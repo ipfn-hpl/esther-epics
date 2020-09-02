@@ -1,0 +1,101 @@
+######################
+record (ai, "$(user):Voltage")
+{
+    field (DESC, "getVoltage  QNT1")
+    field (DTYP, "stream")
+    field (INP, "@quantel.proto getVoltage $(bus)")
+    field (SCAN, "10 second")
+    field(PREC, 0)
+    field(LOPR, "100")
+    field(HOPR, "1600")
+    field(EGU, "Volt")
+    field(SDIS, "$(user):Disable_Remote")
+}
+#record (longin, "$(user):T1")
+#{
+#    field (DESC, "getTrigger  QNT1")
+#    field (DTYP, "stream")
+#    field (INP, "@quantel.proto getTrigger($(user):T2,$(user):T3) $(bus)")
+#    field(VAL, "999")
+#    field (SCAN, "1 second")
+#}
+
+record (longout, "$(user):T1")
+{
+    field (DESC, "setTrigger Q-switch inhibit  QNT1")
+    field (DTYP, "stream")
+    field (OUT, "@quantel.proto setTrigger($(user):T2,$(user):T3) $(bus)")
+    field(LOPR, "1")
+    field(HOPR, "99")
+    field(VAL,  "10")
+    field(PINI, "YES")
+}
+
+record (longout, "$(user):T2")
+{
+    field (DESC, "setTrigger Q-switch Laser shots ")
+    field(VAL, "5")
+    field(LOPR, "1")
+    field(HOPR, "99")
+}
+record (longout, "$(user):T3")
+{
+    field (DESC, "setTrigger Q-switch repeat sequences ")
+    field(VAL, "1")
+    field(LOPR, "1")
+# 99 => continuos
+    field(HOPR, "99")
+}
+record (mbbi, "$(user):Mode_RBV")
+{
+    field(DESC, "get Mode  QNT1")
+    field(DTYP, "stream")
+    field(INP, "@quantel.proto getMode $(bus)")
+    field(SCAN, ".5 second")
+    field(ZRVL,"0")
+    field(ZRST,"standby")
+    field(ONVL,"1")
+    field(ONST,"simmer")
+    field(TWVL,"2")
+    field(TWST,"ready to FIRE")
+    field(TWSV,"MINOR")
+#    field(THVL,"3")
+#    field(THST,"FIRE")  
+}
+record (mbbo, "$(user):Mode")
+{
+    field(DESC, "set Mode  QNT1")
+    field(DTYP, "stream")
+    field(OUT, "@quantel.proto setMode $(bus)")
+    field(VAL, "0")
+    field(ZRVL,"0")
+    field(ZRST,"standby")
+    field(ONVL,"1")
+    field(ONST,"simmer")
+    field(TWVL,"2")
+    field(TWST,"fire auto")
+    field(TWSV,"MINOR")
+    field(THVL,"3")
+    field(THST,"FIRE")  
+    field(PINI, "YES")
+}
+record (bo, "$(user):Disable_Remote")
+{
+    field (DESC, "Disable Scan")
+	field (VAL, "0")
+	field (PINI, "YES")
+	field(ZNAM, "ACTIVE")
+	field(ONAM, "DISABLE")
+}
+#        field(ZNAM, "INACTIVE")
+#        field(ONAM, "ACTIVE")
+
+record(stringout,"$(user):Debug") {
+    field(DESC, "")
+    field(DTYP, "stream")
+    field(OUT, "@quantel.proto debug $(bus)")
+    field(VAL,  "")
+#    field(NELM,"40")
+#    field(FTVL,"CHAR")
+}
+

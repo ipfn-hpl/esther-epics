@@ -1,0 +1,53 @@
+record (ai, "$(user):Pressure")
+{
+	field (DESC, "Get Pressure  KST1")
+	field (DTYP, "stream")
+	field (INP, "@kistler-5051A.proto getPressure KST1")
+	field (EGU, "Bar")
+	field (PREC, "2")
+#field (DRVL, "0")
+#field (DRVH, "60")
+       field (LOPR, "0")
+       field (HOPR, "1000")
+       field (SCAN, "1 second")
+       field (SDIS, "$(user):ROout")
+       field (DISV, "0")
+}
+
+record (bi, "$(user):ROin")
+{
+        field (DESC, "getMeasControl  KST1")
+        field (DTYP, "stream")
+        field (INP, "@kistler-5051A.proto getMeasControl KST1")
+	field(ZNAM, "INACTIVE")
+	field(ONAM, "ACTIVE")
+}
+record (bo, "$(user):ROout")
+{
+        field (DESC, "setMeasControl  KST1")
+        field (DTYP, "stream")
+        field (OUT, "@kistler-5051A.proto setMeasControl KST1")
+	field (PINI, "YES")
+	field(ZNAM, "INACTIVE")
+	field(ONAM, "ACTIVE")
+}
+record (longout, "$(user):MRout")
+{
+        field (DESC, "setMeasRange  KST1")
+        field (DTYP, "stream")
+        field (OUT, "@kistler-5051A.proto setMeasRange KST1")
+	field (PINI, "YES")
+	field (EGU, "Bar")
+        field (LOPR, "10")
+        field (HOPR, "1000")
+        field(VAL, "200")
+        field(ADEL, "10")
+}
+record (bo, "$(user):Disable_Remote")
+{
+        field (DESC, "setMeasControl  KST1")
+	field (PINI, "YES")
+	field(ZNAM, "INACTIVE")
+	field(ONAM, "ACTIVE")
+}
+

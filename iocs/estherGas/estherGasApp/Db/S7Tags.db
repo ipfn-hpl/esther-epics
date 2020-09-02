@@ -1,0 +1,463 @@
+#########  PLC  Bit Tags ############
+# Operational bits
+record(bo, "$(user):START")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M0.0")
+        field(DESC, "S7 PLC START")
+#        field(UDF,1)
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+#record(bi, "$(user):START_RBV")
+#{
+#        field(DTYP, "s7nodave")
+#        field(INP, "@myPLC M0.0")
+#        field(DESC, "S7 PLC START_RBV")
+#        field(ZNAM, "OFF")
+#        field(ONAM, "ON")
+#}
+record(bo, "$(user):STOP")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M0.1")
+        field(DESC, "S7 PLC STOP")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+#record(bi, "$(user):STOP_RBV")
+#{
+#        field(DTYP, "s7nodave")
+#        field(INP, "@myPLC M0.1")
+#        field(PINI,"YES")
+#        field(DESC, "S7 PLC STOP_RBV")
+#        field(ZNAM, "OFF")
+#        field(ONAM, "ON")
+#}
+record(bi, "$(user):ON")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q1.6")
+        field(DESC, "S7 PLC ON")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+}
+record(bo, "$(user):STEP_0_GO")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M2.0")
+        field(DESC, "S7 PLC STEP_0")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+#record(bi, "$(user):STEP_0_RBV")
+#{
+#        field(SCAN, "I/O Intr")
+#        field(DTYP, "s7nodave")
+#        field(INP, "@myPLC(PG=fast) M2.0")
+#        field(DESC, "S7 PLC STEP_0 RBV")
+#        field(ZNAM, "OFF")
+#        field(ONAM, "ON")
+#}
+record(bi, "$(user):STEP_0_ON")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q1.7")
+        field(DESC, "S7 PLC STEP_0 ON")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+}
+record(bo, "$(user):STEP_1_GO")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M2.1")
+        field(DESC, "S7 PLC STEP_1")
+        field(PINI, "YES")
+#        field(ZNAM, "OFF")
+#        field(ONAM, "ON")
+}
+record(bi, "$(user):STEP_1_ON")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q1.2")
+        field(DESC, "S7 PLC STEP_1 ON")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+}
+record(bo, "$(user):STEP_2_GO")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M2.2")
+        field(DESC, "S7 PLC STEP_2")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+record(bi, "$(user):STEP_2_ON")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q1.3")
+        field(DESC, "S7 PLC STEP_2 ON")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+}
+record(bo, "$(user):STEP_3_GO")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M2.3")
+        field(DESC, "S7 PLC STEP_3")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+record(bi, "$(user):STEP_3_ON")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q1.4")
+        field(DESC, "S7 PLC STEP_3 ON")
+}
+record(bo, "$(user):STEP_4_GO")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M2.4")
+        field(DESC, "S7 PLC STEP_4")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+record(bi, "$(user):STEP_4_ON")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) M3.4")
+        field(DESC, "S7 PLC STEP_4 ON")
+}
+record(bo, "$(user):STEP_5_GO")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M2.5")
+        field(DESC, "S7 PLC STEP_5")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+record(bi, "$(user):STEP_5_ON")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) M3.5")
+        field(DESC, "S7 PLC STEP_3 ON")
+}
+record(bo, "$(user):STEP_6_GO")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M2.6")
+        field(DESC, "S7 PLC STEP_6")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+record(bi, "$(user):STEP_6_ON")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) M3.6")
+        field(DESC, "S7 PLC STEP_6 ON")
+}
+record(bo, "$(user):STEP_7_GO")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M2.7")
+        field(DESC, "S7 PLC STEP_7")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+record(bi, "$(user):STEP_7_ON")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) M3.7")
+        field(DESC, "S7 PLC STEP_7 ON")
+}
+record(bo, "$(user):STEP_9_GO")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M3.2")
+        field(DESC, "S7 PLC STEP_9")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+}
+record(bi, "$(user):STEP_9_ON")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) M4.0")
+        field(DESC, "S7 PLC STEP_9 ON")
+}
+record(bo, "$(user):TEST_START")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M0.5")
+        field(DESC, "S7 PLC TEST")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+record(bo, "$(user):TEST_STOP")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M0.6")
+        field(DESC, "S7 PLC TEST")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+record(bi, "$(user):TEST_ON")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) M0.7")
+        field(DESC, "S7 PLC TEST ON")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+#        field(OSV, "MAJOR")
+}
+record(bo, "$(user):TEST_GO")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M3.0")
+        field(DESC, "S7 PLC TEST")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+record(bi, "$(user):TEST_FAIL")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M3.1")
+        field(DESC, "S7 PLC TEST FAILED")
+        field(ZNAM, "OK")
+        field(ONAM, "FAIL")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) M0.2")
+        field(DESC, "S7 PLC ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bo, "$(user):ALARM_CLR")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M0.3")
+        field(DESC, "S7 PLC ALARM CLEAR")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+record(bo, "$(user):ALARM_BREAKPOINT")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M22.5")
+        field(DESC, "S7 PLC ALARM GUI BREAKPOINT")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+record(bo, "$(user):AUTO_CYCLE")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M0.4")
+        field(DESC, "S7 PLC AUTO CYCLE")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+record(bi, "$(user):ABORT_ON")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q1.5")
+        field(DESC, "S7 PLC ABORTING")
+        field(ZNAM, "OFF")
+        field(ONAM, "ABORTING")
+        field(OSV, "MAJOR")
+}
+record(bo, "$(user):ABORT_START")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M4.3")
+        field(DESC, "S7 PLC ABORT START")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+record(bo, "$(user):ABORT_STOP")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC M4.7")
+        field(DESC, "S7 PLC ABORT STOP")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(PINI, "YES")
+}
+#PT901_SP_N
+#########  PLC Set Point Real (D) Tags ############
+#        field(INP, "@myPLC(PG=fast) DB1.DBD0 float") NOT working
+record(ao, "$(user):PT901_SP_N")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC MD40 float")
+        field(DESC, "S7 PT901_SP_N")
+        field(HOPR, "100.0")
+        field(LOPR, "0.0")
+        field(EGU, "Bar")
+        field(PINI, "YES")
+}
+record(ai, "$(user):PT901_SP_N_RBV")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) MD40 float")
+        field(DESC, "S7 PT901_SP_N_RBV")
+        field(EGU, "Bar")
+}
+record(ao, "$(user):PT901_SP_O")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC MD44 float")
+        field(DESC, "S7 PT901_SP_N")
+        field(HOPR, "100.0")
+        field(LOPR, "0.0")
+        field(EGU, "Bar")
+        field(PINI, "YES")
+}
+record(ai,"$(user):PT901_SP_O_RBV")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC  MD44  float")
+        field(DESC, "S7 PT901_SP_O RBV")
+        field(EGU, "Bar")
+}
+record(longin,"$(user):TimerS1_1_wait")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC  MD80  int32")
+        field(DESC, "S7 TimerS1_1_wait")
+        field(EGU, "mSec")
+}
+record(longout,"$(user):PulseNumber")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@myPLC  MW28  uint16")
+        field(DESC, "S7 Pulse Number")
+#        field(EGU, "mSec")
+        field(ADEL, "1")
+        field(PINI, "YES")
+}
+record(longin,"$(user):Counter_S1")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC  MW78 uint16")
+        field(DESC, "S7 Counter_S1 _wait")
+#        field(EGU, "mSec")
+}
+record(longin,"$(user):TimerS1_2_wait")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC  MD84 int32")
+        field(DESC, "S7 TimerS1_2_wait")
+        field(EGU, "mSec")
+}
+record(longin,"$(user):TimerS1_3_wait")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC  MD88 int32")
+        field(DESC, "S7 TimerS1_3_wait")
+        field(EGU, "mSec")
+}
+record(longin,"$(user):TimerS9_1_wait")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC  MD96 int32")
+        field(DESC, "S7 TimerS9_1_wait")
+        field(EGU, "mSec")
+}
+record(longin,"$(user):TimerTests_1_wait")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC  MD92 int32")
+        field(DESC, "S7 :TimerTests_1_wait")
+        field(EGU, "mSec")
+}
+#record(longin, "$(user):Timer1")
+#{
+#        field(SCAN, "I/O Intr")
+#        field(DTYP, "s7nodave")
+#        field(INP, "@myPLC(PG=default) DB3.DBW0 int16 ")
+#        field(DESC, "S7 Timer DB access")
+#}
+record(longin, "$(user):Timer2")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) DB3.DBW2 int16 ")
+        field(DESC, "S7 Timer DB access")
+}
+
+######### Records of the PLC ADC 13 bit?  ############
+#S7 Input records, SCAN "default"
+#        field(EGUF, "Counts")
+#        field(HOPR, "10")
+#        field(LOPR, "0")
+# IW64" does not have a field "SMOOTH"
+record(ai, "$(user):aiIW64")
+{
+        field(DESC, "S7 Analog Input 0")
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(DLV=0,DHV=27648) IW64")
+        field(LINR, "LINEAR")
+        field(EGUF, "10.0")
+        field(EGUL, "0.0")
+        field(EGU, "Volt")
+}
+record(ai, "$(user):aiIW66")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) IW66")
+        field(DESC, "S7 Analog Input")
+        field(EGU, "Volt")
+}
+
+#record(longin, "$(user):dbgW")
+#{
+#        field(SCAN, "I/O Intr")
+#        field(DTYP, "s7nodave")
+#        field(INP, "@myPLC(PG=default) DB23.DBW8 int16 ")
+#        field(DESC, "S7 DB access")
+#}
+#       field(INP, "@myPLC(PG=fast) DB1.DBD0 float") NOT working
+

@@ -1,0 +1,19 @@
+Terminator = CR LF;
+# Pressure is a float
+# use ai and ao records
+
+getPressure {
+	    out "V="; in "%f";
+}
+
+getMeasControl {
+	       out "RO"; in "RO%d";
+}
+
+setMeasControl {
+	       out "RO%d";
+	       @init { getMeasControl; }
+}
+setMeasRange {
+	       out ":18,%d";
+}

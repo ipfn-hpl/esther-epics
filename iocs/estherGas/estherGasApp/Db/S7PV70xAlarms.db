@@ -1,0 +1,82 @@
+######### Records of the PLC PT70x LS Alarm Status bits   ############
+#
+record(bi, "$(user):ALARM_PV701_NOT_CLS")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M21.5")
+        field(DESC, "S7 PLC PV701 NOT CLOSED ALARM")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PV701_NOT_OPN")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M21.6")
+        field(DESC, "S7 PLC PV701 NOT OPEN  ALARM")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PV702_NOT_CLS")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M21.7")
+        field(DESC, "S7 PLC PV702 NOT CLOSED ALARM")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PV702_NOT_OPN")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M22.0")
+        field(DESC, "S7 PLC PV702 NOT OPEN ALARM")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PV703A_NOT_CLS")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M22.1")
+        field(DESC, "S7 PLC PV703A NOT CLOSED ALARM")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PV703A_NOT_OPN")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M22.2")
+        field(DESC, "S7 PLC PV703A NOT OPEN ALARM")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PV703B_NOT_CLS")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M22.3")
+        field(DESC, "S7 PLC PV703B NOT CLOSED ALARM")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PV703B_NOT_OPN")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M22.4")
+        field(DESC, "S7 PLC PV703B NOT OPEN ALARM")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}

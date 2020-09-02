@@ -1,0 +1,45 @@
+# softIoc name and port must be unique on the
+# server where it runs.  It is required that
+# the name be unique.
+#
+# The port is the one used by procServ for its
+# telnet server.
+#
+#NAME=myioc
+NAME=estherGas
+PORT=4050
+
+# User name to run the IOC
+# This must be created manually for each
+# softioc instance
+#
+# Defaults to $NAME
+#
+#USER=myioc
+USER=bernardo
+
+# Name of the server on which this softIoc
+# will run.  This is used for error checking
+# to prevent the instance from being run on
+# the wrong server.
+#
+# If not set then the check is disabled
+#
+#HOST=myserver.domain.com
+
+# IOC executable name.  This is the command
+# given to procServ to start the IOC.
+#
+# Defaults to $CHDIR/st.cmd
+#
+#EXEC="$CHDIR/st.cmd"
+
+# IOC run directory.  The directory in which
+# procServ will start the IOC.  It is permissable
+# to modify or replace the value.
+# eg. CHDIR="$CHDIR/iocBoot/iocexample"
+#
+# Defaults to '/youriocbasedir/$NAME'
+#   (the directory containing this file)
+#
+#CHDIR="$CHDIR"

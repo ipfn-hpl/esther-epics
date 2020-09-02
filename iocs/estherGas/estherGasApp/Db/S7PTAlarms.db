@@ -1,0 +1,365 @@
+######### Records of the PLC PT Tags Alarm - Real-   ############
+#record(ai,"$(user):PT101_LOW")
+#{
+#        field(DESC, "S7 PT101 LOW ALRM")
+#        field(SCAN, "I/O Intr")
+#        field(DTYP, "s7nodave")
+#        field(INP, "@myPLC(PG=default) MD400 float")
+#        field(LOPR, "0")
+#        field(EGU, "Bar")
+#}
+#
+#record(ao,"$(user):PT101_LOW_FWD")
+#{
+#        field(DESC, "S7 PT101 LOW FWD")
+#	field(OMSL, "closed_loop")
+#        field(DOL, "$(user):PT101_LOW CP")
+#  	field(OUT, "$(user):PT101.LOW")
+#}
+#
+record(ai,"$(user):PT102_HIGH")
+{
+        field(DESC, "S7 PT102 HIGH ALRM")
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) MD444 float")
+        field(LOPR, "0")
+        field(EGU, "Bar")
+}
+record(ao,"$(user):PT102_HIGH_FWD")
+{
+        field(DESC, "S7 PT102 HIGH FWD")
+	field(OMSL, "closed_loop")
+        field(DOL, "$(user):PT102_HIGH CP")
+  	field(OUT, "$(user):PT102.HIGH")
+}
+#
+record(ai,"$(user):PT201_LOW")
+{
+        field(DESC, "S7 PT201 LOW ALRM")
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) MD404 float")
+        field(LOPR, "0")
+        field(EGU, "Bar")
+}
+record(ao,"$(user):PT201_LOW_FWD")
+{
+        field(DESC, "S7 PT201 LOW FWD")
+	field(OMSL, "closed_loop")
+        field(DOL, "$(user):PT201_LOW CP")
+  	field(OUT, "$(user):PT201.LOW")
+}
+#
+record(ai,"$(user):PT202_HIGH")
+{
+        field(DESC, "S7 PT202 HIGH ALRM")
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) MD448 float")
+        field(LOPR, "0")
+        field(EGU, "Bar")
+}
+record(ao,"$(user):PT202_HIGH_FWD")
+{
+        field(DESC, "S7 PT202 HIGH FWD")
+	field(OMSL, "closed_loop")
+        field(DOL, "$(user):PT202_HIGH CP")
+  	field(OUT, "$(user):PT202.HIGH")
+}
+#
+#record(ai,"$(user):PT301_LOW")
+#{
+#        field(DESC, "S7 PT302 LOW ALRM")
+#        field(SCAN, "I/O Intr")
+#        field(DTYP, "s7nodave")
+#        field(INP, "@myPLC(PG=default) MD408 float")
+#        field(LOPR, "0")
+#        field(EGU, "Bar")
+#}
+#record(ao,"$(user):PT301_LOW_FWD")
+#{
+#        field(DESC, "S7 PT301 LOW FWD")
+#	field(OMSL, "closed_loop")
+#        field(DOL, "$(user):PT301_LOW CP")
+#  	field(OUT, "$(user):PT301.LOW")
+#}
+#
+record(ai,"$(user):PT302_HIGH")
+{
+        field(DESC, "S7 PT302 HIGH ALRM")
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) MD452 float")
+        field(LOPR, "0")
+        field(EGU, "Bar")
+}
+record(ao,"$(user):PT302_HIGH_FWD")
+{
+        field(DESC, "S7 PT302 HIGH FWD")
+	field(OMSL, "closed_loop")
+        field(DOL, "$(user):PT302_HIGH CP")
+  	field(OUT, "$(user):PT302.HIGH")
+}
+#
+record(ai,"$(user):PT401_LOW")
+{
+        field(DESC, "S7 PT401 LOW ALRM")
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) MD412 float")
+        field(LOPR, "0")
+        field(EGU, "Bar")
+}
+record(ao,"$(user):PT401_LOW_FWD")
+{
+        field(DESC, "S7 PT401 LOW FWD")
+	field(OMSL, "closed_loop")
+        field(DOL, "$(user):PT401_LOW CP")
+  	field(OUT, "$(user):PT401.LOW")
+}
+#
+record(ai,"$(user):PT402_HIGH")
+{
+        field(DESC, "S7 PT402 HIGH ALRM")
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) MD456 float")
+        field(LOPR, "0")
+        field(EGU, "Bar")
+}
+record(ao,"$(user):PT402_HIGH_FWD")
+{
+        field(DESC, "S7 PT402 HIGH FWD")
+	field(OMSL, "closed_loop")
+        field(DOL, "$(user):PT402_HIGH CP")
+  	field(OUT, "$(user):PT402.HIGH")
+}
+#
+#record(ai,"$(user):PT501_LOW")
+#{
+#        field(DESC, "S7 PT501 LOW ALRM")
+#        field(SCAN, "I/O Intr")
+#        field(DTYP, "s7nodave")
+#        field(INP, "@myPLC(PG=default) MD416 float")
+#        field(LOPR, "-1.0")
+#        field(HOPR, "250.0")
+#        field(EGU, "Bar")
+#}
+#record(ao,"$(user):PT501_LOW_FWD")
+#{
+#        field(DESC, "S7 PT501 LOW FWD")
+#	field(OMSL, "closed_loop")
+#        field(DOL, "$(user):PT501_LOW CP")
+#  	field(OUT, "$(user):PT501.LOW")
+#}
+#
+record(ai,"$(user):PT502_HIGH")
+{
+        field(DESC, "S7 PT502 HIGH ALRM")
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) MD460 float")
+        field(LOPR, "0")
+        field(EGU, "Bar")
+}
+record(ao,"$(user):PT502_HIGH_FWD")
+{
+        field(DESC, "S7 PT502 HIGH FWD")
+	field(OMSL, "closed_loop")
+        field(DOL, "$(user):PT502_HIGH CP")
+  	field(OUT, "$(user):PT502.HIGH")
+}
+#
+record(ai,"$(user):PT601_HIGH")
+{
+        field(DESC, "S7 PT601 HIGH ALRM")
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) MD464 float")
+        field(LOPR, "0")
+        field(EGU, "Bar")
+}
+record(ao,"$(user):PT601_HIGH_FWD")
+{
+        field(DESC, "S7 PT601 HIGH FWD")
+	field(OMSL, "closed_loop")
+        field(DOL, "$(user):PT601_HIGH CP")
+  	field(OUT, "$(user):PT601.HIGH")
+}
+#
+#record(ai,"$(user):PT801_LOW")
+#{
+#        field(DESC, "S7 PT801 LOW ALRM")
+#        field(SCAN, "I/O Intr")
+#        field(DTYP, "s7nodave")
+#        field(INP, "@myPLC(PG=default) MD420 float")
+#        field(LOPR, "0")
+#        field(EGU, "Bar")
+#}
+#record(ao,"$(user):PT801_LOW_FWD")
+#{
+#        field(DESC, "S7 PT801 LOW FWD")
+#	field(OMSL, "closed_loop")
+#        field(DOL, "$(user):PT801_LOW CP")
+#  	field(OUT, "$(user):PT801.LOW")
+#}
+#
+record(ai,"$(user):PT901_HIGH")
+{
+        field(DESC, "S7 PT901 HIGH ALRM")
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) MD440 float")
+        field(LOPR, "0")
+        field(EGU, "Bar")
+}
+record(ao,"$(user):PT901_HIGH_FWD")
+{
+        field(DESC, "S7 PT901 HIGH FWD")
+	field(OMSL, "closed_loop")
+        field(DOL, "$(user):PT901_HIGH CP")
+  	field(OUT, "$(user):PT901.HIGH")
+}
+####### ALARM Status bits
+record(bi, "$(user):ALARM_PT101")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M20.0")
+        field(DESC, "S7 PLC PT101 ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PT102")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M20.1")
+        field(DESC, "S7 PLC PT102 ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PT201")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M20.2")
+        field(DESC, "S7 PLC PT201 ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PT202")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M20.3")
+        field(DESC, "S7 PLC PT202 ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PT301")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M20.4")
+        field(DESC, "S7 PLC PT301 ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PT302")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M20.5")
+        field(DESC, "S7 PLC PT302 ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PT401")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M20.6")
+        field(DESC, "S7 PLC PT401 ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PT402")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M20.7")
+        field(DESC, "S7 PLC PT402 ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PT501")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M21.0")
+        field(DESC, "S7 PLC PT501 ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PT502")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M21.1")
+        field(DESC, "S7 PLC PT502 ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PT601")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M21.2")
+        field(DESC, "S7 PLC PT601 ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PT801")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M21.3")
+        field(DESC, "S7 PLC PT801 ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_PT901")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M21.4")
+        field(DESC, "S7 PLC PT901 ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+record(bi, "$(user):ALARM_DOORS_OPEN")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M22.6")
+        field(DESC, "S7 PLC DOORS OPEN ALARM SET")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MAJOR")
+}
+

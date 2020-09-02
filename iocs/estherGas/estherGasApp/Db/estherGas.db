@@ -1,0 +1,4 @@
+record(longout,"$(user):PulseNumber")
+{
+        field(DESC, "Pulse Number")
+}

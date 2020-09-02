@@ -1,0 +1,974 @@
+#########  PLC State status Bit Tags (Debug) ############
+record(bi, "$(user):SA_0")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M116.0")
+        field(DESC, "S7 PLC Status Bit")
+}
+record(bi, "$(user):SA_1")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M116.1")
+        field(DESC, "S7 PLC Status Bit")
+}
+record(bi, "$(user):SA_2")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M116.2")
+        field(DESC, "S7 PLC Status Bit")
+}
+record(bi, "$(user):SA_3")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M116.3")
+        field(DESC, "S7 PLC Status Bit")
+}
+record(bi, "$(user):SA_4")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M116.4")
+        field(DESC, "S7 PLC Status Bit")
+}
+record(bi, "$(user):SA_5")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M116.5")
+        field(DESC, "S7 PLC Status Bit")
+}
+record(bi, "$(user):SA_END")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M116.7")
+        field(DESC, "S7 PLC Status Bit")
+        field(ZNAM, "  ")
+        field(ONAM, "ABORT END")
+#        field(OSV, "MAJOR")
+}
+record(bi, "$(user):S0_0")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M101.0")
+}
+record(bi, "$(user):S0_1")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M101.1")
+}
+record(bi, "$(user):S0_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M101.7")
+}
+#Step 1
+record(bi, "$(user):S1_0")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M102.0")
+}
+record(bi, "$(user):S1_1")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M102.1")
+}
+record(bi, "$(user):S1_1A")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M65.0")
+}
+record(bi, "$(user):S1_2")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M102.2")
+}
+record(bi, "$(user):S1_3")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M102.3")
+}
+record(bi, "$(user):S1_4")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M102.4")
+}
+record(bi, "$(user):S1_5")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M102.5")
+}
+record(bi, "$(user):S1_6")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M102.6")
+}
+record(bi, "$(user):S1_7")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M102.7")
+}
+record(bi, "$(user):S1_7A")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M65.2")
+}
+record(bi, "$(user):S1_8")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M103.0")
+}
+record(bi, "$(user):S1_9")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M103.1")
+}
+record(bi, "$(user):S1_10")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M103.2")
+}
+record(bi, "$(user):S1_10A")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M65.1")
+}
+record(bi, "$(user):S1_11")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M103.3")
+}
+record(bi, "$(user):S1_12")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M103.4")
+}
+record(bi, "$(user):S1_13")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M103.5")
+}
+record(bi, "$(user):S1_14")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M103.6")
+}
+record(bi, "$(user):S1_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M103.7")
+}
+#Step 2
+record(bi, "$(user):S2_0")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M104.0")
+}
+record(bi, "$(user):S2_1")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M104.1")
+}
+record(bi, "$(user):S2_2")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M104.2")
+}
+record(bi, "$(user):S2_3")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M104.3")
+}
+record(bi, "$(user):S2_4")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M104.4")
+}
+record(bi, "$(user):S2_5")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M104.5")
+}
+record(bi, "$(user):S2_6")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M104.6")
+}
+record(bi, "$(user):S2_7")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M104.7")
+}
+record(bi, "$(user):S2_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M105.7")
+}
+#Step 3
+record(bi, "$(user):S3_0")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M106.0")
+}
+record(bi, "$(user):S3_1")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M106.1")
+}
+record(bi, "$(user):S3_2")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M106.2")
+}
+record(bi, "$(user):S3_3")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M106.3")
+}
+record(bi, "$(user):S3_4")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M106.4")
+}
+record(bi, "$(user):S3_4A")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M65.5")
+}
+record(bi, "$(user):S3_5")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M106.5")
+}
+record(bi, "$(user):S3_5A")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M65.6")
+}
+record(bi, "$(user):S3_6")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M106.6")
+}
+record(bi, "$(user):S3_7")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M106.7")
+}
+record(bi, "$(user):S3_8")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M107.0")
+}
+record(bi, "$(user):S3_9")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M107.1")
+}
+record(bi, "$(user):S3_10")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M107.2")
+}
+record(bi, "$(user):S3_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M107.7")
+}
+#Step 4
+record(bi, "$(user):S4_0")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M108.0")
+}
+record(bi, "$(user):S4_1")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M108.1")
+}
+record(bi, "$(user):S4_2")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M108.2")
+}
+record(bi, "$(user):S4_3")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M108.3")
+}
+record(bi, "$(user):S4_4")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M108.4")
+}
+record(bi, "$(user):S4_5")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M108.5")
+}
+record(bi, "$(user):S4_5A")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M109.3")
+}
+record(bi, "$(user):S4_6")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M108.6")
+}
+record(bi, "$(user):S4_7")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M108.7")
+}
+record(bi, "$(user):S4_8")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M109.0")
+}
+record(bi, "$(user):S4_8A")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M109.4")
+}
+record(bi, "$(user):S4_9")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M109.1")
+}
+record(bi, "$(user):S4_10")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M109.2")
+}
+record(bi, "$(user):S4_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M109.7")
+}
+#Step 5
+record(bi, "$(user):S5_0")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M110.0")
+}
+record(bi, "$(user):S5_1")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M110.1")
+}
+record(bi, "$(user):S5_2")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M110.2")
+}
+record(bi, "$(user):S5_3")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M110.3")
+}
+record(bi, "$(user):S5_4")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M110.4")
+}
+record(bi, "$(user):S5_5")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M110.5")
+}
+record(bi, "$(user):S5_6")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M110.6")
+}
+record(bi, "$(user):S5_7")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M110.7")
+}
+record(bi, "$(user):S5_8")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M111.0")
+}
+record(bi, "$(user):S5_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M111.7")
+}
+#Step 6
+record(bi, "$(user):S6_0")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M112.0")
+}
+record(bi, "$(user):S6_1")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M112.1")
+}
+record(bi, "$(user):S6_2")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M112.2")
+}
+record(bi, "$(user):S6_3")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M112.3")
+}
+record(bi, "$(user):S6_3A")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M113.2")
+}
+record(bi, "$(user):S6_4")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M112.4")
+}
+record(bi, "$(user):S6_5")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M112.5")
+}
+record(bi, "$(user):S6_6")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M112.6")
+}
+record(bi, "$(user):S6_7")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M112.7")
+}
+record(bi, "$(user):S6_8")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M113.0")
+}
+record(bi, "$(user):S6_9")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M113.1")
+}
+record(bi, "$(user):S6_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M113.7")
+}
+#Step 7
+record(bi, "$(user):S7_0")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M114.0")
+}
+record(bi, "$(user):S7_1")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M114.1")
+}
+record(bi, "$(user):S7_1A")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M120.1")
+}
+record(bi, "$(user):S7_2")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M114.2")
+}
+record(bi, "$(user):S7_3")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M114.3")
+}
+record(bi, "$(user):S7_4")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M114.4")
+}
+record(bi, "$(user):S7_5")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M114.5")
+}
+record(bi, "$(user):S7_5A")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M115.5")
+}
+record(bi, "$(user):S7_6")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M114.6")
+}
+record(bi, "$(user):S7_7")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M114.7")
+}
+record(bi, "$(user):S7_8")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M115.0")
+}
+record(bi, "$(user):S7_9")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M115.1")
+}
+record(bi, "$(user):S7_10")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M115.2")
+}
+record(bi, "$(user):S7_11")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M115.3")
+}
+record(bi, "$(user):S7_12")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M115.4")
+}
+record(bi, "$(user):S7_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M115.7")
+}
+#Step 9
+record(bi, "$(user):S9_0")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M123.0")
+}
+record(bi, "$(user):S9_1")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M123.1")
+}
+record(bi, "$(user):S9_1A")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M123.5")
+}
+record(bi, "$(user):S9_2")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M123.2")
+}
+record(bi, "$(user):S9_2A")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M123.6")
+}
+record(bi, "$(user):S9_3")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M123.3")
+}
+record(bi, "$(user):S9_4")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M123.4")
+}
+record(bi, "$(user):S9_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M124.7")
+}
+#Step Tests
+record(bi, "$(user):ST_0")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M117.0")
+}
+record(bi, "$(user):ST_1")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M117.1")
+}
+record(bi, "$(user):ST_2")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M117.2")
+}
+record(bi, "$(user):ST_3")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M117.3")
+}
+record(bi, "$(user):ST_4")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M117.4")
+}
+record(bi, "$(user):ST_5")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M117.5")
+}
+record(bi, "$(user):ST_6")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M117.6")
+}
+record(bi, "$(user):ST_7")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M117.7")
+}
+record(bi, "$(user):ST_8")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M118.0")
+}
+record(bi, "$(user):ST_9")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M118.1")
+}
+record(bi, "$(user):ST_10")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M118.2")
+}
+record(bi, "$(user):ST_11")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M118.3")
+}
+record(bi, "$(user):ST_12")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M118.4")
+}
+record(bi, "$(user):ST_13")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M118.5")
+}
+record(bi, "$(user):ST_14")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M118.6")
+}
+record(bi, "$(user):ST_15")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M118.7")
+}
+record(bi, "$(user):ST_16")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M119.0")
+}
+record(bi, "$(user):ST_17")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M119.1")
+}
+record(bi, "$(user):ST_18")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M119.2")
+}
+record(bi, "$(user):ST_19")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M119.3")
+}
+record(bi, "$(user):ST_20")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M119.4")
+}
+record(bi, "$(user):ST_21")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M119.5")
+}
+record(bi, "$(user):ST_22")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M119.6")
+}
+record(bi, "$(user):ST_23")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M119.7")
+}
+record(bi, "$(user):ST_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M120.7")
+}
+
+

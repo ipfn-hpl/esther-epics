@@ -1,0 +1,201 @@
+#########  PLC VALVE Status Temp #######
+# Temporary bit addresses, Will be replaced when Digital I/O modules exist
+#record(bi, "$(user):PV100")
+#{
+#        field(SCAN, "I/O Intr")
+#        field(DTYP, "s7nodave")
+#        field(INP, "@myPLC(PG=fast) Q0.0")
+#        field(DESC, "S7 PLC PV100")
+#        field(ZNAM, "OFF")
+#        field(ONAM, "ON")
+#}
+record(bi, "$(user):PV101")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q9.3")
+        field(DESC, "S7 PLC PV101")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV102")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q9.4")
+        field(DESC, "S7 PLC PV102 NO")
+        field(ZNAM, "OPEN")
+        field(ONAM, "CLOSED")
+}
+record(bi, "$(user):PV201")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q8.3")
+        field(DESC, "S7 PLC PV201")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV202")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q8.4")
+        field(DESC, "S7 PLC PV202")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV203")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q8.5")
+        field(DESC, "S7 PLC PV203 NO")
+        field(ZNAM, "OPEN")
+        field(ONAM, "CLOSED")
+}
+record(bi, "$(user):PV301")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q8.6")
+        field(DESC, "S7 PLC PV301")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV302")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q8.7")
+        field(DESC, "S7 PLC PV302")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV303")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q0.3")
+        field(DESC, "S7 PLC PV303 NO")
+        field(ZNAM, "OPEN")
+        field(ONAM, "CLOSED")
+}
+record(bi, "$(user):PV401")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q8.0")
+        field(DESC, "S7 PLC PV401")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV402")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q8.1")
+        field(DESC, "S7 PLC PV402")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV403")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q8.2")
+        field(DESC, "S7 PLC PV403 NO")
+        field(ZNAM, "OPEN")
+        field(ONAM, "CLOSED")
+}
+record(bi, "$(user):PV501")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q9.5")
+        field(DESC, "S7 PLC PV501")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV502")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q9.6")
+        field(DESC, "S7 PLC PV502")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV503")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q9.7")
+        field(DESC, "S7 PLC PV503 NO")
+        field(ZNAM, "OPEN")
+        field(ONAM, "CLOSED")
+}
+record(bi, "$(user):PV601")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q9.0")
+        field(DESC, "S7 PLC PV601")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV602")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q9.1")
+        field(DESC, "S7 PLC PV602")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV603")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q9.2")
+        field(DESC, "S7 PLC PV603")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV701")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q0.4")
+        field(DESC, "S7 PLC PV701")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV702")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q0.5")
+        field(DESC, "S7 PLC PV702")
+        field(ZNAM, "CLOSED")
+        field(ONAM, "OPEN")
+}
+record(bi, "$(user):PV703A")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q0.6")
+        field(DESC, "S7 PLC PV703A")
+        field(ZNAM, "OPEN")
+        field(ONAM, "CLOSED")
+}
+record(bi, "$(user):PV703B")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=fast) Q0.7")
+        field(DESC, "S7 PLC PV703B")
+        field(ZNAM, "OPEN")
+        field(ONAM, "CLOSED")
+}
+

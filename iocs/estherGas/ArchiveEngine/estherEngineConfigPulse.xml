@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Example for XML configuration file syntax -->
+<engineconfig>
+  <!-- Engine can have one or more groups
+       Each group has a name and one or more channels
+    -->
+  <group>
+    <name>Esther Pressure Transducers</name>
+      <!-- Each channel has a name and
+           a sample period (or expected change period).
+           The period is either in seconds or in HH:MM:SS format.
+           It is either using the 'monitor' or 'scan' sample mode.
+       -->
+      <!-- Example for a monitor with engine-enforced
+           value change threshold of 2.5
+        -->
+      <channel>
+         <name>Esther:gas:PT101</name>
+         <period>1.0</period>
+	 <monitor>0.5</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:PT102</name>
+         <period>1.0</period>
+	 <monitor>0.5</monitor>
+       </channel>
+      <channel>
+         <name>Esther:gas:PT201</name>
+         <period>1.0</period>
+	 <monitor>0.5</monitor>
+       </channel>
+      <channel>
+         <name>Esther:gas:PT202</name>
+         <period>1.0</period>
+         <monitor>0.5</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:PT301</name>
+         <period>1.0</period>
+         <monitor>0.5</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:PT302</name>
+         <period>1.0</period>
+         <monitor>0.5</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:PT401</name>
+         <period>1.0</period>
+         <monitor>0.5</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:PT402</name>
+         <period>1.0</period>
+         <monitor>0.5</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:PT501</name>
+         <period>1.0</period>
+         <monitor>0.5</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:PT502</name>
+         <period>1.0</period>
+         <monitor>0.5</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:PT601</name>
+         <period>1.0</period>
+         <monitor>0.5</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:PT801</name>
+         <period>1.0</period>
+         <monitor>0.5</monitor>
+      </channel>
+
+      <!-- Channel that is scanned every 1 minutes
+      <channel>
+         <name>Esther:gas:PT801</name>
+         <period>00:01:00</period><scan/>
+      </channel>
+-->
+      <!-- Channel that enables sampling of this group -->
+      <channel>
+         <name>Esther:gas:PT901</name>
+         <period>00:00:01</period><scan/>
+         <enable/>
+      </channel>
+  </group>
+
+  <group>
+    <name>Esther MFC Flow/Volumes</name>
+      <channel>
+         <name>Esther:gas:MFC201_FFLOW</name>
+         <period>1.0</period>
+	 <monitor>0.2</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:MFC401_FFLOW</name>
+         <period>1.0</period>
+	 <monitor>0.2</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:MFC601_FFLOW</name>
+         <period>1.0</period>
+	 <monitor>0.2</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:MFC201_VOL_FMEAS</name>
+         <period>1.0</period>
+	 <monitor>0.2</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:MFC201_FVOL_SP</name>
+         <period>60.0</period>
+	 <monitor>0.1</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:MFC401_VOL_FMEAS</name>
+         <period>1.0</period>
+	 <monitor>0.2</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:MFC401_FVOL_SP</name>
+         <period>60.0</period>
+	 <monitor>0.1</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:MFC601_VOL_FMEAS</name>
+         <period>1.0</period>
+	 <monitor>0.2</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:MFC601_FVOL_HE1_SP</name>
+         <period>60.0</period>
+	 <monitor>0.1</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:MFC601_FVOL_HE2_SP</name>
+         <period>60.0</period>
+	 <monitor>0.1</monitor>
+         <enable/>
+      </channel>
+  </group>
+
+  <group>
+    <name>Esther Saved Pressures</name>
+      <channel>
+         <name>Esther:gas:PT901_END_S1</name>
+	 <monitor/>
+      </channel>
+      <channel>
+         <name>Esther:gas:PT901_END_O</name>
+	 <monitor/>
+      </channel>
+      <channel>
+         <name>Esther:gas:PT901_END_HE1</name>
+	 <monitor/>
+      </channel>
+      <channel>
+         <name>Esther:gas:PT901_END_H</name>
+	 <monitor/>
+      </channel>
+      <channel>
+         <name>Esther:gas:PT901_END_HE2</name>
+	 <monitor/>
+         <enable/>
+      </channel>
+  </group>
+
+  <group>
+    <name>Esther Bombe Pressure Transducer (Kistler)</name>
+      <channel>
+         <name>Esther:Bombe:MRout</name>
+         <period>10.0</period>
+	 <monitor/>
+      </channel>
+      <channel>
+         <name>Esther:Bombe:Pressure</name>
+         <period>0.05</period>
+	 <scan/>
+         <enable/>
+      </channel>
+  </group>
+
+  <group>
+    <name>Esther Pulse Number</name>
+      <channel>
+         <name>Esther:gas:PulseNumber</name>
+	 <monitor>1</monitor>
+         <enable/>
+      </channel>
+  </group>
+
+  <group>
+    <name>Esther Gas Alarm Ssytem</name>
+      <channel>
+         <name>Esther:gas:MXT_H2_Central</name>
+	 <monitor/>
+      </channel>
+      <channel>
+         <name>Esther:gas:MXT_H2_Bunker</name>
+	 <monitor/>
+      </channel>
+      <channel>
+         <name>Esther:gas:MXT_O2_Central</name>
+	 <monitor/>
+      </channel>
+      <channel>
+         <name>Esther:gas:MXT_O2_Bunker</name>
+	 <monitor/>
+         <enable/>
+      </channel>
+  </group>
+
+  <!-- 
+   Other Group 
+  <group>
+    <name>SouthSectorVacuum</name>
+      <channel>
+         <name>SSV:P1</name>
+         <period>1.0</period><monitor/>
+      </channel>
+  </group>
+-->
+</engineconfig>

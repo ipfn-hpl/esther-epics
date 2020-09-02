@@ -1,0 +1,4 @@
+sudo ./ArchiveConfigTool -engine estherPulse -delete_config
+sudo ./ArchiveConfigTool -engine estherPulse -config estherEngineConfigPulse.xml -import
+sudo ./ArchiveEngine -pluginCustomization esther.ini -engine estherPulse -port 4812
+
