@@ -128,7 +128,7 @@
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV101</pv>
+          <pv trig="true">Esther:gas:PV101_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -2051,7 +2051,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV101</pv>
+          <pv trig="true">Esther:gas:PV101_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -2146,7 +2146,7 @@ $(pv_value)</tooltip>
                 <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
               </value>
             </exp>
-            <pv trig="true">Esther:gas:PV101</pv>
+            <pv trig="true">Esther:gas:PV101_OUT</pv>
           </rule>
         </rules>
         <scale_options>
@@ -2488,7 +2488,7 @@ $(pv_value)</tooltip>
                 <color name="Text_ForeGround" red="0" green="0" blue="0" />
               </value>
             </exp>
-            <pv trig="true">Esther:gas:PV101</pv>
+            <pv trig="true">Esther:gas:PV101_OUT</pv>
           </rule>
         </rules>
         <scale_options>
@@ -2547,7 +2547,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV101</pv>
+          <pv trig="true">Esther:gas:PV101_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -3098,7 +3098,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV101</pv>
+          <pv trig="true">Esther:gas:PV101_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -3170,7 +3170,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV101</pv>
+          <pv trig="true">Esther:gas:PV101_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -3564,7 +3564,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV101</pv>
+          <pv trig="true">Esther:gas:PV101_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -3659,7 +3659,7 @@ $(pv_value)</tooltip>
                 <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
               </value>
             </exp>
-            <pv trig="true">Esther:gas:PV101</pv>
+            <pv trig="true">Esther:gas:PV101_OUT</pv>
           </rule>
         </rules>
         <scale_options>
@@ -4001,7 +4001,7 @@ $(pv_value)</tooltip>
                 <color name="Text_ForeGround" red="0" green="0" blue="0" />
               </value>
             </exp>
-            <pv trig="true">Esther:gas:PV101</pv>
+            <pv trig="true">Esther:gas:PV101_OUT</pv>
           </rule>
         </rules>
         <scale_options>
@@ -4060,7 +4060,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV101</pv>
+          <pv trig="true">Esther:gas:PV101_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -7413,7 +7413,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV301</pv>
+          <pv trig="true">Esther:gas:PV301_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -7508,7 +7508,7 @@ $(pv_value)</tooltip>
                 <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
               </value>
             </exp>
-            <pv trig="true">Esther:gas:PV301</pv>
+            <pv trig="true">Esther:gas:PV301_OUT</pv>
           </rule>
         </rules>
         <scale_options>
@@ -7850,7 +7850,7 @@ $(pv_value)</tooltip>
                 <color name="Text_ForeGround" red="0" green="0" blue="0" />
               </value>
             </exp>
-            <pv trig="true">Esther:gas:PV301</pv>
+            <pv trig="true">Esther:gas:PV301_OUT</pv>
           </rule>
         </rules>
         <scale_options>
@@ -7909,7 +7909,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV301</pv>
+          <pv trig="true">Esther:gas:PV301_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -8460,7 +8460,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV301</pv>
+          <pv trig="true">Esther:gas:PV301_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -8532,7 +8532,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV301</pv>
+          <pv trig="true">Esther:gas:PV301_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -8926,7 +8926,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV301</pv>
+          <pv trig="true">Esther:gas:PV301_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -9021,7 +9021,7 @@ $(pv_value)</tooltip>
                 <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
               </value>
             </exp>
-            <pv trig="true">Esther:gas:PV301</pv>
+            <pv trig="true">Esther:gas:PV301_OUT</pv>
           </rule>
         </rules>
         <scale_options>
@@ -9363,7 +9363,7 @@ $(pv_value)</tooltip>
                 <color name="Text_ForeGround" red="0" green="0" blue="0" />
               </value>
             </exp>
-            <pv trig="true">Esther:gas:PV301</pv>
+            <pv trig="true">Esther:gas:PV301_OUT</pv>
           </rule>
         </rules>
         <scale_options>
@@ -9422,7 +9422,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV301</pv>
+          <pv trig="true">Esther:gas:PV301_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -9958,7 +9958,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV301</pv>
+          <pv trig="true">Esther:gas:PV301_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -10242,7 +10242,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV301</pv>
+          <pv trig="true">Esther:gas:PV301_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -13100,7 +13100,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV501</pv>
+          <pv trig="true">Esther:gas:PV501_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -13195,7 +13195,7 @@ $(pv_value)</tooltip>
                 <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
               </value>
             </exp>
-            <pv trig="true">Esther:gas:PV501</pv>
+            <pv trig="true">Esther:gas:PV501_OUT</pv>
           </rule>
         </rules>
         <scale_options>
@@ -13537,7 +13537,7 @@ $(pv_value)</tooltip>
                 <color name="Text_ForeGround" red="0" green="0" blue="0" />
               </value>
             </exp>
-            <pv trig="true">Esther:gas:PV501</pv>
+            <pv trig="true">Esther:gas:PV501_OUT</pv>
           </rule>
         </rules>
         <scale_options>
@@ -13596,7 +13596,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV501</pv>
+          <pv trig="true">Esther:gas:PV501_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -14147,7 +14147,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV501</pv>
+          <pv trig="true">Esther:gas:PV501_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -14219,7 +14219,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV501</pv>
+          <pv trig="true">Esther:gas:PV501_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -14598,7 +14598,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV501</pv>
+          <pv trig="true">Esther:gas:PV501_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -14882,7 +14882,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV501</pv>
+          <pv trig="true">Esther:gas:PV501_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -15322,7 +15322,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV101</pv>
+        <pv trig="true">Esther:gas:PV101_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -15507,7 +15507,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV201</pv>
+          <pv trig="true">Esther:gas:PV201_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -15740,7 +15740,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV301</pv>
+          <pv trig="true">Esther:gas:PV301_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -15928,7 +15928,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV301</pv>
+        <pv trig="true">Esther:gas:PV301_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -16043,7 +16043,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV401</pv>
+          <pv trig="true">Esther:gas:PV401_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -16301,7 +16301,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV501</pv>
+        <pv trig="true">Esther:gas:PV501_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -16416,7 +16416,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV501</pv>
+          <pv trig="true">Esther:gas:PV501_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -16645,7 +16645,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV102</pv>
+          <pv trig="true">Esther:gas:PV102_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -16697,7 +16697,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV102</pv>
+          <pv trig="true">Esther:gas:PV102_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -16929,7 +16929,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV203</pv>
+          <pv trig="true">Esther:gas:PV203_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -16950,7 +16950,7 @@ $(pv_value)</tooltip>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
-      <auto_size>false</auto_size>
+      <auto_size>true</auto_size>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -16961,12 +16961,12 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Sans" height="14" style="1" pixels="false">Header 2</opifont.name>
+        <opifont.name fontName="Sans" height="12" style="1" pixels="false">Header 3</opifont.name>
       </font>
       <foreground_color>
         <color name="Header_Background" red="77" green="77" blue="77" />
       </foreground_color>
-      <height>24</height>
+      <height>19</height>
       <horizontal_alignment>1</horizontal_alignment>
       <name>Ext</name>
       <rules>
@@ -16981,7 +16981,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV203</pv>
+          <pv trig="true">Esther:gas:PV203_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -16991,13 +16991,13 @@ $(pv_value)</tooltip>
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <text>EXIT </text>
+      <text>EXIT</text>
       <tooltip></tooltip>
       <transparent>true</transparent>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>42</width>
+      <width>40</width>
       <wrap_words>true</wrap_words>
       <wuid>-9f6cce5:15b152f089d:ea4</wuid>
       <x>60</x>
@@ -17212,7 +17212,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV202</pv>
+          <pv trig="true">Esther:gas:PV202_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -17440,7 +17440,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV302</pv>
+          <pv trig="true">Esther:gas:PV302_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -17668,7 +17668,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV402</pv>
+          <pv trig="true">Esther:gas:PV402_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -17896,7 +17896,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV502</pv>
+          <pv trig="true">Esther:gas:PV502_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -18109,7 +18109,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV201</pv>
+          <pv trig="true">Esther:gas:PV201_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -18397,7 +18397,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV201</pv>
+          <pv trig="true">Esther:gas:PV201_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -18509,7 +18509,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV303</pv>
+          <pv trig="true">Esther:gas:PV303_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -18561,7 +18561,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV303</pv>
+          <pv trig="true">Esther:gas:PV303_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -18777,7 +18777,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV401</pv>
+          <pv trig="true">Esther:gas:PV401_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -19065,7 +19065,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV401</pv>
+          <pv trig="true">Esther:gas:PV401_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -19136,7 +19136,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV301</pv>
+        <pv trig="true">Esther:gas:PV301_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -19247,7 +19247,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV403</pv>
+          <pv trig="true">Esther:gas:PV403_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -19299,7 +19299,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV403</pv>
+          <pv trig="true">Esther:gas:PV403_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -19490,7 +19490,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV501</pv>
+        <pv trig="true">Esther:gas:PV501_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -19601,7 +19601,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV503</pv>
+          <pv trig="true">Esther:gas:PV503_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -19653,7 +19653,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV503</pv>
+          <pv trig="true">Esther:gas:PV503_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -19844,7 +19844,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV202</pv>
+        <pv trig="true">Esther:gas:PV202_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -19914,7 +19914,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV402</pv>
+        <pv trig="true">Esther:gas:PV402_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -19984,7 +19984,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV101</pv>
+        <pv trig="true">Esther:gas:PV101_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -20050,8 +20050,8 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts>
       <path pathString="Scripts/LineColorChange_2inputs.js" checkConnect="true" sfe="false" seoe="false">
-        <pv trig="true">Esther:gas:PV402</pv>
-        <pv trig="true">Esther:gas:PV502</pv>
+        <pv trig="true">Esther:gas:PV402_OUT</pv>
+        <pv trig="true">Esther:gas:PV502_OUT</pv>
       </path>
     </scripts>
     <tooltip>$(pv_name)
@@ -20136,8 +20136,8 @@ $(pv_value)</tooltip>
       </scale_options>
       <scripts>
         <path pathString="Scripts/LineColorChange_2inputs.js" checkConnect="true" sfe="false" seoe="false">
-          <pv trig="true">Esther:gas:PV402</pv>
-          <pv trig="true">Esther:gas:PV502</pv>
+          <pv trig="true">Esther:gas:PV402_OUT</pv>
+          <pv trig="true">Esther:gas:PV502_OUT</pv>
         </path>
       </scripts>
       <show_scrollbar>false</show_scrollbar>
@@ -20437,8 +20437,8 @@ $(pv_value)</tooltip>
       </scale_options>
       <scripts>
         <path pathString="Scripts/LineColorChange_2inputs.js" checkConnect="true" sfe="false" seoe="false">
-          <pv trig="true">Esther:gas:PV202</pv>
-          <pv trig="true">Esther:gas:PV302</pv>
+          <pv trig="true">Esther:gas:PV202_OUT</pv>
+          <pv trig="true">Esther:gas:PV302_OUT</pv>
         </path>
       </scripts>
       <show_scrollbar>false</show_scrollbar>
@@ -20742,7 +20742,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV101</pv>
+          <pv trig="true">Esther:gas:PV101_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -21024,8 +21024,8 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts>
       <path pathString="Scripts/LineColorChange_2inputs.js" checkConnect="true" sfe="false" seoe="false">
-        <pv trig="true">Esther:gas:PV202</pv>
-        <pv trig="true">Esther:gas:PV302</pv>
+        <pv trig="true">Esther:gas:PV202_OUT</pv>
+        <pv trig="true">Esther:gas:PV302_OUT</pv>
       </path>
     </scripts>
     <tooltip>$(pv_name)
@@ -21090,7 +21090,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV101</pv>
+        <pv trig="true">Esther:gas:PV101_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -21156,8 +21156,8 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts>
       <path pathString="Scripts/LineColorChange_2inputs.js" checkConnect="true" sfe="false" seoe="false">
-        <pv trig="true">Esther:gas:PV402</pv>
-        <pv trig="true">Esther:gas:PV502</pv>
+        <pv trig="true">Esther:gas:PV402_OUT</pv>
+        <pv trig="true">Esther:gas:PV502_OUT</pv>
       </path>
     </scripts>
     <tooltip>$(pv_name)
@@ -21217,8 +21217,8 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts>
       <path pathString="Scripts/LineColorChange_2inputs.js" checkConnect="true" sfe="false" seoe="false">
-        <pv trig="true">Esther:gas:PV202</pv>
-        <pv trig="true">Esther:gas:PV302</pv>
+        <pv trig="true">Esther:gas:PV202_OUT</pv>
+        <pv trig="true">Esther:gas:PV302_OUT</pv>
       </path>
     </scripts>
     <tooltip>$(pv_name)
@@ -21282,7 +21282,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV101</pv>
+        <pv trig="true">Esther:gas:PV101_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -21982,7 +21982,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV602</pv>
+        <pv trig="true">Esther:gas:PV602_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -22053,7 +22053,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV603</pv>
+        <pv trig="true">Esther:gas:PV603_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -22123,7 +22123,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV601</pv>
+        <pv trig="true">Esther:gas:PV601_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -22189,9 +22189,9 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts>
       <path pathString="Scripts/LineColorChange_3inputs.js" checkConnect="true" sfe="false" seoe="false">
-        <pv trig="true">Esther:gas:PV601</pv>
-        <pv trig="true">Esther:gas:PV602</pv>
-        <pv trig="true">Esther:gas:PV603</pv>
+        <pv trig="true">Esther:gas:PV601_OUT</pv>
+        <pv trig="true">Esther:gas:PV602_OUT</pv>
+        <pv trig="true">Esther:gas:PV603_OUT</pv>
       </path>
     </scripts>
     <tooltip>$(pv_name)
@@ -22886,7 +22886,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV702</pv>
+        <pv trig="true">Esther:gas:PV702_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -23174,7 +23174,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV702</pv>
+        <pv trig="true">Esther:gas:PV702_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -23335,7 +23335,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV702</pv>
+          <pv trig="true">Esther:gas:PV702_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -23407,7 +23407,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV702</pv>
+          <pv trig="true">Esther:gas:PV702_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -23478,7 +23478,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV702</pv>
+        <pv trig="true">Esther:gas:PV702_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -23549,7 +23549,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV702</pv>
+        <pv trig="true">Esther:gas:PV702_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -23601,7 +23601,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV702</pv>
+        <pv trig="true">loc://PV702</pv>
       </rule>
     </rules>
     <scale_options>
@@ -24222,7 +24222,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV701</pv>
+          <pv trig="true">Esther:gas:PV701_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -24325,7 +24325,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV703A</pv>
+          <pv trig="true">Esther:gas:PV703A_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -24491,7 +24491,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV703A</pv>
+        <pv trig="true">Esther:gas:PV703A_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -24561,7 +24561,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV703A</pv>
+        <pv trig="true">Esther:gas:PV703A_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -24616,7 +24616,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV703A</pv>
+        <pv trig="true">Esther:gas:PV703A_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -24904,7 +24904,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV703A</pv>
+        <pv trig="true">Esther:gas:PV703A_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -25223,7 +25223,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV703B</pv>
+          <pv trig="true">Esther:gas:PV703B_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -25295,7 +25295,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV703B</pv>
+          <pv trig="true">Esther:gas:PV703B_OUT</pv>
         </rule>
       </rules>
       <scale_options>
@@ -25366,7 +25366,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV703B</pv>
+        <pv trig="true">Esther:gas:PV703B_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -25478,7 +25478,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV703B</pv>
+        <pv trig="true">Esther:gas:PV703B_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -25499,7 +25499,7 @@ $(pv_value)</tooltip>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <actions hook="false" hook_all="false" />
-    <auto_size>false</auto_size>
+    <auto_size>true</auto_size>
     <background_color>
       <color red="255" green="255" blue="255" />
     </background_color>
@@ -25515,7 +25515,7 @@ $(pv_value)</tooltip>
     <foreground_color>
       <color name="Header_Background" red="77" green="77" blue="77" />
     </foreground_color>
-    <height>24</height>
+    <height>23</height>
     <horizontal_alignment>1</horizontal_alignment>
     <name>Ext_1</name>
     <rules>
@@ -25546,11 +25546,11 @@ $(pv_value)</tooltip>
     <vertical_alignment>1</vertical_alignment>
     <visible>true</visible>
     <widget_type>Label</widget_type>
-    <width>42</width>
+    <width>54</width>
     <wrap_words>true</wrap_words>
     <wuid>-3342e421:15b1a55cd74:-757e</wuid>
-    <x>866</x>
-    <y>120</y>
+    <x>852</x>
+    <y>118</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
     <actions hook="false" hook_all="false" />
@@ -25871,7 +25871,7 @@ $(pv_value)</tooltip>
             <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
           </value>
         </exp>
-        <pv trig="true">Esther:gas:PV703B</pv>
+        <pv trig="true">Esther:gas:PV703B_OUT</pv>
       </rule>
     </rules>
     <scale_options>
@@ -27136,7 +27136,7 @@ $(pv_value)</tooltip>
       <color red="192" green="192" blue="192" />
     </foreground_color>
     <height>41</height>
-    <image_file>images/valve_on.gif</image_file>
+    <image_file>../BOY Examples/pictures/valve_on.gif</image_file>
     <name>BooleanSymbolMon701</name>
     <no_animation>false</no_animation>
     <off_color>
@@ -27714,5 +27714,441 @@ $(pv_value)</tooltip>
     <wuid>-9f6cce5:15b152f089d:-4151</wuid>
     <x>328</x>
     <y>40</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <alarm_pulsing>true</alarm_pulsing>
+    <align_to_nearest_second>false</align_to_nearest_second>
+    <auto_size>true</auto_size>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <bit>-1</bit>
+    <boolean_label_position>0</boolean_label_position>
+    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <confirm_message>Are you sure you want to do this?</confirm_message>
+    <crop_bottom>0</crop_bottom>
+    <crop_left>0</crop_left>
+    <crop_right>0</crop_right>
+    <crop_top>0</crop_top>
+    <data_type>0</data_type>
+    <degree>0</degree>
+    <enabled>true</enabled>
+    <flip_horizontal>false</flip_horizontal>
+    <flip_vertical>false</flip_vertical>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <height>50</height>
+    <image_file>images/valve_on.gif</image_file>
+    <name>BooleanSymbolCon703A</name>
+    <no_animation>false</no_animation>
+    <off_color>
+      <color red="0" green="0" blue="255" />
+    </off_color>
+    <off_label>OFF</off_label>
+    <on_color>
+      <color red="0" green="0" blue="255" />
+    </on_color>
+    <on_label>ON</on_label>
+    <password></password>
+    <permutation_matrix>
+      <row>
+        <col>1.0</col>
+        <col>0.0</col>
+      </row>
+      <row>
+        <col>0.0</col>
+        <col>1.0</col>
+      </row>
+    </permutation_matrix>
+    <push_action_index>0</push_action_index>
+    <pv_name>Esther:gas:PV703A_OUT</pv_name>
+    <pv_value />
+    <released_action_index>0</released_action_index>
+    <rules>
+      <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV703A</pv>
+      </rule>
+      <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV703A</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_boolean_label>true</show_boolean_label>
+    <show_confirm_dialog>0</show_confirm_dialog>
+    <stretch_to_fit>false</stretch_to_fit>
+    <toggle_button>true</toggle_button>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <transparency>false</transparency>
+    <visible>true</visible>
+    <widget_type>Boolean Symbol Control</widget_type>
+    <width>45</width>
+    <wuid>-93cf660:174bf8bd0b1:-6d53</wuid>
+    <x>1242</x>
+    <y>109</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <alarm_pulsing>true</alarm_pulsing>
+    <align_to_nearest_second>false</align_to_nearest_second>
+    <auto_size>true</auto_size>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <bit>-1</bit>
+    <boolean_label_position>0</boolean_label_position>
+    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <confirm_message>Are you sure you want to do this?</confirm_message>
+    <crop_bottom>0</crop_bottom>
+    <crop_left>0</crop_left>
+    <crop_right>0</crop_right>
+    <crop_top>0</crop_top>
+    <data_type>0</data_type>
+    <degree>0</degree>
+    <enabled>true</enabled>
+    <flip_horizontal>false</flip_horizontal>
+    <flip_vertical>false</flip_vertical>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <height>50</height>
+    <image_file>images/valve_on.gif</image_file>
+    <name>BooleanSymbolCon703B</name>
+    <no_animation>false</no_animation>
+    <off_color>
+      <color red="0" green="0" blue="255" />
+    </off_color>
+    <off_label>OFF</off_label>
+    <on_color>
+      <color red="0" green="0" blue="255" />
+    </on_color>
+    <on_label>ON</on_label>
+    <password></password>
+    <permutation_matrix>
+      <row>
+        <col>1.0</col>
+        <col>0.0</col>
+      </row>
+      <row>
+        <col>0.0</col>
+        <col>1.0</col>
+      </row>
+    </permutation_matrix>
+    <push_action_index>0</push_action_index>
+    <pv_name>Esther:gas:PV703B_OUT</pv_name>
+    <pv_value />
+    <released_action_index>0</released_action_index>
+    <rules>
+      <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV703B</pv>
+      </rule>
+      <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV703A</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_boolean_label>true</show_boolean_label>
+    <show_confirm_dialog>0</show_confirm_dialog>
+    <stretch_to_fit>false</stretch_to_fit>
+    <toggle_button>true</toggle_button>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <transparency>false</transparency>
+    <visible>true</visible>
+    <widget_type>Boolean Symbol Control</widget_type>
+    <width>45</width>
+    <wuid>-93cf660:174bf8bd0b1:-4e19</wuid>
+    <x>1004</x>
+    <y>90</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <alarm_pulsing>true</alarm_pulsing>
+    <align_to_nearest_second>false</align_to_nearest_second>
+    <auto_size>true</auto_size>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <bit>-1</bit>
+    <boolean_label_position>0</boolean_label_position>
+    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <confirm_message>Are you sure you want to do this?</confirm_message>
+    <crop_bottom>0</crop_bottom>
+    <crop_left>0</crop_left>
+    <crop_right>0</crop_right>
+    <crop_top>0</crop_top>
+    <data_type>0</data_type>
+    <degree>0</degree>
+    <enabled>true</enabled>
+    <flip_horizontal>false</flip_horizontal>
+    <flip_vertical>false</flip_vertical>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <height>50</height>
+    <image_file>images/valve_on.gif</image_file>
+    <name>BooleanSymbolCon701</name>
+    <no_animation>false</no_animation>
+    <off_color>
+      <color red="0" green="0" blue="255" />
+    </off_color>
+    <off_label>OFF</off_label>
+    <on_color>
+      <color red="0" green="0" blue="255" />
+    </on_color>
+    <on_label>ON</on_label>
+    <password></password>
+    <permutation_matrix>
+      <row>
+        <col>1.0</col>
+        <col>0.0</col>
+      </row>
+      <row>
+        <col>0.0</col>
+        <col>1.0</col>
+      </row>
+    </permutation_matrix>
+    <push_action_index>0</push_action_index>
+    <pv_name>Esther:gas:PV701_OUT</pv_name>
+    <pv_value />
+    <released_action_index>0</released_action_index>
+    <rules>
+      <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV701</pv>
+      </rule>
+      <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV703A</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_boolean_label>true</show_boolean_label>
+    <show_confirm_dialog>0</show_confirm_dialog>
+    <stretch_to_fit>false</stretch_to_fit>
+    <toggle_button>true</toggle_button>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <transparency>false</transparency>
+    <visible>true</visible>
+    <widget_type>Boolean Symbol Control</widget_type>
+    <width>45</width>
+    <wuid>-93cf660:174bf8bd0b1:-494e</wuid>
+    <x>1166</x>
+    <y>528</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <alarm_pulsing>true</alarm_pulsing>
+    <align_to_nearest_second>false</align_to_nearest_second>
+    <auto_size>true</auto_size>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <bit>-1</bit>
+    <boolean_label_position>0</boolean_label_position>
+    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <confirm_message>Are you sure you want to do this?</confirm_message>
+    <crop_bottom>0</crop_bottom>
+    <crop_left>0</crop_left>
+    <crop_right>0</crop_right>
+    <crop_top>0</crop_top>
+    <data_type>0</data_type>
+    <degree>0</degree>
+    <enabled>true</enabled>
+    <flip_horizontal>false</flip_horizontal>
+    <flip_vertical>false</flip_vertical>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <height>50</height>
+    <image_file>images/valve_on.gif</image_file>
+    <name>BooleanSymbolCon702</name>
+    <no_animation>false</no_animation>
+    <off_color>
+      <color red="0" green="0" blue="255" />
+    </off_color>
+    <off_label>OFF</off_label>
+    <on_color>
+      <color red="0" green="0" blue="255" />
+    </on_color>
+    <on_label>ON</on_label>
+    <password></password>
+    <permutation_matrix>
+      <row>
+        <col>1.0</col>
+        <col>0.0</col>
+      </row>
+      <row>
+        <col>0.0</col>
+        <col>1.0</col>
+      </row>
+    </permutation_matrix>
+    <push_action_index>0</push_action_index>
+    <pv_name>Esther:gas:PV702_OUT</pv_name>
+    <pv_value />
+    <released_action_index>0</released_action_index>
+    <rules>
+      <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV702</pv>
+      </rule>
+      <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV702</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_boolean_label>true</show_boolean_label>
+    <show_confirm_dialog>0</show_confirm_dialog>
+    <stretch_to_fit>false</stretch_to_fit>
+    <toggle_button>true</toggle_button>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <transparency>false</transparency>
+    <visible>true</visible>
+    <widget_type>Boolean Symbol Control</widget_type>
+    <width>45</width>
+    <wuid>-93cf660:174bf8bd0b1:-4342</wuid>
+    <x>1090</x>
+    <y>520</y>
   </widget>
 </display>
