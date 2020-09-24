@@ -18594,7 +18594,7 @@ $(pv_value)</tooltip>
       </background_color>
       <bit>-1</bit>
       <boolean_label_position>0</boolean_label_position>
-      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
       <border_color>
         <color red="0" green="128" blue="255" />
       </border_color>
@@ -18618,7 +18618,7 @@ $(pv_value)</tooltip>
       </foreground_color>
       <height>31</height>
       <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon403</name>
+      <name>BooleanSymbolMon303</name>
       <no_animation>false</no_animation>
       <off_color>
         <color red="0" green="255" blue="0" />
@@ -18638,7 +18638,7 @@ $(pv_value)</tooltip>
           <col>1.0</col>
         </row>
       </permutation_matrix>
-      <pv_name>Esther:gas:PV403</pv_name>
+      <pv_name>Esther:gas:PV303</pv_name>
       <pv_value />
       <rules />
       <scale_options>
@@ -27059,7 +27059,7 @@ $(pv_value)</tooltip>
     <foreground_color>
       <color red="192" green="192" blue="192" />
     </foreground_color>
-    <height>29</height>
+    <height>43</height>
     <image_file>images/valve_on.gif</image_file>
     <name>BooleanSymbolMon702</name>
     <no_animation>false</no_animation>
@@ -27097,10 +27097,10 @@ $(pv_value)</tooltip>
     <transparency>false</transparency>
     <visible>true</visible>
     <widget_type>Boolean Symbol Monitor</widget_type>
-    <width>37</width>
+    <width>45</width>
     <wuid>-5e159a2:174970b7442:-6366</wuid>
-    <x>1088</x>
-    <y>484</y>
+    <x>1090</x>
+    <y>476</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
     <actions hook="false" hook_all="false" />
@@ -27135,7 +27135,7 @@ $(pv_value)</tooltip>
     <foreground_color>
       <color red="192" green="192" blue="192" />
     </foreground_color>
-    <height>33</height>
+    <height>41</height>
     <image_file>../BOY Examples/pictures/valve_on.gif</image_file>
     <name>BooleanSymbolMon701</name>
     <no_animation>false</no_animation>
@@ -27173,7 +27173,7 @@ $(pv_value)</tooltip>
     <transparency>false</transparency>
     <visible>true</visible>
     <widget_type>Boolean Symbol Monitor</widget_type>
-    <width>35</width>
+    <width>43</width>
     <wuid>-5e159a2:174970b7442:-6620</wuid>
     <x>1164</x>
     <y>480</y>
