@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=CS-Studio 4.5.9
+Comment=CS-Studio 4.5.9
+Exec=/opt/epics/cs-studio/cs-studio
+Terminal=false
