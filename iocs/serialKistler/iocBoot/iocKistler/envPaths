@@ -1,0 +1,6 @@
+epicsEnvSet("IOC","iocKistler")
+epicsEnvSet("TOP","/home/esther/GIT_REPOS/esther-epics/iocs/serialKistler")
+epicsEnvSet("EPICS_BASE","/opt/epics7/epics-base")
+epicsEnvSet("SUPPORT","/opt/epics7/support")
+epicsEnvSet("ASYN","/opt/epics7/support/asyn")
+epicsEnvSet("STREAM","/opt/epics7/support/stream/StreamDevice")
