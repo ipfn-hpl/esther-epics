@@ -147,11 +147,11 @@ $(pv_value)</tooltip>
       <x>36</x>
       <y>12</y>
     </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
       <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
+      <alarm_pulsing>true</alarm_pulsing>
       <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
+      <auto_size>true</auto_size>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <background_color>
         <color red="240" green="240" blue="240" />
@@ -164,6 +164,7 @@ $(pv_value)</tooltip>
       </border_color>
       <border_style>0</border_style>
       <border_width>1</border_width>
+      <confirm_message>Are you sure you want to do this?</confirm_message>
       <crop_bottom>0</crop_bottom>
       <crop_left>0</crop_left>
       <crop_right>0</crop_right>
@@ -180,18 +181,19 @@ $(pv_value)</tooltip>
       <foreground_color>
         <color red="192" green="192" blue="192" />
       </foreground_color>
-      <height>31</height>
+      <height>32</height>
       <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon101</name>
+      <name>BooleanSymbolCon101</name>
       <no_animation>false</no_animation>
       <off_color>
-        <color red="255" green="0" blue="0" />
+        <color red="0" green="0" blue="255" />
       </off_color>
       <off_label>OFF</off_label>
       <on_color>
-        <color red="0" green="255" blue="0" />
+        <color red="0" green="0" blue="255" />
       </on_color>
       <on_label>ON</on_label>
+      <password></password>
       <permutation_matrix>
         <row>
           <col>1.0</col>
@@ -202,25 +204,56 @@ $(pv_value)</tooltip>
           <col>1.0</col>
         </row>
       </permutation_matrix>
-      <pv_name>Esther:gas:PV101</pv_name>
+      <push_action_index>0</push_action_index>
+      <pv_name>Esther:gas:PV101_OUT</pv_name>
       <pv_value />
-      <rules />
+      <released_action_index>0</released_action_index>
+      <rules>
+        <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV101</pv>
+        </rule>
+        <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV101</pv>
+        </rule>
+      </rules>
       <scale_options>
         <width_scalable>true</width_scalable>
         <height_scalable>true</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <scripts />
-      <show_boolean_label>false</show_boolean_label>
+      <show_boolean_label>true</show_boolean_label>
+      <show_confirm_dialog>0</show_confirm_dialog>
       <stretch_to_fit>true</stretch_to_fit>
+      <toggle_button>true</toggle_button>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <transparency>false</transparency>
       <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-3c77</wuid>
-      <x>4</x>
+      <widget_type>Boolean Symbol Control</widget_type>
+      <width>32</width>
+      <wuid>7894d373:174fe28a026:-68fe</wuid>
+      <x>10</x>
       <y>24</y>
     </widget>
   </widget>
@@ -15526,82 +15559,6 @@ $(pv_value)</tooltip>
       <x>36</x>
       <y>12</y>
     </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <background_color>
-        <color red="240" green="240" blue="240" />
-      </background_color>
-      <bit>-1</bit>
-      <boolean_label_position>0</boolean_label_position>
-      <border_alarm_sensitive>true</border_alarm_sensitive>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <crop_bottom>0</crop_bottom>
-      <crop_left>0</crop_left>
-      <crop_right>0</crop_right>
-      <crop_top>0</crop_top>
-      <data_type>0</data_type>
-      <degree>0</degree>
-      <enabled>false</enabled>
-      <flip_horizontal>false</flip_horizontal>
-      <flip_vertical>false</flip_vertical>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color red="192" green="192" blue="192" />
-      </foreground_color>
-      <height>31</height>
-      <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon201</name>
-      <no_animation>false</no_animation>
-      <off_color>
-        <color red="255" green="0" blue="0" />
-      </off_color>
-      <off_label>OFF</off_label>
-      <on_color>
-        <color red="0" green="255" blue="0" />
-      </on_color>
-      <on_label>ON</on_label>
-      <permutation_matrix>
-        <row>
-          <col>1.0</col>
-          <col>0.0</col>
-        </row>
-        <row>
-          <col>0.0</col>
-          <col>1.0</col>
-        </row>
-      </permutation_matrix>
-      <pv_name>Esther:gas:PV201</pv_name>
-      <pv_value />
-      <rules />
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_boolean_label>false</show_boolean_label>
-      <stretch_to_fit>true</stretch_to_fit>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparency>false</transparency>
-      <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-42b7</wuid>
-      <x>8</x>
-      <y>28</y>
-    </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
       <auto_size>false</auto_size>
@@ -15642,6 +15599,115 @@ $(pv_value)</tooltip>
       <wuid>-9f6cce5:15b152f089d:-1cd6</wuid>
       <x>0</x>
       <y>4</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <alarm_pulsing>true</alarm_pulsing>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <auto_size>true</auto_size>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <background_color>
+        <color red="240" green="240" blue="240" />
+      </background_color>
+      <bit>-1</bit>
+      <boolean_label_position>0</boolean_label_position>
+      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <border_style>0</border_style>
+      <border_width>1</border_width>
+      <confirm_message>Are you sure you want to do this?</confirm_message>
+      <crop_bottom>0</crop_bottom>
+      <crop_left>0</crop_left>
+      <crop_right>0</crop_right>
+      <crop_top>0</crop_top>
+      <data_type>0</data_type>
+      <degree>0</degree>
+      <enabled>true</enabled>
+      <flip_horizontal>false</flip_horizontal>
+      <flip_vertical>false</flip_vertical>
+      <font>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color red="192" green="192" blue="192" />
+      </foreground_color>
+      <height>32</height>
+      <image_file>images/valve_on.gif</image_file>
+      <name>BooleanSymbolCon201</name>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color red="0" green="0" blue="255" />
+      </off_color>
+      <off_label>OFF</off_label>
+      <on_color>
+        <color red="0" green="0" blue="255" />
+      </on_color>
+      <on_label>ON</on_label>
+      <password></password>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <push_action_index>0</push_action_index>
+      <pv_name>Esther:gas:PV201_OUT</pv_name>
+      <pv_value />
+      <released_action_index>0</released_action_index>
+      <rules>
+        <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV201</pv>
+        </rule>
+        <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV201</pv>
+        </rule>
+      </rules>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <show_boolean_label>true</show_boolean_label>
+      <show_confirm_dialog>0</show_confirm_dialog>
+      <stretch_to_fit>true</stretch_to_fit>
+      <toggle_button>true</toggle_button>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <transparency>false</transparency>
+      <visible>true</visible>
+      <widget_type>Boolean Symbol Control</widget_type>
+      <width>32</width>
+      <wuid>7894d373:174fe28a026:-6904</wuid>
+      <x>10</x>
+      <y>26</y>
     </widget>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -15759,82 +15825,6 @@ $(pv_value)</tooltip>
       <x>36</x>
       <y>12</y>
     </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <background_color>
-        <color red="240" green="240" blue="240" />
-      </background_color>
-      <bit>-1</bit>
-      <boolean_label_position>0</boolean_label_position>
-      <border_alarm_sensitive>true</border_alarm_sensitive>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <crop_bottom>0</crop_bottom>
-      <crop_left>0</crop_left>
-      <crop_right>0</crop_right>
-      <crop_top>0</crop_top>
-      <data_type>0</data_type>
-      <degree>0</degree>
-      <enabled>false</enabled>
-      <flip_horizontal>false</flip_horizontal>
-      <flip_vertical>false</flip_vertical>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color red="192" green="192" blue="192" />
-      </foreground_color>
-      <height>31</height>
-      <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon301</name>
-      <no_animation>false</no_animation>
-      <off_color>
-        <color red="255" green="0" blue="0" />
-      </off_color>
-      <off_label>OFF</off_label>
-      <on_color>
-        <color red="0" green="255" blue="0" />
-      </on_color>
-      <on_label>ON</on_label>
-      <permutation_matrix>
-        <row>
-          <col>1.0</col>
-          <col>0.0</col>
-        </row>
-        <row>
-          <col>0.0</col>
-          <col>1.0</col>
-        </row>
-      </permutation_matrix>
-      <pv_name>Esther:gas:PV301</pv_name>
-      <pv_value />
-      <rules />
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_boolean_label>false</show_boolean_label>
-      <stretch_to_fit>true</stretch_to_fit>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparency>false</transparency>
-      <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-474b</wuid>
-      <x>8</x>
-      <y>28</y>
-    </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
       <auto_size>false</auto_size>
@@ -15875,6 +15865,115 @@ $(pv_value)</tooltip>
       <wuid>-9f6cce5:15b152f089d:-1610</wuid>
       <x>-4</x>
       <y>4</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <alarm_pulsing>true</alarm_pulsing>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <auto_size>true</auto_size>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <background_color>
+        <color red="240" green="240" blue="240" />
+      </background_color>
+      <bit>-1</bit>
+      <boolean_label_position>0</boolean_label_position>
+      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <border_style>0</border_style>
+      <border_width>1</border_width>
+      <confirm_message>Are you sure you want to do this?</confirm_message>
+      <crop_bottom>0</crop_bottom>
+      <crop_left>0</crop_left>
+      <crop_right>0</crop_right>
+      <crop_top>0</crop_top>
+      <data_type>0</data_type>
+      <degree>0</degree>
+      <enabled>true</enabled>
+      <flip_horizontal>false</flip_horizontal>
+      <flip_vertical>false</flip_vertical>
+      <font>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color red="192" green="192" blue="192" />
+      </foreground_color>
+      <height>32</height>
+      <image_file>images/valve_on.gif</image_file>
+      <name>BooleanSymbolCon301</name>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color red="0" green="0" blue="255" />
+      </off_color>
+      <off_label>OFF</off_label>
+      <on_color>
+        <color red="0" green="0" blue="255" />
+      </on_color>
+      <on_label>ON</on_label>
+      <password></password>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <push_action_index>0</push_action_index>
+      <pv_name>Esther:gas:PV301_OUT</pv_name>
+      <pv_value />
+      <released_action_index>0</released_action_index>
+      <rules>
+        <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV301</pv>
+        </rule>
+        <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV301</pv>
+        </rule>
+      </rules>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <show_boolean_label>true</show_boolean_label>
+      <show_confirm_dialog>0</show_confirm_dialog>
+      <stretch_to_fit>true</stretch_to_fit>
+      <toggle_button>true</toggle_button>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <transparency>false</transparency>
+      <visible>true</visible>
+      <widget_type>Boolean Symbol Control</widget_type>
+      <width>32</width>
+      <wuid>7894d373:174fe28a026:-773e</wuid>
+      <x>12</x>
+      <y>26</y>
     </widget>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
@@ -16062,82 +16161,6 @@ $(pv_value)</tooltip>
       <x>36</x>
       <y>12</y>
     </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <background_color>
-        <color red="240" green="240" blue="240" />
-      </background_color>
-      <bit>-1</bit>
-      <boolean_label_position>0</boolean_label_position>
-      <border_alarm_sensitive>true</border_alarm_sensitive>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <crop_bottom>0</crop_bottom>
-      <crop_left>0</crop_left>
-      <crop_right>0</crop_right>
-      <crop_top>0</crop_top>
-      <data_type>0</data_type>
-      <degree>0</degree>
-      <enabled>false</enabled>
-      <flip_horizontal>false</flip_horizontal>
-      <flip_vertical>false</flip_vertical>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color red="192" green="192" blue="192" />
-      </foreground_color>
-      <height>31</height>
-      <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon401</name>
-      <no_animation>false</no_animation>
-      <off_color>
-        <color red="255" green="0" blue="0" />
-      </off_color>
-      <off_label>OFF</off_label>
-      <on_color>
-        <color red="0" green="255" blue="0" />
-      </on_color>
-      <on_label>ON</on_label>
-      <permutation_matrix>
-        <row>
-          <col>1.0</col>
-          <col>0.0</col>
-        </row>
-        <row>
-          <col>0.0</col>
-          <col>1.0</col>
-        </row>
-      </permutation_matrix>
-      <pv_name>Esther:gas:PV401</pv_name>
-      <pv_value />
-      <rules />
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_boolean_label>false</show_boolean_label>
-      <stretch_to_fit>true</stretch_to_fit>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparency>false</transparency>
-      <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-4c01</wuid>
-      <x>12</x>
-      <y>28</y>
-    </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
       <auto_size>false</auto_size>
@@ -16178,6 +16201,115 @@ $(pv_value)</tooltip>
       <wuid>-9f6cce5:15b152f089d:-1434</wuid>
       <x>2</x>
       <y>4</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <alarm_pulsing>true</alarm_pulsing>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <auto_size>true</auto_size>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <background_color>
+        <color red="240" green="240" blue="240" />
+      </background_color>
+      <bit>-1</bit>
+      <boolean_label_position>0</boolean_label_position>
+      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <border_style>0</border_style>
+      <border_width>1</border_width>
+      <confirm_message>Are you sure you want to do this?</confirm_message>
+      <crop_bottom>0</crop_bottom>
+      <crop_left>0</crop_left>
+      <crop_right>0</crop_right>
+      <crop_top>0</crop_top>
+      <data_type>0</data_type>
+      <degree>0</degree>
+      <enabled>true</enabled>
+      <flip_horizontal>false</flip_horizontal>
+      <flip_vertical>false</flip_vertical>
+      <font>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color red="192" green="192" blue="192" />
+      </foreground_color>
+      <height>32</height>
+      <image_file>images/valve_on.gif</image_file>
+      <name>BooleanSymbolCon501</name>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color red="0" green="0" blue="255" />
+      </off_color>
+      <off_label>OFF</off_label>
+      <on_color>
+        <color red="0" green="0" blue="255" />
+      </on_color>
+      <on_label>ON</on_label>
+      <password></password>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <push_action_index>0</push_action_index>
+      <pv_name>Esther:gas:PV501_OUT</pv_name>
+      <pv_value />
+      <released_action_index>0</released_action_index>
+      <rules>
+        <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV301</pv>
+        </rule>
+        <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV301</pv>
+        </rule>
+      </rules>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <show_boolean_label>true</show_boolean_label>
+      <show_confirm_dialog>0</show_confirm_dialog>
+      <stretch_to_fit>true</stretch_to_fit>
+      <toggle_button>true</toggle_button>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <transparency>false</transparency>
+      <visible>true</visible>
+      <widget_type>Boolean Symbol Control</widget_type>
+      <width>32</width>
+      <wuid>7894d373:174fe28a026:-691e</wuid>
+      <x>10</x>
+      <y>26</y>
     </widget>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
@@ -16435,82 +16567,6 @@ $(pv_value)</tooltip>
       <x>36</x>
       <y>12</y>
     </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <background_color>
-        <color red="240" green="240" blue="240" />
-      </background_color>
-      <bit>-1</bit>
-      <boolean_label_position>0</boolean_label_position>
-      <border_alarm_sensitive>true</border_alarm_sensitive>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <crop_bottom>0</crop_bottom>
-      <crop_left>0</crop_left>
-      <crop_right>0</crop_right>
-      <crop_top>0</crop_top>
-      <data_type>0</data_type>
-      <degree>0</degree>
-      <enabled>false</enabled>
-      <flip_horizontal>false</flip_horizontal>
-      <flip_vertical>false</flip_vertical>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color red="192" green="192" blue="192" />
-      </foreground_color>
-      <height>31</height>
-      <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon502</name>
-      <no_animation>false</no_animation>
-      <off_color>
-        <color red="255" green="0" blue="0" />
-      </off_color>
-      <off_label>OFF</off_label>
-      <on_color>
-        <color red="0" green="255" blue="0" />
-      </on_color>
-      <on_label>ON</on_label>
-      <permutation_matrix>
-        <row>
-          <col>1.0</col>
-          <col>0.0</col>
-        </row>
-        <row>
-          <col>0.0</col>
-          <col>1.0</col>
-        </row>
-      </permutation_matrix>
-      <pv_name>Esther:gas:PV502</pv_name>
-      <pv_value />
-      <rules />
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_boolean_label>false</show_boolean_label>
-      <stretch_to_fit>true</stretch_to_fit>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparency>false</transparency>
-      <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-50f1</wuid>
-      <x>12</x>
-      <y>24</y>
-    </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
       <auto_size>false</auto_size>
@@ -16552,462 +16608,11 @@ $(pv_value)</tooltip>
       <x>2</x>
       <y>0</y>
     </widget>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-    <actions hook="false" hook_all="false" />
-    <background_color>
-      <color name="Background" red="255" green="255" blue="255" />
-    </background_color>
-    <border_color>
-      <color name="Black" red="0" green="0" blue="0" />
-    </border_color>
-    <border_style>0</border_style>
-    <border_width>1</border_width>
-    <enabled>true</enabled>
-    <fc>false</fc>
-    <font>
-      <opifont.name fontName="Sans" height="10" style="1" pixels="false">Default Bold</opifont.name>
-    </font>
-    <foreground_color>
-      <color red="192" green="192" blue="192" />
-    </foreground_color>
-    <height>73</height>
-    <lock_children>false</lock_children>
-    <macros>
-      <include_parent_macros>true</include_parent_macros>
-    </macros>
-    <name>Group Name_1</name>
-    <rules />
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <scripts />
-    <show_scrollbar>false</show_scrollbar>
-    <tooltip></tooltip>
-    <transparent>true</transparent>
-    <visible>true</visible>
-    <widget_type>Grouping Container</widget_type>
-    <width>103</width>
-    <wuid>-9f6cce5:15b152f089d:-c3d</wuid>
-    <x>491</x>
-    <y>24</y>
-    <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
       <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <alpha>255</alpha>
-      <anti_alias>true</anti_alias>
-      <arrow_length>15</arrow_length>
-      <arrows>2</arrows>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <background_color>
-        <color name="Header_Background" red="77" green="77" blue="77" />
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <enabled>true</enabled>
-      <fill_arrow>true</fill_arrow>
-      <fill_level>0.0</fill_level>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color red="255" green="0" blue="0" />
-      </foreground_color>
-      <height>38</height>
-      <horizontal_fill>true</horizontal_fill>
-      <line_style>0</line_style>
-      <line_width>4</line_width>
-      <name>Polyline_7</name>
-      <points>
-        <point x="37" y="42" />
-        <point x="53" y="42" />
-        <point x="53" y="5" />
-      </points>
-      <pv_name></pv_name>
-      <pv_value />
-      <rotation_angle>0.0</rotation_angle>
-      <rules>
-        <rule name="Background Color Rule" prop_id="background_color" out_exp="false">
-          <exp bool_exp="pv0==1">
-            <value>
-              <color name="Header_Background" red="77" green="77" blue="77" />
-            </value>
-          </exp>
-          <exp bool_exp="pv0==0">
-            <value>
-              <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
-            </value>
-          </exp>
-          <pv trig="true">Esther:gas:PV102_OUT</pv>
-        </rule>
-      </rules>
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparent>false</transparent>
-      <visible>true</visible>
-      <widget_type>Polyline</widget_type>
-      <width>17</width>
-      <wuid>-9f6cce5:15b152f089d:-c30</wuid>
-      <x>37</x>
-      <y>5</y>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <auto_size>false</auto_size>
-      <background_color>
-        <color red="255" green="255" blue="255" />
-      </background_color>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <enabled>true</enabled>
-      <font>
-        <opifont.name fontName="Sans" height="14" style="1" pixels="false">Header 2</opifont.name>
-      </font>
-      <foreground_color>
-        <color name="Header_Background" red="77" green="77" blue="77" />
-      </foreground_color>
-      <height>24</height>
-      <horizontal_alignment>1</horizontal_alignment>
-      <name>Ext</name>
-      <rules>
-        <rule name="Foreground Color Rule" prop_id="foreground_color" out_exp="false">
-          <exp bool_exp="pv0==1">
-            <value>
-              <color name="Header_Background" red="77" green="77" blue="77" />
-            </value>
-          </exp>
-          <exp bool_exp="pv0==0">
-            <value>
-              <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
-            </value>
-          </exp>
-          <pv trig="true">Esther:gas:PV102_OUT</pv>
-        </rule>
-      </rules>
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_scrollbar>false</show_scrollbar>
-      <text>EXIT </text>
-      <tooltip></tooltip>
-      <transparent>true</transparent>
-      <vertical_alignment>1</vertical_alignment>
-      <visible>true</visible>
-      <widget_type>Label</widget_type>
-      <width>42</width>
-      <wrap_words>true</wrap_words>
-      <wuid>-9f6cce5:15b152f089d:200</wuid>
-      <x>60</x>
-      <y>0</y>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
+      <alarm_pulsing>true</alarm_pulsing>
       <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <background_color>
-        <color red="240" green="240" blue="240" />
-      </background_color>
-      <bit>-1</bit>
-      <boolean_label_position>0</boolean_label_position>
-      <border_alarm_sensitive>true</border_alarm_sensitive>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <crop_bottom>0</crop_bottom>
-      <crop_left>0</crop_left>
-      <crop_right>0</crop_right>
-      <crop_top>0</crop_top>
-      <data_type>0</data_type>
-      <degree>0</degree>
-      <enabled>false</enabled>
-      <flip_horizontal>false</flip_horizontal>
-      <flip_vertical>false</flip_vertical>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color red="192" green="192" blue="192" />
-      </foreground_color>
-      <height>31</height>
-      <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon102</name>
-      <no_animation>false</no_animation>
-      <off_color>
-        <color red="0" green="255" blue="0" />
-      </off_color>
-      <off_label>OFF</off_label>
-      <on_color>
-        <color red="255" green="0" blue="0" />
-      </on_color>
-      <on_label>ON</on_label>
-      <permutation_matrix>
-        <row>
-          <col>1.0</col>
-          <col>0.0</col>
-        </row>
-        <row>
-          <col>0.0</col>
-          <col>1.0</col>
-        </row>
-      </permutation_matrix>
-      <pv_name>Esther:gas:PV102</pv_name>
-      <pv_value />
-      <rules />
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_boolean_label>false</show_boolean_label>
-      <stretch_to_fit>true</stretch_to_fit>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparency>false</transparency>
-      <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-3c7b</wuid>
-      <x>6</x>
-      <y>28</y>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <auto_size>false</auto_size>
-      <background_color>
-        <color red="255" green="255" blue="255" />
-      </background_color>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <enabled>true</enabled>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <foreground_color>
-        <color name="Text_ForeGround" red="0" green="0" blue="0" />
-      </foreground_color>
-      <height>24</height>
-      <horizontal_alignment>1</horizontal_alignment>
-      <name>PV102</name>
-      <rules />
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_scrollbar>false</show_scrollbar>
-      <text>PV102 </text>
-      <tooltip></tooltip>
-      <transparent>true</transparent>
-      <vertical_alignment>1</vertical_alignment>
-      <visible>true</visible>
-      <widget_type>Label</widget_type>
-      <width>52</width>
-      <wrap_words>true</wrap_words>
-      <wuid>-9f6cce5:15b152f089d:-c3b</wuid>
-      <x>-4</x>
-      <y>2</y>
-    </widget>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-    <actions hook="false" hook_all="false" />
-    <background_color>
-      <color name="Background" red="255" green="255" blue="255" />
-    </background_color>
-    <border_color>
-      <color name="Black" red="0" green="0" blue="0" />
-    </border_color>
-    <border_style>0</border_style>
-    <border_width>1</border_width>
-    <enabled>true</enabled>
-    <fc>false</fc>
-    <font>
-      <opifont.name fontName="Sans" height="10" style="1" pixels="false">Default Bold</opifont.name>
-    </font>
-    <foreground_color>
-      <color red="192" green="192" blue="192" />
-    </foreground_color>
-    <height>73</height>
-    <lock_children>false</lock_children>
-    <macros>
-      <include_parent_macros>true</include_parent_macros>
-    </macros>
-    <name>Group Name_2</name>
-    <rules />
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <scripts />
-    <show_scrollbar>false</show_scrollbar>
-    <tooltip></tooltip>
-    <transparent>true</transparent>
-    <visible>true</visible>
-    <widget_type>Grouping Container</widget_type>
-    <width>103</width>
-    <wuid>-9f6cce5:15b152f089d:e96</wuid>
-    <x>560</x>
-    <y>169</y>
-    <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <alpha>255</alpha>
-      <anti_alias>true</anti_alias>
-      <arrow_length>15</arrow_length>
-      <arrows>2</arrows>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <background_color>
-        <color name="Header_Background" red="77" green="77" blue="77" />
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <enabled>true</enabled>
-      <fill_arrow>true</fill_arrow>
-      <fill_level>0.0</fill_level>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color red="255" green="0" blue="0" />
-      </foreground_color>
-      <height>38</height>
-      <horizontal_fill>true</horizontal_fill>
-      <line_style>0</line_style>
-      <line_width>4</line_width>
-      <name>Polyline_7</name>
-      <points>
-        <point x="37" y="42" />
-        <point x="53" y="42" />
-        <point x="53" y="5" />
-      </points>
-      <pv_name></pv_name>
-      <pv_value />
-      <rotation_angle>0.0</rotation_angle>
-      <rules>
-        <rule name="Background Color Rule" prop_id="background_color" out_exp="false">
-          <exp bool_exp="pv0==1">
-            <value>
-              <color name="Header_Background" red="77" green="77" blue="77" />
-            </value>
-          </exp>
-          <exp bool_exp="pv0==0">
-            <value>
-              <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
-            </value>
-          </exp>
-          <pv trig="true">Esther:gas:PV203_OUT</pv>
-        </rule>
-      </rules>
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparent>false</transparent>
-      <visible>true</visible>
-      <widget_type>Polyline</widget_type>
-      <width>17</width>
-      <wuid>-9f6cce5:15b152f089d:ea3</wuid>
-      <x>37</x>
-      <y>5</y>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <actions hook="false" hook_all="false" />
       <auto_size>true</auto_size>
-      <background_color>
-        <color red="255" green="255" blue="255" />
-      </background_color>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <enabled>true</enabled>
-      <font>
-        <opifont.name fontName="Sans" height="12" style="1" pixels="false">Header 3</opifont.name>
-      </font>
-      <foreground_color>
-        <color name="Header_Background" red="77" green="77" blue="77" />
-      </foreground_color>
-      <height>19</height>
-      <horizontal_alignment>1</horizontal_alignment>
-      <name>Ext</name>
-      <rules>
-        <rule name="Foreground Color Rule" prop_id="foreground_color" out_exp="false">
-          <exp bool_exp="pv0==1">
-            <value>
-              <color name="Header_Background" red="77" green="77" blue="77" />
-            </value>
-          </exp>
-          <exp bool_exp="pv0==0">
-            <value>
-              <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
-            </value>
-          </exp>
-          <pv trig="true">Esther:gas:PV203_OUT</pv>
-        </rule>
-      </rules>
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_scrollbar>false</show_scrollbar>
-      <text>EXIT</text>
-      <tooltip></tooltip>
-      <transparent>true</transparent>
-      <vertical_alignment>1</vertical_alignment>
-      <visible>true</visible>
-      <widget_type>Label</widget_type>
-      <width>40</width>
-      <wrap_words>true</wrap_words>
-      <wuid>-9f6cce5:15b152f089d:ea4</wuid>
-      <x>60</x>
-      <y>0</y>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <background_color>
         <color red="240" green="240" blue="240" />
@@ -17020,6 +16625,7 @@ $(pv_value)</tooltip>
       </border_color>
       <border_style>0</border_style>
       <border_width>1</border_width>
+      <confirm_message>Are you sure you want to do this?</confirm_message>
       <crop_bottom>0</crop_bottom>
       <crop_left>0</crop_left>
       <crop_right>0</crop_right>
@@ -17036,18 +16642,19 @@ $(pv_value)</tooltip>
       <foreground_color>
         <color red="192" green="192" blue="192" />
       </foreground_color>
-      <height>31</height>
+      <height>32</height>
       <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon203</name>
+      <name>BooleanSymbolCon501</name>
       <no_animation>false</no_animation>
       <off_color>
-        <color red="0" green="255" blue="0" />
+        <color red="0" green="0" blue="255" />
       </off_color>
       <off_label>OFF</off_label>
       <on_color>
-        <color red="255" green="0" blue="0" />
+        <color red="0" green="0" blue="255" />
       </on_color>
       <on_label>ON</on_label>
+      <password></password>
       <permutation_matrix>
         <row>
           <col>1.0</col>
@@ -17058,67 +16665,57 @@ $(pv_value)</tooltip>
           <col>1.0</col>
         </row>
       </permutation_matrix>
-      <pv_name>Esther:gas:PV203</pv_name>
+      <push_action_index>0</push_action_index>
+      <pv_name>Esther:gas:PV501_OUT</pv_name>
       <pv_value />
-      <rules />
+      <released_action_index>0</released_action_index>
+      <rules>
+        <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV501</pv>
+        </rule>
+        <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV501</pv>
+        </rule>
+      </rules>
       <scale_options>
         <width_scalable>true</width_scalable>
         <height_scalable>true</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <scripts />
-      <show_boolean_label>false</show_boolean_label>
+      <show_boolean_label>true</show_boolean_label>
+      <show_confirm_dialog>0</show_confirm_dialog>
       <stretch_to_fit>true</stretch_to_fit>
+      <toggle_button>true</toggle_button>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <transparency>false</transparency>
       <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-42af</wuid>
-      <x>12</x>
-      <y>24</y>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <auto_size>false</auto_size>
-      <background_color>
-        <color red="255" green="255" blue="255" />
-      </background_color>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <enabled>true</enabled>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <foreground_color>
-        <color name="Text_ForeGround" red="0" green="0" blue="0" />
-      </foreground_color>
-      <height>24</height>
-      <horizontal_alignment>1</horizontal_alignment>
-      <name>PV203</name>
-      <rules />
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_scrollbar>false</show_scrollbar>
-      <text>PV203 </text>
-      <tooltip></tooltip>
-      <transparent>true</transparent>
-      <vertical_alignment>1</vertical_alignment>
-      <visible>true</visible>
-      <widget_type>Label</widget_type>
-      <width>52</width>
-      <wrap_words>true</wrap_words>
-      <wuid>-9f6cce5:15b152f089d:e98</wuid>
-      <x>0</x>
-      <y>0</y>
+      <widget_type>Boolean Symbol Control</widget_type>
+      <width>32</width>
+      <wuid>7894d373:174fe28a026:-691a</wuid>
+      <x>6</x>
+      <y>30</y>
     </widget>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -17231,82 +16828,6 @@ $(pv_value)</tooltip>
       <x>36</x>
       <y>42</y>
     </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <background_color>
-        <color red="240" green="240" blue="240" />
-      </background_color>
-      <bit>-1</bit>
-      <boolean_label_position>0</boolean_label_position>
-      <border_alarm_sensitive>true</border_alarm_sensitive>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <crop_bottom>0</crop_bottom>
-      <crop_left>0</crop_left>
-      <crop_right>0</crop_right>
-      <crop_top>0</crop_top>
-      <data_type>0</data_type>
-      <degree>0</degree>
-      <enabled>false</enabled>
-      <flip_horizontal>false</flip_horizontal>
-      <flip_vertical>false</flip_vertical>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color red="192" green="192" blue="192" />
-      </foreground_color>
-      <height>31</height>
-      <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon202</name>
-      <no_animation>false</no_animation>
-      <off_color>
-        <color red="255" green="0" blue="0" />
-      </off_color>
-      <off_label>OFF</off_label>
-      <on_color>
-        <color red="0" green="255" blue="0" />
-      </on_color>
-      <on_label>ON</on_label>
-      <permutation_matrix>
-        <row>
-          <col>1.0</col>
-          <col>0.0</col>
-        </row>
-        <row>
-          <col>0.0</col>
-          <col>1.0</col>
-        </row>
-      </permutation_matrix>
-      <pv_name>Esther:gas:PV202</pv_name>
-      <pv_value />
-      <rules />
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_boolean_label>false</show_boolean_label>
-      <stretch_to_fit>true</stretch_to_fit>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparency>false</transparency>
-      <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-42bb</wuid>
-      <x>6</x>
-      <y>28</y>
-    </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
       <auto_size>false</auto_size>
@@ -17347,6 +16868,115 @@ $(pv_value)</tooltip>
       <wuid>-5e159a2:174970b7442:-42bf</wuid>
       <x>-4</x>
       <y>4</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <alarm_pulsing>true</alarm_pulsing>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <auto_size>true</auto_size>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <background_color>
+        <color red="240" green="240" blue="240" />
+      </background_color>
+      <bit>-1</bit>
+      <boolean_label_position>0</boolean_label_position>
+      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <border_style>0</border_style>
+      <border_width>1</border_width>
+      <confirm_message>Are you sure you want to do this?</confirm_message>
+      <crop_bottom>0</crop_bottom>
+      <crop_left>0</crop_left>
+      <crop_right>0</crop_right>
+      <crop_top>0</crop_top>
+      <data_type>0</data_type>
+      <degree>0</degree>
+      <enabled>true</enabled>
+      <flip_horizontal>false</flip_horizontal>
+      <flip_vertical>false</flip_vertical>
+      <font>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color red="192" green="192" blue="192" />
+      </foreground_color>
+      <height>32</height>
+      <image_file>images/valve_on.gif</image_file>
+      <name>BooleanSymbolCon202</name>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color red="0" green="0" blue="255" />
+      </off_color>
+      <off_label>OFF</off_label>
+      <on_color>
+        <color red="0" green="0" blue="255" />
+      </on_color>
+      <on_label>ON</on_label>
+      <password></password>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <push_action_index>0</push_action_index>
+      <pv_name>Esther:gas:PV202_OUT</pv_name>
+      <pv_value />
+      <released_action_index>0</released_action_index>
+      <rules>
+        <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV202</pv>
+        </rule>
+        <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV202</pv>
+        </rule>
+      </rules>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <show_boolean_label>true</show_boolean_label>
+      <show_confirm_dialog>0</show_confirm_dialog>
+      <stretch_to_fit>true</stretch_to_fit>
+      <toggle_button>true</toggle_button>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <transparency>false</transparency>
+      <visible>true</visible>
+      <widget_type>Boolean Symbol Control</widget_type>
+      <width>32</width>
+      <wuid>7894d373:174fe28a026:-4ece</wuid>
+      <x>6</x>
+      <y>26</y>
     </widget>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -17440,7 +17070,7 @@ $(pv_value)</tooltip>
               <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
             </value>
           </exp>
-          <pv trig="true">Esther:gas:PV302_OUT</pv>
+          <pv trig="true">Esther:gas:PV302</pv>
         </rule>
       </rules>
       <scale_options>
@@ -17500,11 +17130,11 @@ $(pv_value)</tooltip>
       <x>0</x>
       <y>2</y>
     </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
       <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
+      <alarm_pulsing>true</alarm_pulsing>
       <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
+      <auto_size>true</auto_size>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <background_color>
         <color red="240" green="240" blue="240" />
@@ -17517,13 +17147,14 @@ $(pv_value)</tooltip>
       </border_color>
       <border_style>0</border_style>
       <border_width>1</border_width>
+      <confirm_message>Are you sure you want to do this?</confirm_message>
       <crop_bottom>0</crop_bottom>
       <crop_left>0</crop_left>
       <crop_right>0</crop_right>
       <crop_top>0</crop_top>
       <data_type>0</data_type>
       <degree>0</degree>
-      <enabled>false</enabled>
+      <enabled>true</enabled>
       <flip_horizontal>false</flip_horizontal>
       <flip_vertical>false</flip_vertical>
       <font>
@@ -17533,18 +17164,19 @@ $(pv_value)</tooltip>
       <foreground_color>
         <color red="192" green="192" blue="192" />
       </foreground_color>
-      <height>31</height>
+      <height>32</height>
       <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon302</name>
+      <name>BooleanSymbolCon302</name>
       <no_animation>false</no_animation>
       <off_color>
-        <color red="255" green="0" blue="0" />
+        <color red="0" green="0" blue="255" />
       </off_color>
       <off_label>OFF</off_label>
       <on_color>
-        <color red="0" green="255" blue="0" />
+        <color red="0" green="0" blue="255" />
       </on_color>
       <on_label>ON</on_label>
+      <password></password>
       <permutation_matrix>
         <row>
           <col>1.0</col>
@@ -17555,26 +17187,57 @@ $(pv_value)</tooltip>
           <col>1.0</col>
         </row>
       </permutation_matrix>
-      <pv_name>Esther:gas:PV302</pv_name>
+      <push_action_index>0</push_action_index>
+      <pv_name>Esther:gas:PV302_OUT</pv_name>
       <pv_value />
-      <rules />
+      <released_action_index>0</released_action_index>
+      <rules>
+        <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV302</pv>
+        </rule>
+        <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV302</pv>
+        </rule>
+      </rules>
       <scale_options>
         <width_scalable>true</width_scalable>
         <height_scalable>true</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <scripts />
-      <show_boolean_label>false</show_boolean_label>
+      <show_boolean_label>true</show_boolean_label>
+      <show_confirm_dialog>0</show_confirm_dialog>
       <stretch_to_fit>true</stretch_to_fit>
+      <toggle_button>true</toggle_button>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <transparency>false</transparency>
       <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-474f</wuid>
+      <widget_type>Boolean Symbol Control</widget_type>
+      <width>32</width>
+      <wuid>7894d373:174fe28a026:-4ed6</wuid>
       <x>8</x>
-      <y>24</y>
+      <y>26</y>
     </widget>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -17728,11 +17391,11 @@ $(pv_value)</tooltip>
       <x>-8</x>
       <y>8</y>
     </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
       <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
+      <alarm_pulsing>true</alarm_pulsing>
       <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
+      <auto_size>true</auto_size>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <background_color>
         <color red="240" green="240" blue="240" />
@@ -17745,13 +17408,14 @@ $(pv_value)</tooltip>
       </border_color>
       <border_style>0</border_style>
       <border_width>1</border_width>
+      <confirm_message>Are you sure you want to do this?</confirm_message>
       <crop_bottom>0</crop_bottom>
       <crop_left>0</crop_left>
       <crop_right>0</crop_right>
       <crop_top>0</crop_top>
       <data_type>0</data_type>
       <degree>0</degree>
-      <enabled>false</enabled>
+      <enabled>true</enabled>
       <flip_horizontal>false</flip_horizontal>
       <flip_vertical>false</flip_vertical>
       <font>
@@ -17761,18 +17425,19 @@ $(pv_value)</tooltip>
       <foreground_color>
         <color red="192" green="192" blue="192" />
       </foreground_color>
-      <height>31</height>
+      <height>32</height>
       <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon402</name>
+      <name>BooleanSymbolCon402</name>
       <no_animation>false</no_animation>
       <off_color>
-        <color red="255" green="0" blue="0" />
+        <color red="0" green="0" blue="255" />
       </off_color>
       <off_label>OFF</off_label>
       <on_color>
-        <color red="0" green="255" blue="0" />
+        <color red="0" green="0" blue="255" />
       </on_color>
       <on_label>ON</on_label>
+      <password></password>
       <permutation_matrix>
         <row>
           <col>1.0</col>
@@ -17783,25 +17448,56 @@ $(pv_value)</tooltip>
           <col>1.0</col>
         </row>
       </permutation_matrix>
-      <pv_name>Esther:gas:PV402</pv_name>
+      <push_action_index>0</push_action_index>
+      <pv_name>Esther:gas:PV402_OUT</pv_name>
       <pv_value />
-      <rules />
+      <released_action_index>0</released_action_index>
+      <rules>
+        <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV402</pv>
+        </rule>
+        <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV402</pv>
+        </rule>
+      </rules>
       <scale_options>
         <width_scalable>true</width_scalable>
         <height_scalable>true</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <scripts />
-      <show_boolean_label>false</show_boolean_label>
+      <show_boolean_label>true</show_boolean_label>
+      <show_confirm_dialog>0</show_confirm_dialog>
       <stretch_to_fit>true</stretch_to_fit>
+      <toggle_button>true</toggle_button>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <transparency>false</transparency>
       <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-4c07</wuid>
-      <x>2</x>
+      <widget_type>Boolean Symbol Control</widget_type>
+      <width>32</width>
+      <wuid>7894d373:174fe28a026:-4edc</wuid>
+      <x>6</x>
       <y>28</y>
     </widget>
   </widget>
@@ -17915,82 +17611,6 @@ $(pv_value)</tooltip>
       <x>36</x>
       <y>42</y>
     </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <background_color>
-        <color red="240" green="240" blue="240" />
-      </background_color>
-      <bit>-1</bit>
-      <boolean_label_position>0</boolean_label_position>
-      <border_alarm_sensitive>true</border_alarm_sensitive>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <crop_bottom>0</crop_bottom>
-      <crop_left>0</crop_left>
-      <crop_right>0</crop_right>
-      <crop_top>0</crop_top>
-      <data_type>0</data_type>
-      <degree>0</degree>
-      <enabled>false</enabled>
-      <flip_horizontal>false</flip_horizontal>
-      <flip_vertical>false</flip_vertical>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color red="192" green="192" blue="192" />
-      </foreground_color>
-      <height>31</height>
-      <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon502</name>
-      <no_animation>false</no_animation>
-      <off_color>
-        <color red="255" green="0" blue="0" />
-      </off_color>
-      <off_label>OFF</off_label>
-      <on_color>
-        <color red="0" green="255" blue="0" />
-      </on_color>
-      <on_label>ON</on_label>
-      <permutation_matrix>
-        <row>
-          <col>1.0</col>
-          <col>0.0</col>
-        </row>
-        <row>
-          <col>0.0</col>
-          <col>1.0</col>
-        </row>
-      </permutation_matrix>
-      <pv_name>Esther:gas:PV502</pv_name>
-      <pv_value />
-      <rules />
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_boolean_label>false</show_boolean_label>
-      <stretch_to_fit>true</stretch_to_fit>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparency>false</transparency>
-      <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-50fb</wuid>
-      <x>8</x>
-      <y>24</y>
-    </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
       <auto_size>false</auto_size>
@@ -18031,6 +17651,115 @@ $(pv_value)</tooltip>
       <wuid>-9f6cce5:15b152f089d:3387</wuid>
       <x>0</x>
       <y>2</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <alarm_pulsing>true</alarm_pulsing>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <auto_size>true</auto_size>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <background_color>
+        <color red="240" green="240" blue="240" />
+      </background_color>
+      <bit>-1</bit>
+      <boolean_label_position>0</boolean_label_position>
+      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <border_style>0</border_style>
+      <border_width>1</border_width>
+      <confirm_message>Are you sure you want to do this?</confirm_message>
+      <crop_bottom>0</crop_bottom>
+      <crop_left>0</crop_left>
+      <crop_right>0</crop_right>
+      <crop_top>0</crop_top>
+      <data_type>0</data_type>
+      <degree>0</degree>
+      <enabled>true</enabled>
+      <flip_horizontal>false</flip_horizontal>
+      <flip_vertical>false</flip_vertical>
+      <font>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color red="192" green="192" blue="192" />
+      </foreground_color>
+      <height>32</height>
+      <image_file>images/valve_on.gif</image_file>
+      <name>BooleanSymbolCon502</name>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color red="0" green="0" blue="255" />
+      </off_color>
+      <off_label>OFF</off_label>
+      <on_color>
+        <color red="0" green="0" blue="255" />
+      </on_color>
+      <on_label>ON</on_label>
+      <password></password>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <push_action_index>0</push_action_index>
+      <pv_name>Esther:gas:PV502_OUT</pv_name>
+      <pv_value />
+      <released_action_index>0</released_action_index>
+      <rules>
+        <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV502</pv>
+        </rule>
+        <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV502</pv>
+        </rule>
+      </rules>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <show_boolean_label>true</show_boolean_label>
+      <show_confirm_dialog>0</show_confirm_dialog>
+      <stretch_to_fit>true</stretch_to_fit>
+      <toggle_button>true</toggle_button>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <transparency>false</transparency>
+      <visible>true</visible>
+      <widget_type>Boolean Symbol Control</widget_type>
+      <width>32</width>
+      <wuid>7894d373:174fe28a026:-6912</wuid>
+      <x>10</x>
+      <y>26</y>
     </widget>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -18583,82 +18312,6 @@ $(pv_value)</tooltip>
       <x>60</x>
       <y>0</y>
     </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <background_color>
-        <color red="240" green="240" blue="240" />
-      </background_color>
-      <bit>-1</bit>
-      <boolean_label_position>0</boolean_label_position>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <crop_bottom>0</crop_bottom>
-      <crop_left>0</crop_left>
-      <crop_right>0</crop_right>
-      <crop_top>0</crop_top>
-      <data_type>0</data_type>
-      <degree>0</degree>
-      <enabled>true</enabled>
-      <flip_horizontal>false</flip_horizontal>
-      <flip_vertical>false</flip_vertical>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color red="192" green="192" blue="192" />
-      </foreground_color>
-      <height>31</height>
-      <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon303</name>
-      <no_animation>false</no_animation>
-      <off_color>
-        <color red="0" green="255" blue="0" />
-      </off_color>
-      <off_label>OFF</off_label>
-      <on_color>
-        <color red="255" green="0" blue="0" />
-      </on_color>
-      <on_label>ON</on_label>
-      <permutation_matrix>
-        <row>
-          <col>1.0</col>
-          <col>0.0</col>
-        </row>
-        <row>
-          <col>0.0</col>
-          <col>1.0</col>
-        </row>
-      </permutation_matrix>
-      <pv_name>Esther:gas:PV303</pv_name>
-      <pv_value />
-      <rules />
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_boolean_label>false</show_boolean_label>
-      <stretch_to_fit>true</stretch_to_fit>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparency>false</transparency>
-      <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-4747</wuid>
-      <x>12</x>
-      <y>22</y>
-    </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
       <auto_size>false</auto_size>
@@ -18699,6 +18352,115 @@ $(pv_value)</tooltip>
       <wuid>-9f6cce5:15b152f089d:434f</wuid>
       <x>0</x>
       <y>-2</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <alarm_pulsing>true</alarm_pulsing>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <auto_size>true</auto_size>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <background_color>
+        <color red="240" green="240" blue="240" />
+      </background_color>
+      <bit>-1</bit>
+      <boolean_label_position>0</boolean_label_position>
+      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <border_style>0</border_style>
+      <border_width>1</border_width>
+      <confirm_message>Are you sure you want to do this?</confirm_message>
+      <crop_bottom>0</crop_bottom>
+      <crop_left>0</crop_left>
+      <crop_right>0</crop_right>
+      <crop_top>0</crop_top>
+      <data_type>0</data_type>
+      <degree>0</degree>
+      <enabled>true</enabled>
+      <flip_horizontal>false</flip_horizontal>
+      <flip_vertical>false</flip_vertical>
+      <font>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color red="192" green="192" blue="192" />
+      </foreground_color>
+      <height>38</height>
+      <image_file>images/valve_on.gif</image_file>
+      <name>BooleanSymbolCon303</name>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color red="0" green="0" blue="255" />
+      </off_color>
+      <off_label>OFF</off_label>
+      <on_color>
+        <color red="0" green="0" blue="255" />
+      </on_color>
+      <on_label>ON</on_label>
+      <password></password>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <push_action_index>0</push_action_index>
+      <pv_name>Esther:gas:PV303_OUT</pv_name>
+      <pv_value />
+      <released_action_index>0</released_action_index>
+      <rules>
+        <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV303</pv>
+        </rule>
+        <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV303</pv>
+        </rule>
+      </rules>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <show_boolean_label>true</show_boolean_label>
+      <show_confirm_dialog>0</show_confirm_dialog>
+      <stretch_to_fit>true</stretch_to_fit>
+      <toggle_button>true</toggle_button>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <transparency>false</transparency>
+      <visible>true</visible>
+      <widget_type>Boolean Symbol Control</widget_type>
+      <width>35</width>
+      <wuid>7894d373:174fe28a026:-50ef</wuid>
+      <x>8</x>
+      <y>24</y>
     </widget>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -19155,290 +18917,6 @@ $(pv_value)</tooltip>
     <x>508</x>
     <y>356</y>
   </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-    <actions hook="false" hook_all="false" />
-    <background_color>
-      <color name="Background" red="255" green="255" blue="255" />
-    </background_color>
-    <border_color>
-      <color name="Black" red="0" green="0" blue="0" />
-    </border_color>
-    <border_style>0</border_style>
-    <border_width>1</border_width>
-    <enabled>true</enabled>
-    <fc>false</fc>
-    <font>
-      <opifont.name fontName="Sans" height="10" style="1" pixels="false">Default Bold</opifont.name>
-    </font>
-    <foreground_color>
-      <color red="192" green="192" blue="192" />
-    </foreground_color>
-    <height>73</height>
-    <lock_children>false</lock_children>
-    <macros>
-      <include_parent_macros>true</include_parent_macros>
-    </macros>
-    <name>Group Name_11</name>
-    <rules />
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <scripts />
-    <show_scrollbar>false</show_scrollbar>
-    <tooltip></tooltip>
-    <transparent>true</transparent>
-    <visible>true</visible>
-    <widget_type>Grouping Container</widget_type>
-    <width>103</width>
-    <wuid>-9f6cce5:15b152f089d:4bdc</wuid>
-    <x>560</x>
-    <y>459</y>
-    <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <alpha>255</alpha>
-      <anti_alias>true</anti_alias>
-      <arrow_length>15</arrow_length>
-      <arrows>2</arrows>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <background_color>
-        <color name="Header_Background" red="77" green="77" blue="77" />
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <enabled>true</enabled>
-      <fill_arrow>true</fill_arrow>
-      <fill_level>0.0</fill_level>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color red="255" green="0" blue="0" />
-      </foreground_color>
-      <height>38</height>
-      <horizontal_fill>true</horizontal_fill>
-      <line_style>0</line_style>
-      <line_width>4</line_width>
-      <name>Polyline_7</name>
-      <points>
-        <point x="37" y="42" />
-        <point x="53" y="42" />
-        <point x="53" y="5" />
-      </points>
-      <pv_name></pv_name>
-      <pv_value />
-      <rotation_angle>0.0</rotation_angle>
-      <rules>
-        <rule name="Background Color Rule" prop_id="background_color" out_exp="false">
-          <exp bool_exp="pv0==1">
-            <value>
-              <color name="Header_Background" red="77" green="77" blue="77" />
-            </value>
-          </exp>
-          <exp bool_exp="pv0==0">
-            <value>
-              <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
-            </value>
-          </exp>
-          <pv trig="true">Esther:gas:PV403_OUT</pv>
-        </rule>
-      </rules>
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparent>false</transparent>
-      <visible>true</visible>
-      <widget_type>Polyline</widget_type>
-      <width>17</width>
-      <wuid>-9f6cce5:15b152f089d:4be9</wuid>
-      <x>37</x>
-      <y>5</y>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <auto_size>false</auto_size>
-      <background_color>
-        <color red="255" green="255" blue="255" />
-      </background_color>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <enabled>true</enabled>
-      <font>
-        <opifont.name fontName="Sans" height="14" style="1" pixels="false">Header 2</opifont.name>
-      </font>
-      <foreground_color>
-        <color name="Header_Background" red="77" green="77" blue="77" />
-      </foreground_color>
-      <height>24</height>
-      <horizontal_alignment>1</horizontal_alignment>
-      <name>Exit</name>
-      <rules>
-        <rule name="Foreground Color Rule" prop_id="foreground_color" out_exp="false">
-          <exp bool_exp="pv0==1">
-            <value>
-              <color name="Header_Background" red="77" green="77" blue="77" />
-            </value>
-          </exp>
-          <exp bool_exp="pv0==0">
-            <value>
-              <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
-            </value>
-          </exp>
-          <pv trig="true">Esther:gas:PV403_OUT</pv>
-        </rule>
-      </rules>
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_scrollbar>false</show_scrollbar>
-      <text>EXIT</text>
-      <tooltip></tooltip>
-      <transparent>true</transparent>
-      <vertical_alignment>1</vertical_alignment>
-      <visible>true</visible>
-      <widget_type>Label</widget_type>
-      <width>65</width>
-      <wrap_words>true</wrap_words>
-      <wuid>-9f6cce5:15b152f089d:4bea</wuid>
-      <x>60</x>
-      <y>0</y>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <background_color>
-        <color red="240" green="240" blue="240" />
-      </background_color>
-      <bit>-1</bit>
-      <boolean_label_position>0</boolean_label_position>
-      <border_alarm_sensitive>true</border_alarm_sensitive>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <crop_bottom>0</crop_bottom>
-      <crop_left>0</crop_left>
-      <crop_right>0</crop_right>
-      <crop_top>0</crop_top>
-      <data_type>0</data_type>
-      <degree>0</degree>
-      <enabled>true</enabled>
-      <flip_horizontal>false</flip_horizontal>
-      <flip_vertical>false</flip_vertical>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color red="192" green="192" blue="192" />
-      </foreground_color>
-      <height>31</height>
-      <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon403</name>
-      <no_animation>false</no_animation>
-      <off_color>
-        <color red="0" green="255" blue="0" />
-      </off_color>
-      <off_label>OFF</off_label>
-      <on_color>
-        <color red="255" green="0" blue="0" />
-      </on_color>
-      <on_label>ON</on_label>
-      <permutation_matrix>
-        <row>
-          <col>1.0</col>
-          <col>0.0</col>
-        </row>
-        <row>
-          <col>0.0</col>
-          <col>1.0</col>
-        </row>
-      </permutation_matrix>
-      <pv_name>Esther:gas:PV403</pv_name>
-      <pv_value />
-      <rules />
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_boolean_label>false</show_boolean_label>
-      <stretch_to_fit>true</stretch_to_fit>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparency>false</transparency>
-      <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-49a7</wuid>
-      <x>8</x>
-      <y>26</y>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <auto_size>false</auto_size>
-      <background_color>
-        <color red="255" green="255" blue="255" />
-      </background_color>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <enabled>true</enabled>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <foreground_color>
-        <color name="Text_ForeGround" red="0" green="0" blue="0" />
-      </foreground_color>
-      <height>24</height>
-      <horizontal_alignment>1</horizontal_alignment>
-      <name>PV403</name>
-      <rules />
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_scrollbar>false</show_scrollbar>
-      <text>PV403 </text>
-      <tooltip></tooltip>
-      <transparent>true</transparent>
-      <vertical_alignment>1</vertical_alignment>
-      <visible>true</visible>
-      <widget_type>Label</widget_type>
-      <width>52</width>
-      <wrap_words>true</wrap_words>
-      <wuid>-9f6cce5:15b152f089d:4bde</wuid>
-      <x>-4</x>
-      <y>0</y>
-    </widget>
-  </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
     <actions hook="false" hook_all="false" />
     <alarm_pulsing>false</alarm_pulsing>
@@ -19675,82 +19153,6 @@ $(pv_value)</tooltip>
       <x>60</x>
       <y>0</y>
     </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <background_color>
-        <color red="240" green="240" blue="240" />
-      </background_color>
-      <bit>-1</bit>
-      <boolean_label_position>0</boolean_label_position>
-      <border_alarm_sensitive>true</border_alarm_sensitive>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>1</border_width>
-      <crop_bottom>0</crop_bottom>
-      <crop_left>0</crop_left>
-      <crop_right>0</crop_right>
-      <crop_top>0</crop_top>
-      <data_type>0</data_type>
-      <degree>0</degree>
-      <enabled>false</enabled>
-      <flip_horizontal>false</flip_horizontal>
-      <flip_vertical>false</flip_vertical>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color red="192" green="192" blue="192" />
-      </foreground_color>
-      <height>31</height>
-      <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon503</name>
-      <no_animation>false</no_animation>
-      <off_color>
-        <color red="0" green="255" blue="0" />
-      </off_color>
-      <off_label>OFF</off_label>
-      <on_color>
-        <color red="255" green="0" blue="0" />
-      </on_color>
-      <on_label>ON</on_label>
-      <permutation_matrix>
-        <row>
-          <col>1.0</col>
-          <col>0.0</col>
-        </row>
-        <row>
-          <col>0.0</col>
-          <col>1.0</col>
-        </row>
-      </permutation_matrix>
-      <pv_name>Esther:gas:PV503</pv_name>
-      <pv_value />
-      <rules />
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_boolean_label>false</show_boolean_label>
-      <stretch_to_fit>true</stretch_to_fit>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparency>false</transparency>
-      <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
-      <width>33</width>
-      <wuid>-5e159a2:174970b7442:-50e3</wuid>
-      <x>4</x>
-      <y>24</y>
-    </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
       <auto_size>false</auto_size>
@@ -19791,6 +19193,115 @@ $(pv_value)</tooltip>
       <wuid>-9f6cce5:15b152f089d:4e7a</wuid>
       <x>-4</x>
       <y>2</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <alarm_pulsing>true</alarm_pulsing>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <auto_size>true</auto_size>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <background_color>
+        <color red="240" green="240" blue="240" />
+      </background_color>
+      <bit>-1</bit>
+      <boolean_label_position>0</boolean_label_position>
+      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255" />
+      </border_color>
+      <border_style>0</border_style>
+      <border_width>1</border_width>
+      <confirm_message>Are you sure you want to do this?</confirm_message>
+      <crop_bottom>0</crop_bottom>
+      <crop_left>0</crop_left>
+      <crop_right>0</crop_right>
+      <crop_top>0</crop_top>
+      <data_type>0</data_type>
+      <degree>0</degree>
+      <enabled>true</enabled>
+      <flip_horizontal>false</flip_horizontal>
+      <flip_vertical>false</flip_vertical>
+      <font>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color red="192" green="192" blue="192" />
+      </foreground_color>
+      <height>38</height>
+      <image_file>images/valve_on.gif</image_file>
+      <name>BooleanSymbolCon503</name>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color red="0" green="0" blue="255" />
+      </off_color>
+      <off_label>OFF</off_label>
+      <on_color>
+        <color red="0" green="0" blue="255" />
+      </on_color>
+      <on_label>ON</on_label>
+      <password></password>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <push_action_index>0</push_action_index>
+      <pv_name>Esther:gas:PV503_OUT</pv_name>
+      <pv_value />
+      <released_action_index>0</released_action_index>
+      <rules>
+        <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV503</pv>
+        </rule>
+        <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV503</pv>
+        </rule>
+      </rules>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <show_boolean_label>true</show_boolean_label>
+      <show_confirm_dialog>0</show_confirm_dialog>
+      <stretch_to_fit>true</stretch_to_fit>
+      <toggle_button>true</toggle_button>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <transparency>false</transparency>
+      <visible>true</visible>
+      <widget_type>Boolean Symbol Control</widget_type>
+      <width>35</width>
+      <wuid>7894d373:174fe28a026:-68f6</wuid>
+      <x>6</x>
+      <y>24</y>
     </widget>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
@@ -24373,7 +23884,7 @@ $(pv_value)</tooltip>
       <name>Text Update</name>
       <precision>0</precision>
       <precision_from_pv>true</precision_from_pv>
-      <pv_name>Esther:Bombe:Pressure</pv_name>
+      <pv_name>Esther:Camera:Pressure</pv_name>
       <pv_value />
       <rotation_angle>0.0</rotation_angle>
       <rules />
@@ -25045,11 +24556,11 @@ $(pv_value)</tooltip>
       <x>33</x>
       <y>26</y>
     </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
       <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
+      <alarm_pulsing>true</alarm_pulsing>
       <align_to_nearest_second>false</align_to_nearest_second>
-      <auto_size>false</auto_size>
+      <auto_size>true</auto_size>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <background_color>
         <color red="240" green="240" blue="240" />
@@ -25062,6 +24573,7 @@ $(pv_value)</tooltip>
       </border_color>
       <border_style>0</border_style>
       <border_width>1</border_width>
+      <confirm_message>Are you sure you want to do this?</confirm_message>
       <crop_bottom>0</crop_bottom>
       <crop_left>0</crop_left>
       <crop_right>0</crop_right>
@@ -25080,16 +24592,17 @@ $(pv_value)</tooltip>
       </foreground_color>
       <height>50</height>
       <image_file>images/valve_on.gif</image_file>
-      <name>BooleanSymbolMon703B</name>
+      <name>BooleanSymbolCon703B</name>
       <no_animation>false</no_animation>
       <off_color>
-        <color red="0" green="255" blue="0" />
+        <color red="0" green="0" blue="255" />
       </off_color>
       <off_label>OFF</off_label>
       <on_color>
-        <color red="255" green="0" blue="0" />
+        <color red="0" green="0" blue="255" />
       </on_color>
       <on_label>ON</on_label>
+      <password></password>
       <permutation_matrix>
         <row>
           <col>1.0</col>
@@ -25100,25 +24613,56 @@ $(pv_value)</tooltip>
           <col>1.0</col>
         </row>
       </permutation_matrix>
-      <pv_name>Esther:gas:PV703B</pv_name>
+      <push_action_index>0</push_action_index>
+      <pv_name>Esther:gas:PV703B_OUT</pv_name>
       <pv_value />
-      <rules />
+      <released_action_index>0</released_action_index>
+      <rules>
+        <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV703B</pv>
+        </rule>
+        <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color red="0" green="255" blue="0" />
+            </value>
+          </exp>
+          <exp bool_exp="pv0!=0">
+            <value>
+              <color red="255" green="0" blue="0" />
+            </value>
+          </exp>
+          <pv trig="true">Esther:gas:PV703B</pv>
+        </rule>
+      </rules>
       <scale_options>
         <width_scalable>true</width_scalable>
         <height_scalable>true</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <scripts />
-      <show_boolean_label>false</show_boolean_label>
+      <show_boolean_label>true</show_boolean_label>
+      <show_confirm_dialog>0</show_confirm_dialog>
       <stretch_to_fit>false</stretch_to_fit>
+      <toggle_button>true</toggle_button>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <transparency>false</transparency>
       <visible>true</visible>
-      <widget_type>Boolean Symbol Monitor</widget_type>
+      <widget_type>Boolean Symbol Control</widget_type>
       <width>45</width>
-      <wuid>-5e159a2:174970b7442:-7970</wuid>
-      <x>12</x>
+      <wuid>-93cf660:174bf8bd0b1:-4e19</wuid>
+      <x>8</x>
       <y>16</y>
     </widget>
   </widget>
@@ -26709,8 +26253,8 @@ $(pv_value)</tooltip>
     <height>17</height>
     <horizontal_alignment>1</horizontal_alignment>
     <name>Text Update</name>
-    <precision>0</precision>
-    <precision_from_pv>true</precision_from_pv>
+    <precision>1</precision>
+    <precision_from_pv>false</precision_from_pv>
     <pv_name>Esther:gas:MFC601_FFLOW</pv_name>
     <pv_value />
     <rotation_angle>0.0</rotation_angle>
@@ -26909,82 +26453,6 @@ $(pv_value)</tooltip>
     <x>1160</x>
     <y>140</y>
   </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <actions hook="false" hook_all="false" />
-    <alarm_pulsing>false</alarm_pulsing>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <auto_size>false</auto_size>
-    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-    <background_color>
-      <color red="240" green="240" blue="240" />
-    </background_color>
-    <bit>-1</bit>
-    <boolean_label_position>0</boolean_label_position>
-    <border_alarm_sensitive>true</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255" />
-    </border_color>
-    <border_style>0</border_style>
-    <border_width>1</border_width>
-    <crop_bottom>0</crop_bottom>
-    <crop_left>0</crop_left>
-    <crop_right>0</crop_right>
-    <crop_top>0</crop_top>
-    <data_type>0</data_type>
-    <degree>0</degree>
-    <enabled>true</enabled>
-    <flip_horizontal>false</flip_horizontal>
-    <flip_vertical>false</flip_vertical>
-    <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-    </font>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <foreground_color>
-      <color red="192" green="192" blue="192" />
-    </foreground_color>
-    <height>50</height>
-    <image_file>images/valve_on.gif</image_file>
-    <name>BooleanSymbolMon703A</name>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color red="0" green="255" blue="0" />
-    </off_color>
-    <off_label>OFF</off_label>
-    <on_color>
-      <color red="255" green="0" blue="0" />
-    </on_color>
-    <on_label>ON</on_label>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <pv_name>Esther:gas:PV703A</pv_name>
-    <pv_value />
-    <rules />
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <scripts />
-    <show_boolean_label>false</show_boolean_label>
-    <stretch_to_fit>false</stretch_to_fit>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <transparency>false</transparency>
-    <visible>true</visible>
-    <widget_type>Boolean Symbol Monitor</widget_type>
-    <width>45</width>
-    <wuid>-5e159a2:174970b7442:-6e2c</wuid>
-    <x>1162</x>
-    <y>160</y>
-  </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <actions hook="false" hook_all="false" />
     <auto_size>false</auto_size>
@@ -27025,158 +26493,6 @@ $(pv_value)</tooltip>
     <wuid>-5e159a2:174970b7442:-636e</wuid>
     <x>1082</x>
     <y>456</y>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <actions hook="false" hook_all="false" />
-    <alarm_pulsing>false</alarm_pulsing>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <auto_size>false</auto_size>
-    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-    <background_color>
-      <color red="240" green="240" blue="240" />
-    </background_color>
-    <bit>-1</bit>
-    <boolean_label_position>0</boolean_label_position>
-    <border_alarm_sensitive>true</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255" />
-    </border_color>
-    <border_style>0</border_style>
-    <border_width>1</border_width>
-    <crop_bottom>0</crop_bottom>
-    <crop_left>0</crop_left>
-    <crop_right>0</crop_right>
-    <crop_top>0</crop_top>
-    <data_type>0</data_type>
-    <degree>0</degree>
-    <enabled>false</enabled>
-    <flip_horizontal>false</flip_horizontal>
-    <flip_vertical>false</flip_vertical>
-    <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-    </font>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <foreground_color>
-      <color red="192" green="192" blue="192" />
-    </foreground_color>
-    <height>43</height>
-    <image_file>images/valve_on.gif</image_file>
-    <name>BooleanSymbolMon702</name>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color red="255" green="0" blue="0" />
-    </off_color>
-    <off_label>OFF</off_label>
-    <on_color>
-      <color red="0" green="255" blue="0" />
-    </on_color>
-    <on_label>ON</on_label>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <pv_name>Esther:gas:PV702</pv_name>
-    <pv_value />
-    <rules />
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <scripts />
-    <show_boolean_label>false</show_boolean_label>
-    <stretch_to_fit>true</stretch_to_fit>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <transparency>false</transparency>
-    <visible>true</visible>
-    <widget_type>Boolean Symbol Monitor</widget_type>
-    <width>45</width>
-    <wuid>-5e159a2:174970b7442:-6366</wuid>
-    <x>1090</x>
-    <y>476</y>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <actions hook="false" hook_all="false" />
-    <alarm_pulsing>false</alarm_pulsing>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <auto_size>false</auto_size>
-    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-    <background_color>
-      <color red="240" green="240" blue="240" />
-    </background_color>
-    <bit>-1</bit>
-    <boolean_label_position>0</boolean_label_position>
-    <border_alarm_sensitive>true</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255" />
-    </border_color>
-    <border_style>0</border_style>
-    <border_width>1</border_width>
-    <crop_bottom>0</crop_bottom>
-    <crop_left>0</crop_left>
-    <crop_right>0</crop_right>
-    <crop_top>0</crop_top>
-    <data_type>0</data_type>
-    <degree>0</degree>
-    <enabled>true</enabled>
-    <flip_horizontal>false</flip_horizontal>
-    <flip_vertical>false</flip_vertical>
-    <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-    </font>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <foreground_color>
-      <color red="192" green="192" blue="192" />
-    </foreground_color>
-    <height>41</height>
-    <image_file>../BOY Examples/pictures/valve_on.gif</image_file>
-    <name>BooleanSymbolMon701</name>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color red="255" green="0" blue="0" />
-    </off_color>
-    <off_label>OFF</off_label>
-    <on_color>
-      <color red="0" green="255" blue="0" />
-    </on_color>
-    <on_label>ON</on_label>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <pv_name>Esther:gas:PV701</pv_name>
-    <pv_value />
-    <rules />
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <scripts />
-    <show_boolean_label>false</show_boolean_label>
-    <stretch_to_fit>true</stretch_to_fit>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <transparency>false</transparency>
-    <visible>true</visible>
-    <widget_type>Boolean Symbol Monitor</widget_type>
-    <width>43</width>
-    <wuid>-5e159a2:174970b7442:-6620</wuid>
-    <x>1164</x>
-    <y>480</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <actions hook="false" hook_all="false" />
@@ -27259,82 +26575,6 @@ $(pv_value)</tooltip>
     <wuid>7357b4e3:15b1758de9e:-68ab</wuid>
     <x>816</x>
     <y>670</y>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <actions hook="false" hook_all="false" />
-    <alarm_pulsing>false</alarm_pulsing>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <auto_size>false</auto_size>
-    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-    <background_color>
-      <color red="240" green="240" blue="240" />
-    </background_color>
-    <bit>-1</bit>
-    <boolean_label_position>0</boolean_label_position>
-    <border_alarm_sensitive>true</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255" />
-    </border_color>
-    <border_style>0</border_style>
-    <border_width>1</border_width>
-    <crop_bottom>0</crop_bottom>
-    <crop_left>0</crop_left>
-    <crop_right>0</crop_right>
-    <crop_top>0</crop_top>
-    <data_type>0</data_type>
-    <degree>0</degree>
-    <enabled>false</enabled>
-    <flip_horizontal>false</flip_horizontal>
-    <flip_vertical>false</flip_vertical>
-    <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-    </font>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <foreground_color>
-      <color red="192" green="192" blue="192" />
-    </foreground_color>
-    <height>31</height>
-    <image_file>images/valve_on.gif</image_file>
-    <name>BooleanSymbolMon602</name>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color red="255" green="0" blue="0" />
-    </off_color>
-    <off_label>OFF</off_label>
-    <on_color>
-      <color red="0" green="255" blue="0" />
-    </on_color>
-    <on_label>ON</on_label>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <pv_name>Esther:gas:PV602</pv_name>
-    <pv_value />
-    <rules />
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <scripts />
-    <show_boolean_label>false</show_boolean_label>
-    <stretch_to_fit>true</stretch_to_fit>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <transparency>false</transparency>
-    <visible>true</visible>
-    <widget_type>Boolean Symbol Monitor</widget_type>
-    <width>33</width>
-    <wuid>-5e159a2:174970b7442:-5545</wuid>
-    <x>822</x>
-    <y>690</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <actions hook="false" hook_all="false" />
@@ -27821,226 +27061,8 @@ $(pv_value)</tooltip>
     <widget_type>Boolean Symbol Control</widget_type>
     <width>45</width>
     <wuid>-93cf660:174bf8bd0b1:-6d53</wuid>
-    <x>1242</x>
-    <y>109</y>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
-    <actions hook="false" hook_all="false" />
-    <alarm_pulsing>true</alarm_pulsing>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <auto_size>true</auto_size>
-    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-    <background_color>
-      <color red="240" green="240" blue="240" />
-    </background_color>
-    <bit>-1</bit>
-    <boolean_label_position>0</boolean_label_position>
-    <border_alarm_sensitive>true</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255" />
-    </border_color>
-    <border_style>0</border_style>
-    <border_width>1</border_width>
-    <confirm_message>Are you sure you want to do this?</confirm_message>
-    <crop_bottom>0</crop_bottom>
-    <crop_left>0</crop_left>
-    <crop_right>0</crop_right>
-    <crop_top>0</crop_top>
-    <data_type>0</data_type>
-    <degree>0</degree>
-    <enabled>true</enabled>
-    <flip_horizontal>false</flip_horizontal>
-    <flip_vertical>false</flip_vertical>
-    <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-    </font>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <foreground_color>
-      <color red="192" green="192" blue="192" />
-    </foreground_color>
-    <height>50</height>
-    <image_file>images/valve_on.gif</image_file>
-    <name>BooleanSymbolCon703B</name>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color red="0" green="0" blue="255" />
-    </off_color>
-    <off_label>OFF</off_label>
-    <on_color>
-      <color red="0" green="0" blue="255" />
-    </on_color>
-    <on_label>ON</on_label>
-    <password></password>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <push_action_index>0</push_action_index>
-    <pv_name>Esther:gas:PV703B_OUT</pv_name>
-    <pv_value />
-    <released_action_index>0</released_action_index>
-    <rules>
-      <rule name="RuleColorON" prop_id="on_color" out_exp="false">
-        <exp bool_exp="pv0==0">
-          <value>
-            <color red="0" green="255" blue="0" />
-          </value>
-        </exp>
-        <exp bool_exp="pv0!=0">
-          <value>
-            <color red="255" green="0" blue="0" />
-          </value>
-        </exp>
-        <pv trig="true">Esther:gas:PV703B</pv>
-      </rule>
-      <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
-        <exp bool_exp="pv0==0">
-          <value>
-            <color red="0" green="255" blue="0" />
-          </value>
-        </exp>
-        <exp bool_exp="pv0!=0">
-          <value>
-            <color red="255" green="0" blue="0" />
-          </value>
-        </exp>
-        <pv trig="true">Esther:gas:PV703A</pv>
-      </rule>
-    </rules>
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <scripts />
-    <show_boolean_label>true</show_boolean_label>
-    <show_confirm_dialog>0</show_confirm_dialog>
-    <stretch_to_fit>false</stretch_to_fit>
-    <toggle_button>true</toggle_button>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <transparency>false</transparency>
-    <visible>true</visible>
-    <widget_type>Boolean Symbol Control</widget_type>
-    <width>45</width>
-    <wuid>-93cf660:174bf8bd0b1:-4e19</wuid>
-    <x>1004</x>
-    <y>90</y>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
-    <actions hook="false" hook_all="false" />
-    <alarm_pulsing>true</alarm_pulsing>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <auto_size>true</auto_size>
-    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-    <background_color>
-      <color red="240" green="240" blue="240" />
-    </background_color>
-    <bit>-1</bit>
-    <boolean_label_position>0</boolean_label_position>
-    <border_alarm_sensitive>true</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255" />
-    </border_color>
-    <border_style>0</border_style>
-    <border_width>1</border_width>
-    <confirm_message>Are you sure you want to do this?</confirm_message>
-    <crop_bottom>0</crop_bottom>
-    <crop_left>0</crop_left>
-    <crop_right>0</crop_right>
-    <crop_top>0</crop_top>
-    <data_type>0</data_type>
-    <degree>0</degree>
-    <enabled>true</enabled>
-    <flip_horizontal>false</flip_horizontal>
-    <flip_vertical>false</flip_vertical>
-    <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-    </font>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <foreground_color>
-      <color red="192" green="192" blue="192" />
-    </foreground_color>
-    <height>50</height>
-    <image_file>images/valve_on.gif</image_file>
-    <name>BooleanSymbolCon701</name>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color red="0" green="0" blue="255" />
-    </off_color>
-    <off_label>OFF</off_label>
-    <on_color>
-      <color red="0" green="0" blue="255" />
-    </on_color>
-    <on_label>ON</on_label>
-    <password></password>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <push_action_index>0</push_action_index>
-    <pv_name>Esther:gas:PV701_OUT</pv_name>
-    <pv_value />
-    <released_action_index>0</released_action_index>
-    <rules>
-      <rule name="RuleColorON" prop_id="on_color" out_exp="false">
-        <exp bool_exp="pv0==0">
-          <value>
-            <color red="255" green="0" blue="0" />
-          </value>
-        </exp>
-        <exp bool_exp="pv0!=0">
-          <value>
-            <color red="0" green="255" blue="0" />
-          </value>
-        </exp>
-        <pv trig="true">Esther:gas:PV701</pv>
-      </rule>
-      <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
-        <exp bool_exp="pv0==0">
-          <value>
-            <color red="255" green="0" blue="0" />
-          </value>
-        </exp>
-        <exp bool_exp="pv0!=0">
-          <value>
-            <color red="0" green="255" blue="0" />
-          </value>
-        </exp>
-        <pv trig="true">Esther:gas:PV703A</pv>
-      </rule>
-    </rules>
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <scripts />
-    <show_boolean_label>true</show_boolean_label>
-    <show_confirm_dialog>0</show_confirm_dialog>
-    <stretch_to_fit>false</stretch_to_fit>
-    <toggle_button>true</toggle_button>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <transparency>false</transparency>
-    <visible>true</visible>
-    <widget_type>Boolean Symbol Control</widget_type>
-    <width>45</width>
-    <wuid>-93cf660:174bf8bd0b1:-494e</wuid>
-    <x>1166</x>
-    <y>528</y>
+    <x>1162</x>
+    <y>162</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
     <actions hook="false" hook_all="false" />
@@ -28148,7 +27170,1053 @@ $(pv_value)</tooltip>
     <widget_type>Boolean Symbol Control</widget_type>
     <width>45</width>
     <wuid>-93cf660:174bf8bd0b1:-4342</wuid>
-    <x>1090</x>
-    <y>520</y>
+    <x>1080</x>
+    <y>476</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <alarm_pulsing>true</alarm_pulsing>
+    <align_to_nearest_second>false</align_to_nearest_second>
+    <auto_size>true</auto_size>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <bit>-1</bit>
+    <boolean_label_position>0</boolean_label_position>
+    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <confirm_message>Are you sure you want to do this?</confirm_message>
+    <crop_bottom>0</crop_bottom>
+    <crop_left>0</crop_left>
+    <crop_right>0</crop_right>
+    <crop_top>0</crop_top>
+    <data_type>0</data_type>
+    <degree>0</degree>
+    <enabled>true</enabled>
+    <flip_horizontal>false</flip_horizontal>
+    <flip_vertical>false</flip_vertical>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <height>32</height>
+    <image_file>images/valve_on.gif</image_file>
+    <name>BooleanSymbolCon602</name>
+    <no_animation>false</no_animation>
+    <off_color>
+      <color red="0" green="0" blue="255" />
+    </off_color>
+    <off_label>OFF</off_label>
+    <on_color>
+      <color red="0" green="0" blue="255" />
+    </on_color>
+    <on_label>ON</on_label>
+    <password></password>
+    <permutation_matrix>
+      <row>
+        <col>1.0</col>
+        <col>0.0</col>
+      </row>
+      <row>
+        <col>0.0</col>
+        <col>1.0</col>
+      </row>
+    </permutation_matrix>
+    <push_action_index>0</push_action_index>
+    <pv_name>Esther:gas:PV602_OUT</pv_name>
+    <pv_value />
+    <released_action_index>0</released_action_index>
+    <rules>
+      <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV602</pv>
+      </rule>
+      <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV602</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_boolean_label>true</show_boolean_label>
+    <show_confirm_dialog>0</show_confirm_dialog>
+    <stretch_to_fit>true</stretch_to_fit>
+    <toggle_button>true</toggle_button>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <transparency>false</transparency>
+    <visible>true</visible>
+    <widget_type>Boolean Symbol Control</widget_type>
+    <width>32</width>
+    <wuid>7894d373:174fe28a026:-690e</wuid>
+    <x>822</x>
+    <y>686</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <alarm_pulsing>true</alarm_pulsing>
+    <align_to_nearest_second>false</align_to_nearest_second>
+    <auto_size>true</auto_size>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <bit>-1</bit>
+    <boolean_label_position>0</boolean_label_position>
+    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <confirm_message>Are you sure you want to do this?</confirm_message>
+    <crop_bottom>0</crop_bottom>
+    <crop_left>0</crop_left>
+    <crop_right>0</crop_right>
+    <crop_top>0</crop_top>
+    <data_type>0</data_type>
+    <degree>0</degree>
+    <enabled>true</enabled>
+    <flip_horizontal>false</flip_horizontal>
+    <flip_vertical>false</flip_vertical>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <height>50</height>
+    <image_file>images/valve_on.gif</image_file>
+    <name>BooleanSymbolCon701</name>
+    <no_animation>false</no_animation>
+    <off_color>
+      <color red="0" green="0" blue="255" />
+    </off_color>
+    <off_label>OFF</off_label>
+    <on_color>
+      <color red="0" green="0" blue="255" />
+    </on_color>
+    <on_label>ON</on_label>
+    <password></password>
+    <permutation_matrix>
+      <row>
+        <col>1.0</col>
+        <col>0.0</col>
+      </row>
+      <row>
+        <col>0.0</col>
+        <col>1.0</col>
+      </row>
+    </permutation_matrix>
+    <push_action_index>0</push_action_index>
+    <pv_name>Esther:gas:PV701_OUT</pv_name>
+    <pv_value />
+    <released_action_index>0</released_action_index>
+    <rules>
+      <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV701</pv>
+      </rule>
+      <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV701</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_boolean_label>true</show_boolean_label>
+    <show_confirm_dialog>0</show_confirm_dialog>
+    <stretch_to_fit>false</stretch_to_fit>
+    <toggle_button>true</toggle_button>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <transparency>false</transparency>
+    <visible>true</visible>
+    <widget_type>Boolean Symbol Control</widget_type>
+    <width>45</width>
+    <wuid>7894d373:174fe28a026:-66ea</wuid>
+    <x>1162</x>
+    <y>476</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <alarm_pulsing>false</alarm_pulsing>
+    <alpha>255</alpha>
+    <anti_alias>true</anti_alias>
+    <arrow_length>15</arrow_length>
+    <arrows>2</arrows>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color name="Header_Background" red="77" green="77" blue="77" />
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <enabled>true</enabled>
+    <fill_arrow>true</fill_arrow>
+    <fill_level>0.0</fill_level>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="255" green="0" blue="0" />
+    </foreground_color>
+    <height>38</height>
+    <horizontal_fill>true</horizontal_fill>
+    <line_style>0</line_style>
+    <line_width>4</line_width>
+    <name>Polyline_7</name>
+    <points>
+      <point x="597" y="211" />
+      <point x="613" y="211" />
+      <point x="613" y="174" />
+    </points>
+    <pv_name></pv_name>
+    <pv_value />
+    <rotation_angle>0.0</rotation_angle>
+    <rules>
+      <rule name="Background Color Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Header_Background" red="77" green="77" blue="77" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV203_OUT</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>true</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <widget_type>Polyline</widget_type>
+    <width>17</width>
+    <wuid>-9f6cce5:15b152f089d:ea3</wuid>
+    <x>597</x>
+    <y>174</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <auto_size>true</auto_size>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Sans" height="12" style="1" pixels="false">Header 3</opifont.name>
+    </font>
+    <foreground_color>
+      <color name="Header_Background" red="77" green="77" blue="77" />
+    </foreground_color>
+    <height>19</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <name>Ext</name>
+    <rules>
+      <rule name="Foreground Color Rule" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Header_Background" red="77" green="77" blue="77" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV203_OUT</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_scrollbar>false</show_scrollbar>
+    <text>EXIT</text>
+    <tooltip></tooltip>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <visible>true</visible>
+    <widget_type>Label</widget_type>
+    <width>40</width>
+    <wrap_words>true</wrap_words>
+    <wuid>-9f6cce5:15b152f089d:ea4</wuid>
+    <x>620</x>
+    <y>169</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <auto_size>false</auto_size>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0" />
+    </foreground_color>
+    <height>24</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <name>PV203</name>
+    <rules />
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_scrollbar>false</show_scrollbar>
+    <text>PV203 </text>
+    <tooltip></tooltip>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <visible>true</visible>
+    <widget_type>Label</widget_type>
+    <width>52</width>
+    <wrap_words>true</wrap_words>
+    <wuid>-9f6cce5:15b152f089d:e98</wuid>
+    <x>560</x>
+    <y>169</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <alarm_pulsing>false</alarm_pulsing>
+    <alpha>255</alpha>
+    <anti_alias>true</anti_alias>
+    <arrow_length>15</arrow_length>
+    <arrows>2</arrows>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color name="Header_Background" red="77" green="77" blue="77" />
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <enabled>true</enabled>
+    <fill_arrow>true</fill_arrow>
+    <fill_level>0.0</fill_level>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="255" green="0" blue="0" />
+    </foreground_color>
+    <height>38</height>
+    <horizontal_fill>true</horizontal_fill>
+    <line_style>0</line_style>
+    <line_width>4</line_width>
+    <name>Polyline_7</name>
+    <points>
+      <point x="528" y="66" />
+      <point x="544" y="66" />
+      <point x="544" y="29" />
+    </points>
+    <pv_name></pv_name>
+    <pv_value />
+    <rotation_angle>0.0</rotation_angle>
+    <rules>
+      <rule name="Background Color Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Header_Background" red="77" green="77" blue="77" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV102_OUT</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>true</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <widget_type>Polyline</widget_type>
+    <width>17</width>
+    <wuid>-9f6cce5:15b152f089d:-c30</wuid>
+    <x>528</x>
+    <y>29</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <auto_size>false</auto_size>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Sans" height="14" style="1" pixels="false">Header 2</opifont.name>
+    </font>
+    <foreground_color>
+      <color name="Header_Background" red="77" green="77" blue="77" />
+    </foreground_color>
+    <height>24</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <name>Ext</name>
+    <rules>
+      <rule name="Foreground Color Rule" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Header_Background" red="77" green="77" blue="77" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV102_OUT</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_scrollbar>false</show_scrollbar>
+    <text>EXIT </text>
+    <tooltip></tooltip>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <visible>true</visible>
+    <widget_type>Label</widget_type>
+    <width>42</width>
+    <wrap_words>true</wrap_words>
+    <wuid>-9f6cce5:15b152f089d:200</wuid>
+    <x>551</x>
+    <y>24</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <auto_size>false</auto_size>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0" />
+    </foreground_color>
+    <height>24</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <name>PV102</name>
+    <rules />
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_scrollbar>false</show_scrollbar>
+    <text>PV102 </text>
+    <tooltip></tooltip>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <visible>true</visible>
+    <widget_type>Label</widget_type>
+    <width>52</width>
+    <wrap_words>true</wrap_words>
+    <wuid>-9f6cce5:15b152f089d:-c3b</wuid>
+    <x>487</x>
+    <y>26</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <alarm_pulsing>false</alarm_pulsing>
+    <alpha>255</alpha>
+    <anti_alias>true</anti_alias>
+    <arrow_length>15</arrow_length>
+    <arrows>2</arrows>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color name="Header_Background" red="77" green="77" blue="77" />
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <enabled>true</enabled>
+    <fill_arrow>true</fill_arrow>
+    <fill_level>0.0</fill_level>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="255" green="0" blue="0" />
+    </foreground_color>
+    <height>38</height>
+    <horizontal_fill>true</horizontal_fill>
+    <line_style>0</line_style>
+    <line_width>4</line_width>
+    <name>Polyline_7</name>
+    <points>
+      <point x="597" y="501" />
+      <point x="613" y="501" />
+      <point x="613" y="464" />
+    </points>
+    <pv_name></pv_name>
+    <pv_value />
+    <rotation_angle>0.0</rotation_angle>
+    <rules>
+      <rule name="Background Color Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Header_Background" red="77" green="77" blue="77" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV403_OUT</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>true</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <widget_type>Polyline</widget_type>
+    <width>17</width>
+    <wuid>-9f6cce5:15b152f089d:4be9</wuid>
+    <x>597</x>
+    <y>464</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <auto_size>false</auto_size>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Sans" height="14" style="1" pixels="false">Header 2</opifont.name>
+    </font>
+    <foreground_color>
+      <color name="Header_Background" red="77" green="77" blue="77" />
+    </foreground_color>
+    <height>24</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <name>Exit</name>
+    <rules>
+      <rule name="Foreground Color Rule" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Header_Background" red="77" green="77" blue="77" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="MEDM_COLOR_16" red="30" green="187" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV403_OUT</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_scrollbar>false</show_scrollbar>
+    <text>EXIT</text>
+    <tooltip></tooltip>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <visible>true</visible>
+    <widget_type>Label</widget_type>
+    <width>65</width>
+    <wrap_words>true</wrap_words>
+    <wuid>-9f6cce5:15b152f089d:4bea</wuid>
+    <x>620</x>
+    <y>459</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <auto_size>false</auto_size>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0" />
+    </foreground_color>
+    <height>24</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <name>PV403</name>
+    <rules />
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_scrollbar>false</show_scrollbar>
+    <text>PV403 </text>
+    <tooltip></tooltip>
+    <transparent>true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <visible>true</visible>
+    <widget_type>Label</widget_type>
+    <width>52</width>
+    <wrap_words>true</wrap_words>
+    <wuid>-9f6cce5:15b152f089d:4bde</wuid>
+    <x>556</x>
+    <y>459</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <alarm_pulsing>true</alarm_pulsing>
+    <align_to_nearest_second>false</align_to_nearest_second>
+    <auto_size>true</auto_size>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <bit>-1</bit>
+    <boolean_label_position>0</boolean_label_position>
+    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <confirm_message>Are you sure you want to do this?</confirm_message>
+    <crop_bottom>0</crop_bottom>
+    <crop_left>0</crop_left>
+    <crop_right>0</crop_right>
+    <crop_top>0</crop_top>
+    <data_type>0</data_type>
+    <degree>0</degree>
+    <enabled>true</enabled>
+    <flip_horizontal>false</flip_horizontal>
+    <flip_vertical>false</flip_vertical>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <height>38</height>
+    <image_file>images/valve_on.gif</image_file>
+    <name>BooleanSymbolCon403</name>
+    <no_animation>false</no_animation>
+    <off_color>
+      <color red="0" green="0" blue="255" />
+    </off_color>
+    <off_label>OFF</off_label>
+    <on_color>
+      <color red="0" green="0" blue="255" />
+    </on_color>
+    <on_label>ON</on_label>
+    <password></password>
+    <permutation_matrix>
+      <row>
+        <col>1.0</col>
+        <col>0.0</col>
+      </row>
+      <row>
+        <col>0.0</col>
+        <col>1.0</col>
+      </row>
+    </permutation_matrix>
+    <push_action_index>0</push_action_index>
+    <pv_name>Esther:gas:PV403_OUT</pv_name>
+    <pv_value />
+    <released_action_index>0</released_action_index>
+    <rules>
+      <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV403</pv>
+      </rule>
+      <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV403</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_boolean_label>true</show_boolean_label>
+    <show_confirm_dialog>0</show_confirm_dialog>
+    <stretch_to_fit>true</stretch_to_fit>
+    <toggle_button>true</toggle_button>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <transparency>false</transparency>
+    <visible>true</visible>
+    <widget_type>Boolean Symbol Control</widget_type>
+    <width>35</width>
+    <wuid>7894d373:174fe28a026:-50f5</wuid>
+    <x>564</x>
+    <y>485</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <alarm_pulsing>true</alarm_pulsing>
+    <align_to_nearest_second>false</align_to_nearest_second>
+    <auto_size>true</auto_size>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <bit>-1</bit>
+    <boolean_label_position>0</boolean_label_position>
+    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <confirm_message>Are you sure you want to do this?</confirm_message>
+    <crop_bottom>0</crop_bottom>
+    <crop_left>0</crop_left>
+    <crop_right>0</crop_right>
+    <crop_top>0</crop_top>
+    <data_type>0</data_type>
+    <degree>0</degree>
+    <enabled>true</enabled>
+    <flip_horizontal>false</flip_horizontal>
+    <flip_vertical>false</flip_vertical>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <height>38</height>
+    <image_file>images/valve_on.gif</image_file>
+    <name>BooleanSymbolCon203</name>
+    <no_animation>false</no_animation>
+    <off_color>
+      <color red="0" green="0" blue="255" />
+    </off_color>
+    <off_label>OFF</off_label>
+    <on_color>
+      <color red="0" green="0" blue="255" />
+    </on_color>
+    <on_label>ON</on_label>
+    <password></password>
+    <permutation_matrix>
+      <row>
+        <col>1.0</col>
+        <col>0.0</col>
+      </row>
+      <row>
+        <col>0.0</col>
+        <col>1.0</col>
+      </row>
+    </permutation_matrix>
+    <push_action_index>0</push_action_index>
+    <pv_name>Esther:gas:PV203_OUT</pv_name>
+    <pv_value />
+    <released_action_index>0</released_action_index>
+    <rules>
+      <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV203</pv>
+      </rule>
+      <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV203</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_boolean_label>true</show_boolean_label>
+    <show_confirm_dialog>0</show_confirm_dialog>
+    <stretch_to_fit>true</stretch_to_fit>
+    <toggle_button>true</toggle_button>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <transparency>false</transparency>
+    <visible>true</visible>
+    <widget_type>Boolean Symbol Control</widget_type>
+    <width>35</width>
+    <wuid>7894d373:174fe28a026:-50df</wuid>
+    <x>566</x>
+    <y>192</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <alarm_pulsing>true</alarm_pulsing>
+    <align_to_nearest_second>false</align_to_nearest_second>
+    <auto_size>true</auto_size>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <bit>-1</bit>
+    <boolean_label_position>0</boolean_label_position>
+    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <confirm_message>Are you sure you want to do this?</confirm_message>
+    <crop_bottom>0</crop_bottom>
+    <crop_left>0</crop_left>
+    <crop_right>0</crop_right>
+    <crop_top>0</crop_top>
+    <data_type>0</data_type>
+    <degree>0</degree>
+    <enabled>true</enabled>
+    <flip_horizontal>false</flip_horizontal>
+    <flip_vertical>false</flip_vertical>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <height>38</height>
+    <image_file>images/valve_on.gif</image_file>
+    <name>BooleanSymbolCon102</name>
+    <no_animation>false</no_animation>
+    <off_color>
+      <color red="0" green="0" blue="255" />
+    </off_color>
+    <off_label>OFF</off_label>
+    <on_color>
+      <color red="0" green="0" blue="255" />
+    </on_color>
+    <on_label>ON</on_label>
+    <password></password>
+    <permutation_matrix>
+      <row>
+        <col>1.0</col>
+        <col>0.0</col>
+      </row>
+      <row>
+        <col>0.0</col>
+        <col>1.0</col>
+      </row>
+    </permutation_matrix>
+    <push_action_index>0</push_action_index>
+    <pv_name>Esther:gas:PV102_OUT</pv_name>
+    <pv_value />
+    <released_action_index>0</released_action_index>
+    <rules>
+      <rule name="RuleColorON" prop_id="on_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV102</pv>
+      </rule>
+      <rule name="RuleColorOFF" prop_id="off_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="0" green="255" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0">
+          <value>
+            <color red="255" green="0" blue="0" />
+          </value>
+        </exp>
+        <pv trig="true">Esther:gas:PV102</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_boolean_label>true</show_boolean_label>
+    <show_confirm_dialog>0</show_confirm_dialog>
+    <stretch_to_fit>true</stretch_to_fit>
+    <toggle_button>true</toggle_button>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <transparency>false</transparency>
+    <visible>true</visible>
+    <widget_type>Boolean Symbol Control</widget_type>
+    <width>35</width>
+    <wuid>7894d373:174fe28a026:-50d9</wuid>
+    <x>500</x>
+    <y>48</y>
   </widget>
 </display>

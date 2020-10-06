@@ -5,6 +5,7 @@
 
 < envPaths
 epicsEnvSet( "STREAM_PROTOCOL_PATH", "$(TOP)/db" )
+epicsEnvSet( "EPICS_CAS_INTF_ADDR_LIST", "192.168.0.98" )
 
 cd "${TOP}"
 
