@@ -35,6 +35,9 @@
    ```
    $ ./launch-cs-studio.sh
    ```
+   2. Start with Default Workspace
+   3.  Open OPI (e.g. MainDisplay.opi)
+
 
 
  
