@@ -13,7 +13,8 @@ cd "${TOP}"
 dbLoadDatabase "dbd/Kistler.dbd"
 Kistler_registerRecordDeviceDriver pdbbase
 
-drvAsynSerialPortConfigure("KST1","/dev/ttyUSB0")
+#drvAsynSerialPortConfigure("KST1","/dev/ttyUSB0")
+drvAsynSerialPortConfigure("KST1","/dev/ttyS0")
 #
 asynSetOption("KST1", 0, "baud", "115200")
 asynSetOption("KST1", 0, "bits", "8")
