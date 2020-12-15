@@ -1,9 +1,9 @@
-# ESTHER Operation Scripts
+# ESTHER EPICS Start Scripts
 
 ## How to Start Services 
 1. Change to scripts folder
    ```
-   $ cd [  ]/esther-epics/scripts
+   $ cd  ~/GIT_REPOS/esther-epics/launch-scripts
    ```
 
 1. Start EPICS Channel Archiver
