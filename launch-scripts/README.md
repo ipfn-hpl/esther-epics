@@ -1,7 +1,9 @@
 # ESTHER EPICS Start Scripts
 
 ## How to Start Services 
-1. Change to scripts folder
+1. Open a terminal
+
+2. Change to scripts folder
    ```
    $ cd  ~/GIT_REPOS/esther-epics/launch-scripts
    ```
