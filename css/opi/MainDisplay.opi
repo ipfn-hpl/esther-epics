@@ -2128,7 +2128,7 @@ $(pv_value)</tooltip>
     <vertical_alignment>1</vertical_alignment>
     <visible>true</visible>
     <widget_type>Label</widget_type>
-    <width>202</width>
+    <width>205</width>
     <wrap_words>true</wrap_words>
     <wuid>5527f49a:14e49057e8b:-7b8f</wuid>
     <x>36</x>
@@ -2701,7 +2701,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>69</width>
+      <width>72</width>
       <wrap_words>true</wrap_words>
       <wuid>2ec2be5a:14d70820da7:-7762</wuid>
       <x>132</x>
@@ -3467,7 +3467,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>69</width>
+      <width>72</width>
       <wrap_words>true</wrap_words>
       <wuid>6a07ad04:14e5292d485:-4ec0</wuid>
       <x>132</x>
@@ -3508,7 +3508,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>69</width>
+      <width>72</width>
       <wrap_words>true</wrap_words>
       <wuid>6a07ad04:14e5292d485:-4ebc</wuid>
       <x>132</x>
@@ -3549,7 +3549,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>69</width>
+      <width>72</width>
       <wrap_words>true</wrap_words>
       <wuid>6a07ad04:14e5292d485:-4eb4</wuid>
       <x>132</x>
@@ -3590,7 +3590,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>69</width>
+      <width>72</width>
       <wrap_words>true</wrap_words>
       <wuid>6a07ad04:14e5292d485:-4eb0</wuid>
       <x>132</x>
@@ -3631,7 +3631,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>91</width>
+      <width>92</width>
       <wrap_words>true</wrap_words>
       <wuid>-643a7155:14ef83d4378:-7557</wuid>
       <x>6</x>
@@ -3724,7 +3724,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>91</width>
+      <width>92</width>
       <wrap_words>true</wrap_words>
       <wuid>-643a7155:14ef83d4378:-7548</wuid>
       <x>120</x>
@@ -4502,9 +4502,9 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.gauge" version="1.0.0">
         <actions hook="false" hook_all="false" />
         <alarm_pulsing>true</alarm_pulsing>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
-          <color red="0" green="64" blue="128" />
+          <color red="255" green="255" blue="242" />
         </background_color>
         <border_alarm_sensitive>true</border_alarm_sensitive>
         <border_color>
@@ -4524,14 +4524,14 @@ $(pv_value)</tooltip>
         <color_lolo>
           <color red="255" green="0" blue="0" />
         </color_lolo>
-        <effect_3d>true</effect_3d>
+        <effect_3d>false</effect_3d>
         <enabled>true</enabled>
         <font>
           <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
         </font>
         <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <foreground_color>
-          <color red="255" green="255" blue="255" />
+          <color red="0" green="0" blue="0" />
         </foreground_color>
         <height>163</height>
         <level_hi>80.0</level_hi>
@@ -6688,7 +6688,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>144</width>
+      <width>147</width>
       <wrap_words>true</wrap_words>
       <wuid>6d695dc3:14e1a7380dc:-7afd</wuid>
       <x>180</x>
@@ -6905,7 +6905,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>144</width>
+      <width>147</width>
       <wrap_words>true</wrap_words>
       <wuid>6d695dc3:14e1a7380dc:-7a79</wuid>
       <x>174</x>
@@ -7034,7 +7034,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>118</width>
+      <width>121</width>
       <wrap_words>true</wrap_words>
       <wuid>6d695dc3:14e1a7380dc:-7a69</wuid>
       <x>186</x>
@@ -7700,7 +7700,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>78</width>
+      <width>77</width>
       <wrap_words>true</wrap_words>
       <wuid>6dea99d5:14e6e063197:-7c05</wuid>
       <x>0</x>
@@ -7792,7 +7792,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>78</width>
+      <width>77</width>
       <wrap_words>true</wrap_words>
       <wuid>6dea99d5:14e6e063197:-7bef</wuid>
       <x>0</x>
@@ -7833,7 +7833,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>78</width>
+      <width>77</width>
       <wrap_words>true</wrap_words>
       <wuid>6dea99d5:14e6e063197:-7beb</wuid>
       <x>0</x>
@@ -7874,7 +7874,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>112</width>
+      <width>110</width>
       <wrap_words>true</wrap_words>
       <wuid>6dea99d5:14e6e063197:-7be7</wuid>
       <x>0</x>
@@ -7956,7 +7956,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>78</width>
+      <width>77</width>
       <wrap_words>true</wrap_words>
       <wuid>6dea99d5:14e6e063197:-7bdf</wuid>
       <x>0</x>
@@ -8048,7 +8048,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>112</width>
+      <width>110</width>
       <wrap_words>true</wrap_words>
       <wuid>6dea99d5:14e6e063197:-7bc5</wuid>
       <x>0</x>
@@ -9621,7 +9621,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>132</width>
+      <width>134</width>
       <wrap_words>true</wrap_words>
       <wuid>-643a7155:14ef83d4378:-5a2b</wuid>
       <x>0</x>
@@ -9714,7 +9714,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>122</width>
+      <width>124</width>
       <wrap_words>true</wrap_words>
       <wuid>-643a7155:14ef83d4378:-5669</wuid>
       <x>0</x>
@@ -9807,7 +9807,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>132</width>
+      <width>134</width>
       <wrap_words>true</wrap_words>
       <wuid>-643a7155:14ef83d4378:-5663</wuid>
       <x>0</x>
@@ -9900,7 +9900,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>109</width>
+      <width>112</width>
       <wrap_words>true</wrap_words>
       <wuid>-643a7155:14ef83d4378:-565d</wuid>
       <x>6</x>
