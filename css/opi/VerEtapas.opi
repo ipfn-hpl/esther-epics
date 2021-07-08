@@ -3429,7 +3429,7 @@ $(pv_value)</tooltip>
     <widget_type>LED</widget_type>
     <width>31</width>
     <wuid>-172ae334:14bc126c73a:-7db6</wuid>
-    <x>473</x>
+    <x>510</x>
     <y>347</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
@@ -3487,65 +3487,7 @@ $(pv_value)</tooltip>
     <widget_type>LED</widget_type>
     <width>31</width>
     <wuid>-172ae334:14bc126c73a:-7db2</wuid>
-    <x>503</x>
-    <y>347</y>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-    <actions hook="false" hook_all="false" />
-    <alarm_pulsing>false</alarm_pulsing>
-    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-    <background_color>
-      <color red="240" green="240" blue="240" />
-    </background_color>
-    <bit>-1</bit>
-    <border_alarm_sensitive>true</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255" />
-    </border_color>
-    <border_style>0</border_style>
-    <border_width>1</border_width>
-    <bulb_border>3</bulb_border>
-    <bulb_border_color>
-      <color red="150" green="150" blue="150" />
-    </bulb_border_color>
-    <data_type>0</data_type>
-    <effect_3d>true</effect_3d>
-    <enabled>true</enabled>
-    <font>
-      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
-    </font>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <foreground_color>
-      <color red="192" green="192" blue="192" />
-    </foreground_color>
-    <height>31</height>
-    <name>LED_49</name>
-    <off_color>
-      <color red="0" green="100" blue="0" />
-    </off_color>
-    <off_label>OFF</off_label>
-    <on_color>
-      <color red="0" green="255" blue="0" />
-    </on_color>
-    <on_label>ON</on_label>
-    <pv_name>Esther:gas:S3_10</pv_name>
-    <pv_value />
-    <rules />
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>true</keep_wh_ratio>
-    </scale_options>
-    <scripts />
-    <show_boolean_label>false</show_boolean_label>
-    <square_led>false</square_led>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <visible>true</visible>
-    <widget_type>LED</widget_type>
-    <width>31</width>
-    <wuid>-172ae334:14bc126c73a:-7dae</wuid>
-    <x>536</x>
+    <x>580</x>
     <y>347</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
@@ -3725,6 +3667,64 @@ $(pv_value)</tooltip>
     <wuid>47844693:14beb12af22:-796f</wuid>
     <x>185</x>
     <y>396</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <alarm_pulsing>false</alarm_pulsing>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <bit>-1</bit>
+    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <bulb_border>3</bulb_border>
+    <bulb_border_color>
+      <color red="150" green="150" blue="150" />
+    </bulb_border_color>
+    <data_type>0</data_type>
+    <effect_3d>true</effect_3d>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color red="192" green="192" blue="192" />
+    </foreground_color>
+    <height>31</height>
+    <name>LED_49</name>
+    <off_color>
+      <color red="0" green="100" blue="0" />
+    </off_color>
+    <off_label>OFF</off_label>
+    <on_color>
+      <color red="0" green="255" blue="0" />
+    </on_color>
+    <on_label>ON</on_label>
+    <pv_name>Esther:gas:S3_10</pv_name>
+    <pv_value />
+    <rules />
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>true</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_boolean_label>false</show_boolean_label>
+    <square_led>false</square_led>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <visible>true</visible>
+    <widget_type>LED</widget_type>
+    <width>31</width>
+    <wuid>-172ae334:14bc126c73a:-7dae</wuid>
+    <x>619</x>
+    <y>347</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
     <actions hook="false" hook_all="false" />
@@ -10153,7 +10153,7 @@ $(pv_value)</tooltip>
     </foreground_color>
     <height>31</height>
     <horizontal_alignment>0</horizontal_alignment>
-    <name>Label_12</name>
+    <name>Label_O2</name>
     <rules />
     <scale_options>
       <width_scalable>true</width_scalable>
@@ -10171,8 +10171,8 @@ $(pv_value)</tooltip>
     <width>35</width>
     <wrap_words>true</wrap_words>
     <wuid>7c5f29ff:14e78e63dac:-7ca5</wuid>
-    <x>7</x>
-    <y>350</y>
+    <x>0</x>
+    <y>347</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <actions hook="false" hook_all="false" />
@@ -10194,8 +10194,18 @@ $(pv_value)</tooltip>
     </foreground_color>
     <height>31</height>
     <horizontal_alignment>0</horizontal_alignment>
-    <name>Label_13</name>
-    <rules />
+    <name>Label_HeI/N_I</name>
+    <rules>
+      <rule name="Rule" prop_id="text" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>He_I</value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>N2_I</value>
+        </exp>
+        <pv trig="true">Esther:gas:GAS_MODE</pv>
+      </rule>
+    </rules>
     <scale_options>
       <width_scalable>true</width_scalable>
       <height_scalable>true</height_scalable>
@@ -10203,7 +10213,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <scripts />
     <show_scrollbar>false</show_scrollbar>
-    <text>He1</text>
+    <text>He/N2</text>
     <tooltip></tooltip>
     <transparent>false</transparent>
     <vertical_alignment>1</vertical_alignment>
@@ -10212,7 +10222,7 @@ $(pv_value)</tooltip>
     <width>35</width>
     <wrap_words>true</wrap_words>
     <wuid>7c5f29ff:14e78e63dac:-7c99</wuid>
-    <x>7</x>
+    <x>0</x>
     <y>396</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
@@ -10235,7 +10245,7 @@ $(pv_value)</tooltip>
     </foreground_color>
     <height>31</height>
     <horizontal_alignment>0</horizontal_alignment>
-    <name>Label_14</name>
+    <name>Label_H2</name>
     <rules />
     <scale_options>
       <width_scalable>true</width_scalable>
@@ -10253,7 +10263,7 @@ $(pv_value)</tooltip>
     <width>35</width>
     <wrap_words>true</wrap_words>
     <wuid>7c5f29ff:14e78e63dac:-7c93</wuid>
-    <x>7</x>
+    <x>0</x>
     <y>494</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
@@ -10294,8 +10304,8 @@ $(pv_value)</tooltip>
     <width>35</width>
     <wrap_words>true</wrap_words>
     <wuid>7c5f29ff:14e78e63dac:-7c8d</wuid>
-    <x>7</x>
-    <y>543</y>
+    <x>18</x>
+    <y>627</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
     <actions hook="false" hook_all="false" />
@@ -11071,5 +11081,56 @@ $(pv_value)</tooltip>
     <wuid>-14fade73:17a1ec1824b:-74c9</wuid>
     <x>563</x>
     <y>104</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <actions hook="false" hook_all="false" />
+    <auto_size>false</auto_size>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>0</border_style>
+    <border_width>1</border_width>
+    <enabled>true</enabled>
+    <font>
+      <fontdata fontName="Sans" height="12" style="0" pixels="false" />
+    </font>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <height>31</height>
+    <horizontal_alignment>0</horizontal_alignment>
+    <name>Label_HeI/N_II</name>
+    <rules>
+      <rule name="Rule" prop_id="text" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>He_I</value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>N2_I</value>
+        </exp>
+        <pv trig="true">Esther:gas:GAS_MODE</pv>
+      </rule>
+    </rules>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_scrollbar>false</show_scrollbar>
+    <text>He/N2</text>
+    <tooltip></tooltip>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <visible>true</visible>
+    <widget_type>Label</widget_type>
+    <width>35</width>
+    <wrap_words>true</wrap_words>
+    <wuid>315c48de:17a85d6695c:-7486</wuid>
+    <x>0</x>
+    <y>543</y>
   </widget>
 </display>

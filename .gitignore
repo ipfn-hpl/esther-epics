@@ -1,4 +1,18 @@
 scripts/gateway.*
-css/opi/logs.*
+css/opi/logs*
+css/logs*
+css/BOY Examples/*
+iocs/serialKistler/KistlerApp/Db/O.linux-x86_64/
+iocs/serialKistler/KistlerApp/Makefile
+iocs/serialKistler/KistlerApp/src/KistlerMain.cpp
+iocs/serialKistler/KistlerApp/src/O.Common/
+iocs/serialKistler/KistlerApp/src/O.linux-x86_64/
+iocs/serialKistler/Makefile
+iocs/serialKistler/bin/
+iocs/serialKistler/configure/O.linux-x86_64/
+iocs/serialKistler/db/
+iocs/serialKistler/dbd/
+launch-scripts/gateway.*
+
 
 

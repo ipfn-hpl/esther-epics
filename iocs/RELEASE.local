@@ -1,0 +1,10 @@
+# Variables and paths to dependent modules:
+# Adapt her for your system EPICS instalation
+# You should not need to change "RELEASE" in the other folders
+SUPPORT = /opt/epics7/support
+ASYN     = $(SUPPORT)/asyn
+STREAM   = $(SUPPORT)/stream/StreamDevice
+
+EPICS_BASE = /opt/epics7/epics-base
+
+
