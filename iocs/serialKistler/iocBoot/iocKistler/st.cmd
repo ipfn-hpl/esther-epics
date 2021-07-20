@@ -13,7 +13,6 @@ cd "${TOP}"
 dbLoadDatabase "dbd/Kistler.dbd"
 Kistler_registerRecordDeviceDriver pdbbase
 
-#drvAsynSerialPortConfigure("KST1","/dev/ttyUSB0")
 drvAsynSerialPortConfigure("KST1","/dev/ttyS0")
 #
 asynSetOption("KST1", 0, "baud", "115200")
@@ -22,9 +21,19 @@ asynSetOption("KST1", 0, "parity", "none")
 asynSetOption("KST1", 0, "stop", "1")
 asynSetOption("KST1", 0, "clocal", "Y")
 asynSetOption("KST1", 0, "crtscts", "N")
+
+drvAsynSerialPortConfigure ("PS1","/dev/ttyUSB0")
+asynSetOption ("PS1", 0, "baud", "115200")
+asynSetOption ("PS1", 0, "bits", "8")
+asynSetOption ("PS1", 0, "parity", "none")
+asynSetOption ("PS1", 0, "stop", "1")
+asynSetOption ("PS1", 0, "clocal", "Y")
+asynSetOption ("PS1", 0, "crtscts", "N")
+
 ## Load record instances
 #dbLoadRecords("db/xxx.db","user=esther")
 dbLoadRecords("db/kist.db","user=Esther:Camera")
+dbLoadRecords "db/esp32BME680.db", "user=Esther:ambient, PORT=PS1"
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit

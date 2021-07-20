@@ -1,0 +1,39 @@
+# See
+# https://slideplayer.com/slide/12746561/
+#
+Terminator=CR LF;
+InTerminator = $Terminator;
+ExtraInput = Ignore;
+#MaxInput = 120;
+# message
+#1, 14507614, 31.03, 101428.00, 42.90, 810073.00, 219.94, 3, 30.97, 43.11, 159.89, 1598.85, 3.84
+ 
+# in millisecond
+ReadTimeout = 1500;
+#ReplyTimeout = 250;
+
+# field 9
+getTemperature {
+    in "1,%*i,%*f,%*f,%*f,%*f,%*f,%*f,%f,";
+}
+
+getTime {
+    in "1,%u,%*f,";
+}
+
+getPressure {
+    in "1,%*i,%*f,%f,";
+}
+
+getRawTemperature {
+    in "1,%*i,%f,";
+}
+
+# Connect a stringout record to this to get
+# a generic command interface.
+# After processing finishes, the record contains the reply.
+
+debug {
+    ExtraInput = Ignore;
+    out "%s"; in "%39c"
+}

@@ -7,7 +7,9 @@ include $(TOP)/configure/CONFIG
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
 DB += kist.db
-DB += kistler-5051A.proto 
+DB += kistler-5051A.proto
+DB += esp32BME680.db
+DB += bme680.proto
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

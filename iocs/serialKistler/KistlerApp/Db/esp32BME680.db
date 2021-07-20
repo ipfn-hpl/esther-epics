@@ -1,0 +1,59 @@
+record (longin, "$(user):Time")
+{
+    field (DESC, "getTime  $(PORT)")
+    field (DTYP, "stream")
+    field (INP, "@bme680.proto getTime $(PORT)")
+    field (SCAN, "I/O Intr")
+ #  field(PREC, "3")
+    field(EGU, "s")
+}
+record (ai, "$(user):RawTemperature")
+{
+    field (DESC, "getRawTemperature  $(PORT)")
+    field (DTYP, "stream")
+    field (INP, "@bme680.proto getRawTemperature $(PORT)")
+    field (SCAN, "I/O Intr")
+    field(ADEL,"0.5")
+}
+record (ai, "$(user):Temperature")
+{
+    field (DESC, "getTemperature  $(PORT)")
+    field (DTYP, "stream")
+    field (INP, "@bme680.proto getTemperature $(PORT)")
+    field (SCAN, "I/O Intr")
+    field(EGU, " C")
+    field(HIHI,"50.0")
+    field(HIGH,"30.0")
+    field(HHSV,"MAJOR")
+    field(HSV, "MINOR")
+    field(LOW, "10.0")
+    field(LOLO,"0.0")
+    field(HHSV,"MAJOR")
+    field(HSV, "MINOR")
+    field(LSV, "MINOR")
+    field(LLSV,"MAJOR")
+    field(ADEL,"0.5")
+}
+record (ai, "$(user):Pressure")
+{
+    field (DESC, "getPressure  $(PORT)")
+    field (DTYP, "stream")
+    field (INP, "@bme680.proto getPressure $(PORT)")
+    field (SCAN, "I/O Intr")
+    field(EGU, "Pa")
+}
+
+#oid print_bme680(unsigned long time){
+#    output = "1, " + String(time);
+#    output += ", " + String(iaqSensor.rawTemperature);
+#    output += ", " + String(iaqSensor.pressure);
+#    output += ", " + String(iaqSensor.rawHumidity);
+#    output += ", " + String(iaqSensor.gasResistance);
+#    output += ", " + String(iaqSensor.iaq);
+#    output += ", " + String(iaqSensor.iaqAccuracy);
+#    output += ", " + String(iaqSensor.temperature);
+#    output += ", " + String(iaqSensor.humidity);
+#    output += ", " + String(iaqSensor.staticIaq);
+#    output += ", " + String(iaqSensor.co2Equivalent);
+#    output += ", " + String(iaqSensor.breathVocEquivalent);
+#    Serial.println(output);
