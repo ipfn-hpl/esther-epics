@@ -11,6 +11,7 @@ ssh rpi-gas
 ```
 3. Start CS-Studio, Channel Archive and other services:
 [See scripts folder](/launch-scripts/)
-4. Start VirtualBox "Windows 7 Siemens" machine
+
+4. If necessary Start VirtualBox "Windows 7 Siemens" VM
   * On Windows Start "Tia Portal V13"
   * Open Last PLC project

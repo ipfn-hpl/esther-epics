@@ -23,7 +23,7 @@
    ```
    2. Check service is running with CS-Studio App in client Computers
 
-1. Start EPICS IOC Server for Kistler Pressure Gauges 
+1. Start EPICS IOC Server for Kistler Pressure Gauges and ambient.
 
    1. Start service:
    ```bash
