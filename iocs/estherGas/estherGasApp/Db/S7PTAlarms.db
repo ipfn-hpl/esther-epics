@@ -34,22 +34,22 @@ record(ao,"$(user):PT102_HIGH_FWD")
   	field(OUT, "$(user):PT102.HIGH")
 }
 #
-record(ai,"$(user):PT201_LOW")
-{
-        field(DESC, "S7 PT201 LOW ALRM")
-        field(SCAN, "I/O Intr")
-        field(DTYP, "s7nodave")
-        field(INP, "@myPLC(PG=default) MD404 float")
-        field(LOPR, "0")
-        field(EGU, "Bar")
-}
-record(ao,"$(user):PT201_LOW_FWD")
-{
-        field(DESC, "S7 PT201 LOW FWD")
-	field(OMSL, "closed_loop")
-        field(DOL, "$(user):PT201_LOW CP")
-  	field(OUT, "$(user):PT201.LOW")
-}
+#record(ai,"$(user):PT201_LOW")
+#{
+#        field(DESC, "S7 PT201 LOW ALRM")
+#        field(SCAN, "I/O Intr")
+#        field(DTYP, "s7nodave")
+#        field(INP, "@myPLC(PG=default) MD404 float")
+#        field(LOPR, "0")
+#        field(EGU, "Bar")
+#}
+#record(ao,"$(user):PT201_LOW_FWD")
+#{
+#        field(DESC, "S7 PT201 LOW FWD")
+#	field(OMSL, "closed_loop")
+#        field(DOL, "$(user):PT201_LOW CP")
+#  	field(OUT, "$(user):PT201.LOW")
+#}
 #
 record(ai,"$(user):PT202_HIGH")
 {
@@ -102,22 +102,22 @@ record(ao,"$(user):PT302_HIGH_FWD")
   	field(OUT, "$(user):PT302.HIGH")
 }
 #
-record(ai,"$(user):PT401_LOW")
-{
-        field(DESC, "S7 PT401 LOW ALRM")
-        field(SCAN, "I/O Intr")
-        field(DTYP, "s7nodave")
-        field(INP, "@myPLC(PG=default) MD412 float")
-        field(LOPR, "0")
-        field(EGU, "Bar")
-}
-record(ao,"$(user):PT401_LOW_FWD")
-{
-        field(DESC, "S7 PT401 LOW FWD")
-	field(OMSL, "closed_loop")
-        field(DOL, "$(user):PT401_LOW CP")
-  	field(OUT, "$(user):PT401.LOW")
-}
+#record(ai,"$(user):PT401_LOW")
+#{
+#        field(DESC, "S7 PT401 LOW ALRM")
+#        field(SCAN, "I/O Intr")
+#        field(DTYP, "s7nodave")
+#        field(INP, "@myPLC(PG=default) MD412 float")
+#        field(LOPR, "0")
+#        field(EGU, "Bar")
+#}
+#record(ao,"$(user):PT401_LOW_FWD")
+#{
+#        field(DESC, "S7 PT401 LOW FWD")
+#	field(OMSL, "closed_loop")
+#        field(DOL, "$(user):PT401_LOW CP")
+#  	field(OUT, "$(user):PT401.LOW")
+#}
 #
 record(ai,"$(user):PT402_HIGH")
 {
