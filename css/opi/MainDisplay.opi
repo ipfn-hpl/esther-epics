@@ -4718,7 +4718,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>157</height>
-      <lock_children>true</lock_children>
+      <lock_children>false</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
@@ -4733,7 +4733,7 @@ $(pv_value)</tooltip>
       <show_scrollbar>false</show_scrollbar>
       <tooltip></tooltip>
       <transparent>true</transparent>
-      <visible>true</visible>
+      <visible>false</visible>
       <widget_type>Grouping Container</widget_type>
       <width>265</width>
       <wuid>6dce236d:17af200bf08:-70bd</wuid>
@@ -5204,7 +5204,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>157</height>
-      <lock_children>true</lock_children>
+      <lock_children>false</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
@@ -5264,7 +5264,7 @@ $(pv_value)</tooltip>
         <level_hihi>90.0</level_hihi>
         <level_lo>20.0</level_lo>
         <level_lolo>10.0</level_lolo>
-        <limits_from_pv>false</limits_from_pv>
+        <limits_from_pv>true</limits_from_pv>
         <log_scale>false</log_scale>
         <major_tick_step_hint>20</major_tick_step_hint>
         <maximum>200.0</maximum>
@@ -6520,7 +6520,7 @@ $(pv_value)</tooltip>
       <name>Progress Bar_2</name>
       <origin>0.0</origin>
       <origin_ignored>true</origin_ignored>
-      <pv_name>Esther:gas:MFC601_VOL_MEAS</pv_name>
+      <pv_name>Esther:gas:MFC601_VOL_FMEAS</pv_name>
       <pv_value />
       <rules />
       <scale_font>
@@ -10272,7 +10272,7 @@ $(pv_value)</tooltip>
       <color red="192" green="192" blue="192" />
     </foreground_color>
     <height>22</height>
-    <lock_children>true</lock_children>
+    <lock_children>false</lock_children>
     <macros>
       <include_parent_macros>true</include_parent_macros>
     </macros>
