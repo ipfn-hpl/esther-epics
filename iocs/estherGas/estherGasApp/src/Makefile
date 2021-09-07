@@ -3,18 +3,28 @@ TOP=../..
 include $(TOP)/configure/CONFIG
 #----------------------------------------
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
-#=============================
 
 #=============================
 # Build the IOC support library
 
-LIBRARY_IOC += IUSTISupport
+LIBRARY_IOC += estherGasSupport
+
+# xxxRecord.h will be created from xxxRecord.dbd
+#DBDINC += xxxRecord
+# Install devXxxSoft.dbd into <top>/dbd
+#DBD += xxxSupport.dbd
 
 # Compile and add the code to the support library
-#IUSTISupport_SRCS += serialIustiAPDriver.cpp
+#estherGasSupport_SRCS += xxxRecord.c
+#estherGasSupport_SRCS += devXxxSoft.c
 
-IUSTISupport_LIBS += asyn
-ISTTOKSupport_LIBS += $(EPICS_BASE_IOC_LIBS)
+# Link locally-provided code into the support library,
+# rather than directly into the IOC application.
+#estherGasSupport_SRCS += dbSubExample.c
+#estherGasSupport_SRCS += estherGasHello.c
+estherGasSupport_SRCS += initTrace.c
+
+estherGasSupport_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 #=============================
 # Build the IOC application
@@ -25,14 +35,11 @@ DBD += estherGas.dbd
 
 # estherGas.dbd will be made up from these files:
 estherGas_DBD += base.dbd
-
-# Include dbd files from all support applications:
-estherGas_DBD += s7nodave.dbd 
-#estherGas_DBD +=  IUSTISupport.dbd
-
-# Add all the support libraries needed by this IOC
-estherGas_LIBS += s7nodave asyn 
-#estherGas_LIBS += IUSTISupport s7nodave asyn 
+#estherGas_DBD += xxxSupport.dbd
+#estherGas_DBD += dbSubExample.dbd
+#estherGas_DBD += estherGasHello.dbd
+estherGas_DBD += initTrace.dbd
+estherGas_DBD += s7nodave.dbd
 
 # estherGas_registerRecordDeviceDriver.cpp derives from estherGas.dbd
 estherGas_SRCS += estherGas_registerRecordDeviceDriver.cpp
@@ -44,10 +51,19 @@ estherGas_SRCS_vxWorks += -nil-
 # Add support from base/src/vxWorks if needed
 #estherGas_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
+# Link in the code from the support library
+estherGas_LIBS += estherGasSupport
+estherGas_LIBS += asyn 
+estherGas_LIBS += s7nodave
+
+# NOTE: To build SNL programs, SNCSEQ must be defined
+# in the <top>/configure/RELEASE file
+
+
 # Finally link to the EPICS Base libraries
 estherGas_LIBS += $(EPICS_BASE_IOC_LIBS)
 
-#===========================
+#=============================
 
 include $(TOP)/configure/RULES
 #----------------------------------------
