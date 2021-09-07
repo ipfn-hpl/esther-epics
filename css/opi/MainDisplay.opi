@@ -3422,7 +3422,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>157</height>
-      <lock_children>false</lock_children>
+      <lock_children>true</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
@@ -3873,7 +3873,7 @@ $(pv_value)</tooltip>
           <color red="255" green="0" blue="0" />
         </color_lolo>
         <effect_3d>true</effect_3d>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <font>
           <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
         </font>
@@ -4718,7 +4718,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>157</height>
-      <lock_children>false</lock_children>
+      <lock_children>true</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
@@ -4733,7 +4733,7 @@ $(pv_value)</tooltip>
       <show_scrollbar>false</show_scrollbar>
       <tooltip></tooltip>
       <transparent>true</transparent>
-      <visible>false</visible>
+      <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
       <width>265</width>
       <wuid>6dce236d:17af200bf08:-70bd</wuid>
@@ -5264,7 +5264,7 @@ $(pv_value)</tooltip>
         <level_hihi>90.0</level_hihi>
         <level_lo>20.0</level_lo>
         <level_lolo>10.0</level_lolo>
-        <limits_from_pv>true</limits_from_pv>
+        <limits_from_pv>false</limits_from_pv>
         <log_scale>false</log_scale>
         <major_tick_step_hint>20</major_tick_step_hint>
         <maximum>200.0</maximum>
