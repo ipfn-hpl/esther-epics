@@ -1,10 +1,31 @@
-# Variables and paths to dependent modules:
-# Adapt her for your system EPICS instalation
-# You should not need to change "RELEASE" in the other folders
-SUPPORT = /opt/epics7/support
-ASYN     = $(SUPPORT)/asyn
-STREAM   = $(SUPPORT)/stream/StreamDevice
+#RELEASE Location of external products
 
-EPICS_BASE = /opt/epics7/epics-base
+SUPPORT=/home/pi/EPICS7/support
 
+#  IPAC is only necessary if support for Greensprings IP488 is required
+#  IPAC release V2-7 or later is required.
+IPAC=
+
+# SEQ is required for testIPServer
+#SNCSEQ=$(SUPPORT)/seq-2-2-5
+SNCSEQ=
+
+## For sCalcout support in asynOctet - applications include asynCalc.dbd
+CALC=$(SUPPORT)/calc
+
+ASYN=$(SUPPORT)/asyn
+
+
+# If CALC was built with SSCAN support then SSCAN must be defined for testEpicsApp
+#SSCAN=$(SUPPORT)/sscan-2-11-3
+SSCAN=
+
+#PCRE=
+#PCRE_INCLUDE=/usr/include/pcre
+#PCRE_LIB=/usr/lib/arm-linux-gnueabihf 
+#
+S7NODAVE=$(SUPPORT)/s7nodave-3.0.2
+
+#  EPICS_BASE 3.14.6 or later is required
+EPICS_BASE=/home/pi/EPICS7/epics-base
 
