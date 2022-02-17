@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <width>380</width>
+  <height>540</height>
+  <background_color>
+    <color name="On" red="0" green="255" blue="0">
+    </color>
+  </background_color>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>20</x>
+    <y>290</y>
+    <width>180</width>
+    <height>250</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LabelTitle</name>
+    <class>TITLE</class>
+    <text>SCU800 CONTROLLER ${name}</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>306</width>
+    <height>25</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="meter" version="3.0.0">
+    <name>Meter_MTemp</name>
+    <pv_name>${unit}:${node}:${Add}:MTemp</pv_name>
+    <x>20</x>
+    <y>120</y>
+    <width>120</width>
+    <height>80</height>
+    <format>1</format>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_MTemp</name>
+    <text>Motor Temp</text>
+    <x>30</x>
+    <y>206</y>
+    <width>76</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>${unit}:${node}:${Add}:MTemp</pv_name>
+    <x>30</x>
+    <y>222</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_MSpeed</name>
+    <text>Motor Speed</text>
+    <x>210</x>
+    <y>40</y>
+    <width>81</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>${unit}:${node}:${Add}:MSpeed</pv_name>
+    <x>200</x>
+    <y>206</y>
+  </widget>
+  <widget type="meter" version="3.0.0">
+    <name>Meter_MTemp_1</name>
+    <pv_name>${unit}:${node}:${Add}:MSpeed</pv_name>
+    <x>190</x>
+    <y>120</y>
+    <width>120</width>
+    <height>80</height>
+    <format>1</format>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Speed SP</name>
+    <pv_name>${unit}:${node}:${Add}:SetSpeedSetpoint</pv_name>
+    <x>200</x>
+    <y>60</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>${unit}:${node}:${Add}:ReadSetpoint</pv_name>
+    <x>200</x>
+    <y>90</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Speep SP</name>
+    <text>SET</text>
+    <x>160</x>
+    <y>60</y>
+    <width>28</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text ReadModFonctWithWarning</name>
+    <pv_name>${unit}:${node}:${Add}:ReadModFonctWithWarning</pv_name>
+    <x>200</x>
+    <y>262</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Function Mode</text>
+    <x>80</x>
+    <y>262</y>
+    <width>93</width>
+    <height>16</height>
+    <background_color>
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Speep SP_1</name>
+    <text>Real SP</text>
+    <x>140</x>
+    <y>90</y>
+    <width>52</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_Warning</name>
+    <text>Warning Code</text>
+    <x>30</x>
+    <y>300</y>
+    <width>90</width>
+    <height>16</height>
+    <background_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text ReadModFonctWithWarning_1</name>
+    <pv_name>${unit}:${node}:${Add}:WARNING</pv_name>
+    <x>132</x>
+    <y>300</y>
+    <width>56</width>
+    <format>4</format>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text ReadModFonctWithWarning_2</name>
+    <pv_name>${unit}:${node}:${Add}:NErrors</pv_name>
+    <x>280</x>
+    <y>300</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>N Errors</text>
+    <x>200</x>
+    <y>300</y>
+    <width>53</width>
+    <height>16</height>
+    <background_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_Warning_B0</name>
+    <text>Bad Pump Transmit</text>
+    <x>30</x>
+    <y>330</y>
+    <width>124</width>
+    <height>16</height>
+    <background_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text ReadModFonctWithWarning_3</name>
+    <pv_name>${unit}:${node}:${Add}:WARNING</pv_name>
+    <x>220</x>
+    <y>400</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>N Errors</text>
+    <x>310</x>
+    <y>300</y>
+    <width>53</width>
+    <height>16</height>
+    <background_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>${unit}:${node}:${Add}:WARNING:BAD-PUMP-TX</pv_name>
+    <x>170</x>
+    <y>331</y>
+    <width>15</width>
+    <height>15</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_Warning_FirstDamageLmt</name>
+    <text>First Damage Limit</text>
+    <x>30</x>
+    <y>390</y>
+    <width>118</width>
+    <height>16</height>
+    <background_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_Warning_B0_2</name>
+    <text>Second Damage Limit</text>
+    <x>30</x>
+    <y>360</y>
+    <width>138</width>
+    <height>16</height>
+    <background_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_1</name>
+    <pv_name>${unit}:${node}:${Add}:WARNING</pv_name>
+    <bit>1</bit>
+    <x>170</x>
+    <y>361</y>
+    <width>15</width>
+    <height>15</height>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_2</name>
+    <pv_name>${unit}:${node}:${Add}:WARNING</pv_name>
+    <bit>2</bit>
+    <x>170</x>
+    <y>392</y>
+    <width>15</width>
+    <height>15</height>
+  </widget>
+</display>
