@@ -1,0 +1,142 @@
+Terminator   = "";
+#LockTimeout  = 500;
+ReplyTimeout = 300;
+ReadTimeout  = 200;
+WriteTimeout = 100;
+MaxInput     = 180;
+#ExtraInput   = Error;
+ExtraInput   = Ignore;
+
+## e.g Command("02") {
+Command {
+    out "@\$1",STX,"001 E%02X",ETX,"%3<xor8ff>";
+    in ACK,$1,STX,"001#",ETX,"%6<xor8ff>";
+    out ACK,$1;
+}
+# 3+3+1+ 30 + 4 + 4 + 10 + 4  +  16  + 1 + 1 = 77
+#in  ACK,$1,"@",$1,STX,"001 [%*30c%!4X%(\$2)!4X%*10c%(\$3)!4X%*16c",ETX,"%6<xor8ff>";
+# buffer="01@01<02>001 [7F7F7F7F7F25222622121316103915FFCE000F8C010000320000000A000A00280014<03><cb>"
+#
+ReadMeasValue {
+    MaxInput = 82;
+    ExtraInput  = Error;
+    out        "@",$1,STX,"001?[",ETX,"%3<xor8ff>";
+    in  ACK,$1,"@",$1,STX,"001 [%*30c%!4X%(\$2)!4X%*10c%(\$3)!4X%*16c",ETX,"%6<xor8ff>";
+    out ACK,$1;
+}
+ReadCounters {
+    MaxInput = 58;
+    ExtraInput  = Error;
+    out        "@",$1,STX,"001?c",ETX,"%3<xor8ff>";
+    in  ACK,$1,"@",$1,STX,"001 c%!10c%(\$2)!10c%(\$3)!8X%(\$4)!8X%(\$5)!8X",ETX,"%6<xor8ff>";
+    out ACK,$1;
+}
+ReadMotorTemp {
+    MaxInput = 18;
+    ExtraInput  = Error;
+    out        "@",$1,STX,"001?e",ETX,"%3<xor8ff>";
+    in  ACK,$1,"@",$1,STX,"001 e%!4X",ETX,"%6<xor8ff>";
+    out ACK,$1;
+}
+#ReadSetpoint: No reply within 200 ms to "@<01><02>001?d<03><96>"
+#StreamIoTimeout input="01@01<02>001 d012C003C<03><8b>", size=21)
+ReadSetPoint {
+    MaxInput = 22;
+    out "@",$1,STX,"001?d",ETX,"%3<xor8ff>";
+    in ACK,$1,"@",$1,STX,"001 d%4X%(\$2)4X",ETX,"%6<xor8ff>";
+    out ACK,$1;
+}
+#ReadSetPointTMS {
+#    MaxInput = 22;
+#    in ACK,$1,"@",$1,STX,"001 d%*4X%4X",ETX,"%6<xor8ff>";
+# }
+#out "@",$1,STX,"001?h",ETX,"%3<xor8ff>";
+ReadSpeedSetPoint{
+    MaxInput = 18;
+    out "@",$1,STX,"001?h",ETX,"%3<xor8ff>";
+    in  ACK,$1,"@",$1,STX,"001 h%!4X",ETX,"%6<xor8ff>";
+    out ACK,$1;
+}
+# e.g SetSpeedSetPoint("01") {
+#NOK    @init {ReadSpeedSetPoint($1); }
+# edwards.proto line 67: Unknown command name 'readspeedsetpoint'
+#_ edwards.proto line 67: in command 'readspeedsetpoint'
+#_ edwards.proto line 67: in handler '@init'
+#    @init {
+#        out "@",$1,STX,"001?h",ETX,"%3<xor8ff>";
+#        wait 200;
+#        in  ACK,$1,"@",$1,STX,"001 h%4X",ETX,"%6<xor8ff>";
+#        out ACK,$1;
+#    }
+
+SetSpeedSetPoint {
+    MaxInput = 13;
+    out "@",$1,STX,"001 h%04X",ETX,"%3<xor8ff>";
+    in ACK,$1,"@",$1,STX,"001#",ETX,"%6<xor8ff>";
+    out ACK,$1;
+}
+ReadStatus {
+    MaxInput = 22;
+#    ReplyTimeout = 300;
+    out        "@",$1,STX,"001?f",ETX,"%3<xor8ff>";
+    in  ACK,$1,"@",$1,STX,"001 f%!8X",ETX,"%6<xor8ff>";
+    out ACK,$1;
+}
+ReadStatusRMode {
+#    ReplyTimeout = 300;
+    MaxInput = 22;
+    in  ACK,$1,"@",$1,STX,"001 f%!2X%*6X",ETX,"%6<xor8ff>";
+}
+ReadStatusTMSEnable {
+    MaxInput = 22;
+    in  ACK,$1,"@",$1,STX,"001 f%%*2X!2X%*4X",ETX,"%6<xor8ff>";
+}
+ReadStatusINHIBITEnable {
+    MaxInput = 22;
+    in  ACK,$1,"@",$1,STX,"001 f%%*4X!2X%*2X",ETX,"%6<xor8ff>";
+}
+# OK
+ReadMeas {
+    MaxInput = 32;
+    out "@",$1,STX,"001?D",ETX,"%3<xor8ff>";
+    in  ACK,$1,"@",$1,STX,"001 D%*14c%!4X",ETX,"%6<xor8ff>";
+    out ACK,$1;
+}
+ReadModFonct {
+    MaxInput = 172;
+    out        "@",$1,STX,"001?M",ETX,"%3<xor8ff>";
+    in  ACK,$1,"@",$1,STX,"001 M%!2X%*156c",ETX,"%6<xor8ff>";
+    out ACK,$1;
+}
+ReadModFonctNErrors {
+    ExtraInput = Ignore;
+    MaxInput = 172;
+    in  ACK,$1,"@",$1,STX,"001 M%*!2X%!2X%*154c",ETX,"%6<xor8ff>";
+}
+ReadModFonctError1 {
+#    ExtraInput = Ignore;
+    MaxInput = 172;
+    in  ACK,$1,"@",$1,STX,"001 M%*!4X%!2X%*152c",ETX,"%6<xor8ff>";
+}
+ReadModFonctError2 {
+    MaxInput = 172;
+    in  ACK,$1,"@",$1,STX,"001 M%*!6X%!2X%*150c",ETX,"%6<xor8ff>";
+}
+## OK
+ReadModFonctWWarning {
+    ExtraInput = Ignore;
+    MaxInput = 176;
+    out        "@",$1,STX,"001?m",ETX,"%3<xor8ff>";
+    in  ACK,$1,"@",$1,STX,"001 m%!2X%(\$2)!4X%(\$3)!2X%*154c",ETX,"%6<xor8ff>";
+    out ACK,$1;
+}
+# Connect a stringout record to this to get
+# a generic command interface.
+# After processing finishes, the record contains the reply.
+
+debug {
+    ExtraInput = Ignore;
+    out "%s"; in "%60c"
+}
+
+

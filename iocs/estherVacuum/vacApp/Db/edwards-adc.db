@@ -1,0 +1,125 @@
+#######################################################
+## vim: sta:et:sw=4:ts=4:sts=4
+# ###                                             ### #
+# ### EPICS Database for                          ### #
+# ### SCU-800 Vacuum Contrller                    ### #
+# ###                                             ### #
+# ### author: B. Carvalho                         ### #
+# ###                                             ### #
+# ### Ref 1.0; 2022                               ### #
+# ###                                             ### #
+# ### macros: BUS     RS232/RS485 BUS name		  ### #
+# ### 		  AD      RS485 address of SCU-800    ### #
+# ###         CONVST  name of GPIO used as CONVST ### #
+# ###         BUSY    name of GPIO used as BUSY   ### #
+# ###                                             ### #
+# ### Description:                                ### #
+# ### This is an example DB file using            ### #
+# ### stream(asynI2C) and devgpio to readout an   ### #
+# ###                                             ### #
+# ### Records ending in "__" are for internal use ### #
+# ### only! Do not set them manually              ### #
+# ###                                             ### #
+#######################################################
+
+#######################################
+# ### Read/Write control register ### #
+#######################################
+
+################################################
+# ### Reads the measured rotational speed  ### #
+################################################
+record(ai, $(P)$(R)1:ReadPressure){
+    field(DESC, "Reads the measured Pressure")
+    field(DTYP, "stream")
+    field(INP, "@edwards-adc.proto readPressure(1,$(P)$(R)Error1) $(BUS)")
+    field(VAL, "22")
+    field(SCAN, "5 second")
+#    field(DISA, "1")
+    field(FLNK, "$(P)$(R)2:ReadPressure")
+}
+record(ai, $(P)$(R)2:ReadPressure){
+    field(DESC, "Reads the measured Pressure")
+    field(DTYP, "stream")
+    field(INP, "@edwards-adc.proto readPressure(2,$(P)$(R)Error2) $(BUS)")
+    field(VAL, "500")
+#    field(FLNK, "$(P)$(R)$(A):GaugeVersion")
+}
+record(ai, $(P)$(R)1:ReadVoltage){
+    field(DESC, "Reads the measured Pressure")
+    field(DTYP, "stream")
+    field(INP, "@edwards-adc.proto readVoltage(1,$(P)$(R)Error1) $(BUS)")
+    field(VAL, "500")
+    field(EGU, "Volt")
+    field(SCAN, "5 second")
+    field(DISA, "1")
+    field(FLNK, "$(P)$(R)2:ReadVoltage")
+}
+record(ai, $(P)$(R)2:ReadVoltage){
+    field(DESC, "Reads the measured Pressure")
+    field(DTYP, "stream")
+    field(INP, "@edwards-adc.proto readVoltage(2,$(P)$(R)Error2) $(BUS)")
+    field(VAL, "500")
+    field(EGU, "Volt")
+}
+record(stringin, $(P)$(R)Error1){
+    field(DESC, "Error1")
+}
+record(stringin, $(P)$(R)Error2){
+    field(DESC, "Error2")
+}
+record(ai, $(P)$(R)1:GaugeVersion){
+    field(DESC, "Reads the Gauge Model")
+    field(DTYP, "stream")
+    field(INP, "@edwards-adc.proto gaugeVersion(1,$(P)$(R)ErrorG1)) $(BUS)")
+    field(VAL, "03")
+    field(PINI, "YES")
+    #field(FLNK, "$(P)$(R)$(A):Units")
+    field(FLNK, "$(P)$(R)2:GaugeVersion")
+    #field(SCAN, "10 second")
+}
+record(longin, $(P)$(R)2:GaugeVersion){
+    field(DESC, "Reads the Gauge Model")
+    field(DTYP, "stream")
+    field(INP, "@edwards-adc.proto gaugeVersion(2,$(P)$(R)ErrorG2)) $(BUS)")
+    field(VAL, "03")
+    field(PINI, "YES")
+    field(FLNK, "$(P)$(R)$(A):Units")
+    #field(SCAN, "10 second")
+}
+record(stringin, $(P)$(R)ErrorG1){
+    field(DESC, "ErrorG2")
+}
+record(mbbi, $(P)$(R)$(A):Units){
+    field(DESC, "Reads the Units")
+    field(DTYP, "stream" )
+    field(INP, "@edwards-adc.proto getUnits $(BUS)")
+    field(VAL, "0")
+    field(ZRVL,"0")
+    field(ZRST,"Volt")
+    field(ONVL,"1")
+    field(ONST,"mBar")
+    field(TWVL,"2")
+    field(TWST,"Pascal")
+    field(THVL,"3")
+    field(THST,"Torr")
+    #field(SCAN, "2 second")
+}
+record(mbbo, $(P)$(R)$(A):On1){
+    field(DESC, "Reads the Units")
+    field(DTYP, "stream" )
+    field(OUT, "@edwards-adc.proto onChannel($(A)) $(BUS)")
+    field(VAL, "0")
+    field(ZRVL,"0")
+    field(ZRST,"OFF")
+    field(ONVL,"1")
+    field(ONST,"On")
+    #field(SCAN, "2 second")
+}
+
+record(stringout, $(P)$(A):generic){
+    field(DESC, "Generic")
+    field(DTYP, "stream")
+    field(OUT, "@edwards-adc.proto debug $(BUS)")
+#    field(PINI, "YES")
+}
