@@ -28,6 +28,7 @@ gaugeVersion {
   wait 200;
   out "?GV\${1}";
   in  "%2u";
+  @mismatch {in "%(\$2)10c"};
 }
 #Not responding
 getUnits {
@@ -36,14 +37,21 @@ getUnits {
   in  "%d";
 }
 
-onChannel {
-  out "!RC1=0"
+onGauge {
+  out "!GW\${1}=%b";
+  wait 100;
+  in "%(\$2)10c";
 }
 
-rConv {
-  out ${1} 0;
-  in  "%02r";
+setUnits {
+  out "!US=%u";
 }
+
+# Only relay 2 can be configured
+relayOn {
+  out "!RC22=%b";
+}
+
 # Connect a stringout record to this to get
 # a generic command interface.
 # After processing finishes, the record contains the reply.

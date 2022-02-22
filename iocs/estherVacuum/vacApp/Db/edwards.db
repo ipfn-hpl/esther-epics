@@ -27,6 +27,18 @@
 ################################################
 # ### Reads the measured rotational speed  ### #
 ################################################
+record(bo, $(P)$(R)01:Disable){
+    field(DESC, "Disable Instrument SCAN")
+    field(ZNAM, "ENABLED")
+    field(ONAM, "DISABLED")
+    field(VAL, "1")
+}
+record(bo, $(P)$(R)02:Disable){
+    field(DESC, "Disable Instrument SCAN")
+    field(ZNAM, "ENABLED")
+    field(ONAM, "DISABLED")
+    field(VAL, "1")
+}
 record(longin, $(P)$(R)01:MTemp){
     field(DESC, "Reads the measured TMS temperature")
     field(LOPR, "10")
@@ -62,7 +74,9 @@ record(longin, $(P)$(R)01:ReadMeasValue){
     field(VAL, "22")
     field(SCAN, "2 second")
     #field(DISA, "1")
-    field(FLNK, "$(P)$(R)02:ReadMeasValue")
+    field(SDIS, "$(P)$(R)01:Disable")
+    field(FLNK, "$(P)$(R)01:ReadModFonctWithWarning")
+    #field(FLNK, "$(P)$(R)02:ReadMeasValue")
 }
 record(longin, $(P)$(R)02:MTemp){
     field(DESC, "Reads the measured TMS temperature")
@@ -94,9 +108,10 @@ record(longin, $(P)$(R)02:ReadMeasValue){
     field(INP, "@edwards.proto ReadMeasValue('02', $(P)$(R)02:MTemp, $(P)$(R)02:MSpeed) RS485")
     #field(PINI, "YES")
     field(VAL, "22")
-    #field(SCAN, "2 second")
     #field(DISA, "1")
-    field(FLNK, "$(P)$(R)01:ReadModFonctWithWarning")
+    field(SCAN, "2 second")
+    field(SDIS, "$(P)$(R)02:Disable")
+    field(FLNK, "$(P)$(R)02:ReadModFonctWithWarning")
 }
 record(stringin, $(P)$(R)01:PumpSerialNo){
     field(DESC, "Pump serial number")
@@ -125,7 +140,7 @@ record(stringin, $(P)$(R)01:ReadCounters){
     field(VAL, "Void")
     field(SCAN, "2 second")
     field(DISA, "1")
-    field(FLNK, "$(P)$(R)02:ReadCounters")
+    #field(FLNK, "$(P)$(R)02:ReadCounters")
 }
 record(stringin, $(P)$(R)02:PumpSerialNo){
     field(DESC, "Pump serial number")
@@ -176,7 +191,7 @@ record(ai, $(P)$(R)01:ReadSetpoint){
     field(HHSV,"MAJOR")
     field(HSV, "MINOR")
     field(PINI, "YES")
-    field(FLNK, "$(P)$(R)02:ReadSetpoint")
+    #field(FLNK, "$(P)$(R)02:ReadSetpoint")
     #field(LOW,"1.0e-9")
     #field(LOLO,"0.5e-9")
     #field(LSV, "MINOR")
@@ -203,6 +218,7 @@ record(ai, $(P)$(R)02:ReadSetpoint){
     field(EGU, "rpm")
     field(HIGH, "36100")
     field(HIHI, "37700")
+    field(PINI, "YES")
     #field(SCAN, "2 second")
     #field(DISA, "1")
 }
@@ -295,7 +311,7 @@ record(mbbi, $(P)$(R)01:ReadModFonctWithWarning){
     field(ELST,"Updating Driver S/W")
     #field(DISA, "1")
     #field(SCAN, "10 second")
-    field(FLNK, "$(P)$(R)02:ReadModFonctWithWarning")
+    #field(FLNK, "$(P)$(R)02:ReadModFonctWithWarning")
     #field(SCAN, "10 second")
 }
 # Redundant

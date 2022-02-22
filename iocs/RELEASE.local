@@ -1,31 +1,33 @@
 #RELEASE Location of external products
-
-SUPPORT=/home/pi/EPICS7/support
-
-#  IPAC is only necessary if support for Greensprings IP488 is required
-#  IPAC release V2-7 or later is required.
-IPAC=
-
+HOME=/home/bernardo
+SUPPORT=$(HOME)/EPICS/epics7/support
+#
+#
+ASYN=$(SUPPORT)/asyn
+STREAM=$(SUPPORT)/stream
+#CALC=$(SUPPORT)/calc
+#AUTOSAVE = $(SUPPORT)/autosave
+ 
+## Using this driver in combination with streamDevice
+## requires a workaround forbidding read queries with
+## a max length of 256 byte. To compile the driver with
+## with workaround enabled, uncomment the following line
+#in configure/RELEASE
+#STREAM_WORKAROUND = 1
+#DRVASYNI2C =$(SUPPORT)/drvAsynI2C
+#SNCSEQ=$(SUPPORT)/seq-2-2
+#
 # SEQ is required for testIPServer
 #SNCSEQ=$(SUPPORT)/seq-2-2-5
 SNCSEQ=
 
 ## For sCalcout support in asynOctet - applications include asynCalc.dbd
-CALC=$(SUPPORT)/calc
-
-ASYN=$(SUPPORT)/asyn
-
+#CALC=$(SUPPORT)/calc-3-7-3
+CALC=
+PCRE=
 
 # If CALC was built with SSCAN support then SSCAN must be defined for testEpicsApp
 #SSCAN=$(SUPPORT)/sscan-2-11-3
-SSCAN=
 
-#PCRE=
-#PCRE_INCLUDE=/usr/include/pcre
-#PCRE_LIB=/usr/lib/arm-linux-gnueabihf 
-#
-S7NODAVE=$(SUPPORT)/s7nodave-3.0.2
-
-#  EPICS_BASE 3.14.6 or later is required
-EPICS_BASE=/home/pi/EPICS7/epics-base
-
+#  EPICS_BASE 
+EPICS_BASE=$(HOME)/EPICS/epics7/epics-base
