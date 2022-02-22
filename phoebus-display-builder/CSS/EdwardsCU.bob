@@ -20,7 +20,7 @@
     <text>SCU800 CONTROLLER ${name}</text>
     <x use_class="true">0</x>
     <y use_class="true">0</y>
-    <width>306</width>
+    <width>351</width>
     <height>25</height>
     <font use_class="true">
       <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
@@ -269,5 +269,24 @@
     <y>392</y>
     <width>15</width>
     <height>15</height>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>${unit}:${node}:${Add}:Disable</pv_name>
+    <x>30</x>
+    <y>60</y>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </on_color>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <labels_from_pv>true</labels_from_pv>
   </widget>
 </display>

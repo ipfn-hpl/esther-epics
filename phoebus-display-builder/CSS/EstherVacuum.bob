@@ -2,10 +2,10 @@
 <display version="2.0.0">
   <name>Display</name>
   <macros>
-    <node>EDW</node>
     <unit>Esther</unit>
   </macros>
-  <height>620</height>
+  <width>810</width>
+  <height>1020</height>
   <background_color>
     <color name="Read_Background" red="240" green="240" blue="240">
     </color>
@@ -31,20 +31,21 @@
   <widget type="label" version="2.0.0">
     <name>Label_1</name>
     <text>Some Value:</text>
-    <y>50</y>
+    <x>410</x>
+    <y>20</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
     <pv_name>sim://sine</pv_name>
-    <x>100</x>
-    <y>50</y>
+    <x>510</x>
+    <y>20</y>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_2</name>
     <class>COMMENT</class>
     <text>Some comment.</text>
-    <x>220</x>
-    <y>50</y>
+    <x>630</x>
+    <y>20</y>
     <width>140</width>
     <font use_class="true">
       <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
@@ -62,10 +63,11 @@
     <macros>
       <Add>01</Add>
       <name>CTST</name>
+      <node>EDW</node>
     </macros>
     <file>EdwardsCU.bob</file>
     <x>10</x>
-    <y>80</y>
+    <y>170</y>
     <width>380</width>
     <height>540</height>
     <resize>2</resize>
@@ -76,13 +78,58 @@
     <macros>
       <Add>02</Add>
       <name>STDT</name>
+      <node>EDW</node>
     </macros>
     <file>EdwardsCU.bob</file>
     <x>410</x>
-    <y>80</y>
+    <y>170</y>
     <width>380</width>
     <height>540</height>
     <resize>2</resize>
     <border_width>2</border_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <macros>
+      <Add>01</Add>
+      <name>CTST</name>
+      <node>Vacuum</node>
+    </macros>
+    <file>EdwardsADC.bob</file>
+    <x>20</x>
+    <y>70</y>
+    <width>350</width>
+    <height>90</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <macros>
+      <Add>02</Add>
+      <name>STDT</name>
+      <node>Vacuum</node>
+    </macros>
+    <file>EdwardsADC.bob</file>
+    <x>420</x>
+    <y>68</y>
+    <width>350</width>
+    <height>90</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <macros>
+      <name>STDT</name>
+    </macros>
+    <file>Mst12-arm.bob</file>
+    <x>410</x>
+    <y>720</y>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <name>CTST</name>
+    </macros>
+    <file>Mst12-arm.bob</file>
+    <x>10</x>
+    <y>720</y>
   </widget>
 </display>
