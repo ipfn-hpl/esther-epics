@@ -276,15 +276,35 @@ record(longin, $(P)$(R)01:NErrors){
     field(HIGH, "3")
     field(HIHI, "5")
 }
+record(longin, $(P)$(R)01:Error1){
+    field(DESC, "Reads error 1 being detected")
+    field(VAL, "0")
+    field(LOPR, "0")
+    field(HOPR, "76")
+    field(HIGH, "3")
+    field(HIHI, "5")
+    field(HSV, "MINOR")
+    field(HHSV,"MAJOR")
+}
+record(longin, $(P)$(R)01:Error2){
+    field(DESC, "Reads error 2 being detected")
+    field(VAL, "0")
+    field(LOPR, "0")
+    field(HOPR, "76")
+    field(HIGH, "3")
+    field(HIHI, "5")
+    field(HSV, "MINOR")
+    field(HHSV,"MAJOR")
+}
 record(mbbiDirect, $(P)$(R)01:WARNING){
     field(DESC, "Reads WARNING being detected")
     field(FLNK, "$(P)$(R)01:WARNING:FANOUT1")
-    #field(FLNK, "$(P)$(R)01:WARNING:BAD-PUMP-TX")
 }
 record(mbbi, $(P)$(R)01:ReadModFonctWithWarning){
     field(DESC, "Reads the pump operation mode")
     field(DTYP, "stream" )
-    field(INP,  "@edwards.proto ReadModFonctWWarning('01', $(P)$(R)01:WARNING, $(P)$(R)01:NErrors) $(BUS)" )
+    field(INP, "@edwards.proto ReadModFonctWWarning('01',$(P)$(R)01:WARNING,$(P)$(R)01:NErrors,$(P)$(R)01:Error1,$(P)$(R)01:Error2) $(BUS)" )
+    #field(INP,  "@edwards.proto ReadModFonctWWarning('01', $(P)$(R)01:WARNING, $(P)$(R)01:NErrors) $(BUS)" )
     field(ZRVL,"0")
     field(ZRST,"0")
     field(ONVL,"1")
@@ -542,6 +562,8 @@ record(longin, $(P)$(R)01:ReadModFonctError1){
     field(LOPR, "0")
     field(HOPR, "65")
     field(HIGH, "1")
+    field(HSV, "MINOR")
+    field(HHSV,"MAJOR")
 #    field(HIHI, "5")
 #    field(SCAN, "I/O Intr")
 }
@@ -574,6 +596,7 @@ record(fanout, $(P)$(R)01:WARNING:FANOUT1){
 }
 record(fanout, $(P)$(R)01:WARNING:FANOUT2){
     field(DESC, "WARNING PV Fanout")
+    field(SELM, "All")
     field(LNK1, "$(P)$(R)01:WARNING:PumpRunTimeOver")
     field(LNK2, "$(P)$(R)01:WARNING:PumpOverload")
     field(LNK3, "$(P)$(R)01:WARNING:PumpRecordBungle")
@@ -584,6 +607,7 @@ record(fanout, $(P)$(R)01:WARNING:FANOUT2){
 }
 record(fanout, $(P)$(R)01:WARNING:FANOUT3){
     field(DESC, "WARNING PV Fanout")
+    field(SELM, "All")
     field(LNK1, "$(P)$(R)01:WARNING:RecoverbyAUXData")
 }
 ##  UUU:EDW:01:WARNING:BAD-PUMP-TX 2022-02-08 17:40:34.478545 OFF LINK INVALID
@@ -691,14 +715,158 @@ record(bi, $(P)$(R)01:WARNING:RecoverbyAUXData){
     field( VAL, "1" )
     field(OSV,"MINOR")
 }
-record(bi, $(P)$(R)01:WARNING:){
-    field(DESC, "WARNING: ")
+record(bi, $(P)$(R)01:WARNINGbi){
+    field(DESC, "WARNING ")
 #    field(INP, "$(P)$(R)01:WARNING.B13 MSS")
     field( ZNAM, "OFF" )
     field( ONAM, "ON" )
     field( VAL, "1" )
     field(OSV,"MINOR")
 }
+record(fanout, $(P)$(R)02:WARNING:FANOUT1){
+    field(DESC, "WARNING PV Fanout")
+    field(SELM, "All")
+    field(LNK1, "$(P)$(R)02:WARNING:BAD-PUMP-TX")
+    field(LNK2, "$(P)$(R)02:WARNING:SecondDamageLmt")
+    field(LNK3, "$(P)$(R)02:WARNING:FirstDamageLmt")
+    field(LNK4, "$(P)$(R)02:WARNING:Imbalance-X_H")
+    field(LNK5, "$(P)$(R)02:WARNING:Imbalance-X_B")
+    #field(LNK6, "$(P)$(R)02:WARNING:Imbalance-Z")
+    field(LNK6, "$(P)$(R)02:WARNING:FANOUT2")
+    #field(FLNK, "$(P)$(R)02:WARNING:FANOUT2")
+}
+record(fanout, $(P)$(R)02:WARNING:FANOUT2){
+    field(DESC, "WARNING PV Fanout")
+    field(SELM, "All")
+    field(LNK1, "$(P)$(R)02:WARNING:PumpRunTimeOver")
+    field(LNK2, "$(P)$(R)02:WARNING:PumpOverload")
+    field(LNK3, "$(P)$(R)02:WARNING:PumpRecordBungle")
+    field(LNK4, "$(P)$(R)02:WARNING:PCBRecordBungle")
+    field(LNK5, "$(P)$(R)02:WARNING:LowRTCBattery")
+    field(LNK6, "$(P)$(R)02:WARNING:ClockDataLost")
+    field(FLNK, "$(P)$(R)02:WARNING:FANOUT3")
+}
+record(fanout, $(P)$(R)02:WARNING:FANOUT3){
+    field(DESC, "WARNING PV Fanout")
+    field(SELM, "All")
+    field(LNK1, "$(P)$(R)02:WARNING:RecoverbyAUXData")
+}
+##  UUU:EDW:01:WARNING:BAD-PUMP-TX 2022-02-08 17:40:34.478545 OFF LINK INVALID
+record(bi, $(P)$(R)02:WARNING:BAD-PUMP-TX){
+    field(DESC, "WARNING PV Fanout")
+    field(INP, "$(P)$(R)02:WARNING.B0 NPP")
+    field( ZNAM, "OFF" )
+    field( VAL, "1" )
+    field( ONAM, "ON" )
+    field(OSV,"MINOR")
+}
+record(bi, $(P)$(R)02:WARNING:SecondDamageLmt){
+    field(DESC, "WARNING: Second Damage Limit")
+    field(INP, "$(P)$(R)02:WARNING.B1 MSS")
+    field( ZNAM, "OFF" )
+    field( ONAM, "ON" )
+    field( VAL, "1" )
+    field(OSV,"MINOR")
+}
+record(bi, $(P)$(R)02:WARNING:FirstDamageLmt){
+    field(DESC, "WARNING: First Damage Limit")
+    field(INP, "$(P)$(R)02:WARNING.B2 MSS")
+    field( ZNAM, "OFF" )
+    field( ONAM, "ON" )
+    field( VAL, "1" )
+    field(OSV,"MINOR")
+}
+record(bi, $(P)$(R)02:WARNING:Imbalance-X_H){
+    field(DESC, "WARNING: Imbalance-X_H")
+    field(INP, "$(P)$(R)02:WARNING.B3 MSS")
+    field( ZNAM, "OFF" )
+    field( ONAM, "ON" )
+    field( VAL, "1" )
+    field(OSV,"MINOR")
+}
+record(bi, $(P)$(R)02:WARNING:Imbalance-X_B){
+    field(DESC, "WARNING: Imbalance-X_B")
+    field(INP, "$(P)$(R)02:WARNING.B4 MSS")
+    field( ZNAM, "OFF" )
+    field( ONAM, "ON" )
+    field( VAL, "1" )
+    field(OSV,"MINOR")
+}
+record(bi, $(P)$(R)02:WARNING:Imbalance-Z){
+    field(DESC, "WARNING: Imbalance-Z")
+    field(INP, "$(P)$(R)02:WARNING.B5 MSS")
+    field( ZNAM, "OFF" )
+    field( ONAM, "ON" )
+    field( VAL, "1" )
+    field(OSV,"MINOR")
+}
+record(bi, $(P)$(R)02:WARNING:PumpRunTimeOver){
+    field(DESC, "WARNING:PumpRunTimeOver ")
+    field(INP, "$(P)$(R)02:WARNING.B6 MSS")
+    field( ZNAM, "OFF" )
+    field( ONAM, "ON" )
+    field( VAL, "1" )
+    field(OSV,"MINOR")
+}
+record(bi, $(P)$(R)02:WARNING:PumpOverload){
+    field(DESC, "WARNING: PumpOverload")
+    field(INP, "$(P)$(R)02:WARNING.B7 MSS")
+    field( ZNAM, "OFF" )
+    field( ONAM, "ON" )
+    field( VAL, "1" )
+    field(OSV,"MINOR")
+}
+record(bi, $(P)$(R)02:WARNING:PumpRecordBungle){
+    field(DESC, "WARNING:PumpRecordBungle ")
+    field(INP, "$(P)$(R)02:WARNING.B8 MSS")
+    field( ZNAM, "OFF" )
+    field( ONAM, "ON" )
+    field( VAL, "1" )
+    field(OSV,"MINOR")
+}
+record(bi, $(P)$(R)02:WARNING:PCBRecordBungle){
+    field(DESC, "WARNING:PCBRecordBungle ")
+    field(INP, "$(P)$(R)02:WARNING.B9 MSS")
+    field( ZNAM, "OFF" )
+    field( ONAM, "ON" )
+    field( VAL, "1" )
+    field(OSV,"MINOR")
+}
+record(bi, $(P)$(R)02:WARNING:LowRTCBattery){
+    field(DESC, "WARNING:LowRTCBattery ")
+    field(INP, "$(P)$(R)02:WARNING.B10 MSS")
+    field( ZNAM, "OFF" )
+    field( ONAM, "ON" )
+    field( VAL, "1" )
+    field(OSV,"MINOR")
+}
+record(bi, $(P)$(R)02:WARNING:ClockDataLost){
+    field(DESC, "WARNING:ClockDataLost ")
+    field(INP, "$(P)$(R)02:WARNING.B11 MSS")
+    field( ZNAM, "OFF" )
+    field( ONAM, "ON" )
+    field( VAL, "1" )
+    field(OSV,"MINOR")
+}
+record(bi, $(P)$(R)02:WARNING:RecoverbyAUXData){
+    field(DESC, "WARNING:RecoverbyAUXData ")
+    field(INP, "$(P)$(R)02:WARNING.B12 MSS")
+    field( ZNAM, "OFF" )
+    field( ONAM, "ON" )
+    field( VAL, "1" )
+    field(OSV,"MINOR")
+}
+record(bi, $(P)$(R)02:WARNINGbi){
+    field(DESC, "WARNING Bit word ")
+    field( ZNAM, "OFF" )
+    field( ONAM, "ON" )
+    field( VAL, "1" )
+    field(OSV,"MINOR")
+}
+################################################
+# ### END WARNING Message bits                 ### #
+################################################
+#
 
 record(longin, $(P)$(R)02:NErrors){
     field(DESC, "Reads number of errors being detected")
@@ -710,12 +878,36 @@ record(longin, $(P)$(R)02:NErrors){
 }
 record(mbbiDirect, $(P)$(R)02:WARNING){
     field(DESC, "Reads WARNING being detected")
-#    field(FLNK, "$(P)$(R)01:WARNING:FANOUT1")
+    field(FLNK, "$(P)$(R)02:WARNING:FANOUT1")
+}
+record(longin, $(P)$(R)02:Error1){
+    field(DESC, "Reads error 1 being detected")
+    #field(DTYP, "stream" )
+    #field(INP,  "@edwards.proto ReadError1('01') $(BUS)" )
+    field(VAL, "0")
+    field(LOPR, "0")
+    field(HOPR, "76")
+    field(HIGH, "3")
+    field(HIHI, "5")
+    field(HSV, "MINOR")
+    field(HHSV,"MAJOR")
+    #field(SCAN, "I/O Intr")
+}
+record(longin, $(P)$(R)02:Error2){
+    field(DESC, "Reads error 2 being detected")
+    field(VAL, "0")
+    field(LOPR, "0")
+    field(HOPR, "76")
+    field(HIGH, "3")
+    field(HIHI, "5")
+    field(HSV, "MINOR")
+    field(HHSV,"MAJOR")
 }
 record(mbbi, $(P)$(R)02:ReadModFonctWithWarning){
     field(DESC, "Reads the pump operation mode")
     field(DTYP, "stream" )
-    field(INP,  "@edwards.proto ReadModFonctWWarning('02', $(P)$(R)02:WARNING, $(P)$(R)02:NErrors) $(BUS)" )
+    #field(INP, "@edwards.proto ReadModFonctWWarning('02',$(P)$(R)02:WARNING,$(P)$(R)02:NErrors,$(P)$(R)02:Error1) $(BUS)" )
+    field(INP, "@edwards.proto ReadModFonctWWarning('02',$(P)$(R)02:WARNING,$(P)$(R)02:NErrors,$(P)$(R)02:Error1,$(P)$(R)02:Error2) $(BUS)" )
     field(ZRVL,"0")
     field(ZRST,"0")
     field(ONVL,"1")

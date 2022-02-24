@@ -12,6 +12,8 @@ DB += edwards.proto
 DB += edwards-adc.db
 DB += edwards-adc.proto
 
+DB += armcontrol.db
+DB += armcontrol.proto
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_template = <templatename>

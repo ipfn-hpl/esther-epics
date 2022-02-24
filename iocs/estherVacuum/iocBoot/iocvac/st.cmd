@@ -30,16 +30,34 @@ asynSetOption("RS485", 0, "stop", "1")
 dbLoadRecords("db/edwards.db", "P=Esther:,R=EDW:,BUS=RS485")
 
 ## EDWARDS ADC 
-drvAsynSerialPortConfigure("RS232","/dev/edwardsADC")
-##drvAsynSerialPortConfigure("RS232","/dev/ttyUSB1")
-asynSetOption("RS232", 0, "baud", "9600")
-asynSetOption("RS232", 0, "bits", "8")
-asynSetOption("RS232", 0, "parity", "none")
-asynSetOption("RS232", 0, "stop", "1")
-##asynSetOption("RS232", 0, "clocal", "Y")
-##asynSetOption("RS232", 0, "crtscts", "N")
+drvAsynSerialPortConfigure("RS232E1","/dev/edwardsADC")
+##drvAsynSerialPortConfigure("RS232E1","/dev/ttyUSB1")
+asynSetOption("RS232E1", 0, "baud", "9600")
+asynSetOption("RS232E1", 0, "bits", "8")
+asynSetOption("RS232E1", 0, "parity", "none")
+asynSetOption("RS232E1", 0, "stop", "1")
+##asynSetOption("RS232E1", 0, "clocal", "Y")
+##asynSetOption("RS232E1", 0, "crtscts", "N")
 
-dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232")
+dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
+
+drvAsynSerialPortConfigure("RS232A1","/dev/armCTST")
+asynSetOption("RS232A1", 0, "baud", "115200")
+asynSetOption("RS232A1", 0, "bits", "8")
+asynSetOption("RS232A1", 0, "parity", "none")
+asynSetOption("RS232A1", 0, "stop", "1")
+
+#dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=1,BUS=RS232A1")
+dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=1")
+
+drvAsynSerialPortConfigure("RS232A2","/dev/armSTDT")
+asynSetOption("RS232A2", 0, "baud", "115200")
+asynSetOption("RS232A2", 0, "bits", "8")
+asynSetOption("RS232A2", 0, "parity", "none")
+asynSetOption("RS232A2", 0, "stop", "1")
+
+dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=2")
+
 
 var streamError 1
 #var streamDebug 1

@@ -118,6 +118,12 @@ ReadModFonctError1 {
     MaxInput = 172;
     in  ACK,$1,"@",$1,STX,"001 M%*!4X%!2X%*152c",ETX,"%6<xor8ff>";
 }
+ReadError1 {
+    ExtraInput = Ignore;
+    MaxInput = 176;
+    MaxInput = 172;
+    in  ACK,$1,"@",$1,STX,"001 M%*!4X%!2X%*152c",ETX,"%6<xor8ff>";
+}
 ReadModFonctError2 {
     MaxInput = 172;
     in  ACK,$1,"@",$1,STX,"001 M%*!6X%!2X%*150c",ETX,"%6<xor8ff>";
@@ -127,7 +133,7 @@ ReadModFonctWWarning {
     ExtraInput = Ignore;
     MaxInput = 176;
     out        "@",$1,STX,"001?m",ETX,"%3<xor8ff>";
-    in  ACK,$1,"@",$1,STX,"001 m%!2X%(\$2)!4X%(\$3)!2X%*154c",ETX,"%6<xor8ff>";
+    in  ACK,$1,"@",$1,STX,"001 m%!2X%(\$2)!4X%(\$3)!2X%(\$4)!2X%(\$5)!2X%*150c",ETX,"%6<xor8ff>";
     out ACK,$1;
 }
 # Connect a stringout record to this to get
