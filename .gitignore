@@ -12,6 +12,8 @@ iocs/serialKistler/bin/
 iocs/serialKistler/configure/O.linux-x86_64/
 iocs/serialKistler/db/
 iocs/serialKistler/dbd/
+
+iocs/estherVacuum
 launch-scripts/gateway.*
 
 

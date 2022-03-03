@@ -591,24 +591,24 @@ record(fanout, $(P)$(R)01:WARNING:FANOUT1){
     field(LNK3, "$(P)$(R)01:WARNING:FirstDamageLmt")
     field(LNK4, "$(P)$(R)01:WARNING:Imbalance-X_H")
     field(LNK5, "$(P)$(R)01:WARNING:Imbalance-X_B")
-    field(LNK6, "$(P)$(R)01:WARNING:Imbalance-Z")
-    field(FLNK, "$(P)$(R)01:WARNING:FANOUT2")
+    field(LNK6, "$(P)$(R)01:WARNING:FANOUT2")
 }
 record(fanout, $(P)$(R)01:WARNING:FANOUT2){
     field(DESC, "WARNING PV Fanout")
     field(SELM, "All")
-    field(LNK1, "$(P)$(R)01:WARNING:PumpRunTimeOver")
-    field(LNK2, "$(P)$(R)01:WARNING:PumpOverload")
-    field(LNK3, "$(P)$(R)01:WARNING:PumpRecordBungle")
-    field(LNK4, "$(P)$(R)01:WARNING:PCBRecordBungle")
-    field(LNK5, "$(P)$(R)01:WARNING:LowRTCBattery")
-    field(LNK6, "$(P)$(R)01:WARNING:ClockDataLost")
-    field(FLNK, "$(P)$(R)01:WARNING:FANOUT3")
+    field(LNK1, "$(P)$(R)01:WARNING:Imbalance-Z")
+    field(LNK2, "$(P)$(R)01:WARNING:PumpRunTimeOver")
+    field(LNK3, "$(P)$(R)01:WARNING:PumpOverload")
+    field(LNK4, "$(P)$(R)01:WARNING:PumpRecordBungle")
+    field(LNK5, "$(P)$(R)01:WARNING:PCBRecordBungle")
+    field(LNK6, "$(P)$(R)01:WARNING:FANOUT3")
 }
 record(fanout, $(P)$(R)01:WARNING:FANOUT3){
     field(DESC, "WARNING PV Fanout")
     field(SELM, "All")
     field(LNK1, "$(P)$(R)01:WARNING:RecoverbyAUXData")
+    field(LNK2, "$(P)$(R)01:WARNING:LowRTCBattery")
+    field(LNK3, "$(P)$(R)01:WARNING:ClockDataLost")
 }
 ##  UUU:EDW:01:WARNING:BAD-PUMP-TX 2022-02-08 17:40:34.478545 OFF LINK INVALID
 record(bi, $(P)$(R)01:WARNING:BAD-PUMP-TX){
@@ -715,14 +715,6 @@ record(bi, $(P)$(R)01:WARNING:RecoverbyAUXData){
     field( VAL, "1" )
     field(OSV,"MINOR")
 }
-record(bi, $(P)$(R)01:WARNINGbi){
-    field(DESC, "WARNING ")
-#    field(INP, "$(P)$(R)01:WARNING.B13 MSS")
-    field( ZNAM, "OFF" )
-    field( ONAM, "ON" )
-    field( VAL, "1" )
-    field(OSV,"MINOR")
-}
 record(fanout, $(P)$(R)02:WARNING:FANOUT1){
     field(DESC, "WARNING PV Fanout")
     field(SELM, "All")
@@ -731,25 +723,24 @@ record(fanout, $(P)$(R)02:WARNING:FANOUT1){
     field(LNK3, "$(P)$(R)02:WARNING:FirstDamageLmt")
     field(LNK4, "$(P)$(R)02:WARNING:Imbalance-X_H")
     field(LNK5, "$(P)$(R)02:WARNING:Imbalance-X_B")
-    #field(LNK6, "$(P)$(R)02:WARNING:Imbalance-Z")
     field(LNK6, "$(P)$(R)02:WARNING:FANOUT2")
-    #field(FLNK, "$(P)$(R)02:WARNING:FANOUT2")
 }
 record(fanout, $(P)$(R)02:WARNING:FANOUT2){
     field(DESC, "WARNING PV Fanout")
     field(SELM, "All")
-    field(LNK1, "$(P)$(R)02:WARNING:PumpRunTimeOver")
-    field(LNK2, "$(P)$(R)02:WARNING:PumpOverload")
-    field(LNK3, "$(P)$(R)02:WARNING:PumpRecordBungle")
-    field(LNK4, "$(P)$(R)02:WARNING:PCBRecordBungle")
-    field(LNK5, "$(P)$(R)02:WARNING:LowRTCBattery")
-    field(LNK6, "$(P)$(R)02:WARNING:ClockDataLost")
-    field(FLNK, "$(P)$(R)02:WARNING:FANOUT3")
+    field(LNK1, "$(P)$(R)02:WARNING:Imbalance-Z")
+    field(LNK2, "$(P)$(R)02:WARNING:PumpRunTimeOver")
+    field(LNK3, "$(P)$(R)02:WARNING:PumpOverload")
+    field(LNK4, "$(P)$(R)02:WARNING:PumpRecordBungle")
+    field(LNK5, "$(P)$(R)02:WARNING:PCBRecordBungle")
+    field(LNK6, "$(P)$(R)02:WARNING:FANOUT3")
 }
 record(fanout, $(P)$(R)02:WARNING:FANOUT3){
     field(DESC, "WARNING PV Fanout")
     field(SELM, "All")
     field(LNK1, "$(P)$(R)02:WARNING:RecoverbyAUXData")
+    field(LNK2, "$(P)$(R)02:WARNING:LowRTCBattery")
+    field(LNK3, "$(P)$(R)02:WARNING:ClockDataLost")
 }
 ##  UUU:EDW:01:WARNING:BAD-PUMP-TX 2022-02-08 17:40:34.478545 OFF LINK INVALID
 record(bi, $(P)$(R)02:WARNING:BAD-PUMP-TX){
@@ -851,13 +842,6 @@ record(bi, $(P)$(R)02:WARNING:ClockDataLost){
 record(bi, $(P)$(R)02:WARNING:RecoverbyAUXData){
     field(DESC, "WARNING:RecoverbyAUXData ")
     field(INP, "$(P)$(R)02:WARNING.B12 MSS")
-    field( ZNAM, "OFF" )
-    field( ONAM, "ON" )
-    field( VAL, "1" )
-    field(OSV,"MINOR")
-}
-record(bi, $(P)$(R)02:WARNINGbi){
-    field(DESC, "WARNING Bit word ")
     field( ZNAM, "OFF" )
     field( ONAM, "ON" )
     field( VAL, "1" )

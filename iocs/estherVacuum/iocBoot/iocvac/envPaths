@@ -1,0 +1,7 @@
+epicsEnvSet("IOC","iocvac")
+epicsEnvSet("TOP","/home/bernardo/EPICS/esther-epics/iocs/estherVacuum")
+epicsEnvSet("EPICS_BASE","/home/bernardo/EPICS/epics7/epics-base")
+epicsEnvSet("HOME","/home/bernardo")
+epicsEnvSet("SUPPORT","/home/bernardo/EPICS/epics7/support")
+epicsEnvSet("ASYN","/home/bernardo/EPICS/epics7/support/asyn")
+epicsEnvSet("STREAM","/home/bernardo/EPICS/epics7/support/stream")
