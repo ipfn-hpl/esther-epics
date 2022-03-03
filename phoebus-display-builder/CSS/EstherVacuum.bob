@@ -4,8 +4,8 @@
   <macros>
     <unit>Esther</unit>
   </macros>
-  <width>810</width>
-  <height>1020</height>
+  <width>1180</width>
+  <height>938</height>
   <background_color>
     <color name="Read_Background" red="240" green="240" blue="240">
     </color>
@@ -59,36 +59,6 @@
     <wrap_words use_class="true">true</wrap_words>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_SCU1</name>
-    <macros>
-      <Add>01</Add>
-      <name>CTST</name>
-      <node>EDW</node>
-    </macros>
-    <file>EdwardsCU.bob</file>
-    <x>10</x>
-    <y>170</y>
-    <width>380</width>
-    <height>540</height>
-    <resize>2</resize>
-    <border_width>2</border_width>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_SCU2</name>
-    <macros>
-      <Add>02</Add>
-      <name>STDT</name>
-      <node>EDW</node>
-    </macros>
-    <file>EdwardsCU.bob</file>
-    <x>410</x>
-    <y>170</y>
-    <width>380</width>
-    <height>540</height>
-    <resize>2</resize>
-    <border_width>2</border_width>
-  </widget>
-  <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
     <macros>
       <Add>01</Add>
@@ -96,7 +66,7 @@
       <node>Vacuum</node>
     </macros>
     <file>EdwardsADC.bob</file>
-    <x>20</x>
+    <x>16</x>
     <y>70</y>
     <width>350</width>
     <height>90</height>
@@ -109,27 +79,85 @@
       <node>Vacuum</node>
     </macros>
     <file>EdwardsADC.bob</file>
-    <x>420</x>
+    <x>416</x>
     <y>68</y>
     <width>350</width>
     <height>90</height>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_2</name>
-    <macros>
-      <name>STDT</name>
-    </macros>
-    <file>Mst12-arm.bob</file>
-    <x>410</x>
-    <y>720</y>
-  </widget>
-  <widget type="embedded" version="2.0.0">
     <name>Embedded Display_3</name>
     <macros>
+      <Add>1</Add>
       <name>CTST</name>
     </macros>
     <file>Mst12-arm.bob</file>
     <x>10</x>
-    <y>720</y>
+    <y>746</y>
+    <width>380</width>
+    <height>190</height>
+    <resize>1</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <macros>
+      <Add>2</Add>
+      <name>STDT</name>
+    </macros>
+    <file>Mst12-arm.bob</file>
+    <x>410</x>
+    <y>748</y>
+    <width>380</width>
+    <height>190</height>
+    <resize>1</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <macros>
+      <Add>02</Add>
+      <name>STDT</name>
+      <node>EDW</node>
+    </macros>
+    <file>EdwardsCUTabs.bob</file>
+    <x>410</x>
+    <y>158</y>
+    <width>360</width>
+    <height>590</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <macros>
+      <Add>01</Add>
+      <name>CTST</name>
+      <node>EDW</node>
+    </macros>
+    <file>EdwardsCUTabs.bob</file>
+    <x>10</x>
+    <y>160</y>
+    <width>360</width>
+    <height>590</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_6</name>
+    <macros>
+      <Add>3</Add>
+      <name>CTST</name>
+      <node>HVA</node>
+    </macros>
+    <file>EstherHVAGateValve.bob</file>
+    <x>780</x>
+    <y>100</y>
+    <height>180</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_7</name>
+    <macros>
+      <Add>4</Add>
+      <name>STDT</name>
+      <node>HVA</node>
+    </macros>
+    <file>EstherHVAGateValve.bob</file>
+    <x>780</x>
+    <y>330</y>
+    <height>180</height>
   </widget>
 </display>
