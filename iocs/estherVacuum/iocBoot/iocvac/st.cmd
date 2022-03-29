@@ -47,7 +47,7 @@ dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
 #asynSetOption("RS232A1", 0, "parity", "none")
 #asynSetOption("RS232A1", 0, "stop", "1")
 
-#dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=1")
+dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=1")
 
 ## Arduino MST12 ARM control
 #drvAsynSerialPortConfigure("RS232A2","/dev/armSTDT")
@@ -56,7 +56,7 @@ dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
 #asynSetOption("RS232A2", 0, "parity", "none")
 #asynSetOption("RS232A2", 0, "stop", "1")
 
-#dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=2")
+dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=2")
 
 epicsEnvSet "A" "$(A=3)"
 epicsEnvSet "BRS" "$(BRS=RS232A$(A))"
