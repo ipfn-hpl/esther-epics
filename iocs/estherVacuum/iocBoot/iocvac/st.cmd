@@ -40,22 +40,20 @@ asynSetOption("RS232E1", 0, "stop", "1")
 
 dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
 
-## Arduino MST12 ARM control CTST
-#drvAsynSerialPortConfigure("RS232A1","/dev/armCTST")
-#asynSetOption("RS232A1", 0, "baud", "115200")
-#asynSetOption("RS232A1", 0, "bits", "8")
-#asynSetOption("RS232A1", 0, "parity", "none")
-#asynSetOption("RS232A1", 0, "stop", "1")
-
+# Arduino MST12 ARM control CTST
+drvAsynSerialPortConfigure("RS232A1","/dev/armCTST")
+asynSetOption("RS232A1", 0, "baud", "115200")
+asynSetOption("RS232A1", 0, "bits", "8")
+asynSetOption("RS232A1", 0, "parity", "none")
+asynSetOption("RS232A1", 0, "stop", "1")
 dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=1")
 
-## Arduino MST12 ARM control
-#drvAsynSerialPortConfigure("RS232A2","/dev/armSTDT")
-#asynSetOption("RS232A2", 0, "baud", "115200")
-#asynSetOption("RS232A2", 0, "bits", "8")
-#asynSetOption("RS232A2", 0, "parity", "none")
-#asynSetOption("RS232A2", 0, "stop", "1")
-
+# Arduino MST12 ARM control
+drvAsynSerialPortConfigure("RS232A2","/dev/armSTDT")
+asynSetOption("RS232A2", 0, "baud", "115200")
+asynSetOption("RS232A2", 0, "bits", "8")
+asynSetOption("RS232A2", 0, "parity", "none")
+asynSetOption("RS232A2", 0, "stop", "1")
 dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=2")
 
 epicsEnvSet "A" "$(A=3)"
@@ -77,9 +75,18 @@ asynSetOption("$(BRE)", 0, "baud", "115200")
 asynSetOption("$(BRE)", 0, "bits", "8")
 asynSetOption("$(BRE)", 0, "parity", "none")
 asynSetOption("$(BRE)", 0, "stop", "1")
-
 dbLoadRecords("db/armcontrol.db", "P=$(P):,R=HVA:,A=$(E)")
 
+## Arduino BME680 Air quality sensor
+epicsEnvSet("F", "5")
+epicsEnvSet("BRF", "RS232A$(F)")
+## Arduino HVA Gate Valve control
+drvAsynSerialPortConfigure("$(BRF)","/dev/ttyUSB0",0,0,0)
+asynSetOption("$(BRF)", 0, "baud", "230400")
+asynSetOption("$(BRF)", 0, "bits", "8")
+asynSetOption("$(BRF)", 0, "parity", "none")
+asynSetOption("$(BRF)", 0, "stop", "1")
+dbLoadRecords("db/bme680.db", "P=$(P):,R=BME:,A=$(F)")
 
 var streamError 1
 #var streamDebug 1

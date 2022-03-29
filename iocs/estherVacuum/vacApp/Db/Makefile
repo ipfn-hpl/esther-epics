@@ -14,6 +14,9 @@ DB += edwards-adc.proto
 
 DB += armcontrol.db
 DB += armcontrol.proto
+
+DB += bme680.db
+DB += bme680.proto
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_template = <templatename>
