@@ -201,7 +201,7 @@
   </group>
 
   <group>
-    <name>Esther Gas Alarm Ssytem</name>
+    <name>Esther-Gas Alarm System</name>
       <channel>
          <name>Esther:gas:MXT_H2_Central</name>
      <monitor/>
@@ -221,8 +221,39 @@
       </channel>
   </group>
 
-  <!-- 
-   Other Group 
+  <group>
+    <name>ESTHER Vacuum System</name>
+      <channel>
+         <name>Esther:EDW:01:MTemp</name>
+         <period>10.0</period>
+         <monitor>1.0</monitor>
+      </channel>
+      <channel>
+         <name>Esther:EDW:02:MTemp</name>
+         <period>10.0</period>
+         <monitor>1.0</monitor>
+      </channel>
+      <channel>
+         <name>Esther:HVA:3:Status</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:HVA:4:Status</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:Vacuum:01:ReadPressure</name>
+         <period>10.0</period><scan/>
+      </channel>
+      <channel>
+         <name>Esther:Vacuum:02:ReadPressure</name>
+         <period>10.0</period><scan/>
+         <enable/>
+      </channel>
+  </group>
+
+  <!--
+   Other Group
   <group>
     <name>SouthSectorVacuum</name>
       <channel>
