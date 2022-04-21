@@ -2,7 +2,7 @@
 <display version="2.0.0">
   <name>Display</name>
   <width>340</width>
-  <height>91</height>
+  <height>150</height>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
@@ -24,10 +24,10 @@
   <widget type="label" version="2.0.0">
     <name>Label_2</name>
     <class>COMMENT</class>
-    <text>Type</text>
+    <text>Gauge Type</text>
     <x>22</x>
     <y>24</y>
-    <width>32</width>
+    <width>78</width>
     <height>16</height>
     <font use_class="true">
       <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
@@ -46,31 +46,35 @@
     <pv_name>${unit}:${node}:${Add}:ReadPressure</pv_name>
     <x>8</x>
     <y>51</y>
-    <format>2</format>
+    <width>110</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <format>3</format>
+    <precision>2</precision>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Error</name>
     <pv_name>${unit}:${node}:${Add}:Error</pv_name>
-    <x>20</x>
-    <y>71</y>
+    <x>22</x>
+    <y>110</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Unit</name>
     <pv_name>${unit}:${node}:Units</pv_name>
-    <x>118</x>
+    <x>190</x>
     <y>51</y>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Gauge</name>
-    <pv_name>${unit}:${node}:${Add}:GaugeVersion</pv_name>
-    <x>228</x>
-    <y>51</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text ErrorG</name>
     <pv_name>${unit}:${node}:${Add}:ErrorGauge</pv_name>
-    <x>228</x>
-    <y>71</y>
+    <x>218</x>
+    <y>100</y>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button</name>

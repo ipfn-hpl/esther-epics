@@ -32,7 +32,7 @@
     <name>Meter_MTemp</name>
     <pv_name>${unit}:${node}:${Add}:MTemp</pv_name>
     <x>30</x>
-    <y>104</y>
+    <y>120</y>
     <width>120</width>
     <height>80</height>
     <format>1</format>
@@ -41,7 +41,7 @@
     <name>Label_MTemp</name>
     <text>Motor Temp</text>
     <x>40</x>
-    <y>82</y>
+    <y>104</y>
     <width>76</width>
     <height>16</height>
     <auto_size>true</auto_size>
@@ -50,7 +50,7 @@
     <name>Text Update_2</name>
     <pv_name>${unit}:${node}:${Add}:MTemp</pv_name>
     <x>30</x>
-    <y>200</y>
+    <y>202</y>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_MSpeed</name>
@@ -59,6 +59,11 @@
     <y>24</y>
     <width>81</width>
     <height>16</height>
+    <background_color>
+      <color red="60" green="100" blue="60" alpha="179">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
     <auto_size>true</auto_size>
   </widget>
   <widget type="textupdate" version="2.0.0">
@@ -79,19 +84,19 @@
   <widget type="textentry" version="3.0.0">
     <name>Speed SP</name>
     <pv_name>${unit}:${node}:${Add}:SetSpeedSetpoint</pv_name>
-    <x>200</x>
+    <x>220</x>
     <y>44</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
     <pv_name>${unit}:${node}:${Add}:ReadSetpoint</pv_name>
-    <x>200</x>
+    <x>220</x>
     <y>74</y>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Speep SP</name>
     <text>SET</text>
-    <x>160</x>
+    <x>180</x>
     <y>44</y>
     <width>28</width>
     <height>16</height>
@@ -120,10 +125,10 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Speep SP_1</name>
-    <text>Real SP</text>
-    <x>140</x>
+    <text>Read SP</text>
+    <x>155</x>
     <y>74</y>
-    <width>52</width>
+    <width>57</width>
     <height>16</height>
     <auto_size>true</auto_size>
   </widget>
@@ -152,7 +157,7 @@
     <name>Boolean Button</name>
     <pv_name>${unit}:${node}:${Add}:Disable</pv_name>
     <x>30</x>
-    <y>44</y>
+    <y>25</y>
     <off_color>
       <color name="OK" red="0" green="255" blue="0">
       </color>
@@ -585,5 +590,19 @@
     <y>258</y>
     <width>310</width>
     <height>310</height>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>155</x>
+    <y>24</y>
+    <width>200</width>
+    <height>80</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>${unit}:${node}:${Add}:Command</pv_name>
+    <x>30</x>
+    <y>66</y>
   </widget>
 </display>
