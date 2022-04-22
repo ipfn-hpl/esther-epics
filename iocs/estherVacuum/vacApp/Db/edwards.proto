@@ -9,8 +9,9 @@ ExtraInput   = Ignore;
 
 ## e.g Command("02") {
 Command {
-    out "@\$1",STX,"001 E%02X",ETX,"%3<xor8ff>";
-    in ACK,$1,STX,"001#",ETX,"%6<xor8ff>";
+    MaxInput = 13;
+    out "@",$1,STX,"001 E%02X",ETX,"%3<xor8ff>";
+    in ACK,$1,"@",$1,STX,"001#",ETX,"%6<xor8ff>";
     out ACK,$1;
 }
 # 3+3+1+ 30 + 4 + 4 + 10 + 4  +  16  + 1 + 1 = 77

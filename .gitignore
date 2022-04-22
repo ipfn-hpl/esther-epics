@@ -16,5 +16,6 @@ iocs/serialKistler/dbd/
 iocs/estherVacuum
 launch-scripts/gateway.*
 
+!iocs/estherVacuum/vacApp/Db/**
 
 

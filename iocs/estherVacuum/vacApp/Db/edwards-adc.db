@@ -9,13 +9,9 @@
 # ### Ref 1.0; 2022                               ### #
 # ###                                             ### #
 # ### macros: BUS     RS232/RS485 BUS name		  ### #
-# ### 		  AD      RS485 address of SCU-800    ### #
-# ###         CONVST  name of GPIO used as CONVST ### #
-# ###         BUSY    name of GPIO used as BUSY   ### #
 # ###                                             ### #
 # ### Description:                                ### #
 # ### This is an example DB file using            ### #
-# ### stream(asynI2C) and devgpio to readout an   ### #
 # ###                                             ### #
 # ### Records ending in "__" are for internal use ### #
 # ### only! Do not set them manually              ### #
@@ -26,10 +22,10 @@
 # ### Reads the measured rotational speed  ### #
 ################################################
 record(bo, $(P)$(R)Disable){
-    field(DESC, "Disable Instrument SCAN")
+    field(DESC, "Disable ADC Instrument SCAN")
     field(ZNAM, "ENABLED")
     field(ONAM, "DISABLED")
-    field(VAL, "1")
+    field(VAL, "0")
 }
 record(ai, $(P)$(R)01:ReadPressure){
     field(DESC, "Reads the measured Pressure")

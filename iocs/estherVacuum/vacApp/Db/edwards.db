@@ -31,13 +31,13 @@ record(bo, $(P)$(R)01:Disable){
     field(DESC, "Disable Instrument SCAN")
     field(ZNAM, "ENABLED")
     field(ONAM, "DISABLED")
-    field(VAL, "1")
+    field(VAL, "0")
 }
 record(bo, $(P)$(R)02:Disable){
     field(DESC, "Disable Instrument SCAN")
     field(ZNAM, "ENABLED")
     field(ONAM, "DISABLED")
-    field(VAL, "1")
+    field(VAL, "0")
 }
 record(longin, $(P)$(R)01:MTemp){
     field(DESC, "Reads the measured TMS temperature")
@@ -932,7 +932,7 @@ record(mbbo, $(P)$(R)01:Command){
     field( ONST, "START" )
     field( TWST, "STOP" )
     field( FRST, "RESET" )
-    field(VAL, "0")
+    field(VAL, "2")
 }
 record(mbbo, $(P)$(R)02:Command){
     field( DTYP, "stream" )
@@ -944,7 +944,7 @@ record(mbbo, $(P)$(R)02:Command){
     field( ONST, "START" )
     field( TWST, "STOP" )
     field( FRST, "RESET" )
-    field(VAL, "0")
+    field(VAL, "2")
 }
 record(stringout, $(P)01:generic){
     field(DESC, "Generic")
