@@ -1,0 +1,64 @@
+Terminator   = CR;
+#LockTimeout  = 500;
+ReplyTimeout = 400;
+ReadTimeout  = 300;
+#WriteTimeout = 100;
+MaxInput     = 16;
+#ExtraInput   = Error;
+ExtraInput   = Ignore;
+
+#  out "?GA",${1};
+readPressure {
+  wait 200;
+  out "?GA\${1}";
+  in  "%E";
+  @mismatch {in "%(\$2)10c"};
+}
+readVoltage {
+  wait 200;
+  out "?VL\${1}";
+  in  "%f";
+  @mismatch {in "%(\$2)10c"};
+}
+#readVoltage {
+#  out "?VL\${1}";
+#  in  "%E";
+#}
+gaugeVersion {
+  wait 200;
+  out "?GV\${1}";
+  in  "%2u";
+  @mismatch {in "%(\$2)10c"};
+}
+#Not responding
+getUnits {
+  wait 100;
+  out "?US";
+  in  "%d";
+}
+
+onGauge {
+  out "!GW\${1}=%b";
+  wait 100;
+  in "%(\$2)10c";
+}
+
+setUnits {
+  out "!US=%u";
+}
+
+# Only relay 2 can be configured
+relayOn {
+  out "!RC22=%b";
+}
+
+# Connect a stringout record to this to get
+# a generic command interface.
+# After processing finishes, the record contains the reply.
+
+debug {
+    ExtraInput = Ignore;
+    out "%s"; in "%60c"
+}
+
+
