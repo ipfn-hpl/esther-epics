@@ -14,8 +14,9 @@ iocs/serialKistler/db/
 iocs/serialKistler/dbd/
 
 iocs/estherVacuum
+iocs/estherVacuumRpi
 launch-scripts/gateway.*
 
-!iocs/estherVacuum/vacApp/Db/**
+!iocs/estherVacuumRpi/vacApp/Db/**
 
 

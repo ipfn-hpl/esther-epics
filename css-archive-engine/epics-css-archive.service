@@ -1,0 +1,26 @@
+[Unit]
+Description=EPICS CSS-Archive 4.6.6 engine
+#After=network.target remote-fs.target
+#Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/bernardo/EPICS/esther-epics/css-archive-engine
+#/home/oper/CSS-Archive/archive-engine-4.6.6
+## EPICS Vacuum IOC telnet port is 4051
+ExecStart=/usr/bin/procServ --foreground --quiet --port=4052 /home/bernardo/EPICS/esther-epics/css-archive-engine/epics-archive.sh
+User=bernardo
+RuntimeDirectory=epics-css-archive
+StandardOutput=syslog
+StandardError=inherit
+SyslogIdentifier=procserv-css-archive
+
+[Install]
+WantedBy=multi-user.target
+# telnet localhost 4052
+# Connected to localhost.
+# Escape character is '^]'. (Ctrl + AltGr + ])
+# Ctrl + D
+# > quit
+
