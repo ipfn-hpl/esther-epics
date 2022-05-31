@@ -4,8 +4,8 @@
   <macros>
     <unit>Esther</unit>
   </macros>
-  <width>1180</width>
-  <height>938</height>
+  <width>781</width>
+  <height>955</height>
   <background_color>
     <color name="Read_Background" red="240" green="240" blue="240">
     </color>
@@ -28,36 +28,6 @@
     </foreground_color>
     <transparent use_class="true">true</transparent>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_1</name>
-    <text>Some Value:</text>
-    <x>410</x>
-    <y>20</y>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
-    <pv_name>sim://sine</pv_name>
-    <x>510</x>
-    <y>20</y>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_2</name>
-    <class>COMMENT</class>
-    <text>Some comment.</text>
-    <x>630</x>
-    <y>20</y>
-    <width>140</width>
-    <font use_class="true">
-      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
-      </font>
-    </font>
-    <foreground_color use_class="true">
-      <color name="Text" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <transparent use_class="true">true</transparent>
-    <wrap_words use_class="true">true</wrap_words>
-  </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
     <macros>
@@ -67,7 +37,7 @@
     </macros>
     <file>EdwardsADC.bob</file>
     <x>16</x>
-    <y>70</y>
+    <y>26</y>
     <width>350</width>
     <height>90</height>
   </widget>
@@ -80,7 +50,7 @@
     </macros>
     <file>EdwardsADC.bob</file>
     <x>416</x>
-    <y>68</y>
+    <y>22</y>
     <width>350</width>
     <height>90</height>
   </widget>
@@ -91,8 +61,7 @@
       <name>CTST</name>
     </macros>
     <file>Mst12-arm.bob</file>
-    <x>10</x>
-    <y>746</y>
+    <y>591</y>
     <width>380</width>
     <height>190</height>
     <resize>1</resize>
@@ -104,49 +73,11 @@
       <name>STDT</name>
     </macros>
     <file>Mst12-arm.bob</file>
-    <x>410</x>
-    <y>748</y>
+    <x>400</x>
+    <y>588</y>
     <width>380</width>
     <height>190</height>
     <resize>1</resize>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_2</name>
-    <macros>
-      <Add>02</Add>
-      <name>STDT</name>
-      <node>EDW</node>
-    </macros>
-    <file>EdwardsCUTabs.bob</file>
-    <x>410</x>
-    <y>158</y>
-    <width>360</width>
-    <height>590</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_5</name>
-    <macros>
-      <Add>01</Add>
-      <name>CTST</name>
-      <node>EDW</node>
-    </macros>
-    <file>EdwardsCUTabs.bob</file>
-    <x>10</x>
-    <y>160</y>
-    <width>360</width>
-    <height>590</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_6</name>
-    <macros>
-      <Add>3</Add>
-      <name>CTST</name>
-      <node>HVA</node>
-    </macros>
-    <file>EstherHVAGateValve.bob</file>
-    <x>780</x>
-    <y>100</y>
-    <height>180</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_7</name>
@@ -156,8 +87,48 @@
       <node>HVA</node>
     </macros>
     <file>EstherHVAGateValve.bob</file>
-    <x>780</x>
-    <y>330</y>
-    <height>180</height>
+    <x>416</x>
+    <y>778</y>
+    <width>365</width>
+    <height>166</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_8</name>
+    <macros>
+      <Add>02</Add>
+      <name>STDT</name>
+      <node>EDW</node>
+    </macros>
+    <file>EdwardsCUTabs2.bob</file>
+    <x>416</x>
+    <y>118</y>
+    <width>360</width>
+    <height>470</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_9</name>
+    <macros>
+      <Add>02</Add>
+      <name>CTST</name>
+      <node>EDW</node>
+    </macros>
+    <file>EdwardsCUTabs2.bob</file>
+    <x>5</x>
+    <y>121</y>
+    <width>366</width>
+    <height>470</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_10</name>
+    <macros>
+      <Add>3</Add>
+      <name>CTST</name>
+      <node>HVA</node>
+    </macros>
+    <file>EstherHVAGateValve.bob</file>
+    <x>5</x>
+    <y>781</y>
+    <width>371</width>
+    <height>174</height>
   </widget>
 </display>

@@ -5,7 +5,7 @@
     <node>HVA</node>
     <unit>Esther</unit>
   </macros>
-  <width>342</width>
+  <width>307</width>
   <height>158</height>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_1</name>
@@ -13,6 +13,14 @@
     <y>54</y>
     <width>35</width>
     <height>74</height>
+    <line_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </background_color>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
@@ -50,6 +58,14 @@
     <y>74</y>
     <width>260</width>
     <height>39</height>
+    <line_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </background_color>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_1</name>

@@ -93,6 +93,7 @@
       <color name="On" red="0" green="255" blue="0">
       </color>
     </background_color>
+    <labels_from_pv>true</labels_from_pv>
     <mode>1</mode>
   </widget>
   <widget type="textupdate" version="2.0.0">

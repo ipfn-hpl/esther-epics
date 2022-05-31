@@ -2,7 +2,7 @@
 <display version="2.0.0">
   <name>Display</name>
   <width>340</width>
-  <height>150</height>
+  <height>123</height>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
@@ -45,10 +45,11 @@
     <name>Text Pressure</name>
     <pv_name>${unit}:${node}:${Add}:ReadPressure</pv_name>
     <x>8</x>
-    <y>51</y>
-    <width>110</width>
+    <y>53</y>
+    <width>210</width>
+    <height>40</height>
     <font>
-      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      <font family="Liberation Sans" style="REGULAR" size="36.0">
       </font>
     </font>
     <format>3</format>
@@ -57,14 +58,14 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Error</name>
     <pv_name>${unit}:${node}:${Add}:Error</pv_name>
-    <x>22</x>
-    <y>110</y>
+    <x>50</x>
+    <y>103</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Unit</name>
     <pv_name>${unit}:${node}:Units</pv_name>
-    <x>190</x>
-    <y>51</y>
+    <x>230</x>
+    <y>65</y>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="20.0">
       </font>
