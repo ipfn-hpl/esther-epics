@@ -73,7 +73,6 @@
          <name>Esther:gas:PT801</name>
          <period>1.0</period>
          <monitor>0.5</monitor>
-         <enable/>
       </channel>
 
       <!-- Channel that is scanned every 1 minutes
@@ -81,13 +80,14 @@
          <name>Esther:gas:PT801</name>
          <period>00:01:00</period><scan/>
       </channel>
+         <enable/>
+      </channel>
 -->
       <!-- Channel that enables sampling of this group -->
       <channel>
          <name>Esther:gas:PT901</name>
          <period>00:00:01</period><scan/>
          <enable/>
-      </channel>
   </group>
 
   <group>
@@ -138,7 +138,6 @@
       <channel>
          <name>Esther:gas:MFC601_VOL_FMEAS</name>
          <period>1.0</period><scan/>
-         <enable/>
       </channel>
   </group>
 
@@ -163,7 +162,6 @@
       <channel>
          <name>Esther:gas:PT901_END_HE2</name>
          <monitor/>
-         <enable/>
       </channel>
   </group>
 
@@ -187,7 +185,6 @@
          <name>Esther:ambient:Pressure</name>
          <period>60</period>
          <monitor/>
-         <enable/>
       </channel>
   </group>
 
@@ -225,12 +222,12 @@
     <name>ESTHER Vacuum System</name>
       <channel>
          <name>Esther:EDW:01:MTemp</name>
-         <period>10.0</period>
+         <period>60.0</period>
          <monitor>1.0</monitor>
       </channel>
       <channel>
          <name>Esther:EDW:02:MTemp</name>
-         <period>10.0</period>
+         <period>60.0</period>
          <monitor>1.0</monitor>
       </channel>
       <channel>
