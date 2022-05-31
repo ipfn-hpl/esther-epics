@@ -15,19 +15,19 @@ cd "${TOP}"
 dbLoadDatabase "dbd/vac.dbd"
 vac_registerRecordDeviceDriver pdbbase
 
-## EDWARDS SCU 800
+## EDWARDS SCU 800 -> *** Moved to RPI-Vacuum ***
 #drvAsynSerialPortConfigure("RS485","/dev/ttyUSB2")
 ## Load Serial drivers
-drvAsynSerialPortConfigure("RS485","/dev/rs485")
-asynSetOption("RS485", 0, "baud", "38400")
-asynSetOption("RS485", 0, "bits", "8")
-asynSetOption("RS485", 0, "parity", "none")
-asynSetOption("RS485", 0, "stop", "1")
+#drvAsynSerialPortConfigure("RS485","/dev/rs485")
+#asynSetOption("RS485", 0, "baud", "38400")
+#asynSetOption("RS485", 0, "bits", "8")
+#asynSetOption("RS485", 0, "parity", "none")
+#asynSetOption("RS485", 0, "stop", "1")
 #asynSetOption("RS485", 0, "clocal", "Y")
 #asynSetOption("RS485", 0, "crtscts", "N")
 
 ## Load record instances
-dbLoadRecords("db/edwards.db", "P=Esther:,R=EDW:,BUS=RS485")
+#dbLoadRecords("db/edwards.db", "P=Esther:,R=EDW:,BUS=RS485")
 
 ## EDWARDS ADCa (Now on Raspberry rpi-vacuum)
 #drvAsynSerialPortConfigure("RS232E1","/dev/edwardsADC")
