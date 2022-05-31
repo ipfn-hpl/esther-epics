@@ -99,7 +99,7 @@
       <name>STDT</name>
       <node>EDW</node>
     </macros>
-    <file>EdwardsCUTabs2.bob</file>
+    <file>EdwardsCUTabs.bob</file>
     <x>416</x>
     <y>118</y>
     <width>360</width>
@@ -112,7 +112,7 @@
       <name>CTST</name>
       <node>EDW</node>
     </macros>
-    <file>EdwardsCUTabs2.bob</file>
+    <file>EdwardsCUTabs.bob</file>
     <x>5</x>
     <y>121</y>
     <width>366</width>
