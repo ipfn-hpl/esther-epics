@@ -88,6 +88,7 @@
          <name>Esther:gas:PT901</name>
          <period>00:00:01</period><scan/>
          <enable/>
+      </channel>
   </group>
 
   <group>

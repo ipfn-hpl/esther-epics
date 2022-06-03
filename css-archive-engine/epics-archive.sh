@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # To replace engine:
-# /opt/epics7/archive-engine-4.6.6/archive-engine.sh -settings esther.ini -engine estherPulse -delete_config
-# /opt/epics7/archive-engine-4.6.6/archive-engine.sh -settings esther.ini -engine estherPulse -import estherEngineConfigPulse.xml
+# /opt/css-phoebus/archive-engine-4.6.10/archive-engine.sh -settings esther.ini -engine estherPulse -delete_config
+# /opt/css-phoebus/archive-engine-4.6.10/archive-engine.sh -settings esther.ini -engine estherPulse -import xml/estherEngineConfigPulse.xml
 #
 JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 PATH=$JAVA_HOME/bin:$PATH
