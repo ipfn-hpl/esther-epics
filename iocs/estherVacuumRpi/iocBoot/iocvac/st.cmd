@@ -17,6 +17,18 @@ vac_registerRecordDeviceDriver pdbbase
 ## Load record instances
 #dbLoadRecords("db/xxx.db","user=pi")
 
+## EDWARDS SCU 800
+## Load Serial drivers
+drvAsynSerialPortConfigure("RS485","/dev/rs485")
+asynSetOption("RS485", 0, "baud", "38400")
+asynSetOption("RS485", 0, "bits", "8")
+asynSetOption("RS485", 0, "parity", "none")
+asynSetOption("RS485", 0, "stop", "1")
+#asynSetOption("RS485", 0, "clocal", "Y")
+#asynSetOption("RS485", 0, "crtscts", "N")
+## Load record instances
+dbLoadRecords("db/edwards.db", "P=Esther:,R=EDW:,BUS=RS485")
+
 ## EDWARDS ADC
 drvAsynSerialPortConfigure("RS232E1","/dev/edwardsADC")
 asynSetOption("RS232E1", 0, "baud", "9600")

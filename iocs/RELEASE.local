@@ -1,6 +1,7 @@
 #RELEASE Location of external products
-HOME=/home/bernardo
-SUPPORT=$(HOME)/EPICS/epics7/support
+##
+HOME=/home/pi
+SUPPORT=$(HOME)/EPICS/support
 #
 #
 ASYN=$(SUPPORT)/asyn
@@ -30,4 +31,4 @@ PCRE=
 #SSCAN=$(SUPPORT)/sscan-2-11-3
 
 #  EPICS_BASE 
-EPICS_BASE=$(HOME)/EPICS/epics7/epics-base
+EPICS_BASE=$(HOME)/EPICS/epics-base
