@@ -1,0 +1,46 @@
+# vim: sta:et:sw=4:ts=4:sts=4
+#
+# Project       : ESTHER Vacuum slow Control
+#
+# File          : 
+# Description   : Records for  Control 
+#
+##
+# Author        : Bernardo Carvalho (IPFN-IST)
+#
+# Copyright (c) : (IPFN-IST)
+# Created 26-May-2022
+#
+##
+record(mbbo, "$(P)$(R)OPSTATE") {
+    field(DESC, "Multiple Pulse Sequence State")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(TWVL, "2")
+    field(THVL, "3")
+    field(FRVL, "4")
+    field(FVVL, "5")
+    field(SXVL, "6")
+    field(SVVL, "7")
+    field(EIVL, "8")
+    field(ZRST, "Stopped")
+    field(ONST, "Starting")
+    field(TWST, "Idle")
+    field(THST, "LowVacuum")
+    field(FRST, "StartMaglev")
+    field(FVST, "StopMaglev")
+    field(SXST, "HighVAcuum")
+    field(SVST, "Emergency")
+    field(EIST, "UPSEmergency")
+    field(VAL, "0")
+    field(FLNK, "$(P)$(R)OPCALCSTATE")
+    #field(PINI, "YES")
+}
+
+# record for bit leds
+record(calc, "$(P)$(R)OPCALCSTATE") {
+    field(DESC, "Pulse Calculated State")
+    field(CALC,"2^A")
+    #field(SCAN,"1 second")
+    field(INPA,"$(P)$(R)OPSTATE.VAL NPP NMS")
+}

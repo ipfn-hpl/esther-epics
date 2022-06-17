@@ -1,0 +1,123 @@
+#######################################################
+## vim: sta:et:sw=4:ts=4:sts=4
+# ###                                             ### #
+# ### EPICS Database for                          ### #
+# ### MST-12 Arduino control                      ### #
+# ###                                             ### #
+# ### author: B. Carvalho                         ### #
+# ###                                             ### #
+# ### Ref 1.0; 2022                               ### #
+# ###                                             ### #
+# ### macros: A : Addres of    RS232 BUS   name	  ### #
+# ###                                             ### #
+# ### Description:                                ### #
+# ### This is an example DB file using            ### #
+# ### stream(asynI2C) and devgpio to readout an   ### #
+# ###                                             ### #
+# ### Records ending in "__" are for internal use ### #
+# ### only! Do not set them manually              ### #
+# ###                                             ### #
+#######################################################
+#
+#      "1, Closed, Char:x, SwIN:0, SwOUT:0, LimIN:1, LimOUT:0, Millis:1210605, Holding:1147167"
+
+record(bi, $(P)$(R)$(A):SwitchIn){
+    field(DESC, "SwitchIn Status")
+    field(DTYP, "stream")
+    field(INP, "@armcontrol.proto SwitchIn($(A)) RS232A$(A)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(VAL, "1")
+    field(SCAN, "I/O Intr")
+}
+record(bo, $(P)$(R)$(A):SwitchInCmd){
+    field(DESC, "SwIn Command")
+    field(DTYP, "stream")
+    field(OUT, "@armcontrol.proto SwitchInCmd RS232A$(A)")
+    field(ZNAM, "IN")
+    field(ONAM, "")
+    field(HIGH, "2.0")
+    field(VAL, "0")
+}
+record(bi, $(P)$(R)$(A):SwitchOut){
+    field(DESC, "Start counter")
+    field(DTYP, "stream")
+    field(INP, "@armcontrol.proto SwitchOut($(A)) RS232A$(A)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(VAL, "1")
+    field(SCAN, "I/O Intr")
+}
+record(bo, $(P)$(R)$(A):SwitchOutCmd){
+    field(DESC, "SwOut Command")
+    field(DTYP, "stream")
+    field(OUT, "@armcontrol.proto SwitchOutCmd RS232A$(A)")
+    field(ZNAM, "OUT")
+    field(ONAM, "")
+    field(HIGH, "2.0")
+    field(VAL, "0")
+}
+record(bi, $(P)$(R)$(A):LimitIn){
+    field(DESC, "Start counter")
+    field(DTYP, "stream")
+    field(INP, "@armcontrol.proto LimitIn($(A)) RS232A$(A)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(VAL, "1")
+    field(SCAN, "I/O Intr")
+}
+record(bi, $(P)$(R)$(A):LimitOut){
+    field(DESC, "Start counter")
+    field(DTYP, "stream")
+    field(INP, "@armcontrol.proto LimitOut($(A)) RS232A$(A)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(VAL, "1")
+    field(SCAN, "I/O Intr")
+}
+record(mbbi, $(P)$(R)$(A):Status){
+    field(DTYP, "stream")
+    field(INP, "@armcontrol.proto Status($(A)) RS232A$(A)")
+    field(VAL, "5")
+
+    field(ZRVL,"0")
+    field(ZRST,"Stopped")
+    field(ONVL,"1")
+    field(ONST,"Moving In")
+    field(TWVL,"2")
+    field(TWST,"Moving Out")
+    field(THVL,"3")
+    field(THST,"Closed")
+    field(FRVL,"4")
+    field(FRST,"Open")
+    field(FVVL,"5")
+    field(FVST,"Error")
+
+    field(SCAN, "I/O Intr")
+}
+record(longin, $(P)$(R)$(A):Millis){
+    field(DESC, "Start counter")
+    field(DTYP, "stream")
+    field(INP, "@armcontrol.proto Millis($(A)) RS232A$(A)")
+    field(VAL, "-1")
+    field(EGU, "ms")
+    field(SCAN, "I/O Intr")
+}
+record(longin, $(P)$(R)$(A):Holding){
+    field(DESC, "Start counter")
+    field(DTYP, "stream")
+    field(INP, "@armcontrol.proto Millis($(A)) RS232A$(A)")
+    field(VAL, "-1")
+    field(EGU, "ms")
+    field(SCAN, "I/O Intr")
+}
+record(stringin, $(P)$(R)$(A):Char){
+    field(DTYP, "stream")
+    field(INP, "@armcontrol.proto Char($(A)) RS232A$(A)")
+    field(SCAN, "I/O Intr")
+}
+record(stringout, $(P)$(R):generic){
+    field(DESC, "Generic")
+    field(DTYP, "stream")
+    field(OUT, "@armcontrol.proto debug RS232A$(A)")
+}

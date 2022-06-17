@@ -1,0 +1,48 @@
+program sncEstherVacuum
+double v;
+assign v to "{user}:aiExample";
+monitor v;
+
+short POS_Stopped =0;
+short POS_Starting=1;
+short POS_Idle =2;
+short POS_Clean =3;
+short POS_WaitShot=4;
+short POS_Stopping=5;
+short POS_Emergency=6;
+//short POS_UPSEmergency=7;
+ 
+short ON=1;
+short OFF=0;
+short START=1;
+short STOP=0;
+short CLEAN=0;
+short SHOT=1;
+short NO_ALARM=0;
+short MINOR=1;
+short MAJOR=2;
+short INVALID=3;
+
+
+/* PV variables  */
+short OPSTATE;
+assign OPSTATE to "{unit}:Vacuum:OPSTATE";
+monitor OPSTATE;
+
+ss ss1 {
+    state init {
+        when (delay(10)) {
+            printf("sncExample: Startup delay over\n");
+        } state low
+    }
+    state low {
+        when (v > 5.0) {
+            printf("sncExample: Changing to high\n");
+        } state high
+    }
+    state high {
+        when (v <= 5.0) {
+            printf("sncExample: Changing to low\n");
+        } state low
+    }
+}
