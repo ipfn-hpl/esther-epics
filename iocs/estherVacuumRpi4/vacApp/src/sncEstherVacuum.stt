@@ -1,17 +1,23 @@
 program sncEstherVacuum
-double v;
-assign v to "{user}:aiExample";
-monitor v;
-
 short POS_Stopped =0;
 short POS_Starting=1;
 short POS_Idle =2;
-short POS_Clean =3;
+short POS_LowVacuum=3;
 short POS_WaitShot=4;
 short POS_Stopping=5;
-short POS_Emergency=6;
-//short POS_UPSEmergency=7;
- 
+short POS_Emergency=7;
+short POS_UPSEmergency=8;
+/* 
+   field(ZRST, "Stopped")
+    field(ONST, "Starting")
+    field(TWST, "Idle")
+    field(THST, "LowVacuum")
+    field(FRST, "StartMaglev")
+    field(FVST, "StopMaglev")
+    field(SXST, "HighVAcuum")
+    field(SVST, "Emergency")
+    field(EIST, "UPSEmergency")
+*/
 short ON=1;
 short OFF=0;
 short START=1;
@@ -25,9 +31,45 @@ short INVALID=3;
 
 
 /* PV variables  */
+double v;
+assign v to "{unit}:aiExample";
+monitor v;
+
 short OPSTATE;
 assign OPSTATE to "{unit}:Vacuum:OPSTATE";
 monitor OPSTATE;
+
+float ADC1_Pressure;
+assign ADC1_Pressure "{unit}:Vacuum:01:ReadPressure";
+monitor ADC1_Pressure;
+
+float ADC2_Pressure;
+assign ADC2_Pressure "{unit}:Vacuum:02:ReadPressure";
+monitor ADC2_Pressure;
+
+short GV_CTST_Lim_In;
+assign GV_CTST_Lim_In to "{unit}:HVA:3:LimitIn";
+monitor GV_CTST_Lim_In;
+
+short GV_CTST_Lim_Out;
+assign GV_CTST_Lim_Out to "{unit}:HVA:3:LimitOut";
+monitor GV_CTST_Lim_Out;
+
+short GV_STDT_Lim_In;
+assign GV_STDT_Lim_In to "{unit}:HVA:3:LimitIn";
+monitor GV_STDT_Lim_In;
+
+short GV_STDT_Lim_Out;
+assign GV_STDT_Lim_Out to "{unit}:HVA:3:LimitOut";
+monitor GV_STDT_Lim_Out;
+
+short ARM_CTST_Status;
+assign ARM_CTST_Status to "{unit}:ARM:1:Status";
+monitor ARM_CTST_Status;
+
+short ARM_STDT_Status;
+assign ARM_STDT_Status to "{unit}:ARM:2:Status";
+monitor ARM_STDT_Status;
 
 ss ss1 {
     state init {

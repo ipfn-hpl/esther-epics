@@ -66,6 +66,8 @@ asynSetOption("RS232E1", 0, "stop", "1")
 ##asynSetOption("RS232E1", 0, "crtscts", "N")
 dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
 
+dbLoadRecords("db/estherStates.db", "P=Esther:,R=Vacuum:")
+
 #- Set this to see messages from mySub
 #var mySubDebug 1
 
@@ -76,5 +78,5 @@ cd "${TOP}/iocBoot/${IOC}"
 iocInit
 
 ## Start any sequence programs
-seq sncEstherVacuum, "user=pi,unit=Esther"
+seq sncEstherVacuum, "unit=Esther"
 

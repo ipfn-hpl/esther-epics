@@ -12,6 +12,9 @@
 # Created 26-May-2022
 #
 ##
+record(ai, "$(P)aiExample") {
+    field(DESC, "temp ai PV")
+}
 record(mbbo, "$(P)$(R)OPSTATE") {
     field(DESC, "Multiple Pulse Sequence State")
     field(ZRVL, "0")
