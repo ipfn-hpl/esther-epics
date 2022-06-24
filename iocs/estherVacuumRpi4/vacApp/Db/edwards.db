@@ -31,7 +31,7 @@ record(bo, $(P)$(R)01:Disable){
     field(DESC, "Disable Instrument SCAN")
     field(ZNAM, "ENABLED")
     field(ONAM, "DISABLED")
-    field(VAL, "0")
+    field(VAL, "1")
 }
 record(bo, $(P)$(R)02:Disable){
     field(DESC, "Disable Instrument SCAN")
@@ -71,7 +71,6 @@ record(longin, $(P)$(R)01:ReadMeasValue){
     field(DESC, "Reads TMS Temp, M Temp, M Speed")
     field(DTYP, "stream")
     field(INP, "@edwards.proto ReadMeasValue('01', $(P)$(R)01:MTemp, $(P)$(R)01:MSpeed.RVAL) RS485")
-    #field(PINI, "YES")
     field(VAL, "22")
     field(SCAN, "2 second")
     #field(DISA, "1")
@@ -81,7 +80,6 @@ record(longin, $(P)$(R)01:ReadMeasValue){
 }
 record(longin, $(P)$(R)02:MTemp){
     field(DESC, "Reads the measured TMS temperature")
-    #field(VAL, "1")
     field(LOPR, "10")
     field(HOPR, "100")
     field(HIGH, "60")
@@ -112,7 +110,6 @@ record(longin, $(P)$(R)02:ReadMeasValue){
     field(DTYP, "stream")
     field(INP, "@edwards.proto ReadMeasValue('02', $(P)$(R)02:MTemp, $(P)$(R)02:MSpeed.RVAL) RS485")
     #field(PINI, "YES")
-    #field(DISA, "1")
     field(SCAN, "2 second")
     field(SDIS, "$(P)$(R)02:Disable")
     field(FLNK, "$(P)$(R)02:ReadModFonctWithWarning")
