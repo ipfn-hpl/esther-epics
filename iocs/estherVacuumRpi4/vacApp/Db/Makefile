@@ -18,6 +18,7 @@ DB += edwards-adc.proto
 DB += armcontrol.db
 DB += armcontrol.proto
 DB += estherStates.db
+DB += mb-li.db
 
 #DB += bme680.db
 #DB += bme680.proto

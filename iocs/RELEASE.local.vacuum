@@ -1,6 +1,6 @@
 #RELEASE Location of external products
-HOME=/home/pi
-SUPPORT=/home/pi/EPICS7/support
+HOME_EPICS=/home/pi/EPICS
+SUPPORT=$(HOME_EPICS)/support
 
 #  IPAC is only necessary if support for Greensprings IP488 is required
 #  IPAC release V2-7 or later is required.
@@ -18,16 +18,18 @@ ASYN=$(SUPPORT)/asyn
 STREAM=$(SUPPORT)/stream
 
 # If CALC was built with SSCAN support then SSCAN must be defined for testEpicsApp
-#SSCAN=$(SUPPORT)/sscan-2-11-3
-SSCAN=
+SSCAN=$(SUPPORT)/sscan
+# SSCAN=
 
 PCRE=
 #PCRE_INCLUDE=/usr/include/pcre
 #PCRE_LIB=/usr/lib/arm-linux-gnueabihf 
 #
 #/usr/lib/arm-linux-gnueabihf
-#S7NODAVE=$(SUPPORT)/s7nodave-3.0.2
+S7NODAVE=$(SUPPORT)/s7nodave
+
+MODBUS=$(SUPPORT)/modbus
 
 #  EPICS_BASE 3.14.6 or later is required
-EPICS_BASE=/home/pi/EPICS7/epics-base
+EPICS_BASE=$(HOME_EPICS)/epics-base
 
