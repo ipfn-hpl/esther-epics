@@ -48,6 +48,7 @@ vac_DBD += asyn.dbd
 vac_DBD += drvAsynSerialPort.dbd
 vac_DBD += calc.dbd
 vac_DBD += stream.dbd
+vac_DBD += modbusSupport.dbd
 #vac_DBD += xxxSupport.dbd
 #vac_DBD += dbSubExample.dbd
 vac_DBD += devvacVersion.dbd
@@ -65,22 +66,23 @@ vac_SRCS_vxWorks += -nil-
 vac_LIBS += asyn
 vac_LIBS += calc
 vac_LIBS += stream
+vac_LIBS += modbus
 
 # Link in the code from our support library
 vac_LIBS += vacSupport
 
 # To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file
-ifneq ($(SNCSEQ),)
+#ifneq ($(SNCSEQ),)
     # Build sncEstherVacuum into vacSupport
-    sncEstherVacuum += +r
-    vac_DBD += sncEstherVacuum.dbd
+#    sncEstherVacuum += +r
+#    vac_DBD += sncEstherVacuum.dbd
     # A .stt sequence program is *not* pre-processed:
-    vacSupport_SRCS += sncEstherVacuum.stt
-    vacSupport_LIBS += seq pv
-    vac_LIBS += seq pv
+#    vacSupport_SRCS += sncEstherVacuum.stt
+#    vacSupport_LIBS += seq pv
+#    vac_LIBS += seq pv
 
-endif
+#endif
 
 # Link QSRV (pvAccess Server) if available
 ifdef EPICS_QSRV_MAJOR_VERSION

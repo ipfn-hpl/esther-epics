@@ -6,20 +6,11 @@ include $(TOP)/configure/CONFIG
 # Install databases, templates & substitutions like this
 #DB += circle.db
 #DB += dbExample1.db
-#DB += dbExample2.db
 DB += vacVersion.db
-#DB += dbSubExample.db
 #DB += user.substitutions
-DB += edwards.db
-DB += edwards.proto
-DB += edwards-adc.db
-DB += edwards-adc.proto
+#DB += edwards-adc.proto
 
-DB += armcontrol.db
-DB += armcontrol.proto
-DB += gate-valve.db
-DB += gate-valve.proto
-DB += estherStates.db
+DB += mb-li.db
 
 #DB += bme680.db
 #DB += bme680.proto
