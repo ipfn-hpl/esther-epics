@@ -11,6 +11,8 @@ DB += vacVersion.db
 #DB += edwards-adc.proto
 
 DB += mb-li.db
+DB += mb-lo.db
+DB += mb-ai.db
 
 #DB += bme680.db
 #DB += bme680.proto

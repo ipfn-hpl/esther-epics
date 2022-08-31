@@ -1,0 +1,6 @@
+# ai record template for register inputs
+record(ai, "ai:$(P):$(R)") {
+    field(DTYP,"asynFloat64")
+    field(INP,"@asyn($(PORT) $(OFFSET))FLOAT32_BE")
+    field(SCAN,"$(SCAN)")
+}

@@ -19,69 +19,45 @@ vac_registerRecordDeviceDriver pdbbase
 dbLoadRecords "db/vacVersion.db", "user=pi"
 #dbLoadRecords "db/dbSubExample.db", "user=pi"
 
-## EDWARDS SCU 800
-## Load Serial drivers
-drvAsynSerialPortConfigure("RS485","/dev/rs485")
-asynSetOption("RS485", 0, "baud", "38400")
-asynSetOption("RS485", 0, "bits", "8")
-asynSetOption("RS485", 0, "parity", "none")
-asynSetOption("RS485", 0, "stop", "1")
-#asynSetOption("RS485", 0, "clocal", "Y")
-#asynSetOption("RS485", 0, "crtscts", "N")
+drvAsynSerialPortConfigure("MDBUS", "/dev/tty_modbus", 0, 0, 0)
+asynSetOption("MDBUS",0,"baud","19200")
+asynSetOption("MDBUS",0,"parity","even")
+asynSetOption("MDBUS",0,"bits","8")
+asynSetOption("MDBUS",0,"stop","1")
+
+# modbusInterposeConfig(portName,
+#                      linkType,
+#                      timeoutMsec,
+#                      writeDelayMsec)
+# Modbus link layer type:, 0 = TCP/IP, 1 = RTU, 2 = ASCII
+
+modbusInterposeConfig("MDBUS",1,1000,0)
+# drvModbusAsynConfigure(portName,
+#                       tcpPortName,
+#                       slaveAddress,
+#                       modbusFunction,
+#                       modbusStartAddress,
+#                       modbusLength,
+#                       dataType,
+#                       pollMsec,
+#                       plcType);
+# Read  words (16 bits).  Function code=3 PDU address (start=0).
+# USE PDU ADDRESSES. Prefix 0 is octal
+
+drvModbusAsynConfigure("K1_Y32_In_Word","MDBUS", 1, 3, 32, 1,    0,  100, "el-flow")
 ## Load record instances
-dbLoadRecords("db/edwards.db", "P=Esther:,R=EDW:,BUS=RS485")
+dbLoadRecords("db/mb-li.db","P='Esther:MFC1',R=Measure,PORT=K1_Y32_In_Word,OFFSET=0,SCAN='I/O Intr'")
 
-## EDWARDS ADC moved to rpi4-vacuum
-# drvAsynSerialPortConfigure("RS232E1","/dev/edwardsADC")
-# asynSetOption("RS232E1", 0, "baud", "9600")
-# asynSetOption("RS232E1", 0, "bits", "8")
-# asynSetOption("RS232E1", 0, "parity", "none")
-# asynSetOption("RS232E1", 0, "stop", "1")
-##asynSetOption("RS232E1", 0, "clocal", "Y")
-##asynSetOption("RS232E1", 0, "crtscts", "N")
-# dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
+drvModbusAsynConfigure("K1_Y1063_In_Word","MDBUS", 1, 3, 1063, 1,    0,  100, "el-flow")
+dbLoadRecords("db/mb-li.db","P='Esther:MFC1',R=Temperature,PORT=K1_Y1063_In_Word,OFFSET=0,SCAN='I/O Intr'")
 
-# Arduino MST12 ARM control CTST
-#drvAsynSerialPortConfigure("RS232A1","/dev/armCTST")
-#drvAsynSerialPortConfigure("RS232A1","/dev/ttyACM0")
-#asynSetOption("RS232A1", 0, "baud", "115200")
-#asynSetOption("RS232A1", 0, "bits", "8")
-#asynSetOption("RS232A1", 0, "parity", "none")
-#asynSetOption("RS232A1", 0, "stop", "1")
-#dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=1")
+drvModbusAsynConfigure("K1_Y33_Out_Word","MDBUS", 1, 6, 33, 1,    0,  100, "el-flow")
+dbLoadRecords("db/mb-lo.db","P=Esther:MFC1,R=Setpoint,PORT=K1_Y33_Out_Word,OFFSET=0")
 
-# Arduino MST12 ARM control STDT
-#drvAsynSerialPortConfigure("RS232A2","/dev/armSTDT")
-#asynSetOption("RS232A2", 0, "baud", "115200")
-#asynSetOption("RS232A2", 0, "bits", "8")
-#asynSetOption("RS232A2", 0, "parity", "none")
-#asynSetOption("RS232A2", 0, "stop", "1")
-#dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=2")
+# Float Inputs BIGEndian
+drvModbusAsynConfigure("K1_V41272_In_Word",   "MDBUS",    1, 3,  41272,  2,    0,  100,    "el-flow")
+dbLoadRecords("db/mb-ai.db","P=Esther:MFC1,R=FTemperature,PORT=K1_V41272_In_Word,OFFSET=0,SCAN='I/O Intr'")
 
-# No power on Raspberry USB for SeeduinoV4.2. Must use USB powered HUB
-
-#epicsEnvSet "A" "$(A=3)"
-#epicsEnvSet "BRS" "$(BRS=RS232A$(A))"
-## Arduino HVA Gate Valve control
-#drvAsynSerialPortConfigure("$(BRS)","/dev/gatevalveCTST",0,0,0)
-#asynSetOption("$(BRS)", 0, "baud", "115200")
-#asynSetOption("$(BRS)", 0, "bits", "8")
-#asynSetOption("$(BRS)", 0, "parity", "none")
-#asynSetOption("$(BRS)", 0, "stop", "1")
-#dbLoadRecords("db/armcontrol.db", "P=$(P):,R=HVA:,A=3")
-
-# Arduino Gate Valve  control
-#epicsEnvSet "E" "$(E=4)"
-#epicsEnvSet "BRE" "$(BRE=RS232A$(E))"
-## Arduino HVA Gate Valve control
-#drvAsynSerialPortConfigure("$(BRE)","/dev/gatevalveSTDT",0,0,0)
-#asynSetOption("$(BRE)", 0, "baud", "115200")
-#asynSetOption("$(BRE)", 0, "bits", "8")
-#asynSetOption("$(BRE)", 0, "parity", "none")
-#asynSetOption("$(BRE)", 0, "stop", "1")
-#dbLoadRecords("db/armcontrol.db", "P=$(P):,R=HVA:,A=$(E)")
-
-#dbLoadRecords("db/estherStates.db", "P=Esther:,R=Vacuum:")
 
 #- Set this to see messages from mySub
 #var mySubDebug 1
