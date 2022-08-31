@@ -26,7 +26,7 @@ record(bi, $(P)$(R)$(A):SwitchIn){
     field(INP, "@armcontrol.proto SwitchIn($(A)) RS232A$(A)")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
-    field(VAL, "1")
+    #field(VAL, "1")
     field(SCAN, "I/O Intr")
 }
 record(bo, $(P)$(R)$(A):SwitchInCmd){
@@ -35,7 +35,6 @@ record(bo, $(P)$(R)$(A):SwitchInCmd){
     field(OUT, "@armcontrol.proto SwitchInCmd RS232A$(A)")
     field(ZNAM, "IN")
     field(ONAM, "")
-    field(HIGH, "2.0")
     field(VAL, "0")
 }
 record(bi, $(P)$(R)$(A):SwitchOut){
@@ -44,7 +43,7 @@ record(bi, $(P)$(R)$(A):SwitchOut){
     field(INP, "@armcontrol.proto SwitchOut($(A)) RS232A$(A)")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
-    field(VAL, "1")
+    #field(VAL, "1")
     field(SCAN, "I/O Intr")
 }
 record(bo, $(P)$(R)$(A):SwitchOutCmd){
@@ -53,7 +52,6 @@ record(bo, $(P)$(R)$(A):SwitchOutCmd){
     field(OUT, "@armcontrol.proto SwitchOutCmd RS232A$(A)")
     field(ZNAM, "OUT")
     field(ONAM, "")
-    field(HIGH, "2.0")
     field(VAL, "0")
 }
 record(bi, $(P)$(R)$(A):LimitIn){
@@ -62,7 +60,7 @@ record(bi, $(P)$(R)$(A):LimitIn){
     field(INP, "@armcontrol.proto LimitIn($(A)) RS232A$(A)")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
-    field(VAL, "1")
+    #field(VAL, "1")
     field(SCAN, "I/O Intr")
 }
 record(bi, $(P)$(R)$(A):LimitOut){
@@ -71,13 +69,13 @@ record(bi, $(P)$(R)$(A):LimitOut){
     field(INP, "@armcontrol.proto LimitOut($(A)) RS232A$(A)")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
-    field(VAL, "1")
+#    field(VAL, "1")
     field(SCAN, "I/O Intr")
 }
 record(mbbi, $(P)$(R)$(A):Status){
     field(DTYP, "stream")
     field(INP, "@armcontrol.proto Status($(A)) RS232A$(A)")
-    field(VAL, "5")
+   # field(VAL, "5")
 
     field(ZRVL,"0")
     field(ZRST,"Stopped")
@@ -98,7 +96,7 @@ record(longin, $(P)$(R)$(A):Millis){
     field(DESC, "Start counter")
     field(DTYP, "stream")
     field(INP, "@armcontrol.proto Millis($(A)) RS232A$(A)")
-    field(VAL, "-1")
+#    field(VAL, "-1")
     field(EGU, "ms")
     field(SCAN, "I/O Intr")
 }
@@ -106,7 +104,7 @@ record(longin, $(P)$(R)$(A):Holding){
     field(DESC, "Start counter")
     field(DTYP, "stream")
     field(INP, "@armcontrol.proto Millis($(A)) RS232A$(A)")
-    field(VAL, "-1")
+   # field(VAL, "-1")
     field(EGU, "ms")
     field(SCAN, "I/O Intr")
 }

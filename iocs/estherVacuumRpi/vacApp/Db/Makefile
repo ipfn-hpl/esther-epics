@@ -17,6 +17,8 @@ DB += edwards-adc.proto
 
 DB += armcontrol.db
 DB += armcontrol.proto
+DB += gate-valve.db
+DB += gate-valve.proto
 DB += estherStates.db
 
 #DB += bme680.db

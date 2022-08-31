@@ -31,28 +31,57 @@ asynSetOption("RS485", 0, "stop", "1")
 ## Load record instances
 dbLoadRecords("db/edwards.db", "P=Esther:,R=EDW:,BUS=RS485")
 
-## EDWARDS ADC
-#drvAsynSerialPortConfigure("RS232E1","/dev/edwardsADC")
-#asynSetOption("RS232E1", 0, "baud", "9600")
-#asynSetOption("RS232E1", 0, "bits", "8")
-#asynSetOption("RS232E1", 0, "parity", "none")
-#asynSetOption("RS232E1", 0, "stop", "1")
+## EDWARDS ADC moved to rpi4-vacuum
+# drvAsynSerialPortConfigure("RS232E1","/dev/edwardsADC")
+# asynSetOption("RS232E1", 0, "baud", "9600")
+# asynSetOption("RS232E1", 0, "bits", "8")
+# asynSetOption("RS232E1", 0, "parity", "none")
+# asynSetOption("RS232E1", 0, "stop", "1")
 ##asynSetOption("RS232E1", 0, "clocal", "Y")
 ##asynSetOption("RS232E1", 0, "crtscts", "N")
-#dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
+# dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
 
 # Arduino MST12 ARM control CTST
 #drvAsynSerialPortConfigure("RS232A1","/dev/armCTST")
-drvAsynSerialPortConfigure("RS232A1","/dev/ttyACM0")
-asynSetOption("RS232A1", 0, "baud", "115200")
-asynSetOption("RS232A1", 0, "bits", "8")
-asynSetOption("RS232A1", 0, "parity", "none")
-asynSetOption("RS232A1", 0, "stop", "1")
-dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=1")
+#drvAsynSerialPortConfigure("RS232A1","/dev/ttyACM0")
+#asynSetOption("RS232A1", 0, "baud", "115200")
+#asynSetOption("RS232A1", 0, "bits", "8")
+#asynSetOption("RS232A1", 0, "parity", "none")
+#asynSetOption("RS232A1", 0, "stop", "1")
+#dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=1")
 
-# No power on Raspberry USB for SeeduinoV4.2...
+# Arduino MST12 ARM control STDT
+#drvAsynSerialPortConfigure("RS232A2","/dev/armSTDT")
+#asynSetOption("RS232A2", 0, "baud", "115200")
+#asynSetOption("RS232A2", 0, "bits", "8")
+#asynSetOption("RS232A2", 0, "parity", "none")
+#asynSetOption("RS232A2", 0, "stop", "1")
+#dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=2")
 
-dbLoadRecords("db/estherStates.db", "P=Esther:,R=Vacuum:")
+# No power on Raspberry USB for SeeduinoV4.2. Must use USB powered HUB
+
+#epicsEnvSet "A" "$(A=3)"
+#epicsEnvSet "BRS" "$(BRS=RS232A$(A))"
+## Arduino HVA Gate Valve control
+#drvAsynSerialPortConfigure("$(BRS)","/dev/gatevalveCTST",0,0,0)
+#asynSetOption("$(BRS)", 0, "baud", "115200")
+#asynSetOption("$(BRS)", 0, "bits", "8")
+#asynSetOption("$(BRS)", 0, "parity", "none")
+#asynSetOption("$(BRS)", 0, "stop", "1")
+#dbLoadRecords("db/armcontrol.db", "P=$(P):,R=HVA:,A=3")
+
+# Arduino Gate Valve  control
+#epicsEnvSet "E" "$(E=4)"
+#epicsEnvSet "BRE" "$(BRE=RS232A$(E))"
+## Arduino HVA Gate Valve control
+#drvAsynSerialPortConfigure("$(BRE)","/dev/gatevalveSTDT",0,0,0)
+#asynSetOption("$(BRE)", 0, "baud", "115200")
+#asynSetOption("$(BRE)", 0, "bits", "8")
+#asynSetOption("$(BRE)", 0, "parity", "none")
+#asynSetOption("$(BRE)", 0, "stop", "1")
+#dbLoadRecords("db/armcontrol.db", "P=$(P):,R=HVA:,A=$(E)")
+
+#dbLoadRecords("db/estherStates.db", "P=Esther:,R=Vacuum:")
 
 #- Set this to see messages from mySub
 #var mySubDebug 1
@@ -68,4 +97,4 @@ cd "${TOP}/iocBoot/${IOC}"
 iocInit
 
 ## Start any sequence programs
-seq sncEstherVacuum, "user=pi,unit=Esther"
+#seq sncEstherVacuum, "user=pi,unit=Esther"
