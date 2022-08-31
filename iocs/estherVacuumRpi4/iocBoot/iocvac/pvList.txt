@@ -12,6 +12,7 @@ Esther:Vacuum:02:ErrorGauge
 Esther:EDW:01:SetSpeedSetpointLo
 Esther:EDW:02:SetSpeedSetpointLo
 Esther:Vacuum:OPCALCSTATE
+Esther:EDA:Valve
 Esther:ARM:1:SwitchInCmd
 Esther:ARM:1:SwitchOutCmd
 Esther:ARM:2:SwitchInCmd
@@ -22,6 +23,10 @@ Esther:EDW:01:Disable
 Esther:EDW:02:Disable
 Esther:Vacuum:Disable
 Esther:Vacuum:01:GaugeOn
+Esther:EDA:Valve_LS1_ON
+Esther:EDA:Valve_LS1_OFF
+Esther:EDA:Valve_LS2_ON
+Esther:EDA:Valve_LS2_OFF
 Esther:ARM:1:SwitchIn
 Esther:ARM:1:SwitchOut
 Esther:ARM:1:LimitIn
@@ -76,6 +81,7 @@ Esther:Vacuum:01:ReadPressure
 Esther:Vacuum:02:ReadPressure
 Esther:Vacuum:01:ReadVoltage
 Esther:Vacuum:02:ReadVoltage
+Esther:aiExample
 Esther:EDW:01:SetSpeedSetpoint
 Esther:EDW:02:SetSpeedSetpoint
 Esther:EDW:01:WARNING

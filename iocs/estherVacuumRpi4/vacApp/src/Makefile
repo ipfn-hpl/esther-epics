@@ -48,7 +48,8 @@ vac_DBD += asyn.dbd
 vac_DBD += drvAsynSerialPort.dbd
 vac_DBD += calc.dbd
 vac_DBD += stream.dbd
-vac_DBD += modbusSupport.dbd
+vac_DBD += s7nodave.dbd
+#vac_DBD += modbusSupport.dbd
 
 vac_DBD += initTrace.dbd
 
@@ -66,7 +67,8 @@ vac_LIBS += vacSupport
 vac_LIBS += asyn
 vac_LIBS += calc
 vac_LIBS += stream
-vac_LIBS += modbus
+vac_LIBS += s7nodave
+#vac_LIBS += modbus
 
 
 # To build SNL programs, SNCSEQ must be defined
