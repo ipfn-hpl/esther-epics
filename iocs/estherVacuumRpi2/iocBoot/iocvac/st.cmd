@@ -5,8 +5,8 @@
 
 < envPaths
 
-epicsEnvSet( "STREAM_PROTOCOL_PATH", "$(TOP)/db" )
-epicsEnvSet "P" "$(P=Esther)"
+#epicsEnvSet( "STREAM_PROTOCOL_PATH", "$(TOP)/db" )
+#epicsEnvSet "P" "$(P=Esther)"
 
 cd "${TOP}"
 
