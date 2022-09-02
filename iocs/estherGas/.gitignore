@@ -1,0 +1,8 @@
+Makefile
+bin/
+configure/
+db/
+dbd/
+include/
+estherGasApp/
+lib/
