@@ -44,17 +44,31 @@ modbusInterposeConfig("MDBUS",1,1000,0)
 # Read  words (16 bits).  Function code=3 PDU address (start=0).
 # USE PDU ADDRESSES. Prefix 0 is octal
 
-drvModbusAsynConfigure("K1_Y32_In_Word","MDBUS", 1, 3, 32, 1,    0,  100, "el-flow")
 ## Load record instances
-dbLoadRecords("db/mb-li.db","P='Esther:MFC1',R=Measure,PORT=K1_Y32_In_Word,OFFSET=0,SCAN='I/O Intr'")
+drvModbusAsynConfigure("K1_Y0_Out_Word","MDBUS", 1, 6, 0, 1,    0,  100, "el-flow")
+dbLoadRecords("db/mb-lo.db","P=Esther:MFC1,R=Wink,PORT=K1_Y0_Out_Word,OFFSET=0")
 
-drvModbusAsynConfigure("K1_Y1063_In_Word","MDBUS", 1, 3, 1063, 1,    0,  100, "el-flow")
-dbLoadRecords("db/mb-li.db","P='Esther:MFC1',R=Temperature,PORT=K1_Y1063_In_Word,OFFSET=0,SCAN='I/O Intr'")
+drvModbusAsynConfigure("K1_Y32_In_Word","MDBUS", 1, 3, 32, 1,    0,  100, "el-flow")
+dbLoadRecords("db/mb-li.db","P='Esther:MFC1',R=Measure,PORT=K1_Y32_In_Word,OFFSET=0,SCAN='I/O Intr'")
 
 drvModbusAsynConfigure("K1_Y33_Out_Word","MDBUS", 1, 6, 33, 1,    0,  100, "el-flow")
 dbLoadRecords("db/mb-lo.db","P=Esther:MFC1,R=Setpoint,PORT=K1_Y33_Out_Word,OFFSET=0")
 
+drvModbusAsynConfigure("K1_Y36_Out_Word","MDBUS", 1, 6, 36, 1,    0,  100, "el-flow")
+dbLoadRecords("db/mb-mbbo.db","P=Esther:MFC1,R=Control_Mode,PORT=K1_Y36_Out_Word,OFFSET=0")
+
+drvModbusAsynConfigure("K1_Y1063_In_Word","MDBUS", 1, 3, 1063, 1,    0,  100, "el-flow")
+dbLoadRecords("db/mb-li.db","P='Esther:MFC1',R=Temperature,PORT=K1_Y1063_In_Word,OFFSET=0,SCAN='I/O Intr'")
+
 # Float Inputs BIGEndian
+#ai
+drvModbusAsynConfigure("K1_V41216_In_Word",   "MDBUS",    1, 3,  41216,  2,    0,  100,    "el-flow")
+dbLoadRecords("db/mb-ai.db","P=Esther:MFC1,R=FMeasure,PORT=K1_V41216_In_Word,OFFSET=0,SCAN='I/O Intr'")
+
+# ao
+drvModbusAsynConfigure("K1_V41240_Out_Word",   "MDBUS",    1, 6,  41240,  2,    0,  100,    "el-flow")
+dbLoadRecords("db/mb-ao.db","P=Esther:MFC1,R=FSetpoint,PORT=K1_V41240_Out_Word,OFFSET=0")
+
 drvModbusAsynConfigure("K1_V41272_In_Word",   "MDBUS",    1, 3,  41272,  2,    0,  100,    "el-flow")
 dbLoadRecords("db/mb-ai.db","P=Esther:MFC1,R=FTemperature,PORT=K1_V41272_In_Word,OFFSET=0,SCAN='I/O Intr'")
 

@@ -4,15 +4,14 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS BELOW HERE
 
 # Install databases, templates & substitutions like this
-#DB += circle.db
-#DB += dbExample1.db
 DB += vacVersion.db
 #DB += user.substitutions
-#DB += edwards-adc.proto
 
 DB += mb-li.db
 DB += mb-lo.db
+DB += mb-mbbo.db
 DB += mb-ai.db
+DB += mb-ao.db
 
 #DB += bme680.db
 #DB += bme680.proto
