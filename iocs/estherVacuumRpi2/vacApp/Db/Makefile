@@ -10,6 +10,7 @@ DB += vacVersion.db
 DB += mb-li.db
 DB += mb-lo.db
 DB += mb-mbbo.db
+DB += mb-mbbi.db
 DB += mb-ai.db
 DB += mb-ao.db
 

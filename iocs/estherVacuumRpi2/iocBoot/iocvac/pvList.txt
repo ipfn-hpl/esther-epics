@@ -1,9 +1,9 @@
-Esther:MFC1:FMeasure
-Esther:MFC1:FTemperature
-Esther:MFC1:Measure
-Esther:MFC1:Temperature
-Esther:MFC1:Wink
-Esther:MFC1:Setpoint
+Esther:MFC1:FMeasureai
+Esther:MFC1:FSetpointai
+Esther:MFC1:FTemperatureai
+Esther:MFC1:FCounter-Valueai
 Esther:MFC1:FSetpoint
-pi:vac:version
-Esther:MFC1:Control_Mode
+Esther:MFC1:Measureli
+Esther:MFC1:vac:version
+Esther:MFC1:Control-Modembbi
+Esther:MFC1:Control-Mode

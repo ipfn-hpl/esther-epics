@@ -1,7 +1,7 @@
-# # longout record template for register inputs
-record(mbbo,"$(P):$(R)") {
+# mbbi record template for register inputs
+record(mbbi,"$(P):$(R)mbbi") {
     field(DTYP,"asynUInt32Digital")
-    field(OUT,"@asynMask($(PORT) 0 0xFFFF)")
+    field(INP,"@asynMask($(PORT) $(OFFSET=0) 0xFFFF)")
     field(ZRVL,"0")
     field(ZRST,"Bus/RS232")
     field(ONVL,"1")
@@ -26,7 +26,5 @@ record(mbbo,"$(P):$(R)") {
     field(TEST,"FLOW-BUS analog slave")
     field(ELVL,"18")
     field(ELST,"RS232")
-
-    field(PINI,"YES")
-    field(VAL,"0")
+    field(SCAN,"$(SCAN=I/O Intr)")
 }

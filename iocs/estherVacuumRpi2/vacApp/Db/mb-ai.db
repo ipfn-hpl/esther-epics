@@ -6,5 +6,4 @@ record(ai, "$(P):$(R)ai") {
     field(LOPR,"$(LOPR=0)")
     field(PREC,"$(PREC=3)")
     field(SCAN,"$(SCAN=I/O Intr)")
-    field(PREC,"3")
 }
