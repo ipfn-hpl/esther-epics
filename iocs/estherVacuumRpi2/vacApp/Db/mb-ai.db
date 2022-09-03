@@ -1,10 +1,10 @@
 # ai record template for register inputs
-record(ao, "$(P):$(R)") {
+record(ai, "$(P):$(R)ai") {
     field(DTYP,"asynFloat64")
-    field(OUT,"@asynMask($(PORT) $(OFFSET) 0xFFFF)FLOAT32_BE")
-#    field(HOPR,"(HOPR)")
-#    field(LOPR,"(LOPR)")
-#    field(PREC,"(PREC)")
-#    field(EGU,"(PREC)")
-
+    field(INP,"@asyn($(PORT) 0)FLOAT32_BE")
+    field(HOPR,"$(HOPR=5)")
+    field(LOPR,"$(LOPR=0)")
+    field(PREC,"$(PREC=3)")
+    field(SCAN,"$(SCAN=I/O Intr)")
+    field(PREC,"3")
 }

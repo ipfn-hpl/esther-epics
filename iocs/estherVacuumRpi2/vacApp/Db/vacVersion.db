@@ -1,4 +1,4 @@
-record(lsi, "$(user):vac:version") {
+record(lsi, "$(P):vac:version") {
     field(DTYP, "vac version")
     field(DESC, "Version string")
     field(SIZV, "$(SIZV=200)")

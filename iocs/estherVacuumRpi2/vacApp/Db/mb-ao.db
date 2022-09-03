@@ -1,7 +1,7 @@
-# # longout record template for register inputs
-record(longout,"$(P):$(R)") {
-    field(DTYP,"asynUInt32Digital")
-    field(OUT,"@asynMask($(PORT) $(OFFSET) 0xFFFF)")
+# ao record template for register outputs
+record(ao,"$(P):$(R)") {
+    field(DTYP,"asynFloat64")
+    field(OUT,"@asyn($(PORT) 0)FLOAT32_BE")
 #    field(HOPR,"(HOPR)")
 #    field(LOPR,"(LOPR)")
 #    field(PREC,"(PREC)")
