@@ -67,10 +67,10 @@ modbusInterposeConfig("MDBUS",1,1000,5)
 
 # ao
 drvModbusAsynConfigure("K1_V41240_Out_Word",   "MDBUS",    1, 6,  41240,  2,    0,  100,    "el-flow")
-dbLoadRecords("db/mb-ao.db","P=Esther:MFC1,R=FSetpoint,PORT=K1_V41240_Out_Word,OFFSET=0")
-#ai
+dbLoadRecords("db/mb-ao.db","P=Esther:MFC1,R=FSetpoint,PORT=K1_V41240_Out_Word")
+# ai
 drvModbusAsynConfigure("K1_V41240_In_Word",   "MDBUS",    1, 3,  41240,  2,    0,  100,    "el-flow")
-dbLoadRecords("db/mb-a1.db","P=Esther:MFC1,R=FSetpoint,PORT=K1_V41240_In_Word")
+dbLoadRecords("db/mb-ai.db","P=Esther:MFC1,R=FSetpoint,PORT=K1_V41240_In_Word")
 
 #drvModbusAsynConfigure("K1_V41272_In_Word",   "MDBUS",    1, 3,  41272,  2,    0,  100,    "el-flow")
 #dbLoadRecords("db/mb-ai.db","P=Esther:MFC1,R=FTemperature,PORT=K1_V41272_In_Word,OFFSET=0,SCAN='I/O Intr'")
