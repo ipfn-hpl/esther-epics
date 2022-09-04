@@ -1,0 +1,24 @@
+#https://epics-controls.org/resources-and-support/documents/howto-documents/posix-thread-priority/
+[Unit]
+Description=EPICS Soft IOC ESTHER Vacuum
+Requires=network.target
+After=network.target
+
+[Service]
+WorkingDirectory=/home/pi/esther-epics/iocs/estherVacuumRpi2/iocBoot/iocvac
+ExecStart=/usr/bin/procServ --foreground --quiet --port=4051 /home/pi/esther-epics/iocs/estherVacuumRpi2/iocBoot/iocvac/st.cmd
+Restart=always
+#User=iocuser
+User=pi
+Group=dialout
+RuntimeDirectory=estherVacuum
+#
+# put this file in /etc/systemd/system/
+# and enable service with:
+# sudo systemctl enable esther-vacuum-ioc  
+#
+# Do "telnet localhost 4051" to go to epics console
+# ^] + ^D to exit console
+
+[Install]
+WantedBy=multi-user.target
