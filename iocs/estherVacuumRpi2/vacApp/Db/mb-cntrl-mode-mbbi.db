@@ -1,7 +1,7 @@
 # mbbi record template for register inputs
-record(mbbi,"$(P):$(R)mbbi") {
+record(mbbi,"$(P):$(R)-mbbi") {
     field(DTYP,"asynUInt32Digital")
-    field(INP,"@asynMask($(PORT) $(OFFSET=0) 0xFFFF)")
+    field(INP,"@asynMask($(PORT) $(OFFSET=0) 0xFFFF)UINT16")
     field(ZRVL,"0")
     field(ZRST,"Bus/RS232")
     field(ONVL,"1")
@@ -26,5 +26,11 @@ record(mbbi,"$(P):$(R)mbbi") {
     field(TEST,"FLOW-BUS analog slave")
     field(ELVL,"18")
     field(ELST,"RS232")
+    field(TVVL,"20")
+    field(TVST,"Valve Steering")
+    field(TTVL,"21")
+    field(TTST,"Analog valve steering")
+    field(FTVL,"22")
+    field(FTST,"Valve safe state")
     field(SCAN,"$(SCAN=I/O Intr)")
 }

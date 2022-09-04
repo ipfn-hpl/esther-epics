@@ -48,3 +48,6 @@ Data type.............: 32-bit float (big endian), output (holding) register tab
 Waiting for a confirmation...
 <01><10><A1><18><00><02><E2><33>
 Written 1 references
+
+Serial number string (16 bytes) 
+ mbpoll -m rtu  -a 1 -b 19200 -t 4:hex  -r 0xF119 -1 -v -c 8 /dev/tty_modbus

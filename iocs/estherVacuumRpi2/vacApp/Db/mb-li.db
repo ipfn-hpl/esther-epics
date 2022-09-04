@@ -1,7 +1,7 @@
 # longin record template for register inputs
-record(longin,"$(P):$(R)li") {
+record(longin,"$(P):$(R)-li") {
     field(DTYP,"asynUInt32Digital")
-    field(INP,"@asynMask($(PORT) $(OFFSET=0) 0xFFFF)")
+    field(INP,"@asynMask($(PORT) $(OFFSET=0) 0xFFFF)UINT16")
     field(LOPR,"$(LOPR=0)")
     field(SCAN,"$(SCAN=I/O Intr)")
 }

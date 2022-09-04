@@ -1,5 +1,5 @@
 # ai record template for register inputs
-record(ai, "$(P):$(R)ai") {
+record(ai, "$(P):$(R)-ai") {
     field(DTYP,"asynFloat64")
     field(INP,"@asyn($(PORT) 0)FLOAT32_BE")
     field(HOPR,"$(HOPR=5)")

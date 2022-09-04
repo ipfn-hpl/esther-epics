@@ -1,0 +1,13 @@
+# mbbi record template for register inputs
+record(mbbo,"$(P):$(R)") {
+    field(DTYP,"asynUInt32Digital")
+    field(OUT,"@asynMask($(PORT) $(OFFSET=0) 0xFFFF)UINT16")
+    field(ZRVL,"0")
+    field(ZRST,"Counter off")
+    field(ONVL,"1")
+    field(ONST,"Counting up")
+    field(TWVL,"2")
+    field(TWST,"Counting up until limit")
+    field(PINI,"YES")
+    field(VAL,"0")
+}
