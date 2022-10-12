@@ -3,7 +3,7 @@
 # Project       : ESTHER Vacuum slow Control
 #
 # File          : 
-# Description   : Records for  Control 
+# Description   : Records for  Control
 #
 ##
 # Author        : Bernardo Carvalho (IPFN-IST)
@@ -12,11 +12,11 @@
 # Created 26-May-2022
 #
 ##
-record(ai, "$(P)aiExample") {
-    field(DESC, "temp ai PV")
-}
+#record(ai, "$(P)aiExample") {
+#    field(DESC, "temp ai PV")
+#}
 record(mbbo, "$(P)$(R)OPSTATE") {
-    field(DESC, "Multiple Pulse Sequence State")
+    field(DESC, "Multiple Shot Sequence State")
     field(ZRVL, "0")
     field(ONVL, "1")
     field(TWVL, "2")
@@ -26,18 +26,40 @@ record(mbbo, "$(P)$(R)OPSTATE") {
     field(SXVL, "6")
     field(SVVL, "7")
     field(EIVL, "8")
-    field(ZRST, "Stopped")
-    field(ONST, "Starting")
-    field(TWST, "Idle")
+    field(ZRST, "Idle")
+    field(ONST, "Stopped")
+    field(TWST, "Starting")
     field(THST, "LowVacuum")
     field(FRST, "StartMaglev")
     field(FVST, "StopMaglev")
     field(SXST, "HighVAcuum")
     field(SVST, "Emergency")
     field(EIST, "UPSEmergency")
-    field(VAL, "0")
     field(FLNK, "$(P)$(R)OPCALCSTATE")
+    info(autosaveFields, "VAL")
     #field(PINI, "YES")
+}
+record(mbbo, "$(P)$(R)LAST-OPSTATE") {
+    field(DESC, "Multiple Shot Sequence State")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(TWVL, "2")
+    field(THVL, "3")
+    field(FRVL, "4")
+    field(FVVL, "5")
+    field(SXVL, "6")
+    field(SVVL, "7")
+    field(EIVL, "8")
+    field(ZRST, "Idle")
+    field(ONST, "Stopped")
+    field(TWST, "Starting")
+    field(THST, "LowVacuum")
+    field(FRST, "StartMaglev")
+    field(FVST, "StopMaglev")
+    field(SXST, "HighVAcuum")
+    field(SVST, "Emergency")
+    field(EIST, "UPSEmergency")
+    info(autosaveFields, "VAL")
 }
 
 # record for bit leds
@@ -46,4 +68,34 @@ record(calc, "$(P)$(R)OPCALCSTATE") {
     field(CALC,"2^A")
     #field(SCAN,"1 second")
     field(INPA,"$(P)$(R)OPSTATE.VAL NPP NMS")
+}
+
+record(bo, "$(P)$(R)START-REQ") {
+    info(autosaveFields, "VAL")
+    field(DESC, "Pulse Sequence Start/Continue")
+   # field(VAL, "0")
+    #field(PINI, "YES")
+    field(ZNAM, "")
+    field(ONAM, "START")
+}
+record(bo, "$(P)$(R)STOP-REQ") {
+    info(autosaveFields, "VAL")
+    field(DESC, "Pulse Sequence Stop")
+    field(ZNAM, "STOP")
+    field(ONAM, "")
+}
+record(calc, "$(P)$(R)COUNTDOWN") {
+    field(DESC, "Countdown Increment")
+    field(INPA,"$(P)$(R)COUNTDOWN")
+    field(DISA,"1")
+    #field(SCAN,"Passive")
+    field(SCAN,"1 second")
+    field(CALC,"A+1")
+    field(VAL, "160")
+}
+
+record(stringout, "$(P)$(R)TraceMessage") {
+    info(autosaveFields, "VAL")
+    field(DESC, "Trace Message from IOC")
+    field(VAL, "Trace mode ON")
 }

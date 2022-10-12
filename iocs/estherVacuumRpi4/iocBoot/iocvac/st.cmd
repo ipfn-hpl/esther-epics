@@ -5,7 +5,10 @@
 
 < envPaths
 
-epicsEnvSet( "STREAM_PROTOCOL_PATH", "$(TOP)/db" )
+epicsEnvSet("STREAM_PROTOCOL_PATH", "$(TOP)/db")
+epicsEnvSet("SAVE_DIR", "$(TOP)/iocBoot/$(IOC)/save")
+epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST", "NO")
+
 epicsEnvSet "P" "$(P=Esther)"
 
 cd "${TOP}"
@@ -115,7 +118,31 @@ dbLoadRecords("db/estherStates.db", "P=Esther:,R=Vacuum:")
 #traceIocInit
 
 cd "${TOP}/iocBoot/${IOC}"
+
+save_restoreSet_status_prefix("Esther:")
+set_requestfile_path("$(SAVE_DIR)")
+set_savefile_path("$(SAVE_DIR)")
+set_pass0_restoreFile("$(IOC).sav")
+set_pass1_restoreFile("$(IOC).sav")
+dbLoadRecords("$(AUTOSAVE)/asApp/Db/save_restoreStatus.db", "P=Esther:Vacuum")
+
+# Number of sequenced backup files (e.g., 'auto_settings.sav0') to write
+save_restoreSet_NumSeqFiles(3)
+
+# Time interval between sequenced backups
+save_restoreSet_SeqPeriodInSeconds(600)
+
 iocInit
+
+# Handle autosave 'commands' contained in loaded databases.
+makeAutosaveFiles()
+# Do after 'cp info_settings.req save/iocvac.req'
+
+
+# Start periodic 'save’
+# create_monitor_set("auto_settings.req", 30, "P=Esther:vacuum")
+# makeAutosaveFileFromDbInfo("$(SAVE_DIR)/$(IOC).req", "autosaveFields")
+create_monitor_set("$(IOC).req", 30, "P=Esther:vacuum")
 
 ## Start any sequence programs
 seq sncEstherVacuum, "unit=Esther"

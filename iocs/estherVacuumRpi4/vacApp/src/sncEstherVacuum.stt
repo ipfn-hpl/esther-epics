@@ -1,7 +1,34 @@
-program sncEstherVacuum
-short POS_Stopped =0;
-short POS_Starting=1;
-short POS_Idle =2;
+/**
+/**  vim: set filetype=c :
+ * Use :SyntasticToggleMode
+ *
+ * vim: sta:et:sw=4:ts=4:sts=4 :
+ *
+ * Project       :  ESTHER Vacuum slow Control
+ * Docs: https://www-csr.bessy.de/control/SoftDist/sequencer/
+ *
+ * Description   : VAcuum Sequence State Machine
+ *
+ * Author(s)     : Bernardo Carvalho (IPFN-IST)
+ *               : Paulo Fortuna Carvalho (IPFN-IST)
+ * Copyright (c) : (IPFN-IST)
+ *
+ * Created 5-Sep-2022
+ * Revised 
+ * Modified 
+ *
+ **/
+
+program sncEstherVacuum ("output=logFile.txt")
+%{#include "errlog.h"}%
+%%#include <fcntl.h>    /* for exit() */
+%%#include <stdio.h>    /* for  */
+%%#include <stdlib.h>    /* for  */
+%%#include <string.h>
+
+short POS_Idle = 0;
+short POS_Stopped =1;
+short POS_Starting=2;
 short POS_LowVacuum=3;
 short POS_WaitShot=4;
 short POS_Stopping=5;
@@ -18,10 +45,10 @@ short POS_UPSEmergency=8;
     field(SVST, "Emergency")
     field(EIST, "UPSEmergency")
 */
-short ON=1;
 short OFF=0;
-short START=1;
+short ON=1;
 short STOP=0;
+short START=1;
 short CLEAN=0;
 short SHOT=1;
 short NO_ALARM=0;
@@ -30,14 +57,34 @@ short MAJOR=2;
 short INVALID=3;
 
 
-/* PV variables  */
+/* PV variables  
 double v;
 assign v to "{unit}:aiExample";
 monitor v;
+*/
 
 short OPSTATE;
 assign OPSTATE to "{unit}:Vacuum:OPSTATE";
 monitor OPSTATE;
+
+short LAST_OPSTATE;
+assign LAST_OPSTATE to "{unit}:Vacuum:LAST-OPSTATE";
+monitor LAST_OPSTATE;
+
+short StartReq;
+assign StartReq to "{unit}:Vacuum:START-REQ";
+monitor StartReq;
+
+short StopReq;
+assign StopReq to "{unit}:Vacuum:STOP-REQ";
+monitor StopReq;
+
+short Countdown;
+assign Countdown to "{unit}:Vacuum:COUNTDOWN";
+monitor Countdown;
+
+short CountdownDisa;
+assign CountdownDisa to "{unit}:Vacuum:COUNTDOWN.DISA";
 
 float ADC1_Pressure;
 assign ADC1_Pressure "{unit}:Vacuum:01:ReadPressure";
@@ -46,14 +93,14 @@ monitor ADC1_Pressure;
 float ADC2_Pressure;
 assign ADC2_Pressure "{unit}:Vacuum:02:ReadPressure";
 monitor ADC2_Pressure;
-
+/*
 short GV_CTST_Lim_In;
-assign GV_CTST_Lim_In to "{unit}:HVA:3:LimitIn";
+assign GV_CTST_Lim_In to "{unit}:HVA:4:LimitIn";
 monitor GV_CTST_Lim_In;
-
 short GV_CTST_Lim_Out;
-assign GV_CTST_Lim_Out to "{unit}:HVA:3:LimitOut";
+assign GV_CTST_Lim_Out to "{unit}:HVA:4:LimitOut";
 monitor GV_CTST_Lim_Out;
+*/
 
 short GV_STDT_Lim_In;
 assign GV_STDT_Lim_In to "{unit}:HVA:3:LimitIn";
@@ -71,20 +118,67 @@ short ARM_STDT_Status;
 assign ARM_STDT_Status to "{unit}:ARM:2:Status";
 monitor ARM_STDT_Status;
 
-ss ss1 {
+/* Trace message record limited to 40 characters */
+string msg;
+assign msg to "{unit}:Vacuum:TraceMessage.VAL";
+
+/* Main Vacuum State Set */
+ss VacuumSequence {
     state init {
         when (delay(10)) {
-            printf("sncExample: Startup delay over\n");
-        } state low
+            printf("sncEsther: Startup delay over\n");
+        } state Idle
     }
-    state low {
-        when (v > 5.0) {
-            printf("sncExample: Changing to high\n");
-        } state high
+    state Idle {
+        entry{
+            LAST_OPSTATE = POS_Idle;
+            pvPut(LAST_OPSTATE);
+        }
+        when (delay(10)) {
+//              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
+                strcpy(msg, "State to Stopped");
+                pvPut(msg);
+                errlogSevPrintf(NO_ALARM, "%s\n",msg);
+                /* Pulse state change to Stopped*/
+                OPSTATE = POS_Stopped;
+                pvPut(OPSTATE);
+        } state Starting
     }
-    state high {
-        when (v <= 5.0) {
-            printf("sncExample: Changing to low\n");
-        } state low
+    state Stopped {
+        entry{
+            LAST_OPSTATE = POS_Stopped;
+            pvPut(LAST_OPSTATE);
+            CountdownDisa = OFF;
+            pvPut(CountdownDisa);
+        }
+        when (delay(10) && (StartReq == START) ) { //  && (IsttokupsBatteryON != ON)) 
+//              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
+                strcpy(msg, "State to Starting");
+                pvPut(msg);
+                errlogSevPrintf(NO_ALARM, "%s\n",msg);
+                /* Pulse state change to Starting */
+                OPSTATE = POS_Starting;
+                pvPut(OPSTATE);
+        } state Starting
+    }
+
+    state Starting {
+        entry{
+            LAST_OPSTATE = POS_Starting;
+            pvPut(LAST_OPSTATE);
+            Countdown = 0;
+            pvPut(Countdown);
+            CountdownDisa = ON;
+            //pvPut(CountdownDisa);
+        }
+        when ((StopReq == STOP) ) { //  && (IsttokupsBatteryON != ON)) {
+//              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
+                strcpy(msg, "State to Stopped");
+                pvPut(msg);
+                errlogSevPrintf(NO_ALARM, "%s\n",msg);
+                /* Pulse state change to Stopped */
+                OPSTATE = POS_Stopped;
+                pvPut(OPSTATE);
+        } state Stopped
     }
 }
