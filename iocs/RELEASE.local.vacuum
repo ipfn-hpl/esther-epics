@@ -1,5 +1,5 @@
 #RELEASE Location of external products
-EPICS_ROOT=/home/pi/EPICS7
+EPICS_ROOT=/home/pi/EPICS
 SUPPORT=$(EPICS_ROOT)/support
 
 #  IPAC is only necessary if support for Greensprings IP488 is required
@@ -30,6 +30,8 @@ S7NODAVE=$(SUPPORT)/s7nodave
 
 MODBUS=$(SUPPORT)/modbus
 
-#  EPICS_BASE 
+AUTOSAVE = $(SUPPORT)/autosave
+
+#  EPICS_BASE
 EPICS_BASE=$(EPICS_ROOT)/epics-base
 
