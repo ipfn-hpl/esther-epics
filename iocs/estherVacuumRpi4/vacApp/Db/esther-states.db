@@ -36,8 +36,9 @@ record(mbbo, "$(P)$(R)OPSTATE") {
     field(SVST, "Emergency")
     field(EIST, "UPSEmergency")
     field(FLNK, "$(P)$(R)OPCALCSTATE")
-    info(autosaveFields, "VAL")
-    #field(PINI, "YES")
+    field(VAL, "0")
+    #info(autosaveFields, "VAL")
+    field(PINI, "YES")
 }
 record(mbbo, "$(P)$(R)LAST-OPSTATE") {
     field(DESC, "Multiple Shot Sequence State")
@@ -84,9 +85,9 @@ record(bo, "$(P)$(R)STOP-REQ") {
     field(ZNAM, "Push to Stop")
     field(ONAM, "STOP")
 }
-record(calc, "$(P)$(R)COUNTDOWN") {
-    field(DESC, "Countdown Increment")
-    field(INPA,"$(P)$(R)COUNTDOWN")
+record(calc, "$(P)$(R)COUNTUP") {
+    field(DESC, "Counter Increment")
+    field(INPA,"$(P)$(R)COUNTUP")
     field(DISA,"1")
     field(SCAN,"1 second")
     field(CALC,"A+1")

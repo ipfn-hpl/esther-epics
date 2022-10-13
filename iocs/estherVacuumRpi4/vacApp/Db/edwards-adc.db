@@ -47,15 +47,14 @@ record(ai, $(P)$(R)02:ReadPressure){
 #    field(FLNK, "$(P)$(R)$(A):GaugeVersion")
 }
 record(ao, $(P)$(R)PressureLowThres){
-    field(DESC, "Pressure Threshold to Start MagLev")
+    field(DESC, "Pressure Threshold to Stop MagLev")
     info(autosaveFields, "VAL")
     #field(VAL, "500")
     #field(PREC, "3")
 }
 record(ao, $(P)$(R)PressureHighThres){
-    field(DESC, "Pressure Threshold to Stop MagLev")
+    field(DESC, "Pressure Threshold to Start MagLev")
     info(autosaveFields, "VAL")
-    #field(VAL, "500")
     #field(PREC, "3")
 }
 record(ai, $(P)$(R)01:ReadVoltage){
