@@ -10,14 +10,16 @@ include $(TOP)/configure/CONFIG
 DB += vacVersion.db
 #DB += dbSubExample.db
 #DB += user.substitutions
-DB += edwards.db
-DB += edwards.proto
+DB += edwards-scu800.db
+DB += edwards-scu800.proto
 DB += edwards-adc.db
 DB += edwards-adc.proto
 
+DB += gate-valve.db
+DB += gate-valve.proto
 DB += armcontrol.db
 DB += armcontrol.proto
-DB += estherStates.db
+DB += esther-states.db
 #DB += mb-li.db
 DB += S7-eda-valve.db
 

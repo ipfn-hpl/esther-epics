@@ -71,24 +71,23 @@ record(calc, "$(P)$(R)OPCALCSTATE") {
 }
 
 record(bo, "$(P)$(R)START-REQ") {
-    info(autosaveFields, "VAL")
+    # info(autosaveFields, "VAL")
     field(DESC, "Pulse Sequence Start/Continue")
-   # field(VAL, "0")
-    #field(PINI, "YES")
-    field(ZNAM, "")
+    field(VAL, "0")
+    field(PINI, "YES")
+    field(ZNAM, "Push to Start")
     field(ONAM, "START")
 }
 record(bo, "$(P)$(R)STOP-REQ") {
     info(autosaveFields, "VAL")
     field(DESC, "Pulse Sequence Stop")
-    field(ZNAM, "STOP")
-    field(ONAM, "")
+    field(ZNAM, "Push to Stop")
+    field(ONAM, "STOP")
 }
 record(calc, "$(P)$(R)COUNTDOWN") {
     field(DESC, "Countdown Increment")
     field(INPA,"$(P)$(R)COUNTDOWN")
     field(DISA,"1")
-    #field(SCAN,"Passive")
     field(SCAN,"1 second")
     field(CALC,"A+1")
     field(VAL, "160")

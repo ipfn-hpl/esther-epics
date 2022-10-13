@@ -70,7 +70,7 @@ record(ai, $(P)$(R)01:MSpeed){
 record(longin, $(P)$(R)01:ReadMeasValue){
     field(DESC, "Reads TMS Temp, M Temp, M Speed")
     field(DTYP, "stream")
-    field(INP, "@edwards.proto ReadMeasValue('01', $(P)$(R)01:MTemp, $(P)$(R)01:MSpeed.RVAL) RS485")
+    field(INP, "@edwards-scu800.proto ReadMeasValue('01', $(P)$(R)01:MTemp, $(P)$(R)01:MSpeed.RVAL) RS485")
     field(VAL, "22")
     field(SCAN, "2 second")
     #field(DISA, "1")
@@ -108,7 +108,7 @@ record(ai, $(P)$(R)02:MSpeed){
 record(longin, $(P)$(R)02:ReadMeasValue){
     field(DESC, "Reads TMS Temp, M Temp, M Speed")
     field(DTYP, "stream")
-    field(INP, "@edwards.proto ReadMeasValue('02', $(P)$(R)02:MTemp, $(P)$(R)02:MSpeed.RVAL) RS485")
+    field(INP, "@edwards-scu800.proto ReadMeasValue('02', $(P)$(R)02:MTemp, $(P)$(R)02:MSpeed.RVAL) RS485")
     #field(PINI, "YES")
     field(SCAN, "2 second")
     field(SDIS, "$(P)$(R)02:Disable")
@@ -136,7 +136,7 @@ record(longin, $(P)$(R)01:StartCnt){
 record(stringin, $(P)$(R)01:ReadCounters){
     field(DESC, "CU/Pump serialN, hour cnt, start cnt")
     field(DTYP, "stream")
-    field(INP, "@edwards.proto ReadCounters('01', $(P)$(R)01:PumpSerialNo, $(P)$(R)01:PumpCnt, $(P)$(R)01:CuCnt, $(P)$(R)01:StartCnt) RS485")
+    field(INP, "@edwards-scu800.proto ReadCounters('01', $(P)$(R)01:PumpSerialNo, $(P)$(R)01:PumpCnt, $(P)$(R)01:CuCnt, $(P)$(R)01:StartCnt) RS485")
     field(PINI, "YES")
     field(VAL, "Void")
     field(SCAN, "2 second")
@@ -165,7 +165,7 @@ record(longin, $(P)$(R)02:StartCnt){
 record(stringin, $(P)$(R)02:ReadCounters){
     field(DESC, "CU/Pump serialN, hour cnt, start cnt")
     field(DTYP, "stream")
-    field(INP, "@edwards.proto ReadCounters('02', $(P)$(R)02:PumpSerialNo, $(P)$(R)02:PumpCnt, $(P)$(R)02:CuCnt, $(P)$(R)02:StartCnt) RS485")
+    field(INP, "@edwards-scu800.proto ReadCounters('02', $(P)$(R)02:PumpSerialNo, $(P)$(R)02:PumpCnt, $(P)$(R)02:CuCnt, $(P)$(R)02:StartCnt) RS485")
     field(VAL, "Void")
 }
 record(longin, $(P)$(R)01:SetpointTMS){
@@ -178,7 +178,7 @@ record(longin, $(P)$(R)01:SetpointTMS){
 record(ai, $(P)$(R)01:ReadSetpoint){
     field(DESC, "Reads Speed SP & TMS temp SP")
     field( DTYP, "stream" )
-    field( INP,  "@edwards.proto ReadSetpoint('01', $(P)$(R)01:SetpointTMS) RS485")
+    field( INP,  "@edwards-scu800.proto ReadSetpoint('01', $(P)$(R)01:SetpointTMS) RS485")
   # Check Pump rpm rates
   # half of rated speed
     field(ROFF,"0")
@@ -205,7 +205,7 @@ record(longin, $(P)$(R)02:SetpointTMS){
 record(ai, $(P)$(R)02:ReadSetpoint){
     field(DESC, "Reads Speed SP & TMS temp SP")
     field( DTYP, "stream" )
-    field( INP,  "@edwards.proto ReadSetpoint('02', $(P)$(R)02:SetpointTMS) RS485")
+    field( INP,  "@edwards-scu800.proto ReadSetpoint('02', $(P)$(R)02:SetpointTMS) RS485")
   # Check Pump rpm rates
   # half of rated speed
     field(ROFF,"0")
@@ -221,7 +221,7 @@ record(ai, $(P)$(R)02:ReadSetpoint){
 record(ao, $(P)$(R)01:SetSpeedSetpoint){
     field(DESC, "Reads the measured rotational speed")
     field(DTYP, "stream" )
-    field(OUT,  "@edwards.proto SetSpeedSetpoint('01') RS485")
+    field(OUT,  "@edwards-scu800.proto SetSpeedSetpoint('01') RS485")
     # Check Pump rpm rates. rated 35000 ~ 584 Hz
     field( DRVH, "35000" )
     #This value can be changed in the range from half of
@@ -244,7 +244,7 @@ record(ao, $(P)$(R)01:SetSpeedSetpoint){
 record(ao, $(P)$(R)02:SetSpeedSetpoint){
     field(DESC, "Reads the measured rotational speed")
     field(DTYP, "stream" )
-    field(OUT,  "@edwards.proto SetSpeedSetpoint('02') RS485")
+    field(OUT,  "@edwards-scu800.proto SetSpeedSetpoint('02') RS485")
     # Check Pump rpm rates. rated 35000 ~ 584 Hz
     field( DRVH, "35000" )
     #This value can be changed in the range from half of
@@ -299,8 +299,8 @@ record(mbbiDirect, $(P)$(R)01:WARNING){
 record(mbbi, $(P)$(R)01:ReadModFonctWithWarning){
     field(DESC, "Reads the pump operation mode")
     field(DTYP, "stream" )
-    field(INP, "@edwards.proto ReadModFonctWWarning('01',$(P)$(R)01:WARNING,$(P)$(R)01:NErrors,$(P)$(R)01:Error1,$(P)$(R)01:Error2) RS485" )
-    #field(INP,  "@edwards.proto ReadModFonctWWarning('01', $(P)$(R)01:WARNING, $(P)$(R)01:NErrors) $(BUS)" )
+    field(INP, "@edwards-scu800.proto ReadModFonctWWarning('01',$(P)$(R)01:WARNING,$(P)$(R)01:NErrors,$(P)$(R)01:Error1,$(P)$(R)01:Error2) RS485" )
+    #field(INP,  "@edwards-scu800.proto ReadModFonctWWarning('01', $(P)$(R)01:WARNING, $(P)$(R)01:NErrors) $(BUS)" )
     field(ZRVL,"0")
     field(ZRST,"0")
     field(ONVL,"1")
@@ -334,7 +334,7 @@ record(mbbi, $(P)$(R)01:ReadModFonctWithWarning){
 record(longin, $(P)$(R)01:ReadSetpointli){
     field(DESC, "Reads Speed SP & TMS temp SP")
     field( DTYP, "stream" )
-    field( INP,  "@edwards.proto ReadSetpoint('01', $(P)$(R)01:SetpointTMS) RS485")
+    field( INP,  "@edwards-scu800.proto ReadSetpoint('01', $(P)$(R)01:SetpointTMS) RS485")
   # Check Pump rpm rates
   # half of rated spped
     field(HIGH, "600")
@@ -349,7 +349,7 @@ record(longin, $(P)$(R)01:ReadSetpointli){
 record(longout, $(P)$(R)01:SetSpeedSetpointLo){
     field(DESC, "Reads the measured rotational speed")
     field( DTYP, "stream" )
-    field( OUT,  "@edwards.proto SetSpeedSetpoint('01') RS485")
+    field( OUT,  "@edwards-scu800.proto SetSpeedSetpoint('01') RS485")
     # Check Pump rpm rates. rated 35000 ~ 584 Hz
     field( DRVH, "584" )
     # half of rated spped
@@ -361,7 +361,7 @@ record(longout, $(P)$(R)01:SetSpeedSetpointLo){
 record(longout, $(P)$(R)02:SetSpeedSetpointLo){
     field(DESC, "Reads the measured rotational speed")
     field( DTYP, "stream" )
-    field( OUT,  "@edwards.proto SetSpeedSetpoint('02') RS485")
+    field( OUT,  "@edwards-scu800.proto SetSpeedSetpoint('02') RS485")
     # Check Pump rpm rates. rated 35000 ~ 584 Hz
     field( DRVH, "584" )
     # half of rated spped
@@ -373,7 +373,7 @@ record(longout, $(P)$(R)02:SetSpeedSetpointLo){
 record(ai, $(P)$(R)01:ReadMeas){
     field(DESC, "Reads the measured rotational speed")
     field(DTYP, "stream")
-    field(INP, "@edwards.proto ReadMeas('01') RS485")
+    field(INP, "@edwards-scu800.proto ReadMeas('01') RS485")
     #field(PINI, "YES")
     #    1. Val= RVAL + ROFF
     #    2. Val = Val * ASLO + AOFF
@@ -388,7 +388,7 @@ record(ai, $(P)$(R)01:ReadMeas){
 record(longin, $(P)$(R)02:ReadMeas){
     field(DESC, "Reads the measured rotational speed")
     field(DTYP, "stream")
-    field(INP, "@edwards.proto ReadMeas('02') RS485")
+    field(INP, "@edwards-scu800.proto ReadMeas('02') RS485")
     #field(PINI, "YES")
     field(VAL, "22")
     field(SCAN, "2 second")
@@ -398,7 +398,7 @@ record(longin, $(P)$(R)02:ReadMeas){
 record(ai, $(P)$(R)01:ReadSpeedSetpoint){
     field(DESC, "Reads the the Speed Set Point value")
     field( DTYP, "stream" )
-    field( INP,  "@edwards.proto ReadSpeedSetpoint('01') RS485")
+    field( INP,  "@edwards-scu800.proto ReadSpeedSetpoint('01') RS485")
   # Check Pump rpm rates
   # half of rated spped
     field(ROFF,"0")
@@ -415,7 +415,7 @@ record(ai, $(P)$(R)01:ReadSpeedSetpoint){
 record(longin, $(P)$(R)02:ReadSpeedSetpoint){
     field(DESC, "Reads the the Speed Set Point value")
     field( DTYP, "stream" )
-    field( INP,  "@edwards.proto ReadSpeedSetpoint('02') RS485")
+    field( INP,  "@edwards-scu800.proto ReadSpeedSetpoint('02') RS485")
     field(HIGH, "36000")
     field(HIHI, "40000")
     field(VAL, "666")
@@ -427,7 +427,7 @@ record(longin, $(P)$(R)02:ReadSpeedSetpoint){
 record(longin, $(P)$(R)01:ReadMotorTemp){
   field(DESC, "Reads the measured motor temperature")
   field(DTYP, "stream" )
-  field(INP,  "@edwards.proto ReadMotorTemp('01') RS485" )
+  field(INP,  "@edwards-scu800.proto ReadMotorTemp('01') RS485" )
   field(HIGH, "100")
   field(HIHI, "110")
   field(VAL, "1")
@@ -440,7 +440,7 @@ record(longin, $(P)$(R)01:ReadMotorTemp){
 record(longin, $(P)$(R)02:ReadMotorTemp){
   field(DESC, "Reads the measured motor temperature")
   field(DTYP, "stream" )
-  field(INP,  "@edwards.proto ReadMotorTemp('02') RS485" )
+  field(INP,  "@edwards-scu800.proto ReadMotorTemp('02') RS485" )
   field(HIGH, "100")
   field(HIHI, "110")
   field(VAL, "1")
@@ -466,7 +466,7 @@ record(longin, $(P)$(R)02:ReadMotorTemp){
 record(longin, $(P)$(R)01:ReadStatus){
   field(DESC, "Reads various setting")
   field(DTYP, "stream" )
-  field(INP,  "@edwards.proto ReadStatus('01') RS485" )
+  field(INP,  "@edwards-scu800.proto ReadStatus('01') RS485" )
   # Check Pump rpm rates
   # half of rated spped
   #field(HIGH, "100")
@@ -481,7 +481,7 @@ record(longin, $(P)$(R)01:ReadStatus){
 record(mbbi, $(P)$(R)01:ReadStatusRMode){
     field(DESC, "Reads the Remote mode operation")
     field(DTYP, "stream" )
-    field(INP,  "@edwards.proto ReadStatusRMode('01') RS485" )
+    field(INP,  "@edwards-scu800.proto ReadStatusRMode('01') RS485" )
     field(VAL, "7")
     field(ZRVL,"0")
     field(ONVL,"1")
@@ -502,7 +502,7 @@ record(mbbi, $(P)$(R)01:ReadStatusRMode){
 record(longin, $(P)$(R)01:ReadModFonctI){
     field(DESC, "Reads the pump operation mode")
     field(DTYP, "stream" )
-    field(INP,  "@edwards.proto ReadModFonct('01') RS485" )
+    field(INP,  "@edwards-scu800.proto ReadModFonct('01') RS485" )
     field(DISA, "1")
     field(SCAN, "2 second")
     field(PINI, "YES")
@@ -510,7 +510,7 @@ record(longin, $(P)$(R)01:ReadModFonctI){
 record(mbbi, $(P)$(R)01:ReadModFonct){
     field(DESC, "Reads the pump operation mode")
 #    field(DTYP, "stream" )
-#    field(INP,  "@edwards.proto ReadModFonct('01') $(BUS)" )
+#    field(INP,  "@edwards-scu800.proto ReadModFonct('01') $(BUS)" )
     field(VAL, "11")
     field(ZRVL,"0")
     field(ONVL,"1")
@@ -887,7 +887,7 @@ record(mbbi, $(P)$(R)02:ReadModFonctWithWarning){
     field(DESC, "Reads the pump operation mode")
     field(DTYP, "stream" )
     #field(INP, "@edwards.proto ReadModFonctWWarning('02',$(P)$(R)02:WARNING,$(P)$(R)02:NErrors,$(P)$(R)02:Error1) $(BUS)" )
-    field(INP, "@edwards.proto ReadModFonctWWarning('02',$(P)$(R)02:WARNING,$(P)$(R)02:NErrors,$(P)$(R)02:Error1,$(P)$(R)02:Error2) $(BUS)" )
+    field(INP, "@edwards-scu800.proto ReadModFonctWWarning('02',$(P)$(R)02:WARNING,$(P)$(R)02:NErrors,$(P)$(R)02:Error1,$(P)$(R)02:Error2) $(BUS)" )
     field(ZRVL,"0")
     field(ZRST,"0")
     field(ONVL,"1")
@@ -921,7 +921,7 @@ record(mbbi, $(P)$(R)02:ReadModFonctWithWarning){
 ################################################
 record(mbbo, $(P)$(R)01:Command){
     field( DTYP, "stream" )
-    field( OUT,  "@edwards.proto Command('01') RS485" )
+    field( OUT,  "@edwards-scu800.proto Command('01') RS485" )
   #field( ZRVL, "0" )
     field( ONVL, "1" )
     field( TWVL, "2" )
@@ -933,7 +933,7 @@ record(mbbo, $(P)$(R)01:Command){
 }
 record(mbbo, $(P)$(R)02:Command){
     field( DTYP, "stream" )
-    field( OUT,  "@edwards.proto Command('02') RS485" )
+    field( OUT,  "@edwards-scu800.proto Command('02') RS485" )
   #field( ZRVL, "0" )
     field( ONVL, "1" )
     field( TWVL, "2" )
@@ -943,9 +943,9 @@ record(mbbo, $(P)$(R)02:Command){
     field( FRST, "RESET" )
     field(VAL, "2")
 }
-record(stringout, $(P)01:generic){
-    field(DESC, "Generic")
+record(stringout, $(P)$(R)generic){
+    field(DESC, "EDW Generic")
     field(DTYP, "stream")
-    field(OUT, "@edwards.proto debug('01') RS485")
+    field(OUT, "@edwards-scu800.proto debug('01') RS485")
 #    field(PINI, "YES")
 }

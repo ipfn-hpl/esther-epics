@@ -46,6 +46,18 @@ record(ai, $(P)$(R)02:ReadPressure){
     field(PREC, "3")
 #    field(FLNK, "$(P)$(R)$(A):GaugeVersion")
 }
+record(ao, $(P)$(R)PressureLowThres){
+    field(DESC, "Pressure Threshold to Start MagLev")
+    info(autosaveFields, "VAL")
+    #field(VAL, "500")
+    #field(PREC, "3")
+}
+record(ao, $(P)$(R)PressureHighThres){
+    field(DESC, "Pressure Threshold to Stop MagLev")
+    info(autosaveFields, "VAL")
+    #field(VAL, "500")
+    #field(PREC, "3")
+}
 record(ai, $(P)$(R)01:ReadVoltage){
     field(DESC, "Reads the measured Pressure")
     field(DTYP, "stream")
@@ -187,7 +199,7 @@ record(mbbo, $(P)$(R)setUnits){
 }
 
 record(stringout, $(P)$(R):generic){
-    field(DESC, "Generic")
+    field(DESC, "ADC-Generic")
     field(DTYP, "stream")
     field(OUT, "@edwards-adc.proto debug $(BUS)")
 #    field(PINI, "YES")

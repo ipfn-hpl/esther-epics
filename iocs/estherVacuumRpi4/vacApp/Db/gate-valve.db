@@ -113,8 +113,8 @@ record(stringin, $(P)$(R)$(A):Char){
     field(INP, "@armcontrol.proto Char($(A)) RS232A$(A)")
     field(SCAN, "I/O Intr")
 }
-record(stringout, $(P)$(R):generic){
-    field(DESC, "Generic")
+record(stringout, $(P)$(R)generic){
+    field(DESC, "HVA Generic")
     field(DTYP, "stream")
     field(OUT, "@armcontrol.proto debug RS232A$(A)")
 }

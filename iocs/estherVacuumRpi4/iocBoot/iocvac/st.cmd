@@ -7,6 +7,7 @@
 
 epicsEnvSet("STREAM_PROTOCOL_PATH", "$(TOP)/db")
 epicsEnvSet("SAVE_DIR", "$(TOP)/iocBoot/$(IOC)/save")
+epicsEnvSet("EPICS_CA_ADDR_LIST", "192.168.0.21 192.168.0.60 192.168.0.99 192.168.1.98")
 epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST", "NO")
 
 epicsEnvSet "P" "$(P=Esther)"
@@ -53,7 +54,7 @@ asynSetOption("$(BRS)", 0, "baud", "115200")
 asynSetOption("$(BRS)", 0, "bits", "8")
 asynSetOption("$(BRS)", 0, "parity", "none")
 asynSetOption("$(BRS)", 0, "stop", "1")
-dbLoadRecords("db/armcontrol.db", "P=$(P):,R=HVA:,A=3")
+dbLoadRecords("db/gate-valve.db", "P=$(P):,R=HVA:,A=3")
 
 ## EDWARDS SCU 800
 ## Load Serial drivers
@@ -65,7 +66,7 @@ asynSetOption("RS485", 0, "stop", "1")
 #asynSetOption("RS485", 0, "clocal", "Y")
 #asynSetOption("RS485", 0, "crtscts", "N")
 ## Load record instances
-dbLoadRecords("db/edwards.db", "P=Esther:,R=EDW:,BUS=RS485")
+dbLoadRecords("db/edwards-scu800.db", "P=Esther:,R=EDW:,BUS=RS485")
 
 ## EDWARDS ADC Vacuum Monitor
 drvAsynSerialPortConfigure("RS232E1","/dev/edwardsADC")
@@ -77,7 +78,7 @@ asynSetOption("RS232E1", 0, "stop", "1")
 ##asynSetOption("RS232E1", 0, "crtscts", "N")
 dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
 
-dbLoadRecords("db/estherStates.db", "P=Esther:,R=Vacuum:")
+dbLoadRecords("db/esther-states.db", "P=Esther:,R=Vacuum:")
 
 # drvAsynSerialPortConfigure("MDBUS", "/dev/modbus", 0, 0, 0)
 # asynSetOption("MDBUS",0,"baud","19200")

@@ -99,6 +99,8 @@ Esther:Vacuum:01:ReadVoltage
 Esther:Vacuum:02:ReadVoltage
 Esther:EDW:01:SetSpeedSetpoint
 Esther:EDW:02:SetSpeedSetpoint
+Esther:Vacuum:PressureLowThres
+Esther:Vacuum:PressureHighThres
 Esther:EDW:01:WARNING
 Esther:EDW:02:WARNING
 Esther:ARM:1:Status
@@ -111,9 +113,9 @@ Esther:EDW:02:ReadModFonctWithWarning
 Esther:Vacuum:01:GaugeVersion
 Esther:Vacuum:02:GaugeVersion
 Esther:Vacuum:Units
-Esther:ARM::generic
-Esther:HVA::generic
-Esther:01:generic
+Esther:ARM:ARM-generic
+Esther:HVA:generic
+Esther:EDW:generic
 Esther:Vacuum::generic
 Esther:Vacuum:TraceMessage
 Esther:VacuumSR_recentlyStr

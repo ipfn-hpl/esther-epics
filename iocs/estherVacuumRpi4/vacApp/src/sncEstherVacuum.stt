@@ -34,20 +34,11 @@ short POS_WaitShot=4;
 short POS_Stopping=5;
 short POS_Emergency=7;
 short POS_UPSEmergency=8;
-/* 
-   field(ZRST, "Stopped")
-    field(ONST, "Starting")
-    field(TWST, "Idle")
-    field(THST, "LowVacuum")
-    field(FRST, "StartMaglev")
-    field(FVST, "StopMaglev")
-    field(SXST, "HighVAcuum")
-    field(SVST, "Emergency")
-    field(EIST, "UPSEmergency")
-*/
+
 short OFF=0;
 short ON=1;
 short STOP=0;
+short STOP_REQ=1;
 short START=1;
 short CLEAN=0;
 short SHOT=1;
@@ -90,9 +81,25 @@ float ADC1_Pressure;
 assign ADC1_Pressure "{unit}:Vacuum:01:ReadPressure";
 monitor ADC1_Pressure;
 
+float ADC1_PressureHigh;
+assign ADC1_PressureHigh "{unit}:Vacuum:01:ReadPressure.HIGH";
+float ADC1_PressureLow;
+assign ADC1_PressureLow "{unit}:Vacuum:01:ReadPressure.LOW";
+
 float ADC2_Pressure;
 assign ADC2_Pressure "{unit}:Vacuum:02:ReadPressure";
 monitor ADC2_Pressure;
+float ADC2_PressureHigh;
+assign ADC2_PressureHigh "{unit}:Vacuum:02:ReadPressure.HIGH";
+float ADC2_PressureLow;
+assign ADC2_PressureLow "{unit}:Vacuum:02:ReadPressure.LOW";
+float ADC_PressureLowThres;
+assign ADC_PressureLowThres"{unit}:Vacuum:PressureLowThres";
+monitor ADC_PressureLowThres;
+float ADC_PressureHighThres;
+assign ADC_PressureHighThres"{unit}:Vacuum:PressureHighThres";
+monitor ADC_PressureHighThres;
+
 /*
 short GV_CTST_Lim_In;
 assign GV_CTST_Lim_In to "{unit}:HVA:4:LimitIn";
@@ -171,7 +178,7 @@ ss VacuumSequence {
             CountdownDisa = ON;
             //pvPut(CountdownDisa);
         }
-        when ((StopReq == STOP) ) { //  && (IsttokupsBatteryON != ON)) {
+        when ((StopReq == STOP_REQ) ) { //  && (IsttokupsBatteryON != ON)) {
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
                 strcpy(msg, "State to Stopped");
                 pvPut(msg);
