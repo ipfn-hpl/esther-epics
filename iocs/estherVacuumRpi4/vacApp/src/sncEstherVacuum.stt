@@ -134,13 +134,13 @@ short GV_STDT_Lim_Out;
 assign GV_STDT_Lim_Out to "{unit}:HVA:3:LimitOut";
 monitor GV_STDT_Lim_Out;
 
-short ARM_CTST_Status;
-assign ARM_CTST_Status to "{unit}:ARM:1:Status";
-monitor ARM_CTST_Status;
+//short ARM_CTST_Status;
+//assign ARM_CTST_Status to "{unit}:ARM:1:Status";
+//monitor ARM_CTST_Status;
 
-short ARM_STDT_Status;
-assign ARM_STDT_Status to "{unit}:ARM:2:Status";
-monitor ARM_STDT_Status;
+//short ARM_STDT_Status;
+//assign ARM_STDT_Status to "{unit}:ARM:2:Status";
+//monitor ARM_STDT_Status;
 
 /* Trace message record limited to 40 characters */
 string msg;
@@ -157,16 +157,16 @@ ss VacuumSequence {
         entry{
             OPSTATE = POS_Idle;
             pvPut(OPSTATE);
-            LAST_OPSTATE = POS_Idle;
-            pvPut(LAST_OPSTATE);
         }
-        when (delay(10)) {
+        when (delay(10) && (StartReq == START)) {
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
                 strcpy(msg, "State to Stopped");
                 pvPut(msg);
                 errlogSevPrintf(NO_ALARM, "%s\n",msg);
+                LAST_OPSTATE = POS_Idle;
+                pvPut(LAST_OPSTATE);
                 /* Pulse state change to Stopped*/
-        } state Starting
+        } state Stopped
     }
     state Stopped {
         entry{
@@ -189,6 +189,8 @@ ss VacuumSequence {
                 pvPut(msg);
                 errlogSevPrintf(NO_ALARM, "%s\n",msg);
                 /* Pulse state change to Starting */
+                LAST_OPSTATE = POS_Stopped;
+                pvPut(LAST_OPSTATE);
         } state Starting
     }
 
@@ -229,16 +231,34 @@ ss VacuumSequence {
             pvPut(ADC1_PressureHigh);
             pvPut(ADC2_PressureHigh);
         }
-        
+        when ((StopReq == STOP_REQ) ) { //  && (IsttokupsBatteryON != ON)) {
+//              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
+                strcpy(msg, "State to Starting");
+                pvPut(msg);
+                errlogSevPrintf(NO_ALARM, "%s\n",msg);
+                // Pulse state change to Stopped
+                LAST_OPSTATE = POS_LowVacuum;
+                pvPut(LAST_OPSTATE);
+        } state Stopping
+    }
+
+    state Stopping {
+        entry{
+            OPSTATE = POS_Stopping;
+            pvPut(OPSTATE);
+            //ADC1_PressureHigh = ADC_PressureHighThres;
+            //ADC2_PressureHigh = ADC_PressureHighThres;
+            //pvPut(ADC1_PressureHigh);
+            //pvPut(ADC2_PressureHigh);
+        }
         when ((StopReq == STOP_REQ) ) { //  && (IsttokupsBatteryON != ON)) {
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
                 strcpy(msg, "State to Stopped");
                 pvPut(msg);
                 errlogSevPrintf(NO_ALARM, "%s\n",msg);
-                // Pulse state change to Stopped 
-                LAST_OPSTATE = POS_LowVacuum;
+                // Pulse state change to Stopped
+                LAST_OPSTATE = POS_Stopping;
                 pvPut(LAST_OPSTATE);
-        } state LowVacuum
-        
+        } state Stopped
     }
 }

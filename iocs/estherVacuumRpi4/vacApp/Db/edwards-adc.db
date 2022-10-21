@@ -1,26 +1,26 @@
-#######################################################
-## vim: sta:et:sw=4:ts=4:sts=4
-# ###                                             ### #
-# ### EPICS Database for                          ### #
-# ### SCU-800 Vacuum Contrller                    ### #
-# ###                                             ### #
-# ### author: B. Carvalho                         ### #
-# ###                                             ### #
-# ### Ref 1.0; 2022                               ### #
-# ###                                             ### #
-# ### macros: BUS     RS232/RS485 BUS name		  ### #
-# ###                                             ### #
-# ### Description:                                ### #
-# ### This is an example DB file using            ### #
-# ###                                             ### #
-# ### Records ending in "__" are for internal use ### #
-# ### only! Do not set them manually              ### #
-# ###                                             ### #
-#######################################################
-
-################################################
-# ### Reads the measured rotational speed  ### #
-################################################
+########################################################
+# vim: sta:et:sw=4:ts=4:sts=4
+#                                                       #
+#     EPICS Database for                                #
+#     EDWARDS ADC Sensors                               #
+#     EDA Gate Control S7 PLC control                   #
+#                                                       #
+#     author: B. Carvalho                               #
+#                                                       #
+#     Ref 1.0; 2022                                     #
+#                                                       #
+#     macros: A : Address of    RS232 BUS   name        #
+#                                                       #
+#     Description:                                      #
+#     This is an example DB file using                  #
+#                                                       #
+#     Records ending in "__" are for internal use       #
+#     only! Do not set them manually                    #
+#                                                       #
+########################################################
+##################################################
+# Disables Instrument reading                    #
+##################################################
 record(bo, $(P)$(R)Disable){
     field(DESC, "Disable ADC Instrument SCAN")
     field(ZNAM, "ENABLED")
@@ -48,13 +48,20 @@ record(ai, $(P)$(R)02:ReadPressure){
 }
 record(ao, $(P)$(R)PressureLowThres){
     field(DESC, "Pressure Threshold to Stop MagLev")
+    field(EGU, "mBar")
+    field(HOPR, "1.0e-4")
+    field(LOPR, "1.0e-7")
     info(autosaveFields, "VAL")
-    #field(VAL, "500")
+    #field(VAL, "1.0e-5")
     #field(PREC, "3")
 }
 record(ao, $(P)$(R)PressureHighThres){
     field(DESC, "Pressure Threshold to Start MagLev")
+    field(EGU, "mBar")
+    field(HOPR, "0.002")
+    field(LOPR, "1.0e-6")
     info(autosaveFields, "VAL")
+    #field(VAL, "1.0e-3")
     #field(PREC, "3")
 }
 record(ai, $(P)$(R)01:ReadVoltage){

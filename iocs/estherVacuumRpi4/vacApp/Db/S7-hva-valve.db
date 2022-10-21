@@ -1,0 +1,49 @@
+######################################################
+# vim: sta:et:sw=4:ts=4:sts=4                         #
+#                                                     #
+#     EPICS Database for                            # #
+#     HVA Gate Contol Arduino control                 #
+#                                                     #
+#     author: B. Carvalho                             #
+#                                                     #
+#     Ref 1.0; 2022                                   #
+#                                                     #
+#     macros: A : Address of    RS232 BUS   name      #
+#                                                     #
+#     Description:                                    #
+#     This is an example DB file using                #
+#                                                     #
+#     Records ending in "__" are for internal use     #
+#     only! Do not set them manually                  #
+#                                                     #
+#######################################################
+#####         PLC  Bit Tags     ############
+record(bo, "$(P)$(R):CTST-Valve")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@vacPLC Q0.7")
+        field(DESC, "S7 PLC CTST VALVE Solenoid")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(VAL, "0")
+        field(PINI, "YES")
+}
+record(bo, "$(P)$(R):STDT-Valve")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@vacPLC Q0.6")
+        field(DESC, "S7 PLC STDT VALVE Solenoid")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(VAL, "0")
+        field(PINI, "YES")
+}
+#record(bi, "$(P)$(R):Valve_LS1_ON")
+#{
+#        field(DESC, "S7 PLC EDA_VALVE LS1 ON")
+#        field(DTYP, "s7nodave")
+#        field(SCAN, "I/O Intr")
+#        field(INP, "@vacPLC(PG=fast) I0.0")
+#        field(ZNAM, "OFF")
+#        field(ONAM, "ON")
+#}

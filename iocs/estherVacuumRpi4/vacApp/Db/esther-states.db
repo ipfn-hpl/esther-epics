@@ -82,6 +82,8 @@ record(bo, "$(P)$(R)START-REQ") {
 record(bo, "$(P)$(R)STOP-REQ") {
     info(autosaveFields, "VAL")
     field(DESC, "Pulse Sequence Stop")
+    field(VAL, "0")
+    field(PINI, "YES")
     field(ZNAM, "Push to Stop")
     field(ONAM, "STOP")
 }

@@ -22,6 +22,7 @@ DB += armcontrol.proto
 DB += esther-states.db
 #DB += mb-li.db
 DB += S7-eda-valve.db
+DB += S7-hva-valve.db
 
 #DB += bme680.db
 #DB += bme680.proto
