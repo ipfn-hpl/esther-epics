@@ -32,12 +32,12 @@ s7nodaveConfigurePollGroup("vacPLC", "fast", 0.1, 0)
 
 # Arduino MST12 ARM control CTST
 # /dev/ttyACM0
-#drvAsynSerialPortConfigure("RS232A1","/dev/armCTST")
-#asynSetOption("RS232A1", 0, "baud", "115200")
-#asynSetOption("RS232A1", 0, "bits", "8")
-#asynSetOption("RS232A1", 0, "parity", "none")
-#asynSetOption("RS232A1", 0, "stop", "1")
-#dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=1")
+drvAsynSerialPortConfigure("RS232A1","/dev/armCTST")
+asynSetOption("RS232A1", 0, "baud", "115200")
+asynSetOption("RS232A1", 0, "bits", "8")
+asynSetOption("RS232A1", 0, "parity", "none")
+asynSetOption("RS232A1", 0, "stop", "1")
+dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=1")
 
 # Arduino MST12 ARM control
 #drvAsynSerialPortConfigure("RS232A2","/dev/armSTDT")

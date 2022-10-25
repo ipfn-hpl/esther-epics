@@ -1,3 +1,4 @@
+Esther:ARM:1:Char
 Esther:HVA:3:Char
 Esther:EDW:01:PumpSerialNo
 Esther:EDW:01:ReadCounters
@@ -23,6 +24,8 @@ Esther:Vacuum:COUNTUP
 Esther:EDA:Valve
 Esther:HVA:CTST-Valve
 Esther:HVA:STDT-Valve
+Esther:ARM:1:SwitchInCmd
+Esther:ARM:1:SwitchOutCmd
 Esther:HVA:3:SwitchInCmd
 Esther:HVA:3:SwitchOutCmd
 Esther:EDW:01:Disable
@@ -39,6 +42,10 @@ Esther:EDA:Valve_LS1_ON
 Esther:EDA:Valve_LS1_OFF
 Esther:EDA:Valve_LS2_ON
 Esther:EDA:Valve_LS2_OFF
+Esther:ARM:1:SwitchIn
+Esther:ARM:1:SwitchOut
+Esther:ARM:1:LimitIn
+Esther:ARM:1:LimitOut
 Esther:HVA:3:SwitchIn
 Esther:HVA:3:SwitchOut
 Esther:HVA:3:LimitIn
@@ -91,6 +98,7 @@ Esther:Vacuum:PressureLowThres
 Esther:Vacuum:PressureHighThres
 Esther:EDW:01:WARNING
 Esther:EDW:02:WARNING
+Esther:ARM:1:Status
 Esther:HVA:3:Status
 Esther:EDW:01:ReadModFonctWithWarning
 Esther:EDW:01:ReadStatusRMode
@@ -99,6 +107,7 @@ Esther:EDW:02:ReadModFonctWithWarning
 Esther:Vacuum:01:GaugeVersion
 Esther:Vacuum:02:GaugeVersion
 Esther:Vacuum:Units
+Esther:ARM:ARM-generic
 Esther:HVA:generic
 Esther:EDW:generic
 Esther:Vacuum::generic
@@ -147,6 +156,8 @@ Esther:VacuumSR_4_Status
 Esther:VacuumSR_5_Status
 Esther:VacuumSR_6_Status
 Esther:VacuumSR_7_Status
+Esther:ARM:1:Millis
+Esther:ARM:1:Holding
 Esther:HVA:3:Millis
 Esther:HVA:3:Holding
 Esther:EDW:01:MTemp
