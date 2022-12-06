@@ -83,11 +83,12 @@
          <enable/>
       </channel>
 -->
-      <!-- Channel that enables sampling of this group -->
+      <!-- Channel that enables sampling of this group 
+         <enable/>
+      -->
       <channel>
          <name>Esther:gas:PT901</name>
          <period>00:00:01</period><scan/>
-         <enable/>
       </channel>
   </group>
 
@@ -139,6 +140,9 @@
       <channel>
          <name>Esther:gas:MFC601_VOL_FMEAS</name>
          <period>1.0</period><scan/>
+      <!-- Channel that enables sampling of this group 
+         <enable/>
+      -->
       </channel>
   </group>
 
@@ -175,7 +179,7 @@
       </channel>
       <channel>
          <name>Esther:Camera:Pressure</name>
-         <period>0.1</period><scan/>
+         <period>5.0</period><scan/>
       </channel>
       <channel>
          <name>Esther:ambient:Temperature</name>
@@ -215,7 +219,6 @@
       <channel>
          <name>Esther:gas:MXT_O2_Bunker</name>
      <monitor/>
-         <enable/>
       </channel>
   </group>
 
@@ -241,11 +244,11 @@
       </channel>
       <channel>
          <name>Esther:Vacuum:01:ReadPressure</name>
-         <period>10.0</period><scan/>
+         <period>30.0</period><scan/>
       </channel>
       <channel>
          <name>Esther:Vacuum:02:ReadPressure</name>
-         <period>10.0</period><scan/>
+         <period>30.0</period><scan/>
          <enable/>
       </channel>
   </group>

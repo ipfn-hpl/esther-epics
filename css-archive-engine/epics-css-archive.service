@@ -1,16 +1,15 @@
 [Unit]
-Description=EPICS CSS-Archive 4.6.6 engine
+Description=EPICS CSS-Archive 4.6 engine
 #After=network.target remote-fs.target
 #Requires=network.target
 After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/bernardo/EPICS/esther-epics/css-archive-engine
-#/home/oper/CSS-Archive/archive-engine-4.6.6
+WorkingDirectory=/home/esther/css-phoebus
 ## EPICS Vacuum IOC telnet port is 4051
-ExecStart=/usr/bin/procServ --foreground --quiet --port=4052 /home/bernardo/EPICS/esther-epics/css-archive-engine/epics-archive.sh
-User=bernardo
+ExecStart=/usr/bin/procServ --foreground --quiet --port=4052 /home/esther/css-phoebus/epics-archive-engine.sh
+User=esther
 RuntimeDirectory=epics-css-archive
 StandardOutput=syslog
 StandardError=inherit
