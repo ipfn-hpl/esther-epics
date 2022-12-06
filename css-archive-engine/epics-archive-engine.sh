@@ -5,7 +5,9 @@
 # ./epics-archive-engine.sh -engine estherPulse -settings esther.ini
 #
 # Archive Engine launcher for Linux or Mac OS X
-
+# get latest at:
+# https://controlssoftware.sns.ornl.gov/css_phoebus/nightly
+#
 # When deploying, change "TOP"
 # to the absolute installation path
 TOP="./archive-engine"
