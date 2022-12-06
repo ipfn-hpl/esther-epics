@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>Display</name>
+  <name>Esther Vacuum</name>
   <macros>
     <unit>Esther</unit>
   </macros>
   <width>781</width>
   <height>955</height>
   <background_color>
-    <color name="Read_Background" red="240" green="240" blue="240">
+    <color name="Write_Background" red="128" green="255" blue="255">
     </color>
   </background_color>
+  <grid_visible>false</grid_visible>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
@@ -34,6 +35,7 @@
       <Add>01</Add>
       <name>CTST</name>
       <node>Vacuum</node>
+      <unit>Esther</unit>
     </macros>
     <file>EdwardsADC.bob</file>
     <x>16</x>

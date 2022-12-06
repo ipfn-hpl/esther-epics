@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>Display</name>
+  <name>SCU800 Sub Display</name>
   <width>351</width>
   <height>463</height>
   <background_color>
@@ -45,7 +45,7 @@
     <text>SET Speed</text>
     <x>148</x>
     <y>25</y>
-    <width>116</width>
+    <width>72</width>
     <height>16</height>
     <auto_size>true</auto_size>
   </widget>

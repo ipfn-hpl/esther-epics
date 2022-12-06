@@ -2,11 +2,19 @@
 <display version="2.0.0">
   <name>estherVacuumRpi2</name>
   <width>470</width>
-  <height>150</height>
+  <height>276</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>30</x>
+    <y>150</y>
+    <width>300</width>
+    <height>126</height>
+    <transparent>true</transparent>
+  </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
-    <text>EL-FLOW</text>
+    <text>EL-FLOW + EDA Valve</text>
     <x use_class="true">0</x>
     <y use_class="true">0</y>
     <width>320</width>
@@ -20,35 +28,6 @@
       </color>
     </foreground_color>
     <transparent use_class="true">true</transparent>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_1</name>
-    <text>Some Value:</text>
-    <y>50</y>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
-    <pv_name>sim://sine</pv_name>
-    <x>100</x>
-    <y>50</y>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_2</name>
-    <class>COMMENT</class>
-    <text>Some comment.</text>
-    <x>150</x>
-    <y>20</y>
-    <width>140</width>
-    <font use_class="true">
-      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
-      </font>
-    </font>
-    <foreground_color use_class="true">
-      <color name="Text" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <transparent use_class="true">true</transparent>
-    <wrap_words use_class="true">true</wrap_words>
   </widget>
   <widget type="label" version="2.0.0">
     <name>FMeasure</name>
@@ -96,5 +75,52 @@
     <x>330</x>
     <y>120</y>
     <width>140</width>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>Esther:EDA:Valve</pv_name>
+    <x>130</x>
+    <y>160</y>
+    <labels_from_pv>true</labels_from_pv>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Valve</name>
+    <pv_name>Esther:EDA:Valve</pv_name>
+    <symbols>
+      <symbol>pic/1809-horizontal-type-L-port-flow-path-open-right.png</symbol>
+      <symbol>pic/1809-horizontal-type-L-port-flow-path-open-left.png</symbol>
+    </symbols>
+    <x>110</x>
+    <y>200</y>
+    <width>130</width>
+    <height>76</height>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Valve_LS1_ON</name>
+    <pv_name>Esther:EDA:Valve_LS1_ON</pv_name>
+    <bit>0</bit>
+    <x>260</x>
+    <y>200</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Valve_LS1_OFF</name>
+    <pv_name>Esther:EDA:Valve_LS1_OFF</pv_name>
+    <bit>0</bit>
+    <x>260</x>
+    <y>230</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Valve_LS2_ON</name>
+    <pv_name>Esther:EDA:Valve_LS2_ON</pv_name>
+    <bit>0</bit>
+    <x>70</x>
+    <y>200</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Valve_LS2_OFF</name>
+    <pv_name>Esther:EDA:Valve_LS2_OFF</pv_name>
+    <bit>0</bit>
+    <x>70</x>
+    <y>230</y>
   </widget>
 </display>
