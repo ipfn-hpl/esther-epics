@@ -1,0 +1,15 @@
+# https://weinimo.github.io/how-to-write-udev-rules-for-usb-devices.html
+#
+# USB devices (usbfs replacement)
+# terminal commands:
+# lsusb
+# udevadm info -a -n /dev/ttyUSBx
+# sudo vim /etc/udev/rules.d/40-usb.rules
+# sudo udevadm control --reload-rules; sudo udevadm trigger
+# Devices
+#
+# Bus 001 Device 049: ID 067b:23d3 Prolific Technology, Inc. USB-Serial Controller 
+# SUBSYSTEMS=="usb", DRIVERS=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="23d3", SYMLINK+="modbus"
+#SUBSYSTEMS=="tty", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="23d3", SYMLINK+="tty_modbus"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="23d3", SYMLINK+="tty_modbus"
+
