@@ -1,0 +1,34 @@
+# USB devices (usbfs replacement)
+# terminal commands:
+# lsusb
+# udevadm info -a -n /dev/ttyUSBx
+# sudo vim /etc/udev/rules.d/40-usb.rules
+# sudo udevadm control --reload-rules; sudo udevadm trigger
+# Devices
+#
+#  Id: 2886:0004 Seeed Technology Co., Ltd. Seeeduino v4
+# /dev/ttyACM0  "1"  ATTRS{devpath}=="1.2.3" ATTRS{devnum}=="6"  Attached to USB HUB 
+SUBSYSTEMS=="usb",DRIVERS=="usb",ATTRS{idProduct}=="0004",ATTRS{idVendor}=="2886", SYMLINK+="armCTST"
+
+# ID 1a86:7523 QinHeng Electronics CH340 serial converter
+# /dev/ttyUSB2 "2" Attached to USB HUB 
+#   ATTRS{devnum}=="10"   ATTRS{devpath}=="1.4.4"
+SUBSYSTEMS=="usb",DRIVERS=="usb",ATTRS{devpath}=="1.4.4",ATTRS{bcdDevice}=="0254",ATTRS{idVendor}=="1a86",ATTRS{idProduct}=="7523",SYMLINK+="armSTDT"
+
+#  ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+# /dev/ttyUSB2 "3"  ATTRS{devnum}=="4",ATTRS{devpath}=="1.2.2" Attached to USB HUB
+SUBSYSTEMS=="usb",DRIVERS=="usb",ATTRS{idProduct}=="ea60",ATTRS{idVendor}=="10c4",ATTRS{bcdDevice}=="0100",SYMLINK+="gatevalveCTST"
+
+# ID 1a86:7523 QinHeng Electronics CH340 serial converter. Attached to USB onboard
+# /dev/ttyUSB1  
+#  ATTRS{devnum}=="4" ATTRS{devpath}=="1.2"
+# SUBSYSTEMS=="tty"",     ATTRS{devnum}=="4",  ATTRS{devpath}=="1.4"
+SUBSYSTEMS=="usb",DRIVERS=="usb",ATTRS{devpath}=="1.2",ATTRS{bcdDevice}=="0254",ATTRS{idVendor}=="1a86",ATTRS{idProduct}=="7523",SYMLINK+="edwardsADC"
+
+# ID 1a86:7523 QinHeng Electronics CH340 serial converter. Attached to USB onboard
+# Bus 001 Device 004: ID 1a86:7523 QinHeng Electronics CH340 serial converter
+SUBSYSTEMS=="usb", DRIVERS=="usb", ATTRS{bcdDevice}=="0264", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="rs485"
+
+# Bus 001 Device 049: ID 067b:23d3 Prolific Technology, Inc. USB-Serial Controller 
+# SUBSYSTEMS=="usb", DRIVERS=="usb", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="23d3", SYMLINK+="modbus"
+#SUBSYSTEMS=="tty", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="23d3", SYMLINK+="tty_modbus"
