@@ -1,7 +1,7 @@
-# autosave R5.3	Automatically generated - DO NOT MODIFY - 221021-140700
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 221220-134312
 Esther:Vacuum:STOP-REQ.VAL 0
 Esther:Vacuum:PressureLowThres.VAL 1e-05
-Esther:Vacuum:PressureHighThres.VAL 0.00050545572916667
-Esther:Vacuum:TraceMessage.VAL State to Stopped
-Esther:Vacuum:LAST-OPSTATE.VAL 0
+Esther:Vacuum:PressureHighThres.VAL 0.0004
+Esther:Vacuum:TraceMessage.VAL State to LowVacuum
+Esther:Vacuum:LAST-OPSTATE.VAL 1
 <END>
