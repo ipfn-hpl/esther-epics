@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>estherVacuumRpi2</name>
+  <name>MFC El-Flow ED</name>
   <width>470</width>
   <height>276</height>
   <widget type="rectangle" version="2.0.0">
@@ -14,7 +14,7 @@
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
-    <text>EL-FLOW + EDA Valve</text>
+    <text>EL-FLOW  ${mfc}  / EDA ${eda} Valve</text>
     <x use_class="true">0</x>
     <y use_class="true">0</y>
     <width>320</width>
@@ -32,25 +32,29 @@
   <widget type="label" version="2.0.0">
     <name>FMeasure</name>
     <text>FMeasure-ai</text>
-    <x>30</x>
+    <x>40</x>
     <y>90</y>
+    <width>79</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>FMeasure-ai</name>
-    <pv_name>Esther:MFC1:FMeasure-ai</pv_name>
+    <pv_name>Esther:${mfc}:FMeasure-ai</pv_name>
     <x>30</x>
-    <y>120</y>
+    <y>110</y>
   </widget>
   <widget type="combo" version="2.0.0">
     <name>Control-Mode</name>
-    <pv_name>Esther:MFC1:Control-Mode</pv_name>
+    <pv_name>Esther:${mfc}:Control-Mode</pv_name>
     <x>170</x>
     <y>120</y>
     <width>140</width>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Control-Mode-mbbi</name>
-    <pv_name>Esther:MFC1:Control-Mode-mbbi</pv_name>
+    <pv_name>Esther:${mfc}:Control-Mode-mbbi</pv_name>
     <x>170</x>
     <y>90</y>
     <width>130</width>
@@ -71,21 +75,21 @@
   </widget>
   <widget type="combo" version="2.0.0">
     <name>Counter-Mode</name>
-    <pv_name>Esther:MFC1:Counter-Mode</pv_name>
+    <pv_name>Esther:${mfc}:Counter-Mode</pv_name>
     <x>330</x>
     <y>120</y>
     <width>140</width>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button</name>
-    <pv_name>Esther:EDA:Valve</pv_name>
+    <pv_name>Esther:EDA:${eda}-Valve</pv_name>
     <x>130</x>
     <y>160</y>
     <labels_from_pv>true</labels_from_pv>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Valve</name>
-    <pv_name>Esther:EDA:Valve</pv_name>
+    <pv_name>Esther:EDA:${eda}-Valve</pv_name>
     <symbols>
       <symbol>pic/1809-horizontal-type-L-port-flow-path-open-right.png</symbol>
       <symbol>pic/1809-horizontal-type-L-port-flow-path-open-left.png</symbol>
@@ -97,30 +101,50 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>Valve_LS1_ON</name>
-    <pv_name>Esther:EDA:Valve_LS1_ON</pv_name>
+    <pv_name>Esther:EDA:${eda}-Valve_LS1_ON</pv_name>
     <bit>0</bit>
     <x>260</x>
     <y>200</y>
   </widget>
   <widget type="led" version="2.0.0">
     <name>Valve_LS1_OFF</name>
-    <pv_name>Esther:EDA:Valve_LS1_OFF</pv_name>
+    <pv_name>Esther:EDA:${eda}-Valve_LS1_OFF</pv_name>
     <bit>0</bit>
     <x>260</x>
     <y>230</y>
   </widget>
   <widget type="led" version="2.0.0">
     <name>Valve_LS2_ON</name>
-    <pv_name>Esther:EDA:Valve_LS2_ON</pv_name>
+    <pv_name>Esther:EDA:${eda}-Valve_LS2_ON</pv_name>
     <bit>0</bit>
     <x>70</x>
     <y>200</y>
   </widget>
   <widget type="led" version="2.0.0">
     <name>Valve_LS2_OFF</name>
-    <pv_name>Esther:EDA:Valve_LS2_OFF</pv_name>
+    <pv_name>Esther:EDA:${eda}-Valve_LS2_OFF</pv_name>
     <bit>0</bit>
     <x>70</x>
     <y>230</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>FTemperature-ai</name>
+    <pv_name>Esther:${mfc}:FTemperature-ai</pv_name>
+    <x>30</x>
+    <y>60</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>L FTemperature</name>
+    <text>FTemperature-ai</text>
+    <x>37</x>
+    <y>40</y>
+    <width>105</width>
+    <height>16</height>
+    <background_color>
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
   </widget>
 </display>

@@ -4,7 +4,7 @@
   <macros>
     <unit>Esther</unit>
   </macros>
-  <width>781</width>
+  <width>1261</width>
   <height>955</height>
   <background_color>
     <color name="Write_Background" red="128" green="255" blue="255">
@@ -132,5 +132,29 @@
     <y>781</y>
     <width>371</width>
     <height>174</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display MFC DT</name>
+    <macros>
+      <eda>ST</eda>
+      <mfc>MFC-CT</mfc>
+    </macros>
+    <file>EL-FLOW-MFC.bob</file>
+    <x>776</x>
+    <y>80</y>
+    <width>480</width>
+    <height>298</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <macros>
+      <eda>DT</eda>
+      <mfc>MFC-ST</mfc>
+    </macros>
+    <file>EL-FLOW-MFC.bob</file>
+    <x>781</x>
+    <y>480</y>
+    <width>480</width>
+    <height>298</height>
   </widget>
 </display>
