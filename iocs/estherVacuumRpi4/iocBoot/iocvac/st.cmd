@@ -22,6 +22,7 @@ vac_registerRecordDeviceDriver pdbbase
 s7nodaveConfigureIsoTcpPort("vacPLC", "192.168.0.1", 0)
 dbLoadRecords("db/S7-eda-valve.db", "P=Esther:,R=EDA")
 dbLoadRecords("db/S7-hva-valve.db", "P=Esther:,R=HVA")
+dbLoadRecords("db/S7-tags.db", "P=Esther:,R=Vacuum")
 
 # Configure Poll Group
 s7nodaveConfigurePollGroup("vacPLC", "default", 1.0, 0)

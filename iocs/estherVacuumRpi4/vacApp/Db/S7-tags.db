@@ -1,0 +1,40 @@
+######################################################
+# vim: sta:et:sw=4:ts=4:sts=4
+#                                                     #
+#     EPICS Database for                              #
+#     General Tags     S7 PLC control                 #
+#                                                     #
+#     author: B. Carvalho                             #
+#                                                     #
+#     Ref 1.0; 2022                                   #
+#                                                     #
+#     macros
+#                                                     #
+#     Description:                                    #
+#     This is an example DB file using                #
+#                                                     #
+#     Records ending in "__" are for internal use     #
+#     only! Do not set them manually                  #
+#                                                     #
+#######################################################
+#####         PLC  Tags     ############
+record(longin, "$(P)$(R):CT-PT-Static")
+{
+        field(DESC, "S7 CT Static Pressure")
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@vacPLC(PG=default) IW64 uint16")
+}
+#record(ai,"$(P):MFC601_FLOW")
+#{
+#        field(SCAN, "I/O Intr")
+#        field(DTYP, "s7nodave")
+#        field(INP, "@myPLC(PG=fast,DLV=0,DHV=41942) MW272 int16")
+#        field(LOPR, "0.0")
+#        field(HOPR, "100.0")
+#        field(LINR, "LINEAR")
+#        field(EGUL, "0.0")
+#        field(EGUF, "65.53")
+#        field(EGU, "ln/min")
+#        field(PREC, "2")
+#}

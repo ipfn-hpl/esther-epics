@@ -28,7 +28,7 @@
 # ### Reads the measured rotational speed  ### #
 ################################################
 record(bo, $(P)$(R)01:Disable){
-    field(DESC, "CTST Maglev Controller Disable Instrument SCAN")
+    field(DESC, "CTST Maglev Disable SCAN")
     field(ZNAM, "ENABLED")
     field(ONAM, "DISABLED")
     field(VAL, "1")

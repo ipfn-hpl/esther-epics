@@ -19,7 +19,7 @@
 #######################################################
 #####         PLC  Bit Tags     ############
 # Operational bits
-record(bo, "$(P)$(R):Valve")
+record(bo, "$(P)$(R):ST-Valve")
 {
         field(DTYP, "s7nodave")
         field(OUT, "@vacPLC Q1.1")
@@ -30,7 +30,7 @@ record(bo, "$(P)$(R):Valve")
         field(VAL, "0")
         field(PINI, "YES")
 }
-record(bi, "$(P)$(R):Valve_LS1_ON")
+record(bi, "$(P)$(R):ST-Valve_LS1_ON")
 {
         field(DESC, "S7 PLC EDA_VALVE LS1 ON")
         field(DTYP, "s7nodave")
@@ -39,7 +39,7 @@ record(bi, "$(P)$(R):Valve_LS1_ON")
         field(ZNAM, "OFF")
         field(ONAM, "ON")
 }
-record(bi, "$(P)$(R):Valve_LS1_OFF")
+record(bi, "$(P)$(R):ST-Valve_LS1_OFF")
 {
         field(DESC, "S7 PLC EDA_VALVE LS1 ON")
         field(DTYP, "s7nodave")
@@ -48,7 +48,7 @@ record(bi, "$(P)$(R):Valve_LS1_OFF")
         field(ZNAM, "OFF")
         field(ONAM, "ON")
 }
-record(bi, "$(P)$(R):Valve_LS2_ON")
+record(bi, "$(P)$(R):ST-Valve_LS2_ON")
 {
         field(DESC, "S7 PLC EDA_VALVE LS2 ON")
         field(DTYP, "s7nodave")
@@ -57,12 +57,61 @@ record(bi, "$(P)$(R):Valve_LS2_ON")
         field(ZNAM, "OFF")
         field(ONAM, "ON")
 }
-record(bi, "$(P)$(R):Valve_LS2_OFF")
+record(bi, "$(P)$(R):ST-Valve_LS2_OFF")
 {
         field(DESC, "S7 PLC EDA_VALVE LS2 ON")
         field(DTYP, "s7nodave")
         field(SCAN, "I/O Intr")
         field(INP, "@vacPLC(PG=fast) I0.3")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+}
+
+## DT Valve
+record(bo, "$(P)$(R):DT-Valve")
+{
+        field(DTYP, "s7nodave")
+        field(OUT, "@vacPLC Q1.0")
+        field(DESC, "S7 PLC EDA_VALVE Solenoid")
+#        field(UDF,1)
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(VAL, "0")
+        field(PINI, "YES")
+}
+record(bi, "$(P)$(R):DT-Valve_LS1_ON")
+{
+        field(DESC, "S7 PLC EDA_VALVE LS1 ON")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@vacPLC(PG=fast) I0.4")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+}
+record(bi, "$(P)$(R):DT-Valve_LS1_OFF")
+{
+        field(DESC, "S7 PLC EDA_VALVE LS1 ON")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@vacPLC(PG=fast) I0.5")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+}
+record(bi, "$(P)$(R):DT-Valve_LS2_ON")
+{
+        field(DESC, "S7 PLC EDA_VALVE LS2 ON")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@vacPLC(PG=fast) I0.6")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+}
+record(bi, "$(P)$(R):DT-Valve_LS2_OFF")
+{
+        field(DESC, "S7 PLC EDA_VALVE LS2 ON")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@vacPLC(PG=fast) I0.7")
         field(ZNAM, "OFF")
         field(ONAM, "ON")
 }
