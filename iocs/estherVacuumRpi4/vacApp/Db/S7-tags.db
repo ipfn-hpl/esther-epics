@@ -49,9 +49,9 @@
 #        field(EOFF, "0.0")
 #        field(EGU, "mA")
 #}
-record(ai, "$(P)$(R):CT-PT-Static")
+record(ai, "$(P)$(R):DT-PT-Static")
 {
-        field(DESC, "S7 CT Static Pressurei in mbar")
+        field(DESC, "S7 DT Static Pressurei in mbar")
         field(SCAN, "I/O Intr")
         field(DTYP, "s7nodave")
         field(INP, "@vacPLC(PG=default) IW64 uint16")
