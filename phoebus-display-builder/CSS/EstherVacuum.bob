@@ -157,4 +157,38 @@
     <width>480</width>
     <height>298</height>
   </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_DT-PT-Static</name>
+    <text>DT-PT-Static</text>
+    <x>820</x>
+    <y>400</y>
+  </widget>
+  <widget type="tank" version="2.0.0">
+    <name>Tank_DT-PT-Static</name>
+    <pv_name>Esther:Vacuum:DT-PT-Static</pv_name>
+    <x>960</x>
+    <y>410</y>
+    <width>250</width>
+    <height>60</height>
+    <horizontal>true</horizontal>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_DT-PT-Static</name>
+    <pv_name>Esther:Vacuum:DT-PT-Static</pv_name>
+    <x>781</x>
+    <y>420</y>
+    <width>169</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <format>1</format>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_DT-PT-Static_1</name>
+    <text>DT-PT-Static</text>
+    <x>1020</x>
+    <y>390</y>
+  </widget>
 </display>
