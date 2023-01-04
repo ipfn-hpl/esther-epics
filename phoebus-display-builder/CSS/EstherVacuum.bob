@@ -139,7 +139,7 @@
       <eda>ST</eda>
       <mfc>MFC-CT</mfc>
     </macros>
-    <file>EL-FLOW-MFC-ST.bob</file>
+    <file>EL-FLOW-MFC-CT.bob</file>
     <x>776</x>
     <y>80</y>
     <width>480</width>

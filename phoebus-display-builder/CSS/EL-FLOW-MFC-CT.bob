@@ -14,7 +14,7 @@
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
-    <text>EL-FLOW  ${mfc}  / EDA DT Valve</text>
+    <text>EL-FLOW  ${mfc}  / EDA CT Valve</text>
     <x use_class="true">0</x>
     <y use_class="true">0</y>
     <width>320</width>
@@ -161,10 +161,10 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Counter-Mode_1</name>
-    <text>Air</text>
+    <text>Closed</text>
     <x>248</x>
     <y>210</y>
-    <width>18</width>
+    <width>44</width>
     <height>16</height>
     <background_color>
       <color name="Write_Background" red="128" green="255" blue="255">
