@@ -52,7 +52,7 @@
       <font family="Liberation Sans" style="REGULAR" size="36.0">
       </font>
     </font>
-    <format>3</format>
+    <format>2</format>
     <precision>2</precision>
   </widget>
   <widget type="textupdate" version="2.0.0">
