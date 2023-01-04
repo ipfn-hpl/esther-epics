@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>States</name>
+  <macros>
+    <node>Vacuum</node>
+    <unit>Esther</unit>
+  </macros>
+  <width>740</width>
+  <height>570</height>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>ESTHER State Machine</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Some Value:</text>
+    <y>50</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>sim://sine</pv_name>
+    <x>100</x>
+    <y>50</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <class>COMMENT</class>
+    <text>Some comment.</text>
+    <x>20</x>
+    <y>31</y>
+    <width>140</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>${unit}:${node}:OPCALCSTATE</pv_name>
+    <x>60</x>
+    <y>290</y>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>OPCALCSTATE</name>
+    <pv_name>${unit}:${node}:OPCALCSTATE</pv_name>
+    <x>420</x>
+    <y>180</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
+    <bit>0</bit>
+    <x>410</x>
+    <y>220</y>
+    <width>50</width>
+    <height>50</height>
+    <on_label>IDLE</on_label>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_1</name>
+    <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
+    <bit>1</bit>
+    <x>400</x>
+    <y>310</y>
+    <width>80</width>
+    <height>80</height>
+    <on_label>STOPPED</on_label>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_2</name>
+    <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
+    <bit>2</bit>
+    <x>250</x>
+    <y>390</y>
+    <width>80</width>
+    <height>80</height>
+    <on_label>STARTING</on_label>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_3</name>
+    <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
+    <bit>3</bit>
+    <x>400</x>
+    <y>490</y>
+    <width>80</width>
+    <height>80</height>
+    <on_label>LOW Vacuum</on_label>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>START-REQ</name>
+    <pv_name>${unit}:Vacuum:START-REQ</pv_name>
+    <x>230</x>
+    <y>210</y>
+    <height>60</height>
+    <off_label>Push to Start / Continue</off_label>
+    <mode>1</mode>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>STOP-REQ</name>
+    <pv_name>${unit}:Vacuum:STOP-REQ</pv_name>
+    <x>640</x>
+    <y>210</y>
+    <height>60</height>
+    <off_label>Toggle to Stop</off_label>
+    <on_label>Stopping</on_label>
+    <on_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Pressure</name>
+    <pv_name>${unit}:${node}:01:ReadPressure</pv_name>
+    <x>220</x>
+    <y>95</y>
+    <width>210</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="36.0">
+      </font>
+    </font>
+    <format>2</format>
+    <precision>2</precision>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Unit</name>
+    <pv_name>${unit}:${node}:Units</pv_name>
+    <x>610</x>
+    <y>32</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Pressure_1</name>
+    <pv_name>${unit}:${node}:02:ReadPressure</pv_name>
+    <x>480</x>
+    <y>95</y>
+    <width>210</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="36.0">
+      </font>
+    </font>
+    <format>3</format>
+    <precision>2</precision>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>CTST_lb</name>
+    <class>Label_1</class>
+    <text>CTST</text>
+    <x>290</x>
+    <y>70</y>
+    <width>58</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_4</name>
+    <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
+    <bit>5</bit>
+    <x>550</x>
+    <y>400</y>
+    <width>80</width>
+    <height>80</height>
+    <on_label>STOPPING</on_label>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU Counter</name>
+    <pv_name>${unit}:${node}:COUNTUP</pv_name>
+    <x>90</x>
+    <y>350</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>High Press Thr</name>
+    <class>Label_1</class>
+    <text>High Press </text>
+    <x>26</x>
+    <y>80</y>
+    <width>73</width>
+    <height>16</height>
+    <font>
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LowPress Thr</name>
+    <class>Label_1</class>
+    <text>Low Press </text>
+    <x>20</x>
+    <y>110</y>
+    <width>70</width>
+    <height>16</height>
+    <font>
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>PressureLowThres</name>
+    <pv_name>${unit}:${node}:PressureLowThres</pv_name>
+    <x>100</x>
+    <y>135</y>
+    <format>2</format>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>${unit}:${node}:PressureHighThres</pv_name>
+    <x>90</x>
+    <y>160</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU PressureHighThres</name>
+    <pv_name>${unit}:${node}:PressureHighThres</pv_name>
+    <x>106</x>
+    <y>80</y>
+    <precision>5</precision>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_3</name>
+    <pv_name>Esther:Vacuum:PressureHighThres</pv_name>
+    <x>90</x>
+    <y>210</y>
+    <format>3</format>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU PressureLowThres</name>
+    <pv_name>${unit}:${node}:PressureLowThres</pv_name>
+    <x>100</x>
+    <y>110</y>
+    <precision>5</precision>
+  </widget>
+  <widget type="scrollbar" version="2.0.0">
+    <name>PressureHighThres</name>
+    <pv_name>${unit}:${node}:PressureHighThres</pv_name>
+    <y>260</y>
+    <width>20</width>
+    <height>100</height>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Scaled Slider</name>
+    <pv_name>${unit}:${node}:PressureHighThres</pv_name>
+    <x>26</x>
+    <y>135</y>
+    <width>55</width>
+    <height>400</height>
+    <horizontal>false</horizontal>
+  </widget>
+</display>

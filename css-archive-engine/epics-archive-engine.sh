@@ -10,7 +10,8 @@
 #
 # When deploying, change "TOP"
 # to the absolute installation path
-TOP="./archive-engine"
+#TOP="./archive-engine"
+TOP="/home/esther/css-phoebus/archive-engine"
 
 # Ideally, assert that Java is found
 # export JAVA_HOME=/opt/jdk-9
@@ -24,7 +25,9 @@ fi
 
 JAR=`echo "${TOP}/service-archive-engine-*.jar"`
 
-java -jar $JAR $OPT "$@"
+#java -jar $JAR $OPT "$@"
+java -jar $JAR -engine estherPulse -settings esther.ini
+
 
 echo "Archive Started. Check browser at  http://localhost:4812/main"
 

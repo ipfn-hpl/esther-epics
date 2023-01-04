@@ -223,7 +223,7 @@
   </group>
 
   <group>
-    <name>ESTHER Vacuum System</name>
+    <name>ESTHER CT-ST-DT Vacuum System</name>
       <channel>
          <name>Esther:EDW:01:MTemp</name>
          <period>60.0</period>
@@ -241,6 +241,10 @@
       <channel>
          <name>Esther:HVA:4:Status</name>
          <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:Vacuum:DT-PT-Static</name>
+         <period>30.0</period><scan/>
       </channel>
       <channel>
          <name>Esther:Vacuum:01:ReadPressure</name>
