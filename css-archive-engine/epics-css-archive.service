@@ -6,9 +6,9 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/esther/GIT_REPOS/esther-epics/css-archive-engine
+WorkingDirectory=/home/esther/git-repos/esther-epics/css-archive-engine
 ## EPICS  telnet port is 4051, archive is 4052
-ExecStart=/usr/bin/procServ --foreground --quiet --port=4052 /home/esther/GIT_REPOS/esther-epics/css-archive-engine/epics-archive-engine.sh
+ExecStart=/usr/bin/procServ --foreground --quiet --port=4052 /home/esther/git-repos/esther-epics/css-archive-engine/epics-archive-engine.sh
 User=esther
 RuntimeDirectory=epics-css-archive
 StandardOutput=syslog

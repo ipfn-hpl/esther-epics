@@ -11,7 +11,8 @@
 # When deploying, change "TOP"
 # to the absolute installation path
 #TOP="./archive-engine"
-TOP="/home/esther/css-phoebus/archive-engine"
+#TOP="/home/esther/css-phoebus/archive-engine"
+TOP="/opt/epics/archive-engine"
 
 # Ideally, assert that Java is found
 # export JAVA_HOME=/opt/jdk-9
