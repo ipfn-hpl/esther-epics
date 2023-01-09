@@ -57,7 +57,7 @@
     <height>90</height>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_3</name>
+    <name>ED Arm CTST</name>
     <macros>
       <Add>1</Add>
       <name>CTST</name>
@@ -69,7 +69,7 @@
     <resize>1</resize>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_4</name>
+    <name>ED Arm STDT</name>
     <macros>
       <Add>2</Add>
       <name>STDT</name>
@@ -80,6 +80,7 @@
     <width>380</width>
     <height>190</height>
     <resize>1</resize>
+    <border_width>1</border_width>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_7</name>
@@ -93,9 +94,10 @@
     <y>778</y>
     <width>365</width>
     <height>166</height>
+    <border_width>1</border_width>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_8</name>
+    <name>ED SCU800 STDT</name>
     <macros>
       <Add>02</Add>
       <name>STDT</name>
@@ -106,9 +108,10 @@
     <y>118</y>
     <width>360</width>
     <height>470</height>
+    <border_width>1</border_width>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_9</name>
+    <name>ED SCU800 CTST</name>
     <macros>
       <Add>01</Add>
       <name>CTST</name>
@@ -119,6 +122,7 @@
     <y>121</y>
     <width>366</width>
     <height>470</height>
+    <border_width>1</border_width>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_10</name>
@@ -132,9 +136,10 @@
     <y>781</y>
     <width>371</width>
     <height>174</height>
+    <border_width>1</border_width>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display MFC DT</name>
+    <name>Embedded Display MFC CT</name>
     <macros>
       <eda>CT</eda>
       <mfc>MFC-CT</mfc>
@@ -146,7 +151,7 @@
     <height>298</height>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_5</name>
+    <name>Embedded Display MFC ST</name>
     <macros>
       <eda>DT</eda>
       <mfc>MFC-ST</mfc>
@@ -190,5 +195,28 @@
     <text>DT-PT-Static</text>
     <x>1020</x>
     <y>390</y>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB DryPump-CT</name>
+    <pv_name>Esther:EDW:DryPump-CT</pv_name>
+    <x>830</x>
+    <y>820</y>
+    <show_led>false</show_led>
+    <show_confirm_dialog>2</show_confirm_dialog>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label  DryPump-CT</name>
+    <text>DryPump-CT</text>
+    <x>830</x>
+    <y>790</y>
+    <foreground_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
   </widget>
 </display>

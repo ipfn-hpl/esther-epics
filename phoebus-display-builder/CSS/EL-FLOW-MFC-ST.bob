@@ -60,7 +60,7 @@
     <width>130</width>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_4</name>
+    <name>L MFC Counter-Mode</name>
     <text>Control-Mode</text>
     <x>170</x>
     <y>70</y>
@@ -160,7 +160,7 @@
     <wrap_words>false</wrap_words>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Counter-Mode_1</name>
+    <name>EDA CT Air tube</name>
     <text>Air</text>
     <x>248</x>
     <y>210</y>
@@ -174,8 +174,8 @@
     <auto_size>true</auto_size>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Counter-Mode_2</name>
-    <text>CT</text>
+    <name>EDA DT tube</name>
+    <text>DT</text>
     <x>80</x>
     <y>210</y>
     <width>19</width>

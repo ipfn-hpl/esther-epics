@@ -175,7 +175,7 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Counter-Mode_2</name>
-    <text>DT</text>
+    <text>CT</text>
     <x>80</x>
     <y>210</y>
     <width>19</width>
