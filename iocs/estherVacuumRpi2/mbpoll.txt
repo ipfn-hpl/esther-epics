@@ -1,6 +1,12 @@
-# Control Mode
+# EL_FLOW MODBUS debugging 
+See 917099-Manual-EL-FLOW-Select.pdf for registers
+
+### Control Mode
 mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 37 -v -1  /dev/tty_modbus
 
+# Init Reset (change parameters)
+mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 11 -1 -v  /dev/tty_modbus 64
+Lock:
 mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 11 -v  /dev/tty_modbus 82
 debug enabled
 Set device=/dev/tty_modbus
@@ -51,3 +57,36 @@ Written 1 references
 
 Serial number string (16 bytes) 
  mbpoll -m rtu  -a 1 -b 19200 -t 4:hex  -r 0xF119 -1 -v -c 8 /dev/tty_modbus
+
+### Baud Rate (unsigned long) 
+ mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 0xFD49 -1 -v  -c 2 /dev/tty_modbus
+-- Polling slave 1...
+[01][03][FD][48][00][02][75][B1]
+Waiting for a confirmation...
+<01><03><04><00><00><4B><00><CC><C3>
+[64841]:        0
+[64842]:        19200
+
+(Change. Max 256000)
+mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 0xFD49 -1 -v  /dev/tty_modbus 0 38400
+mbpoll -m rtu  -a 1 -b 38400  -t 4  -r 0xFD49 -1 -v  -c2 /dev/tty_modbus
+
+### Parity (default 2) 
+ mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 4013  -1 -v  -c 1 /dev/tty_modbus
+
+-- Polling slave 1...
+[01][03][0F][AC][00][01][47][3F]
+Waiting for a confirmation...
+<01><03><02><00><02><39><85>
+[4013]:         2
+
+### FieldBus Address (default 1) 
+ mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 4013  -1 -v  -c 1 /dev/tty_modbus
+
+-- Polling slave 1...
+[01][03][0F][AA][00][01][A7][3E]
+Waiting for a confirmation...
+<01><03><02><00><01><79><84>
+[4011]:         1
+
+
