@@ -269,6 +269,10 @@
       <channel>
          <name>Esther:Vacuum:STDT-Pressure</name>
          <period>30.0</period><scan/>
+      </channel>
+      <channel>
+         <name>Esther:Vacuum:Enabled</name>
+         <period>60.0</period><monitor/>
          <enable/>
       </channel>
   </group>

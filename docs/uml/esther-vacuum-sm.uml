@@ -1,0 +1,92 @@
+@startuml
+' scale 350 width
+hide empty description
+
+[*] -> Stopped
+Stopped : Instruments Powered Off
+' state Stopped {
+'   [*] --> Idle
+'  Idle --> Configuring : powerInst
+'  Configuring --> Idle : EvConfig
+' }
+Stopped --right-> Idle
+
+state Idle {
+'  [*] --> NewValueSelection
+'  NewValueSelection --> NewValuePreview : EvNewValue
+'  NewValuePreview --> NewValueSelection : EvNewValueRejected
+'  NewValuePreview --> NewValueSelection : EvNewValueSaved
+'  state NewValuePreview {
+'     State1 -> State2
+'  }
+'  --
+    [*] -> HidraulicPressureON
+    HidraulicPressureON -> WaterCircuitON
+    --
+    [*] -> OpenCTSTArm
+    OpenCTSTArm -> OpenCTSTGateValve
+    --
+    [*] -> OpenSTDTArm
+    OpenSTDTArm -> OpenSTDTGateValve
+}
+Idle : Instruments On
+Idle -right-> ManualOperation :  OpRequest
+ManualOperation -> Idle
+Idle --> StartingLowVacuum :  OpRequest
+StartingLowVacuum : Open CTST andSTDT Arms
+
+state StartingLowVacuum {
+    [*] --> StartDryPumpDT
+    StartDryPumpDT --> fork_state  : Press(DT)  < 500 mBar
+    state fork_state <<fork>>
+    fork_state --> StartDryPumpCT
+    fork_state --> StartDryPumpST
+    ' fork_state --> StartDryPumpST
+    ' StartDryPumpDT --> StartDryPumpST
+    ' StartDryPumpDT --> join_state
+    ' fork_state --> State3
+    StartDryPumpCT --> CheckPressuresLV
+    StartDryPumpST --> CheckPressuresLV : p(DT)  < 5 mBar
+    state CheckPressuresLV <<join>>
+
+    CheckPressuresLV -> [*]  :  p(DT) < 5mBar\np(CT,ST)  <  1e-2 mBar
+
+}
+
+StartingLowVacuum -> LowVacuum
+LowVacuum : 
+LowVacuum -> StoppingLowVacuum : OpRequest
+state StoppingLowVacuum {
+  [*] -> StopDryPumpCT
+  --
+  [*] -> StopDryPumpST
+  --
+  [*] -> StopDryPumpDT
+}
+StoppingLowVacuum --> Idle : Wait10Seconds
+LowVacuum --> StartingHighVacuum
+state StartingHighVacuum {
+    [*] --> forkStateH
+    state forkStateH <<fork>>
+    forkStateH --> StartTurboCTST
+    forkStateH --> StartTurboSTDT
+    StartTurboCTST --> joinStateH
+    StartTurboSTDT --> joinStateH
+    state joinStateH <<join>>
+    joinStateH -> [*]  :  p(CTST, STDT) < 1e-6
+}
+StartingHighVacuum --> HighVacuum
+HighVacuum -> StoppingHighVacuum
+StoppingHighVacuum -> LowVacuum
+state StoppingHighVacuum {
+  [*] -> StopTurbos
+  state StopTurbos <<fork>>
+  StopTurbos --> StopTurboCTST
+  StopTurbos --> StopTurboSTDT
+  StopTurboCTST --> CheckTurbos
+  StopTurboSTDT --> CheckTurbos
+  state CheckTurbos <<join>>
+  CheckTurbos -> [*]  :  CTST,STDT Levitation Mode
+}
+@enduml
+

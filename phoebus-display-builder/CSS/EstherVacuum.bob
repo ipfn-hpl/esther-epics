@@ -219,4 +219,50 @@
     </background_color>
     <transparent>false</transparent>
   </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB DryPump-ST</name>
+    <pv_name>Esther:EDW:DryPump-ST</pv_name>
+    <x>950</x>
+    <y>820</y>
+    <show_led>false</show_led>
+    <show_confirm_dialog>2</show_confirm_dialog>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label  DryPump-ST</name>
+    <text>DryPump-ST</text>
+    <x>950</x>
+    <y>790</y>
+    <foreground_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB DryPump-DT</name>
+    <pv_name>Esther:EDW:DryPump-DT</pv_name>
+    <x>1070</x>
+    <y>820</y>
+    <show_led>false</show_led>
+    <show_confirm_dialog>2</show_confirm_dialog>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label  DryPump-DT</name>
+    <text>DryPump-DT</text>
+    <x>1070</x>
+    <y>790</y>
+    <foreground_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+  </widget>
 </display>
