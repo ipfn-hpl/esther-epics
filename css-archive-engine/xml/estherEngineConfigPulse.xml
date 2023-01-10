@@ -243,15 +243,31 @@
          <period>60.0</period><monitor/>
       </channel>
       <channel>
+         <name>Esther:EDW:01:ReadModFonctWithWarning</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:EDW:02:ReadModFonctWithWarning</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:EDA:CT-Valve_LS2_ON</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:EDA:DT-Valve_LS2_ON</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
          <name>Esther:Vacuum:DT-PT-Static</name>
          <period>30.0</period><scan/>
       </channel>
       <channel>
-         <name>Esther:Vacuum:01:ReadPressure</name>
+         <name>Esther:Vacuum:CTST-Pressure</name>
          <period>30.0</period><scan/>
       </channel>
       <channel>
-         <name>Esther:Vacuum:02:ReadPressure</name>
+         <name>Esther:Vacuum:STDT-Pressure</name>
          <period>30.0</period><scan/>
          <enable/>
       </channel>

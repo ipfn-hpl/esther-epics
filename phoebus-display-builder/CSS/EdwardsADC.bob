@@ -43,7 +43,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Pressure</name>
-    <pv_name>${unit}:${node}:${Add}:ReadPressure</pv_name>
+    <pv_name>${unit}:${node}:${name}-Pressure</pv_name>
     <x>8</x>
     <y>53</y>
     <width>210</width>
@@ -100,7 +100,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Unit_1</name>
-    <pv_name>${unit}:${node}:${Add}:GaugeVersion</pv_name>
+    <pv_name>${unit}:${node}:${name}-GaugeVersion</pv_name>
     <x>100</x>
     <y>25</y>
   </widget>
