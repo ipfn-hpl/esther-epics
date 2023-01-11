@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Esther Control</name>
+  <macros>
+    <node>gas</node>
+    <unit>Esther</unit>
+  </macros>
+  <width>1571</width>
+  <height>520</height>
+  <widget type="label" version="2.0.0">
+    <name>Lbl Title</name>
+    <class>TITLE</class>
+    <text>Gas Filling SETPOINTS</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>244</width>
+    <height>25</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Bottle Low Pressure Alarm Values (Bar)</name>
+    <x>10</x>
+    <y>25</y>
+    <width>810</width>
+    <height>115</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="192" blue="204">
+      </color>
+    </background_color>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_N2</name>
+      <class>Label_1</class>
+      <text>PT101
+Nitrogen Purge</text>
+      <x>10</x>
+      <y>2</y>
+      <width>138</width>
+      <height>41</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_SpN2</name>
+      <pv_name>${unit}:${node}:PT101_LOW</pv_name>
+      <x>29</x>
+      <y>50</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_O2</name>
+      <class>Label_1</class>
+      <text>PT201
+Oxygen</text>
+      <x>306</x>
+      <y>2</y>
+      <width>69</width>
+      <height>41</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="30" green="144" blue="255">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_SpO2</name>
+      <pv_name>${unit}:${node}:PT201_LOW</pv_name>
+      <x>285</x>
+      <y>50</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_He_1</name>
+      <class>Label_1</class>
+      <text>PT301
+Helium I</text>
+      <x>400</x>
+      <y>2</y>
+      <width>75</width>
+      <height>41</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="128" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_SpHe_I</name>
+      <pv_name>${unit}:${node}:PT301_LOW</pv_name>
+      <x>400</x>
+      <y>50</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_H2</name>
+      <class>Label_1</class>
+      <text>PT401
+Hydrogen</text>
+      <x>526</x>
+      <y>2</y>
+      <width>88</width>
+      <height>41</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="165" blue="0">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_SpH2</name>
+      <pv_name>${unit}:${node}:PT401_LOW</pv_name>
+      <x>540</x>
+      <y>50</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_He_2</name>
+      <class>Label_1</class>
+      <text>PT501
+Helium II</text>
+      <x>660</x>
+      <y>2</y>
+      <width>81</width>
+      <height>41</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="128" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_SE_2</name>
+      <pv_name>${unit}:${node}:PT401_LOW</pv_name>
+      <x>660</x>
+      <y>50</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Filling PT901 Set Points</name>
+    <x>286</x>
+    <y>160</y>
+    <width>535</width>
+    <height>120</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="192" blue="204">
+      </color>
+    </background_color>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_FSP_O2</name>
+      <class>Label_1</class>
+      <text>O2</text>
+      <x>41</x>
+      <y>20</y>
+      <width>25</width>
+      <height>19</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="30" green="144" blue="255">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_FSP_O2</name>
+      <pv_name>${unit}:${node}:PT901_SP_O</pv_name>
+      <x>10</x>
+      <y>43</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_FSP_He_1</name>
+      <class>Label_1</class>
+      <text>He I</text>
+      <x>161</x>
+      <y>20</y>
+      <width>36</width>
+      <height>19</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="128" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_FSP_He_1</name>
+      <pv_name>${unit}:${node}:PT901_SP_HE1</pv_name>
+      <x>130</x>
+      <y>43</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_FSP_H2</name>
+      <class>Label_1</class>
+      <text>H2</text>
+      <x>264</x>
+      <y>20</y>
+      <width>25</width>
+      <height>19</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="165" blue="0">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_FSP_H2</name>
+      <pv_name>${unit}:${node}:PT901_SP_H</pv_name>
+      <x>250</x>
+      <y>43</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_FSP_He_2</name>
+      <class>Label_1</class>
+      <text>He II</text>
+      <x>384</x>
+      <y>20</y>
+      <width>42</width>
+      <height>19</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="128" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_FSP_He_2</name>
+      <pv_name>${unit}:${node}:PT901_SP_HE2</pv_name>
+      <x>370</x>
+      <y>43</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Initial Purge</name>
+    <y>160</y>
+    <width>285</width>
+    <height>120</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="192" blue="204">
+      </color>
+    </background_color>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_IP</name>
+      <class>Label_1</class>
+      <text>Filling
+Pressure</text>
+      <x>3</x>
+      <y>2</y>
+      <width>80</width>
+      <height>41</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+      <wrap_words>false</wrap_words>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_Ip_Fill</name>
+      <pv_name>${unit}:${node}:PT901_SP_N</pv_name>
+      <x>4</x>
+      <y>43</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_O2_5</name>
+      <class>Label_1</class>
+      <text>Max Residual
+Pressure</text>
+      <x>104</x>
+      <y>2</y>
+      <width>120</width>
+      <height>41</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_SpO2_2</name>
+      <pv_name>${unit}:${node}:PT901_SP_N</pv_name>
+      <x>123</x>
+      <y>43</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>MFC VOLUME Set Points</name>
+    <x>286</x>
+    <y>290</y>
+    <width>535</width>
+    <height>120</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="173" green="216" blue="230">
+      </color>
+    </background_color>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_MFC_O2</name>
+      <class>Label_1</class>
+      <text>MFC201
+O2</text>
+      <x>30</x>
+      <width>72</width>
+      <height>41</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="30" green="144" blue="255">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_MFC_O2</name>
+      <pv_name>${unit}:${node}:MFC201_FVOL_SP</pv_name>
+      <x>10</x>
+      <y>43</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_MFC_He_1</name>
+      <class>Label_1</class>
+      <text>MFC601
+He I</text>
+      <x>151</x>
+      <width>72</width>
+      <height>41</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="128" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_MFC_He_1</name>
+      <pv_name>${unit}:${node}:MFC601_FVOL_HE1_SP</pv_name>
+      <x>130</x>
+      <y>43</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_MFC_H2</name>
+      <class>Label_1</class>
+      <text>MFC401
+H2</text>
+      <x>264</x>
+      <width>72</width>
+      <height>41</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="165" blue="0">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_MFC_H2</name>
+      <pv_name>${unit}:${node}:MFC401_FVOL_SP</pv_name>
+      <x>250</x>
+      <y>43</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_MFC_He_2</name>
+      <class>Label_1</class>
+      <text>MFC601
+He II</text>
+      <x>384</x>
+      <width>72</width>
+      <height>41</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="128" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_MFC_He_2</name>
+      <pv_name>${unit}:${node}:MFC601_FVOL_HE2_SP</pv_name>
+      <x>370</x>
+      <y>43</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+  </widget>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>pic/ESTHER_logo_variant_150x192.png</file>
+    <x>62</x>
+    <y>300</y>
+    <height>192</height>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>MFC FLOW Set Points</name>
+    <x>286</x>
+    <y>420</y>
+    <width>535</width>
+    <height>100</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="18.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="173" green="216" blue="230">
+      </color>
+    </background_color>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_MFC_F_O2</name>
+      <class>Label_1</class>
+      <text>MFC201-O2</text>
+      <x>10</x>
+      <width>104</width>
+      <height>19</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="30" green="144" blue="255">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_MFC_F_O2</name>
+      <pv_name>${unit}:${node}:MFC201_FFLOW_SP</pv_name>
+      <x>10</x>
+      <y>19</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_MFC_Fl_O2</name>
+      <text>0-2 m3/h</text>
+      <x>30</x>
+      <y>42</y>
+      <width>56</width>
+      <height>16</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_MFC_F_H2</name>
+      <class>Label_1</class>
+      <text>MFC401-H2</text>
+      <x>250</x>
+      <width>104</width>
+      <height>19</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="255" green="165" blue="0">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_MFC_F_H2</name>
+      <pv_name>${unit}:${node}:MFC401_FFLOW_SP</pv_name>
+      <x>250</x>
+      <y>19</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_MFC_Fl_H2</name>
+      <text>0-2 m3/h</text>
+      <x>270</x>
+      <y>42</y>
+      <width>56</width>
+      <height>16</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_MFC_F_He</name>
+      <class>Label_1</class>
+      <text>MFC601- He</text>
+      <x>377</x>
+      <width>109</width>
+      <height>19</height>
+      <font>
+        <font family="DejaVu Sans" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="128" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_MFC_F_He</name>
+      <pv_name>${unit}:${node}:MFC601_FFLOW_SP</pv_name>
+      <x>384</x>
+      <y>19</y>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_MFC_Fl_He</name>
+      <text>0-50 ln/h</text>
+      <x>404</x>
+      <y>42</y>
+      <width>55</width>
+      <height>16</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <auto_size>true</auto_size>
+    </widget>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <x>860</x>
+    <y>240</y>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_Gas_mode</name>
+    <x>1460</x>
+    <y>40</y>
+    <width>111</width>
+    <height>54</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Lbl_Gas_Mode</name>
+      <class>SECTION</class>
+      <text>Purge Gas Mode</text>
+      <y>38</y>
+      <width>111</width>
+      <height>16</height>
+      <font use_class="true">
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color use_class="true">
+        <color name="Text" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <transparent use_class="true">true</transparent>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="slide_button" version="2.0.0">
+      <name>SB_Gas_Mode</name>
+      <pv_name>${unit}:${node}:GAS_MODE</pv_name>
+      <label>Helium</label>
+      <width>111</width>
+      <height>50</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <show_confirm_dialog>1</show_confirm_dialog>
+      <confirm_message>Are your sure?</confirm_message>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_Start_Stop</name>
+    <x>850</x>
+    <y>25</y>
+    <width>230</width>
+    <height>30</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="bool_button" version="2.0.0">
+      <name>BB_GAS_Start</name>
+      <pv_name>${unit}:${node}:START</pv_name>
+      <off_label>START</off_label>
+      <show_led>false</show_led>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>${unit}:${node}:ON</pv_name>
+      <x>100</x>
+      <width>30</width>
+      <height>30</height>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>BB_GAS_Stop</name>
+      <pv_name>${unit}:${node}:STOP</pv_name>
+      <x>130</x>
+      <off_label>STOP</off_label>
+      <on_label>STOPPING</on_label>
+      <show_led>false</show_led>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_Abort</name>
+    <x>860</x>
+    <y>118</y>
+    <width>210</width>
+    <height>45</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="bool_button" version="2.0.0">
+      <name>BB_GAS_Start_3</name>
+      <pv_name>${unit}:${node}:ABORT_START</pv_name>
+      <height>37</height>
+      <off_label>ABORT
+START</off_label>
+      <show_led>false</show_led>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>BB_GAS_Stop_2</name>
+      <pv_name>${unit}:${node}:ABORT_STOP</pv_name>
+      <x>107</x>
+      <height>37</height>
+      <off_label>ABORT
+STOP</off_label>
+      <on_label>STOPPING</on_label>
+      <show_led>false</show_led>
+    </widget>
+  </widget>
+</display>
