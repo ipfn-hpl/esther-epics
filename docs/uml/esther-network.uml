@@ -1,0 +1,32 @@
+@startuml
+' !include <office/Servers/database_server>
+
+nwdiag {
+    group control_room {
+       color = "#FFAAAA";
+       golem ;
+       rpi2_gas;
+       plc_gas ;
+    }
+  network ctn_tecnico {
+      address = "10.10.136.x/24";
+
+      golem [address = "10.10.136.128"];
+'      golem [address = "10.10.136.128", description = "<$database_server>\n archive];
+  }
+
+  network esther_lab {
+    address = "192.168.0.x/24";
+    color = "palegreen";
+
+    golem [address = "192.168.0.98"];
+    rpi2_gas [address = ".60"];
+    plc_gas [address = ".100"];
+    galatea [address = ".99"];
+    plc_vacuum [address = ".101"];
+    rpi2_vacuum [address = ".21"];
+    rpi4_vacuum [address = ".22"];
+
+  }
+}
+@enduml

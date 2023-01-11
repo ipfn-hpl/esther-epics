@@ -17,6 +17,7 @@ iocs/estherVacuum
 iocs/estherVacuumRpi
 launch-scripts/gateway.*
 
+docs/uml/*.png
 !iocs/estherVacuumRpi/vacApp/Db/**
 
 
