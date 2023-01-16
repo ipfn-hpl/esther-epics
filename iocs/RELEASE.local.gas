@@ -1,6 +1,6 @@
 #RELEASE Location of external products
-HOME=/home/pi
-SUPPORT=/home/pi/EPICS7/support
+EPICS_ROOT=/home/pi/EPICS7
+SUPPORT=$(EPICS_ROOT)/support
 
 #  IPAC is only necessary if support for Greensprings IP488 is required
 #  IPAC release V2-7 or later is required.
