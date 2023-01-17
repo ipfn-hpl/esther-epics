@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>EDBt</name>
+  <width>215</width>
+  <height>159</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>R_3</name>
+    <x>161</x>
+    <y>61</y>
+    <width>36</width>
+    <height>76</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_2</name>
+    <x>189</x>
+    <y>37</y>
+    <width>2</width>
+    <height>24</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="24.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>El_T1_2</name>
+    <x>184</x>
+    <y>29</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_Press</name>
+    <pv_name>${unit}:${node}:PT${ptNum}</pv_name>
+    <x>80</x>
+    <y>25</y>
+    <format>1</format>
+    <precision>2</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <wrap_words>false</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_earth</name>
+    <x>197</x>
+    <y>131</y>
+    <width>10</width>
+    <height>10</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="10.0" y="0.0">
+      </point>
+      <point x="10.0" y="10.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_earth_1</name>
+    <x>199</x>
+    <y>142</y>
+    <width>16</width>
+    <height>2</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="16.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_earth_2</name>
+    <x>201</x>
+    <y>146</y>
+    <width>12</width>
+    <height>2</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="12.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_earth_3</name>
+    <x>203</x>
+    <y>150</y>
+    <width>8</width>
+    <height>2</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="8.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>El_T1</name>
+    <x>71</x>
+    <y>69</y>
+    <width>5</width>
+    <height>10</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>El_T2</name>
+    <x>77</x>
+    <y>69</y>
+    <width>5</width>
+    <height>10</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>R_1</name>
+    <x>65</x>
+    <y>72</y>
+    <width>15</width>
+    <height>5</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>El_T2_1</name>
+    <x>59</x>
+    <y>65</y>
+    <width>15</width>
+    <height>18</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_gas</name>
+    <text>$(gasName)</text>
+    <y>65</y>
+    <width>65</width>
+    <height>18</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_1</name>
+    <x>80</x>
+    <y>74</y>
+    <width>20</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="20.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_3</name>
+    <x>100</x>
+    <y>69</y>
+    <width>10</width>
+    <height>10</height>
+    <points>
+      <point x="10.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="10.0">
+      </point>
+      <point x="10.0" y="10.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_2</name>
+    <x>104</x>
+    <y>74</y>
+    <width>20</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="20.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>P_4</name>
+    <x>125</x>
+    <y>67</y>
+    <width>7</width>
+    <height>14</height>
+    <points>
+      <point x="7.0" y="0.0">
+      </point>
+      <point x="0.0" y="7.0">
+      </point>
+      <point x="7.0" y="14.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>El_T1_1</name>
+    <x>126</x>
+    <y>69</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>P_8</name>
+    <x>137</x>
+    <y>67</y>
+    <width>7</width>
+    <height>14</height>
+    <points>
+      <point x="5.0" y="0.0">
+      </point>
+      <point x="0.0" y="7.0">
+      </point>
+      <point x="5.0" y="14.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>P_9</name>
+    <x>144</x>
+    <y>67</y>
+    <width>7</width>
+    <height>14</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="5.0" y="7.0">
+      </point>
+      <point x="0.0" y="14.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_4</name>
+    <x>150</x>
+    <y>74</y>
+    <width>11</width>
+    <height>2</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="11.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <arrow_length>11</arrow_length>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LlbPT</name>
+    <text>PT${ptNum}</text>
+    <x>80</x>
+    <y>1</y>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+</display>
