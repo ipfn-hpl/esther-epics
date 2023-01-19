@@ -195,6 +195,146 @@ $(pv_value)</tooltip>
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
+    <name>Bottle_2</name>
+    <y>97</y>
+    <width>80</width>
+    <height>23</height>
+    <style>3</style>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_19</name>
+      <x>57</x>
+      <y>4</y>
+      <width>15</width>
+      <height>18</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="128" green="0" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_20</name>
+      <x>69</x>
+      <y>9</y>
+      <width>5</width>
+      <height>9</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="128" green="0" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_8</name>
+      <x>64</x>
+      <y>11</y>
+      <width>15</width>
+      <height>5</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_21</name>
+      <x>75</x>
+      <y>9</y>
+      <width>5</width>
+      <height>9</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="128" green="0" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>N_2</name>
+      <text>$(gasName)</text>
+      <x>1</x>
+      <y>4</y>
+      <width>65</width>
+      <height>18</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="ForeGround Color Rules " prop_id="foreground_color" out_exp="false">
+          <exp bool_exp="pv0 == 0">
+            <value>
+              <color name="Header_ForeGround" red="255" green="255" blue="255">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0 == 1">
+            <value>
+              <color name="Text_ForeGround" red="0" green="0" blue="0">
+              </color>
+            </value>
+          </exp>
+          <pv_name>Esther:gas:PV101_OUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
     <name>F101_CV101</name>
     <x>92</x>
     <y>62</y>
@@ -281,7 +421,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
     </widget>
     <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_22</name>
+      <name>Ellipse_13</name>
       <x>11</x>
       <y>2</y>
       <width>10</width>
@@ -477,6 +617,205 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
   </widget>
   <widget type="group" version="2.0.0">
+    <name>F101_CV101_2</name>
+    <x>91</x>
+    <y>103</y>
+    <width>41</width>
+    <height>16</height>
+    <style>3</style>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Background Color Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Header_Background" red="77" green="77" blue="77">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="MEDM_COLOR_16" red="30" green="187" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>Esther:gas:PV101_OUT</pv_name>
+      </rule>
+    </rules>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_45</name>
+      <x>2</x>
+      <y>7</y>
+      <width>11</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="10.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_47</name>
+      <y>4</y>
+      <width>8</width>
+      <height>6</height>
+      <points>
+        <point x="5.0" y="0.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="6.0">
+        </point>
+        <point x="5.0" y="6.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse_15</name>
+      <x>11</x>
+      <y>2</y>
+      <width>10</width>
+      <height>10</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_48</name>
+      <x>8</x>
+      <width>10</width>
+      <height>14</height>
+      <points>
+        <point x="10.0" y="0.0">
+        </point>
+        <point x="0.0" y="8.0">
+        </point>
+        <point x="10.0" y="14.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_49</name>
+      <x>20</x>
+      <width>6</width>
+      <height>15</height>
+      <points>
+        <point x="5.0" y="0.0">
+        </point>
+        <point x="0.0" y="7.0">
+        </point>
+        <point x="5.0" y="14.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_50</name>
+      <x>26</x>
+      <width>6</width>
+      <height>15</height>
+      <points>
+        <point x="0.0" y="14.0">
+        </point>
+        <point x="5.0" y="7.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_51</name>
+      <x>30</x>
+      <y>7</y>
+      <width>11</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="10.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="Header_Background" red="77" green="77" blue="77">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
     <name>N2_Ground</name>
     <x>169</x>
     <y>126</y>
@@ -495,7 +834,7 @@ $(pv_value)</tooltip>
     <actions>
     </actions>
     <widget type="polyline" version="2.0.0">
-      <name>Polyline_52</name>
+      <name>Polyline_36</name>
       <macros>
         <pv_name></pv_name>
       </macros>
@@ -520,7 +859,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
     </widget>
     <widget type="polyline" version="2.0.0">
-      <name>Polyline_53</name>
+      <name>Polyline_37</name>
       <x>3</x>
       <y>8</y>
       <width>13</width>
@@ -542,7 +881,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
     </widget>
     <widget type="polyline" version="2.0.0">
-      <name>Polyline_54</name>
+      <name>Polyline_38</name>
       <x>5</x>
       <y>10</y>
       <width>9</width>
@@ -564,7 +903,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
     </widget>
     <widget type="polyline" version="2.0.0">
-      <name>Polyline_55</name>
+      <name>Polyline_39</name>
       <x>7</x>
       <y>12</y>
       <width>5</width>
@@ -585,6 +924,45 @@ $(pv_value)</tooltip>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
     </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>N2_Polyline_1</name>
+    <x>78</x>
+    <y>110</y>
+    <width>15</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="14.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Color Rule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Header_Background" red="77" green="77" blue="77">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PT${ptNum}_OUT</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Fx2</name>
@@ -714,7 +1092,7 @@ $(pv_value)</tooltip>
       <actions>
       </actions>
       <widget type="polyline" version="2.0.0">
-        <name>Polyline_56</name>
+        <name>Polyline_46</name>
         <x>6</x>
         <y>10</y>
         <width>1</width>
@@ -736,7 +1114,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
       </widget>
       <widget type="ellipse" version="2.0.0">
-        <name>Ellipse_24</name>
+        <name>Ellipse_18</name>
         <width>12</width>
         <height>12</height>
         <line_width>2</line_width>
