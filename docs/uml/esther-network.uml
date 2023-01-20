@@ -21,9 +21,9 @@ nwdiag {
 
     golem [address = "192.168.0.98"];
     rpi2_gas [address = ".60"];
-    plc_gas [address = ".100"];
+    plc_gas [address = ".02"];
     galatea [address = ".99"];
-    plc_vacuum [address = ".101"];
+    plc_vacuum [address = ".01"];
     rpi2_vacuum [address = ".21"];
     rpi4_vacuum [address = ".22"];
 
