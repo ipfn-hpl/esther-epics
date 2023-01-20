@@ -7,3 +7,5 @@ include/
 vacApp/
 lib/
 iocBoot/iocvac/save/
+!vacApp/Db
+

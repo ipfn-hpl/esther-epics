@@ -37,6 +37,7 @@ record(bo, "$(P)$(R):STDT-Valve")
         field(ONAM, "ON")
         field(VAL, "0")
         field(PINI, "YES")
+    #info(autosaveFields, "VAL")
 }
 #record(bi, "$(P)$(R):Valve_LS1_ON")
 #{

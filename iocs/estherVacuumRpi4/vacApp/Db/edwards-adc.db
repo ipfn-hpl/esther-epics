@@ -2,8 +2,7 @@
 # vim: sta:et:sw=4:ts=4:sts=4
 #                                                       #
 #     EPICS Database for                                #
-#     EDWARDS ADC Sensors                               #
-#     EDA Gate Control S7 PLC control                   #
+#     EDWARDS ADC Pressure Sensors                      #
 #                                                       #
 #     author: B. Carvalho                               #
 #                                                       #
@@ -26,23 +25,32 @@ record(bo, $(P)$(R)Disable){
     field(ZNAM, "ENABLED")
     field(ONAM, "DISABLED")
     field(VAL, "0")
+    field(PINI, "YES")
+    field(FLNK, "$(P)$(R)Enabled")
 }
-record(ai, $(P)$(R)01:ReadPressure){
-    field(DESC, "Reads the measured Pressure")
+record(calc, $(P)$(R)Enabled){
+    field(DESC, "ADC Instrument SCAN Enabled")
+	field(CALC, "(A==1)?0:1")
+    field(INPA, "$(P)$(R)Disable.VAL NPP NMS")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+}
+record(ai, $(P)$(R)CTST-Pressure){
+    field(DESC, "Reads the measured CTST Pressure")
     field(DTYP, "stream")
-    field(INP, "@edwards-adc.proto readPressure(1,$(P)$(R)01:Error) $(BUS)")
-    field(VAL, "22")
+    field(INP, "@edwards-adc.proto readPressure(1,$(P)$(R)CTST-Error) $(BUS)")
+    #field(VAL, "22")n
     field(PREC, "3")
-    field(SCAN, "5 second")
+    field(SCAN, "2 second")
     field(SDIS, "$(P)$(R)Disable")
 #    field(DISA, "1")
-    field(FLNK, "$(P)$(R)02:ReadPressure")
+    field(FLNK, "$(P)$(R)STDT-Pressure")
 }
-record(ai, $(P)$(R)02:ReadPressure){
-    field(DESC, "Reads the measured Pressure")
+record(ai, $(P)$(R)STDT-Pressure){
+    field(DESC, "Reads the measured STDT Pressure")
     field(DTYP, "stream")
-    field(INP, "@edwards-adc.proto readPressure(2,$(P)$(R)02:Error) $(BUS)")
-    field(VAL, "500")
+    field(INP, "@edwards-adc.proto readPressure(2,$(P)$(R)STDT-Error) $(BUS)")
+    #field(VAL, "500")
     field(PREC, "3")
 #    field(FLNK, "$(P)$(R)$(A):GaugeVersion")
 }
@@ -67,7 +75,7 @@ record(ao, $(P)$(R)PressureHighThres){
 record(ai, $(P)$(R)01:ReadVoltage){
     field(DESC, "Reads the measured Pressure")
     field(DTYP, "stream")
-    field(INP, "@edwards-adc.proto readVoltage(1,$(P)$(R)01:Error) $(BUS)")
+    field(INP, "@edwards-adc.proto readVoltage(1,$(P)$(R)CTST-Error) $(BUS)")
     field(VAL, "500")
     field(EGU, "Volt")
     field(SCAN, "5 second")
@@ -77,22 +85,22 @@ record(ai, $(P)$(R)01:ReadVoltage){
 record(ai, $(P)$(R)02:ReadVoltage){
     field(DESC, "Reads the measured Pressure")
     field(DTYP, "stream")
-    field(INP, "@edwards-adc.proto readVoltage(2,$(P)$(R)02:Error) $(BUS)")
+    field(INP, "@edwards-adc.proto readVoltage(2,$(P)$(R)STDT-Error) $(BUS)")
     field(VAL, "500")
     field(EGU, "Volt")
 }
-record(stringin, $(P)$(R)01:Error){
+record(stringin, $(P)$(R)CTST-Error){
     field(DESC, "Error Status Gauge 1")
     field(VAL, "NoErr")
 }
-record(stringin, $(P)$(R)02:Error){
+record(stringin, $(P)$(R)STDT-Error){
     field(DESC, "Error Status Gauge 2")
     field(VAL, "NoErr")
 }
-record(mbbi, $(P)$(R)01:GaugeVersion){
+record(mbbi, $(P)$(R)CTST-GaugeVersion){
     field(DESC, "Reads the Gauge Model")
     field(DTYP, "stream")
-    field(INP, "@edwards-adc.proto gaugeVersion(1,$(P)$(R)01:ErrorGauge) $(BUS)")
+    field(INP, "@edwards-adc.proto gaugeVersion(1,$(P)$(R)CTST-ErrorGauge) $(BUS)")
     field(VAL, "0")
     field(ZRVL,"0")
     field(ZRST,"No Gauge")
@@ -113,13 +121,13 @@ record(mbbi, $(P)$(R)01:GaugeVersion){
     field(EIVL,"21")
     field(EIST,"APGX-M / APGX-L")
     field(PINI, "YES")
-    field(FLNK, "$(P)$(R)02:GaugeVersion")
+    field(FLNK, "$(P)$(R)STDT-GaugeVersion")
     #field(SCAN, "10 second")
 }
-record(mbbi, $(P)$(R)02:GaugeVersion){
+record(mbbi, $(P)$(R)STDT-GaugeVersion){
     field(DESC, "Reads the Gauge Model")
     field(DTYP, "stream")
-    field(INP, "@edwards-adc.proto gaugeVersion(1,$(P)$(R)02:ErrorGauge) $(BUS)")
+    field(INP, "@edwards-adc.proto gaugeVersion(1,$(P)$(R)STDT-ErrorGauge) $(BUS)")
     field(VAL, "0")
     field(ZRVL,"0")
     field(ZRST,"No Gauge")
@@ -141,14 +149,14 @@ record(mbbi, $(P)$(R)02:GaugeVersion){
     field(EIST,"APGX-M / APGX-L")
     field(FLNK, "$(P)$(R)Units")
     #field(PINI, "YES")
-    #field(FLNK, "$(P)$(R)02:GaugeVersion")
+    #field(FLNK, "$(P)$(R)STDT-GaugeVersion")
     #field(SCAN, "10 second")
 }
-record(stringin, $(P)$(R)01:ErrorGauge){
+record(stringin, $(P)$(R)CTST-ErrorGauge){
     field(DESC, "ErrorG1")
     field(VAL, "NoErr")
 }
-record(stringin, $(P)$(R)02:ErrorGauge){
+record(stringin, $(P)$(R)STDT-ErrorGauge){
     field(DESC, "ErrorG2")
     field(VAL, "NoErr")
 }
@@ -170,7 +178,7 @@ record(mbbi, $(P)$(R)Units){
 record(bo, $(P)$(R)01:GaugeOn){
     field(DESC, "Turns on Gauge")
     field(DTYP, "stream" )
-    field(OUT, "@edwards-adc.proto onGauge(1,$(P)$(R)01:Error) $(BUS)")
+    field(OUT, "@edwards-adc.proto onGauge(1,$(P)$(R)CTST-Error) $(BUS)")
     field(VAL, "1")
     field(PINI, "YES")
     field(ZNAM, "OFF")
@@ -179,7 +187,7 @@ record(bo, $(P)$(R)01:GaugeOn){
 record(mbbo, $(P)$(R)02:GaugeOn){
     field(DESC, "Turns on Gauge")
     field(DTYP, "stream" )
-    field(OUT, "@edwards-adc.proto onGauge(2,$(P)$(R)02:Error) $(BUS)")
+    field(OUT, "@edwards-adc.proto onGauge(2,$(P)$(R)STDT-Error) $(BUS)")
     field(VAL, "0")
     field(ZRVL,"0")
     field(ZRST,"OFF")
@@ -201,7 +209,7 @@ record(mbbo, $(P)$(R)setUnits){
     field(TWST,"Pa")
     field(THVL,"2")
     field(THST,"Torr")
-    field(FLNK, "$(P)$(R)01:GaugeVersion")
+    field(FLNK, "$(P)$(R)CTST-GaugeVersion")
 }
 
 record(stringout, $(P)$(R):generic){
@@ -211,20 +219,20 @@ record(stringout, $(P)$(R):generic){
 #    field(PINI, "YES")
 }
 # Redundant
-record(longin, $(P)$(R)01:GaugeVersionli){
+record(longin, $(P)$(R)CTST-GaugeVersionli){
     field(DESC, "Reads the Gauge Model")
     field(DTYP, "stream")
-    field(INP, "@edwards-adc.proto gaugeVersion(1,$(P)$(R)01:ErrorGauge) $(BUS)")
+    field(INP, "@edwards-adc.proto gaugeVersion(1,$(P)$(R)CTST-ErrorGauge) $(BUS)")
     field(VAL, "03")
     #field(PINI, "YES")
-    field(FLNK, "$(P)$(R)02:GaugeVersion")
+    field(FLNK, "$(P)$(R)STDT-GaugeVersion")
     #field(SCAN, "10 second")
 }
 # Redundant
-record(longin, $(P)$(R)02:GaugeVersionli){
+record(longin, $(P)$(R)STDT-GaugeVersionli){
     field(DESC, "Reads the Gauge Model")
     field(DTYP, "stream")
-    field(INP, "@edwards-adc.proto gaugeVersion(2,$(P)$(R)02:ErrorGauge) $(BUS)")
+    field(INP, "@edwards-adc.proto gaugeVersion(2,$(P)$(R)STDT-ErrorGauge) $(BUS)")
     field(VAL, "03")
     #field(PINI, "YES")
     field(FLNK, "$(P)$(R)Units")
