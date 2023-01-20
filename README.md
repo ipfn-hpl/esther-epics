@@ -22,7 +22,7 @@ ssh rpi-gas
 
 ## Web Displays
 ### Combustion Chamber Gas Injection System 
-[Valve Display](http://10.10.136.128:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/GasSystem/ValveMaster_dbg.bob)
+[Valve Display](http://10.10.136.128:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/GasSystem/ValveDisplay.bob)
 
 ## GitHub repository
 [Esther Epics](https://github.com/ipfn-hpl/esther-epics)
