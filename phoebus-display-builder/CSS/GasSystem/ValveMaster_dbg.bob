@@ -10,10 +10,10 @@
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
-    <text>My Display</text>
+    <text>Esther Gas Injection System</text>
     <x use_class="true">0</x>
     <y use_class="true">0</y>
-    <width>550</width>
+    <width>322</width>
     <height>31</height>
     <font use_class="true">
       <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
@@ -24,6 +24,8 @@
       </color>
     </foreground_color>
     <transparent use_class="true">true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
@@ -33,7 +35,7 @@
     </macros>
     <file>BottleDouble.bob</file>
     <x>40</x>
-    <y>31</y>
+    <y>30</y>
     <width>203</width>
     <height>141</height>
   </widget>
@@ -57,88 +59,9 @@
     </macros>
     <file>BottleSimple.bob</file>
     <x>40</x>
-    <y>560</y>
+    <y>546</y>
     <width>187</width>
     <height>141</height>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_6</name>
-    <x>459</x>
-    <y>161</y>
-    <width>1</width>
-    <height>30</height>
-    <points>
-      <point x="1.0" y="30.0">
-      </point>
-      <point x="1.0" y="1.0">
-      </point>
-    </points>
-    <line_width>2</line_width>
-    <line_color>
-      <color name="Blue" red="0" green="0" blue="255">
-      </color>
-    </line_color>
-  </widget>
-  <widget type="arc" version="2.0.0">
-    <name>Arc_2</name>
-    <x>442</x>
-    <y>160</y>
-    <width>38</width>
-    <height>21</height>
-    <total_angle>180.0</total_angle>
-    <line_width>0</line_width>
-    <background_color>
-      <color name="Blue" red="0" green="0" blue="255">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="polygon" version="2.0.0">
-    <name>Polygon_6</name>
-    <x>461</x>
-    <y>177</y>
-    <width>17</width>
-    <height>26</height>
-    <points>
-      <point x="0.0" y="13.0">
-      </point>
-      <point x="17.0" y="0.0">
-      </point>
-      <point x="16.0" y="26.0">
-      </point>
-    </points>
-    <line_width>0</line_width>
-    <background_color>
-      <color name="On" red="0" green="255" blue="0">
-      </color>
-    </background_color>
-  </widget>
-  <widget type="polygon" version="2.0.0">
-    <name>Polygon_7</name>
-    <x>445</x>
-    <y>178</y>
-    <width>14</width>
-    <height>24</height>
-    <points>
-      <point x="14.0" y="12.0">
-      </point>
-      <point x="0.0" y="0.0">
-      </point>
-      <point x="0.0" y="24.0">
-      </point>
-    </points>
-    <line_width>0</line_width>
-  </widget>
-  <widget type="symbol" version="2.0.0">
-    <name>Symbol</name>
-    <pv_name>loc://boolean:symbol&lt;VDouble&gt;(0)</pv_name>
-    <symbols>
-      <symbol>../pic/valve_off.gif</symbol>
-      <symbol>../pic/valve_on.gif</symbol>
-    </symbols>
-    <x>471</x>
-    <y>260</y>
-    <width>48</width>
-    <height>35</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_3</name>
@@ -148,7 +71,7 @@
     </macros>
     <file>BottleDouble.bob</file>
     <x>40</x>
-    <y>365</y>
+    <y>374</y>
     <width>187</width>
     <height>141</height>
   </widget>
@@ -160,7 +83,7 @@
     </macros>
     <file>BottleSimple.bob</file>
     <x>40</x>
-    <y>760</y>
+    <y>712</y>
     <width>187</width>
     <height>141</height>
   </widget>
@@ -395,7 +318,7 @@ $(pv_value)</tooltip>
     </widget>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_6</name>
+    <name>ED_pt202</name>
     <macros>
       <ptNum>102</ptNum>
     </macros>
@@ -480,5 +403,163 @@ $(pv_value)</tooltip>
     <width>100</width>
     <height>110</height>
     <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_59</name>
+    <x>210</x>
+    <y>230</y>
+    <width>400</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="290.0" y="40.0">
+      </point>
+      <point x="290.0" y="0.0">
+      </point>
+      <point x="400.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_60</name>
+    <x>210</x>
+    <y>589</y>
+    <width>400</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="290.0" y="40.0">
+      </point>
+      <point x="290.0" y="0.0">
+      </point>
+      <point x="400.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_pt202_1</name>
+    <macros>
+      <ptNum>202</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>410</x>
+    <y>202</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_8</name>
+    <macros>
+      <mfcNum>401</mfcNum>
+    </macros>
+    <file>MFC.bob</file>
+    <x>260</x>
+    <y>582</y>
+    <width>95</width>
+    <height>57</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_9</name>
+    <macros>
+      <mfcNum>201</mfcNum>
+    </macros>
+    <file>MFC.bob</file>
+    <x>227</x>
+    <y>223</y>
+    <width>95</width>
+    <height>57</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_10</name>
+    <macros>
+      <pvNum>201</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>290</x>
+    <y>229</y>
+    <width>100</width>
+    <height>110</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_11</name>
+    <macros>
+      <cvNum>303</cvNum>
+    </macros>
+    <file>Valve_NR.bob</file>
+    <x>227</x>
+    <y>410</y>
+    <width>83</width>
+    <height>40</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_12</name>
+    <macros>
+      <cvNum>502</cvNum>
+    </macros>
+    <file>Valve_NR.bob</file>
+    <x>227</x>
+    <y>760</y>
+    <width>83</width>
+    <height>40</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_13</name>
+    <macros>
+      <flNum>603</flNum>
+    </macros>
+    <file>Lira.bob</file>
+    <x>980</x>
+    <y>482</y>
+    <width>70</width>
+    <height>50</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_14</name>
+    <macros>
+      <mfcNum>601</mfcNum>
+    </macros>
+    <file>MFC.bob</file>
+    <x>832</x>
+    <y>470</y>
+    <width>95</width>
+    <height>57</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_pt202_2</name>
+    <macros>
+      <ptNum>601</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>900</x>
+    <y>446</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_15</name>
+    <macros>
+      <cvNum>701</cvNum>
+    </macros>
+    <file>Valve_NR.bob</file>
+    <x>1070</x>
+    <y>482</y>
+    <width>83</width>
+    <height>40</height>
   </widget>
 </display>

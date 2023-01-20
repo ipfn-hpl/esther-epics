@@ -3,10 +3,19 @@
   <name>D_PValve_NO</name>
   <width>78</width>
   <height>110</height>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>PV${pvNum}</text>
+    <y>10</y>
+    <width>78</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_6</name>
     <x>37</x>
-    <y>11</y>
+    <y>41</y>
     <width>1</width>
     <height>30</height>
     <points>
@@ -24,7 +33,7 @@
   <widget type="arc" version="2.0.0">
     <name>Arc_2</name>
     <x>20</x>
-    <y>10</y>
+    <y>40</y>
     <width>38</width>
     <height>21</height>
     <total_angle>180.0</total_angle>
@@ -37,7 +46,7 @@
   <widget type="polygon" version="2.0.0">
     <name>Polygon_R</name>
     <x>39</x>
-    <y>27</y>
+    <y>57</y>
     <width>17</width>
     <height>26</height>
     <points>
@@ -74,7 +83,7 @@
   <widget type="polygon" version="2.0.0">
     <name>Polygon_L</name>
     <x>23</x>
-    <y>28</y>
+    <y>58</y>
     <width>17</width>
     <height>24</height>
     <points>
@@ -112,7 +121,7 @@
     <name>LED</name>
     <pv_name>${unit}:${node}:PV${pvNum}</pv_name>
     <x>23</x>
-    <y>80</y>
+    <y>110</y>
     <off_color>
       <color red="255" green="0" blue="0">
       </color>

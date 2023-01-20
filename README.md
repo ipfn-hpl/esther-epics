@@ -1,4 +1,4 @@
-## ESTHER GAS SYSTEM Control
+# ESTHER GAS SYSTEM Control (EPICS)
 
 ## Start Systems
 
@@ -12,6 +12,18 @@ ssh rpi-gas
 3. Start CS-Studio, Channel Archive and other services:
 [See scripts folder](/launch-scripts/)
 
-4. If necessary Start VirtualBox "Windows 7 Siemens" VM
-  * On Windows Start "Tia Portal V13"
+4. If necessary Start VirtualBox "Windows 10" VM
+  * On Windows Start "Tia Portal V17"
   * Open Last PLC project
+5. Start phoebus
+```
+/opt/epics/phoebus.sh
+```
+
+## Web Displays
+### Combustion Chamber Gas Injection System 
+[Valve Display](http://10.10.136.128:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/GasSystem/ValveMaster_dbg.bob)
+
+## GitHub repository
+[Esther Epics](https://github.com/ipfn-hpl/esther-epics)
+
