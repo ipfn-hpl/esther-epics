@@ -6,7 +6,7 @@
     <unit>Esther</unit>
   </macros>
   <width>307</width>
-  <height>158</height>
+  <height>155</height>
   <background_color>
     <color name="Read_Background" red="240" green="240" blue="240">
     </color>
@@ -46,15 +46,9 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED</name>
-    <pv_name>${unit}:${node}:${Add}:LimitIn</pv_name>
-    <x>269</x>
-    <y>138</y>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_1</name>
-    <pv_name>${unit}:${node}:${Add}:Status</pv_name>
-    <x>105</x>
-    <y>114</y>
+    <pv_name>${unit}:${node}:${name}_LS_IN</pv_name>
+    <x>271</x>
+    <y>131</y>
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
@@ -73,9 +67,9 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_1</name>
-    <pv_name>${unit}:${node}:${Add}:LimitOut</pv_name>
+    <pv_name>${unit}:${node}:${name}_LS_OUT</pv_name>
     <x>23</x>
-    <y>134</y>
+    <y>130</y>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Valve</name>
@@ -83,7 +77,7 @@
     <x>12</x>
     <y>34</y>
     <width>65</width>
-    <off_label>PUSH</off_label>
+    <off_label>PUSH OUT</off_label>
     <off_color>
       <color name="Button_Background" red="210" green="210" blue="210">
       </color>
@@ -95,12 +89,6 @@
       </color>
     </background_color>
     <show_confirm_dialog>1</show_confirm_dialog>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update_3</name>
-    <pv_name>${unit}:${node}:${Add}:Char</pv_name>
-    <x>121</x>
-    <y>34</y>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_3</name>
@@ -114,8 +102,8 @@
   <widget type="label" version="2.0.0">
     <name>Label_4</name>
     <text>IN</text>
-    <x>245</x>
-    <y>138</y>
+    <x>251</x>
+    <y>120</y>
     <width>14</width>
     <height>16</height>
     <auto_size>true</auto_size>
@@ -123,8 +111,8 @@
   <widget type="label" version="2.0.0">
     <name>Label_5</name>
     <text>OUT</text>
-    <x>75</x>
-    <y>134</y>
+    <x>19</x>
+    <y>114</y>
     <width>30</width>
     <height>16</height>
     <auto_size>true</auto_size>
