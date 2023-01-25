@@ -1,0 +1,16 @@
+# RELEASE Location of external products
+EPICS_ROOT=/opt
+SUPPORT=$(EPICS_ROOT)/support
+
+#  IPAC is only necessary if support for Greensprings IP488 is required
+#  IPAC release V2-7 or later is required.
+SSCAN=
+IPAC=
+PCRE=
+CALC=
+ASYN=$(SUPPORT)/asyn
+STREAM=$(SUPPORT)/stream
+
+#  EPICS_BASE
+EPICS_BASE=$(EPICS_ROOT)/epics-base
+
