@@ -90,6 +90,12 @@
          <name>Esther:gas:PT901</name>
          <period>00:00:01</period><scan/>
       </channel>
+      <channel>
+         <name>Esther:gas:ON</name>
+         <period>60</period>
+         <monitor/>
+         <enable/>
+      </channel>
   </group>
 
   <group>
@@ -143,6 +149,10 @@
       <!-- Channel that enables sampling of this group 
          <enable/>
       -->
+      </channel>
+      <channel>
+         <name>Esther:gas:ON</name>
+         <enable/>
       </channel>
   </group>
 
@@ -234,6 +244,7 @@
          <period>60.0</period>
          <monitor>1.0</monitor>
       </channel>
+      <!--
       <channel>
          <name>Esther:HVA:3:Status</name>
          <period>60.0</period><monitor/>
@@ -242,6 +253,7 @@
          <name>Esther:HVA:4:Status</name>
          <period>60.0</period><monitor/>
       </channel>
+      -->
       <channel>
          <name>Esther:EDW:01:ReadModFonctWithWarning</name>
          <period>60.0</period><monitor/>
@@ -269,6 +281,22 @@
       <channel>
          <name>Esther:Vacuum:STDT-Pressure</name>
          <period>30.0</period><scan/>
+      </channel>
+      <channel>
+         <name>Esther:HVA:CTST_LS_IN</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:HVA:CTST_LS_OUT</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:HVA:STDT_LS_IN</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:HVA:STDT_LS_OUT</name>
+         <period>60.0</period><monitor/>
       </channel>
       <channel>
          <name>Esther:Vacuum:Enabled</name>
