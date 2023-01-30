@@ -17,13 +17,9 @@ vac_DBD += base.dbd
 
 # Include dbd files from all support applications:
 #vac_DBD += xxx.dbd
-vac_DBD += asyn.dbd
-vac_DBD += drvAsynSerialPort.dbd
-vac_DBD += stream.dbd
 
 # Add all the support libraries needed by this IOC
-vac_LIBS += asyn
-vac_LIBS += stream
+#vac_LIBS += xxx
 
 # vac_registerRecordDeviceDriver.cpp derives from vac.dbd
 vac_SRCS += vac_registerRecordDeviceDriver.cpp

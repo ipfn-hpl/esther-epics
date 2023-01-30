@@ -1,0 +1,47 @@
+#######################################################
+# vim: sta:et:sw=4:ts=4:sts=4
+### EPICS Database for                          ###
+#
+### author: B. Carvalho                         ###
+### Description:        
+### Records ending in "__" are for internal use ### #
+### only! Do not set them manually              ###
+#######################################################
+
+record(mbbi, $(P)$(R)Status){
+    field(DESC, "Inficon BPG Sensor Status on VGC401")
+    field(VAL,"5")
+    field(ZRVL,"0")
+    field(ZRST,"Measurement data OK")
+    field(ONVL,"1")
+    field(ONST,"Underrange")
+    field(TWVL,"2")
+    field(TWST,"Overrange")
+    field(THVL,"3")
+    field(THST,"Sensor error")
+    field(FRVL,"4")
+    field(FRST,"Sensor OFF")
+    field(FVVL,"5")
+    field(FVST,"No sensor")
+    field(SXVL,"6")
+    field(SXST,"Identification error")
+    field(SVVL,"7")
+    field(SVST,"Error BAG, BPG, HPG, BCG")
+}
+record(ai, $(P)$(R)Pressure){
+    field(DESC, "Inficon BPG Sensor Pressure on VGC401")
+    field(DTYP, "stream")
+    field(INP, "@inficonVG401.proto ReadPressure($(P)$(R)Status) $(BUS)")
+    field(VAL, "-1")
+    field(HOPR, "1200")
+    field(LOPR, "0")
+    field(EGU, "mBar")
+    field(SCAN, "I/O Intr")
+}
+record(bo, $(P)$(R)COM){
+    field(DESC, "Inficon BPG Sensor on VGC401")
+    field(DTYP, "stream")
+    field(OUT, "@inficonVG401.proto EnablePressure $(BUS)")
+    field(VAL, "0")
+    field(HIGH, "0.5")
+}

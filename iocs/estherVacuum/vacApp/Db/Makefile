@@ -7,16 +7,9 @@ include $(TOP)/configure/CONFIG
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
 #DB += xxx.db
-DB += edwards.db
-DB += edwards.proto
-DB += edwards-adc.db
-DB += edwards-adc.proto
+DB += inficonVG401.db
+DB += inficonVG401.proto
 
-DB += armcontrol.db
-DB += armcontrol.proto
-
-DB += bme680.db
-DB += bme680.proto
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_template = <templatename>
