@@ -5,8 +5,8 @@
     <node>gas</node>
     <unit>Esther</unit>
   </macros>
-  <width>1336</width>
-  <height>901</height>
+  <width>1341</width>
+  <height>853</height>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
@@ -212,7 +212,7 @@ $(pv_value)</tooltip>
     <widget type="label" version="2.0.0">
       <name>Label_9</name>
       <text>Combustion Chamber</text>
-      <x>134</x>
+      <x>77</x>
       <y>55</y>
       <width>402</width>
       <height>46</height>
@@ -351,7 +351,7 @@ $(pv_value)</tooltip>
     </line_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline_57</name>
+    <name>Pl_ExitN2</name>
     <x>650</x>
     <y>20</y>
     <width>50</width>
@@ -370,36 +370,14 @@ $(pv_value)</tooltip>
     </line_color>
     <arrows>2</arrows>
   </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline_58</name>
-    <x>580</x>
-    <y>100</y>
-    <width>190</width>
-    <height>410</height>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-      <point x="150.0" y="0.0">
-      </point>
-      <point x="150.0" y="410.0">
-      </point>
-      <point x="190.0" y="410.0">
-      </point>
-    </points>
-    <line_width>2</line_width>
-    <line_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </line_color>
-  </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_2</name>
     <macros>
       <pvNum>101</pvNum>
     </macros>
     <file>PValve_NC.bob</file>
-    <x>322</x>
-    <y>40</y>
+    <x>300</x>
+    <y>53</y>
     <width>88</width>
     <height>90</height>
     <transparent>true</transparent>
@@ -408,7 +386,7 @@ $(pv_value)</tooltip>
     <name>Polyline_59</name>
     <x>350</x>
     <y>230</y>
-    <width>290</width>
+    <width>240</width>
     <height>40</height>
     <points>
       <point x="0.0" y="40.0">
@@ -417,7 +395,7 @@ $(pv_value)</tooltip>
       </point>
       <point x="150.0" y="0.0">
       </point>
-      <point x="290.0" y="0.0">
+      <point x="240.0" y="0.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -428,18 +406,18 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_60</name>
-    <x>330</x>
+    <x>390</x>
     <y>589</y>
-    <width>280</width>
+    <width>220</width>
     <height>41</height>
     <points>
       <point x="0.0" y="41.0">
       </point>
-      <point x="170.0" y="40.0">
+      <point x="110.0" y="40.0">
       </point>
-      <point x="170.0" y="0.0">
+      <point x="110.0" y="0.0">
       </point>
-      <point x="280.0" y="0.0">
+      <point x="220.0" y="0.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -454,7 +432,7 @@ $(pv_value)</tooltip>
       <ptNum>202</ptNum>
     </macros>
     <file>PT_probe.bob</file>
-    <x>410</x>
+    <x>398</x>
     <y>202</y>
     <width>86</width>
     <height>71</height>
@@ -466,7 +444,7 @@ $(pv_value)</tooltip>
       <mfcNum>401</mfcNum>
     </macros>
     <file>MFC.bob</file>
-    <x>260</x>
+    <x>208</x>
     <y>582</y>
     <width>120</width>
     <height>60</height>
@@ -505,13 +483,13 @@ $(pv_value)</tooltip>
     <height>40</height>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_13</name>
+    <name>ED_FL_601</name>
     <macros>
-      <flNum>603</flNum>
+      <flNum>601</flNum>
     </macros>
     <file>Lira.bob</file>
-    <x>1060</x>
-    <y>546</y>
+    <x>1170</x>
+    <y>654</y>
     <width>70</width>
     <height>50</height>
     <transparent>true</transparent>
@@ -522,8 +500,8 @@ $(pv_value)</tooltip>
       <mfcNum>601</mfcNum>
     </macros>
     <file>MFC.bob</file>
-    <x>867</x>
-    <y>536</y>
+    <x>998</x>
+    <y>642</y>
     <width>120</width>
     <height>60</height>
   </widget>
@@ -533,8 +511,8 @@ $(pv_value)</tooltip>
       <ptNum>601</ptNum>
     </macros>
     <file>PT_probe.bob</file>
-    <x>960</x>
-    <y>510</y>
+    <x>1096</x>
+    <y>620</y>
     <width>86</width>
     <height>71</height>
     <transparent>true</transparent>
@@ -545,8 +523,8 @@ $(pv_value)</tooltip>
       <cvNum>701</cvNum>
     </macros>
     <file>Valve_NR.bob</file>
-    <x>1138</x>
-    <y>482</y>
+    <x>1240</x>
+    <y>667</y>
     <width>83</width>
     <height>40</height>
   </widget>
@@ -556,10 +534,10 @@ $(pv_value)</tooltip>
       <cvNum>601</cvNum>
     </macros>
     <file>Valve_NR.bob</file>
-    <x>770</x>
-    <y>560</y>
-    <width>73</width>
-    <height>36</height>
+    <x>760</x>
+    <y>600</y>
+    <width>112</width>
+    <height>41</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>EC_NR603</name>
@@ -567,13 +545,13 @@ $(pv_value)</tooltip>
       <cvNum>603</cvNum>
     </macros>
     <file>Valve_NR.bob</file>
-    <x>770</x>
-    <y>489</y>
-    <width>73</width>
-    <height>36</height>
+    <x>768</x>
+    <y>520</y>
+    <width>112</width>
+    <height>41</height>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_5</name>
+    <name>Ed_PV_202</name>
     <macros>
       <pvNum>202</pvNum>
     </macros>
@@ -628,8 +606,8 @@ $(pv_value)</tooltip>
       <cvNum>602</cvNum>
     </macros>
     <file>Valve_NR.bob</file>
-    <x>770</x>
-    <y>630</y>
+    <x>760</x>
+    <y>786</y>
     <width>73</width>
     <height>36</height>
   </widget>
@@ -637,16 +615,16 @@ $(pv_value)</tooltip>
     <name>Pl_O2_3</name>
     <x>580</x>
     <y>310</y>
-    <width>190</width>
-    <height>270</height>
+    <width>180</width>
+    <height>310</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
       <point x="100.0" y="0.0">
       </point>
-      <point x="100.0" y="270.0">
+      <point x="100.0" y="310.0">
       </point>
-      <point x="190.0" y="270.0">
+      <point x="180.0" y="310.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -661,7 +639,7 @@ $(pv_value)</tooltip>
       <pvNum>201</pvNum>
     </macros>
     <file>PValve_NC.bob</file>
-    <x>306</x>
+    <x>300</x>
     <y>223</y>
     <width>80</width>
     <height>61</height>
@@ -673,7 +651,7 @@ $(pv_value)</tooltip>
       <pvNum>301</pvNum>
     </macros>
     <file>PValve_NC.bob</file>
-    <x>281</x>
+    <x>300</x>
     <y>401</y>
     <width>80</width>
     <height>61</height>
@@ -683,7 +661,7 @@ $(pv_value)</tooltip>
     <name>Pl_HeI_1</name>
     <x>343</x>
     <y>407</y>
-    <width>260</width>
+    <width>227</width>
     <height>40</height>
     <points>
       <point x="0.0" y="40.0">
@@ -692,7 +670,7 @@ $(pv_value)</tooltip>
       </point>
       <point x="150.0" y="0.0">
       </point>
-      <point x="260.0" y="0.0">
+      <point x="227.0" y="3.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -764,5 +742,403 @@ $(pv_value)</tooltip>
     <width>40</width>
     <height>40</height>
     <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <x>500</x>
+    <y>100</y>
+    <width>270</width>
+    <height>440</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="220.0" y="40.0">
+      </point>
+      <point x="220.0" y="440.0">
+      </point>
+      <point x="270.0" y="440.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_ExitN2_1</name>
+    <x>640</x>
+    <y>190</y>
+    <width>50</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="50.0" y="40.0">
+      </point>
+      <point x="50.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_302</name>
+    <macros>
+      <pvNum>302</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>520</x>
+    <y>447</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_401</name>
+    <macros>
+      <pvNum>401</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>300</x>
+    <y>584</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_402</name>
+    <macros>
+      <pvNum>402</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>520</x>
+    <y>630</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_501</name>
+    <macros>
+      <pvNum>501</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>300</x>
+    <y>747</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PT_302</name>
+    <macros>
+      <ptNum>302</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>398</x>
+    <y>378</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PT_402</name>
+    <macros>
+      <ptNum>402</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>398</x>
+    <y>546</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PT_502</name>
+    <macros>
+      <ptNum>502</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>406</x>
+    <y>715</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_HeII_2</name>
+    <x>358</x>
+    <y>740</y>
+    <width>272</width>
+    <height>45</height>
+    <points>
+      <point x="0.0" y="45.0">
+      </point>
+      <point x="152.0" y="40.0">
+      </point>
+      <point x="152.0" y="0.0">
+      </point>
+      <point x="272.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_502</name>
+    <macros>
+      <pvNum>502</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>520</x>
+    <y>784</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_HeII_3</name>
+    <x>510</x>
+    <y>780</y>
+    <width>50</width>
+    <height>50</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="50.0">
+      </point>
+      <point x="50.0" y="50.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_H2_4</name>
+    <x>580</x>
+    <y>670</y>
+    <width>130</width>
+    <height>160</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="130.0" y="0.0">
+      </point>
+      <point x="130.0" y="160.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_HeII_3</name>
+    <x>638</x>
+    <y>835</y>
+    <width>140</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="140.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_HeII_4</name>
+    <x>590</x>
+    <y>490</y>
+    <width>90</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="90.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_603</name>
+    <macros>
+      <pvNum>603</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>820</x>
+    <y>500</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_601</name>
+    <macros>
+      <pvNum>601</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>833</x>
+    <y>580</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_602</name>
+    <macros>
+      <pvNum>602</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>833</x>
+    <y>786</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_MV704</name>
+    <macros>
+      <mvNum>704</mvNum>
+    </macros>
+    <file>MValve.bob</file>
+    <x>1010</x>
+    <y>462</y>
+    <width>40</width>
+    <height>40</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_FL_603</name>
+    <macros>
+      <flNum>603</flNum>
+    </macros>
+    <file>Lira.bob</file>
+    <x>939</x>
+    <y>462</y>
+    <width>70</width>
+    <height>50</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PT901</name>
+    <macros>
+      <ptNum>901</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>950</x>
+    <y>70</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_701</name>
+    <macros>
+      <pvNum>701</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>1076</x>
+    <y>462</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_MV701</name>
+    <macros>
+      <mvNum>701</mvNum>
+    </macros>
+    <file>MValve.bob</file>
+    <x>1036</x>
+    <y>100</y>
+    <width>40</width>
+    <height>40</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_FL_602</name>
+    <macros>
+      <flNum>602</flNum>
+    </macros>
+    <file>Lira.bob</file>
+    <x>832</x>
+    <y>100</y>
+    <width>70</width>
+    <height>50</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Ed_PV_203</name>
+    <macros>
+      <pvNum>203</pvNum>
+    </macros>
+    <file>PValve_NO.bob</file>
+    <x>570</x>
+    <y>185</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_HeII_5</name>
+    <x>900</x>
+    <y>540</y>
+    <width>50</width>
+    <height>280</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="50.0" y="0.0">
+      </point>
+      <point x="50.0" y="280.0">
+      </point>
+      <point x="0.0" y="280.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_HeII_5</name>
+    <x>900</x>
+    <y>691</y>
+    <width>90</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="90.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
   </widget>
 </display>

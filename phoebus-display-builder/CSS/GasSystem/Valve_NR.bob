@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>Display</name>
-  <width>71</width>
-  <height>36</height>
+  <width>100</width>
+  <height>40</height>
   <widget type="label" version="2.0.0">
     <name>Lbl_CV</name>
     <text>CV${cvNum}</text>
-    <x>8</x>
+    <x>20</x>
     <width>52</width>
     <height>18</height>
     <font>
@@ -28,13 +28,13 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_L</name>
-    <y>21</y>
-    <width>25</width>
-    <height>1</height>
+    <y>20</y>
+    <width>40</width>
+    <height>0</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="25.0" y="0.0">
+      <point x="40.0" y="0.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -49,14 +49,14 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_R</name>
-    <x>46</x>
+    <x>60</x>
     <y>20</y>
-    <width>25</width>
+    <width>40</width>
     <height>1</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="25.0" y="0.0">
+      <point x="40.0" y="0.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -71,7 +71,7 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_1</name>
-    <x>26</x>
+    <x>40</x>
     <y>15</y>
     <width>21</width>
     <height>13</height>
@@ -97,7 +97,7 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_2</name>
-    <x>26</x>
+    <x>38</x>
     <y>31</y>
     <width>21</width>
     <height>1</height>
@@ -119,7 +119,7 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="polygon" version="2.0.0">
     <name>Polygon_3</name>
-    <x>42</x>
+    <x>54</x>
     <y>27</y>
     <width>7</width>
     <height>9</height>

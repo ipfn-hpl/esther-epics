@@ -22,6 +22,10 @@ state Idle {
 '  --
     [*] -> HidraulicPressureON
     HidraulicPressureON -> WaterCircuitON
+    WaterCircuitON -> FansTurbosON
+    state HidraulicPressureON #lightblue
+    state WaterCircuitON #lightblue
+    state FansTurbosON #lightblue
     --
     [*] -> OpenCTSTArm
     OpenCTSTArm -> OpenCTSTGateValve
@@ -30,32 +34,32 @@ state Idle {
     OpenSTDTArm -> OpenSTDTGateValve
 }
 Idle : Instruments On
-Idle -right-> ManualOperation :  OpRequest
-ManualOperation -> Idle
+Idle -right[#blue,bold]-> ManualOperation :  OpRequest
+ManualOperation -left[#blue,bold]-> Idle
+state ManualOperation #lightblue
 Idle --> StartingLowVacuum :  OpRequest
 StartingLowVacuum : Open CTST andSTDT Arms
 
 state StartingLowVacuum {
-    [*] --> StartDryPumpDT
-    StartDryPumpDT --> fork_state  : Press(DT)  < 500 mBar
-    state fork_state <<fork>>
-    fork_state --> StartDryPumpCT
-    fork_state --> StartDryPumpST
-    ' fork_state --> StartDryPumpST
+'     [*] --> StartDryPumpDT
+    [*] --> fork_stateLV
+    state fork_stateLV <<fork>>
+    fork_stateLV --> StartDryPumpCT
+    fork_stateLV --> StartDryPumpDT
     ' StartDryPumpDT --> StartDryPumpST
-    ' StartDryPumpDT --> join_state
-    ' fork_state --> State3
     StartDryPumpCT --> CheckPressuresLV
-    StartDryPumpST --> CheckPressuresLV : p(DT)  < 5 mBar
+    StartDryPumpDT --> CheckPressuresLV
+'    : p(DT)  < 5 mBar
     state CheckPressuresLV <<join>>
 
-    CheckPressuresLV -> [*]  :  p(DT) < 5mBar\np(CT,ST)  <  1e-2 mBar
+    CheckPressuresLV -> StartDryPumpST : Press(DT)  < 500 mBar
+    StartDryPumpST -> [*]  :  p(DT) < 5mBar\np(CT,ST)  <  1e-2 mBar
 
 }
 
 StartingLowVacuum -> LowVacuum
 LowVacuum : 
-LowVacuum -> StoppingLowVacuum : OpRequest
+LowVacuum -[#blue,bold]-> StoppingLowVacuum : OpRequest
 state StoppingLowVacuum {
   [*] -> StopDryPumpCT
   --
