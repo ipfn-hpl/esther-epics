@@ -276,7 +276,7 @@
       <font family="Liberation Sans" style="REGULAR" size="20.0">
       </font>
     </font>
-    <format>1</format>
+    <format>2</format>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_DT-PT-Static_2</name>
@@ -290,5 +290,18 @@
     <x>813</x>
     <y>849</y>
     <width>220</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_DT-PT-Static_2</name>
+    <pv_name>${unit}:Vacuum:VGC401-Pressure</pv_name>
+    <x>990</x>
+    <y>805</y>
+    <width>169</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <format>2</format>
   </widget>
 </display>

@@ -34,11 +34,11 @@
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>1020.75</min>
-      <max>1023.15</max>
+      <min>1.0</min>
+      <max>2.844461107447916</max>
       <grid>false</grid>
-      <autoscale>false</autoscale>
-      <log_scale>false</log_scale>
+      <autoscale>true</autoscale>
+      <log_scale>true</log_scale>
     </axis>
     <axis>
       <visible>true</visible>
@@ -51,10 +51,10 @@
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>400.0</min>
-      <max>2800.0</max>
+      <min>8.565E-5</min>
+      <max>1.3735E-4</max>
       <grid>false</grid>
-      <autoscale>false</autoscale>
+      <autoscale>true</autoscale>
       <log_scale>false</log_scale>
     </axis>
   </axes>
@@ -87,13 +87,13 @@
       </archive>
     </pv>
     <pv>
-      <display_name>Esther:Vacuum:01:ReadPressure</display_name>
+      <display_name>Esther:Vacuum:PT-CT-Static</display_name>
       <visible>true</visible>
-      <name>Esther:Vacuum:01:ReadPressure</name>
-      <axis>1</axis>
+      <name>Esther:Vacuum:PT-CT-Static</name>
+      <axis>0</axis>
       <color>
-        <red>0</red>
-        <green>255</green>
+        <red>255</red>
+        <green>127</green>
         <blue>0</blue>
       </color>
       <trace_type>AREA</trace_type>
@@ -106,18 +106,43 @@
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
       <archive>
-        <name>jdbc:mysql://192.168.0.98/archive</name>
-        <url>jdbc:mysql://192.168.0.98/archive</url>
+        <name>jdbc:mysql://localhost/archive</name>
+        <url>jdbc:mysql://localhost/archive</url>
         <key>1</key>
       </archive>
     </pv>
     <pv>
-      <display_name>Esther:Vacuum:02:ReadPressure</display_name>
+      <display_name>Esther:Vacuum:CTST-Pressure</display_name>
       <visible>true</visible>
-      <name>Esther:Vacuum:02:ReadPressure</name>
+      <name>Esther:Vacuum:CTST-Pressure</name>
       <axis>1</axis>
       <color>
         <red>0</red>
+        <green>255</green>
+        <blue>127</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>2</linewidth>
+      <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>2</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+      <archive>
+        <name>jdbc:mysql://localhost/archive</name>
+        <url>jdbc:mysql://localhost/archive</url>
+        <key>1</key>
+      </archive>
+    </pv>
+    <pv>
+      <display_name>Esther:Vacuum:STDT-Pressure</display_name>
+      <visible>true</visible>
+      <name>Esther:Vacuum:STDT-Pressure</name>
+      <axis>1</axis>
+      <color>
+        <red>127</red>
         <green>0</green>
         <blue>255</blue>
       </color>
@@ -131,8 +156,8 @@
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
       <archive>
-        <name>jdbc:mysql://192.168.0.98/archive</name>
-        <url>jdbc:mysql://192.168.0.98/archive</url>
+        <name>jdbc:mysql://localhost/archive</name>
+        <url>jdbc:mysql://localhost/archive</url>
         <key>1</key>
       </archive>
     </pv>
