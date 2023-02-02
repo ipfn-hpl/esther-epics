@@ -2,7 +2,6 @@ Terminator = CR LF;
 ReplyTimeout = 2000;
 MaxInput     = 100;
 
-# 0, 1.0000E+03 mbar
 #0, 1.0000E+03 mbar
 
 EnablePressure {

@@ -14,6 +14,10 @@ DBD += vac.dbd
 
 # vac.dbd will be made up from these files:
 vac_DBD += base.dbd
+vac_DBD += asyn.dbd
+vac_DBD += drvAsynSerialPort.dbd
+vac_DBD += calc.dbd
+vac_DBD += stream.dbd
 
 # Include dbd files from all support applications:
 #vac_DBD += xxx.dbd
@@ -33,6 +37,9 @@ vac_SRCS_vxWorks += -nil-
 
 # Finally link to the EPICS Base libraries
 vac_LIBS += $(EPICS_BASE_IOC_LIBS)
+vac_LIBS += asyn
+vac_LIBS += calc
+vac_LIBS += stream
 
 #===========================
 
