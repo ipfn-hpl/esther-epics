@@ -19,11 +19,19 @@ vac_DBD += drvAsynSerialPort.dbd
 vac_DBD += calc.dbd
 vac_DBD += stream.dbd
 
+vac_DBD += qsrv.dbd
+vac_DBD += PVAServerRegister.dbd
+
 # Include dbd files from all support applications:
 #vac_DBD += xxx.dbd
 
 # Add all the support libraries needed by this IOC
 #vac_LIBS += xxx
+vac_LIBS += asyn
+vac_LIBS += calc
+vac_LIBS += stream
+# include QSRV
+vac_LIBS += qsrv
 
 # vac_registerRecordDeviceDriver.cpp derives from vac.dbd
 vac_SRCS += vac_registerRecordDeviceDriver.cpp
@@ -37,9 +45,7 @@ vac_SRCS_vxWorks += -nil-
 
 # Finally link to the EPICS Base libraries
 vac_LIBS += $(EPICS_BASE_IOC_LIBS)
-vac_LIBS += asyn
-vac_LIBS += calc
-vac_LIBS += stream
+vac_LIBS += $(EPICS_BASE_PVA_CORE_LIBS)
 
 #===========================
 
