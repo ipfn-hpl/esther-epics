@@ -28,6 +28,25 @@ record(bo, "$(P)$(R):CTST-Valve")
         field(VAL, "0")
         field(PINI, "YES")
 }
+record(bi, "$(P)$(R):CTST_LS_IN")
+{
+        field(DESC, "S7 PLC HVA_VALVE LS IN")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@vacPLC I1.2")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+}
+record(bi, "$(P)$(R):CTST_LS_OUT")
+{
+        field(DESC, "S7 PLC HVA_VALVE LS OUT")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@vacPLC I1.3")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MINOR")
+}
 record(bo, "$(P)$(R):STDT-Valve")
 {
         field(DTYP, "s7nodave")
@@ -38,6 +57,25 @@ record(bo, "$(P)$(R):STDT-Valve")
         field(VAL, "0")
         field(PINI, "YES")
     #info(autosaveFields, "VAL")
+}
+record(bi, "$(P)$(R):STDT_LS_IN")
+{
+        field(DESC, "S7 PLC HVA_VALVE LS IN")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@vacPLC I1.0")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+}
+record(bi, "$(P)$(R):STDT_LS_OUT")
+{
+        field(DESC, "S7 PLC HVA_VALVE LS OUT")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@vacPLC I1.1")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(OSV, "MINOR")
 }
 #record(bi, "$(P)$(R):Valve_LS1_ON")
 #{

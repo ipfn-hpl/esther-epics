@@ -49,14 +49,14 @@ asynSetOption("RS232A2", 0, "stop", "1")
 dbLoadRecords("db/armcontrol.db", "P=Esther:,R=ARM:,A=2")
 
 epicsEnvSet "A" "$(A=3)"
-epicsEnvSet "BRS" "$(BRS=RS232A$(A))"
+#epicsEnvSet "BRS" "$(BRS=RS232A$(A))"
 ## Arduino HVA Gate Valve control
-drvAsynSerialPortConfigure("$(BRS)","/dev/gatevalveCTST",0,0,0)
-asynSetOption("$(BRS)", 0, "baud", "115200")
-asynSetOption("$(BRS)", 0, "bits", "8")
-asynSetOption("$(BRS)", 0, "parity", "none")
-asynSetOption("$(BRS)", 0, "stop", "1")
-dbLoadRecords("db/gate-valve.db", "P=$(P):,R=HVA:,A=3")
+#drvAsynSerialPortConfigure("$(BRS)","/dev/gatevalveCTST",0,0,0)
+#asynSetOption("$(BRS)", 0, "baud", "115200")
+#asynSetOption("$(BRS)", 0, "bits", "8")
+#asynSetOption("$(BRS)", 0, "parity", "none")
+#asynSetOption("$(BRS)", 0, "stop", "1")
+#dbLoadRecords("db/gate-valve.db", "P=$(P):,R=HVA:,A=3")
 
 ## EDWARDS SCU 800
 ## Load Serial drivers
@@ -76,9 +76,16 @@ asynSetOption("RS232E1", 0, "baud", "9600")
 asynSetOption("RS232E1", 0, "bits", "8")
 asynSetOption("RS232E1", 0, "parity", "none")
 asynSetOption("RS232E1", 0, "stop", "1")
-#asynSetOption("RS232E1", 0, "clocal", "Y")
-##asynSetOption("RS232E1", 0, "crtscts", "N")
+##asynSetOption("RS232E1", 0, "clocal", "Y")
+asynSetOption("RS232E1", 0, "crtscts", "N")
 dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
+
+#drvAsynSerialPortConfigure("RS232INF","/dev/tty_inficom")
+#asynSetOption("RS232A1", 0, "baud", "19200")
+#asynSetOption("RS232A1", 0, "bits", "8")
+#asynSetOption("RS232A1", 0, "parity", "none")
+#asynSetOption("RS232A1", 0, "stop", "1")
+#dbLoadRecords("db/inficonVG401.db", "P=Esther:,R=VG401:,BUS=RS232INF")
 
 dbLoadRecords("db/esther-states.db", "P=Esther:,R=Vacuum:")
 

@@ -32,8 +32,8 @@ record(calc, $(P)$(R)Enabled){
     field(DESC, "ADC Instrument SCAN Enabled")
 	field(CALC, "(A==1)?0:1")
     field(INPA, "$(P)$(R)Disable.VAL NPP NMS")
-    field(ZNAM, "Disabled")
-    field(ONAM, "Enabled")
+#    field(ZNAM, "Disabled")
+#    field(ONAM, "Enabled")
 }
 record(ai, $(P)$(R)CTST-Pressure){
     field(DESC, "Reads the measured CTST Pressure")

@@ -31,13 +31,15 @@ record(bo, $(P)$(R)01:Disable){
     field(DESC, "CTST Maglev Disable SCAN")
     field(ZNAM, "ENABLED")
     field(ONAM, "DISABLED")
-    field(VAL, "1")
+    #field(VAL, "1")
+    info(autosaveFields, "VAL")
 }
 record(bo, $(P)$(R)02:Disable){
     field(DESC, "Disable Instrument SCAN")
     field(ZNAM, "ENABLED")
     field(ONAM, "DISABLED")
-    field(VAL, "1")
+    #field(VAL, "1")
+    info(autosaveFields, "VAL")
 }
 record(longin, $(P)$(R)01:MTemp){
     field(DESC, "Reads the measured TMS temperature")
