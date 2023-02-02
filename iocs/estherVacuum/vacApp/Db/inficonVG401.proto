@@ -1,15 +1,59 @@
 Terminator = CR LF;
-ReplyTimeout = 2000;
-MaxInput     = 100;
+#Terminator = "";
+OutTerminator = "";
+ReplyTimeout = 1000;
+ReadTimeout = 900;
+MaxInput     = 20;
+ExtraInput   = Ignore;
+#ExtraInput   = Error;
 
-#0, 1.0000E+03 mbar
+# "0, 1.0000E+03 mbar"
 
 EnablePressure {
-   out "COM,1";
+   out "COM,1",CR,LF;
    in ACK;
 }
 
+WriteCOM {
+   out "COM,%u",CR,LF;
+   in ACK;
+   in "%*d, %*g mBar";
+}
+# x = 0 –> 100 ms
+# 1 –> 1 s (default)
+# 2 –> 1 min.
+
 ReadPressure {
     in "%(\$1)u, %E mBar";
+}
+
+#    in "%*d, %E mBar";
+ReadPressure2 {
+    in "%*d, %12g mBar";
+}
+
+ReadPR1 {
+    out "PR1",CR,LF;
+    in ACK;
+    out ENQ;
+    in "%(\$1)u, %g mBar";
+}
+ReadERR {
+    out "ERR",CR,LF;
+    in ACK;
+    out ENQ;
+    in "%d";
+}
+ReadFSR {
+    out "FSR",CR,LF;
+    in ACK;
+    out ENQ;
+    in "%d";
+}
+ReadUNI {
+    out "UNI",CR,LF;
+    in ACK;
+    out ENQ;
+    in "%u";
 }
 

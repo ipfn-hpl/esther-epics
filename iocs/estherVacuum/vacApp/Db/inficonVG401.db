@@ -10,7 +10,37 @@
 ### Records ending in "__" are for internal use ### #
 ### only! Do not set them manually              ###
 #######################################################
-
+record(bo, $(P)$(R)VGC401-COM){
+    field(DESC, "Inficon VGC401 control")
+    field(DTYP, "stream")
+    field(OUT, "@inficonVG401.proto EnablePressure $(BUS)")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+    field(VAL, "1")
+    field(HIGH, "2.5")
+#    field(FLNK, "$(P)$(R)VGC401-Error")
+}
+record(longout, $(P)$(R)VGC401-COM-OUT){
+    field(DESC, "Inficon VGC401 control")
+    field(DTYP, "stream")
+    field(OUT, "@inficonVG401.proto EnablePressure $(BUS)")
+    field(VAL, "2")
+#    field(PINI, "YES")
+}
+record(longin, $(P)$(R)VGC401-Error){
+    field(DESC, "Inficon Error Status on VGC401")
+    field(DTYP, "stream")
+    field(INP, "@inficonVG401.proto ReadERR $(BUS)")
+    field(VAL,"-1")
+    field(SCAN,"10 second")
+    field(FLNK, "$(P)$(R)VGC401-FullRange")
+}
+record(longin, $(P)$(R)VGC401-FullRange){
+    field(DESC, "Inficon VGC401 Measurement range")
+    field(DTYP, "stream")
+    field(INP, "@inficonVG401.proto ReadFSR $(BUS)")
+    field(VAL,"-1")
+}
 record(mbbi, $(P)$(R)VGC401-Status){
     field(DESC, "Inficon BPG Sensor Status on VGC401")
     field(VAL,"5")
@@ -34,20 +64,22 @@ record(mbbi, $(P)$(R)VGC401-Status){
 record(ai, $(P)$(R)PT-CT-Static){
     field(DESC, "Inficon BPG Sensor Pressure on VGC401")
     field(DTYP, "stream")
-    field(INP, "@inficonVG401.proto ReadPressure($(P)$(R)VGC401-Status) $(BUS)")
+    field(INP, "@inficonVG401.proto ReadPR1($(P)$(R)VGC401-Status) $(BUS)")
+#    field(INP, "@inficonVG401.proto ReadPressure($(P)$(R)VGC401-Status) $(BUS)")
     field(VAL, "-1")
     field(HOPR, "1200")
     field(LOPR, "0")
+    field(PREC, "4")
     field(EGU, "mBar")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "1 second")
+#    field(SCAN, "I/O Intr")
 }
-record(bo, $(P)$(R)VGC401-COM){
-    field(DESC, "Inficon VGC401 control")
+record(ai, $(P)$(R)VGC401-Pressure){
+    field(DESC, "Inficon BPG Sensor Pressure on VGC401")
     field(DTYP, "stream")
-    field(OUT, "@inficonVG401.proto EnablePressure $(BUS)")
-    field(ZNAM, "0")
-    field(ONAM, "1")
-    field(VAL, "1")
-    field(PINI, "YES")
-    field(HIGH, "2.5")
+#    field(INP, "@inficonVG401.proto ReadPR1($(P)$(R)VGC401-Status) $(BUS)")
+    field(INP, "@inficonVG401.proto ReadPressure($(P)$(R)VGC401-Status) $(BUS)")
+    field(VAL, "-1")
+    field(EGU, "mBar")
+#    field(SCAN, "1 second")
 }

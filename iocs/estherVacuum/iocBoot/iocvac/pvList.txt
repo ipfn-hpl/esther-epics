@@ -1,3 +1,6 @@
 Esther:Vacuum:PT-CT-Static
+Esther:Vacuum:VGC401-Pressure
 Esther:Vacuum:VGC401-COM
+Esther:Vacuum:VGC401-Error
+Esther:Vacuum:VGC401-FullRange
 Esther:Vacuum:VGC401-Status
