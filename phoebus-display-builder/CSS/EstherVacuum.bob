@@ -199,16 +199,16 @@
   <widget type="bool_button" version="2.0.0">
     <name>BB DryPump-CT</name>
     <pv_name>Esther:EDW:DryPump-CT</pv_name>
-    <x>830</x>
-    <y>820</y>
+    <x>840</x>
+    <y>40</y>
     <show_led>false</show_led>
     <show_confirm_dialog>2</show_confirm_dialog>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label  DryPump-CT</name>
     <text>DryPump-CT</text>
-    <x>830</x>
-    <y>790</y>
+    <x>840</x>
+    <y>10</y>
     <foreground_color>
       <color name="Header_Background" red="77" green="77" blue="77">
       </color>
@@ -222,16 +222,16 @@
   <widget type="bool_button" version="2.0.0">
     <name>BB DryPump-ST</name>
     <pv_name>Esther:EDW:DryPump-ST</pv_name>
-    <x>950</x>
-    <y>820</y>
+    <x>960</x>
+    <y>40</y>
     <show_led>false</show_led>
     <show_confirm_dialog>2</show_confirm_dialog>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label  DryPump-ST</name>
     <text>DryPump-ST</text>
-    <x>950</x>
-    <y>790</y>
+    <x>960</x>
+    <y>10</y>
     <foreground_color>
       <color name="Header_Background" red="77" green="77" blue="77">
       </color>
@@ -245,16 +245,16 @@
   <widget type="bool_button" version="2.0.0">
     <name>BB DryPump-DT</name>
     <pv_name>Esther:EDW:DryPump-DT</pv_name>
-    <x>1070</x>
-    <y>820</y>
+    <x>1080</x>
+    <y>40</y>
     <show_led>false</show_led>
     <show_confirm_dialog>2</show_confirm_dialog>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label  DryPump-DT</name>
     <text>DryPump-DT</text>
-    <x>1070</x>
-    <y>790</y>
+    <x>1080</x>
+    <y>10</y>
     <foreground_color>
       <color name="Header_Background" red="77" green="77" blue="77">
       </color>
@@ -264,5 +264,31 @@
       </color>
     </background_color>
     <transparent>false</transparent>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_DT-PT-Static_1</name>
+    <pv_name>${unit}:Vacuum:PT-CT-Static</pv_name>
+    <x>803</x>
+    <y>805</y>
+    <width>169</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <format>1</format>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_DT-PT-Static_2</name>
+    <text>PT-CT-Static</text>
+    <x>842</x>
+    <y>785</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_VGC401-Status</name>
+    <pv_name>${unit}:Vacuum:VGC401-Status</pv_name>
+    <x>813</x>
+    <y>849</y>
+    <width>220</width>
   </widget>
 </display>

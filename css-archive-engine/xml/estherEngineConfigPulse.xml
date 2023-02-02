@@ -79,27 +79,8 @@
       <channel>
          <name>Esther:gas:PT801</name>
          <period>00:01:00</period><scan/>
-      </channel>
-         <enable/>
-      </channel>
--->
-      <!-- Channel that enables sampling of this group 
-         <enable/>
-      -->
-      <channel>
-         <name>Esther:gas:PT901</name>
-         <period>00:00:01</period><scan/>
-      </channel>
-      <channel>
-         <name>Esther:gas:ON</name>
-         <period>60</period>
-         <monitor/>
-         <enable/>
-      </channel>
-  </group>
+        -->
 
-  <group>
-    <name>Esther MFC Flow/Volumes</name>
       <channel>
          <name>Esther:gas:MFC201_FFLOW</name>
          <period>1.0</period>
@@ -146,18 +127,8 @@
       <channel>
          <name>Esther:gas:MFC601_VOL_FMEAS</name>
          <period>1.0</period><scan/>
-      <!-- Channel that enables sampling of this group 
-         <enable/>
-      -->
       </channel>
-      <channel>
-         <name>Esther:gas:ON</name>
-         <enable/>
-      </channel>
-  </group>
 
-  <group>
-    <name>Esther Saved Pressures</name>
       <channel>
          <name>Esther:gas:PT901_END_S1</name>
      <monitor/>
@@ -178,7 +149,33 @@
          <name>Esther:gas:PT901_END_HE2</name>
          <monitor/>
       </channel>
+
+      <channel>
+         <name>Esther:gas:PulseNumber</name>
+         <monitor>1</monitor>
+      </channel>
+
+      <channel>
+         <name>Esther:gas:PT901</name>
+         <period>00:00:01</period><scan/>
+      </channel>
+      <channel>
+         <name>Esther:gas:ON</name>
+         <period>60</period>
+         <monitor/>
+         <enable/>
+      </channel>
   </group>
+
+      <!-- 
+  <group>
+    <name>Esther MFC Flow/Volumes</name>
+  </group>
+
+  <group>
+    <name>Esther Saved Pressures</name>
+  </group>
+      -->
 
   <group>
     <name>Esther Bombe Pressure Transducer (Kistler)</name>
@@ -200,15 +197,6 @@
          <name>Esther:ambient:Pressure</name>
          <period>60</period>
          <monitor/>
-      </channel>
-  </group>
-
-  <group>
-    <name>Esther Pulse Number</name>
-      <channel>
-         <name>Esther:gas:PulseNumber</name>
-         <monitor>1</monitor>
-         <enable/>
       </channel>
   </group>
 
@@ -269,6 +257,10 @@
       <channel>
          <name>Esther:EDA:DT-Valve_LS2_ON</name>
          <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:Vacuum:PT-CT-Static</name>
+         <period>30.0</period><scan/>
       </channel>
       <channel>
          <name>Esther:Vacuum:DT-PT-Static</name>
