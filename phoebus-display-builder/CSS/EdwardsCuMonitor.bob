@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>SCU800 Sub Display</name>
+  <width>351</width>
+  <height>463</height>
+  <background_color>
+    <color name="On" red="0" green="255" blue="0">
+    </color>
+  </background_color>
+  <widget type="label" version="2.0.0">
+    <name>LabelTitle</name>
+    <class>TITLE</class>
+    <text>SCU800 CONTROLLER ${name}</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>351</width>
+    <height>25</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>${unit}:${node}:${Add}:ReadSetpoint</pv_name>
+    <x>225</x>
+    <y>30</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text ReadModFonctWithWarning</name>
+    <pv_name>${unit}:${node}:${Add}:ReadModFonctWithWarning</pv_name>
+    <x>224</x>
+    <y>66</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Function Mode</text>
+    <x>119</x>
+    <y>67</y>
+    <width>93</width>
+    <height>16</height>
+    <background_color>
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Speep SP_1</name>
+    <text>Speed SP</text>
+    <x>160</x>
+    <y>30</y>
+    <width>64</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_Warning</name>
+    <text>Warning Code</text>
+    <x>121</x>
+    <y>83</y>
+    <width>90</width>
+    <height>16</height>
+    <background_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text ReadModFonctWithWarning_3</name>
+    <pv_name>${unit}:${node}:${Add}:WARNING</pv_name>
+    <x>224</x>
+    <y>87</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>${unit}:${node}:${Add}:Disable</pv_name>
+    <bit>0</bit>
+    <x>30</x>
+    <y>25</y>
+    <width>100</width>
+    <height>30</height>
+    <off_label>Off</off_label>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_label>On</on_label>
+    <on_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </on_color>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <square>true</square>
+    <labels_from_pv>true</labels_from_pv>
+  </widget>
+  <widget type="tabs" version="2.0.0">
+    <name>Tabs</name>
+    <tabs>
+      <tab>
+        <name>Normal</name>
+        <children>
+          <widget type="label" version="2.0.0">
+            <name>Label_MTemp</name>
+            <text>Motor Temp</text>
+            <x>38</x>
+            <y>231</y>
+            <width>76</width>
+            <height>16</height>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_2</name>
+            <pv_name>${unit}:${node}:${Add}:MTemp</pv_name>
+            <x>30</x>
+            <y>202</y>
+          </widget>
+          <widget type="thermometer" version="2.0.0">
+            <name>Thermometer</name>
+            <pv_name>${unit}:${node}:${Add}:MTemp</pv_name>
+            <x>28</x>
+            <y>19</y>
+            <width>30</width>
+            <height>140</height>
+          </widget>
+          <widget type="tank" version="2.0.0">
+            <name>Tank_MSpeed</name>
+            <pv_name>${unit}:${node}:${Add}:MSpeed</pv_name>
+            <x>207</x>
+            <y>9</y>
+            <width>68</width>
+            <background_color>
+              <color name="Background" red="255" green="255" blue="255">
+              </color>
+            </background_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_MSpeed</name>
+            <text>Motor Speed</text>
+            <x>207</x>
+            <y>239</y>
+            <width>81</width>
+            <height>16</height>
+            <background_color>
+              <color red="60" green="100" blue="60" alpha="179">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Tu_MSpeed</name>
+            <pv_name>${unit}:${node}:${Add}:MSpeed</pv_name>
+            <x>177</x>
+            <y>242</y>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>Warnings</name>
+        <children>
+          <widget type="label" version="2.0.0">
+            <name>Label_Warning_B0_3</name>
+            <text>Bad Pump Transmit</text>
+            <x>18</x>
+            <y>9</y>
+            <width>124</width>
+            <height>16</height>
+            <background_color>
+              <color red="255" green="128" blue="0" alpha="60">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <horizontal_alignment>2</horizontal_alignment>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_Warning_B0_4</name>
+            <text>Second Damage Limit</text>
+            <x>18</x>
+            <y>29</y>
+            <width>138</width>
+            <height>16</height>
+            <background_color>
+              <color red="255" green="128" blue="0" alpha="60">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <horizontal_alignment>2</horizontal_alignment>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_Warning_FirstDamageLmt_1</name>
+            <text>First Damage Limit</text>
+            <x>19</x>
+            <y>49</y>
+            <width>118</width>
+            <height>16</height>
+            <background_color>
+              <color red="255" green="128" blue="0" alpha="60">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <horizontal_alignment>2</horizontal_alignment>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_Tab_Warning_13</name>
+            <text>Imbalance X_H</text>
+            <x>18</x>
+            <y>69</y>
+            <width>96</width>
+            <height>16</height>
+            <background_color>
+              <color red="255" green="128" blue="0" alpha="60">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <horizontal_alignment>2</horizontal_alignment>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_Tab_Warning_14</name>
+            <text>Imbalance X_B</text>
+            <x>18</x>
+            <y>89</y>
+            <width>95</width>
+            <height>16</height>
+            <background_color>
+              <color red="255" green="128" blue="0" alpha="60">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <horizontal_alignment>2</horizontal_alignment>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_Tab_Warning_15</name>
+            <text>Imbalance Z</text>
+            <x>18</x>
+            <y>109</y>
+            <width>78</width>
+            <height>16</height>
+            <background_color>
+              <color red="255" green="128" blue="0" alpha="60">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <horizontal_alignment>2</horizontal_alignment>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_Tab_Warning_16</name>
+            <text>Pump Run Time Over</text>
+            <x>18</x>
+            <y>129</y>
+            <width>136</width>
+            <height>16</height>
+            <background_color>
+              <color red="255" green="128" blue="0" alpha="60">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <horizontal_alignment>2</horizontal_alignment>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_Tab_Warning_17</name>
+            <text>Pump Overload</text>
+            <x>18</x>
+            <y>149</y>
+            <width>98</width>
+            <height>16</height>
+            <background_color>
+              <color red="255" green="128" blue="0" alpha="60">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <horizontal_alignment>2</horizontal_alignment>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_Tab_Warning_18</name>
+            <text>Pump record bungle</text>
+            <x>18</x>
+            <y>169</y>
+            <width>127</width>
+            <height>16</height>
+            <background_color>
+              <color red="255" green="128" blue="0" alpha="60">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <horizontal_alignment>2</horizontal_alignment>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_Tab_Warning_19</name>
+            <text>PCB record bungle</text>
+            <x>18</x>
+            <y>189</y>
+            <width>119</width>
+            <height>16</height>
+            <background_color>
+              <color red="255" green="128" blue="0" alpha="60">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <horizontal_alignment>2</horizontal_alignment>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_Tab_Warning_20</name>
+            <text>Low RTC Battery</text>
+            <x>18</x>
+            <y>209</y>
+            <width>107</width>
+            <height>16</height>
+            <background_color>
+              <color red="255" green="128" blue="0" alpha="60">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <horizontal_alignment>2</horizontal_alignment>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_Tab_Warning_21</name>
+            <text>Clock Data is Lost</text>
+            <x>18</x>
+            <y>229</y>
+            <width>113</width>
+            <height>16</height>
+            <background_color>
+              <color red="255" green="128" blue="0" alpha="60">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <horizontal_alignment>2</horizontal_alignment>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_Tab_Warning_22</name>
+            <text> Recover by AUX Data</text>
+            <x>18</x>
+            <y>249</y>
+            <width>141</width>
+            <height>16</height>
+            <background_color>
+              <color red="255" green="128" blue="0" alpha="60">
+              </color>
+            </background_color>
+            <transparent>false</transparent>
+            <horizontal_alignment>2</horizontal_alignment>
+            <auto_size>true</auto_size>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED</name>
+            <pv_name>${unit}:${node}:${Add}:WARNING:BAD-PUMP-TX</pv_name>
+            <x>180</x>
+            <width>15</width>
+            <height>15</height>
+            <on_color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_3</name>
+            <pv_name>${unit}:${node}:${Add}:WARNING:SecondDamageLmt</pv_name>
+            <x>180</x>
+            <y>20</y>
+            <width>15</width>
+            <height>15</height>
+            <on_color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_4</name>
+            <pv_name>${unit}:${node}:${Add}:WARNING:FirstDamageLmt</pv_name>
+            <x>180</x>
+            <y>40</y>
+            <width>15</width>
+            <height>15</height>
+            <on_color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_10</name>
+            <pv_name>${unit}:${node}:${Add}:WARNING:Imbalance-X_H</pv_name>
+            <x>180</x>
+            <y>60</y>
+            <width>15</width>
+            <height>15</height>
+            <on_color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_12</name>
+            <pv_name>${unit}:${node}:${Add}:WARNING:Imbalance-X_B</pv_name>
+            <x>180</x>
+            <y>80</y>
+            <width>15</width>
+            <height>15</height>
+            <on_color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_W_5</name>
+            <pv_name>${unit}:${node}:${Add}:WARNING:Imbalance-Z</pv_name>
+            <x>180</x>
+            <y>100</y>
+            <width>15</width>
+            <height>15</height>
+            <on_color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_W_6</name>
+            <pv_name>${unit}:${node}:${Add}:WARNING:PumpRunTimeOver</pv_name>
+            <x>180</x>
+            <y>120</y>
+            <width>15</width>
+            <height>15</height>
+            <on_color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_W_7</name>
+            <pv_name>${unit}:${node}:${Add}:WARNING:PumpOverload</pv_name>
+            <x>180</x>
+            <y>140</y>
+            <width>15</width>
+            <height>15</height>
+            <on_color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_W_8</name>
+            <pv_name>${unit}:${node}:${Add}:WARNING:PumpRecordBungle</pv_name>
+            <x>180</x>
+            <y>160</y>
+            <width>15</width>
+            <height>15</height>
+            <on_color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_W_9</name>
+            <pv_name>${unit}:${node}:${Add}:WARNING:PCBRecordBungle</pv_name>
+            <x>180</x>
+            <y>180</y>
+            <width>15</width>
+            <height>15</height>
+            <on_color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_W_11</name>
+            <pv_name>${unit}:${node}:${Add}:WARNING:ClockDataLost</pv_name>
+            <x>180</x>
+            <y>220</y>
+            <width>15</width>
+            <height>15</height>
+            <on_color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_W_12</name>
+            <pv_name>${unit}:${node}:${Add}:WARNING:LowRTCBattery</pv_name>
+            <x>180</x>
+            <y>200</y>
+            <width>15</width>
+            <height>15</height>
+            <on_color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+          </widget>
+          <widget type="led" version="2.0.0">
+            <name>LED_W_14</name>
+            <pv_name>${unit}:${node}:${Add}:WARNING:RecoverbyAUXData</pv_name>
+            <x>180</x>
+            <y>240</y>
+            <width>15</width>
+            <height>15</height>
+            <on_color>
+              <color name="MAJOR" red="255" green="0" blue="0">
+              </color>
+            </on_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>Errors</name>
+        <children>
+          <widget type="label" version="2.0.0">
+            <name>Label_3</name>
+            <text>Error 1 Code</text>
+            <x>38</x>
+            <y>10</y>
+            <background_color>
+              <color name="Grid" red="128" green="128" blue="128">
+              </color>
+            </background_color>
+          </widget>
+          <widget type="label" version="2.0.0">
+            <name>Label_6</name>
+            <text>Error 2 Code</text>
+            <x>38</x>
+            <y>27</y>
+            <background_color>
+              <color name="Grid" red="128" green="128" blue="128">
+              </color>
+            </background_color>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text Update_4</name>
+            <pv_name>${unit}:${node}:${Add}:Error2</pv_name>
+            <x>138</x>
+            <y>29</y>
+          </widget>
+          <widget type="textupdate" version="2.0.0">
+            <name>Text ReadModFonctWithWarning_4</name>
+            <pv_name>${unit}:${node}:${Add}:NErrors</pv_name>
+            <x>138</x>
+            <y>2</y>
+          </widget>
+        </children>
+      </tab>
+    </tabs>
+    <x>10</x>
+    <y>153</y>
+    <width>310</width>
+    <height>310</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text ReadModFonctWithWarning_5</name>
+    <pv_name>${unit}:${node}:${Add}:NErrors</pv_name>
+    <x>225</x>
+    <y>109</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>N Errors</text>
+    <x>159</x>
+    <y>110</y>
+    <width>53</width>
+    <height>16</height>
+    <background_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+</display>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>Esther Vacuum</name>
+  <name>Esther Vacuum Monitor</name>
   <macros>
     <unit>Esther</unit>
   </macros>
@@ -14,7 +14,7 @@
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
-    <text>ESTHER Vacuum Monitor / Control</text>
+    <text>ESTHER Vacuum Monitor</text>
     <x use_class="true">0</x>
     <y use_class="true">0</y>
     <width>550</width>
@@ -37,7 +37,7 @@
       <node>Vacuum</node>
       <unit>Esther</unit>
     </macros>
-    <file>EdwardsADC.bob</file>
+    <file>EdwardsADCMonitor.bob</file>
     <x>16</x>
     <y>26</y>
     <width>350</width>
@@ -50,7 +50,7 @@
       <name>STDT</name>
       <node>Vacuum</node>
     </macros>
-    <file>EdwardsADC.bob</file>
+    <file>EdwardsADCMonitor.bob</file>
     <x>416</x>
     <y>22</y>
     <width>350</width>
@@ -62,7 +62,7 @@
       <Add>1</Add>
       <name>CTST</name>
     </macros>
-    <file>Mst12-arm.bob</file>
+    <file>Mst12-armMonitor.bob</file>
     <y>591</y>
     <width>380</width>
     <height>190</height>
@@ -74,7 +74,7 @@
       <Add>2</Add>
       <name>STDT</name>
     </macros>
-    <file>Mst12-arm.bob</file>
+    <file>Mst12-armMonitor.bob</file>
     <x>400</x>
     <y>588</y>
     <width>380</width>
@@ -89,7 +89,7 @@
       <name>STDT</name>
       <node>HVA</node>
     </macros>
-    <file>EstherHVAGateValve.bob</file>
+    <file>EstherHVAGateValveMonitor.bob</file>
     <x>416</x>
     <y>778</y>
     <width>365</width>
@@ -103,7 +103,7 @@
       <name>STDT</name>
       <node>EDW</node>
     </macros>
-    <file>EdwardsCUTabs.bob</file>
+    <file>EdwardsCuMonitor.bob</file>
     <x>416</x>
     <y>118</y>
     <width>360</width>
@@ -117,7 +117,7 @@
       <name>CTST</name>
       <node>EDW</node>
     </macros>
-    <file>EdwardsCUTabs.bob</file>
+    <file>EdwardsCuMonitor.bob</file>
     <x>5</x>
     <y>121</y>
     <width>366</width>
@@ -131,7 +131,7 @@
       <name>CTST</name>
       <node>HVA</node>
     </macros>
-    <file>EstherHVAGateValve.bob</file>
+    <file>EstherHVAGateValveMonitor.bob</file>
     <x>5</x>
     <y>781</y>
     <width>371</width>
@@ -144,7 +144,7 @@
       <eda>CT</eda>
       <mfc>MFC-CT</mfc>
     </macros>
-    <file>EL-FLOW-MFC-CT.bob</file>
+    <file>EL-FLOW-MFC-CTMonitor.bob</file>
     <x>776</x>
     <y>80</y>
     <width>480</width>
@@ -196,13 +196,21 @@
     <x>1020</x>
     <y>390</y>
   </widget>
-  <widget type="bool_button" version="2.0.0">
+  <widget type="led" version="2.0.0">
     <name>BB DryPump-CT</name>
     <pv_name>Esther:EDW:DryPump-CT</pv_name>
+    <bit>0</bit>
     <x>840</x>
     <y>40</y>
-    <show_led>false</show_led>
-    <show_confirm_dialog>2</show_confirm_dialog>
+    <width>100</width>
+    <height>30</height>
+    <off_label>Off</off_label>
+    <on_label>On</on_label>
+    <on_color>
+      <color red="60" green="255" blue="60">
+      </color>
+    </on_color>
+    <square>true</square>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label  DryPump-CT</name>
@@ -219,13 +227,21 @@
     </background_color>
     <transparent>false</transparent>
   </widget>
-  <widget type="bool_button" version="2.0.0">
+  <widget type="led" version="2.0.0">
     <name>BB DryPump-ST</name>
     <pv_name>Esther:EDW:DryPump-ST</pv_name>
+    <bit>0</bit>
     <x>960</x>
     <y>40</y>
-    <show_led>false</show_led>
-    <show_confirm_dialog>1</show_confirm_dialog>
+    <width>100</width>
+    <height>30</height>
+    <off_label>Off</off_label>
+    <on_label>On</on_label>
+    <on_color>
+      <color red="60" green="255" blue="60">
+      </color>
+    </on_color>
+    <square>true</square>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label  DryPump-ST</name>
@@ -242,13 +258,21 @@
     </background_color>
     <transparent>false</transparent>
   </widget>
-  <widget type="bool_button" version="2.0.0">
+  <widget type="led" version="2.0.0">
     <name>BB DryPump-DT</name>
     <pv_name>Esther:EDW:DryPump-DT</pv_name>
+    <bit>0</bit>
     <x>1080</x>
     <y>40</y>
-    <show_led>false</show_led>
-    <show_confirm_dialog>2</show_confirm_dialog>
+    <width>100</width>
+    <height>30</height>
+    <off_label>Off</off_label>
+    <on_label>On</on_label>
+    <on_color>
+      <color red="60" green="255" blue="60">
+      </color>
+    </on_color>
+    <square>true</square>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label  DryPump-DT</name>
@@ -277,6 +301,7 @@
       </font>
     </font>
     <format>2</format>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_DT-PT-Static_2</name>
