@@ -6,11 +6,11 @@
     <unit>Esther</unit>
   </macros>
   <width>307</width>
-  <height>158</height>
+  <height>125</height>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_1</name>
-    <x>269</x>
-    <y>74</y>
+    <x>261</x>
+    <y>41</y>
     <width>20</width>
     <height>60</height>
   </widget>
@@ -35,38 +35,37 @@
   <widget type="led" version="2.0.0">
     <name>LED</name>
     <pv_name>${unit}:${node}:${Add}:LimitIn</pv_name>
-    <x>269</x>
-    <y>138</y>
+    <x>261</x>
+    <y>105</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
     <pv_name>${unit}:${node}:${Add}:Status</pv_name>
-    <x>105</x>
-    <y>114</y>
+    <x>97</x>
+    <y>81</y>
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
-    <x>8</x>
-    <y>93</y>
+    <y>60</y>
     <width>264</width>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_1</name>
     <pv_name>${unit}:${node}:${Add}:LimitOut</pv_name>
-    <x>23</x>
-    <y>134</y>
+    <x>15</x>
+    <y>101</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_3</name>
     <pv_name>${unit}:${node}:${Add}:Char</pv_name>
-    <x>105</x>
-    <y>64</y>
+    <x>97</x>
+    <y>31</y>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_3</name>
     <text>LIMITS</text>
-    <x>121</x>
-    <y>138</y>
+    <x>113</x>
+    <y>105</y>
     <width>46</width>
     <height>16</height>
     <auto_size>true</auto_size>
@@ -74,8 +73,8 @@
   <widget type="label" version="2.0.0">
     <name>Label_4</name>
     <text>IN</text>
-    <x>245</x>
-    <y>138</y>
+    <x>237</x>
+    <y>105</y>
     <width>14</width>
     <height>16</height>
     <auto_size>true</auto_size>
@@ -83,8 +82,8 @@
   <widget type="label" version="2.0.0">
     <name>Label_5</name>
     <text>OUT</text>
-    <x>75</x>
-    <y>134</y>
+    <x>67</x>
+    <y>101</y>
     <width>30</width>
     <height>16</height>
     <auto_size>true</auto_size>
