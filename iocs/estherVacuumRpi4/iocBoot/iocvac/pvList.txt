@@ -1,6 +1,5 @@
 Esther:ARM:1:Char
 Esther:ARM:2:Char
-Esther:HVA:3:Char
 Esther:EDW:01:PumpSerialNo
 Esther:EDW:01:ReadCounters
 Esther:EDW:02:PumpSerialNo
@@ -34,8 +33,6 @@ Esther:ARM:1:SwitchInCmd
 Esther:ARM:1:SwitchOutCmd
 Esther:ARM:2:SwitchInCmd
 Esther:ARM:2:SwitchOutCmd
-Esther:HVA:3:SwitchInCmd
-Esther:HVA:3:SwitchOutCmd
 Esther:EDW:01:Disable
 Esther:EDW:02:Disable
 Esther:Vacuum:Disable
@@ -54,6 +51,10 @@ Esther:EDA:DT-Valve_LS1_ON
 Esther:EDA:DT-Valve_LS1_OFF
 Esther:EDA:DT-Valve_LS2_ON
 Esther:EDA:DT-Valve_LS2_OFF
+Esther:HVA:CTST_LS_IN
+Esther:HVA:CTST_LS_OUT
+Esther:HVA:STDT_LS_IN
+Esther:HVA:STDT_LS_OUT
 Esther:ARM:1:SwitchIn
 Esther:ARM:1:SwitchOut
 Esther:ARM:1:LimitIn
@@ -62,10 +63,6 @@ Esther:ARM:2:SwitchIn
 Esther:ARM:2:SwitchOut
 Esther:ARM:2:LimitIn
 Esther:ARM:2:LimitOut
-Esther:HVA:3:SwitchIn
-Esther:HVA:3:SwitchOut
-Esther:HVA:3:LimitIn
-Esther:HVA:3:LimitOut
 Esther:EDW:01:WARNING:BAD-PUMP-TX
 Esther:EDW:01:WARNING:SecondDamageLmt
 Esther:EDW:01:WARNING:FirstDamageLmt
@@ -117,7 +114,6 @@ Esther:EDW:01:WARNING
 Esther:EDW:02:WARNING
 Esther:ARM:1:Status
 Esther:ARM:2:Status
-Esther:HVA:3:Status
 Esther:EDW:01:ReadModFonctWithWarning
 Esther:EDW:01:ReadStatusRMode
 Esther:EDW:01:ReadModFonct
@@ -126,7 +122,6 @@ Esther:Vacuum:CTST-GaugeVersion
 Esther:Vacuum:STDT-GaugeVersion
 Esther:Vacuum:Units
 Esther:ARM:ARM-generic
-Esther:HVA:generic
 Esther:EDW:generic
 Esther:Vacuum::generic
 Esther:Vacuum:TraceMessage
@@ -178,8 +173,6 @@ Esther:ARM:1:Millis
 Esther:ARM:1:Holding
 Esther:ARM:2:Millis
 Esther:ARM:2:Holding
-Esther:HVA:3:Millis
-Esther:HVA:3:Holding
 Esther:EDW:01:MTemp
 Esther:EDW:01:ReadMeasValue
 Esther:EDW:02:MTemp

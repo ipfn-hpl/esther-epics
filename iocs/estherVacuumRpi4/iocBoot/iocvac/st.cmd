@@ -155,5 +155,5 @@ makeAutosaveFiles()
 create_monitor_set("$(IOC).req", 30, "P=Esther:vacuum")
 
 ## Start any sequence programs
-# seq sncEstherVacuum, "unit=Esther"
+seq sncEstherVacuum, "P=Esther"
 

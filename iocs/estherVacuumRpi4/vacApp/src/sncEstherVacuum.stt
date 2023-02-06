@@ -74,22 +74,22 @@ monitor Countup;
 short CountupDisa;
 assign CountupDisa to "{P}:Vacuum:COUNTUP.DISA";
 
-float ADC1_Pressure;
-assign ADC1_Pressure "{P}:Vacuum:01:ReadPressure";
-monitor ADC1_Pressure;
+float CTST_Pressure;
+assign CTST_Pressure "{P}:Vacuum:CTST-Pressure";
+monitor CTST_Pressure;
+float CTST_PressureHigh;
+assign CTST_PressureHigh "{P}:Vacuum:CTST-Pressure.HIGH";
+float CTST_PressureLow;
+assign CTST_PressureLow "{P}:Vacuum:CTST-Pressure.LOW";
 
-float ADC1_PressureHigh;
-assign ADC1_PressureHigh "{P}:Vacuum:01:ReadPressure.HIGH";
-float ADC1_PressureLow;
-assign ADC1_PressureLow "{P}:Vacuum:01:ReadPressure.LOW";
+float STDT_Pressure;
+assign STDT_Pressure "{P}:Vacuum:STDT-Pressure";
+monitor STDT_Pressure;
+float STDT_PressureHigh;
+assign STDT_PressureHigh "{P}:Vacuum:STDT-Pressure.HIGH";
+float STDT_PressureLow;
+assign STDT_PressureLow "{P}:Vacuum:STDT-Pressure.LOW";
 
-float ADC2_Pressure;
-assign ADC2_Pressure "{P}:Vacuum:02:ReadPressure";
-monitor ADC2_Pressure;
-float ADC2_PressureHigh;
-assign ADC2_PressureHigh "{P}:Vacuum:02:ReadPressure.HIGH";
-float ADC2_PressureLow;
-assign ADC2_PressureLow "{P}:Vacuum:02:ReadPressure.LOW";
 float ADC_PressureLowThres;
 assign ADC_PressureLowThres "{P}:Vacuum:PressureLowThres";
 monitor ADC_PressureLowThres;
@@ -97,43 +97,14 @@ float ADC_PressureHighThres;
 assign ADC_PressureHighThres "{P}:Vacuum:PressureHighThres";
 monitor ADC_PressureHighThres;
 
-float CTST_Pressure;
-assign CTST_Pressure "{P}:Vacuum:CTST-Pressure";
-monitor CTST_Pressure;
 
-float STDT_Pressure;
-assign STDT_Pressure "{P}:Vacuum:STDT-Pressure";
-monitor STDT_Pressure;
+short ARM_CTST_Status;
+assign ARM_CTST_Status to "{P}:ARM:1:Status";
+monitor ARM_CTST_Status;
 
-/*
-short GV_CTST_Lim_In;
-assign GV_CTST_Lim_In to "{P}:HVA:4:LimitIn";
-monitor GV_CTST_Lim_In;
-short GV_CTST_Lim_Out;
-assign GV_CTST_Lim_Out to "{P}:HVA:4:LimitOut";
-monitor GV_CTST_Lim_Out;
-
-short GV_STDT_In;
-assign GV_STDT_In "{P}:HVA:3:SwitchIn";
-short GV_STDT_Out;
-assign GV_STDT_Out "{P}:HVA:3:SwitchOut";
-
-short GV_STDT_Lim_In;
-assign GV_STDT_Lim_In to "{P}:HVA:3:LimitIn";
-monitor GV_STDT_Lim_In;
-
-short GV_STDT_Lim_Out;
-assign GV_STDT_Lim_Out to "{P}:HVA:3:LimitOut";
-monitor GV_STDT_Lim_Out;
-*/
-
-//short ARM_CTST_Status;
-//assign ARM_CTST_Status to "{P}:ARM:1:Status";
-//monitor ARM_CTST_Status;
-
-//short ARM_STDT_Status;
-//assign ARM_STDT_Status to "{P}:ARM:2:Status";
-//monitor ARM_STDT_Status;
+short ARM_STDT_Status;
+assign ARM_STDT_Status to "{P}:ARM:2:Status";
+monitor ARM_STDT_Status;
 
 /* Trace message record limited to 40 characters */
 string msg;
@@ -147,6 +118,20 @@ short HVA_CTST_Valve;
 assign HVA_CTST_Valve to "{P}:HVA:CTST-Valve";
 short HVA_STDT_Valve;
 assign HVA_STDT_Valve to "{P}:HVA:STDT-Valve";
+short HVA_CTST_Lim_In;
+assign HVA_CTST_Lim_In to "{P}:HVA:CTST_LS_IN";
+monitor HVA_CTST_Lim_In;
+short HVA_CTST_Lim_Out;
+assign HVA_CTST_Lim_Out to "{P}:HVA:CTST_LS_OUT";
+monitor HVA_CTST_Lim_Out;
+
+short HVA_STDT_Lim_In;
+assign HVA_STDT_Lim_In to "{P}:HVA:STDT_LS_IN";
+monitor HVA_STDT_Lim_In;
+short HVA_STDT_Lim_Out;
+assign HVA_STDT_Lim_Out to "{P}:HVA:STDT_LS_OUT";
+monitor HVA_STDT_Lim_Out;
+
 short EDW_Dry_Pump_CT;
 assign EDW_Dry_Pump_CT to "{P}:EDW:DryPump-CT";
 short EDW_Dry_Pump_ST;
@@ -183,14 +168,14 @@ ss VacuumSequence {
             pvPut(OPSTATE);
            // LAST_OPSTATE = POS_Stopped;
             //pvPut(LAST_OPSTATE);
-            GV_STDT_In= ON; // TODO repeat for CT-ST
-            pvPut(GV_STDT_In);
+            HVA_CTST_Valve= ON; // TODO repeat for CT-ST
+            pvPut(HVA_CTST_Valve);
             CountupDisa = ON;
             pvPut(CountupDisa);
-            ADC1_PressureHigh = 1.1e3;
-            ADC2_PressureHigh = 1.1e3;
-            pvPut(ADC1_PressureHigh);
-            pvPut(ADC2_PressureHigh);
+            CTST_PressureHigh = 1.1e3;
+            STDT_PressureHigh = 1.1e3;
+            pvPut(CTST_PressureHigh);
+            pvPut(STDT_PressureHigh);
         }
         when (delay(10) && (StartReq == START) ) { //  && (IsttokupsBatteryON != ON)) 
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
@@ -235,10 +220,10 @@ ss VacuumSequence {
         entry{
             OPSTATE = POS_LowVacuum;
             pvPut(OPSTATE);
-            ADC1_PressureHigh = ADC_PressureHighThres;
-            ADC2_PressureHigh = ADC_PressureHighThres;
-            pvPut(ADC1_PressureHigh);
-            pvPut(ADC2_PressureHigh);
+            CTST_PressureHigh = ADC_PressureHighThres;
+            STDT_PressureHigh = ADC_PressureHighThres;
+            pvPut(CTST_PressureHigh);
+            pvPut(STDT_PressureHigh);
         }
         when ((StopReq == STOP_REQ) ) { //  && (IsttokupsBatteryON != ON)) {
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
@@ -255,10 +240,10 @@ ss VacuumSequence {
         entry{
             OPSTATE = POS_Stopping;
             pvPut(OPSTATE);
-            //ADC1_PressureHigh = ADC_PressureHighThres;
-            //ADC2_PressureHigh = ADC_PressureHighThres;
-            //pvPut(ADC1_PressureHigh);
-            //pvPut(ADC2_PressureHigh);
+            //CTST_PressureHigh = ADC_PressureHighThres;
+            //STDT_PressureHigh = ADC_PressureHighThres;
+            //pvPut(CTST_PressureHigh);
+            //pvPut(STDT_PressureHigh);
         }
         when ((StopReq == STOP_REQ) ) { //  && (IsttokupsBatteryON != ON)) {
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {

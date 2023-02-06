@@ -4,8 +4,10 @@ configure/
 db/
 dbd/
 include/
-vacApp/
+vacApp/*
 lib/
 iocBoot/iocvac/save/
 !vacApp/Db
+!vacApp/src
+
 
