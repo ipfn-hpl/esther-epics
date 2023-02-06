@@ -89,6 +89,33 @@ record(bo, "$(P)$(R)STOP-REQ") {
     field(ZNAM, "Push to Stop")
     field(ONAM, "STOP")
 }
+record(ao, "$(P)$(R)Hidraulic-Pressure") {
+    field(DESC, "Hidraulic-Pressure")
+    field(HOPR, "250.0")
+    field(LOPR, "0.0")
+    field(VAL, "0.0")
+}
+record(bo, "$(P)$(R)Water-Pump") {
+    field(DESC, "Water Colling Pump")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    #field(VAL, "0")
+    info(autosaveFields, "VAL")
+}
+record(bo, "$(P)$(R)Turbo-Fans") {
+    field(DESC, "Maglev Turbos Fans")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    #field(VAL, "0")
+    info(autosaveFields, "VAL")
+}
+record(bo, "$(P)$(R)Auto-Mode") {
+    info(autosaveFields, "VAL")
+    field(DESC, "Pulse Sequence Manual/Auto")
+    field(ZNAM, "Manual")
+    field(ONAM, "Auto")
+    info(autosaveFields, "VAL")
+}
 record(calc, "$(P)$(R)COUNTUP") {
     field(DESC, "Counter Increment")
     field(INPA,"$(P)$(R)COUNTUP")

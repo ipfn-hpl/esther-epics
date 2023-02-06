@@ -1,8 +1,6 @@
-/**
-/**  vim: set filetype=c :
+/*
+ * vim: syntax=cpp ts=4 sw=4 sts=4 sr et
  * Use :SyntasticToggleMode
- *
- * vim: sta:et:sw=4:ts=4:sts=4 :
  *
  * Project       :  ESTHER Vacuum slow Control
  * Docs: https://www-csr.bessy.de/control/SoftDist/sequencer/
@@ -10,7 +8,6 @@
  * Description   : VAcuum Sequence State Machine
  *
  * Author(s)     : Bernardo Carvalho (IPFN-IST)
- *               : Paulo Fortuna Carvalho (IPFN-IST)
  * Copyright (c) : (IPFN-IST)
  *
  * Created 5-Sep-2022
@@ -50,101 +47,113 @@ short INVALID=3;
 
 /* PV variables  
 double v;
-assign v to "{unit}:aiExample";
+assign v to "{P}:aiExample";
 monitor v;
 */
 
 short OPSTATE;
-assign OPSTATE to "{unit}:Vacuum:OPSTATE";
+assign OPSTATE to "{P}:Vacuum:OPSTATE";
 monitor OPSTATE;
 
 short LAST_OPSTATE;
-assign LAST_OPSTATE to "{unit}:Vacuum:LAST-OPSTATE";
+assign LAST_OPSTATE to "{P}:Vacuum:LAST-OPSTATE";
 monitor LAST_OPSTATE;
 
 short StartReq;
-assign StartReq to "{unit}:Vacuum:START-REQ";
+assign StartReq to "{P}:Vacuum:START-REQ";
 monitor StartReq;
 
 short StopReq;
-assign StopReq to "{unit}:Vacuum:STOP-REQ";
+assign StopReq to "{P}:Vacuum:STOP-REQ";
 monitor StopReq;
 
 short Countup;
-assign Countup to "{unit}:Vacuum:COUNTUP";
+assign Countup to "{P}:Vacuum:COUNTUP";
 monitor Countup;
 
 short CountupDisa;
-assign CountupDisa to "{unit}:Vacuum:COUNTUP.DISA";
+assign CountupDisa to "{P}:Vacuum:COUNTUP.DISA";
 
 float ADC1_Pressure;
-assign ADC1_Pressure "{unit}:Vacuum:01:ReadPressure";
+assign ADC1_Pressure "{P}:Vacuum:01:ReadPressure";
 monitor ADC1_Pressure;
 
 float ADC1_PressureHigh;
-assign ADC1_PressureHigh "{unit}:Vacuum:01:ReadPressure.HIGH";
+assign ADC1_PressureHigh "{P}:Vacuum:01:ReadPressure.HIGH";
 float ADC1_PressureLow;
-assign ADC1_PressureLow "{unit}:Vacuum:01:ReadPressure.LOW";
+assign ADC1_PressureLow "{P}:Vacuum:01:ReadPressure.LOW";
 
 float ADC2_Pressure;
-assign ADC2_Pressure "{unit}:Vacuum:02:ReadPressure";
+assign ADC2_Pressure "{P}:Vacuum:02:ReadPressure";
 monitor ADC2_Pressure;
 float ADC2_PressureHigh;
-assign ADC2_PressureHigh "{unit}:Vacuum:02:ReadPressure.HIGH";
+assign ADC2_PressureHigh "{P}:Vacuum:02:ReadPressure.HIGH";
 float ADC2_PressureLow;
-assign ADC2_PressureLow "{unit}:Vacuum:02:ReadPressure.LOW";
+assign ADC2_PressureLow "{P}:Vacuum:02:ReadPressure.LOW";
 float ADC_PressureLowThres;
-assign ADC_PressureLowThres "{unit}:Vacuum:PressureLowThres";
+assign ADC_PressureLowThres "{P}:Vacuum:PressureLowThres";
 monitor ADC_PressureLowThres;
 float ADC_PressureHighThres;
-assign ADC_PressureHighThres "{unit}:Vacuum:PressureHighThres";
+assign ADC_PressureHighThres "{P}:Vacuum:PressureHighThres";
 monitor ADC_PressureHighThres;
 
-/* /dev/gatevalveCTST 
-short gatevalveCTST_In;
-assign gatevalveCTST_In "{unit}:HVA:3:SwitchIn";
-short gatevalveCTST_Out;
-assign gatevalveCTST_Out "{unit}:HVA:3:SwitchOut";
-short gatevalveCTST_LimitIn;
-assign gatevalveCTST_LimitIn "{unit}:HVA:3:LimitIn";
-monitor gatevalveCTST_LimitIn;
-short gatevalveCTST_LimitOut;
-assign gatevalveCTST_LimitOut "{unit}:HVA:3:LimitOut";
-monitor gatevalveCTST_LimitOut;
-*/
+float CTST_Pressure;
+assign CTST_Pressure "{P}:Vacuum:CTST-Pressure";
+monitor CTST_Pressure;
+
+float STDT_Pressure;
+assign STDT_Pressure "{P}:Vacuum:STDT-Pressure";
+monitor STDT_Pressure;
+
 /*
 short GV_CTST_Lim_In;
-assign GV_CTST_Lim_In to "{unit}:HVA:4:LimitIn";
+assign GV_CTST_Lim_In to "{P}:HVA:4:LimitIn";
 monitor GV_CTST_Lim_In;
 short GV_CTST_Lim_Out;
-assign GV_CTST_Lim_Out to "{unit}:HVA:4:LimitOut";
+assign GV_CTST_Lim_Out to "{P}:HVA:4:LimitOut";
 monitor GV_CTST_Lim_Out;
-*/
 
 short GV_STDT_In;
-assign GV_STDT_In "{unit}:HVA:3:SwitchIn";
+assign GV_STDT_In "{P}:HVA:3:SwitchIn";
 short GV_STDT_Out;
-assign GV_STDT_Out "{unit}:HVA:3:SwitchOut";
+assign GV_STDT_Out "{P}:HVA:3:SwitchOut";
 
 short GV_STDT_Lim_In;
-assign GV_STDT_Lim_In to "{unit}:HVA:3:LimitIn";
+assign GV_STDT_Lim_In to "{P}:HVA:3:LimitIn";
 monitor GV_STDT_Lim_In;
 
 short GV_STDT_Lim_Out;
-assign GV_STDT_Lim_Out to "{unit}:HVA:3:LimitOut";
+assign GV_STDT_Lim_Out to "{P}:HVA:3:LimitOut";
 monitor GV_STDT_Lim_Out;
+*/
 
 //short ARM_CTST_Status;
-//assign ARM_CTST_Status to "{unit}:ARM:1:Status";
+//assign ARM_CTST_Status to "{P}:ARM:1:Status";
 //monitor ARM_CTST_Status;
 
 //short ARM_STDT_Status;
-//assign ARM_STDT_Status to "{unit}:ARM:2:Status";
+//assign ARM_STDT_Status to "{P}:ARM:2:Status";
 //monitor ARM_STDT_Status;
 
 /* Trace message record limited to 40 characters */
 string msg;
-assign msg to "{unit}:Vacuum:TraceMessage.VAL";
+assign msg to "{P}:Vacuum:TraceMessage.VAL";
+
+short EDA_CT_Valve;
+assign EDA_CT_Valve to "{P}:EDA:CT-Valve";
+short EDA_DT_Valve;
+assign EDA_DT_Valve to "{P}:EDA:DT-Valve";
+short HVA_CTST_Valve;
+assign HVA_CTST_Valve to "{P}:HVA:CTST-Valve";
+short HVA_STDT_Valve;
+assign HVA_STDT_Valve to "{P}:HVA:STDT-Valve";
+short EDW_Dry_Pump_CT;
+assign EDW_Dry_Pump_CT to "{P}:EDW:DryPump-CT";
+short EDW_Dry_Pump_ST;
+assign EDW_Dry_Pump_ST to "{P}:EDW:DryPump-ST";
+short EDW_Dry_Pump_DT;
+assign EDW_Dry_Pump_DT to "{P}:EDW:DryPump-DT";
+//monitor GV_STDT_Lim_In;
 
 /* Main Vacuum State Set */
 ss VacuumSequence {
