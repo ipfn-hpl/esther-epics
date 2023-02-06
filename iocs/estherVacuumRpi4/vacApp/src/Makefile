@@ -51,6 +51,8 @@ vac_DBD += stream.dbd
 vac_DBD += s7nodave.dbd
 #vac_DBD += modbusSupport.dbd
 vac_DBD += asSupport.dbd
+vac_DBD += qsrv.dbd
+vac_DBD += PVAServerRegister.dbd
 
 vac_DBD += initTrace.dbd
 
@@ -71,6 +73,9 @@ vac_LIBS += stream
 vac_LIBS += s7nodave
 #vac_LIBS += modbus
 vac_LIBS += autosave
+
+# include QSRV
+vac_LIBS += qsrv
 
 
 # To build SNL programs, SNCSEQ must be defined
@@ -95,6 +100,7 @@ endif
 
 # Finally link IOC to the EPICS Base libraries
 vac_LIBS += $(EPICS_BASE_IOC_LIBS)
+vac_LIBS += $(EPICS_BASE_PVA_CORE_LIBS)
 
 include $(TOP)/configure/RULES
 #----------------------------------------
