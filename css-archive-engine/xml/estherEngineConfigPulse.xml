@@ -263,7 +263,7 @@
          <period>30.0</period><scan/>
       </channel>
       <channel>
-         <name>Esther:Vacuum:DT-PT-Static</name>
+         <name>Esther:Vacuum:PT-DT-Static</name>
          <period>30.0</period><scan/>
       </channel>
       <channel>
