@@ -163,8 +163,8 @@
     <height>298</height>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_DT-PT-Static</name>
-    <text>DT-PT-Static</text>
+    <name>Label_PT-DT-Static</name>
+    <text>PT-DT-Static</text>
     <x>1079</x>
     <y>387</y>
     <background_color>
@@ -174,8 +174,8 @@
     <transparent>false</transparent>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>TU_DT-PT-Static</name>
-    <pv_name>Esther:Vacuum:DT-PT-Static</pv_name>
+    <name>TU_PT-DT-Static</name>
+    <pv_name>Esther:Vacuum:PT-DT-Static</pv_name>
     <x>1040</x>
     <y>412</y>
     <width>190</width>
@@ -281,7 +281,7 @@
     <transparent>false</transparent>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>TU_DT-PT-Static_1</name>
+    <name>TU_PT-CT-Static</name>
     <pv_name>${unit}:Vacuum:PT-CT-Static</pv_name>
     <x>781</x>
     <y>410</y>
@@ -296,7 +296,7 @@
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_DT-PT-Static_2</name>
+    <name>Label_PT-DT-Static_2</name>
     <text>PT-CT-Static</text>
     <x>820</x>
     <y>387</y>

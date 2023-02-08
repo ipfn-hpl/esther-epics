@@ -62,9 +62,9 @@
   </annotations>
   <pvlist>
     <pv>
-      <display_name>Esther:Vacuum:DT-PT-Static</display_name>
+      <display_name>Esther:Vacuum:PT-DT-Static</display_name>
       <visible>true</visible>
-      <name>Esther:Vacuum:DT-PT-Static</name>
+      <name>Esther:Vacuum:PT-DT-Static</name>
       <axis>0</axis>
       <color>
         <red>255</red>

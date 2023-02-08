@@ -98,7 +98,7 @@ Esther:EDW:01:WARNING:FANOUT3
 Esther:EDW:02:WARNING:FANOUT1
 Esther:EDW:02:WARNING:FANOUT2
 Esther:EDW:02:WARNING:FANOUT3
-Esther:Vacuum:DT-PT-Static
+Esther:Vacuum:PT-DT-Static
 Esther:EDW:01:MSpeed
 Esther:EDW:02:MSpeed
 Esther:EDW:01:ReadSetpoint
