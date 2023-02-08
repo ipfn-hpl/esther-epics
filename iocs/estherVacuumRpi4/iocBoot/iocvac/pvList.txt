@@ -39,6 +39,9 @@ Esther:Vacuum:Disable
 Esther:Vacuum:01:GaugeOn
 Esther:Vacuum:START-REQ
 Esther:Vacuum:STOP-REQ
+Esther:Vacuum:Water-Pump
+Esther:Vacuum:Turbo-Fans
+Esther:Vacuum:Auto-Mode
 Esther:VacuumSR_heartbeat
 Esther:VacuumSR_i_am_alive
 Esther:VacuumSR_deadIfZero
@@ -110,6 +113,7 @@ Esther:EDW:01:SetSpeedSetpoint
 Esther:EDW:02:SetSpeedSetpoint
 Esther:Vacuum:PressureLowThres
 Esther:Vacuum:PressureHighThres
+Esther:Vacuum:Hidraulic-Pressure
 Esther:EDW:01:WARNING
 Esther:EDW:02:WARNING
 Esther:ARM:1:Status
@@ -159,6 +163,7 @@ Esther:Vacuum:02:GaugeOn
 Esther:Vacuum:setUnits
 Esther:Vacuum:OPSTATE
 Esther:Vacuum:LAST-OPSTATE
+Esther:Vacuum:Idle-State
 Esther:VacuumSR_rebootStatus
 Esther:VacuumSR_status
 Esther:VacuumSR_0_Status

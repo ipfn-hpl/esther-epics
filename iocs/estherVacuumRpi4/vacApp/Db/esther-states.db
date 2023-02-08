@@ -53,18 +53,48 @@ record(mbbo, "$(P)$(R)LAST-OPSTATE") {
     field(SXVL, "6")
     field(SVVL, "7")
     field(EIVL, "8")
-    field(ZRST, "Idle")
-    field(ONST, "Stopped")
-    field(TWST, "Starting")
-    field(THST, "LowVacuum")
-    field(FRST, "StartMaglev")
-    field(FVST, "StopMaglev")
-    field(SXST, "HighVAcuum")
-    field(SVST, "Emergency")
-    field(EIST, "UPSEmergency")
+    field(NIVL, "9")
+    field(ZRST, "Stopped")
+    field(ONST, "Idle")
+    field(TWST, "ManualOperation")
+    field(THST, "StartingLowVacuum")
+    field(FRST, "LowVacuum")
+    field(FVST, "StoppingLowVacuum")
+    field(SXST, "StartingHighVacuum")
+    field(SVST, "HighVacuum")
+    field(EIST, "StoppingHighVacuum")
+    field(NIST, "Emergency")
+#    field(EIST, "UPSEmergency")
     info(autosaveFields, "VAL")
 }
 
+record(mbbo, "$(P)$(R)Idle-State") {
+    field(DESC, "Multiple Idle Sequence Sub-State")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(TWVL, "2")
+    field(THVL, "3")
+    field(FRVL, "4")
+    field(FVVL, "5")
+    field(SXVL, "6")
+    field(SVVL, "7")
+    field(EIVL, "8")
+    field(NIVL, "9")
+    field(ZRST, "Inactive")
+    field(ONST, "CheckManual")
+    field(TWST, "OpenArms")
+    field(THST, "OpenValves")
+    field(FRST, "LowVacuum")
+    field(FVST, "StoppingLowVacuum")
+    field(SXST, "StartingHighVacuum")
+    field(SVST, "HighVacuum")
+    field(EIST, "StoppingHighVacuum")
+    field(NIST, "End")
+    field(FLNK, "$(P)$(R)OPCALCSTATE")
+    field(VAL, "0")
+    #info(autosaveFields, "VAL")
+   # field(PINI, "YES")
+}
 # record for bit leds
 record(calc, "$(P)$(R)OPCALCSTATE") {
     field(DESC, "Pulse Calculated State")
@@ -93,6 +123,8 @@ record(ao, "$(P)$(R)Hidraulic-Pressure") {
     field(DESC, "Hidraulic-Pressure")
     field(HOPR, "250.0")
     field(LOPR, "0.0")
+    field(LOW, "50.0")
+    field(LOLO, "10.0")
     field(VAL, "0.0")
 }
 record(bo, "$(P)$(R)Water-Pump") {
@@ -102,9 +134,11 @@ record(bo, "$(P)$(R)Water-Pump") {
     #field(VAL, "0")
     info(autosaveFields, "VAL")
 }
+# TODO change this to S7
 record(bo, "$(P)$(R)Turbo-Fans") {
     field(DESC, "Maglev Turbos Fans")
     field(ZNAM, "Off")
+    field(ZSV, "MINOR")
     field(ONAM, "On")
     #field(VAL, "0")
     info(autosaveFields, "VAL")
@@ -112,8 +146,8 @@ record(bo, "$(P)$(R)Turbo-Fans") {
 record(bo, "$(P)$(R)Auto-Mode") {
     info(autosaveFields, "VAL")
     field(DESC, "Pulse Sequence Manual/Auto")
-    field(ZNAM, "Manual")
-    field(ONAM, "Auto")
+    field(ZNAM, "Auto")
+    field(ONAM, "Manual")
     info(autosaveFields, "VAL")
 }
 record(calc, "$(P)$(R)COUNTUP") {

@@ -19,21 +19,33 @@
 program sncEstherVacuum ("output=logFile.txt")
 %{#include "errlog.h"}%
 %%#include <fcntl.h>    /* for exit() */
-%%#include <stdio.h>    /* for  */
-%%#include <stdlib.h>    /* for  */
+//%%#include <stdio.h>    /* for  */
+//%%#include <stdlib.h>    /* for  */
 %%#include <string.h>
 
-short POS_Idle = 0;
-short POS_Stopped =1;
-short POS_Starting=2;
-short POS_LowVacuum=3;
-short POS_WaitShot=4;
-short POS_Stopping=5;
-short POS_Emergency=7;
-short POS_UPSEmergency=8;
+short POS_Stopped = 0;
+short POS_Idle = 1;
+short POS_ManualOperation=2;
+short POS_StartingLowVacuum=3;
+short POS_LowVacuum=4;
+short POS_StoppingLowVacuum=5;
+short POS_StartingHighVacuum=6;
+short POS_HighVacuum=7;
+short POS_StoppingHighVacuum=8;
+short POS_Emergency=9;
+// short POS_UPSEmergency=8;
+
+short IdleState_Inactive = 0;
+short IdleState_CheckManual = 1;
+short IdleState_OpenArms = 2;
+short IdleState_OpenValves = 3;
+short IdleState_CheckValves = 4;
+short IdleState_End = 9;
 
 short OFF=0;
 short ON=1;
+short AUTO_ON=0;
+short AUTO_OFF=1;
 short STOP=0;
 short STOP_REQ=1;
 short START=1;
@@ -53,11 +65,14 @@ monitor v;
 
 short OPSTATE;
 assign OPSTATE to "{P}:Vacuum:OPSTATE";
-monitor OPSTATE;
+//monitor OPSTATE;
 
 short LAST_OPSTATE;
 assign LAST_OPSTATE to "{P}:Vacuum:LAST-OPSTATE";
 monitor LAST_OPSTATE;
+
+short IdleSubState;
+assign IdleSubState to "{P}:Vacuum:Idle-State";
 
 short StartReq;
 assign StartReq to "{P}:Vacuum:START-REQ";
@@ -71,8 +86,19 @@ short Countup;
 assign Countup to "{P}:Vacuum:COUNTUP";
 monitor Countup;
 
+short AutoMode;
+assign AutoMode to "{P}:Vacuum:Auto-Mode";
+monitor AutoMode;
+
 short CountupDisa;
 assign CountupDisa to "{P}:Vacuum:COUNTUP.DISA";
+
+short VacuumDisable;
+assign VacuumDisable to "{P}:Vacuum:Disable";
+short EdwScuCtStDisable;
+assign EdwScuCtStDisable to "{P}:EDW:01:Disable";
+short EdwScuStDtDisable;
+assign EdwScuStDtDisable to "{P}:EDW:02:Disable";
 
 float CTST_Pressure;
 assign CTST_Pressure "{P}:Vacuum:CTST-Pressure";
@@ -97,14 +123,28 @@ float ADC_PressureHighThres;
 assign ADC_PressureHighThres "{P}:Vacuum:PressureHighThres";
 monitor ADC_PressureHighThres;
 
+short ARM_CTST_OutCmd;
+assign ARM_CTST_OutCmd to "{P}:ARM:1:SwitchOutCmd";
 
 short ARM_CTST_Status;
 assign ARM_CTST_Status to "{P}:ARM:1:Status";
 monitor ARM_CTST_Status;
 
+short ARM_STDT_OutCmd;
+assign ARM_STDT_OutCmd to "{P}:ARM:2:SwitchOutCmd";
+
 short ARM_STDT_Status;
 assign ARM_STDT_Status to "{P}:ARM:2:Status";
 monitor ARM_STDT_Status;
+
+short TurboFans;
+assign TurboFans to "{P}:Vacuum:Turbo-Fans";
+monitor TurboFans;
+
+short HidraulicPressure;
+assign HidraulicPressure to  "{P}:Vacuum:Hidraulic-Pressure";
+monitor HidraulicPressure;
+
 
 /* Trace message record limited to 40 characters */
 string msg;
@@ -145,8 +185,9 @@ ss VacuumSequence {
     state init {
         when (delay(5)) {
             printf("sncEsther: Startup delay over\n");
-        } state Idle
+        } state Stopped
     }
+    /*
     state Idle {
         entry{
             OPSTATE = POS_Idle;
@@ -159,61 +200,111 @@ ss VacuumSequence {
                 errlogSevPrintf(NO_ALARM, "%s\n",msg);
                 LAST_OPSTATE = POS_Idle;
                 pvPut(LAST_OPSTATE);
-                /* Pulse state change to Stopped*/
         } state Stopped
     }
+    */
     state Stopped {
         entry{
             OPSTATE = POS_Stopped;
             pvPut(OPSTATE);
-           // LAST_OPSTATE = POS_Stopped;
-            //pvPut(LAST_OPSTATE);
-            HVA_CTST_Valve= ON; // TODO repeat for CT-ST
-            pvPut(HVA_CTST_Valve);
+            LAST_OPSTATE = POS_Stopped;
+            pvPut(LAST_OPSTATE);
             CountupDisa = ON;
             pvPut(CountupDisa);
+            VacuumDisable = ON;
+            pvPut(VacuumDisable);
+            EdwScuCtStDisable = ON;
+            pvPut(EdwScuCtStDisable);
+            EdwScuStDtDisable = ON;
+            pvPut(EdwScuStDtDisable);
             CTST_PressureHigh = 1.1e3;
-            STDT_PressureHigh = 1.1e3;
             pvPut(CTST_PressureHigh);
+            STDT_PressureHigh = 1.1e3;
             pvPut(STDT_PressureHigh);
+            HidraulicPressure = 0.0;
+            pvPut(HidraulicPressure);
         }
         when (delay(10) && (StartReq == START) ) { //  && (IsttokupsBatteryON != ON)) 
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
-                strcpy(msg, "State to Starting");
+                strcpy(msg, "State to Idle");
                 pvPut(msg);
-                errlogSevPrintf(NO_ALARM, "%s\n",msg);
-                /* Pulse state change to Starting */
+                errlogSevPrintf(NO_ALARM, "%s\n", msg);
+                /* Pulse state change to Idle */
                 LAST_OPSTATE = POS_Stopped;
                 pvPut(LAST_OPSTATE);
-        } state Starting
+        } state Idle
     }
 
-    state Starting {
+    state Idle {
         entry{
-            OPSTATE = POS_Starting;
+            OPSTATE = POS_Idle;
             pvPut(OPSTATE);
             Countup = 0;
             pvPut(Countup);
             CountupDisa = OFF;
             pvPut(CountupDisa);
+            VacuumDisable = OFF;
+            pvPut(VacuumDisable);
+            HVA_CTST_Valve= ON; // TODO repeat for CT-ST
+            pvPut(HVA_CTST_Valve);
+            EdwScuCtStDisable = OFF;
+            pvPut(EdwScuCtStDisable);
+            EdwScuStDtDisable = OFF;
+            pvPut(EdwScuStDtDisable);
         }
         when ((StopReq == STOP_REQ) ) { //  && (IsttokupsBatteryON != ON)) {
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
                 strcpy(msg, "State to Stopped");
                 pvPut(msg);
-                errlogSevPrintf(NO_ALARM, "%s\n",msg);
+                errlogSevPrintf(NO_ALARM, "%s\n", msg);
                 /* Pulse state change to Stopped */
-                LAST_OPSTATE = POS_Starting;
-                pvPut(LAST_OPSTATE);
+                //LAST_OPSTATE = POS_Starting;
+                //pvPut(LAST_OPSTATE);
         } state Stopped
 
-        when (delay(10) && (StartReq == START) ) { //  && (IsttokupsBatteryON != ON)) 
-//              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
-                strcpy(msg, "State to LowVacuum");
+        when (delay(5) && (AutoMode == AUTO_OFF) ) {
+                strcpy(msg, "State to ManualOperation");
                 pvPut(msg);
-                errlogSevPrintf(NO_ALARM, "%s\n",msg);
+                errlogSevPrintf(NO_ALARM, "%s\n", msg);
+        } state ManualOperation
+        when (delay(10) && (StartReq == START) ) {
+//              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
+                strcpy(msg, "State to StartingLowVacuum");
+                pvPut(msg);
+                errlogSevPrintf(NO_ALARM, "%s\n", msg);
                 /* Pulse state change to Starting */
-        } state LowVacuum
+        } state StartingLowVacuum
+    }
+
+    state ManualOperation {
+        entry{
+            OPSTATE = POS_ManualOperation;
+            pvPut(OPSTATE);
+            CountupDisa = ON;
+            pvPut(CountupDisa);
+        }
+        when (AutoMode == AUTO_ON) {
+                strcpy(msg, "State to Idle");
+                pvPut(msg);
+                errlogSevPrintf(NO_ALARM, "%s\n", msg);
+
+        } state Idle
+    }
+    state StartingLowVacuum {
+        entry{
+            OPSTATE = POS_StartingLowVacuum;
+            pvPut(OPSTATE);
+            //CTST_PressureHigh = ADC_PressureHighThres;
+            //STDT_PressureHigh = ADC_PressureHighThres;
+            //pvPut(CTST_PressureHigh);
+            //pvPut(STDT_PressureHigh);
+        }
+        when (AutoMode == AUTO_ON) {
+                strcpy(msg, "State to Idle");
+                pvPut(msg);
+                errlogSevPrintf(NO_ALARM, "%s\n", msg);
+
+        } state Idle
     }
 
     state LowVacuum {
@@ -229,13 +320,15 @@ ss VacuumSequence {
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
                 strcpy(msg, "State to Starting");
                 pvPut(msg);
-                errlogSevPrintf(NO_ALARM, "%s\n",msg);
+                errlogSevPrintf(NO_ALARM, "%s\n", msg);
                 // Pulse state change to Stopped
                 LAST_OPSTATE = POS_LowVacuum;
                 pvPut(LAST_OPSTATE);
-        } state Stopping
+        //} state Stopping
+        } state Idle
     }
-
+}
+/*
     state Stopping {
         entry{
             OPSTATE = POS_Stopping;
@@ -255,4 +348,52 @@ ss VacuumSequence {
                 pvPut(LAST_OPSTATE);
         } state Stopped
     }
+*/
+
+/*          --------- Sub States--------------- */
+
+/*********** SUB-State: StoppingSequence Set ************/
+ss IdleSequence {
+    state Inactive {
+        entry {
+            IdleSubState = IdleState_Inactive;
+            pvPut(IdleSubState);
+        }
+
+        when (OPSTATE == POS_Idle) {
+            ARM_CTST_OutCmd = ON;
+            pvPut(ARM_CTST_OutCmd);
+            ARM_STDT_OutCmd = ON;
+            pvPut(ARM_STDT_OutCmd);
+            strcpy(msg, "IdleSubState Mode: CheckManual");
+            pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
+            IdleSubState = IdleState_OpenArms;
+            pvPut(IdleSubState);
+        } state OpenArms
+    }
+    state OpenArms {
+        when (OPSTATE != POS_Idle ) { } state Inactive
+        when  (pvStatus(HidraulicPressure)) {
+            strcpy(msg, "IdleSubState Mode: OpenValves");
+            pvPut(msg);
+            EDA_CT_Valve = ON;
+            pvPut(EDA_CT_Valve);
+            EDA_DT_Valve = ON;
+            pvPut(EDA_DT_Valve);
+
+        } state OpenValves
+    }
+    state OpenValves {
+        when (OPSTATE != POS_Idle ) { } state Inactive
+        //when  (pvStatus(IsttokRPump1_Pressure)) 
+    }
 }
+/*
+short IdleState_CheckManual = 1;
+short IdleState_OpenArms = 2;
+short IdleState_OpenValves = 3;
+short IdleState_CheckValves = 4;
+short IdleState_End = 9;
+
+*/
