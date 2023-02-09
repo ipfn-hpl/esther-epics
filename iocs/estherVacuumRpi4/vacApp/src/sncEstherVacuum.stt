@@ -46,6 +46,7 @@ short OFF=0;
 short ON=1;
 short AUTO_ON=0;
 short AUTO_OFF=1;
+short ARM_STATUS_OPEN=4;
 short STOP=0;
 short STOP_REQ=1;
 short START=1;
@@ -112,7 +113,7 @@ float CT_StaticPressure;
 assign CT_StaticPressure to "{P}:Vacuum:PT-CT-Static";
 monitor CT_StaticPressure;
 float DT_StaticPressure;
-assign DT_StaticPressure to "{P}:Vacuum:PT-DP-Static";
+assign DT_StaticPressure to "{P}:Vacuum:PT-DT-Static";
 monitor DT_StaticPressure;
 float STDT_Pressure;
 assign STDT_Pressure "{P}:Vacuum:STDT-Pressure";
@@ -158,12 +159,17 @@ assign msg to "{P}:Vacuum:TraceMessage.VAL";
 
 short EDA_CT_Valve;
 assign EDA_CT_Valve to "{P}:EDA:CT-Valve";
+short EDA_CT_LS2_ON;
+assign EDA_CT_LS2_ON to "{P}:EDA:CT-Valve_LS2_ON";
+monitor EDA_CT_LS2_ON;
 short EDA_DT_Valve;
 assign EDA_DT_Valve to "{P}:EDA:DT-Valve";
+short EDA_DT_LS2_ON;
+assign EDA_DT_LS2_ON to "{P}:EDA:DT-Valve_LS2_ON";
+monitor EDA_DT_LS2_ON;
+
 short HVA_CTST_Valve;
 assign HVA_CTST_Valve to "{P}:HVA:CTST-Valve";
-short HVA_STDT_Valve;
-assign HVA_STDT_Valve to "{P}:HVA:STDT-Valve";
 short HVA_CTST_Lim_In;
 assign HVA_CTST_Lim_In to "{P}:HVA:CTST_LS_IN";
 monitor HVA_CTST_Lim_In;
@@ -171,6 +177,8 @@ short HVA_CTST_Lim_Out;
 assign HVA_CTST_Lim_Out to "{P}:HVA:CTST_LS_OUT";
 monitor HVA_CTST_Lim_Out;
 
+short HVA_STDT_Valve;
+assign HVA_STDT_Valve to "{P}:HVA:STDT-Valve";
 short HVA_STDT_Lim_In;
 assign HVA_STDT_Lim_In to "{P}:HVA:STDT_LS_IN";
 monitor HVA_STDT_Lim_In;
@@ -251,8 +259,10 @@ ss VacuumSequence {
             pvPut(CountupDisa);
             VacuumDisable = OFF;
             pvPut(VacuumDisable);
-            HVA_CTST_Valve= ON; // TODO repeat for CT-ST
+            HVA_CTST_Valve = OFF;
             pvPut(HVA_CTST_Valve);
+            HVA_STDT_Valve = OFF;
+            pvPut(HVA_STDT_Valve);
             EdwScuCtStDisable = OFF;
             pvPut(EdwScuCtStDisable);
             EdwScuStDtDisable = OFF;
@@ -380,7 +390,7 @@ ss IdleSequence {
     }
     state OpenArms {
         when (OPSTATE != POS_Idle ) { } state Inactive
-        when  (pvStatus(HidraulicPressure)) {
+        when  (pvStatus(HidraulicPressure) && (ARM_CTST_Status == ARM_STATUS_OPEN )) {
             strcpy(msg, "IdleSubState Mode: OpenValves");
             pvPut(msg);
             EDA_CT_Valve = ON;
@@ -392,7 +402,30 @@ ss IdleSequence {
     }
     state OpenValves {
         when (OPSTATE != POS_Idle ) { } state Inactive
+        when  (pvStatus(TurboFans) && (EDA_CT_LS2_ON == ON) && (EDA_DT_LS2_ON == ON)) {
+            strcpy(msg, "IdleSubState Mode: OpenValves");
+            pvPut(msg);
+            HVA_CTST_Valve = ON;
+            pvPut(HVA_CTST_Valve);
+            HVA_STDT_Valve = ON;
+            pvPut(HVA_STDT_Valve);
+
+        } state CheckValves
         //when  (pvStatus(IsttokRPump1_Pressure)) 
+    }
+    state CheckValves {
+        when (OPSTATE != POS_Idle ) { } state Inactive
+        when  ((HVA_CTST_Lim_Out == 0) && (HVA_STDT_Lim_Out == 0) ) {
+            strcpy(msg, "IdleSubState Mode: End");
+            pvPut(msg);
+            IdleSubState = IdleState_End;
+            pvPut(IdleSubState);
+
+        } state End
+        //when  (pvStatus(IsttokRPump1_Pressure)) 
+    }
+    state End {
+        when (OPSTATE != POS_Idle ) { } state Inactive
     }
 }
 /*

@@ -84,7 +84,7 @@ record(mbbo, "$(P)$(R)Idle-State") {
     field(ONST, "CheckManual")
     field(TWST, "OpenArms")
     field(THST, "OpenValves")
-    field(FRST, "LowVacuum")
+    field(FRST, "CheckValves")
     field(FVST, "StoppingLowVacuum")
     field(SXST, "StartingHighVacuum")
     field(SVST, "HighVacuum")
