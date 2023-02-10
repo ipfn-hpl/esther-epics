@@ -163,7 +163,9 @@ Esther:Vacuum:02:GaugeOn
 Esther:Vacuum:setUnits
 Esther:Vacuum:OPSTATE
 Esther:Vacuum:LAST-OPSTATE
-Esther:Vacuum:Idle-State
+Esther:Vacuum:Idle-SubState
+Esther:Vacuum:StartingLV-SubState
+Esther:Vacuum:StoppingLV-SubState
 Esther:VacuumSR_rebootStatus
 Esther:VacuumSR_status
 Esther:VacuumSR_0_Status
