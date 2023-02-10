@@ -52,6 +52,10 @@
       <font family="Liberation Sans" style="REGULAR" size="36.0">
       </font>
     </font>
+    <background_color>
+      <color red="255" green="255" blue="204">
+      </color>
+    </background_color>
     <format>2</format>
     <precision>2</precision>
   </widget>
