@@ -94,7 +94,6 @@
       </color>
     </background_color>
     <labels_from_pv>true</labels_from_pv>
-    <mode>1</mode>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_3</name>

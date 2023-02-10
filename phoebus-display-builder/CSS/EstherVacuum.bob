@@ -198,10 +198,19 @@
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>BB DryPump-CT</name>
-    <pv_name>Esther:EDW:DryPump-CT</pv_name>
+    <pv_name>${unit}:EDW:DryPump-CT</pv_name>
     <x>840</x>
     <y>40</y>
     <show_led>false</show_led>
+    <rules>
+      <rule name="New Rule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:Vacuum:Auto-Mode</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
     <show_confirm_dialog>2</show_confirm_dialog>
   </widget>
   <widget type="label" version="2.0.0">
@@ -218,13 +227,23 @@
       </color>
     </background_color>
     <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>BB DryPump-ST</name>
-    <pv_name>Esther:EDW:DryPump-ST</pv_name>
+    <pv_name>${unit}:EDW:DryPump-ST</pv_name>
     <x>960</x>
     <y>40</y>
     <show_led>false</show_led>
+    <rules>
+      <rule name="New Rule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:Vacuum:Auto-Mode</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
     <show_confirm_dialog>1</show_confirm_dialog>
   </widget>
   <widget type="label" version="2.0.0">
@@ -241,13 +260,23 @@
       </color>
     </background_color>
     <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>BB DryPump-DT</name>
-    <pv_name>Esther:EDW:DryPump-DT</pv_name>
+    <pv_name>${unit}:EDW:DryPump-DT</pv_name>
     <x>1080</x>
     <y>40</y>
     <show_led>false</show_led>
+    <rules>
+      <rule name="New Rule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:Vacuum:Auto-Mode</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
     <show_confirm_dialog>2</show_confirm_dialog>
   </widget>
   <widget type="label" version="2.0.0">
@@ -264,6 +293,7 @@
       </color>
     </background_color>
     <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TU_PT-CT-Static</name>
@@ -290,5 +320,20 @@
     <x>813</x>
     <y>849</y>
     <width>220</width>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>Vacuum.plt</file>
+        <target>replace</target>
+        <description>Open Vacuum Plot</description>
+      </action>
+    </actions>
+    <x>1060</x>
+    <y>810</y>
+    <width>150</width>
+    <height>39</height>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
