@@ -165,23 +165,14 @@
   <widget type="label" version="2.0.0">
     <name>Label_PT-DT-Static</name>
     <text>PT-DT-Static</text>
-    <x>820</x>
-    <y>400</y>
-  </widget>
-  <widget type="tank" version="2.0.0">
-    <name>Tank_PT-DT-Static</name>
-    <pv_name>Esther:Vacuum:PT-DT-Static</pv_name>
-    <x>960</x>
-    <y>410</y>
-    <width>250</width>
-    <height>60</height>
-    <horizontal>true</horizontal>
+    <x>1094</x>
+    <y>382</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TU_PT-DT-Static</name>
     <pv_name>Esther:Vacuum:PT-DT-Static</pv_name>
-    <x>781</x>
-    <y>420</y>
+    <x>1055</x>
+    <y>402</y>
     <width>169</width>
     <height>40</height>
     <font>
@@ -189,12 +180,6 @@
       </font>
     </font>
     <format>1</format>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_PT-DT-Static_1</name>
-    <text>PT-DT-Static</text>
-    <x>1020</x>
-    <y>390</y>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>BB DryPump-CT</name>
@@ -298,8 +283,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>TU_PT-CT-Static</name>
     <pv_name>${unit}:Vacuum:PT-CT-Static</pv_name>
-    <x>803</x>
-    <y>805</y>
+    <x>800</x>
+    <y>401</y>
     <width>169</width>
     <height>40</height>
     <font>
@@ -307,33 +292,33 @@
       </font>
     </font>
     <format>2</format>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_PT-DT-Static</name>
     <text>PT-CT-Static</text>
-    <x>842</x>
-    <y>785</y>
+    <x>839</x>
+    <y>381</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TU_VGC401-Status</name>
     <pv_name>${unit}:Vacuum:VGC401-Status</pv_name>
-    <x>813</x>
-    <y>849</y>
+    <x>800</x>
+    <y>441</y>
     <width>220</width>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>Action Button_1</name>
     <actions>
-      <action type="open_display">
+      <action type="open_file">
         <file>Vacuum.plt</file>
-        <target>replace</target>
         <description>Open Vacuum Plot</description>
       </action>
     </actions>
     <x>1060</x>
-    <y>810</y>
+    <y>446</y>
     <width>150</width>
-    <height>39</height>
+    <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
