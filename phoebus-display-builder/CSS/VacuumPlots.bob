@@ -22,10 +22,11 @@
     <transparent use_class="true">true</transparent>
   </widget>
   <widget type="databrowser" version="2.0.0">
-    <name>Data Browser</name>
-    <file>Vacuum.plt</file>
+    <name>DB_VacuumlpLOTS</name>
+    <file>VacuumLog.plt</file>
     <y>31</y>
     <width>860</width>
     <height>519</height>
+    <show_toolbar>true</show_toolbar>
   </widget>
 </display>
