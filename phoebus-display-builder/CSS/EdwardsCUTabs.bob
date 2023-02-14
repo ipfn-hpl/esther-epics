@@ -576,7 +576,6 @@
     <y>153</y>
     <width>310</width>
     <height>310</height>
-    <active_tab>1</active_tab>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button ON</name>

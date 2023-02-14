@@ -35,7 +35,7 @@
         <blue>0</blue>
       </color>
       <min>1.0</min>
-      <max>2.844461107447916</max>
+      <max>1000.0</max>
       <grid>false</grid>
       <autoscale>true</autoscale>
       <log_scale>true</log_scale>
@@ -45,14 +45,14 @@
       <name>Value 2</name>
       <use_axis_name>false</use_axis_name>
       <use_trace_names>true</use_trace_names>
-      <right>false</right>
+      <right>true</right>
       <color>
         <red>0</red>
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>8.565E-5</min>
-      <max>1.3735E-4</max>
+      <min>-50.0</min>
+      <max>1050.0</max>
       <grid>false</grid>
       <autoscale>true</autoscale>
       <log_scale>false</log_scale>
