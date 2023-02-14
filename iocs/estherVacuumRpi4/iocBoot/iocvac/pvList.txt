@@ -111,8 +111,8 @@ Esther:Vacuum:01:ReadVoltage
 Esther:Vacuum:02:ReadVoltage
 Esther:EDW:01:SetSpeedSetpoint
 Esther:EDW:02:SetSpeedSetpoint
-Esther:Vacuum:PressureLowThres
-Esther:Vacuum:PressureHighThres
+Esther:Vacuum:PressureL2HThres
+Esther:Vacuum:PressureH2LThres
 Esther:Vacuum:Hidraulic-Pressure
 Esther:EDW:01:WARNING
 Esther:EDW:02:WARNING
@@ -166,6 +166,8 @@ Esther:Vacuum:LAST-OPSTATE
 Esther:Vacuum:Idle-SubState
 Esther:Vacuum:StartingLV-SubState
 Esther:Vacuum:StoppingLV-SubState
+Esther:Vacuum:StartingHV-SubState
+Esther:Vacuum:StoppingHV-SubState
 Esther:VacuumSR_rebootStatus
 Esther:VacuumSR_status
 Esther:VacuumSR_0_Status

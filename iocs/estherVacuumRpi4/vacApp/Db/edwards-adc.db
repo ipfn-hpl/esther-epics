@@ -54,22 +54,22 @@ record(ai, $(P)$(R)STDT-Pressure){
     field(PREC, "3")
 #    field(FLNK, "$(P)$(R)$(A):GaugeVersion")
 }
-record(ao, $(P)$(R)PressureLowThres){
-    field(DESC, "Pressure Threshold to Stop MagLev")
-    field(EGU, "mBar")
-    field(HOPR, "1.0e-4")
-    field(LOPR, "1.0e-7")
-    info(autosaveFields, "VAL")
-    #field(VAL, "1.0e-5")
-    #field(PREC, "3")
-}
-record(ao, $(P)$(R)PressureHighThres){
+record(ao, $(P)$(R)PressureL2HThres){
     field(DESC, "Pressure Threshold to Start MagLev")
     field(EGU, "mBar")
     field(HOPR, "0.002")
     field(LOPR, "1.0e-6")
     info(autosaveFields, "VAL")
     #field(VAL, "1.0e-3")
+    #field(PREC, "3")
+}
+record(ao, $(P)$(R)PressureH2LThres){
+    field(DESC, "Pressure Threshold to Stop MagLev")
+    field(EGU, "mBar")
+    field(HOPR, "1.0e-3")
+    field(LOPR, "1.0e-7")
+    info(autosaveFields, "VAL")
+    #field(VAL, "1.0e-5")
     #field(PREC, "3")
 }
 record(ai, $(P)$(R)01:ReadVoltage){
