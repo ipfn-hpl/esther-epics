@@ -2,6 +2,7 @@
 <display version="2.0.0">
   <name>Esther Vacuum</name>
   <macros>
+    <node>Vacuum</node>
     <unit>Esther</unit>
   </macros>
   <width>1261</width>
@@ -188,7 +189,7 @@
   <widget type="bool_button" version="2.0.0">
     <name>BB DryPump-CT</name>
     <pv_name>${unit}:EDW:DryPump-CT</pv_name>
-    <x>840</x>
+    <x>781</x>
     <y>40</y>
     <show_led>false</show_led>
     <rules>
@@ -196,7 +197,7 @@
         <exp bool_exp="pv0==0">
           <value>true</value>
         </exp>
-        <pv_name>${unit}:Vacuum:Auto-Mode</pv_name>
+        <pv_name>${unit}:Vacuum:OPSTATE</pv_name>
       </rule>
     </rules>
     <enabled>false</enabled>
@@ -205,8 +206,8 @@
   <widget type="label" version="2.0.0">
     <name>Label  DryPump-CT</name>
     <text>DryPump-CT</text>
-    <x>840</x>
-    <y>10</y>
+    <x>781</x>
+    <y>15</y>
     <foreground_color>
       <color name="Header_Background" red="77" green="77" blue="77">
       </color>
@@ -221,7 +222,7 @@
   <widget type="bool_button" version="2.0.0">
     <name>BB DryPump-ST</name>
     <pv_name>${unit}:EDW:DryPump-ST</pv_name>
-    <x>960</x>
+    <x>893</x>
     <y>40</y>
     <show_led>false</show_led>
     <rules>
@@ -238,8 +239,8 @@
   <widget type="label" version="2.0.0">
     <name>Label  DryPump-ST</name>
     <text>DryPump-ST</text>
-    <x>960</x>
-    <y>10</y>
+    <x>893</x>
+    <y>15</y>
     <foreground_color>
       <color name="Header_Background" red="77" green="77" blue="77">
       </color>
@@ -254,7 +255,7 @@
   <widget type="bool_button" version="2.0.0">
     <name>BB DryPump-DT</name>
     <pv_name>${unit}:EDW:DryPump-DT</pv_name>
-    <x>1080</x>
+    <x>1007</x>
     <y>40</y>
     <show_led>false</show_led>
     <rules>
@@ -271,8 +272,8 @@
   <widget type="label" version="2.0.0">
     <name>Label  DryPump-DT</name>
     <text>DryPump-DT</text>
-    <x>1080</x>
-    <y>10</y>
+    <x>1007</x>
+    <y>15</y>
     <foreground_color>
       <color name="Header_Background" red="77" green="77" blue="77">
       </color>
@@ -326,6 +327,21 @@
     <x>1060</x>
     <y>446</y>
     <width>150</width>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="open_display">
+        <file>VacuumStates.bob</file>
+        <target>replace</target>
+        <description>Open States</description>
+      </action>
+    </actions>
+    <x>1130</x>
+    <y>30</y>
+    <width>116</width>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
