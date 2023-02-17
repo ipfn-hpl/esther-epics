@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>MFC El-Flow DT</name>
+  <name>MFC El-Flow EDA DT</name>
   <width>470</width>
   <height>276</height>
   <widget type="rectangle" version="2.0.0">
@@ -14,7 +14,7 @@
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
-    <text>EL-FLOW  ${mfc}  / EDA CT Valve</text>
+    <text>EL-FLOW  ${mfc}  / EDA DT Valve</text>
     <x use_class="true">0</x>
     <y use_class="true">0</y>
     <width>320</width>
@@ -45,49 +45,6 @@
     <x>30</x>
     <y>110</y>
   </widget>
-  <widget type="multi_state_led" version="2.0.0">
-    <name>Control-Mode</name>
-    <pv_name>Esther:${mfc}:Control-Mode</pv_name>
-    <x>170</x>
-    <y>120</y>
-    <width>140</width>
-    <height>30</height>
-    <square>true</square>
-    <states>
-      <state>
-        <value>0</value>
-        <label>State 1</label>
-        <color>
-          <color name="Off" red="60" green="100" blue="60">
-          </color>
-        </color>
-      </state>
-      <state>
-        <value>1</value>
-        <label>State 2</label>
-        <color>
-          <color name="On" red="0" green="255" blue="0">
-          </color>
-        </color>
-      </state>
-      <state>
-        <value>2</value>
-        <label>State 3</label>
-        <color>
-          <color name="State 2" red="10" green="0" blue="80">
-          </color>
-        </color>
-      </state>
-      <state>
-        <value>3</value>
-        <label>State 4</label>
-        <color>
-          <color name="State 3" red="10" green="0" blue="120">
-          </color>
-        </color>
-      </state>
-    </states>
-  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Control-Mode-mbbi</name>
     <pv_name>Esther:${mfc}:Control-Mode-mbbi</pv_name>
@@ -96,7 +53,7 @@
     <width>130</width>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_4</name>
+    <name>L MFC Counter-Mode</name>
     <text>Control-Mode</text>
     <x>170</x>
     <y>70</y>
@@ -123,7 +80,6 @@
       <color red="60" green="255" blue="60">
       </color>
     </on_color>
-    <square>true</square>
     <labels_from_pv>true</labels_from_pv>
   </widget>
   <widget type="symbol" version="2.0.0">
@@ -199,11 +155,11 @@
     <wrap_words>false</wrap_words>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Counter-Mode_1</name>
-    <text>Closed</text>
+    <name>EDA CT Air tube</name>
+    <text>Air</text>
     <x>248</x>
     <y>210</y>
-    <width>44</width>
+    <width>18</width>
     <height>16</height>
     <background_color>
       <color name="Write_Background" red="128" green="255" blue="255">
@@ -213,8 +169,8 @@
     <auto_size>true</auto_size>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Counter-Mode_2</name>
-    <text>CT</text>
+    <name>EDA DT tube</name>
+    <text>DT</text>
     <x>80</x>
     <y>210</y>
     <width>19</width>
@@ -225,31 +181,6 @@
     </background_color>
     <transparent>false</transparent>
     <auto_size>true</auto_size>
-  </widget>
-  <widget type="multi_state_led" version="2.0.0">
-    <name>LED (Multi State)</name>
-    <x>410</x>
-    <y>370</y>
-    <width>1</width>
-    <height>1</height>
-    <states>
-      <state>
-        <value>0</value>
-        <label>State 1</label>
-        <color>
-          <color name="Off" red="60" green="100" blue="60">
-          </color>
-        </color>
-      </state>
-      <state>
-        <value>1</value>
-        <label>State 2</label>
-        <color>
-          <color name="On" red="0" green="255" blue="0">
-          </color>
-        </color>
-      </state>
-    </states>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Control-Mode-mbbi_1</name>

@@ -5,7 +5,7 @@
        Each group has a name and one or more channels
     -->
   <group>
-    <name>Esther Pressure Transducers</name>
+    <name>Esther Driver Gas Injection System</name>
       <!-- Each channel has a name and
            a sample period (or expected change period).
            The period is either in seconds or in HH:MM:SS format.
@@ -178,7 +178,7 @@
       -->
 
   <group>
-    <name>Esther Bombe Pressure Transducer (Kistler)</name>
+    <name>Esther Driver Pressure Transducer (Kistler)</name>
       <channel>
          <name>Esther:Camera:MRout</name>
          <period>10</period>
@@ -201,7 +201,7 @@
   </group>
 
   <group>
-    <name>Esther-Gas Alarm System</name>
+    <name>Esther - MXT Gas Alarms System</name>
       <channel>
          <name>Esther:gas:MXT_H2_Central</name>
      <monitor/>

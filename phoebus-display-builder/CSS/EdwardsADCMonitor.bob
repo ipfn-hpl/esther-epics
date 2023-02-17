@@ -79,19 +79,19 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>Boolean Button</name>
-    <pv_name>${unit}:${node}:Disable</pv_name>
+    <pv_name>${unit}:${node}:Enabled</pv_name>
     <bit>0</bit>
     <x>240</x>
     <y>8</y>
     <width>90</width>
     <off_label>Off</off_label>
     <off_color>
-      <color name="OK" red="0" green="255" blue="0">
+      <color name="Button_Background" red="210" green="210" blue="210">
       </color>
     </off_color>
     <on_label>On</on_label>
     <on_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
+      <color name="OK" red="0" green="255" blue="0">
       </color>
     </on_color>
     <font>

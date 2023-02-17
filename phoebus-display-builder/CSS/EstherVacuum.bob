@@ -317,7 +317,7 @@
     <width>220</width>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button_1</name>
+    <name>ActButton_VacPlot</name>
     <actions>
       <action type="open_file">
         <file>Vacuum.plt</file>
@@ -335,7 +335,7 @@
     <actions>
       <action type="open_display">
         <file>VacuumStates.bob</file>
-        <target>replace</target>
+        <target>tab</target>
         <description>Open States</description>
       </action>
     </actions>
