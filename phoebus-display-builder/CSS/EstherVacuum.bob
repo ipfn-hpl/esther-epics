@@ -194,7 +194,7 @@
     <show_led>false</show_led>
     <rules>
       <rule name="New Rule" prop_id="enabled" out_exp="false">
-        <exp bool_exp="pv0==0">
+        <exp bool_exp="pv0==2">
           <value>true</value>
         </exp>
         <pv_name>${unit}:Vacuum:OPSTATE</pv_name>
@@ -227,10 +227,10 @@
     <show_led>false</show_led>
     <rules>
       <rule name="New Rule" prop_id="enabled" out_exp="false">
-        <exp bool_exp="pv0==0">
+        <exp bool_exp="pv0==2">
           <value>true</value>
         </exp>
-        <pv_name>${unit}:Vacuum:Auto-Mode</pv_name>
+        <pv_name>${unit}:Vacuum:OPSTATE</pv_name>
       </rule>
     </rules>
     <enabled>false</enabled>
@@ -260,10 +260,10 @@
     <show_led>false</show_led>
     <rules>
       <rule name="New Rule" prop_id="enabled" out_exp="false">
-        <exp bool_exp="pv0==0">
+        <exp bool_exp="pv0==2">
           <value>true</value>
         </exp>
-        <pv_name>${unit}:Vacuum:Auto-Mode</pv_name>
+        <pv_name>${unit}:Vacuum:OPSTATE</pv_name>
       </rule>
     </rules>
     <enabled>false</enabled>

@@ -260,19 +260,19 @@
       </channel>
       <channel>
          <name>Esther:Vacuum:PT-CT-Static</name>
-         <period>30.0</period><scan/>
+         <period>5.0</period><scan/>
       </channel>
       <channel>
          <name>Esther:Vacuum:PT-DT-Static</name>
-         <period>30.0</period><scan/>
+         <period>5.0</period><scan/>
       </channel>
       <channel>
          <name>Esther:Vacuum:CTST-Pressure</name>
-         <period>30.0</period><scan/>
+         <period>5.0</period><scan/>
       </channel>
       <channel>
          <name>Esther:Vacuum:STDT-Pressure</name>
-         <period>30.0</period><scan/>
+         <period>5.0</period><scan/>
       </channel>
       <channel>
          <name>Esther:HVA:CTST_LS_IN</name>
@@ -288,6 +288,26 @@
       </channel>
       <channel>
          <name>Esther:HVA:STDT_LS_OUT</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:Vacuum:OPSTATE</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:Vacuum:TraceMessage</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:Vacuum:PressureL2HThres</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:Vacuum:PressureH2LThres</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:Vacuum:Hidraulic-Pressure</name>
          <period>60.0</period><monitor/>
       </channel>
       <channel>
