@@ -319,7 +319,7 @@ ss VacuumSequence {
             HidraulicPressure = 0.0;
             pvPut(HidraulicPressure);
         }
-        when (delay(10) && (StartReq == START) ) { //  && (IsttokupsBatteryON != ON)) 
+        when (delay(5) && (StartReq == START) ) { //  && (IsttokupsBatteryON != ON)) 
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
                 strcpy(msg, "State to Idle");
                 pvPut(msg);
@@ -358,7 +358,7 @@ ss VacuumSequence {
             EdwScuStDtDisable = OFF;
             pvPut(EdwScuStDtDisable);
         }
-        when (delay(10) && (StopReq == STOP_REQ) ) { //  && (IsttokupsBatteryON != ON)) {
+        when (delay(4) && (StopReq == STOP_REQ) ) { //  && (IsttokupsBatteryON != ON)) {
                 strcpy(msg, "State to Stopped");
                 pvPut(msg);
                 errlogSevPrintf(NO_ALARM, "%s\n", msg);
@@ -367,13 +367,13 @@ ss VacuumSequence {
                 //pvPut(LAST_OPSTATE);
         } state Stopped
 
-        when (delay(5) && (AutoMode == AUTO_OFF) ) {
+        when (delay(4) && (AutoMode == AUTO_OFF) ) {
                 strcpy(msg, "State to ManualOperation");
                 pvPut(msg);
                 errlogSevPrintf(NO_ALARM, "%s\n", msg);
         } state ManualOperation
 
-        when (delay(10) && (StartReq == START) && (IdleSubState == SubState_End)) {
+        when (delay(4) && (StartReq == START) && (IdleSubState == SubState_End)) {
                 strcpy(msg, "State to StartingLowVacuum");
                 pvPut(msg);
                 errlogSevPrintf(NO_ALARM, "%s\n", msg);
@@ -404,7 +404,7 @@ ss VacuumSequence {
             //pvPut(CTST_PressureHigh);
             //pvPut(STDT_PressureHigh);
         }
-        when (delay(10) && (StopReq == STOP_REQ)) {
+        when (delay(5) && (StopReq == STOP_REQ)) {
         //  && (IsttokupsBatteryON != ON)) {
                 strcpy(msg, "State to Stopping");
                 pvPut(msg);
@@ -430,11 +430,11 @@ ss VacuumSequence {
             STDT_PressureHigh = ADC_PressureL2HThres;
             pvPut(STDT_PressureHigh);
         }
-        when (delay(10) && (StopReq == STOP_REQ) ) {
+        when (delay(5) && (StopReq == STOP_REQ) ) {
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
                 strcpy(msg, "State to Stopping LV");
                 pvPut(msg);
-                errlogSevPrintf(NO_ALARM, "%s\n", msg);
+                errlogSevPrintf(MINOR, "%s\n", msg);
                 // Pulse state change to Stopped
                 LAST_OPSTATE = POS_LowVacuum;
                 pvPut(LAST_OPSTATE);
@@ -492,10 +492,10 @@ ss VacuumSequence {
         entry{
             OPSTATE = POS_HighVacuum;
             pvPut(OPSTATE);
-            //CTST_PressureHigh = ADC_PressureHighThres;
-            //STDT_PressureHigh = ADC_PressureHighThres;
-            //pvPut(CTST_PressureHigh);
-            //pvPut(STDT_PressureHigh);
+            CTST_PressureHigh = ADC_PressureH2LThres;
+            STDT_PressureHigh = ADC_PressureH2LThres;
+            pvPut(CTST_PressureHigh);
+            pvPut(STDT_PressureHigh);
         }
         when (StopReq == STOP_REQ) {
                 strcpy(msg, "State to Stopping HV");
@@ -504,8 +504,11 @@ ss VacuumSequence {
                 LAST_OPSTATE = POS_HighVacuum;
                 pvPut(LAST_OPSTATE);
         } state StoppingHighVacuum
-        when  ((pvStatus(CTST_Pressure) != pvStatOK) ||
-                (pvStatus(STDT_Pressure) != pvStatOK)) {
+        when  (delay(10) && ((pvStatus(CTST_Pressure) != pvStatOK) ||
+                (pvStatus(STDT_Pressure) != pvStatOK) )) {
+                strcpy(msg, "Pressure Alarm. State to Stopping HV");
+                pvPut(msg);
+                errlogSevPrintf(MINOR, "%s\n", msg);
         } state StoppingHighVacuum
         /*
         when (delay(10) && (StartReq == START)) {
@@ -629,7 +632,7 @@ ss StartingLVSequence {
     }
     state StartPumpDT {
         when (OPSTATE != POS_StartingLowVacuum ) { } state Inactive
-        when (delay(60)) {
+        when (delay(60) && (DT_StaticPressure < 500)) {
             EDW_Dry_Pump_CT = ON;
             pvPut(EDW_Dry_Pump_CT);
             strcpy(msg, "StartingLV SS: StartPump_CT");
@@ -641,11 +644,11 @@ ss StartingLVSequence {
     }
     state StartPumpCT {
         when (OPSTATE != POS_StartingLowVacuum ) { } state Inactive
-        when ((CT_StaticPressure < 500) && (DT_StaticPressure < 500)) {
+        when ((CT_StaticPressure < 500)) {
             EDW_Dry_Pump_ST = ON;
             pvPut(EDW_Dry_Pump_ST);
-            CTST_PressureHigh = ADC_PressureL2HThres;
-            STDT_PressureHigh = ADC_PressureL2HThres;
+            CTST_PressureHigh = 1e-1; //ADC_PressureL2HThres;
+            STDT_PressureHigh = 1e-1; //ADC_PressureL2HThres;
             pvPut(CTST_PressureHigh);
             pvPut(STDT_PressureHigh);
             strcpy(msg, "StartingLVSubState: CheckPressure");
@@ -765,8 +768,8 @@ ss StartingHVSequence {
     }
     state CheckPumpsAccel {
         when (OPSTATE != POS_StartingHighVacuum ) { } state Inactive
-        when  ((EdwScuCtStModFonct == EdwScuModFonct_Acceleration) &&
-            (EdwScuStDtModFonct == EdwScuModFonct_Acceleration)) {
+        when  (delay(2) && ((EdwScuCtStModFonct == EdwScuModFonct_Acceleration) &&
+            (EdwScuStDtModFonct == EdwScuModFonct_Acceleration))) {
             StartingHVSubState = StartingHV_CheckPumpsNormal;
             pvPut(StartingHVSubState);
         } state CheckPumpsNormal
@@ -788,8 +791,11 @@ ss StartingHVSequence {
     }
     state CheckHvPressure {
         when (OPSTATE != POS_StartingHighVacuum ) { } state Inactive
-        when  ((pvStatus(CTST_Pressure) == pvStatOK) &&
-                (pvStatus(STDT_Pressure) == pvStatOK)) {
+        when  (delay(5) && ((pvStatus(CTST_Pressure) == pvStatOK) &&
+                (pvStatus(STDT_Pressure) == pvStatOK))) {
+            strcpy(msg, "StartingHV SubState: End");
+            pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
             StartingHVSubState = SubState_End;
             pvPut(StartingHVSubState);
         } state End
@@ -825,16 +831,16 @@ ss StoppingHVSequence {
     }
     state CheckPumpsDecel {
         when (OPSTATE != POS_StoppingHighVacuum ) { } state Inactive
-        when  ((EdwScuCtStModFonct == EdwScuModFonct_Deceleration) &&
-            (EdwScuStDtModFonct == EdwScuModFonct_Deceleration)) {
+        when  (delay(5) && ((EdwScuCtStModFonct == EdwScuModFonct_Deceleration) &&
+            (EdwScuStDtModFonct == EdwScuModFonct_Deceleration) )) {
             StoppingHVSubState = StoppingHV_CheckPumpsLevit;
             pvPut(StoppingHVSubState);
         } state CheckPumpsLevit
     }
     state CheckPumpsLevit{
         when (OPSTATE != POS_StoppingHighVacuum ) { } state Inactive
-        when  ((EdwScuCtStModFonct == EdwScuModFonct_Levitation) &&
-                (EdwScuStDtModFonct == EdwScuModFonct_Levitation)) {
+        when  (delay(10) && ((EdwScuCtStModFonct == EdwScuModFonct_Levitation) &&
+                (EdwScuStDtModFonct == EdwScuModFonct_Levitation))) {
             strcpy(msg, "StoppingHV SubState: End");
             pvPut(msg);
             errlogSevPrintf(NO_ALARM, "%s\n", msg);
