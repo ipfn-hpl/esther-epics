@@ -7,6 +7,17 @@
   </macros>
   <width>1341</width>
   <height>853</height>
+  <widget type="embedded" version="2.0.0">
+    <name>EC_NR303</name>
+    <macros>
+      <cvNum>303</cvNum>
+    </macros>
+    <file>Valve_NR.bob</file>
+    <x>209</x>
+    <y>427</y>
+    <width>112</width>
+    <height>41</height>
+  </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
@@ -90,232 +101,14 @@
   <widget type="embedded" version="2.0.0">
     <name>ED_PV102</name>
     <macros>
-      <pvName>ALARM_BREAKPOINT</pvName>
       <pvNum>102</pvNum>
     </macros>
     <file>PValve_NO.bob</file>
-    <x>590</x>
-    <y>20</y>
+    <x>586</x>
+    <y>10</y>
     <width>90</width>
-    <height>99</height>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>G_CC</name>
-    <x>805</x>
-    <y>190</y>
-    <width>536</width>
-    <height>175</height>
-    <style>3</style>
+    <height>70</height>
     <transparent>true</transparent>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rounded Rectangle_3</name>
-      <x>24</x>
-      <y>13</y>
-      <width>488</width>
-      <height>145</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color name="Header_Background" red="77" green="77" blue="77">
-        </color>
-      </background_color>
-      <corner_width>16</corner_width>
-      <corner_height>16</corner_height>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="arc" version="2.0.0">
-      <name>Arc_4</name>
-      <x>385</x>
-      <y>105</y>
-      <width>90</width>
-      <height>70</height>
-      <total_angle>180.0</total_angle>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="255" green="0" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color name="MEDM_COLOR_11" red="90" green="90" blue="90">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <rules>
-        <rule name="Background Color Rule" prop_id="background_color" out_exp="false">
-          <exp bool_exp="pv0==1">
-            <value>
-              <color name="MEDM_COLOR_11" red="90" green="90" blue="90">
-              </color>
-            </value>
-          </exp>
-          <exp bool_exp="pv0==0">
-            <value>
-              <color name="MEDM_COLOR_16" red="30" green="187" blue="0">
-              </color>
-            </value>
-          </exp>
-          <pv_name>${unit}:${node}:PV703A_OUT</pv_name>
-        </rule>
-      </rules>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rounded Rect</name>
-      <x>509</x>
-      <y>1</y>
-      <width>27</width>
-      <height>170</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color name="Header_Background" red="77" green="77" blue="77">
-        </color>
-      </background_color>
-      <corner_width>16</corner_width>
-      <corner_height>16</corner_height>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rounded Rect_2</name>
-      <width>27</width>
-      <height>170</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color name="Header_Background" red="77" green="77" blue="77">
-        </color>
-      </background_color>
-      <corner_width>16</corner_width>
-      <corner_height>16</corner_height>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_9</name>
-      <text>Combustion Chamber</text>
-      <x>77</x>
-      <y>55</y>
-      <width>402</width>
-      <height>46</height>
-      <font>
-        <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="OPI_Background" red="255" green="255" blue="255">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>TU_Kistler</name>
-      <pv_name>${unit}:Camera:Pressure</pv_name>
-      <x>43</x>
-      <y>39</y>
-      <width>88</width>
-      <height>15</height>
-      <font>
-        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
-        </font>
-      </font>
-      <foreground_color>
-        <color name="Text_ForeGround" red="0" green="0" blue="0">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="MEDM_COLOR_8" red="133" green="133" blue="133">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="arc" version="2.0.0">
-      <name>Arc_3</name>
-      <x>385</x>
-      <width>90</width>
-      <height>70</height>
-      <total_angle>-180.0</total_angle>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="255" green="0" blue="0">
-        </color>
-      </line_color>
-      <background_color>
-        <color name="MEDM_COLOR_11" red="90" green="90" blue="90">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <rules>
-        <rule name="Background Color Rule" prop_id="background_color" out_exp="false">
-          <exp bool_exp="pv0==1">
-            <value>
-              <color name="MEDM_COLOR_11" red="90" green="90" blue="90">
-              </color>
-            </value>
-          </exp>
-          <exp bool_exp="pv0==0">
-            <value>
-              <color name="MEDM_COLOR_16" red="30" green="187" blue="0">
-              </color>
-            </value>
-          </exp>
-          <pv_name>${unit}:${node}:PV703A_OUT</pv_name>
-        </rule>
-      </rules>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label_Kist</name>
-      <text>KISTLER</text>
-      <x>42</x>
-      <y>22</y>
-      <width>90</width>
-      <height>19</height>
-      <foreground_color>
-        <color name="OPI_Background" red="255" green="255" blue="255">
-        </color>
-      </foreground_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>ED_pt202</name>
@@ -352,16 +145,16 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Pl_ExitN2</name>
-    <x>650</x>
+    <x>640</x>
     <y>20</y>
-    <width>50</width>
+    <width>60</width>
     <height>40</height>
     <points>
       <point x="0.0" y="40.0">
       </point>
-      <point x="50.0" y="40.0">
+      <point x="60.0" y="40.0">
       </point>
-      <point x="50.0" y="0.0">
+      <point x="60.0" y="0.0">
       </point>
     </points>
     <line_color>
@@ -386,7 +179,7 @@ $(pv_value)</tooltip>
     <name>Polyline_59</name>
     <x>350</x>
     <y>230</y>
-    <width>240</width>
+    <width>180</width>
     <height>40</height>
     <points>
       <point x="0.0" y="40.0">
@@ -395,7 +188,7 @@ $(pv_value)</tooltip>
       </point>
       <point x="150.0" y="0.0">
       </point>
-      <point x="240.0" y="0.0">
+      <point x="180.0" y="0.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -461,37 +254,15 @@ $(pv_value)</tooltip>
     <height>60</height>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_11</name>
-    <macros>
-      <cvNum>303</cvNum>
-    </macros>
-    <file>Valve_NR.bob</file>
-    <x>208</x>
-    <y>424</y>
-    <width>73</width>
-    <height>36</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_12</name>
-    <macros>
-      <cvNum>502</cvNum>
-    </macros>
-    <file>Valve_NR.bob</file>
-    <x>227</x>
-    <y>760</y>
-    <width>83</width>
-    <height>40</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
     <name>ED_FL_601</name>
     <macros>
       <flNum>601</flNum>
     </macros>
     <file>Lira.bob</file>
-    <x>1170</x>
-    <y>654</y>
-    <width>70</width>
-    <height>50</height>
+    <x>1096</x>
+    <y>716</y>
+    <width>75</width>
+    <height>48</height>
     <transparent>true</transparent>
   </widget>
   <widget type="embedded" version="2.0.0">
@@ -500,10 +271,11 @@ $(pv_value)</tooltip>
       <mfcNum>601</mfcNum>
     </macros>
     <file>MFC.bob</file>
-    <x>998</x>
-    <y>642</y>
+    <x>981</x>
+    <y>706</y>
     <width>120</width>
     <height>60</height>
+    <transparent>true</transparent>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>ED_pt202_2</name>
@@ -511,31 +283,20 @@ $(pv_value)</tooltip>
       <ptNum>601</ptNum>
     </macros>
     <file>PT_probe.bob</file>
-    <x>1096</x>
-    <y>620</y>
+    <x>1072</x>
+    <y>684</y>
     <width>86</width>
     <height>71</height>
     <transparent>true</transparent>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_15</name>
-    <macros>
-      <cvNum>701</cvNum>
-    </macros>
-    <file>Valve_NR.bob</file>
-    <x>1240</x>
-    <y>667</y>
-    <width>83</width>
-    <height>40</height>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_16</name>
+    <name>EC_NR601</name>
     <macros>
       <cvNum>601</cvNum>
     </macros>
     <file>Valve_NR.bob</file>
-    <x>760</x>
-    <y>600</y>
+    <x>791</x>
+    <y>726</y>
     <width>112</width>
     <height>41</height>
   </widget>
@@ -545,8 +306,8 @@ $(pv_value)</tooltip>
       <cvNum>603</cvNum>
     </macros>
     <file>Valve_NR.bob</file>
-    <x>768</x>
-    <y>520</y>
+    <x>799</x>
+    <y>646</y>
     <width>112</width>
     <height>41</height>
   </widget>
@@ -600,31 +361,20 @@ $(pv_value)</tooltip>
       </color>
     </line_color>
   </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_17</name>
-    <macros>
-      <cvNum>602</cvNum>
-    </macros>
-    <file>Valve_NR.bob</file>
-    <x>760</x>
-    <y>786</y>
-    <width>73</width>
-    <height>36</height>
-  </widget>
   <widget type="polyline" version="2.0.0">
     <name>Pl_O2_3</name>
     <x>580</x>
     <y>310</y>
-    <width>180</width>
-    <height>310</height>
+    <width>210</width>
+    <height>430</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="100.0" y="0.0">
+      <point x="170.0" y="0.0">
       </point>
-      <point x="100.0" y="310.0">
+      <point x="180.0" y="430.0">
       </point>
-      <point x="180.0" y="310.0">
+      <point x="210.0" y="430.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -651,7 +401,7 @@ $(pv_value)</tooltip>
       <pvNum>301</pvNum>
     </macros>
     <file>PValve_NC.bob</file>
-    <x>300</x>
+    <x>294</x>
     <y>401</y>
     <width>80</width>
     <height>61</height>
@@ -659,18 +409,18 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Pl_HeI_1</name>
-    <x>343</x>
-    <y>407</y>
-    <width>227</width>
-    <height>40</height>
+    <x>350</x>
+    <y>415</y>
+    <width>217</width>
+    <height>37</height>
     <points>
-      <point x="0.0" y="40.0">
+      <point x="0.0" y="30.0">
       </point>
-      <point x="150.0" y="40.0">
+      <point x="140.0" y="30.0">
       </point>
-      <point x="150.0" y="0.0">
+      <point x="140.0" y="0.0">
       </point>
-      <point x="227.0" y="3.0">
+      <point x="210.0" y="0.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -681,16 +431,16 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Pl_O2_1</name>
-    <x>493</x>
-    <y>447</y>
-    <width>40</width>
+    <x>490</x>
+    <y>450</y>
+    <width>50</width>
     <height>40</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
       <point x="0.0" y="40.0">
       </point>
-      <point x="40.0" y="40.0">
+      <point x="50.0" y="40.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -705,9 +455,9 @@ $(pv_value)</tooltip>
       <mvNum>204</mvNum>
     </macros>
     <file>MValve.bob</file>
-    <x>542</x>
+    <x>530</x>
     <y>200</y>
-    <width>40</width>
+    <width>80</width>
     <height>40</height>
     <transparent>true</transparent>
   </widget>
@@ -732,14 +482,14 @@ $(pv_value)</tooltip>
     </line_color>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>ED_MV40</name>
+    <name>ED_MV404</name>
     <macros>
-      <mvNum>40</mvNum>
+      <mvNum>404</mvNum>
     </macros>
     <file>MValve.bob</file>
-    <x>540</x>
+    <x>525</x>
     <y>561</y>
-    <width>40</width>
+    <width>50</width>
     <height>40</height>
     <transparent>true</transparent>
   </widget>
@@ -747,18 +497,18 @@ $(pv_value)</tooltip>
     <name>Polyline</name>
     <x>500</x>
     <y>100</y>
-    <width>270</width>
-    <height>440</height>
+    <width>300</width>
+    <height>560</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
       <point x="0.0" y="40.0">
       </point>
-      <point x="220.0" y="40.0">
+      <point x="270.0" y="40.0">
       </point>
-      <point x="220.0" y="440.0">
+      <point x="280.0" y="560.0">
       </point>
-      <point x="270.0" y="440.0">
+      <point x="300.0" y="560.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -769,16 +519,16 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Pl_ExitN2_1</name>
-    <x>640</x>
+    <x>630</x>
     <y>190</y>
-    <width>50</width>
+    <width>60</width>
     <height>40</height>
     <points>
       <point x="0.0" y="40.0">
       </point>
-      <point x="50.0" y="40.0">
+      <point x="60.0" y="40.0">
       </point>
-      <point x="50.0" y="0.0">
+      <point x="60.0" y="0.0">
       </point>
     </points>
     <line_color>
@@ -794,7 +544,7 @@ $(pv_value)</tooltip>
     </macros>
     <file>PValve_NC.bob</file>
     <x>520</x>
-    <y>447</y>
+    <y>450</y>
     <width>80</width>
     <height>61</height>
     <transparent>true</transparent>
@@ -854,7 +604,7 @@ $(pv_value)</tooltip>
     </macros>
     <file>PT_probe.bob</file>
     <x>398</x>
-    <y>546</y>
+    <y>557</y>
     <width>86</width>
     <height>71</height>
     <transparent>true</transparent>
@@ -875,7 +625,7 @@ $(pv_value)</tooltip>
     <name>PL_HeII_2</name>
     <x>358</x>
     <y>740</y>
-    <width>272</width>
+    <width>252</width>
     <height>45</height>
     <points>
       <point x="0.0" y="45.0">
@@ -884,7 +634,7 @@ $(pv_value)</tooltip>
       </point>
       <point x="152.0" y="0.0">
       </point>
-      <point x="272.0" y="0.0">
+      <point x="252.0" y="0.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -929,14 +679,14 @@ $(pv_value)</tooltip>
     <name>Pl_H2_4</name>
     <x>580</x>
     <y>670</y>
-    <width>130</width>
+    <width>150</width>
     <height>160</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="130.0" y="0.0">
+      <point x="150.0" y="0.0">
       </point>
-      <point x="130.0" y="160.0">
+      <point x="150.0" y="160.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -947,14 +697,14 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>PL_HeII_3</name>
-    <x>638</x>
-    <y>835</y>
-    <width>140</width>
+    <x>580</x>
+    <y>830</y>
+    <width>210</width>
     <height>1</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="140.0" y="0.0">
+      <point x="210.0" y="0.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -987,8 +737,8 @@ $(pv_value)</tooltip>
       <pvNum>603</pvNum>
     </macros>
     <file>PValve_NC.bob</file>
-    <x>820</x>
-    <y>500</y>
+    <x>871</x>
+    <y>624</y>
     <width>80</width>
     <height>61</height>
     <transparent>true</transparent>
@@ -999,20 +749,8 @@ $(pv_value)</tooltip>
       <pvNum>601</pvNum>
     </macros>
     <file>PValve_NC.bob</file>
-    <x>833</x>
-    <y>580</y>
-    <width>80</width>
-    <height>61</height>
-    <transparent>true</transparent>
-  </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>ED_PV_602</name>
-    <macros>
-      <pvNum>602</pvNum>
-    </macros>
-    <file>PValve_NC.bob</file>
-    <x>833</x>
-    <y>786</y>
+    <x>871</x>
+    <y>706</y>
     <width>80</width>
     <height>61</height>
     <transparent>true</transparent>
@@ -1023,9 +761,9 @@ $(pv_value)</tooltip>
       <mvNum>704</mvNum>
     </macros>
     <file>MValve.bob</file>
-    <x>1010</x>
-    <y>462</y>
-    <width>40</width>
+    <x>908</x>
+    <y>511</y>
+    <width>80</width>
     <height>40</height>
     <transparent>true</transparent>
   </widget>
@@ -1035,8 +773,8 @@ $(pv_value)</tooltip>
       <flNum>603</flNum>
     </macros>
     <file>Lira.bob</file>
-    <x>939</x>
-    <y>462</y>
+    <x>851</x>
+    <y>504</y>
     <width>70</width>
     <height>50</height>
     <transparent>true</transparent>
@@ -1047,8 +785,8 @@ $(pv_value)</tooltip>
       <ptNum>901</ptNum>
     </macros>
     <file>PT_probe.bob</file>
-    <x>950</x>
-    <y>70</y>
+    <x>1008</x>
+    <y>79</y>
     <width>86</width>
     <height>71</height>
     <transparent>true</transparent>
@@ -1059,8 +797,8 @@ $(pv_value)</tooltip>
       <pvNum>701</pvNum>
     </macros>
     <file>PValve_NC.bob</file>
-    <x>1076</x>
-    <y>462</y>
+    <x>1121</x>
+    <y>498</y>
     <width>80</width>
     <height>61</height>
     <transparent>true</transparent>
@@ -1071,9 +809,9 @@ $(pv_value)</tooltip>
       <mvNum>701</mvNum>
     </macros>
     <file>MValve.bob</file>
-    <x>1036</x>
-    <y>100</y>
-    <width>40</width>
+    <x>1083</x>
+    <y>120</y>
+    <width>80</width>
     <height>40</height>
     <transparent>true</transparent>
   </widget>
@@ -1083,38 +821,26 @@ $(pv_value)</tooltip>
       <flNum>602</flNum>
     </macros>
     <file>Lira.bob</file>
-    <x>832</x>
-    <y>100</y>
+    <x>882</x>
+    <y>115</y>
     <width>70</width>
     <height>50</height>
     <transparent>true</transparent>
   </widget>
-  <widget type="embedded" version="2.0.0">
-    <name>Ed_PV_203</name>
-    <macros>
-      <pvNum>203</pvNum>
-    </macros>
-    <file>PValve_NO.bob</file>
-    <x>570</x>
-    <y>185</y>
-    <width>80</width>
-    <height>61</height>
-    <transparent>true</transparent>
-  </widget>
   <widget type="polyline" version="2.0.0">
     <name>PL_HeII_5</name>
-    <x>900</x>
-    <y>540</y>
+    <x>931</x>
+    <y>666</y>
     <width>50</width>
-    <height>280</height>
+    <height>169</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
       <point x="50.0" y="0.0">
       </point>
-      <point x="50.0" y="280.0">
+      <point x="50.0" y="169.0">
       </point>
-      <point x="0.0" y="280.0">
+      <point x="0.0" y="169.0">
       </point>
     </points>
     <line_width>2</line_width>
@@ -1125,14 +851,454 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>PL_HeII_5</name>
-    <x>900</x>
-    <y>691</y>
+    <x>931</x>
+    <y>750</y>
+    <width>59</width>
+    <height>2</height>
+    <points>
+      <point x="0.0" y="2.0">
+      </point>
+      <point x="59.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PT801</name>
+    <macros>
+      <ptNum>801</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <y>31</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit</name>
+    <text>EXIT</text>
+    <x>710</x>
+    <y>29</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit_1</name>
+    <text>EXIT</text>
+    <x>670</x>
+    <y>240</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV203</name>
+    <macros>
+      <pvNum>203</pvNum>
+    </macros>
+    <file>PValve_NO.bob</file>
+    <x>580</x>
+    <y>180</y>
     <width>90</width>
-    <height>1</height>
+    <height>70</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV303</name>
+    <macros>
+      <pvNum>303</pvNum>
+    </macros>
+    <file>PValve_NO.bob</file>
+    <x>586</x>
+    <y>360</y>
+    <width>90</width>
+    <height>70</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_ExitN2_2</name>
+    <x>641</x>
+    <y>369</y>
+    <width>60</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="60.0" y="40.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit_2</name>
+    <text>EXIT</text>
+    <x>635</x>
+    <y>419</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV503</name>
+    <macros>
+      <pvNum>503</pvNum>
+    </macros>
+    <file>PValve_NO.bob</file>
+    <x>591</x>
+    <y>690</y>
+    <width>90</width>
+    <height>70</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_ExitN2_3</name>
+    <x>646</x>
+    <y>700</y>
+    <width>60</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="60.0" y="40.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit_3</name>
+    <text>EXIT</text>
+    <x>686</x>
+    <y>750</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>EC_NR602</name>
+    <macros>
+      <cvNum>602</cvNum>
+    </macros>
+    <file>Valve_NR.bob</file>
+    <x>790</x>
+    <y>810</y>
+    <width>112</width>
+    <height>41</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_602</name>
+    <macros>
+      <pvNum>602</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>871</x>
+    <y>786</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV403</name>
+    <macros>
+      <pvNum>403</pvNum>
+    </macros>
+    <file>PValve_NO.bob</file>
+    <x>588</x>
+    <y>539</y>
+    <width>90</width>
+    <height>70</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_ExitN2_4</name>
+    <x>643</x>
+    <y>548</y>
+    <width>60</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="60.0" y="40.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit_4</name>
+    <text>EXIT</text>
+    <x>683</x>
+    <y>598</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>EC_NR502</name>
+    <macros>
+      <cvNum>502</cvNum>
+    </macros>
+    <file>Valve_NR.bob</file>
+    <x>212</x>
+    <y>767</y>
+    <width>112</width>
+    <height>41</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV703A</name>
+    <macros>
+      <pvNum>703A</pvNum>
+    </macros>
+    <file>PValve_NO.bob</file>
+    <x>1140</x>
+    <y>100</y>
+    <width>90</width>
+    <height>70</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_703a</name>
+    <x>1200</x>
+    <y>150</y>
+    <width>40</width>
+    <height>70</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="90.0" y="0.0">
+      <point x="40.0" y="0.0">
+      </point>
+      <point x="40.0" y="70.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_19</name>
+    <file>C_Chamber.bob</file>
+    <x>800</x>
+    <y>190</y>
+    <width>541</width>
+    <height>240</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV703B</name>
+    <macros>
+      <pvNum>703B</pvNum>
+    </macros>
+    <file>PValve_NO.bob</file>
+    <x>931</x>
+    <y>100</y>
+    <width>90</width>
+    <height>70</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_Exit_roof</name>
+    <x>810</x>
+    <y>470</y>
+    <width>40</width>
+    <height>70</height>
+    <points>
+      <point x="40.0" y="70.0">
+      </point>
+      <point x="0.0" y="70.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit_5</name>
+    <text>EXIT</text>
+    <x>830</x>
+    <y>452</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>EC_NR701</name>
+    <macros>
+      <cvNum>701</cvNum>
+    </macros>
+    <file>Valve_NR.bob</file>
+    <x>1148</x>
+    <y>730</y>
+    <width>112</width>
+    <height>41</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_702</name>
+    <macros>
+      <pvNum>702</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>974</x>
+    <y>497</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_O2_4</name>
+    <x>1040</x>
+    <y>540</y>
+    <width>210</width>
+    <height>210</height>
+    <points>
+      <point x="100.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+      <point x="60.0" y="100.0">
+      </point>
+      <point x="210.0" y="100.0">
+      </point>
+      <point x="210.0" y="210.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_703a_1</name>
+    <x>1180</x>
+    <y>350</y>
+    <width>50</width>
+    <height>190</height>
+    <points>
+      <point x="0.0" y="190.0">
+      </point>
+      <point x="50.0" y="190.0">
+      </point>
+      <point x="50.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_Exit_roof_1</name>
+    <x>810</x>
+    <y>60</y>
+    <width>70</width>
+    <height>90</height>
+    <points>
+      <point x="70.0" y="90.0">
+      </point>
+      <point x="0.0" y="90.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit_6</name>
+    <text>EXIT</text>
+    <x>840</x>
+    <y>64</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_N2_2</name>
+    <x>980</x>
+    <y>150</y>
+    <width>110</width>
+    <height>0</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="110.0" y="0.0">
       </point>
     </points>
     <line_width>2</line_width>

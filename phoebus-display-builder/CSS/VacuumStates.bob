@@ -5,8 +5,8 @@
     <node>Vacuum</node>
     <unit>Esther</unit>
   </macros>
-  <width>780</width>
-  <height>870</height>
+  <width>1099</width>
+  <height>800</height>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
@@ -29,8 +29,7 @@
     <name>LED</name>
     <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
     <bit>0</bit>
-    <x>390</x>
-    <y>183</y>
+    <x>384</x>
     <width>100</width>
     <height>100</height>
     <on_label>STOPPED</on_label>
@@ -39,8 +38,8 @@
     <name>LED_1</name>
     <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
     <bit>1</bit>
-    <x>400</x>
-    <y>310</y>
+    <x>394</x>
+    <y>127</y>
     <width>80</width>
     <height>80</height>
     <on_label>IDLE</on_label>
@@ -49,8 +48,8 @@
     <name>LED_2</name>
     <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
     <bit>2</bit>
-    <x>650</x>
-    <y>310</y>
+    <x>644</x>
+    <y>127</y>
     <width>90</width>
     <height>90</height>
     <on_label>ManualOperation </on_label>
@@ -63,17 +62,17 @@
     <name>LED_LV</name>
     <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
     <bit>4</bit>
-    <x>400</x>
-    <y>560</y>
-    <width>80</width>
-    <height>80</height>
+    <x>385</x>
+    <y>377</y>
+    <width>100</width>
+    <height>100</height>
     <on_label>LOW Vacuum</on_label>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>START-REQ</name>
     <pv_name>${unit}:Vacuum:START-REQ</pv_name>
-    <x>250</x>
-    <y>220</y>
+    <x>244</x>
+    <y>37</y>
     <height>60</height>
     <off_label>Push to Start / Continue</off_label>
     <mode>1</mode>
@@ -81,8 +80,8 @@
   <widget type="bool_button" version="2.0.0">
     <name>STOP-REQ</name>
     <pv_name>${unit}:Vacuum:STOP-REQ</pv_name>
-    <x>520</x>
-    <y>220</y>
+    <x>514</x>
+    <y>37</y>
     <height>60</height>
     <off_label>Push to Stop</off_label>
     <on_label>Stopping</on_label>
@@ -95,7 +94,7 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Pressure</name>
     <pv_name>${unit}:${node}:CTST-Pressure</pv_name>
-    <x>250</x>
+    <x>670</x>
     <y>25</y>
     <width>210</width>
     <height>40</height>
@@ -109,8 +108,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Unit</name>
     <pv_name>${unit}:${node}:Units</pv_name>
-    <x>649</x>
-    <y>85</y>
+    <x>929</x>
+    <y>147</y>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="20.0">
       </font>
@@ -119,7 +118,7 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Pressure_1</name>
     <pv_name>${unit}:${node}:STDT-Pressure</pv_name>
-    <x>469</x>
+    <x>889</x>
     <y>25</y>
     <width>210</width>
     <height>40</height>
@@ -134,7 +133,7 @@
     <name>CTST_lb</name>
     <class>Label_1</class>
     <text>CTST</text>
-    <x>320</x>
+    <x>740</x>
     <width>58</width>
     <height>25</height>
     <font>
@@ -147,8 +146,8 @@
     <name>LED_StopLV</name>
     <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
     <bit>5</bit>
-    <x>570</x>
-    <y>400</y>
+    <x>564</x>
+    <y>217</y>
     <width>80</width>
     <height>80</height>
     <on_label>StoppingLowVacuum </on_label>
@@ -163,8 +162,8 @@
     <name>High Press Thr</name>
     <class>Label_1</class>
     <text>Low-&gt;High_Thres</text>
-    <x>12</x>
-    <y>620</y>
+    <x>524</x>
+    <y>410</y>
     <width>111</width>
     <height>16</height>
     <font>
@@ -182,8 +181,8 @@
     <name>LowPress Thr</name>
     <class>Label_1</class>
     <text>High-&gt;Low_Thres</text>
-    <x>519</x>
-    <y>620</y>
+    <x>513</x>
+    <y>437</y>
     <width>111</width>
     <height>16</height>
     <font>
@@ -197,17 +196,10 @@
     <transparent>false</transparent>
     <auto_size>true</auto_size>
   </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>PressureLowThres</name>
-    <pv_name>${unit}:${node}:PressureL2HThres</pv_name>
-    <x>127</x>
-    <y>620</y>
-    <format>2</format>
-  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TU_DT-PT-Static</name>
     <pv_name>${unit}:${node}:PT-CT-Static</pv_name>
-    <x>269</x>
+    <x>689</x>
     <y>85</y>
     <width>169</width>
     <height>40</height>
@@ -221,14 +213,14 @@
   <widget type="label" version="2.0.0">
     <name>Label_DT-PT-Static</name>
     <text>PT-CT-Static</text>
-    <x>308</x>
+    <x>728</x>
     <y>65</y>
   </widget>
   <widget type="label" version="2.0.0">
     <name>CTST_lb_1</name>
     <class>Label_1</class>
     <text>STDT</text>
-    <x>509</x>
+    <x>929</x>
     <width>58</width>
     <height>25</height>
     <font>
@@ -240,7 +232,7 @@
   <widget type="textupdate" version="2.0.0">
     <name>TU_DT-PT-Static_1</name>
     <pv_name>${unit}:${node}:PT-DT-Static</pv_name>
-    <x>480</x>
+    <x>900</x>
     <y>85</y>
     <width>169</width>
     <height>40</height>
@@ -253,28 +245,28 @@
   <widget type="label" version="2.0.0">
     <name>Label_DT-PT-Static_1</name>
     <text>DT-PT-Static</text>
-    <x>519</x>
+    <x>939</x>
     <y>65</y>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_6</name>
     <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
     <bit>3</bit>
-    <x>240</x>
-    <y>400</y>
+    <x>234</x>
+    <y>217</y>
     <width>80</width>
     <height>80</height>
     <on_label>StartingLowVacuum </on_label>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline</name>
-    <x>530</x>
-    <y>380</y>
+    <x>524</x>
+    <y>197</y>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_1</name>
-    <x>480</x>
-    <y>360</y>
+    <x>474</x>
+    <y>177</y>
     <width>170</width>
     <points>
       <point x="0.0" y="0.0">
@@ -292,8 +284,8 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_2</name>
-    <x>480</x>
-    <y>300</y>
+    <x>474</x>
+    <y>117</y>
     <width>170</width>
     <height>30</height>
     <points>
@@ -312,8 +304,8 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_3</name>
-    <x>310</x>
-    <y>370</y>
+    <x>304</x>
+    <y>187</y>
     <width>90</width>
     <height>40</height>
     <points>
@@ -330,8 +322,8 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_4</name>
-    <x>440</x>
-    <y>280</y>
+    <x>434</x>
+    <y>97</y>
     <width>1</width>
     <height>30</height>
     <points>
@@ -348,8 +340,8 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_5</name>
-    <x>310</x>
-    <y>470</y>
+    <x>304</x>
+    <y>287</y>
     <width>90</width>
     <height>110</height>
     <points>
@@ -366,8 +358,8 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_6</name>
-    <x>470</x>
-    <y>470</y>
+    <x>464</x>
+    <y>287</y>
     <width>110</width>
     <height>110</height>
     <points>
@@ -384,8 +376,8 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_7</name>
-    <x>480</x>
-    <y>370</y>
+    <x>474</x>
+    <y>187</y>
     <height>40</height>
     <points>
       <point x="100.0" y="40.0">
@@ -402,16 +394,16 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_2</name>
     <pv_name>${unit}:${node}:OPSTATE</pv_name>
-    <x>378</x>
-    <y>150</y>
+    <x>360</x>
+    <y>260</y>
     <width>129</width>
     <height>31</height>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry</name>
     <pv_name>${unit}:${node}:Hidraulic-Pressure</pv_name>
-    <x>12</x>
-    <y>150</y>
+    <x>10</x>
+    <y>235</y>
     <width>120</width>
     <height>45</height>
   </widget>
@@ -419,8 +411,8 @@
     <name>Check Box_1</name>
     <pv_name>${unit}:${node}:Turbo-Fans</pv_name>
     <label>Turbo-Fans</label>
-    <x>12</x>
-    <y>195</y>
+    <x>10</x>
+    <y>280</y>
   </widget>
   <widget type="label" version="2.0.0">
     <name>LowPress Thr_1</name>
@@ -439,8 +431,8 @@
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button</name>
     <pv_name>${unit}:Vacuum:Auto-Mode</pv_name>
-    <x>505</x>
-    <y>330</y>
+    <x>499</x>
+    <y>147</y>
     <off_label>Push Auto</off_label>
     <off_color>
       <color name="OK" red="0" green="255" blue="0">
@@ -456,39 +448,31 @@
   <widget type="textupdate" version="2.0.0">
     <name>Tu_StartLV_Sub</name>
     <pv_name>${unit}:${node}:StartingLV-SubState</pv_name>
-    <x>112</x>
-    <y>480</y>
+    <x>106</x>
+    <y>297</y>
     <width>190</width>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Tu_StopLV_Sub</name>
     <pv_name>${unit}:${node}:StoppingLV-SubState</pv_name>
-    <x>580</x>
-    <y>480</y>
+    <x>574</x>
+    <y>297</y>
     <width>181</width>
-  </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>PressureLowThres_1</name>
-    <pv_name>${unit}:${node}:PressureH2LThres</pv_name>
-    <x>640</x>
-    <y>620</y>
-    <width>109</width>
-    <format>2</format>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_StartHV</name>
     <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
     <bit>6</bit>
-    <x>240</x>
-    <y>700</y>
+    <x>234</x>
+    <y>517</y>
     <width>80</width>
     <height>80</height>
     <on_label>StartingHighVacuum </on_label>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_8</name>
-    <x>310</x>
-    <y>630</y>
+    <x>304</x>
+    <y>447</y>
     <height>80</height>
     <points>
       <point x="100.0" y="0.0">
@@ -506,16 +490,16 @@
     <name>LED_StopHV</name>
     <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
     <bit>8</bit>
-    <x>570</x>
-    <y>700</y>
+    <x>564</x>
+    <y>517</y>
     <width>80</width>
     <height>80</height>
     <on_label>StoppingHighVacuum </on_label>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_9</name>
-    <x>470</x>
-    <y>630</y>
+    <x>464</x>
+    <y>447</y>
     <width>120</width>
     <height>80</height>
     <points>
@@ -534,54 +518,54 @@
     <name>LED_HV</name>
     <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
     <bit>7</bit>
-    <x>400</x>
-    <y>790</y>
-    <width>80</width>
-    <height>80</height>
+    <x>384</x>
+    <y>587</y>
+    <width>100</width>
+    <height>100</height>
     <on_label>HIGHVacuum</on_label>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Tu_Idle_Sub</name>
     <pv_name>${unit}:${node}:Idle-SubState</pv_name>
-    <x>400</x>
-    <y>390</y>
+    <x>394</x>
+    <y>207</y>
     <width>80</width>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Tu_StartHV_Sub</name>
     <pv_name>${unit}:${node}:StartingHV-SubState</pv_name>
-    <x>80</x>
-    <y>690</y>
+    <x>117</x>
+    <y>597</y>
     <width>184</width>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Tu_StopHV_Sub</name>
     <pv_name>${unit}:${node}:StoppingHV-SubState</pv_name>
-    <x>605</x>
-    <y>680</y>
+    <x>599</x>
+    <y>497</y>
     <width>165</width>
   </widget>
   <widget type="checkbox" version="2.0.0">
     <name>ChB_WP</name>
     <pv_name>${unit}:${node}:Water-Pump</pv_name>
     <label>Water-Pump</label>
-    <x>12</x>
-    <y>215</y>
+    <x>10</x>
+    <y>300</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
     <pv_name>${unit}:${node}:TraceMessage</pv_name>
-    <x>12</x>
-    <y>760</y>
-    <width>215</width>
-    <height>90</height>
+    <x>764</x>
+    <y>330</y>
+    <width>236</width>
+    <height>60</height>
     <interactive>true</interactive>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>START-REQ_1</name>
     <pv_name>${unit}:Vacuum:START-REQ</pv_name>
-    <x>264</x>
-    <y>580</y>
+    <x>258</x>
+    <y>397</y>
     <width>80</width>
     <height>50</height>
     <off_label>Push to Continue</off_label>
@@ -597,16 +581,16 @@
         <description>Open Vacuum Display</description>
       </action>
     </actions>
-    <x>599</x>
-    <y>810</y>
+    <x>26</x>
+    <y>127</y>
     <width>150</width>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_10</name>
-    <x>300</x>
-    <y>770</y>
+    <x>294</x>
+    <y>587</y>
     <width>90</width>
     <height>60</height>
     <points>
@@ -623,8 +607,8 @@
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_11</name>
-    <x>480</x>
-    <y>770</y>
+    <x>474</x>
+    <y>587</y>
     <height>60</height>
     <points>
       <point x="0.0" y="60.0">
@@ -637,5 +621,81 @@
       </color>
     </line_color>
     <arrows>2</arrows>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>High Press Thr_1</name>
+    <class>Label_1</class>
+    <text>CTST-Pressure_HIGH</text>
+    <x>734</x>
+    <y>227</y>
+    <width>141</width>
+    <height>16</height>
+    <font>
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="230" blue="102">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>PressureLowThres_3</name>
+    <pv_name>${unit}:${node}:CTST-Pressure.HIGH</pv_name>
+    <x>734</x>
+    <y>243</y>
+    <width>110</width>
+    <format>2</format>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>PressureLowThres_4</name>
+    <pv_name>${unit}:${node}:STDT-Pressure.HIGH</pv_name>
+    <x>910</x>
+    <y>243</y>
+    <width>109</width>
+    <format>2</format>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>High Press Thr_2</name>
+    <class>Label_1</class>
+    <text>STDT-Pressure_HIGH</text>
+    <x>910</x>
+    <y>227</y>
+    <width>141</width>
+    <height>16</height>
+    <font>
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="230" blue="102">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_HV_1</name>
+    <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
+    <bit>10</bit>
+    <x>513</x>
+    <y>700</y>
+    <width>100</width>
+    <height>100</height>
+    <on_label>SHOTReady</on_label>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_StartShot</name>
+    <pv_name>${unit}:Vacuum:OPCALCSTATE</pv_name>
+    <bit>9</bit>
+    <x>301</x>
+    <y>687</y>
+    <width>80</width>
+    <height>80</height>
+    <on_label>StartingShot</on_label>
   </widget>
 </display>

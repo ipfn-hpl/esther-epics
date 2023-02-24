@@ -205,7 +205,6 @@ Helium II</text>
       <x>41</x>
       <y>20</y>
       <width>25</width>
-      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -233,7 +232,6 @@ Helium II</text>
       <x>161</x>
       <y>20</y>
       <width>36</width>
-      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -261,7 +259,6 @@ Helium II</text>
       <x>264</x>
       <y>20</y>
       <width>25</width>
-      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -289,7 +286,6 @@ Helium II</text>
       <x>384</x>
       <y>20</y>
       <width>42</width>
-      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -506,7 +502,7 @@ He II</text>
   </widget>
   <widget type="picture" version="2.0.0">
     <name>Picture</name>
-    <file>pic/ESTHER_logo_variant_150x192.png</file>
+    <file>../pics/ESTHER_logo_variant_150x192.png</file>
     <x>62</x>
     <y>300</y>
     <height>192</height>
@@ -531,7 +527,6 @@ He II</text>
       <text>MFC201-O2</text>
       <x>10</x>
       <width>104</width>
-      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -568,7 +563,6 @@ He II</text>
       <text>MFC401-H2</text>
       <x>250</x>
       <width>104</width>
-      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -605,7 +599,6 @@ He II</text>
       <text>MFC601- He</text>
       <x>377</x>
       <width>109</width>
-      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -655,6 +648,7 @@ He II</text>
       <pv_name>${unit}:${node}:START</pv_name>
       <off_label>START</off_label>
       <show_led>false</show_led>
+      <mode>1</mode>
     </widget>
     <widget type="led" version="2.0.0">
       <name>LED</name>
@@ -670,6 +664,7 @@ He II</text>
       <off_label>STOP</off_label>
       <on_label>STOPPING</on_label>
       <show_led>false</show_led>
+      <mode>1</mode>
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
@@ -687,6 +682,7 @@ He II</text>
       <off_label>ABORT
 START</off_label>
       <show_led>false</show_led>
+      <mode>1</mode>
     </widget>
     <widget type="bool_button" version="2.0.0">
       <name>BB_GAS_Stop_2</name>
@@ -697,6 +693,7 @@ START</off_label>
 STOP</off_label>
       <on_label>STOPPING</on_label>
       <show_led>false</show_led>
+      <mode>1</mode>
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
@@ -710,7 +707,7 @@ STOP</off_label>
     <widget type="slide_button" version="2.0.0">
       <name>SB_Gas_Mode</name>
       <pv_name>${unit}:${node}:GAS_MODE</pv_name>
-      <label>Helium</label>
+      <label>Mode</label>
       <x>20</x>
       <width>111</width>
       <height>50</height>
@@ -721,8 +718,8 @@ STOP</off_label>
     <widget type="label" version="2.0.0">
       <name>Lbl_Gas_Mode</name>
       <class>SECTION</class>
-      <text>Purge Gas Mode</text>
-      <width>111</width>
+      <text>Purge Gas</text>
+      <width>71</width>
       <height>16</height>
       <font use_class="true">
         <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
@@ -744,288 +741,6 @@ STOP</off_label>
     <height>55</height>
     <style>3</style>
     <transparent>true</transparent>
-    <widget type="bool_button" version="2.0.0">
-      <name>BB_Stp_1</name>
-      <pv_name>${unit}:${node}:STEP_1_GO</pv_name>
-      <y>25</y>
-      <off_label>Step 1</off_label>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-      <on_color>
-        <color red="0" green="255" blue="0">
-        </color>
-      </on_color>
-      <foreground_color>
-        <color red="192" green="192" blue="192">
-        </color>
-      </foreground_color>
-      <background_color>
-        <color red="100" green="100" blue="100">
-        </color>
-      </background_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_STP_1</name>
-      <pv_name>${unit}:${node}:STEP_1_ON</pv_name>
-      <x>100</x>
-      <y>25</y>
-      <width>30</width>
-      <height>30</height>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-      <foreground_color>
-        <color red="192" green="192" blue="192">
-        </color>
-      </foreground_color>
-      <square>true</square>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_0</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_0</pv_name>
-      <x>135</x>
-      <y>30</y>
-      <off_color use_class="true">
-        <color name="Off" red="60" green="100" blue="60">
-        </color>
-      </off_color>
-      <on_color use_class="true">
-        <color name="On" red="0" green="255" blue="0">
-        </color>
-      </on_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_1</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_1</pv_name>
-      <x>155</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_1A</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_1A</pv_name>
-      <x>175</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_2</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_2</pv_name>
-      <x>195</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_3</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_3</pv_name>
-      <x>215</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_4</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_4</pv_name>
-      <x>235</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_5</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_5</pv_name>
-      <x>255</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_6</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_6</pv_name>
-      <x>275</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_7</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_7</pv_name>
-      <x>295</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_7A</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_7A</pv_name>
-      <x>315</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_8</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_8</pv_name>
-      <x>335</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_9</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_9</pv_name>
-      <x>355</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_10</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_10</pv_name>
-      <x>375</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_10A</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_10A</pv_name>
-      <x>395</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_11</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_11</pv_name>
-      <x>415</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_12</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_0</pv_name>
-      <x>435</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_13</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_13</pv_name>
-      <x>455</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_Stp1_14</name>
-      <class>ON_OFF</class>
-      <pv_name>${unit}:${node}:S1_14</pv_name>
-      <x>475</x>
-      <y>30</y>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-    </widget>
-    <widget type="led" version="2.0.0">
-      <name>Ld_STP1_END</name>
-      <pv_name>${unit}:${node}:STEP_1_ON</pv_name>
-      <x>500</x>
-      <y>25</y>
-      <width>30</width>
-      <height>30</height>
-      <off_color>
-        <color red="0" green="100" blue="0">
-        </color>
-      </off_color>
-      <foreground_color>
-        <color red="192" green="192" blue="192">
-        </color>
-      </foreground_color>
-      <square>true</square>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Tu_PT901_end</name>
-      <pv_name>${unit}:${node}:PT901_END_S1</pv_name>
-      <x>540</x>
-      <y>30</y>
-      <width>110</width>
-      <wrap_words>false</wrap_words>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Tu_Counter_S1</name>
-      <pv_name>${unit}:${node}:Counter_S1</pv_name>
-      <x>215</x>
-      <width>110</width>
-      <visible>false</visible>
-      <wrap_words>false</wrap_words>
-      <rules>
-        <rule name="Visible" prop_id="visible" out_exp="false">
-          <exp bool_exp="if(pv0&gt;1)">
-            <value>true</value>
-          </exp>
-          <pv_name>${unit}:${node}:Counter_S1</pv_name>
-        </rule>
-      </rules>
-    </widget>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
@@ -1035,5 +750,495 @@ STOP</off_label>
     <width>490</width>
     <height>16</height>
     <auto_size>true</auto_size>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_Alarm</name>
+    <pv_name>${unit}:${node}:ALARM</pv_name>
+    <x>1020</x>
+    <y>70</y>
+    <width>30</width>
+    <height>30</height>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_ALARM_CLR</name>
+    <pv_name>${unit}:${node}:ALARM_CLR</pv_name>
+    <x>870</x>
+    <y>70</y>
+    <width>110</width>
+    <off_label>CLEARALARM</off_label>
+    <on_label></on_label>
+    <show_led>false</show_led>
+    <mode>1</mode>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TIU_S1_SubStep</name>
+    <pv_name>${unit}:${node}:S1_SubStep</pv_name>
+    <x>967</x>
+    <y>315</y>
+    <width>55</width>
+    <format>1</format>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Tu_PT901_end</name>
+    <pv_name>${unit}:${node}:PT901_END_S1</pv_name>
+    <x>1345</x>
+    <y>255</y>
+    <width>110</width>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Tu_Counter_S1_1</name>
+    <pv_name>${unit}:${node}:Counter_S1</pv_name>
+    <x>1150</x>
+    <y>315</y>
+    <width>110</width>
+    <visible>false</visible>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="Visible" prop_id="visible" out_exp="false">
+        <exp bool_exp="if(pv0&gt;1)">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Counter_S1</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Stp_2</name>
+    <pv_name>${unit}:${node}:STEP_0_GO</pv_name>
+    <x>860</x>
+    <y>205</y>
+    <off_label>Step 0</off_label>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="100" green="100" blue="100">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_STP_2</name>
+    <pv_name>${unit}:${node}:STEP_0_ON</pv_name>
+    <x>968</x>
+    <y>205</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <square>true</square>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_STP_3</name>
+    <pv_name>${unit}:${node}:S0_END</pv_name>
+    <x>1340</x>
+    <y>205</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <square>true</square>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Stp_1</name>
+    <pv_name>${unit}:${node}:STEP_1_GO</pv_name>
+    <x>850</x>
+    <y>265</y>
+    <off_label>Step 1</off_label>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="100" green="100" blue="100">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_STP_1</name>
+    <pv_name>${unit}:${node}:STEP_1_ON</pv_name>
+    <x>950</x>
+    <y>265</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <square>true</square>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_0</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_0</pv_name>
+    <x>985</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_1</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_1</pv_name>
+    <x>1005</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_1A</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_1A</pv_name>
+    <x>1025</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_2</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_2</pv_name>
+    <x>1045</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_3</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_3</pv_name>
+    <x>1065</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_4</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_4</pv_name>
+    <x>1085</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_5</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_5</pv_name>
+    <x>1105</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_6</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_6</pv_name>
+    <x>1125</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_7</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_7</pv_name>
+    <x>1145</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_7A</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_7A</pv_name>
+    <x>1165</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_8</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_8</pv_name>
+    <x>1185</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_9</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_9</pv_name>
+    <x>1205</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_10</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_10</pv_name>
+    <x>1225</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_10A</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_10A</pv_name>
+    <x>1245</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_11</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_11</pv_name>
+    <x>1265</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_12</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_0</pv_name>
+    <x>1285</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_13</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_13</pv_name>
+    <x>1305</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_Stp1_14</name>
+    <class>ON_OFF</class>
+    <pv_name>${unit}:${node}:S1_14</pv_name>
+    <x>1325</x>
+    <y>270</y>
+    <off_color use_class="true">
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_STP1_END</name>
+    <pv_name>${unit}:${node}:S1_END</pv_name>
+    <x>1350</x>
+    <y>265</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <square>true</square>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_STP_4</name>
+    <pv_name>${unit}:${node}:ABORT_ON</pv_name>
+    <x>1080</x>
+    <y>120</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <square>true</square>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_STP1_END_1</name>
+    <pv_name>${unit}:${node}:SA_END</pv_name>
+    <x>1340</x>
+    <y>120</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <square>true</square>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>${unit}:${node}:GAS_MODE</pv_name>
+    <x>1265</x>
+    <y>80</y>
+    <width>60</width>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
   </widget>
 </display>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>D_PValve_NO</name>
-  <width>78</width>
-  <height>110</height>
+  <width>90</width>
+  <height>70</height>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_6</name>
     <x>37</x>
-    <y>11</y>
+    <y>22</y>
     <width>1</width>
     <height>30</height>
     <points>
@@ -24,7 +24,7 @@
   <widget type="arc" version="2.0.0">
     <name>Arc_2</name>
     <x>20</x>
-    <y>10</y>
+    <y>21</y>
     <width>38</width>
     <height>21</height>
     <total_angle>180.0</total_angle>
@@ -33,11 +33,28 @@
       <color name="On" red="0" green="255" blue="0">
       </color>
     </background_color>
+    <rules>
+      <rule name="PV_color" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="STOP" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PV${pvNum}</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="polygon" version="2.0.0">
     <name>Polygon_R</name>
     <x>39</x>
-    <y>27</y>
+    <y>38</y>
     <width>17</width>
     <height>26</height>
     <points>
@@ -74,7 +91,7 @@
   <widget type="polygon" version="2.0.0">
     <name>Polygon_L</name>
     <x>23</x>
-    <y>28</y>
+    <y>39</y>
     <width>14</width>
     <height>24</height>
     <points>
@@ -104,22 +121,16 @@
             </color>
           </value>
         </exp>
-        <pv_name>${unit}:${node}:${pvName}</pv_name>
+        <pv_name>${unit}:${node}:PV${pvNum}</pv_name>
       </rule>
     </rules>
   </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED</name>
-    <pv_name>${unit}:${node}:${pvName}</pv_name>
-    <x>23</x>
-    <y>80</y>
-    <off_color>
-      <color name="OK" red="0" green="255" blue="0">
-      </color>
-    </off_color>
-    <on_color>
-      <color red="255" green="0" blue="0">
-      </color>
-    </on_color>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>PV${pvNum}</text>
+    <width>90</width>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
   </widget>
 </display>

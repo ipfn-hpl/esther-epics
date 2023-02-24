@@ -41,6 +41,23 @@
       <color red="255" green="0" blue="0">
       </color>
     </background_color>
+    <rules>
+      <rule name="PV_color" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PV${pvNum}</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="polygon" version="2.0.0">
     <name>Polygon_R</name>
