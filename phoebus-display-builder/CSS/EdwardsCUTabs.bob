@@ -591,6 +591,15 @@
     <x>10</x>
     <y>66</y>
     <width>70</width>
+    <rules>
+      <rule name="New Rule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==2">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:Vacuum:OPSTATE</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
     <show_confirm_dialog>true</show_confirm_dialog>
     <confirm_message>Are you sure?</confirm_message>
   </widget>

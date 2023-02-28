@@ -86,13 +86,22 @@
     <x>130</x>
     <y>160</y>
     <labels_from_pv>true</labels_from_pv>
+    <rules>
+      <rule name="New Rule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==2">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:Vacuum:OPSTATE</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
   </widget>
   <widget type="symbol" version="2.0.0">
     <name>Valve</name>
     <pv_name>Esther:EDA:${eda}-Valve</pv_name>
     <symbols>
-      <symbol>pic/1809-horizontal-type-L-port-flow-path-open-right.png</symbol>
-      <symbol>pic/1809-horizontal-type-L-port-flow-path-open-left.png</symbol>
+      <symbol>pics/1809-horizontal-type-L-port-flow-path-open-right.png</symbol>
+      <symbol>pics/1809-horizontal-type-L-port-flow-path-open-left.png</symbol>
     </symbols>
     <x>110</x>
     <y>200</y>

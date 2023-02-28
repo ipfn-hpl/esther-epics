@@ -88,6 +88,15 @@
       <color name="On" red="0" green="255" blue="0">
       </color>
     </background_color>
+    <rules>
+      <rule name="New Rule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==2">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:Vacuum:OPSTATE</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
     <show_confirm_dialog>2</show_confirm_dialog>
     <confirm_message>Are your sure?</confirm_message>
   </widget>

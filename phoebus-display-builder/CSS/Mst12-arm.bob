@@ -76,6 +76,15 @@
       </color>
     </background_color>
     <labels_from_pv>true</labels_from_pv>
+    <rules>
+      <rule name="New Rule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==2">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:Vacuum:OPSTATE</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
     <mode>1</mode>
   </widget>
   <widget type="bool_button" version="2.0.0">
@@ -94,6 +103,15 @@
       </color>
     </background_color>
     <labels_from_pv>true</labels_from_pv>
+    <rules>
+      <rule name="New Rule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==2">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:Vacuum:OPSTATE</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_3</name>
