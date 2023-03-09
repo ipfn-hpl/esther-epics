@@ -1,5 +1,0 @@
-epicsEnvSet("ARCH","linux-x86_64")
-epicsEnvSet("IOC","iocestherGas")
-epicsEnvSet("TOP","/home/bernardo/EPICS/estherGas")
-epicsEnvSet("S7NODAVE","/opt/epics/modules/soft/s7nodave-SNAPSHOT-20150323")
-epicsEnvSet("EPICS_BASE","/usr/lib/epics")

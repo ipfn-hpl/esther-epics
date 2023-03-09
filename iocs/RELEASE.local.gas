@@ -1,33 +1,15 @@
 #RELEASE Location of external products
-EPICS_ROOT=/home/pi/EPICS7
+EPICS_ROOT=/home/pi/epics
 SUPPORT=$(EPICS_ROOT)/support
-
-#  IPAC is only necessary if support for Greensprings IP488 is required
-#  IPAC release V2-7 or later is required.
-IPAC=
-
-# SEQ is required for testIPServer
-#SNCSEQ=$(SUPPORT)/seq-2-2-5
-SNCSEQ=$(SUPPORT)/seq-2-2
-#SNCSEQ=
-
-## For sCalcout support in asynOctet - applications include asynCalc.dbd
+#SNCSEQ=$(SUPPORT)/seq-2-2-0-2
+SNCSEQ=
+SSCAN=$(SUPPORT)/sscan
 CALC=$(SUPPORT)/calc
-
 ASYN=$(SUPPORT)/asyn
-STREAM=$(SUPPORT)/stream
-
-# If CALC was built with SSCAN support then SSCAN must be defined for testEpicsApp
-#SSCAN=$(SUPPORT)/sscan-2-11-3
-SSCAN=
-
 PCRE=
-#PCRE_INCLUDE=/usr/include/pcre
-#PCRE_LIB=/usr/lib/arm-linux-gnueabihf 
-#
-#/usr/lib/arm-linux-gnueabihf
-#S7NODAVE=$(SUPPORT)/s7nodave-3.0.2
+STREAM=$(SUPPORT)/stream
+S7NODAVE=$(SUPPORT)/s7nodave-3.0.2
 
-#  EPICS_BASE 3.14.6 or later is required
-EPICS_BASE=/home/pi/EPICS7/epics-base
+#  EPICS_BASE
+EPICS_BASE=$(EPICS_ROOT)/epics-base
 

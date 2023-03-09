@@ -388,12 +388,33 @@ record(longin,"$(user):Counter_S1")
         field(DESC, "S7 Counter_S1 _wait")
 #        field(EGU, "mSec")
 }
+record(longin,"$(user):SA_SubStep")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP,  "@myPLC MW139 uint16")
+        field(DESC, "S7 STEP Abort sm substep")
+}
 record(longin,"$(user):S1_SubStep")
 {
         field(DTYP, "s7nodave")
         field(SCAN, "I/O Intr")
-        field(INP,  "@myPLC MW150 uint16")
+        field(INP,  "@myPLC MW141 uint16")
         field(DESC, "S7 STEP 1 sm substep")
+}
+record(longin,"$(user):S2_SubStep")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP,  "@myPLC MW142 uint16")
+        field(DESC, "S7 STEP 2 sm substep")
+}
+record(longin,"$(user):S3_SubStep")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP,  "@myPLC MW143 uint16")
+        field(DESC, "S7 STEP 3 sm substep")
 }
 record(longin,"$(user):TimerS1_2_wait")
 {
