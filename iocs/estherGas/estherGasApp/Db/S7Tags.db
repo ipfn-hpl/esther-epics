@@ -392,28 +392,49 @@ record(longin,"$(user):SA_SubStep")
 {
         field(DTYP, "s7nodave")
         field(SCAN, "I/O Intr")
-        field(INP,  "@myPLC MW139 uint16")
+        field(INP,  "@myPLC MW138 uint16")
         field(DESC, "S7 STEP Abort sm substep")
+}
+record(longin,"$(user):S0_SubStep")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP,  "@myPLC MW140 uint16")
+        field(DESC, "S7 STEP 0 sm substep")
 }
 record(longin,"$(user):S1_SubStep")
 {
         field(DTYP, "s7nodave")
         field(SCAN, "I/O Intr")
-        field(INP,  "@myPLC MW141 uint16")
+        field(INP,  "@myPLC MW142 uint16")
         field(DESC, "S7 STEP 1 sm substep")
 }
 record(longin,"$(user):S2_SubStep")
 {
         field(DTYP, "s7nodave")
         field(SCAN, "I/O Intr")
-        field(INP,  "@myPLC MW142 uint16")
+        field(INP,  "@myPLC MW144 uint16")
         field(DESC, "S7 STEP 2 sm substep")
 }
 record(longin,"$(user):S3_SubStep")
 {
         field(DTYP, "s7nodave")
         field(SCAN, "I/O Intr")
-        field(INP,  "@myPLC MW143 uint16")
+        field(INP,  "@myPLC MW146 uint16")
+        field(DESC, "S7 STEP 3 sm substep")
+}
+record(longin,"$(user):MFC_StartStep")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP,  "@myPLC MW156 uint16")
+        field(DESC, "S7 STEP 2 sm substep")
+}
+record(longin,"$(user):S3_SubStep")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP,  "@myPLC MW144 uint16")
         field(DESC, "S7 STEP 3 sm substep")
 }
 record(longin,"$(user):TimerS1_2_wait")
