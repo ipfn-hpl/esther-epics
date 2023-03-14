@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>DisplayAlarms</name>
+  <width>290</width>
+  <height>270</height>
+  <background_color>
+    <color red="255" green="230" blue="204">
+    </color>
+  </background_color>
+  <widget type="bool_button" version="2.0.0">
+    <name>ClearAlarm</name>
+    <pv_name>Esther:gas:ALARM_CLR</pv_name>
+    <bit>-1</bit>
+    <width>150</width>
+    <height>50</height>
+    <off_label>CLEAR ALARMS </off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <foreground_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <mode>1</mode>
+    <show_confirm_dialog>2</show_confirm_dialog>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>ALARM ACTIVE</text>
+    <x>157</x>
+    <y>2</y>
+    <width>120</width>
+    <height>46</height>
+    <font>
+      <font family="Sans" style="BOLD" size="8.910891089108912">
+      </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>false</value>
+        </exp>
+        <pv_name>Esther:gas:ALARM</pv_name>
+      </rule>
+      <rule name="Blinking" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="240" green="240" blue="240">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1&amp;&amp;pv1&lt;0.5">
+          <value>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1&amp;&amp;pv1&gt;=0.5">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>Esther:gas:ALARM</pv_name>
+        <pv_name>sim://ramp(0,1,.05)</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Grouping Container_1</name>
+    <x>253</x>
+    <y>54</y>
+    <width>30</width>
+    <height>210</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="led" version="2.0.0">
+      <name>ALARM_LED_7</name>
+      <pv_name>Esther:gas:ALARM_PT401</pv_name>
+      <bit>0</bit>
+      <x>2</x>
+      <y>2</y>
+      <width>25</width>
+      <height>25</height>
+      <on_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>ALARM_LED_8</name>
+      <pv_name>Esther:gas:ALARM_PT501</pv_name>
+      <bit>0</bit>
+      <x>2</x>
+      <y>62</y>
+      <width>25</width>
+      <height>25</height>
+      <on_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>ALARM_LED_9</name>
+      <pv_name>Esther:gas:ALARM_PT402</pv_name>
+      <bit>0</bit>
+      <x>2</x>
+      <y>32</y>
+      <width>25</width>
+      <height>25</height>
+      <on_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>ALARM_LED_10</name>
+      <pv_name>Esther:gas:ALARM_PT502</pv_name>
+      <bit>0</bit>
+      <x>2</x>
+      <y>92</y>
+      <width>25</width>
+      <height>25</height>
+      <on_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>ALARM_LED_11</name>
+      <pv_name>Esther:gas:ALARM_PT601</pv_name>
+      <bit>0</bit>
+      <x>2</x>
+      <y>122</y>
+      <width>25</width>
+      <height>25</height>
+      <on_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>ALARM_LED_12</name>
+      <pv_name>Esther:gas:ALARM_PT801</pv_name>
+      <bit>0</bit>
+      <x>2</x>
+      <y>152</y>
+      <width>25</width>
+      <height>25</height>
+      <on_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>ALARM_LED_13</name>
+      <pv_name>Esther:gas:ALARM_PT901</pv_name>
+      <bit>0</bit>
+      <x>2</x>
+      <y>182</y>
+      <width>25</width>
+      <height>25</height>
+      <on_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Grouping Container_2</name>
+    <x>105</x>
+    <y>54</y>
+    <width>29</width>
+    <height>210</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="group" version="2.0.0">
+      <name>Grouping Container_3</name>
+      <width>30</width>
+      <height>210</height>
+      <style>3</style>
+      <foreground_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <widget type="led" version="2.0.0">
+        <name>ALARM_LED_14</name>
+        <pv_name>Esther:gas:ALARM_PT101</pv_name>
+        <bit>0</bit>
+        <x>2</x>
+        <y>2</y>
+        <width>26</width>
+        <height>26</height>
+        <on_color>
+          <color name="Major" red="255" green="0" blue="0">
+          </color>
+        </on_color>
+        <line_color>
+          <color red="150" green="150" blue="150">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ALARM_LED_15</name>
+        <pv_name>Esther:gas:ALARM_PT102</pv_name>
+        <bit>0</bit>
+        <x>2</x>
+        <y>32</y>
+        <width>26</width>
+        <height>26</height>
+        <on_color>
+          <color name="Major" red="255" green="0" blue="0">
+          </color>
+        </on_color>
+        <line_color>
+          <color red="150" green="150" blue="150">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ALARM_LED_16</name>
+        <pv_name>Esther:gas:ALARM_PT201</pv_name>
+        <bit>0</bit>
+        <x>2</x>
+        <y>62</y>
+        <width>26</width>
+        <height>26</height>
+        <on_color>
+          <color name="Major" red="255" green="0" blue="0">
+          </color>
+        </on_color>
+        <line_color>
+          <color red="150" green="150" blue="150">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ALARM_LED_17</name>
+        <pv_name>Esther:gas:ALARM_PT202</pv_name>
+        <bit>0</bit>
+        <x>2</x>
+        <y>92</y>
+        <width>26</width>
+        <height>26</height>
+        <on_color>
+          <color name="Major" red="255" green="0" blue="0">
+          </color>
+        </on_color>
+        <line_color>
+          <color red="150" green="150" blue="150">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ALARM_LED_18</name>
+        <pv_name>Esther:gas:ALARM_PT301</pv_name>
+        <bit>0</bit>
+        <x>2</x>
+        <y>122</y>
+        <width>26</width>
+        <height>26</height>
+        <on_color>
+          <color name="Major" red="255" green="0" blue="0">
+          </color>
+        </on_color>
+        <line_color>
+          <color red="150" green="150" blue="150">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ALARM_LED_19</name>
+        <pv_name>Esther:gas:ALARM_PT302</pv_name>
+        <bit>0</bit>
+        <x>2</x>
+        <y>152</y>
+        <width>26</width>
+        <height>26</height>
+        <on_color>
+          <color name="Major" red="255" green="0" blue="0">
+          </color>
+        </on_color>
+        <line_color>
+          <color red="150" green="150" blue="150">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ALARM_LED_20</name>
+        <pv_name>Esther:gas:ALARM_DOORS_OPEN</pv_name>
+        <bit>0</bit>
+        <x>2</x>
+        <y>182</y>
+        <width>26</width>
+        <height>26</height>
+        <on_color>
+          <color name="Major" red="255" green="0" blue="0">
+          </color>
+        </on_color>
+        <line_color>
+          <color red="150" green="150" blue="150">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>PT101</text>
+    <x>2</x>
+    <y>54</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>PT102</text>
+    <x>2</x>
+    <y>83</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>PT201</text>
+    <x>2</x>
+    <y>113</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>PT202</text>
+    <x>2</x>
+    <y>143</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>PT301</text>
+    <x>2</x>
+    <y>173</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_9</name>
+    <text>PT302</text>
+    <x>2</x>
+    <y>203</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_15</name>
+    <text>DOORS</text>
+    <x>2</x>
+    <y>233</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_16</name>
+    <text>PT401</text>
+    <x>158</x>
+    <y>54</y>
+    <width>80</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_17</name>
+    <text>PT501</text>
+    <x>157</x>
+    <y>114</y>
+    <width>80</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_18</name>
+    <text>PT402</text>
+    <x>157</x>
+    <y>84</y>
+    <width>80</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_19</name>
+    <text>PT502</text>
+    <x>157</x>
+    <y>144</y>
+    <width>80</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_20</name>
+    <text>PT601</text>
+    <x>157</x>
+    <y>174</y>
+    <width>80</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_21</name>
+    <text>PT801</text>
+    <x>157</x>
+    <y>204</y>
+    <width>80</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_22</name>
+    <text>PT901</text>
+    <x>157</x>
+    <y>234</y>
+    <width>80</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>
