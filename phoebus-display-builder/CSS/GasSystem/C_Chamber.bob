@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <width>540</width>
+  <height>200</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>RRectangle_3</name>
+    <x>24</x>
+    <y>23</y>
+    <width>488</width>
+    <height>145</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </background_color>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_4</name>
+    <x>385</x>
+    <y>128</y>
+    <width>90</width>
+    <height>70</height>
+    <total_angle>180.0</total_angle>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="MEDM_COLOR_11" red="90" green="90" blue="90">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Background Color Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="MEDM_COLOR_11" red="90" green="90" blue="90">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="MEDM_COLOR_16" red="30" green="187" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PV703A_OUT</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rounded Rect</name>
+    <x>509</x>
+    <y>11</y>
+    <width>27</width>
+    <height>170</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </background_color>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rounded Rect_2</name>
+    <y>10</y>
+    <width>27</width>
+    <height>170</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </background_color>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_Name</name>
+    <text>Combustion Chamber</text>
+    <x>77</x>
+    <y>65</y>
+    <width>402</width>
+    <height>46</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="OPI_Background" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_Kistler</name>
+    <pv_name>${unit}:Camera:Pressure</pv_name>
+    <x>43</x>
+    <y>49</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_8" red="133" green="133" blue="133">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_5</name>
+    <x>385</x>
+    <width>90</width>
+    <height>70</height>
+    <total_angle>-180.0</total_angle>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="MEDM_COLOR_11" red="90" green="90" blue="90">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Background Color Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="MEDM_COLOR_11" red="90" green="90" blue="90">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="MEDM_COLOR_16" red="30" green="187" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PV703A_OUT</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_Kist</name>
+    <text>KISTLER</text>
+    <x>42</x>
+    <y>32</y>
+    <width>90</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="OPI_Background" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>
