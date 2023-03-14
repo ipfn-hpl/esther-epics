@@ -38,7 +38,7 @@ $(pv_value)</tooltip>
       </color>
     </line_color>
     <background_color>
-      <color name="MEDM_COLOR_11" red="90" green="90" blue="90">
+      <color red="102" green="102" blue="102">
       </color>
     </background_color>
     <actions>
@@ -47,17 +47,11 @@ $(pv_value)</tooltip>
       <rule name="Background Color Rule" prop_id="background_color" out_exp="false">
         <exp bool_exp="pv0==1">
           <value>
-            <color name="MEDM_COLOR_11" red="90" green="90" blue="90">
+            <color red="0" green="255" blue="0">
             </color>
           </value>
         </exp>
-        <exp bool_exp="pv0==0">
-          <value>
-            <color name="MEDM_COLOR_16" red="30" green="187" blue="0">
-            </color>
-          </value>
-        </exp>
-        <pv_name>${unit}:${node}:PV703A_OUT</pv_name>
+        <pv_name>${unit}:${node}:PV701</pv_name>
       </rule>
     </rules>
     <tooltip>$(pv_name)
@@ -175,19 +169,14 @@ $(pv_value)</tooltip>
     </actions>
     <rules>
       <rule name="Background Color Rule" prop_id="background_color" out_exp="false">
-        <exp bool_exp="pv0==1">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==0">
           <value>
-            <color name="MEDM_COLOR_11" red="90" green="90" blue="90">
+            <color red="0" green="255" blue="0">
             </color>
           </value>
         </exp>
-        <exp bool_exp="pv0==0">
-          <value>
-            <color name="MEDM_COLOR_16" red="30" green="187" blue="0">
-            </color>
-          </value>
-        </exp>
-        <pv_name>${unit}:${node}:PV703A_OUT</pv_name>
+        <pv_name>${unit}:${node}:PV703A</pv_name>
+        <pv_name>${unit}:${node}:PV703B</pv_name>
       </rule>
     </rules>
     <tooltip>$(pv_name)
