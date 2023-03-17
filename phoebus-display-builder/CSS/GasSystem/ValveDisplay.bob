@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>DB_ValveDisplay</name>
+  <name>ValveDisplay</name>
   <macros>
     <node>gas</node>
     <unit>Esther</unit>
@@ -40,10 +40,10 @@
     <height>141</height>
   </widget>
   <widget type="embedded" version="2.0.0">
-    <name>Embedded Display_1</name>
+    <name>ED_PT201</name>
     <macros>
       <gasName>O2</gasName>
-      <ptNum>202</ptNum>
+      <ptNum>201</ptNum>
     </macros>
     <file>BottleSimple.bob</file>
     <x>40</x>
@@ -1391,5 +1391,378 @@
     <y>790</y>
     <width>159</width>
     <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>Esther:gas:MFC201_FLOW</pv_name>
+    <x>289</x>
+    <y>300</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>Esther:gas:MFC201_VOL_MEAS</pv_name>
+    <x>289</x>
+    <y>321</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>PT201_2</name>
+    <text>Volume</text>
+    <x>240</x>
+    <y>319</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>PT201_3</name>
+    <text>Flow</text>
+    <x>240</x>
+    <y>300</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_5</name>
+    <pv_name>Esther:gas:MFC601_FFLOW</pv_name>
+    <x>1249</x>
+    <y>807</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>FFlow</name>
+    <text>FFlow</text>
+    <x>1204</x>
+    <y>806</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_6</name>
+    <pv_name>Esther:gas:MFC601_VOL_FMEAS</pv_name>
+    <x>1249</x>
+    <y>829</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>FVol</name>
+    <text>FVol</text>
+    <x>1202</x>
+    <y>828</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>Esther:gas:MFC601_FLOW</pv_name>
+    <x>1247</x>
+    <y>766</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_4</name>
+    <pv_name>Esther:gas:MFC601_VOL_MEAS</pv_name>
+    <x>1247</x>
+    <y>787</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>PT201_4</name>
+    <text>Flow</text>
+    <x>1201</x>
+    <y>764</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>PT201_5</name>
+    <text>Volume</text>
+    <x>1201</x>
+    <y>785</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>FFlow_1</name>
+    <text>FFlow</text>
+    <x>262</x>
+    <y>338</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_7</name>
+    <pv_name>Esther:gas:MFC201_FFLOW</pv_name>
+    <x>307</x>
+    <y>339</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>FVol_1</name>
+    <text>FVol</text>
+    <x>260</x>
+    <y>360</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_8</name>
+    <pv_name>Esther:gas:MFC201_VOL_FMEAS</pv_name>
+    <x>307</x>
+    <y>361</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
   </widget>
 </display>

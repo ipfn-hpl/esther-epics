@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>DB_ValveDisplay</name>
+  <name>ValveMASTER</name>
   <macros>
     <node>gas</node>
     <unit>Esther</unit>
@@ -729,7 +729,7 @@
     <x>590</x>
     <y>490</y>
     <width>170</width>
-    <height>0</height>
+    <height>1</height>
     <points>
       <point x="0.0" y="0.0">
       </point>
@@ -1405,6 +1405,24 @@
     <pv_name>${unit}:${node}:PV201_OUT</pv_name>
     <x>310</x>
     <y>284</y>
+    <width>61</width>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://boolMaster</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_Pv702</name>
+    <pv_name>${unit}:${node}:PV702_OUT</pv_name>
+    <x>969</x>
+    <y>565</y>
     <width>61</width>
     <show_led>false</show_led>
     <rules>
