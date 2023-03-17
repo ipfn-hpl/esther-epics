@@ -423,19 +423,19 @@ record(longin,"$(user):S3_SubStep")
         field(INP,  "@myPLC MW146 uint16")
         field(DESC, "S7 STEP 3 sm substep")
 }
+record(longin,"$(user):S4_SubStep")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP,  "@myPLC MW148 uint16")
+        field(DESC, "S7 STEP 4 sm substep")
+}
 record(longin,"$(user):MFC_StartStep")
 {
         field(DTYP, "s7nodave")
         field(SCAN, "I/O Intr")
         field(INP,  "@myPLC MW156 uint16")
         field(DESC, "S7 STEP 2 sm substep")
-}
-record(longin,"$(user):S3_SubStep")
-{
-        field(DTYP, "s7nodave")
-        field(SCAN, "I/O Intr")
-        field(INP,  "@myPLC MW144 uint16")
-        field(DESC, "S7 STEP 3 sm substep")
 }
 record(longin,"$(user):TimerS1_2_wait")
 {
