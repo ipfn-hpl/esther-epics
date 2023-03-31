@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2023-03-30 16:18:13 by esther-->
+<!--Saved on 2023-03-31 17:40:24 by esther-->
 <display version="2.0.0">
   <name>ValveDisplay</name>
   <macros>
@@ -7,7 +7,7 @@
     <unit>Esther</unit>
   </macros>
   <width>1341</width>
-  <height>853</height>
+  <height>857</height>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
@@ -1482,8 +1482,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
     <pv_name>Esther:gas:MFC201_FLOW</pv_name>
-    <x>289</x>
-    <y>300</y>
+    <x>305</x>
+    <y>285</y>
     <width>88</width>
     <height>15</height>
     <font>
@@ -1508,8 +1508,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_2</name>
     <pv_name>Esther:gas:MFC201_VOL_MEAS</pv_name>
-    <x>289</x>
-    <y>321</y>
+    <x>305</x>
+    <y>306</y>
     <width>88</width>
     <height>15</height>
     <font>
@@ -1534,8 +1534,8 @@
   <widget type="label" version="2.0.0">
     <name>PT201_2</name>
     <text>Volume</text>
-    <x>240</x>
-    <y>319</y>
+    <x>256</x>
+    <y>304</y>
     <width>44</width>
     <height>19</height>
     <foreground_color>
@@ -1554,8 +1554,8 @@
   <widget type="label" version="2.0.0">
     <name>PT201_3</name>
     <text>Flow</text>
-    <x>240</x>
-    <y>300</y>
+    <x>256</x>
+    <y>285</y>
     <width>44</width>
     <height>19</height>
     <foreground_color>
@@ -1574,8 +1574,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_5</name>
     <pv_name>Esther:gas:MFC601_FFLOW</pv_name>
-    <x>1249</x>
-    <y>807</y>
+    <x>1251</x>
+    <y>798</y>
     <width>88</width>
     <height>15</height>
     <font>
@@ -1601,8 +1601,8 @@
   <widget type="label" version="2.0.0">
     <name>FFlow</name>
     <text>FFlow</text>
-    <x>1204</x>
-    <y>806</y>
+    <x>1206</x>
+    <y>797</y>
     <width>44</width>
     <height>19</height>
     <foreground_color>
@@ -1621,8 +1621,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_6</name>
     <pv_name>Esther:gas:MFC601_VOL_FMEAS</pv_name>
-    <x>1249</x>
-    <y>829</y>
+    <x>1251</x>
+    <y>820</y>
     <width>88</width>
     <height>15</height>
     <font>
@@ -1647,8 +1647,8 @@
   <widget type="label" version="2.0.0">
     <name>FVol</name>
     <text>FVol</text>
-    <x>1202</x>
-    <y>828</y>
+    <x>1204</x>
+    <y>819</y>
     <width>44</width>
     <height>19</height>
     <foreground_color>
@@ -1668,8 +1668,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_3</name>
     <pv_name>Esther:gas:MFC601_FLOW</pv_name>
-    <x>1247</x>
-    <y>766</y>
+    <x>1249</x>
+    <y>757</y>
     <width>88</width>
     <height>15</height>
     <font>
@@ -1695,8 +1695,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_4</name>
     <pv_name>Esther:gas:MFC601_VOL_MEAS</pv_name>
-    <x>1247</x>
-    <y>787</y>
+    <x>1249</x>
+    <y>778</y>
     <width>88</width>
     <height>15</height>
     <font>
@@ -1721,8 +1721,8 @@
   <widget type="label" version="2.0.0">
     <name>PT201_4</name>
     <text>Flow</text>
-    <x>1201</x>
-    <y>764</y>
+    <x>1203</x>
+    <y>755</y>
     <width>44</width>
     <height>19</height>
     <foreground_color>
@@ -1741,8 +1741,8 @@
   <widget type="label" version="2.0.0">
     <name>PT201_5</name>
     <text>Volume</text>
-    <x>1201</x>
-    <y>785</y>
+    <x>1203</x>
+    <y>776</y>
     <width>44</width>
     <height>19</height>
     <foreground_color>
@@ -1762,7 +1762,7 @@
     <name>FFlow_1</name>
     <text>FFlow</text>
     <x>262</x>
-    <y>338</y>
+    <y>323</y>
     <width>44</width>
     <height>19</height>
     <foreground_color>
@@ -1780,9 +1780,9 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_7</name>
-    <pv_name>Esther:gas:MFC201_FFLOW</pv_name>
+    <pv_name>${unit}:${node}:MFC201_FFLOW</pv_name>
     <x>307</x>
-    <y>339</y>
+    <y>325</y>
     <width>88</width>
     <height>15</height>
     <font>
@@ -1808,9 +1808,9 @@
   <widget type="label" version="2.0.0">
     <name>FVol_1</name>
     <text>FVol</text>
-    <x>260</x>
-    <y>360</y>
-    <width>44</width>
+    <x>259</x>
+    <y>342</y>
+    <width>47</width>
     <height>19</height>
     <foreground_color>
       <color name="Text_ForeGround" red="0" green="0" blue="0">
@@ -1828,9 +1828,244 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_8</name>
-    <pv_name>Esther:gas:MFC201_VOL_FMEAS</pv_name>
-    <x>307</x>
-    <y>361</y>
+    <pv_name>${unit}:${node}:MFC201_VOL_FMEAS</pv_name>
+    <x>306</x>
+    <y>343</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_F_401</name>
+    <pv_name>${unit}:${node}:MFC401_FFLOW</pv_name>
+    <x>324</x>
+    <y>646</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>FFlow_401</name>
+    <text>FFlow</text>
+    <x>279</x>
+    <y>645</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>FVol_401</name>
+    <text>FVol</text>
+    <x>277</x>
+    <y>667</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_V_401</name>
+    <pv_name>${unit}:${node}:MFC401_VOL_FMEAS</pv_name>
+    <x>324</x>
+    <y>668</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LbL_FT_401</name>
+    <text>Temp</text>
+    <x>277</x>
+    <y>686</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>LbL_FT_401</name>
+    <pv_name>${unit}:${node}:MFC401_FTEMP</pv_name>
+    <x>324</x>
+    <y>687</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>LbL_FT_402</name>
+    <pv_name>${unit}:${node}:MFC201_FTEMP</pv_name>
+    <x>306</x>
+    <y>365</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LbL_FT_403</name>
+    <text>Temp</text>
+    <x>259</x>
+    <y>364</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LbL_T_MFC_601</name>
+    <text>Temp</text>
+    <x>1204</x>
+    <y>838</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_FT_MFC601</name>
+    <pv_name>${unit}:${node}:MFC601_FTEMP</pv_name>
+    <x>1251</x>
+    <y>839</y>
     <width>88</width>
     <height>15</height>
     <font>

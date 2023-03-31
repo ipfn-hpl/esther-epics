@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2023-03-30 15:43:59 by esther-->
+<!--Saved on 2023-03-31 18:20:55 by esther-->
 <display version="2.0.0">
   <name>ValveMASTER</name>
   <macros>
@@ -1523,6 +1523,24 @@
     <pv_name>${unit}:${node}:PV102_OUT</pv_name>
     <x>602</x>
     <y>80</y>
+    <width>61</width>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://boolMaster</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_PT401</name>
+    <pv_name>${unit}:${node}:PV401_OUT</pv_name>
+    <x>300</x>
+    <y>645</y>
     <width>61</width>
     <show_led>false</show_led>
     <rules>
