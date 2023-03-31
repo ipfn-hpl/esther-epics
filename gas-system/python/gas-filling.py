@@ -8,7 +8,7 @@ from PyQt6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDateTimeEdit,
         QProgressBar, QPushButton, QRadioButton, QScrollBar, QSizePolicy,
         QSlider, QSpinBox, QStyleFactory, QTableWidget, QTabWidget, QTextEdit,
         QVBoxLayout, QWidget, QTableWidgetItem)
-
+from PyQt6.QtGui import QDoubleValidator
 from epics import caget, caput, cainfo
 import os
 
@@ -112,6 +112,9 @@ class WidgetGasFilling(QDialog):
         togglePushButton.setCheckable(True)
         RPump1press = caget('ISTTOK:central:RPump1-Pressure')
         self.tempEdit = QLineEdit('s3cRe7')
+        validator = QDoubleValidator()  # Create validator.
+        validator.setRange( -10.0, 9999.0, 2)
+        self.tempEdit.setValidator(validator)
         self.tempEdit.setText(str(RPump1press))
 
         
