@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2023-03-30 16:18:13 by esther-->
 <display version="2.0.0">
   <name>ValveDisplay</name>
   <macros>
@@ -384,8 +385,16 @@
             </color>
           </value>
         </exp>
+        <exp bool_exp="pv2&gt;=10.0 &amp;&amp; pv3==1">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
         <pv_name>${unit}:${node}:PT202</pv_name>
         <pv_name>${unit}:${node}:PV202</pv_name>
+        <pv_name>${unit}:${node}:PT302</pv_name>
+        <pv_name>${unit}:${node}:PV302</pv_name>
       </rule>
     </rules>
   </widget>
@@ -434,6 +443,18 @@
       <color red="0" green="0" blue="0">
       </color>
     </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==1 &amp;&amp; pv1&gt;=10.0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PV301</pv_name>
+        <pv_name>${unit}:${node}:PT302</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Pl_O2_1</name>
@@ -454,6 +475,18 @@
       <color red="0" green="0" blue="0">
       </color>
     </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==1 &amp;&amp; pv1&gt;=10.0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PV301</pv_name>
+        <pv_name>${unit}:${node}:PT302</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>ED_MV204</name>
@@ -747,6 +780,26 @@
       <color red="0" green="0" blue="0">
       </color>
     </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=10.0 &amp;&amp; pv1==1">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv2&gt;=10.0 &amp;&amp; pv3==1">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PT202</pv_name>
+        <pv_name>${unit}:${node}:PV202</pv_name>
+        <pv_name>${unit}:${node}:PT302</pv_name>
+        <pv_name>${unit}:${node}:PV302</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>ED_PV_603</name>
@@ -1248,6 +1301,17 @@
       <color red="0" green="0" blue="0">
       </color>
     </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=3.0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PT601</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>PL_703a_1</name>
@@ -1268,6 +1332,17 @@
       <color red="0" green="0" blue="0">
       </color>
     </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=3.0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PT601</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Pl_Exit_roof_1</name>
@@ -1324,6 +1399,18 @@
       <color red="0" green="0" blue="0">
       </color>
     </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv1==0">
+          <value>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PT901</pv_name>
+        <pv_name>${unit}:${node}:PV703B</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Pl_N2_3</name>

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2023-03-31 15:32:30 by esther-->
 <display version="2.0.0">
   <name>Esther Gas Control</name>
   <macros>
     <node>gas</node>
     <unit>Esther</unit>
   </macros>
-  <width>1500</width>
-  <height>740</height>
+  <width>1440</width>
+  <height>730</height>
   <widget type="label" version="2.0.0">
     <name>Lbl Title</name>
     <class>TITLE</class>
@@ -175,8 +176,8 @@ Helium II</text>
       <auto_size>true</auto_size>
     </widget>
     <widget type="textentry" version="3.0.0">
-      <name>TE_SE_2</name>
-      <pv_name>${unit}:${node}:PT401_LOW</pv_name>
+      <name>TE_SHe2_2</name>
+      <pv_name>${unit}:${node}:PT501_LOW</pv_name>
       <x>660</x>
       <y>50</y>
       <format>1</format>
@@ -242,6 +243,14 @@ Helium II</text>
       </foreground_color>
       <horizontal_alignment>1</horizontal_alignment>
       <auto_size>true</auto_size>
+      <rules>
+        <rule name="TextRuleNew Rule" prop_id="text" out_exp="false">
+          <exp bool_exp="pv0=1">
+            <value>N2</value>
+          </exp>
+          <pv_name>${unit}:${node}:GAS_MODE</pv_name>
+        </rule>
+      </rules>
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>TE_FSP_He_1</name>
@@ -296,6 +305,14 @@ Helium II</text>
       </foreground_color>
       <horizontal_alignment>1</horizontal_alignment>
       <auto_size>true</auto_size>
+      <rules>
+        <rule name="TextRuleNew Rule" prop_id="text" out_exp="false">
+          <exp bool_exp="pv0=1">
+            <value>N2 II</value>
+          </exp>
+          <pv_name>${unit}:${node}:GAS_MODE</pv_name>
+        </rule>
+      </rules>
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>TE_FSP_He_2</name>
@@ -609,6 +626,14 @@ He II</text>
       </foreground_color>
       <horizontal_alignment>1</horizontal_alignment>
       <auto_size>true</auto_size>
+      <rules>
+        <rule name="TextRuleNew Rule" prop_id="text" out_exp="false">
+          <exp bool_exp="pv0=1">
+            <value>MFC601- N2</value>
+          </exp>
+          <pv_name>${unit}:${node}:GAS_MODE</pv_name>
+        </rule>
+      </rules>
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>TE_MFC_F_He</name>
@@ -621,10 +646,10 @@ He II</text>
     </widget>
     <widget type="label" version="2.0.0">
       <name>Lbl_MFC_Fl_He</name>
-      <text>0-50 ln/h</text>
+      <text>0-50 ln/min</text>
       <x>404</x>
       <y>42</y>
-      <width>55</width>
+      <width>70</width>
       <height>16</height>
       <horizontal_alignment>1</horizontal_alignment>
       <auto_size>true</auto_size>
@@ -699,15 +724,6 @@ He II</text>
       <auto_size>true</auto_size>
     </widget>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label</name>
-    <text>https://www.solisplc.com/tutorials/programming-a-state-machine-in-ladder-logic</text>
-    <x>880</x>
-    <y>340</y>
-    <width>490</width>
-    <height>16</height>
-    <auto_size>true</auto_size>
-  </widget>
   <widget type="led" version="2.0.0">
     <name>LED_Alarm</name>
     <pv_name>${unit}:${node}:ALARM</pv_name>
@@ -726,7 +742,7 @@ He II</text>
     <x>693</x>
     <y>590</y>
     <width>110</width>
-    <off_label>CLEARALARM</off_label>
+    <off_label>CLEAR_ALARM</off_label>
     <on_label></on_label>
     <show_led>false</show_led>
     <mode>1</mode>
@@ -734,8 +750,8 @@ He II</text>
   <widget type="textupdate" version="2.0.0">
     <name>TIU_S1_SubStep</name>
     <pv_name>${unit}:${node}:S1_SubStep</pv_name>
-    <x>998</x>
-    <y>154</y>
+    <x>985</x>
+    <y>158</y>
     <width>55</width>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="16.0">
@@ -749,7 +765,7 @@ He II</text>
   <widget type="textupdate" version="2.0.0">
     <name>Tu_PT901_end</name>
     <pv_name>${unit}:${node}:PT901_END_S1</pv_name>
-    <x>1385</x>
+    <x>1330</x>
     <y>158</y>
     <width>110</width>
     <format>1</format>
@@ -757,11 +773,11 @@ He II</text>
     <wrap_words>false</wrap_words>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Tu_Counter_S1_1</name>
+    <name>Tu_Counter_S1</name>
     <pv_name>${unit}:${node}:Counter_S1</pv_name>
-    <x>1140</x>
-    <y>138</y>
-    <width>110</width>
+    <x>1046</x>
+    <y>158</y>
+    <width>48</width>
     <wrap_words>false</wrap_words>
     <rules>
       <rule name="Visible" prop_id="visible" out_exp="false">
@@ -816,7 +832,7 @@ He II</text>
   <widget type="led" version="2.0.0">
     <name>Ld_STP_3</name>
     <pv_name>${unit}:${node}:S0_END</pv_name>
-    <x>1340</x>
+    <x>1290</x>
     <y>118</y>
     <width>30</width>
     <height>30</height>
@@ -872,40 +888,10 @@ He II</text>
     <square>true</square>
   </widget>
   <widget type="led" version="2.0.0">
-    <name>Ld_Stp1_3</name>
-    <class>ON_OFF</class>
-    <pv_name>${unit}:${node}:S1_3</pv_name>
-    <x>1065</x>
-    <y>159</y>
-    <off_color use_class="true">
-      <color name="Off" red="60" green="100" blue="60">
-      </color>
-    </off_color>
-    <on_color use_class="true">
-      <color name="On" red="0" green="255" blue="0">
-      </color>
-    </on_color>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>Ld_Stp1_4</name>
-    <class>ON_OFF</class>
-    <pv_name>${unit}:${node}:S1_4</pv_name>
-    <x>1085</x>
-    <y>159</y>
-    <off_color use_class="true">
-      <color name="Off" red="60" green="100" blue="60">
-      </color>
-    </off_color>
-    <on_color use_class="true">
-      <color name="On" red="0" green="255" blue="0">
-      </color>
-    </on_color>
-  </widget>
-  <widget type="led" version="2.0.0">
     <name>Ld_STP1_END</name>
     <pv_name>${unit}:${node}:S1_END</pv_name>
-    <x>1348</x>
-    <y>154</y>
+    <x>1290</x>
+    <y>158</y>
     <width>30</width>
     <height>30</height>
     <off_color>
@@ -972,8 +958,8 @@ He II</text>
         <description>Valve Display</description>
       </action>
     </actions>
-    <x>1265</x>
-    <y>376</y>
+    <x>693</x>
+    <y>640</y>
     <width>120</width>
     <height>23</height>
     <tooltip>$(actions)</tooltip>
@@ -981,25 +967,49 @@ He II</text>
   <widget type="textupdate" version="2.0.0">
     <name>TU_SA_SS</name>
     <pv_name>${unit}:${node}:SA_SubStep</pv_name>
-    <x>1130</x>
-    <y>83</y>
+    <x>1123</x>
+    <y>82</y>
     <width>55</width>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
     <file>GasAlarms.bob</file>
-    <x>910</x>
-    <y>376</y>
+    <x>930</x>
+    <y>410</y>
     <width>290</width>
     <height>320</height>
     <border_width>1</border_width>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>TIU_S1_SubStep_2</name>
+    <name>TU_S1_SubStep_1_wait_1</name>
+    <pv_name>${unit}:${node}:TimerS1_1_wait</pv_name>
+    <x>1110</x>
+    <y>158</y>
+    <width>88</width>
+    <visible>false</visible>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <format>7</format>
+    <horizontal_alignment>1</horizontal_alignment>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="Visible" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==12 || pv0==10">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:S1_SubStep</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_S1_SubStep_1_wait_3</name>
     <pv_name>${unit}:${node}:TimerS1_3_wait</pv_name>
-    <x>1230</x>
-    <y>148</y>
+    <x>1185</x>
+    <y>163</y>
     <width>95</width>
+    <visible>false</visible>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
@@ -1007,6 +1017,14 @@ He II</text>
     <format>1</format>
     <horizontal_alignment>1</horizontal_alignment>
     <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="Visible" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==15">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:S1_SubStep</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>BB_Stp_2</name>
@@ -1052,7 +1070,7 @@ He II</text>
   <widget type="led" version="2.0.0">
     <name>Ld_STP1_END_2</name>
     <pv_name>${unit}:${node}:S2_END</pv_name>
-    <x>1348</x>
+    <x>1290</x>
     <y>187</y>
     <width>30</width>
     <height>30</height>
@@ -1069,8 +1087,8 @@ He II</text>
   <widget type="textupdate" version="2.0.0">
     <name>TU_SA_SS</name>
     <pv_name>${unit}:${node}:S0_SubStep</pv_name>
-    <x>1053</x>
-    <y>118</y>
+    <x>1015</x>
+    <y>123</y>
     <width>55</width>
   </widget>
   <widget type="textupdate" version="2.0.0">
@@ -1170,7 +1188,7 @@ STOP</off_label>
   <widget type="led" version="2.0.0">
     <name>Ld_STP1_END_3</name>
     <pv_name>${unit}:${node}:S3_END</pv_name>
-    <x>1348</x>
+    <x>1290</x>
     <y>217</y>
     <width>30</width>
     <height>30</height>
@@ -1209,7 +1227,7 @@ STOP</off_label>
     <mode>1</mode>
   </widget>
   <widget type="led" version="2.0.0">
-    <name>Ld_STP_7</name>
+    <name>Ld_STP_4</name>
     <pv_name>${unit}:${node}:STEP_4_ON</pv_name>
     <x>953</x>
     <y>256</y>
@@ -1228,8 +1246,8 @@ STOP</off_label>
   <widget type="textupdate" version="2.0.0">
     <name>TIU_S1_SubStep_4</name>
     <pv_name>${unit}:${node}:S4_SubStep</pv_name>
-    <x>1003</x>
-    <y>259</y>
+    <x>996</x>
+    <y>260</y>
     <width>55</width>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="16.0">
@@ -1243,8 +1261,257 @@ STOP</off_label>
   <widget type="led" version="2.0.0">
     <name>Ld_STP1_END_4</name>
     <pv_name>${unit}:${node}:S4_END</pv_name>
-    <x>1348</x>
+    <x>1290</x>
     <y>256</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <square>true</square>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Tu_PT901_end_s3</name>
+    <pv_name>${unit}:${node}:PT901_END_O</pv_name>
+    <x>1330</x>
+    <y>217</y>
+    <width>110</width>
+    <format>1</format>
+    <show_units>false</show_units>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Tu_PT901_end_s4</name>
+    <pv_name>${unit}:${node}:PT901_END_HE1</pv_name>
+    <x>1320</x>
+    <y>256</y>
+    <width>110</width>
+    <format>1</format>
+    <show_units>false</show_units>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Stp_5</name>
+    <pv_name>${unit}:${node}:STEP_5_GO</pv_name>
+    <x>852</x>
+    <y>286</y>
+    <off_label>Step 5</off_label>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="100" green="100" blue="100">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_STP_5</name>
+    <pv_name>${unit}:${node}:STEP_5_ON</pv_name>
+    <x>953</x>
+    <y>286</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <square>true</square>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TIU_S1_SubStep_5</name>
+    <pv_name>${unit}:${node}:S5_SubStep</pv_name>
+    <x>983</x>
+    <y>286</y>
+    <width>55</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <format>1</format>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_STP1_END_5</name>
+    <pv_name>${unit}:${node}:S5_END</pv_name>
+    <x>1290</x>
+    <y>286</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <square>true</square>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Stp_6</name>
+    <pv_name>${unit}:${node}:STEP_7_GO</pv_name>
+    <x>852</x>
+    <y>346</y>
+    <off_label>Step 7</off_label>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="100" green="100" blue="100">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_STP_7</name>
+    <pv_name>${unit}:${node}:STEP_7_ON</pv_name>
+    <x>953</x>
+    <y>346</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <square>true</square>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TIU_S1_SubStep_7</name>
+    <pv_name>${unit}:${node}:S7_SubStep</pv_name>
+    <x>983</x>
+    <y>346</y>
+    <width>55</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <format>1</format>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_STP1_END_6</name>
+    <pv_name>${unit}:${node}:S7_END</pv_name>
+    <x>1290</x>
+    <y>346</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <square>true</square>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Tu_PT901_end_s7</name>
+    <pv_name>${unit}:${node}:PT901_END_HE2</pv_name>
+    <x>1320</x>
+    <y>346</y>
+    <width>110</width>
+    <format>1</format>
+    <show_units>false</show_units>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Stp_6</name>
+    <pv_name>${unit}:${node}:STEP_6_GO</pv_name>
+    <x>852</x>
+    <y>316</y>
+    <off_label>Step 6</off_label>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="100" green="100" blue="100">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_STP_6</name>
+    <pv_name>${unit}:${node}:STEP_6_ON</pv_name>
+    <x>953</x>
+    <y>316</y>
+    <width>30</width>
+    <height>30</height>
+    <off_color>
+      <color red="0" green="100" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <square>true</square>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TIU_S1_SubStep_8</name>
+    <pv_name>${unit}:${node}:S6_SubStep</pv_name>
+    <x>983</x>
+    <y>316</y>
+    <width>55</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <format>1</format>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Ld_STP1_END_6</name>
+    <pv_name>${unit}:${node}:S6_END</pv_name>
+    <x>1290</x>
+    <y>316</y>
     <width>30</width>
     <height>30</height>
     <off_color>

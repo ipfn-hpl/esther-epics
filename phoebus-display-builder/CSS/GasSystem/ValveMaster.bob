@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2023-03-30 15:43:59 by esther-->
 <display version="2.0.0">
   <name>ValveMASTER</name>
   <macros>
@@ -964,8 +965,8 @@
   <widget type="label" version="2.0.0">
     <name>Lbl_Exit_2</name>
     <text>EXIT</text>
-    <x>635</x>
-    <y>419</y>
+    <x>676</x>
+    <y>409</y>
     <width>49</width>
     <height>25</height>
     <font>
@@ -1343,7 +1344,16 @@
     <y>170</y>
     <width>61</width>
     <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://boolMaster</pv_name>
+      </rule>
+    </rules>
     <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>BB_Master</name>
@@ -1423,6 +1433,96 @@
     <pv_name>${unit}:${node}:PV702_OUT</pv_name>
     <x>969</x>
     <y>565</y>
+    <width>61</width>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://boolMaster</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_PV203</name>
+    <pv_name>${unit}:${node}:PV203_OUT</pv_name>
+    <x>587</x>
+    <y>243</y>
+    <width>61</width>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://boolMaster</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_PT303</name>
+    <pv_name>${unit}:${node}:PV303_OUT</pv_name>
+    <x>586</x>
+    <y>430</y>
+    <width>61</width>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://boolMaster</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_PT503</name>
+    <pv_name>${unit}:${node}:PV503_OUT</pv_name>
+    <x>592</x>
+    <y>759</y>
+    <width>61</width>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://boolMaster</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_PT403</name>
+    <pv_name>${unit}:${node}:PV403_OUT</pv_name>
+    <x>588</x>
+    <y>609</y>
+    <width>61</width>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>loc://boolMaster</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_PV102</name>
+    <pv_name>${unit}:${node}:PV102_OUT</pv_name>
+    <x>602</x>
+    <y>80</y>
     <width>61</width>
     <show_led>false</show_led>
     <rules>
