@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Example for XML configuration file syntax -->
+<!--  XML configuration file for Esther Shock Tube
+    check browser at 
+    http://10.10.136.128:4812/main
+-->
 <engineconfig>
   <!-- Engine can have one or more groups
        Each group has a name and one or more channels
@@ -16,12 +19,12 @@
         -->
       <channel>
          <name>Esther:gas:PT101</name>
-         <period>1.0</period>
-     <monitor>0.5</monitor>
+         <period>10.0</period>
+         <monitor>1.0</monitor>
       </channel>
       <channel>
          <name>Esther:gas:PT102</name>
-         <period>1.0</period>
+         <period>10.0</period>
      <monitor>0.5</monitor>
        </channel>
       <channel>
@@ -72,7 +75,7 @@
       <channel>
          <name>Esther:gas:PT801</name>
          <period>1.0</period>
-         <monitor>0.5</monitor>
+         <monitor>1.0</monitor>
       </channel>
 
       <!-- Channel that is scanned every 1 minutes
@@ -128,6 +131,21 @@
          <name>Esther:gas:MFC601_VOL_FMEAS</name>
          <period>1.0</period><scan/>
       </channel>
+      <channel>
+         <name>Esther:gas:MFC201_FTEMP</name>
+         <period>1.0</period>
+         <monitor>0.2</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:MFC401_FTEMP</name>
+         <period>1.0</period>
+         <monitor>0.2</monitor>
+      </channel>
+      <channel>
+         <name>Esther:gas:MFC601_FTEMP</name>
+         <period>1.0</period>
+         <monitor>0.2</monitor>
+      </channel>
 
       <channel>
          <name>Esther:gas:PT901_END_S1</name>
@@ -157,7 +175,7 @@
 
       <channel>
          <name>Esther:gas:PT901</name>
-         <period>00:00:01</period><scan/>
+         <period>00:00:02</period><scan/>
       </channel>
       <channel>
          <name>Esther:gas:ON</name>
