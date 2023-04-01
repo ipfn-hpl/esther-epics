@@ -25,7 +25,7 @@ dbLoadRecords("db/S7PT.db","user=Esther:gas")
 dbLoadRecords("db/S7PTAlarms.db","user=Esther:gas")
 dbLoadRecords("db/S7PV.db","user=Esther:gas")
 dbLoadRecords("db/S7PV_out.db","user=Esther:gas")
-dbLoadRecords("db/S7sbits.db","user=Esther:gas, plc=myPLC")
+# dbLoadRecords("db/S7sbits.db","user=Esther:gas, plc=myPLC")
 dbLoadRecords("db/S7MFC.db","user=Esther:gas, plc=myPLC")
 dbLoadRecords("db/S7PV70xAlarms.db","user=Esther:gas, plc=myPLC")
 

@@ -36,6 +36,16 @@ record(bo, "$(user):STOP")
 #        field(ZNAM, "OFF")
 #        field(ONAM, "ON")
 #}
+record(bi, "$(user):SA_END")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M116.7")
+        field(DESC, "S7 PLC Status Bit")
+        field(ZNAM, "  ")
+        field(ONAM, "ABORT END")
+#        field(OSV, "MAJOR")
+}
 record(bi, "$(user):ON")
 {
         field(SCAN, "I/O Intr")
@@ -72,6 +82,13 @@ record(bi, "$(user):STEP_0_ON")
         field(ZNAM, "OFF")
         field(ONAM, "ON")
 }
+record(bi, "$(user):S0_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M101.7")
+}
 record(bo, "$(user):STEP_1_GO")
 {
         field(DTYP, "s7nodave")
@@ -89,6 +106,13 @@ record(bi, "$(user):STEP_1_ON")
         field(DESC, "S7 PLC STEP_1 ON")
         field(ZNAM, "OFF")
         field(ONAM, "ON")
+}
+record(bi, "$(user):S1_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M103.7")
 }
 record(bo, "$(user):STEP_2_GO")
 {
@@ -108,6 +132,13 @@ record(bi, "$(user):STEP_2_ON")
         field(ZNAM, "OFF")
         field(ONAM, "ON")
 }
+record(bi, "$(user):S2_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M105.7")
+}
 record(bo, "$(user):STEP_3_GO")
 {
         field(DTYP, "s7nodave")
@@ -123,6 +154,13 @@ record(bi, "$(user):STEP_3_ON")
         field(DTYP, "s7nodave")
         field(INP, "@myPLC(PG=fast) Q1.4")
         field(DESC, "S7 PLC STEP_3 ON")
+}
+record(bi, "$(user):S3_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M107.7")
 }
 record(bo, "$(user):STEP_4_GO")
 {
@@ -140,6 +178,13 @@ record(bi, "$(user):STEP_4_ON")
         field(INP, "@myPLC(PG=fast) M3.4")
         field(DESC, "S7 PLC STEP_4 ON")
 }
+record(bi, "$(user):S4_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M109.7")
+}
 record(bo, "$(user):STEP_5_GO")
 {
         field(DTYP, "s7nodave")
@@ -155,6 +200,13 @@ record(bi, "$(user):STEP_5_ON")
         field(DTYP, "s7nodave")
         field(INP, "@myPLC(PG=fast) M3.5")
         field(DESC, "S7 PLC STEP_3 ON")
+}
+record(bi, "$(user):S5_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M111.7")
 }
 record(bo, "$(user):STEP_6_GO")
 {
@@ -172,6 +224,13 @@ record(bi, "$(user):STEP_6_ON")
         field(INP, "@myPLC(PG=fast) M3.6")
         field(DESC, "S7 PLC STEP_6 ON")
 }
+record(bi, "$(user):S6_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M113.7")
+}
 record(bo, "$(user):STEP_7_GO")
 {
         field(DTYP, "s7nodave")
@@ -188,6 +247,13 @@ record(bi, "$(user):STEP_7_ON")
         field(INP, "@myPLC(PG=fast) M3.7")
         field(DESC, "S7 PLC STEP_7 ON")
 }
+record(bi, "$(user):S7_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M115.7")
+}
 record(bo, "$(user):STEP_9_GO")
 {
         field(DTYP, "s7nodave")
@@ -202,6 +268,13 @@ record(bi, "$(user):STEP_9_ON")
         field(DTYP, "s7nodave")
         field(INP, "@myPLC(PG=fast) M4.0")
         field(DESC, "S7 PLC STEP_9 ON")
+}
+record(bi, "$(user):S9_END")
+{
+        field(DESC, "S7 PLC Status Bit")
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP, "@myPLC(PG=fast) M124.7")
 }
 record(bo, "$(user):TEST_START")
 {
@@ -429,6 +502,27 @@ record(longin,"$(user):S4_SubStep")
         field(SCAN, "I/O Intr")
         field(INP,  "@myPLC MW148 uint16")
         field(DESC, "S7 STEP 4 sm substep")
+}
+record(longin,"$(user):S5_SubStep")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP,  "@myPLC MW150 uint16")
+        field(DESC, "S7 STEP 5 sm substep")
+}
+record(longin,"$(user):S6_SubStep")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP,  "@myPLC MW152 uint16")
+        field(DESC, "S7 STEP 6 sm substep")
+}
+record(longin,"$(user):S7_SubStep")
+{
+        field(DTYP, "s7nodave")
+        field(SCAN, "I/O Intr")
+        field(INP,  "@myPLC MW154 uint16")
+        field(DESC, "S7 STEP 7 sm substep")
 }
 record(longin,"$(user):MFC_StartStep")
 {
