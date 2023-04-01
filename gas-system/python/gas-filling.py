@@ -12,8 +12,8 @@ from PyQt6.QtGui import QDoubleValidator
 from epics import caget, caput, cainfo
 import os
 
-#os.environ['EPICS_CA_ADDR_LIST'] = '10.10.136.128'
-os.environ['EPICS_CA_ADDR_LIST'] = 'localhost 192.168.1.110'
+os.environ['EPICS_CA_ADDR_LIST'] = '10.10.136.128'
+#os.environ['EPICS_CA_ADDR_LIST'] = 'localhost 192.168.1.110'
 
 os.environ['EPICS_CA_AUTO_ADDR_LIST'] = 'NO'
 
@@ -63,8 +63,8 @@ class WidgetGasFilling(QDialog):
 
         mainLayout.addWidget(self.bottomLeftTabWidget, 2, 0)
 
-        mainLayout.setRowStretch(1, 1)
-        mainLayout.setRowStretch(2, 1)
+        mainLayout.setRowStretch(0, 1)
+        mainLayout.setRowStretch(2, 2)
         mainLayout.setColumnStretch(0, 1)
         mainLayout.setColumnStretch(1, 1)
 
@@ -95,34 +95,64 @@ class WidgetGasFilling(QDialog):
         checkBox.setTristate(True)
         checkBox.setCheckState(Qt.CheckState.PartiallyChecked)
 
-        layout = QVBoxLayout()
-        layout.addWidget(radioButton1)
-        layout.addWidget(radioButton2)
-        layout.addWidget(checkBox)
-        layout.addStretch(1)
+        layout = QGridLayout() # QVBoxLayout()
+        layout.addWidget(radioButton1, 0, 0)
+        layout.addWidget(radioButton2, 0, 1)
+        #layout.addWidget(checkBox)
+        #layout.setRowStretch(2, 1)
+        #layout.addStretch(1)
         self.topLeftGroupBox.setLayout(layout)
 
+    def sumPress(self):
+        tPfill = float(self.tableGasFill.item(0,0).text())
+        tHe = float(self.tableGasFill.item(0,1).text())
+        tH = float(self.tableGasFill.item(0,2).text())
+        tO2 = float(self.tableGasFill.item(0,3).text())
+        pSum = tHe + tH + tO2
+        print(f"Sum Value: {pSum}")
+        pPartAmbHe = tPfill * tHe / pSum
+        self.tableGasFill.setItem(1,1, QTableWidgetItem(f'{pPartAmbHe:0.2f}'))
+        pPartAmbH = tPfill * tH / pSum
+        self.tableGasFill.setItem(1,2, QTableWidgetItem(f'{pPartAmbH:0.2f}'))
+        pPartAmbO2 = tPfill * tO2 / pSum
+        self.tableGasFill.setItem(1,3, QTableWidgetItem(f'{pPartAmbO2:0.2f}'))
+        tempAbs = float(self.tempEdit.text())  + T_REF
+        pPartRefHe = pPartAmbHe * T_REF / tempAbs
+        self.tableGasFill.setItem(2,1, QTableWidgetItem(f'{pPartRefHe:0.2f}'))
+
+    def getEpics(self):
+        mfc601Temp = caget('Esther:gas:' + 'MFC601_FTEMP')
+        self.tempEdit.setText(f'{mfc601Temp:0.1f}')
     def createTopRightGroupBox(self):
         self.topRightGroupBox = QGroupBox("Group 2")
 
-        defaultPushButton = QPushButton("Default Push Button")
-        defaultPushButton.setDefault(True)
+        epicsPushButton = QPushButton("Epics Get PVs")
+        epicsPushButton.setDefault(True)
+        epicsPushButton.clicked.connect(self.getEpics)
+
+        pressPushButton = QPushButton("Calc Press")
+        pressPushButton.setDefault(True)
+        pressPushButton.clicked.connect(self.sumPress)
 
         togglePushButton = QPushButton("Toggle Push Button")
         togglePushButton.setCheckable(True)
-        RPump1press = caget('ISTTOK:central:RPump1-Pressure')
-        self.tempEdit = QLineEdit('s3cRe7')
+        #RPump1press = caget('ISTTOK:central:RPump1-Pressure')
+        self.tempEdit = QLineEdit('14.5')
         validator = QDoubleValidator()  # Create validator.
-        validator.setRange( -10.0, 9999.0, 2)
+        validator.setRange( -10.0, 100.0, 2)
         self.tempEdit.setValidator(validator)
-        self.tempEdit.setText(str(RPump1press))
+        self.pv901Offset = QLineEdit('0.15')
 
-        
-        layout = QVBoxLayout()
-        layout.addWidget(defaultPushButton)
-        layout.addWidget(togglePushButton)
-        layout.addWidget(self.tempEdit)
-        layout.addStretch(1)
+        layout = QGridLayout() #QVBoxLayout()
+        layout.addWidget(epicsPushButton, 0, 0)
+        layout.addWidget(pressPushButton, 0, 1)
+        layout.addWidget(togglePushButton, 1, 0)
+        layout.addWidget(QLabel('MFC601 Temp'), 2, 0)
+        layout.addWidget(self.tempEdit, 2, 1)
+        layout.addWidget(QLabel('PV901 Offset'), 3, 0)
+        layout.addWidget(self.pv901Offset, 3, 1)
+        layout.setRowStretch(3, 1)
+        #layout.addStretch(1)
         self.topRightGroupBox.setLayout(layout)
 
     def createBottomLeftTabWidget(self):
@@ -131,8 +161,9 @@ class WidgetGasFilling(QDialog):
                 QSizePolicy.Policy.Ignored)
 
         tab1 = QWidget()
-        self.tableGasFill = QTableWidget(1, 4)
+        self.tableGasFill = QTableWidget(3, 4)
         self.tableGasFill.setHorizontalHeaderLabels(("P_Filling","He","H2","O2"))
+        self.tableGasFill.setVerticalHeaderLabels(("Target","Partial(R)","Partial(A)"))
         self.tableGasFill.setItem(0,0,QTableWidgetItem("30"))
         self.tableGasFill.setItem(0,1,QTableWidgetItem("8.0"))
         self.tableGasFill.setItem(0,2,QTableWidgetItem("2.0"))
@@ -142,7 +173,7 @@ class WidgetGasFilling(QDialog):
         tab1hbox.setContentsMargins(5, 5, 5, 5)
         tab1hbox.addWidget(self.tableGasFill)
         tab1.setLayout(tab1hbox)
-        self.bottomLeftTabWidget.addTab(tab1, "&Table")
+        self.bottomLeftTabWidget.addTab(tab1, "&Target")
 
 
 if __name__ == '__main__':
