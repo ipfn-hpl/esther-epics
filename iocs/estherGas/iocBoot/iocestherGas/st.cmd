@@ -28,6 +28,7 @@ dbLoadRecords("db/S7PV_out.db","user=Esther:gas")
 # dbLoadRecords("db/S7sbits.db","user=Esther:gas, plc=myPLC")
 dbLoadRecords("db/S7MFC.db","user=Esther:gas, plc=myPLC")
 dbLoadRecords("db/S7PV70xAlarms.db","user=Esther:gas, plc=myPLC")
+dbLoadRecords("db/estherGas.db","user=Esther:gas")
 
 
 ## Set this to see messages from mySub

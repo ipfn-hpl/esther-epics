@@ -1,4 +1,31 @@
-record(longout,"$(user):PulseNumber")
-{
-        field(DESC, "Pulse Number")
+record(mbbo,"$(user):Operator") {
+        field(DESC, "Esther Pulse Operator")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(THVL, "3")
+        field(FRVL, "4")
+        field(ONST, "Mario Lino")
+        field(TWST, "Bernardo Carvalho")
+        field(THST, "Rafael Rodrigues")
+        field(FRST, "Ricardo Ferreira")
+        field(VAL, "2")
 }
+record(mbbo,"$(user):Chief-Engineer") {
+        field(DESC, "Esther Pulse Engineer")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(THVL, "3")
+        field(FRVL, "4")
+        field(ONST, "Mario Lino")
+        field(TWST, "Bernardo Carvalho")
+        field(THST, "Rafael Rodrigues")
+        field(FRST, "Ricardo Ferreira")
+        field(VAL, "3")
+}
+record(stringout, $(user):Chief-Eng-Pass){
+    field(DESC, "Chief Engineer Password")
+    field(VAL, "None")
+}
+#record(longout,"$(user):PulseNumber") {
+#        field(DESC, "Pulse Number")
+#}

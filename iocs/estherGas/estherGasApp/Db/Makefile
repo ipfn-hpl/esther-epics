@@ -18,6 +18,7 @@ DB += S7PV.db
 DB += S7PV_out.db
 DB += S7sbits.db
 DB += S7PV70xAlarms.db 
+DB += estherGas.db 
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
