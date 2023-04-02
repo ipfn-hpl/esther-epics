@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2023-03-31 18:51:54 by esther-->
+<!--Saved on 2023-04-01 17:42:53 by bernardo-->
 <display version="2.0.0">
   <name>Esther Gas Control</name>
   <macros>
@@ -48,7 +48,7 @@
 Nitrogen Purge</text>
       <x>10</x>
       <y>2</y>
-      <width>138</width>
+      <width>101</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -75,7 +75,7 @@ Nitrogen Purge</text>
 Oxygen</text>
       <x>306</x>
       <y>2</y>
-      <width>69</width>
+      <width>53</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -104,7 +104,7 @@ Oxygen</text>
 Helium I</text>
       <x>400</x>
       <y>2</y>
-      <width>75</width>
+      <width>55</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -133,7 +133,7 @@ Helium I</text>
 Hydrogen</text>
       <x>526</x>
       <y>2</y>
-      <width>88</width>
+      <width>67</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -162,7 +162,7 @@ Hydrogen</text>
 Helium II</text>
       <x>660</x>
       <y>2</y>
-      <width>81</width>
+      <width>58</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -205,8 +205,7 @@ Helium II</text>
       <text>O2</text>
       <x>41</x>
       <y>20</y>
-      <width>25</width>
-      <height>19</height>
+      <width>21</width>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -233,8 +232,7 @@ Helium II</text>
       <text>He I</text>
       <x>161</x>
       <y>20</y>
-      <width>36</width>
-      <height>19</height>
+      <width>27</width>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -269,8 +267,7 @@ Helium II</text>
       <text>H2</text>
       <x>264</x>
       <y>20</y>
-      <width>25</width>
-      <height>19</height>
+      <width>21</width>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -297,8 +294,7 @@ Helium II</text>
       <text>He II</text>
       <x>384</x>
       <y>20</y>
-      <width>42</width>
-      <height>19</height>
+      <width>30</width>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -348,7 +344,7 @@ Helium II</text>
 Pressure</text>
       <x>3</x>
       <y>2</y>
-      <width>80</width>
+      <width>59</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -375,7 +371,7 @@ Pressure</text>
 Pressure</text>
       <x>104</x>
       <y>2</y>
-      <width>120</width>
+      <width>90</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -414,7 +410,7 @@ Pressure</text>
       <text>MFC201
 O2</text>
       <x>30</x>
-      <width>72</width>
+      <width>59</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -442,7 +438,7 @@ O2</text>
       <text>MFC601
 He I</text>
       <x>151</x>
-      <width>72</width>
+      <width>60</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -470,7 +466,7 @@ He I</text>
       <text>MFC401
 H2</text>
       <x>264</x>
-      <width>72</width>
+      <width>60</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -498,7 +494,7 @@ H2</text>
       <text>MFC601
 He II</text>
       <x>384</x>
-      <width>72</width>
+      <width>60</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -547,8 +543,7 @@ He II</text>
       <class>Label_1</class>
       <text>MFC201-O2</text>
       <x>10</x>
-      <width>104</width>
-      <height>19</height>
+      <width>87</width>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -584,8 +579,7 @@ He II</text>
       <class>Label_1</class>
       <text>MFC401-H2</text>
       <x>250</x>
-      <width>104</width>
-      <height>19</height>
+      <width>87</width>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -621,8 +615,7 @@ He II</text>
       <class>Label_1</class>
       <text>MFC601- He</text>
       <x>377</x>
-      <width>109</width>
-      <height>19</height>
+      <width>89</width>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -1553,5 +1546,49 @@ STOP</off_label>
     <format>1</format>
     <show_units>false</show_units>
     <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>CB_Chief-Operator</name>
+    <pv_name>${unit}:${node}:Operator</pv_name>
+    <x>286</x>
+    <y>550</y>
+    <width>202</width>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>CB_Chief-Engineer</name>
+    <pv_name>${unit}:${node}:Chief-Engineer</pv_name>
+    <x>497</x>
+    <y>550</y>
+    <width>216</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Operator</name>
+    <text>Operator</text>
+    <x>286</x>
+    <y>530</y>
+    <width>202</width>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Chief-Engineer</name>
+    <text>Chief-Engineer</text>
+    <x>497</x>
+    <y>530</y>
+    <width>216</width>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_PulseNumber</name>
+    <text>Pulse Number</text>
+    <x>127</x>
+    <y>520</y>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>${unit}:${node}:PulseNumber</pv_name>
+    <x>127</x>
+    <y>540</y>
+    <horizontal_alignment>1</horizontal_alignment>
   </widget>
 </display>

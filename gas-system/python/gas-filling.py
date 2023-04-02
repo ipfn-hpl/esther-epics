@@ -40,14 +40,16 @@ class WidgetGasFilling(QDialog):
 
         self.createTopLeftGroupBox()
         self.createTopRightGroupBox()
-        self.createBottomLeftTabWidget()
+        #self.createBottomLeftTabWidget()
+        self.createBottomTabWidget()
 
         styleComboBox.textActivated.connect(self.changeStyle)
         self.useStylePaletteCheckBox.toggled.connect(self.changePalette)
         disableWidgetsCheckBox.toggled.connect(self.topLeftGroupBox.setDisabled)
-        disableWidgetsCheckBox.toggled.connect(self.topRightGroupBox.setDisabled)
-        disableWidgetsCheckBox.toggled.connect(self.bottomLeftTabWidget.setDisabled)
+        disableWidgetsCheckBox.toggled.connect(self.topRightTabWidget.setDisabled)
+#        disableWidgetsCheckBox.toggled.connect(self.bottomLeftTabWidget.setDisabled)
 #        disableWidgetsCheckBox.toggled.connect(self.bottomRightGroupBox.setDisabled)
+        disableWidgetsCheckBox.toggled.connect(self.bottomTabWidget.setDisabled)
 
         topLayout = QHBoxLayout()
         topLayout.addWidget(styleLabel)
@@ -59,14 +61,16 @@ class WidgetGasFilling(QDialog):
         mainLayout = QGridLayout()
         mainLayout.addLayout(topLayout, 0, 0, 1, 2)
         mainLayout.addWidget(self.topLeftGroupBox, 1, 0)
-        mainLayout.addWidget(self.topRightGroupBox, 1, 1)
+        #mainLayout.addWidget(self.topRightGroupBox, 1, 1)
 
-        mainLayout.addWidget(self.bottomLeftTabWidget, 2, 0)
+        mainLayout.addWidget(self.topRightTabWidget , 1, 1)
+        mainLayout.addWidget(self.bottomTabWidget, 2, 0, 1, 2)
 
-        mainLayout.setRowStretch(0, 1)
-        mainLayout.setRowStretch(2, 2)
+        mainLayout.setRowStretch(0, 0)
+        mainLayout.setRowStretch(0, 2)
+        mainLayout.setRowStretch(2, 1)
         mainLayout.setColumnStretch(0, 1)
-        mainLayout.setColumnStretch(1, 1)
+        mainLayout.setColumnStretch(1, 2)
 
         self.setLayout(mainLayout)
 
@@ -95,9 +99,27 @@ class WidgetGasFilling(QDialog):
         checkBox.setTristate(True)
         checkBox.setCheckState(Qt.CheckState.PartiallyChecked)
 
+        epicsPushButton = QPushButton("Epics Get PVs")
+        epicsPushButton.setDefault(True)
+        epicsPushButton.clicked.connect(self.getEpics)
+        self.tempEdit = QLineEdit('14.5')
+        validator = QDoubleValidator()  # Create validator.
+        validator.setRange( -10.0, 100.0, 2)
+        self.tempEdit.setValidator(validator)
+        self.pv901Offset = QLineEdit('0.15')
+
+        pressPushButton = QPushButton("Calc Press")
+        pressPushButton.setDefault(True)
+        pressPushButton.clicked.connect(self.sumPress)
         layout = QGridLayout() # QVBoxLayout()
         layout.addWidget(radioButton1, 0, 0)
         layout.addWidget(radioButton2, 0, 1)
+        layout.addWidget(epicsPushButton, 1, 0)
+        layout.addWidget(pressPushButton, 1, 1)
+        layout.addWidget(QLabel('MFC601 Temp'), 2, 0)
+        layout.addWidget(self.tempEdit, 2, 1)
+        layout.addWidget(QLabel('PV901 Offset'), 3, 0)
+        layout.addWidget(self.pv901Offset, 3, 1)
         #layout.addWidget(checkBox)
         #layout.setRowStretch(2, 1)
         #layout.addStretch(1)
@@ -106,58 +128,71 @@ class WidgetGasFilling(QDialog):
     def sumPress(self):
         tPfill = float(self.tableGasFill.item(0,0).text())
         tHe = float(self.tableGasFill.item(0,1).text())
-        tH = float(self.tableGasFill.item(0,2).text())
+        tH2 = float(self.tableGasFill.item(0,2).text())
         tO2 = float(self.tableGasFill.item(0,3).text())
-        pSum = tHe + tH + tO2
-        print(f"Sum Value: {pSum}")
+        pSum = tHe + tH2 + tO2
+        #print(f"Sum Value: {pSum}")
         pPartAmbHe = tPfill * tHe / pSum
         self.tableGasFill.setItem(1,1, QTableWidgetItem(f'{pPartAmbHe:0.2f}'))
-        pPartAmbH = tPfill * tH / pSum
-        self.tableGasFill.setItem(1,2, QTableWidgetItem(f'{pPartAmbH:0.2f}'))
+        pPartAmbH2 = tPfill * tH2 / pSum
+        self.tableGasFill.setItem(1,2, QTableWidgetItem(f'{pPartAmbH2:0.2f}'))
         pPartAmbO2 = tPfill * tO2 / pSum
         self.tableGasFill.setItem(1,3, QTableWidgetItem(f'{pPartAmbO2:0.2f}'))
         tempAbs = float(self.tempEdit.text())  + T_REF
         pPartRefHe = pPartAmbHe * T_REF / tempAbs
         self.tableGasFill.setItem(2,1, QTableWidgetItem(f'{pPartRefHe:0.2f}'))
+        pPartRefH2 = pPartAmbH2 * T_REF / tempAbs
+        self.tableGasFill.setItem(2,2, QTableWidgetItem(f'{pPartRefH2:0.2f}'))
+        pPartRefO2 = pPartAmbO2 * T_REF / tempAbs
+        self.tableGasFill.setItem(2,3, QTableWidgetItem(f'{pPartRefO2:0.2f}'))
+
+        volAmbHe = pPartAmbHe  * VOL_DRIVER
+        #volRefHe = pPartRefHe  * VOL_DRIVER
+        volRefHe2 = float(self.tableSetPoints.item(1,3).text())
+        volAmbHe2 = volRefHe2 * tempAbs / T_REF
+        volAmbHe1 = volAmbHe - volAmbHe2 - VOL_DRIVER
+        volRefHe1 = volAmbHe1 * T_REF / tempAbs
+
+        volAmbO2 = pPartAmbO2  * VOL_DRIVER
+        self.tableSetPoints.setItem(0,0, QTableWidgetItem(f'{volAmbO2:0.2f}'))
+        volRefO2 = pPartRefO2  * VOL_DRIVER
+        self.tableSetPoints.setItem(1,0, QTableWidgetItem(f'{volRefO2:0.2f}'))
+
+        self.tableSetPoints.setItem(0,1, QTableWidgetItem(f'{volAmbHe1:0.2f}'))
+        self.tableSetPoints.setItem(1,1, QTableWidgetItem(f'{volRefHe1:0.2f}'))
+        volAmbH2 = pPartAmbH2  * VOL_DRIVER
+        self.tableSetPoints.setItem(0,2, QTableWidgetItem(f'{volAmbH2:0.2f}'))
+        volRefH2 = pPartRefH2  * VOL_DRIVER
+        self.tableSetPoints.setItem(1,2, QTableWidgetItem(f'{volRefH2:0.2f}'))
+        self.tableSetPoints.setItem(0,3, QTableWidgetItem(f'{volAmbHe2:0.2f}'))
+
+        dPO2 = volAmbO2 / 10000 * 200
+        self.tableSetPoints.setItem(2,0, QTableWidgetItem(f'{dPO2:0.2f}'))
+        dPHe1 = volAmbHe1 / 10000 * 200 / 2.0
+        self.tableSetPoints.setItem(2,1, QTableWidgetItem(f'{dPHe1:0.2f}'))
+        dPH2 = volAmbH2 / 10000 * 200
+        self.tableSetPoints.setItem(2,2, QTableWidgetItem(f'{dPH2:0.2f}'))
 
     def getEpics(self):
         mfc601Temp = caget('Esther:gas:' + 'MFC601_FTEMP')
         self.tempEdit.setText(f'{mfc601Temp:0.1f}')
-    def createTopRightGroupBox(self):
+    def createTopRightGroupBox2(self):
         self.topRightGroupBox = QGroupBox("Group 2")
 
-        epicsPushButton = QPushButton("Epics Get PVs")
-        epicsPushButton.setDefault(True)
-        epicsPushButton.clicked.connect(self.getEpics)
-
-        pressPushButton = QPushButton("Calc Press")
-        pressPushButton.setDefault(True)
-        pressPushButton.clicked.connect(self.sumPress)
 
         togglePushButton = QPushButton("Toggle Push Button")
         togglePushButton.setCheckable(True)
         #RPump1press = caget('ISTTOK:central:RPump1-Pressure')
-        self.tempEdit = QLineEdit('14.5')
-        validator = QDoubleValidator()  # Create validator.
-        validator.setRange( -10.0, 100.0, 2)
-        self.tempEdit.setValidator(validator)
-        self.pv901Offset = QLineEdit('0.15')
 
         layout = QGridLayout() #QVBoxLayout()
-        layout.addWidget(epicsPushButton, 0, 0)
-        layout.addWidget(pressPushButton, 0, 1)
         layout.addWidget(togglePushButton, 1, 0)
-        layout.addWidget(QLabel('MFC601 Temp'), 2, 0)
-        layout.addWidget(self.tempEdit, 2, 1)
-        layout.addWidget(QLabel('PV901 Offset'), 3, 0)
-        layout.addWidget(self.pv901Offset, 3, 1)
         layout.setRowStretch(3, 1)
         #layout.addStretch(1)
         self.topRightGroupBox.setLayout(layout)
 
-    def createBottomLeftTabWidget(self):
-        self.bottomLeftTabWidget = QTabWidget()
-        self.bottomLeftTabWidget.setSizePolicy(QSizePolicy.Policy.Preferred,
+    def createTopRightGroupBox(self):
+        self.topRightTabWidget = QTabWidget()
+        self.topRightTabWidget.setSizePolicy(QSizePolicy.Policy.Preferred,
                 QSizePolicy.Policy.Ignored)
 
         tab1 = QWidget()
@@ -165,16 +200,51 @@ class WidgetGasFilling(QDialog):
         self.tableGasFill.setHorizontalHeaderLabels(("P_Filling","He","H2","O2"))
         self.tableGasFill.setVerticalHeaderLabels(("Target","Partial(R)","Partial(A)"))
         self.tableGasFill.setItem(0,0,QTableWidgetItem("30"))
-        self.tableGasFill.setItem(0,1,QTableWidgetItem("8.0"))
+        self.tableGasFill.setItem(0,1,QTableWidgetItem("7.0"))
         self.tableGasFill.setItem(0,2,QTableWidgetItem("2.0"))
-        self.tableGasFill.setItem(0,3,QTableWidgetItem("1.2"))
+        self.tableGasFill.setItem(0,3,QTableWidgetItem("1.0"))
+
+        tab2 = QWidget()
+        self.tableMfc = QTableWidget(2, 3)
+        self.tableMfc.setHorizontalHeaderLabels(("MFC601 - He","H2","O2"))
+        self.tableMfc.setItem(0,0,QTableWidgetItem("45.0"))
+        self.tableMfc.setItem(0,1,QTableWidgetItem("1.5"))
+        self.tableMfc.setItem(0,2,QTableWidgetItem("1.5"))
 
         tab1hbox = QHBoxLayout()
         tab1hbox.setContentsMargins(5, 5, 5, 5)
         tab1hbox.addWidget(self.tableGasFill)
         tab1.setLayout(tab1hbox)
-        self.bottomLeftTabWidget.addTab(tab1, "&Target")
+        
+        tab2hbox = QHBoxLayout()
+        tab2hbox.setContentsMargins(5, 5, 5, 5)
+        tab2hbox.addWidget(self.tableMfc)
+        tab2.setLayout(tab2hbox)
 
+        self.topRightTabWidget.addTab(tab1, "&Target")
+        self.topRightTabWidget.addTab(tab2, "&MFCs")
+
+    def createBottomTabWidget(self):
+        self.bottomTabWidget = QTabWidget()
+        self.bottomTabWidget.setSizePolicy(QSizePolicy.Policy.Preferred,
+                QSizePolicy.Policy.Ignored)
+
+        tab1 = QWidget()
+        self.tableSetPoints = QTableWidget(3, 4)
+
+        self.tableSetPoints.setHorizontalHeaderLabels(("O2","He1","H2","He2"))
+        self.tableSetPoints.setVerticalHeaderLabels(("Litre Ambient","Litre Norm","dP bottle"))
+        self.tableSetPoints.setItem(0,0,QTableWidgetItem("900"))
+        self.tableSetPoints.setItem(0,1,QTableWidgetItem("80.0"))
+        self.tableSetPoints.setItem(0,2,QTableWidgetItem("20.0"))
+        self.tableSetPoints.setItem(0,3,QTableWidgetItem("105.0"))
+        self.tableSetPoints.setItem(1,3,QTableWidgetItem("100.0"))
+        
+        tab1hbox = QHBoxLayout()
+        tab1hbox.setContentsMargins(5, 5, 5, 5)
+        tab1hbox.addWidget(self.tableSetPoints)
+        tab1.setLayout(tab1hbox)
+        self.bottomTabWidget.addTab(tab1, "&SetPoints")
 
 if __name__ == '__main__':
 
