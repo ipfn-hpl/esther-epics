@@ -21,10 +21,14 @@ os.environ['EPICS_CA_AUTO_ADDR_LIST'] = 'NO'
 R_GAS = 8.31446 # J / mol / K
 T_REF = 273.15  # K
 VOL_DRIVER = 50.35
+PV_PREFIX = 'Esther:gas:'
 
 class WidgetGasFilling(QDialog):
     def __init__(self, parent=None):
         super(WidgetGasFilling, self).__init__(parent)
+        self.mfcTemp = dict()
+        self.mfcFlowSp = dict()
+        self.ptPress = dict()
 
         self.originalPalette = QApplication.palette()
         styleComboBox = QComboBox()
@@ -138,7 +142,8 @@ class WidgetGasFilling(QDialog):
         self.tableGasFill.setItem(1,2, QTableWidgetItem(f'{pPartAmbH2:0.2f}'))
         pPartAmbO2 = tPfill * tO2 / pSum
         self.tableGasFill.setItem(1,3, QTableWidgetItem(f'{pPartAmbO2:0.2f}'))
-        tempAbs = float(self.tempEdit.text())  + T_REF
+        tempAbs = self.mfcTemp['601'] + T_REF
+       # tempabs = float(self.tempEdit.text())  + T_REF
         pPartRefHe = pPartAmbHe * T_REF / tempAbs
         self.tableGasFill.setItem(2,1, QTableWidgetItem(f'{pPartRefHe:0.2f}'))
         pPartRefH2 = pPartAmbH2 * T_REF / tempAbs
@@ -173,7 +178,33 @@ class WidgetGasFilling(QDialog):
         dPH2 = volAmbH2 / 10000 * 200
         self.tableSetPoints.setItem(2,2, QTableWidgetItem(f'{dPH2:0.2f}'))
 
+        fPO2 = self.ptPress['201'] - dPO2
+        self.tableSetPoints.setItem(3,0, QTableWidgetItem(f'{fPO2:0.2f}'))
+        fPHe1 = self.ptPress['301'] - dPHe1
+        self.tableSetPoints.setItem(3,1, QTableWidgetItem(f'{fPHe1:0.2f}'))
+
+        minO2 = volRefO2 / 1e3 / self.mfcFlowSp['201'] * 60
+        self.tableSetPoints.setItem(4,0, QTableWidgetItem(f'{minO2:0.2f}'))
+        minHe1 = volRefHe1 / self.mfcFlowSp['601']
+        self.tableSetPoints.setItem(4,1, QTableWidgetItem(f'{minHe1:0.2f}'))
+        minO2 =( 0.8 * volRefO2 / self.mfcFlowSp['201'] + 0.2 * volRefO2 / 0.4) / 1e3 * 60
+        self.tableSetPoints.setItem(4,2, QTableWidgetItem(f'{minO2:0.2f}'))
+
     def getEpics(self):
+        self.mfcTemp['201'] = caget(PV_PREFIX + 'MFC201_FTEMP')
+        self.mfcTemp['401'] = caget(PV_PREFIX + 'MFC401_FTEMP')
+        self.mfcTemp['601'] = caget(PV_PREFIX + 'MFC601_FTEMP')
+        self.mfcFlowSp['201'] = caget(PV_PREFIX + 'MFC201_FFLOW_SP')
+        self.mfcFlowSp['401'] = caget(PV_PREFIX + 'MFC401_FFLOW_SP')
+        self.mfcFlowSp['601'] = caget(PV_PREFIX + 'MFC601_FFLOW_SP')
+        self.ptPress['201'] = caget(PV_PREFIX + 'PT201')
+        self.ptPress['301'] = caget(PV_PREFIX + 'PT301')
+        self.ptPress['401'] = caget(PV_PREFIX + 'PT401')
+        self.ptPress['501'] = caget(PV_PREFIX + 'PT501')
+        self.tableMfc.setItem(1,0,QTableWidgetItem(f"{self.mfcTemp['601']:0.2f}"))
+        self.tableMfc.setItem(1,1,QTableWidgetItem(f"{self.mfcTemp['401']:0.2f}"))
+        self.tableMfc.setItem(1,2,QTableWidgetItem(f"{self.mfcTemp['201']:0.2f}"))
+        
         mfc601Temp = caget('Esther:gas:' + 'MFC601_FTEMP')
         self.tempEdit.setText(f'{mfc601Temp:0.1f}')
     def createTopRightGroupBox2(self):
@@ -206,7 +237,8 @@ class WidgetGasFilling(QDialog):
 
         tab2 = QWidget()
         self.tableMfc = QTableWidget(2, 3)
-        self.tableMfc.setHorizontalHeaderLabels(("MFC601 - He","H2","O2"))
+        self.tableMfc.setHorizontalHeaderLabels(("601 N2/He (ln/min)","H2 (m3/h)","O2"))
+        self.tableMfc.setVerticalHeaderLabels(("Flow","Temperature"))
         self.tableMfc.setItem(0,0,QTableWidgetItem("45.0"))
         self.tableMfc.setItem(0,1,QTableWidgetItem("1.5"))
         self.tableMfc.setItem(0,2,QTableWidgetItem("1.5"))
@@ -230,15 +262,16 @@ class WidgetGasFilling(QDialog):
                 QSizePolicy.Policy.Ignored)
 
         tab1 = QWidget()
-        self.tableSetPoints = QTableWidget(3, 4)
+        self.tableSetPoints = QTableWidget(5, 4)
 
         self.tableSetPoints.setHorizontalHeaderLabels(("O2","He1","H2","He2"))
-        self.tableSetPoints.setVerticalHeaderLabels(("Litre Ambient","Litre Norm","dP bottle"))
+        self.tableSetPoints.setVerticalHeaderLabels(("Litre Ambient","Litre Norm","dP bottle",'Bottle Final Press','Filling min'))
         self.tableSetPoints.setItem(0,0,QTableWidgetItem("900"))
         self.tableSetPoints.setItem(0,1,QTableWidgetItem("80.0"))
         self.tableSetPoints.setItem(0,2,QTableWidgetItem("20.0"))
         self.tableSetPoints.setItem(0,3,QTableWidgetItem("105.0"))
         self.tableSetPoints.setItem(1,3,QTableWidgetItem("100.0"))
+        self.tableSetPoints.setCurrentCell(1,3)
         
         tab1hbox = QHBoxLayout()
         tab1hbox.setContentsMargins(5, 5, 5, 5)
