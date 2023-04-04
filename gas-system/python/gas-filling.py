@@ -2,20 +2,21 @@
 """
 """
 
-from PyQt6.QtCore import QDateTime, Qt, QTimer
+from PyQt6.QtCore import (QDateTime, Qt, QTimer)
 from PyQt6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDateTimeEdit,
         QDial, QDialog, QGridLayout, QGroupBox, QHBoxLayout, QLabel, QLineEdit,
         QProgressBar, QPushButton, QRadioButton, QScrollBar, QSizePolicy,
-        QSlider, QSpinBox, QStyleFactory, QTableWidget, QTabWidget, QTextEdit,
+        QSlider, QStyleFactory, QTableWidget, QTabWidget, QTextEdit,
         QVBoxLayout, QWidget, QTableWidgetItem)
+# QSpinBox
 from PyQt6.QtGui import QDoubleValidator
 from epics import caget, caput, cainfo
-import os
+# import os
 
-os.environ['EPICS_CA_ADDR_LIST'] = '10.10.136.128'
-#os.environ['EPICS_CA_ADDR_LIST'] = 'localhost 192.168.1.110'
+# os.environ['EPICS_CA_ADDR_LIST'] = '10.10.136.128'
+# os.environ['EPICS_CA_ADDR_LIST'] = 'localhost 192.168.1.110'
 
-os.environ['EPICS_CA_AUTO_ADDR_LIST'] = 'NO'
+# os.environ['EPICS_CA_AUTO_ADDR_LIST'] = 'NO'
 
 # Constants 
 R_GAS = 8.31446 # J / mol / K
@@ -94,34 +95,45 @@ class WidgetGasFilling(QDialog):
     def createTopLeftGroupBox(self):
         self.topLeftGroupBox = QGroupBox("Group 1")
 
-        radioButton1 = QRadioButton("He Flushing")
-        radioButton2 = QRadioButton("N2 Flushing")
+        #radioButton1 = QRadioButton("He Flushing")
+        #radioButton2 = QRadioButton("N2 Flushing")
 #        radioButton3 = QRadioButton("Radio button 3")
-        radioButton1.setChecked(True)
+        #radioButton1.setChecked(True)
 
         checkBox = QCheckBox("Tri-state check box")
         checkBox.setTristate(True)
         checkBox.setCheckState(Qt.CheckState.PartiallyChecked)
 
-        epicsPushButton = QPushButton("Epics Get PVs")
-        epicsPushButton.setDefault(True)
-        epicsPushButton.clicked.connect(self.getEpics)
+        epicsGetButton = QPushButton("Epics Get PVs")
+        epicsGetButton.setDefault(True)
+        epicsGetButton.clicked.connect(self.getEpics)
+        epicsPutButton = QPushButton("Epics Put PVs")
+        epicsPutButton.setDefault(True)
+        epicsPutButton.clicked.connect(self.putEpics)
         self.tempEdit = QLineEdit('14.5')
         validator = QDoubleValidator()  # Create validator.
         validator.setRange( -10.0, 100.0, 2)
         self.tempEdit.setValidator(validator)
         self.pv901Offset = QLineEdit('0.15')
-
+        labelText = "<P><b><i><font color='#ff0001' font_size=4>"
+        labelText +="Flushing Gas"
+        labelText +="</font></i></b></P></br>"
+        self.gasMode = QLabel('He')
         pressPushButton = QPushButton("Calc Press")
         pressPushButton.setDefault(True)
         pressPushButton.clicked.connect(self.sumPress)
         layout = QGridLayout() # QVBoxLayout()
-        layout.addWidget(radioButton1, 0, 0)
-        layout.addWidget(radioButton2, 0, 1)
-        layout.addWidget(epicsPushButton, 1, 0)
+        layout.addWidget(QLabel(labelText), 0, 0)
+        layout.addWidget(self.gasMode, 0, 1)
+        #layout.addWidget(QLabel('Flushing Gas Mode'), 0, 0)
+        #layout.addWidget(radioButton2, 0, 1)
+        #layout.addWidget(radioButton1, 0, 0)
+        #layout.addWidget(radioButton2, 0, 1)
+        layout.addWidget(epicsGetButton, 1, 0)
         layout.addWidget(pressPushButton, 1, 1)
-        layout.addWidget(QLabel('MFC601 Temp'), 2, 0)
-        layout.addWidget(self.tempEdit, 2, 1)
+        layout.addWidget(epicsPutButton, 1, 2)
+        #layout.addWidget(QLabel('MFC601 Temp'), 2, 0)
+        #layout.addWidget(self.tempEdit, 2, 1)
         layout.addWidget(QLabel('PV901 Offset'), 3, 0)
         layout.addWidget(self.pv901Offset, 3, 1)
         #layout.addWidget(checkBox)
@@ -177,11 +189,17 @@ class WidgetGasFilling(QDialog):
         self.tableSetPoints.setItem(2,1, QTableWidgetItem(f'{dPHe1:0.2f}'))
         dPH2 = volAmbH2 / 10000 * 200
         self.tableSetPoints.setItem(2,2, QTableWidgetItem(f'{dPH2:0.2f}'))
+        dPHe2 = volAmbHe2 / 10000 * 200 / 2.0
+        self.tableSetPoints.setItem(2,3, QTableWidgetItem(f'{dPHe2:0.2f}'))
 
         fPO2 = self.ptPress['201'] - dPO2
         self.tableSetPoints.setItem(3,0, QTableWidgetItem(f'{fPO2:0.2f}'))
         fPHe1 = self.ptPress['301'] - dPHe1
         self.tableSetPoints.setItem(3,1, QTableWidgetItem(f'{fPHe1:0.2f}'))
+        fPH2 = self.ptPress['401'] - dPH2
+        self.tableSetPoints.setItem(3,2, QTableWidgetItem(f'{fPH2:0.2f}'))
+        fPHe2 = self.ptPress['501'] - dPHe2
+        self.tableSetPoints.setItem(3,3, QTableWidgetItem(f'{fPHe2:0.2f}'))
 
         minO2 = volRefO2 / 1e3 / self.mfcFlowSp['201'] * 60
         self.tableSetPoints.setItem(4,0, QTableWidgetItem(f'{minO2:0.2f}'))
@@ -189,6 +207,17 @@ class WidgetGasFilling(QDialog):
         self.tableSetPoints.setItem(4,1, QTableWidgetItem(f'{minHe1:0.2f}'))
         minO2 =( 0.8 * volRefO2 / self.mfcFlowSp['201'] + 0.2 * volRefO2 / 0.4) / 1e3 * 60
         self.tableSetPoints.setItem(4,2, QTableWidgetItem(f'{minO2:0.2f}'))
+        minHe2 = volRefHe2 / self.mfcFlowSp['601']
+        self.tableSetPoints.setItem(4,3, QTableWidgetItem(f'{minHe2:0.2f}'))
+
+        self.pSp_O2 = volAmbO2 / VOL_DRIVER
+        self.tableSetPoints.setItem(5,0, QTableWidgetItem(f'{self.pSp_O2:0.2f}'))
+        self.pSp_He1 = self.pSp_O2 + volAmbHe1 / VOL_DRIVER
+        self.tableSetPoints.setItem(5,1, QTableWidgetItem(f'{self.pSp_He1:0.2f}'))
+        self.pSp_H2 = self.pSp_He1 + volAmbH2 / VOL_DRIVER
+        self.tableSetPoints.setItem(5,2, QTableWidgetItem(f'{self.pSp_H2:0.2f}'))
+        self.pSp_He2 = self.pSp_H2 + volAmbHe2 / VOL_DRIVER
+        self.tableSetPoints.setItem(5,3, QTableWidgetItem(f'{self.pSp_He2:0.2f}'))
 
     def getEpics(self):
         self.mfcTemp['201'] = caget(PV_PREFIX + 'MFC201_FTEMP')
@@ -205,8 +234,15 @@ class WidgetGasFilling(QDialog):
         self.tableMfc.setItem(1,1,QTableWidgetItem(f"{self.mfcTemp['401']:0.2f}"))
         self.tableMfc.setItem(1,2,QTableWidgetItem(f"{self.mfcTemp['201']:0.2f}"))
         
-        mfc601Temp = caget('Esther:gas:' + 'MFC601_FTEMP')
-        self.tempEdit.setText(f'{mfc601Temp:0.1f}')
+        gasM = caget(PV_PREFIX + 'GAS_MODE', as_string=True)
+        self.gasMode.setText(gasM)
+        #mfc601Temp = caget('Esther:gas:' + 'MFC601_FTEMP')
+        #self.tempEdit.setText(f'{mfc601Temp:0.1f}')
+    def putEpics(self):
+        caput(PV_PREFIX + 'PT901_SP_O', self.pSp_O2)
+        caput(PV_PREFIX + 'PT901_SP_HE1', self.pSp_He1)
+        caput(PV_PREFIX + 'PT901_SP_H', self.pSp_H2)
+        caput(PV_PREFIX + 'PT901_SP_HE2', self.pSp_He2)
     def createTopRightGroupBox2(self):
         self.topRightGroupBox = QGroupBox("Group 2")
 
@@ -262,10 +298,10 @@ class WidgetGasFilling(QDialog):
                 QSizePolicy.Policy.Ignored)
 
         tab1 = QWidget()
-        self.tableSetPoints = QTableWidget(5, 4)
+        self.tableSetPoints = QTableWidget(6, 4)
 
         self.tableSetPoints.setHorizontalHeaderLabels(("O2","He1","H2","He2"))
-        self.tableSetPoints.setVerticalHeaderLabels(("Litre Ambient","Litre Norm","dP bottle",'Bottle Final Press','Filling min'))
+        self.tableSetPoints.setVerticalHeaderLabels(("Litre Ambient","Litre Norm","dP bottle",'Bottle Final Press','Filling min','P_setpoint'))
         self.tableSetPoints.setItem(0,0,QTableWidgetItem("900"))
         self.tableSetPoints.setItem(0,1,QTableWidgetItem("80.0"))
         self.tableSetPoints.setItem(0,2,QTableWidgetItem("20.0"))

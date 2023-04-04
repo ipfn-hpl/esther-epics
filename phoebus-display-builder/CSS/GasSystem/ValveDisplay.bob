@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2023-04-03 14:32:01 by esther-->
+<!--Saved on 2023-04-03 14:39:30 by esther-->
 <display version="2.0.0">
   <name>ValveDisplay</name>
   <macros>
@@ -1271,13 +1271,14 @@
     </line_color>
     <rules>
       <rule name="ColorRule" prop_id="line_color" out_exp="false">
-        <exp bool_exp="pv0&gt;=3.0">
+        <exp bool_exp="pv0 &gt;=pv1+ 1.0">
           <value>
             <color name="On" red="0" green="255" blue="0">
             </color>
           </value>
         </exp>
         <pv_name>${unit}:${node}:PT601</pv_name>
+        <pv_name>${unit}:${node}:PT901</pv_name>
       </rule>
     </rules>
   </widget>
@@ -1302,13 +1303,15 @@
     </line_color>
     <rules>
       <rule name="ColorRule" prop_id="line_color" out_exp="false">
-        <exp bool_exp="pv0&gt;=3.0">
+        <exp bool_exp="(pv0 &gt;=pv1) &amp;&amp; pv2== 1">
           <value>
             <color name="On" red="0" green="255" blue="0">
             </color>
           </value>
         </exp>
         <pv_name>${unit}:${node}:PT601</pv_name>
+        <pv_name>${unit}:${node}:PT901</pv_name>
+        <pv_name>${unit}:${node}:PT701</pv_name>
       </rule>
     </rules>
   </widget>

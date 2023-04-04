@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2023-04-01 17:42:53 by bernardo-->
+<!--Saved on 2023-04-03 17:26:40 by esther-->
 <display version="2.0.0">
   <name>Esther Gas Control</name>
   <macros>
@@ -48,7 +48,7 @@
 Nitrogen Purge</text>
       <x>10</x>
       <y>2</y>
-      <width>101</width>
+      <width>138</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -75,7 +75,7 @@ Nitrogen Purge</text>
 Oxygen</text>
       <x>306</x>
       <y>2</y>
-      <width>53</width>
+      <width>69</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -104,7 +104,7 @@ Oxygen</text>
 Helium I</text>
       <x>400</x>
       <y>2</y>
-      <width>55</width>
+      <width>75</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -133,7 +133,7 @@ Helium I</text>
 Hydrogen</text>
       <x>526</x>
       <y>2</y>
-      <width>67</width>
+      <width>88</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -162,7 +162,7 @@ Hydrogen</text>
 Helium II</text>
       <x>660</x>
       <y>2</y>
-      <width>58</width>
+      <width>81</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -205,7 +205,7 @@ Helium II</text>
       <text>O2</text>
       <x>41</x>
       <y>20</y>
-      <width>21</width>
+      <width>25</width>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -232,7 +232,8 @@ Helium II</text>
       <text>He I</text>
       <x>161</x>
       <y>20</y>
-      <width>27</width>
+      <width>36</width>
+      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -267,7 +268,7 @@ Helium II</text>
       <text>H2</text>
       <x>264</x>
       <y>20</y>
-      <width>21</width>
+      <width>25</width>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -294,7 +295,8 @@ Helium II</text>
       <text>He II</text>
       <x>384</x>
       <y>20</y>
-      <width>30</width>
+      <width>42</width>
+      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -344,7 +346,7 @@ Helium II</text>
 Pressure</text>
       <x>3</x>
       <y>2</y>
-      <width>59</width>
+      <width>80</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -371,7 +373,7 @@ Pressure</text>
 Pressure</text>
       <x>104</x>
       <y>2</y>
-      <width>90</width>
+      <width>120</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -410,7 +412,7 @@ Pressure</text>
       <text>MFC201
 O2</text>
       <x>30</x>
-      <width>59</width>
+      <width>72</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -438,7 +440,7 @@ O2</text>
       <text>MFC601
 He I</text>
       <x>151</x>
-      <width>60</width>
+      <width>72</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -466,7 +468,7 @@ He I</text>
       <text>MFC401
 H2</text>
       <x>264</x>
-      <width>60</width>
+      <width>72</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -494,7 +496,7 @@ H2</text>
       <text>MFC601
 He II</text>
       <x>384</x>
-      <width>60</width>
+      <width>72</width>
       <height>41</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
@@ -543,7 +545,7 @@ He II</text>
       <class>Label_1</class>
       <text>MFC201-O2</text>
       <x>10</x>
-      <width>87</width>
+      <width>104</width>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -579,7 +581,7 @@ He II</text>
       <class>Label_1</class>
       <text>MFC401-H2</text>
       <x>250</x>
-      <width>87</width>
+      <width>104</width>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -615,7 +617,8 @@ He II</text>
       <class>Label_1</class>
       <text>MFC601- He</text>
       <x>377</x>
-      <width>89</width>
+      <width>109</width>
+      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -1020,7 +1023,7 @@ He II</text>
     <wrap_words>false</wrap_words>
     <rules>
       <rule name="Visible" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0==15">
+        <exp bool_exp="pv0==15 || pv0==16">
           <value>true</value>
         </exp>
         <pv_name>${unit}:${node}:S1_SubStep</pv_name>
@@ -1135,7 +1138,7 @@ STOP</off_label>
     <pv_name>${unit}:${node}:STEP_3_GO</pv_name>
     <x>850</x>
     <y>217</y>
-    <off_label>Step 3</off_label>
+    <off_label>Step3 O2</off_label>
     <off_color>
       <color red="0" green="100" blue="0">
       </color>
@@ -1457,7 +1460,7 @@ STOP</off_label>
     <pv_name>${unit}:${node}:STEP_6_GO</pv_name>
     <x>850</x>
     <y>316</y>
-    <off_label>Step 6</off_label>
+    <off_label>Step6 H2</off_label>
     <off_color>
       <color red="0" green="100" blue="0">
       </color>
