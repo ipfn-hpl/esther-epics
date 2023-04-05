@@ -3,13 +3,14 @@
 """
 
 from PyQt6.QtCore import (QDateTime, Qt, QTimer)
+from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDateTimeEdit,
         QDial, QDialog, QGridLayout, QGroupBox, QHBoxLayout, QLabel, QLineEdit,
         QProgressBar, QPushButton, QRadioButton, QScrollBar, QSizePolicy,
         QSlider, QStyleFactory, QTableWidget, QTabWidget, QTextEdit,
         QVBoxLayout, QWidget, QTableWidgetItem)
 # QSpinBox
-from PyQt6.QtGui import QDoubleValidator
+from PyQt6.QtGui import (QDoubleValidator, QPixmap)
 from epics import caget, caput, cainfo
 # import os
 
@@ -23,6 +24,13 @@ R_GAS = 8.31446 # J / mol / K
 T_REF = 273.15  # K
 VOL_DRIVER = 50.35
 PV_PREFIX = 'Esther:gas:'
+
+N_EDIT = Qt.ItemFlag.ItemIsEnabled
+
+def setTableNonEditItem(row, col, table,  value):
+    item = QTableWidgetItem(f'{value:0.2f}')
+    item.setFlags(Qt.ItemFlag.ItemIsEnabled)
+    table.setItem(row,col,item)
 
 class WidgetGasFilling(QDialog):
     def __init__(self, parent=None):
@@ -50,6 +58,8 @@ class WidgetGasFilling(QDialog):
 
         styleComboBox.textActivated.connect(self.changeStyle)
         self.useStylePaletteCheckBox.toggled.connect(self.changePalette)
+#        item = QTableWidgetItem(f'{self.tHeNorm:0.2f}')
+#        item.setFlags(Qt.ItemFlag.ItemIsEnabled)
         disableWidgetsCheckBox.toggled.connect(self.topLeftGroupBox.setDisabled)
         disableWidgetsCheckBox.toggled.connect(self.topRightTabWidget.setDisabled)
 #        disableWidgetsCheckBox.toggled.connect(self.bottomLeftTabWidget.setDisabled)
@@ -72,15 +82,16 @@ class WidgetGasFilling(QDialog):
         mainLayout.addWidget(self.bottomTabWidget, 2, 0, 1, 2)
 
         mainLayout.setRowStretch(0, 0)
-        mainLayout.setRowStretch(0, 2)
-        mainLayout.setRowStretch(2, 1)
+        mainLayout.setRowStretch(1, 1)
+        mainLayout.setRowStretch(2, 2)
         mainLayout.setColumnStretch(0, 1)
         mainLayout.setColumnStretch(1, 2)
 
         self.setLayout(mainLayout)
 
         self.setWindowTitle("Gas Filling Parameters")
-        self.changeStyle('Windows')
+        #self.changeStyle('Windows')
+        self.changeStyle('Fusion')
 
     def changeStyle(self, styleName):
         QApplication.setStyle(QStyleFactory.create(styleName))
@@ -121,7 +132,7 @@ class WidgetGasFilling(QDialog):
         self.gasMode = QLabel('He')
         pressPushButton = QPushButton("Calc Press")
         pressPushButton.setDefault(True)
-        pressPushButton.clicked.connect(self.sumPress)
+        pressPushButton.clicked.connect(self.calcPress)
         layout = QGridLayout() # QVBoxLayout()
         layout.addWidget(QLabel(labelText), 0, 0)
         layout.addWidget(self.gasMode, 0, 1)
@@ -141,27 +152,43 @@ class WidgetGasFilling(QDialog):
         #layout.addStretch(1)
         self.topLeftGroupBox.setLayout(layout)
 
-    def sumPress(self):
+    def calcPress(self):
         tPfill = float(self.tableGasFill.item(0,0).text())
         tHe = float(self.tableGasFill.item(0,1).text())
         tH2 = float(self.tableGasFill.item(0,2).text())
         tO2 = float(self.tableGasFill.item(0,3).text())
         pSum = tHe + tH2 + tO2
+        self.tHeNorm = tHe * tO2
+        self.tH2Norm = tH2 * tO2
+        item = QTableWidgetItem(f'{self.tHeNorm:0.2f}')
+        item.setFlags(Qt.ItemFlag.ItemIsEnabled)
+        self.tableGasFill.setItem(1,1, item)
+        item = QTableWidgetItem(f'{self.tH2Norm:0.2f}')
+        item.setFlags(Qt.ItemFlag.ItemIsEnabled)
+        self.tableGasFill.setItem(1,2, item)
+        #self.tableGasFill.setItem(1,1, QTableWidgetItem(f'{self.tHeNorm:0.2f}'))
+        #self.tableGasFill.setItem(1,2, QTableWidgetItem(f'{self.tH2Norm:0.2f}'))
         #print(f"Sum Value: {pSum}")
         pPartAmbHe = tPfill * tHe / pSum
-        self.tableGasFill.setItem(1,1, QTableWidgetItem(f'{pPartAmbHe:0.2f}'))
+        setTableNonEditItem(2, 1, self.tableGasFill, pPartAmbHe)
+        # self.tableGasFill.setItem(2,1, QTableWidgetItem(f'{pPartAmbHe:0.2f}'))
         pPartAmbH2 = tPfill * tH2 / pSum
-        self.tableGasFill.setItem(1,2, QTableWidgetItem(f'{pPartAmbH2:0.2f}'))
+        # self.tableGasFill.setItem(2,2, QTableWidgetItem(f'{pPartAmbH2:0.2f}'))
+        setTableNonEditItem(2, 2, self.tableGasFill, pPartAmbH2)
         pPartAmbO2 = tPfill * tO2 / pSum
-        self.tableGasFill.setItem(1,3, QTableWidgetItem(f'{pPartAmbO2:0.2f}'))
+        # self.tableGasFill.setItem(2,3, QTableWidgetItem(f'{pPartAmbO2:0.2f}'))
+        setTableNonEditItem(2, 3, self.tableGasFill,  pPartAmbO2)
         tempAbs = self.mfcTemp['601'] + T_REF
        # tempabs = float(self.tempEdit.text())  + T_REF
         pPartRefHe = pPartAmbHe * T_REF / tempAbs
-        self.tableGasFill.setItem(2,1, QTableWidgetItem(f'{pPartRefHe:0.2f}'))
+        # self.tableGasFill.setItem(3,1, QTableWidgetItem(f'{pPartRefHe:0.2f}'))
+        setTableNonEditItem(3, 1, self.tableGasFill, pPartRefHe)
         pPartRefH2 = pPartAmbH2 * T_REF / tempAbs
-        self.tableGasFill.setItem(2,2, QTableWidgetItem(f'{pPartRefH2:0.2f}'))
+        # self.tableGasFill.setItem(3,2, QTableWidgetItem(f'{pPartRefH2:0.2f}'))
+        setTableNonEditItem(3, 2, self.tableGasFill, pPartRefH2)
         pPartRefO2 = pPartAmbO2 * T_REF / tempAbs
-        self.tableGasFill.setItem(2,3, QTableWidgetItem(f'{pPartRefO2:0.2f}'))
+        # self.tableGasFill.setItem(3,3, QTableWidgetItem(f'{pPartRefO2:0.2f}'))
+        setTableNonEditItem(3, 3, self.tableGasFill, pPartRefO2)
 
         volAmbHe = pPartAmbHe  * VOL_DRIVER
         #volRefHe = pPartRefHe  * VOL_DRIVER
@@ -171,7 +198,8 @@ class WidgetGasFilling(QDialog):
         volRefHe1 = volAmbHe1 * T_REF / tempAbs
 
         volAmbO2 = pPartAmbO2  * VOL_DRIVER
-        self.tableSetPoints.setItem(0,0, QTableWidgetItem(f'{volAmbO2:0.2f}'))
+        # self.tableSetPoints.setItem(0,0, QTableWidgetItem(f'{volAmbO2:0.2f}'))
+        setTableNonEditItem(0, 0, self.tableSetPoints, volAmbO2)
         volRefO2 = pPartRefO2  * VOL_DRIVER
         self.tableSetPoints.setItem(1,0, QTableWidgetItem(f'{volRefO2:0.2f}'))
 
@@ -238,14 +266,15 @@ class WidgetGasFilling(QDialog):
         self.gasMode.setText(gasM)
         #mfc601Temp = caget('Esther:gas:' + 'MFC601_FTEMP')
         #self.tempEdit.setText(f'{mfc601Temp:0.1f}')
+
     def putEpics(self):
         caput(PV_PREFIX + 'PT901_SP_O', self.pSp_O2)
         caput(PV_PREFIX + 'PT901_SP_HE1', self.pSp_He1)
         caput(PV_PREFIX + 'PT901_SP_H', self.pSp_H2)
         caput(PV_PREFIX + 'PT901_SP_HE2', self.pSp_He2)
+
     def createTopRightGroupBox2(self):
         self.topRightGroupBox = QGroupBox("Group 2")
-
 
         togglePushButton = QPushButton("Toggle Push Button")
         togglePushButton.setCheckable(True)
@@ -257,19 +286,27 @@ class WidgetGasFilling(QDialog):
         #layout.addStretch(1)
         self.topRightGroupBox.setLayout(layout)
 
+
     def createTopRightGroupBox(self):
         self.topRightTabWidget = QTabWidget()
         self.topRightTabWidget.setSizePolicy(QSizePolicy.Policy.Preferred,
-                QSizePolicy.Policy.Ignored)
+                QSizePolicy.Policy.Preferred)
+        #        QSizePolicy.Policy.Ignored)
 
         tab1 = QWidget()
-        self.tableGasFill = QTableWidget(3, 4)
+        self.tableGasFill = QTableWidget(4, 4)
         self.tableGasFill.setHorizontalHeaderLabels(("P_Filling","He","H2","O2"))
-        self.tableGasFill.setVerticalHeaderLabels(("Target","Partial(R)","Partial(A)"))
+        self.tableGasFill.setVerticalHeaderLabels(("Target",'TargNormO2',"Partial (Ref)","Partial (Abs)"))
         self.tableGasFill.setItem(0,0,QTableWidgetItem("30"))
-        self.tableGasFill.setItem(0,1,QTableWidgetItem("7.0"))
-        self.tableGasFill.setItem(0,2,QTableWidgetItem("2.0"))
-        self.tableGasFill.setItem(0,3,QTableWidgetItem("1.0"))
+        self.tableGasFill.setItem(0,1,QTableWidgetItem("8.0"))
+        itemNonEdit = QTableWidgetItem("2.0")
+        itemNonEdit.setFlags(Qt.ItemFlag.NoItemFlags)
+        #itemNonEdit.setFlags(itemNonEdit.flags() & ~Qt.ItemFlag.ItemIsEditable)
+        self.tableGasFill.setItem(0,2, itemNonEdit)
+        self.tableGasFill.setItem(0,3,QTableWidgetItem("1.2"))
+        itemO2Norm = QTableWidgetItem("1.0")
+        itemO2Norm.setFlags(itemNonEdit.flags())
+        self.tableGasFill.setItem(1,3, itemO2Norm)
 
         tab2 = QWidget()
         self.tableMfc = QTableWidget(2, 3)
@@ -289,13 +326,28 @@ class WidgetGasFilling(QDialog):
         tab2hbox.addWidget(self.tableMfc)
         tab2.setLayout(tab2hbox)
 
+        labelPng = QLabel()
+        pixmap = QPixmap('estherSpTable.png')
+        labelPng.setPixmap(pixmap.scaled(768, 512, Qt.AspectRatioMode.KeepAspectRatio))
+        labelPng.resize(pixmap.width(), pixmap.height())
+
+        tab3 = QWidget()
+        tab3hbox = QHBoxLayout()
+        tab3hbox.setContentsMargins(5, 5, 5, 5)
+        tab3hbox.addWidget(labelPng)
+        tab3.setLayout(tab3hbox)
+
+
         self.topRightTabWidget.addTab(tab1, "&Target")
         self.topRightTabWidget.addTab(tab2, "&MFCs")
+        self.topRightTabWidget.addTab(tab3, "&Reference")
+        self.topRightTabWidget.adjustSize()
 
     def createBottomTabWidget(self):
         self.bottomTabWidget = QTabWidget()
         self.bottomTabWidget.setSizePolicy(QSizePolicy.Policy.Preferred,
-                QSizePolicy.Policy.Ignored)
+                QSizePolicy.Policy.Preferred)
+        #        QSizePolicy.Policy.Ignored)
 
         tab1 = QWidget()
         self.tableSetPoints = QTableWidget(6, 4)
@@ -314,6 +366,7 @@ class WidgetGasFilling(QDialog):
         tab1hbox.addWidget(self.tableSetPoints)
         tab1.setLayout(tab1hbox)
         self.bottomTabWidget.addTab(tab1, "&SetPoints")
+        self.bottomTabWidget.adjustSize()
 
 if __name__ == '__main__':
 
