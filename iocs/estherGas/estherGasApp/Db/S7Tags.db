@@ -388,13 +388,23 @@ record(bo, "$(user):ABORT_STOP")
         field(ONAM, "ON")
         field(PINI, "YES")
 }
-record(bo, "$(user):GAS_MODE")
+record(bi, "$(user):GAS_MODE")
+{
+        field(SCAN, "I/O Intr")
+        field(DTYP, "s7nodave")
+        field(INP, "@myPLC(PG=default) M30.0")
+        field(DESC, "S7 PLC GAS MODE")
+        field(ZNAM, "He")
+        field(ONAM, "N2")
+}
+record(bo, "$(user):GAS_MODE_OUT")
 {
         field(DTYP, "s7nodave")
         field(OUT, "@myPLC M30.0")
         field(DESC, "S7 PLC GAS MODE")
         field(ZNAM, "He")
         field(ONAM, "N2")
+        field(VAL, "0")
         field(PINI, "YES")
 }
 #PT901_SP_N
