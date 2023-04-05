@@ -37,7 +37,8 @@ class WidgetGasFilling(QDialog):
         super(WidgetGasFilling, self).__init__(parent)
         self.mfcTemp = dict()
         self.mfcFlowSp = dict()
-        self.ptPress = dict()
+        self.ptPress  = dict()
+        self.endPV901 = dict()
 
         self.originalPalette = QApplication.palette()
         styleComboBox = QComboBox()
@@ -121,6 +122,9 @@ class WidgetGasFilling(QDialog):
         epicsPutButton = QPushButton("Epics Put PVs")
         epicsPutButton.setDefault(True)
         epicsPutButton.clicked.connect(self.putEpics)
+        epicsUpdButton = QPushButton("Epics Update PVs")
+        epicsUpdButton.setDefault(True)
+        epicsUpdButton.clicked.connect(self.updatePvEpics)
         self.tempEdit = QLineEdit('14.5')
         validator = QDoubleValidator()  # Create validator.
         validator.setRange( -10.0, 100.0, 2)
@@ -139,12 +143,10 @@ class WidgetGasFilling(QDialog):
         #layout.addWidget(QLabel('Flushing Gas Mode'), 0, 0)
         #layout.addWidget(radioButton2, 0, 1)
         #layout.addWidget(radioButton1, 0, 0)
-        #layout.addWidget(radioButton2, 0, 1)
         layout.addWidget(epicsGetButton, 1, 0)
         layout.addWidget(pressPushButton, 1, 1)
-        layout.addWidget(epicsPutButton, 1, 2)
-        #layout.addWidget(QLabel('MFC601 Temp'), 2, 0)
-        #layout.addWidget(self.tempEdit, 2, 1)
+        layout.addWidget(epicsPutButton, 2, 0)
+        layout.addWidget(epicsUpdButton, 2, 1)
         layout.addWidget(QLabel('PV901 Offset'), 3, 0)
         layout.addWidget(self.pv901Offset, 3, 1)
         #layout.addWidget(checkBox)
@@ -247,6 +249,25 @@ class WidgetGasFilling(QDialog):
         self.pSp_He2 = self.pSp_H2 + volAmbHe2 / VOL_DRIVER
         self.tableSetPoints.setItem(5,3, QTableWidgetItem(f'{self.pSp_He2:0.2f}'))
 
+    def updatePvEpics(self):
+        self.endPV901['Purge'] = caget(PV_PREFIX + 'PT901_END_S1')
+        setTableNonEditItem(0, 0, self.tableMeasure, self.endPV901['Purge'])
+        endPress = caget(PV_PREFIX + 'PT901_END_O')
+        self.endPV901['O2']  = endPress
+        setTableNonEditItem(0, 1, self.tableMeasure, endPress)
+        endPress = caget(PV_PREFIX + 'PT901_END_HE1')
+        self.endPV901['He1'] = endPress
+        if (endPress > 0.0):
+            setTableNonEditItem(0, 2, self.tableMeasure, endPress)
+        endPress = caget(PV_PREFIX + 'PT901_END_H')
+        self.endPV901['H2'] = endPress
+        setTableNonEditItem(0, 3, self.tableMeasure, endPress)
+        endPress = caget(PV_PREFIX + 'PT901_END_HE2')
+        self.endPV901['He2'] = endPress
+
+        setTableNonEditItem(1, 0, self.tableMeasure, VOL_DRIVER)
+        vol = (self.endPV901['O2'] - self.endPV901['Purge']) * VOL_DRIVER
+        setTableNonEditItem(1, 1, self.tableMeasure, vol)
     def getEpics(self):
         self.mfcTemp['201'] = caget(PV_PREFIX + 'MFC201_FTEMP')
         self.mfcTemp['401'] = caget(PV_PREFIX + 'MFC401_FTEMP')
@@ -296,7 +317,7 @@ class WidgetGasFilling(QDialog):
         tab1 = QWidget()
         self.tableGasFill = QTableWidget(4, 4)
         self.tableGasFill.setHorizontalHeaderLabels(("P_Filling","He","H2","O2"))
-        self.tableGasFill.setVerticalHeaderLabels(("Target",'TargNormO2',"Partial (Ref)","Partial (Abs)"))
+        self.tableGasFill.setVerticalHeaderLabels(("Target",'TargNormO2',"P_Partial (Ref)","P_Partial (Amb)"))
         self.tableGasFill.setItem(0,0,QTableWidgetItem("30"))
         self.tableGasFill.setItem(0,1,QTableWidgetItem("8.0"))
         itemNonEdit = QTableWidgetItem("2.0")
@@ -365,7 +386,21 @@ class WidgetGasFilling(QDialog):
         tab1hbox.setContentsMargins(5, 5, 5, 5)
         tab1hbox.addWidget(self.tableSetPoints)
         tab1.setLayout(tab1hbox)
+        
+        tab2 = QWidget()
+        self.tableMeasure = QTableWidget(2, 5)
+        self.tableMeasure.setHorizontalHeaderLabels(("Purge","O2","He1","H2","He2"))
+        self.tableMeasure.setVerticalHeaderLabels(("StepEndPress","Volume (Amb)"))
+        setTableNonEditItem(0, 0, self.tableMeasure, 0.5)
+        #self.tableMeasure.setItem(0,0,QTableWidgetItem("45.0"))
+
+        tab2hbox = QHBoxLayout()
+        tab2hbox.setContentsMargins(5, 5, 5, 5)
+        tab2hbox.addWidget(self.tableMeasure)
+        tab2.setLayout(tab2hbox)
+
         self.bottomTabWidget.addTab(tab1, "&SetPoints")
+        self.bottomTabWidget.addTab(tab2, "&Measure")
         self.bottomTabWidget.adjustSize()
 
 if __name__ == '__main__':

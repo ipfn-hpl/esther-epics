@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2023-04-03 17:26:40 by esther-->
+<!--Saved on 2023-04-05 17:10:26 by esther-->
 <display version="2.0.0">
   <name>Esther Gas Control</name>
   <macros>
@@ -206,6 +206,7 @@ Helium II</text>
       <x>41</x>
       <y>20</y>
       <width>25</width>
+      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -269,6 +270,7 @@ Helium II</text>
       <x>264</x>
       <y>20</y>
       <width>25</width>
+      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -546,6 +548,7 @@ He II</text>
       <text>MFC201-O2</text>
       <x>10</x>
       <width>104</width>
+      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -582,6 +585,7 @@ He II</text>
       <text>MFC401-H2</text>
       <x>250</x>
       <width>104</width>
+      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -700,7 +704,7 @@ He II</text>
     <transparent>true</transparent>
     <widget type="slide_button" version="2.0.0">
       <name>SB_Gas_Mode</name>
-      <pv_name>${unit}:${node}:GAS_MODE</pv_name>
+      <pv_name>${unit}:${node}:GAS_MODE_OUT</pv_name>
       <label>Mode</label>
       <x>20</x>
       <width>111</width>
@@ -830,7 +834,6 @@ He II</text>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="led" version="2.0.0">
     <name>Ld_STP_3</name>
@@ -847,7 +850,6 @@ He II</text>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>BB_Stp_1</name>
@@ -888,7 +890,6 @@ He II</text>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="led" version="2.0.0">
     <name>Ld_STP1_END</name>
@@ -905,7 +906,6 @@ He II</text>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="led" version="2.0.0">
     <name>Ld_STP_4</name>
@@ -922,7 +922,6 @@ He II</text>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="led" version="2.0.0">
     <name>Ld_STP1_END_1</name>
@@ -939,10 +938,9 @@ He II</text>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update_1</name>
+    <name>TU_GAsMode</name>
     <pv_name>${unit}:${node}:GAS_MODE</pv_name>
     <x>1230</x>
     <y>50</y>
@@ -1069,7 +1067,6 @@ He II</text>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="led" version="2.0.0">
     <name>Ld_STP1_END_2</name>
@@ -1086,7 +1083,6 @@ He II</text>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TU_SA_SS</name>
@@ -1172,7 +1168,6 @@ STOP</off_label>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TIU_S1_SubStep_3</name>
@@ -1204,7 +1199,6 @@ STOP</off_label>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>BB_Stp_4</name>
@@ -1245,7 +1239,6 @@ STOP</off_label>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TIU_S1_SubStep_4</name>
@@ -1277,7 +1270,6 @@ STOP</off_label>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Tu_PT901_end_s3</name>
@@ -1338,7 +1330,6 @@ STOP</off_label>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TIU_S1_SubStep_5</name>
@@ -1370,7 +1361,6 @@ STOP</off_label>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>BB_Stp_6</name>
@@ -1411,7 +1401,6 @@ STOP</off_label>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TIU_S1_SubStep_7</name>
@@ -1443,7 +1432,6 @@ STOP</off_label>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Tu_PT901_end_s7</name>
@@ -1494,7 +1482,6 @@ STOP</off_label>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TIU_S1_SubStep_8</name>
@@ -1526,7 +1513,6 @@ STOP</off_label>
       <color red="192" green="192" blue="192">
       </color>
     </foreground_color>
-    <square>true</square>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>BB _AUTO_CYCLE</name>
