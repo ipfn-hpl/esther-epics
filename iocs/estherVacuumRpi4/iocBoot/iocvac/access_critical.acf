@@ -1,0 +1,16 @@
+UAG(uag) {bernardo,esther}
+HAG(hag) {rpi4-vacuum,golem,galatea}
+ASG(DEFAULT) {
+  RULE(1,READ)
+  RULE(1,WRITE) {
+    UAG(uag)
+    HAG(hag)
+  }
+}
+ASG(critical) {
+  RULE(1,READ)
+  RULE(1,WRITE) {
+    UAG(uag)
+    HAG(hag)
+  }
+}

@@ -8,6 +8,8 @@ Esther:Vacuum:CTST-Error
 Esther:Vacuum:STDT-Error
 Esther:Vacuum:CTST-ErrorGauge
 Esther:Vacuum:STDT-ErrorGauge
+Esther:Vacuum:CurrentTime
+Esther:Vacuum:TimeOfDay
 Esther:EDW:01:SetSpeedSetpointLo
 Esther:EDW:02:SetSpeedSetpointLo
 Esther:VacuumSR_0_State
@@ -42,6 +44,7 @@ Esther:Vacuum:STOP-REQ
 Esther:Vacuum:Water-Pump
 Esther:Vacuum:Turbo-Fans
 Esther:Vacuum:Auto-Mode
+Esther:Vacuum:HoldVacuum
 Esther:VacuumSR_heartbeat
 Esther:VacuumSR_i_am_alive
 Esther:VacuumSR_deadIfZero
@@ -111,11 +114,10 @@ Esther:Vacuum:01:ReadVoltage
 Esther:Vacuum:02:ReadVoltage
 Esther:EDW:01:SetSpeedSetpoint
 Esther:EDW:02:SetSpeedSetpoint
-Esther:Vacuum:PressureL2HThres
-Esther:Vacuum:PressureH2LThres
 Esther:Vacuum:Hidraulic-Pressure
 Esther:EDW:01:WARNING
 Esther:EDW:02:WARNING
+Esther:Vacuum:ResetIdle
 Esther:ARM:1:Status
 Esther:ARM:2:Status
 Esther:EDW:01:ReadModFonctWithWarning
@@ -129,6 +131,7 @@ Esther:ARM:ARM-generic
 Esther:EDW:generic
 Esther:Vacuum::generic
 Esther:Vacuum:TraceMessage
+Esther:Vacuum:Time2Reset
 Esther:VacuumSR_recentlyStr
 Esther:VacuumSR_rebootStatusStr
 Esther:VacuumSR_rebootTime
@@ -168,6 +171,7 @@ Esther:Vacuum:StartingLV-SubState
 Esther:Vacuum:StoppingLV-SubState
 Esther:Vacuum:StartingHV-SubState
 Esther:Vacuum:StoppingHV-SubState
+Esther:Vacuum:StartingShot-SubState
 Esther:VacuumSR_rebootStatus
 Esther:VacuumSR_status
 Esther:VacuumSR_0_Status
