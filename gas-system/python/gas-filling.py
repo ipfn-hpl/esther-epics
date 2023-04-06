@@ -38,6 +38,7 @@ class WidgetGasFilling(QDialog):
         self.mfcTemp = dict()
         self.mfcFlowSp = dict()
         self.ptPress  = dict()
+        self.volRef   = dict()
         self.endPV901 = dict()
 
         self.originalPalette = QApplication.palette()
@@ -194,23 +195,26 @@ class WidgetGasFilling(QDialog):
 
         volAmbHe = pPartAmbHe  * VOL_DRIVER
         #volRefHe = pPartRefHe  * VOL_DRIVER
-        volRefHe2 = float(self.tableSetPoints.item(1,3).text())
-        volAmbHe2 = volRefHe2 * tempAbs / T_REF
+        self.volRef['He2'] = float(self.tableSetPoints.item(1,3).text())
+        volAmbHe2 = self.volRef['He2'] * tempAbs / T_REF
         volAmbHe1 = volAmbHe - volAmbHe2 - VOL_DRIVER
-        volRefHe1 = volAmbHe1 * T_REF / tempAbs
+        self.volRef['He1'] = volAmbHe1 * T_REF / tempAbs
 
         volAmbO2 = pPartAmbO2  * VOL_DRIVER
         # self.tableSetPoints.setItem(0,0, QTableWidgetItem(f'{volAmbO2:0.2f}'))
         setTableNonEditItem(0, 0, self.tableSetPoints, volAmbO2)
-        volRefO2 = pPartRefO2  * VOL_DRIVER
-        self.tableSetPoints.setItem(1,0, QTableWidgetItem(f'{volRefO2:0.2f}'))
+        self.volRef['O2'] = pPartRefO2  * VOL_DRIVER
+        setTableNonEditItem(1, 0, self.tableSetPoints, self.volRef['O2'])
+        #self.tableSetPoints.setItem(1,0, QTableWidgetItem(f'{volRefO2:0.2f}'))
 
         self.tableSetPoints.setItem(0,1, QTableWidgetItem(f'{volAmbHe1:0.2f}'))
-        self.tableSetPoints.setItem(1,1, QTableWidgetItem(f'{volRefHe1:0.2f}'))
+        setTableNonEditItem(1, 1, self.tableSetPoints, self.volRef['He1'])
+        #self.tableSetPoints.setItem(1,1, QTableWidgetItem(f'{self.volRefHe1:0.2f}'))
         volAmbH2 = pPartAmbH2  * VOL_DRIVER
         self.tableSetPoints.setItem(0,2, QTableWidgetItem(f'{volAmbH2:0.2f}'))
-        volRefH2 = pPartRefH2  * VOL_DRIVER
-        self.tableSetPoints.setItem(1,2, QTableWidgetItem(f'{volRefH2:0.2f}'))
+        self.volRef['H2'] = pPartRefH2  * VOL_DRIVER
+        setTableNonEditItem(1, 2, self.tableSetPoints, self.volRef['H2'])
+        #self.tableSetPoints.setItem(1,2, QTableWidgetItem(f'{self.volRefH2:0.2f}'))
         self.tableSetPoints.setItem(0,3, QTableWidgetItem(f'{volAmbHe2:0.2f}'))
 
         dPO2 = volAmbO2 / 10000 * 200
@@ -231,13 +235,16 @@ class WidgetGasFilling(QDialog):
         fPHe2 = self.ptPress['501'] - dPHe2
         self.tableSetPoints.setItem(3,3, QTableWidgetItem(f'{fPHe2:0.2f}'))
 
-        minO2 = volRefO2 / 1e3 / self.mfcFlowSp['201'] * 60
-        self.tableSetPoints.setItem(4,0, QTableWidgetItem(f'{minO2:0.2f}'))
-        minHe1 = volRefHe1 / self.mfcFlowSp['601']
+        minO2 = self.volRef['O2'] / 1e3 / self.mfcFlowSp['201'] * 60
+        setTableNonEditItem(4, 0, self.tableSetPoints, minO2)
+        # self.tableSetPoints.setItem(4,0, QTableWidgetItem(f'{minO2:0.2f}'))
+        minHe1 = self.volRef['He1'] / self.mfcFlowSp['601']
         self.tableSetPoints.setItem(4,1, QTableWidgetItem(f'{minHe1:0.2f}'))
-        minO2 =( 0.8 * volRefO2 / self.mfcFlowSp['201'] + 0.2 * volRefO2 / 0.4) / 1e3 * 60
-        self.tableSetPoints.setItem(4,2, QTableWidgetItem(f'{minO2:0.2f}'))
-        minHe2 = volRefHe2 / self.mfcFlowSp['601']
+        # change
+        minO2 =( 0.8 * self.volRef['O2'] / self.mfcFlowSp['201'] + 0.2 * self.volRef['O2'] / 0.4) / 1e3 * 60
+        setTableNonEditItem(4, 2, self.tableSetPoints, minO2)
+        #self.tableSetPoints.setItem(4,2, QTableWidgetItem(f'{minO2:0.2f}'))
+        minHe2 = self.volRef['He2'] / self.mfcFlowSp['601']
         self.tableSetPoints.setItem(4,3, QTableWidgetItem(f'{minHe2:0.2f}'))
 
         self.pSp_O2 = volAmbO2 / VOL_DRIVER
@@ -279,7 +286,11 @@ class WidgetGasFilling(QDialog):
         self.ptPress['301'] = caget(PV_PREFIX + 'PT301')
         self.ptPress['401'] = caget(PV_PREFIX + 'PT401')
         self.ptPress['501'] = caget(PV_PREFIX + 'PT501')
-        self.tableMfc.setItem(1,0,QTableWidgetItem(f"{self.mfcTemp['601']:0.2f}"))
+        setTableNonEditItem(0, 0, self.tableMfc, self.mfcFlowSp['601'])
+        setTableNonEditItem(0, 1, self.tableMfc, self.mfcFlowSp['401'])
+        setTableNonEditItem(0, 2, self.tableMfc, self.mfcFlowSp['201'])
+        setTableNonEditItem(1, 0, self.tableMfc, self.mfcTemp['601'])
+        #self.tableMfc.setItem(1,0,QTableWidgetItem(f"{self.mfcTemp['601']:0.2f}"))
         self.tableMfc.setItem(1,1,QTableWidgetItem(f"{self.mfcTemp['401']:0.2f}"))
         self.tableMfc.setItem(1,2,QTableWidgetItem(f"{self.mfcTemp['201']:0.2f}"))
         
@@ -293,6 +304,11 @@ class WidgetGasFilling(QDialog):
         caput(PV_PREFIX + 'PT901_SP_HE1', self.pSp_He1)
         caput(PV_PREFIX + 'PT901_SP_H', self.pSp_H2)
         caput(PV_PREFIX + 'PT901_SP_HE2', self.pSp_He2)
+        
+        caput(PV_PREFIX + 'MFC201_FVOL_SP', 1.5 * self.volRef['O2'])
+        caput(PV_PREFIX + 'MFC601_FVOL_HE1_SP', 1.5 * self.volRef['He1'])
+        caput(PV_PREFIX + 'MFC401_FVOL_SP', 1.5 * self.volRef['H2'])
+        caput(PV_PREFIX + 'MFC601_FVOL_HE2_SP', 1.5 * self.volRef['He2'])
 
     def createTopRightGroupBox2(self):
         self.topRightGroupBox = QGroupBox("Group 2")
