@@ -39,9 +39,11 @@ Esther:gas:MFC201_FFLOW
 Esther:gas:MFC201_FTEMP
 Esther:gas:MFC201_VOL_MEAS
 Esther:gas:MFC201_VOL_FMEAS
+Esther:gas:MFC201_FVOL_O2_END
 Esther:gas:MFC401_FLOW
 Esther:gas:MFC401_FFLOW
 Esther:gas:MFC401_FTEMP
+Esther:gas:MFC401_FVOL_H2_END
 Esther:gas:MFC401_VOL_MEAS
 Esther:gas:MFC401_VOL_FMEAS
 Esther:gas:MFC601_FLOW
@@ -49,6 +51,8 @@ Esther:gas:MFC601_FFLOW
 Esther:gas:MFC601_FTEMP
 Esther:gas:MFC601_VOL_MEAS
 Esther:gas:MFC601_VOL_FMEAS
+Esther:gas:MFC601_FVOL_HE1_END
+Esther:gas:MFC601_FVOL_HE2_END
 Esther:gas:MFC601_VOL_HE1_SAVE
 Esther:gas:MFC601_VOL_HE2_SAVE
 Esther:gas:MXT_H2_Central
@@ -116,6 +120,7 @@ Esther:gas:TEST_ON
 Esther:gas:TEST_FAIL
 Esther:gas:ALARM
 Esther:gas:ABORT_ON
+Esther:gas:GAS_MODE
 Esther:gas:ALARM_PT101
 Esther:gas:ALARM_PT102
 Esther:gas:ALARM_PT201
@@ -178,7 +183,7 @@ Esther:gas:ALARM_BREAKPOINT
 Esther:gas:AUTO_CYCLE
 Esther:gas:ABORT_START
 Esther:gas:ABORT_STOP
-Esther:gas:GAS_MODE
+Esther:gas:GAS_MODE_OUT
 Esther:gas:PV101_OUT
 Esther:gas:PV102_OUT
 Esther:gas:PV201_OUT
