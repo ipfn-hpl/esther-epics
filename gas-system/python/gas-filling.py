@@ -40,6 +40,8 @@ class WidgetGasFilling(QDialog):
         self.ptPress  = dict()
         self.volRef   = dict()
         self.endPV901 = dict()
+        self.deltaPress = dict()
+        self.pressSp = dict()
 
         self.originalPalette = QApplication.palette()
         styleComboBox = QComboBox()
@@ -247,14 +249,18 @@ class WidgetGasFilling(QDialog):
         minHe2 = self.volRef['He2'] / self.mfcFlowSp['601']
         self.tableSetPoints.setItem(4,3, QTableWidgetItem(f'{minHe2:0.2f}'))
 
-        self.pSp_O2 = volAmbO2 / VOL_DRIVER
-        self.tableSetPoints.setItem(5,0, QTableWidgetItem(f'{self.pSp_O2:0.2f}'))
-        self.pSp_He1 = self.pSp_O2 + volAmbHe1 / VOL_DRIVER
-        self.tableSetPoints.setItem(5,1, QTableWidgetItem(f'{self.pSp_He1:0.2f}'))
-        self.pSp_H2 = self.pSp_He1 + volAmbH2 / VOL_DRIVER
-        self.tableSetPoints.setItem(5,2, QTableWidgetItem(f'{self.pSp_H2:0.2f}'))
-        self.pSp_He2 = self.pSp_H2 + volAmbHe2 / VOL_DRIVER
-        self.tableSetPoints.setItem(5,3, QTableWidgetItem(f'{self.pSp_He2:0.2f}'))
+        self.deltaPress['O2'] = volAmbO2 / VOL_DRIVER
+        self.pressSp['O2'] = self.deltaPress['O2']
+        self.tableSetPoints.setItem(5,0, QTableWidgetItem(f"{self.pressSp['O2']:0.2f}"))
+        self.deltaPress['He1'] = volAmbHe1 / VOL_DRIVER
+        self.pressSp['He1'] = self.pressSp['O2'] + self.deltaPress['He1']
+        self.tableSetPoints.setItem(5, 1, QTableWidgetItem(f"{self.pressSp['He1']:0.2f}"))
+        self.deltaPress['H2'] = volAmbH2 / VOL_DRIVER
+        self.pressSp['H2'] = self.pressSp['He1'] + self.deltaPress['H2']
+        self.tableSetPoints.setItem(5, 2, QTableWidgetItem(f"{self.pressSp['H2']:0.2f}"))
+        self.deltaPress['He2'] = volAmbHe1 / VOL_DRIVER
+        self.pressSp['He2'] = self.pressSp['H2'] + self.deltaPress['He2']
+        self.tableSetPoints.setItem(5, 3, QTableWidgetItem(f"{self.pressSp['He2']:0.2f}"))
 
     def updatePvEpics(self):
         self.endPV901['Purge'] = caget(PV_PREFIX + 'PT901_END_S1')
@@ -268,13 +274,31 @@ class WidgetGasFilling(QDialog):
             setTableNonEditItem(0, 2, self.tableMeasure, endPress)
         endPress = caget(PV_PREFIX + 'PT901_END_H')
         self.endPV901['H2'] = endPress
-        setTableNonEditItem(0, 3, self.tableMeasure, endPress)
+        if (endPress > 0.0):
+            setTableNonEditItem(0, 3, self.tableMeasure, endPress)
         endPress = caget(PV_PREFIX + 'PT901_END_HE2')
         self.endPV901['He2'] = endPress
+        if (endPress > 0.0):
+            setTableNonEditItem(0, 4, self.tableMeasure, endPress)
 
         setTableNonEditItem(1, 0, self.tableMeasure, VOL_DRIVER)
         vol = (self.endPV901['O2'] - self.endPV901['Purge']) * VOL_DRIVER
         setTableNonEditItem(1, 1, self.tableMeasure, vol)
+        vol = (self.endPV901['He1'] - self.endPV901['O2']) * VOL_DRIVER
+        setTableNonEditItem(1, 2, self.tableMeasure, vol)
+        vol = (self.endPV901['H2'] - self.endPV901['He1']) * VOL_DRIVER
+        setTableNonEditItem(1, 3, self.tableMeasure, vol)
+        vol = (self.endPV901['He1'] - self.endPV901['H2']) * VOL_DRIVER
+        setTableNonEditItem(1, 4, self.tableMeasure, vol)
+
+        vol = caget(PV_PREFIX + 'MFC201_FVOL_O2_END')
+        setTableNonEditItem(2, 1, self.tableMeasure, vol)
+        vol = caget(PV_PREFIX + 'MFC601_FVOL_HE1_END')
+        setTableNonEditItem(2, 2, self.tableMeasure, vol)
+        vol = caget(PV_PREFIX + 'MFC401_FVOL_H2_END')
+        setTableNonEditItem(2, 3, self.tableMeasure, vol)
+        vol = caget(PV_PREFIX + 'MFC601_FVOL_HE2_END')
+        setTableNonEditItem(2, 4, self.tableMeasure, vol)
     def getEpics(self):
         self.mfcTemp['201'] = caget(PV_PREFIX + 'MFC201_FTEMP')
         self.mfcTemp['401'] = caget(PV_PREFIX + 'MFC401_FTEMP')
@@ -300,10 +324,10 @@ class WidgetGasFilling(QDialog):
         #self.tempEdit.setText(f'{mfc601Temp:0.1f}')
 
     def putEpics(self):
-        caput(PV_PREFIX + 'PT901_SP_O', self.pSp_O2)
-        caput(PV_PREFIX + 'PT901_SP_HE1', self.pSp_He1)
-        caput(PV_PREFIX + 'PT901_SP_H', self.pSp_H2)
-        caput(PV_PREFIX + 'PT901_SP_HE2', self.pSp_He2)
+        caput(PV_PREFIX + 'PT901_SP_O', self.pressSp['O2'])
+        caput(PV_PREFIX + 'PT901_SP_HE1', self.pressSp['He1'])
+        caput(PV_PREFIX + 'PT901_SP_H', self.pressSp['H2'])
+        caput(PV_PREFIX + 'PT901_SP_HE2', self.pressSp['He2'])
         
         caput(PV_PREFIX + 'MFC201_FVOL_SP', 1.5 * self.volRef['O2'])
         caput(PV_PREFIX + 'MFC601_FVOL_HE1_SP', 1.5 * self.volRef['He1'])
@@ -390,7 +414,7 @@ class WidgetGasFilling(QDialog):
         self.tableSetPoints = QTableWidget(6, 4)
 
         self.tableSetPoints.setHorizontalHeaderLabels(("O2","He1","H2","He2"))
-        self.tableSetPoints.setVerticalHeaderLabels(("Litre Ambient","Litre Norm","dP bottle",'Bottle Final Press','Filling min','P_setpoint'))
+        self.tableSetPoints.setVerticalHeaderLabels(("Litre Ambient","Litre Norm","dP bottle",'Bottle Final Press','Filling / min','P_setpoint'))
         self.tableSetPoints.setItem(0,0,QTableWidgetItem("900"))
         self.tableSetPoints.setItem(0,1,QTableWidgetItem("80.0"))
         self.tableSetPoints.setItem(0,2,QTableWidgetItem("20.0"))
@@ -404,10 +428,10 @@ class WidgetGasFilling(QDialog):
         tab1.setLayout(tab1hbox)
         
         tab2 = QWidget()
-        self.tableMeasure = QTableWidget(2, 5)
+        self.tableMeasure = QTableWidget(3, 5)
         self.tableMeasure.setHorizontalHeaderLabels(("Purge","O2","He1","H2","He2"))
-        self.tableMeasure.setVerticalHeaderLabels(("StepEndPress","Volume (Amb)"))
-        setTableNonEditItem(0, 0, self.tableMeasure, 0.5)
+        self.tableMeasure.setVerticalHeaderLabels(("StepEndPress (Amb)","Volume (Amb)",'Vol MFC'))
+        #setTableNonEditItem(0, 0, self.tableMeasure, 0.5)
         #self.tableMeasure.setItem(0,0,QTableWidgetItem("45.0"))
 
         tab2hbox = QHBoxLayout()
