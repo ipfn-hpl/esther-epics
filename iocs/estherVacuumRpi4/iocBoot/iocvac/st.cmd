@@ -72,6 +72,9 @@ dbLoadRecords("db/edwards-scu800.db", "P=Esther:,R=EDW:,BUS=RS485")
 
 ## EDWARDS ADC Vacuum Monitor
 drvAsynSerialPortConfigure("RS232E1","/dev/edwardsADC")
+# drvAsynSerialPortConfigure("RS232E1","/dev/ttyAMA0")
+# On Raspberry Pi4 primary UART
+# drvAsynSerialPortConfigure("RS232E1","/dev/ttyS0")
 asynSetOption("RS232E1", 0, "baud", "9600")
 asynSetOption("RS232E1", 0, "bits", "8")
 asynSetOption("RS232E1", 0, "parity", "none")

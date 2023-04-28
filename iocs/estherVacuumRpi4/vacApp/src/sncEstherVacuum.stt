@@ -227,7 +227,7 @@ monitor HidraulicPressure;
 
 short HoldVacuum;
 assign HoldVacuum to "{P}:Vacuum:HoldVacuum";
-monitor HoldVacuum;
+// monitor HoldVacuum;
 
 short ResetIdle;
 assign ResetIdle to "{P}:Vacuum:ResetIdle";
