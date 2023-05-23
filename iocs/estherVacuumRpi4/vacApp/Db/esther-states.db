@@ -326,7 +326,7 @@ record(stringout,"$(P)$(R)Time2Reset"){
 }
 record(scalcout,"$(P)$(R)ResetIdle"){
     field(DESC,"Reset Idle State")
-    field(INA,"$(P)$(R)HoldVacuum CP")
+    field(INPA,"$(P)$(R)HoldVacuum CP")
     field(INAA,"$(P)$(R)TimeOfDay CP")
     field(INBB,"$(P)$(R)Time2Reset CP")
     field(CALC,"((A==0) && (AA=BB))?1:0")
