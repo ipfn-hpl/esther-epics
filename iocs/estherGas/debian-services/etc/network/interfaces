@@ -1,0 +1,30 @@
+auto lo
+iface lo inet loopback
+# https://raspberrypi.stackexchange.com/questions/89927/create-multiple-ip-adresses-on-pi
+allow-hotplug enxb827ebfd6013
+auto enxb827ebfd6013
+iface enxb827ebfd6013 inet static
+    address 192.168.0.60/24
+    gateway 192.168.0.98
+iface enxb827ebfd6013 inet static
+    address 192.168.102.60/24
+#iface enxb827ebfd6013 inet dhcp
+
+# https://askubuntu.com/questions/452317/both-dhcp-and-static-ip-addresses-simultaneously-on-one-interface
+#esther HPL internal LAN
+#auto enxb827ebfd6013:0
+#iface enxb827ebfd6013:0 inet static
+#    address 192.168.0.60/24
+#    network 192.168.0.0
+#    gateway 192.168.0.98
+
+
+#You probably don't want to set a gateway here
+#broadcast 192.168.0.255
+#gateway 190.168.0.99
+
+#No Wifi
+#allow-hotplug wlan0
+#iface wlan0 inet manual
+#wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+#iface default inet dhcp
