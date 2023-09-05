@@ -627,11 +627,13 @@ ss IdleSequence {
         }
 
         when (OPSTATE == POS_Idle) {
+        /*
             ARM_CTST_OutCmd = ON;
             pvPut(ARM_CTST_OutCmd);
             ARM_STDT_OutCmd = ON;
             pvPut(ARM_STDT_OutCmd);
             strcpy(msg, "IdleSubState Mode: OpenArms");
+          */
             pvPut(msg);
             errlogSevPrintf(NO_ALARM, "%s\t", msg);
             errlogSevPrintf(NO_ALARM, "%d\n", pvStatus(HidraulicPressure));
@@ -641,9 +643,10 @@ ss IdleSequence {
     }
     state OpenArms {
         when (OPSTATE != POS_Idle ) { } state Inactive
-        when  ((pvStatus(HidraulicPressure) == pvStatOK) &&
+        when  ((pvStatus(HidraulicPressure) == pvStatOK)) {
+        /*&&
             (ARM_CTST_Status == ARM_STATUS_OPEN ) &&
-            (ARM_STDT_Status == ARM_STATUS_OPEN )) {
+            (ARM_STDT_Status == ARM_STATUS_OPEN )) { */
             strcpy(msg, "IdleSubState Mode: End");
             pvPut(msg);
             errlogSevPrintf(NO_ALARM, "%s\n", msg);
