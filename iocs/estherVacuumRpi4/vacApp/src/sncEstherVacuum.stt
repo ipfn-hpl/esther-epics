@@ -324,9 +324,10 @@ ss VacuumSequence {
             EdwScuStDtDisable = ON;
             pvPut(EdwScuStDtDisable);
 
-            EDA_CT_Valve = OFF;
+            EDA_CT_Valve = (EDA_CT_LS2_ON)? ON: OFF;
             pvPut(EDA_CT_Valve);
-            EDA_DT_Valve = OFF;
+            
+            EDA_DT_Valve = (EDA_DT_LS2_ON)? ON:  OFF;
             pvPut(EDA_DT_Valve);
             
             HVA_CTST_Valve = OFF;
