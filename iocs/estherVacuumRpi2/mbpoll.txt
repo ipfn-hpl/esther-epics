@@ -1,13 +1,15 @@
 # EL_FLOW MODBUS debugging 
 See 917099-Manual-EL-FLOW-Select.pdf for registers
 
+Changed Baud rate to 38400 
+
 ### Control Mode
-mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 37 -v -1  /dev/tty_modbus
+mbpoll -m rtu  -a 1 -b 38400 -t 4  -r 37 -v -1  /dev/tty_modbus
 
 # Init Reset (change parameters)
-mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 11 -1 -v  /dev/tty_modbus 64
+mbpoll -m rtu  -a 1 -b 38400 -t 4  -r 11 -1 -v  /dev/tty_modbus 64
 Lock:
-mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 11 -v  /dev/tty_modbus 82
+mbpoll -m rtu  -a 1 -b 38400 -t 4  -r 11 -v  /dev/tty_modbus 82
 debug enabled
 Set device=/dev/tty_modbus
 1 write data have been found
@@ -19,12 +21,12 @@ This program comes with ABSOLUTELY NO WARRANTY.
 This is free software, and you are welcome to redistribute it
 under certain conditions; type 'mbpoll -w' for details.
 
-Opening /dev/tty_modbus at 19200 bauds (E, 8, 1)
+Opening /dev/tty_modbus at 38400 bauds (E, 8, 1)
 Set response timeout to 1 sec, 0 us
 Protocol configuration: Modbus RTU
 Slave configuration...: address = [1]
                         start reference = 11, count = 1
-Communication.........: /dev/tty_modbus,      19200-8E1
+Communication.........: /dev/tty_modbus,      38400-8E1
                         t/o 1.00 s, poll rate 1000 ms
 Data type.............: 16-bit register, output (holding) register table
 
@@ -33,20 +35,20 @@ Waiting for a confirmation...
 <01><06><00><0A><00><52><28><35>
 Written 1 references.
 
- mbpoll -m rtu  -a 1 -b 19200 -t 4:float -B  -r 41241 -v  /dev/tty_modbus
+ mbpoll -m rtu  -a 1 -b 38400 -t 4:float -B  -r 41241 -v  /dev/tty_modbus
 -- Polling slave 1... Ctrl-C to stop)
 [01][03][A1][18][00][02][67][F0]
 Waiting for a confirmation...
 <01><03><04><3F><BF><FE><09><47><A5>
 [41241]: 	1.49994
 
-mbpoll -m rtu  -a 1 -b 19200 -t 4:float -B  -r 41241 -v  /dev/tty_modbus 1.3
+mbpoll -m rtu  -a 1 -b 38400 -t 4:float -B  -r 41241 -v  /dev/tty_modbus 1.3
 Set data=1.3
 1.17549e-38,3.40282e+38
 Float[0]=1.3
 Slave configuration...: address = [1]
                         start reference = 41241, count = 1
-Communication.........: /dev/tty_modbus,      19200-8E1
+Communication.........: /dev/tty_modbus,      38400-8E1
                         t/o 1.00 s, poll rate 1000 ms
 Data type.............: 32-bit float (big endian), output (holding) register table
 
@@ -56,10 +58,10 @@ Waiting for a confirmation...
 Written 1 references
 
 Serial number string (16 bytes) 
- mbpoll -m rtu  -a 1 -b 19200 -t 4:hex  -r 0xF119 -1 -v -c 8 /dev/tty_modbus
+ mbpoll -m rtu  -a 1 -b 38400 -t 4:hex  -r 0xF119 -1 -v -c 8 /dev/tty_modbus
 
 ### Baud Rate (unsigned long) 
- mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 0xFD49 -1 -v  -c 2 /dev/tty_modbus
+ mbpoll -m rtu  -a 1 -b 38400 -t 4  -r 0xFD49 -1 -v  -c 2 /dev/tty_modbus
 -- Polling slave 1...
 [01][03][FD][48][00][02][75][B1]
 Waiting for a confirmation...
@@ -72,7 +74,7 @@ mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 0xFD49 -1 -v  /dev/tty_modbus 0 38400
 mbpoll -m rtu  -a 1 -b 38400  -t 4  -r 0xFD49 -1 -v  -c2 /dev/tty_modbus
 
 ### Parity (default 2) 
- mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 4013  -1 -v  -c 1 /dev/tty_modbus
+ mbpoll -m rtu  -a 1 -b 38400 -t 4  -r 4013  -1 -v  -c 1 /dev/tty_modbus
 
 -- Polling slave 1...
 [01][03][0F][AC][00][01][47][3F]
@@ -81,7 +83,7 @@ Waiting for a confirmation...
 [4013]:         2
 
 ### FieldBus Address (default 1) 
- mbpoll -m rtu  -a 1 -b 19200 -t 4  -r 4013  -1 -v  -c 1 /dev/tty_modbus
+ mbpoll -m rtu  -a 1 -b 38400 -t 4  -r 4013  -1 -v  -c 1 /dev/tty_modbus
 
 -- Polling slave 1...
 [01][03][0F][AA][00][01][A7][3E]
@@ -89,4 +91,17 @@ Waiting for a confirmation...
 <01><03><02><00><01><79><84>
 [4011]:         1
 
+# Counter Unit
+mbpoll -m rtu  -a 1 -b 38400  -t 4:hex  -r 0xE839 -1 -v  -c2 /dev/tty_modbus
 
+Waiting for a confirmation...
+<01><03><08><6C><6E><20><20><00><00><00><00><9A><CB>
+[59449]: 	0x6C6E
+[59450]: 	0x2020
+ "  ln"
+# Counter 
+mbpoll -m rtu  -a 1 -b 38400  -t 4  -r 0xE809 -1 -v  -c2 /dev/tty_modbus
+
+# Counter New Setpoint
+mbpoll -m rtu  -a 1 -b 38400 -t 4 -r 0x0D07 -v -1 /dev/tty_modbus
+3335]: 	0

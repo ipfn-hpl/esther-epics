@@ -1,0 +1,22 @@
+# mbbi record for register Reset Counter Enable
+# MB address 0x0D09/3338
+record(mbbi,"$(P):$(R)-mbbi") {
+    field(DTYP,"asynUInt32Digital")
+    field(INP,"@asynMask($(PORT) $(OFFSET=0) 0xFFFF)UINT16")
+    field(ZRVL,"0")
+    field(ZRST,"Disable")
+    field(ONVL,"1")
+    field(ONST,"By Hardware switch")
+    field(TWVL,"2")
+    field(TWST,"obsolete")
+    field(THVL,"4")
+    field(THST,"By Parameter Reset")
+    field(FRVL,"8")
+    field(FRST,"Automatically")
+    field(SCAN,"$(SCAN=I/O Intr)")
+}
+# Bit	Value 	Description
+# 0	1	By hardware switch (if present)
+# 1	2	Externally (obsolete)
+# 2	4	By parameter Reset MS Address  0x0E68/3689
+# 3	8	Automatically (e.g. when counter value is reset)
