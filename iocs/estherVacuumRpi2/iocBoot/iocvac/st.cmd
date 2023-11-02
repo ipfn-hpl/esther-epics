@@ -91,6 +91,34 @@ drvModbusAsynConfigure("K1_R59416_In_Word",   "MDBUS",    1, 3,  0xE818,  2,    
 dbLoadRecords("db/mb-ai.db","P=Esther:MFC-ST,R=FCounter-Limit,PORT=K1_R59416_In_Word")
 
 # MFC CT : 10 l /min high flow
+# MFC DT :  /min 
+
+drvModbusAsynConfigure("K2_Y3335_In_Word","MDBUS",  2, 3, 0x0D06, 1,    0,  500, "el-flow")
+dbLoadRecords("db/mb-li.db","P=Esther:MFC-CT,R=Counter-New-Setpoint,PORT=K2_Y3335_In_Word,HOPR=32000")
+
+drvModbusAsynConfigure("K2_Y3335_Out_Word","MDBUS", 2, 6, 0x0D06, 1,    0,  500, "el-flow")
+dbLoadRecords("db/mb-lo.db","P=Esther:MFC-CT,R=Counter-New-Setpoint,PORT=K2_Y3335_Out_Word,OFFSET=0")
+
+drvModbusAsynConfigure("K1_Y3335_Out_Word","MDBUS", 1, 6, 0x0D06, 1,    0,  500, "el-flow")
+dbLoadRecords("db/mb-lo.db","P=Esther:MFC-ST,R=Counter-New-Setpoint,PORT=K1_Y3335_Out_Word,OFFSET=0")
+
+drvModbusAsynConfigure("K1_Y3689_In_Word","MDBUS",  1, 3, 0x0E68, 1,    0,  500, "el-flow")
+dbLoadRecords("db/mb-reset-mbbi.db","P=Esther:MFC-ST,R=Reset,PORT=K1_Y3689_In_Word")
+drvModbusAsynConfigure("K1_Y3689_Out_Word","MDBUS",  1, 6, 0x0E68, 1,    0,  500, "el-flow")
+dbLoadRecords("db/mb-reset-mbbo.db","P=Esther:MFC-ST,R=Reset,PORT=K1_Y3689_Out_Word")
+
+drvModbusAsynConfigure("K2_Y3689_In_Word","MDBUS",  2, 3, 0x0E68, 1,    0,  500, "el-flow")
+dbLoadRecords("db/mb-reset-mbbi.db","P=Esther:MFC-CT,R=Reset,PORT=K2_Y3689_In_Word")
+
+drvModbusAsynConfigure("K1_Y3338_Out_Word","MDBUS", 1, 6, 0x0D09, 1,    0,  500, "el-flow")
+dbLoadRecords("db/mb-lo.db","P=Esther:MFC-ST,R=Reset-Counter,PORT=K1_Y3338_Out_Word,OFFSET=0")
+drvModbusAsynConfigure("K1_Y3338_In_Word","MDBUS",  1, 3, 0x0D09, 1,    0,  500, "el-flow")
+dbLoadRecords("db/mb-reset-counter-mbbi.db","P=Esther:MFC-ST,R=Reset-Counter,PORT=K1_Y3338_In_Word")
+
+drvModbusAsynConfigure("K2_Y3338_Out_Word","MDBUS", 2, 6, 0x0D09, 1,    0,  500, "el-flow")
+dbLoadRecords("db/mb-lo.db","P=Esther:MFC-CT,R=Reset-Counter,PORT=K1_Y3338_Out_Word,OFFSET=0")
+drvModbusAsynConfigure("K2_Y3338_In_Word","MDBUS",  2, 3, 0x0D09, 1,    0,  500, "el-flow")
+dbLoadRecords("db/mb-reset-counter-mbbi.db","P=Esther:MFC-CT,R=Reset-Counter,PORT=K1_Y3338_In_Word")
 
 drvModbusAsynConfigure("K2_R32_In_Word","MDBUS", 2, 3, 32, 1,    0,  100, "el-flow")
 dbLoadRecords("db/mb-li.db","P='Esther:MFC-CT',R=Measure,PORT=K2_R32_In_Word,HOPR=41942")

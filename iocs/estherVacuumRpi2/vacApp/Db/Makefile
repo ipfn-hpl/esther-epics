@@ -7,6 +7,8 @@ include $(TOP)/configure/CONFIG
 DB += vacVersion.db
 #DB += user.substitutions
 
+DB += mb-ai.db
+DB += mb-ao.db
 DB += mb-li.db
 DB += mb-lo.db
 DB += mb-mbbo.db
@@ -15,8 +17,9 @@ DB += mb-cntrl-mode-mbbi.db
 DB += mb-cntrl-mode-mbbo.db 
 DB += mb-count-mode-mbbi.db
 DB += mb-count-mode-mbbo.db
-DB += mb-ai.db
-DB += mb-ao.db
+DB += mb-reset-counter-mbbi.db
+DB += mb-reset-mbbi.db
+DB += mb-reset-mbbo.db
 
 #DB += bme680.db
 #DB += bme680.proto
