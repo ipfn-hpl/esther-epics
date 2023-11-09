@@ -2,8 +2,11 @@
 record(ai, "$(P):$(R)-ai") {
     field(DTYP,"asynFloat64")
     field(INP,"@asyn($(PORT) 0)FLOAT32_BE")
+    field(EGU,"$(EGU=ln)")
     field(HOPR,"$(HOPR=5)")
     field(LOPR,"$(LOPR=0)")
+    field(LOW,"$(LOW=0.1)")
+    field(LOLO,"$(LOLO=0.0)")
     field(PREC,"$(PREC=3)")
     field(SCAN,"$(SCAN=I/O Intr)")
 }

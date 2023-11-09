@@ -102,6 +102,40 @@ Waiting for a confirmation...
 # Counter 
 mbpoll -m rtu  -a 1 -b 38400  -t 4  -r 0xE809 -1 -v  -c2 /dev/tty_modbus
 
+# Fluid Name
+
+mbpoll -m rtu  -a 1 -b 38400  -t 4:hex  -r 0x8189 -1 -v  -c2 /dev/tty_modbus
+<01><03><04><4E><32><20><20><54><CC>
+[33161]: 	0x4E32
+[33162]: 	0x2020
+"  N2"
+
 # Counter New Setpoint
 mbpoll -m rtu  -a 1 -b 38400 -t 4 -r 0x0D07 -v -1 /dev/tty_modbus
 3335]: 	0
+
+Advanced fluid set parameters
+Note that the parameters described in this section do not contain any actual measurement values, but only fixed reference
+values, which can be used for capacity calculations, etc.
+
+#Inlet Pressure
+poll -m rtu  -a 2 -b 38400 -1 -t 4:float -B -0 -r 0xF168  /dev/tty_modbus 
+-- Polling slave 2...
+[61800]: 	2
+#Outlet Pressure
+mbpoll -m rtu  -a 2 -b 38400 -1 -t 4:float -B -0 -r 0xF170 /dev/tty_modbus
+-- Polling slave 2...
+[61808]: 	0.1
+#Fluid Temperature
+mbpoll -m rtu  -a 2 -b 38400 -1 -t 4:float -B -0 -r 0xF180 /dev/tty_modbus
+-- Polling slave 2...
+[61824]: 	20
+#Capacity 100%
+# Capacity 100% is scaled when Inlet Pressure, Fluid Temperature or Fluid Name is changed for the selected fluid.
+mbpoll -m rtu  -a 2 -b 38400 -1 -t 4:float -B -0 -r 0x8168 /dev/tty_modbus
+[33128]: 	10
+
+
+
+
+

@@ -2,7 +2,10 @@
 record(ao,"$(P):$(R)") {
     field(DTYP,"asynFloat64")
     field(OUT,"@asyn($(PORT) 0)FLOAT32_BE")
+    field(EGU,"$(EGU=ln)")
     field(HOPR,"$(HOPR=3.0)")
     field(LOPR,"$(LOPR=0.0)")
+    field(LOW,"$(LOW=0.1)")
+    field(LOLO,"$(LOLO=0.0)")
     field(PREC,"$(PREC=3)")
 }
