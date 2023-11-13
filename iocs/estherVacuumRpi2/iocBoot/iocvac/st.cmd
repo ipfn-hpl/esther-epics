@@ -79,9 +79,9 @@ dbLoadRecords("db/mb-ai.db","P=Esther:MFC-ST,R=FMeasure,PORT=K1_R41217_In_Word")
 
 # ao
 drvModbusAsynConfigure("K1_R41240_Out_Word",   "MDBUS",   1, 16,  41240,  2,   0,  500,    "el-flow")
-dbLoadRecords("db/mb-ao.db","P=Esther:MFC-ST,R=FSetpoint,PORT=K1_R41240_Out_Word")
+dbLoadRecords("db/mb-ao.db","P=Esther:MFC-ST,R=FSetpoint,PORT=K1_R41240_Out_Word,PREC=2,EGU=mln/min")
 drvModbusAsynConfigure("K1_R59416_Out_Word",   "MDBUS",   1, 16, 0xE818,  2,   0,  500,    "el-flow")
-dbLoadRecords("db/mb-ao.db","P=Esther:MFC-ST,R=FCounter-Limit,HOPR=20.5,PORT=K1_R59416_Out_Word")
+dbLoadRecords("db/mb-ao.db","P=Esther:MFC-ST,R=FCounter-Limit,HOPR=20.5,PORT=K1_R59416_Out_Word,PREC=2,EGU=ln")
 # ai
 drvModbusAsynConfigure("K1_R41240_In_Word",   "MDBUS",    1, 3,   41240,  2,   0,  500,    "el-flow")
 dbLoadRecords("db/mb-ai.db","P=Esther:MFC-ST,R=FSetpoint,PORT=K1_R41240_In_Word")
@@ -103,6 +103,12 @@ dbLoadRecords("db/mb-li.db","P=Esther:MFC-CT,R=Alarm-Info,PORT=K2_Y0053_In_Word,
 
 drvModbusAsynConfigure("K2_Y3108_Out_Word","MDBUS", 2, 6, 0x0C23, 1,    0,  500, "el-flow")
 dbLoadRecords("db/mb-lo.db","P=Esther:MFC-CT,R=Alarm-Mode,PORT=K2_Y3108_Out_Word,OFFSET=0,HOPR=3")
+
+drvModbusAsynConfigure("K2_Y3334_Out_Word","MDBUS", 2, 6, 0x0D05, 1,    0,  500, "el-flow")
+dbLoadRecords("db/mb-lo.db","P=Esther:MFC-CT,R=Counter-Setpoint-Mode,PORT=K2_Y3334_Out_Word,OFFSET=0")
+
+#drvModbusAsynConfigure("K2_Y3334_Outb_Word","MDBUS", 2, 6, 0x0D05, 1,    0,  500, "el-flow")
+#dbLoadRecords("db/mb-bo.db","P=Esther:MFC-CT,R=Counter-Setpoint-Mode,PORT=K2_Y3334_Outb_Word,OFFSET=0")
 
 drvModbusAsynConfigure("K2_Y3335_In_Word","MDBUS",  2, 3, 0x0D06, 1,    0,  500, "el-flow")
 dbLoadRecords("db/mb-li.db","P=Esther:MFC-CT,R=Counter-New-Setpoint,PORT=K2_Y3335_In_Word,HOPR=32000")
@@ -158,7 +164,7 @@ dbLoadRecords("db/mb-ai.db","P=Esther:MFC-CT,R=FMeasure,PORT=K2_R41217_In_Word,E
 drvModbusAsynConfigure("K2_R41240_In_Word",   "MDBUS",    2, 3,   41240,  2,   0,  100,    "el-flow")
 dbLoadRecords("db/mb-ai.db","P=Esther:MFC-CT,R=FSetpoint,PORT=K2_R41240_In_Word,HOPR=10.0,PREC=2,EGU=ln/min")
 drvModbusAsynConfigure("K2_R41240_Out_Word",   "MDBUS",   2, 16,  41240,  2,   0,  500,    "el-flow")
-dbLoadRecords("db/mb-ao.db","P=Esther:MFC-CT,R=FSetpoint,PORT=K2_R41240_Out_Word,HOPR=10.0,PREC=2")
+dbLoadRecords("db/mb-ao.db","P=Esther:MFC-CT,R=FSetpoint,PORT=K2_R41240_Out_Word,HOPR=10.0,PREC=2,EGU=ln/min")
 
 drvModbusAsynConfigure("K2_R41273_In_Word",   "MDBUS",    2, 3,  0xA138,  2,    0,  200,    "el-flow")
 dbLoadRecords("db/mb-ai.db","P=Esther:MFC-CT,R=FTemperature,PORT=K2_R41273_In_Word,EGU=C")

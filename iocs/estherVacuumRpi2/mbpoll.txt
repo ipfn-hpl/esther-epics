@@ -8,6 +8,7 @@ mbpoll -m rtu  -a 1 -b 38400 -t 4  -r 37 -v -1  /dev/tty_modbus
 
 # Init Reset (change parameters)
 mbpoll -m rtu  -a 1 -b 38400 -t 4  -r 11 -1 -v  /dev/tty_modbus 64
+mbpoll -m rtu -a 2 -b 38400 -t 4 -0 -r 0x0A -1 -v  /dev/tty_modbus 64
 Lock:
 mbpoll -m rtu  -a 1 -b 38400 -t 4  -r 11 -v  /dev/tty_modbus 82
 debug enabled
@@ -92,16 +93,54 @@ Waiting for a confirmation...
 [4011]:         1
 
 # Counter Unit
-mbpoll -m rtu  -a 1 -b 38400  -t 4:hex  -r 0xE839 -1 -v  -c2 /dev/tty_modbus
+ mbpoll -m rtu -a 1 -b 38400 -t 4:hex -0 -r 0xE838 -1 -c2 /dev/tty_modbus
+-- Polling slave 1...
+[59448]: 	0x6C6E
+[59449]: 	0x2020
 
-Waiting for a confirmation...
-<01><03><08><6C><6E><20><20><00><00><00><00><9A><CB>
-[59449]: 	0x6C6E
-[59450]: 	0x2020
+
+mbpoll -m rtu -a 2 -b 38400 -t 4:hex -0 -r 0xE838 -1 -c2 /dev/tty_modbus
+-- Polling slave 2...
+[59448]: 	0x6C6E
+[59449]: 	0x2020
  "  ln"
+# Capacity Unit
+mbpoll -m rtu -a 1 -b 38400 -t 4:hex -0 -r 0x81F8 -1 -c2 /dev/tty_modbus
+-- Polling slave 1...
+[33272]: 	0x6D6C
+[33273]: 	0x6E2F
+"mln/"
+➜  estherVacuumRpi2 git:(master) ✗ 
+
+mbpoll -m rtu -a 2 -b 38400 -t 4:hex -0 -r 0x81F8 -1 -c2 /dev/tty_modbus
+-- Polling slave 2...
+[33272]: 	0x6C6E
+[33273]: 	0x2F6D
+"ln/m"
+
+mbpoll -m rtu -a 1 -b 38400 -t 4:hex -0 -r 0x81F8 -1 -c7 /dev/tty_modbus
+-- Polling slave 1...
+[33272]: 	0x6D6C
+[33273]: 	0x6E2F
+[33274]: 	0x6D69
+[33275]: 	0x6E00
+"mln/min"
+
+mbpoll -m rtu -a 2 -b 38400 -t 4:hex -0 -r 0x81F8 -1 -c4 /dev/tty_modbus
+-- Polling slave 2...
+[33272]: 	0x6C6E
+[33273]: 	0x2F6D
+[33274]: 	0x696E
+[33275]: 	0x2000
+"ln/min "
+
 # Counter 
 mbpoll -m rtu  -a 1 -b 38400  -t 4  -r 0xE809 -1 -v  -c2 /dev/tty_modbus
 
+mbpoll -m rtu -a 2 -b 38400 -t 4 -0 -r 0x0030 -1  /dev/tty_modbus
+
+# Fluid Set
+mbpoll -m rtu -a 2 -b 38400 -t 4 -0 -r 0x0030 -1  /dev/tty_modbus
 # Fluid Name
 
 mbpoll -m rtu  -a 1 -b 38400  -t 4:hex  -r 0x8189 -1 -v  -c2 /dev/tty_modbus
@@ -109,6 +148,16 @@ mbpoll -m rtu  -a 1 -b 38400  -t 4:hex  -r 0x8189 -1 -v  -c2 /dev/tty_modbus
 [33161]: 	0x4E32
 [33162]: 	0x2020
 "  N2"
+
+mbpoll -m rtu -a 2 -b 38400 -t 4:hex -0 -r 0x8188 -1 -c5 /dev/tty_modbus
+-- Polling slave 2...
+[33160]: 	0x4832
+[33161]: 	0x2020
+[33162]: 	0x2020
+[33163]: 	0x2020
+[33164]: 	0x2020
+"  H2"
+
 
 # Counter New Setpoint
 mbpoll -m rtu  -a 1 -b 38400 -t 4 -r 0x0D07 -v -1 /dev/tty_modbus
@@ -119,7 +168,7 @@ Note that the parameters described in this section do not contain any actual mea
 values, which can be used for capacity calculations, etc.
 
 #Inlet Pressure
-poll -m rtu  -a 2 -b 38400 -1 -t 4:float -B -0 -r 0xF168  /dev/tty_modbus 
+mpoll -m rtu  -a 2 -b 38400 -1 -t 4:float -B -0 -r 0xF168  /dev/tty_modbus 
 -- Polling slave 2...
 [61800]: 	2
 #Outlet Pressure
@@ -130,11 +179,18 @@ mbpoll -m rtu  -a 2 -b 38400 -1 -t 4:float -B -0 -r 0xF170 /dev/tty_modbus
 mbpoll -m rtu  -a 2 -b 38400 -1 -t 4:float -B -0 -r 0xF180 /dev/tty_modbus
 -- Polling slave 2...
 [61824]: 	20
+
+# Viscosity
+mbpoll -m rtu  -a 2 -b 38400 -1 -t 4:float -B -0 -r 0xF1A8 /dev/tty_modbus
 #Capacity 100%
 # Capacity 100% is scaled when Inlet Pressure, Fluid Temperature or Fluid Name is changed for the selected fluid.
 mbpoll -m rtu  -a 2 -b 38400 -1 -t 4:float -B -0 -r 0x8168 /dev/tty_modbus
 [33128]: 	10
 
+#Alarm Setpoint Mode
+mbpoll -m rtu -a 2 -b 38400 -t 4 -0 -r 0x0C25 -1 /dev/tty_modbus
+# Alarm New Setpoint
+mbpoll -m rtu -a 2 -b 38400 -t 4 -0 -r 0x0C26 -1 -c2 /dev/tty_modbus
 
 
 

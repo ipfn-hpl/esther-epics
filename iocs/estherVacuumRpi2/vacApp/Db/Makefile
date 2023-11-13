@@ -11,6 +11,7 @@ DB += mb-ai.db
 DB += mb-ao.db
 DB += mb-li.db
 DB += mb-lo.db
+DB += mb-bo.db
 DB += mb-mbbo.db
 #DB += mb-mbbi.db
 DB += mb-cntrl-mode-mbbi.db 
