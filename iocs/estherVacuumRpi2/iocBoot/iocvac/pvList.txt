@@ -13,6 +13,7 @@ Esther:MFC-ST:FCounter-Limit
 Esther:MFC-CT:FSetpoint
 Esther:MFC-CT:FCounter-Value
 Esther:MFC-CT:FCounter-Limit
+Esther:MFC-CT:Enabled
 Esther:MFC-ST:Measure-li
 Esther:MFC-CT:Alarm-Info-li
 Esther:MFC-CT:Counter-New-Setpoint-li

@@ -20,6 +20,7 @@ DB += mb-count-mode-mbbo.db
 DB += mb-reset-counter-mbbi.db
 DB += mb-reset-mbbi.db
 DB += mb-reset-mbbo.db
+DB += mfc-control.db
 
 #DB += bme680.db
 #DB += bme680.proto
