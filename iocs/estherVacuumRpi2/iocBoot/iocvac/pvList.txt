@@ -19,6 +19,8 @@ Esther:MFC-CT:Alarm-Info-li
 Esther:MFC-CT:Counter-New-Setpoint-li
 Esther:MFC-CT:Measure-li
 Esther:MFC-CT:Alarm-Mode
+Esther:MFC-CT:Alarm-Setpoint-Mode
+Esther:MFC-CT:Counter-Setpoint-Mode
 Esther:MFC-CT:Counter-New-Setpoint
 Esther:MFC-ST:Counter-New-Setpoint
 Esther:MFC-ST:Reset-Counter-Enable

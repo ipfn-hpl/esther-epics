@@ -104,8 +104,11 @@ dbLoadRecords("db/mb-li.db","P=Esther:MFC-CT,R=Alarm-Info,PORT=K2_Y0053_In_Word,
 drvModbusAsynConfigure("K2_Y3108_Out_Word","MDBUS", 2, 6, 0x0C23, 1,    0,  500, "el-flow")
 dbLoadRecords("db/mb-lo.db","P=Esther:MFC-CT,R=Alarm-Mode,PORT=K2_Y3108_Out_Word,OFFSET=0,HOPR=3")
 
+drvModbusAsynConfigure("K2_Y3110_Out_Word","MDBUS", 2, 6, 0x0C25, 1,    0,  500, "el-flow")
+dbLoadRecords("db/mb-lo.db","P=Esther:MFC-CT,R=Alarm-Setpoint-Mode,PORT=K2_Y3110_Out_Word,OFFSET=0,HOPR=1")
+
 drvModbusAsynConfigure("K2_Y3334_Out_Word","MDBUS", 2, 6, 0x0D05, 1,    0,  500, "el-flow")
-dbLoadRecords("db/mb-lo.db","P=Esther:MFC-CT,R=Counter-Setpoint-Mode,PORT=K2_Y3334_Out_Word,OFFSET=0")
+dbLoadRecords("db/mb-lo.db","P=Esther:MFC-CT,R=Counter-Setpoint-Mode,PORT=K2_Y3334_Out_Word,OFFSET=0,HOPR=1")
 
 #drvModbusAsynConfigure("K2_Y3334_Outb_Word","MDBUS", 2, 6, 0x0D05, 1,    0,  500, "el-flow")
 #dbLoadRecords("db/mb-bo.db","P=Esther:MFC-CT,R=Counter-Setpoint-Mode,PORT=K2_Y3334_Outb_Word,OFFSET=0")

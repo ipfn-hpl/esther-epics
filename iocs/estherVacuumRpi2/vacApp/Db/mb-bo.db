@@ -1,7 +1,7 @@
-# bo record template for register inputs
+# bo record template for register inputs. Modbus function 5
 record(bo,"$(P):$(R)") {
     field(DTYP,"asynUInt32Digital")
-    field(OUT,"@asynMask($(PORT) $(OFFSET=0) 0xFFFF)")
+    field(OUT,"@asynMask($(PORT) $(OFFSET=0) 0x1)")
     field(ZNAM,"$(ZNAM=OFF)")
     field(ONAM,"$(ONAM=ON)")
 }
