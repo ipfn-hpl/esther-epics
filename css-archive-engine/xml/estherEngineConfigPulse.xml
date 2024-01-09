@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--  XML configuration file for Esther Shock Tube
     check browser at 
-    http://10.10.136.128:4812/main
+    http://10.10.136.x:4812/main
+ To replace engine:
+ ./archive-engine.sh -import ~/GIT_REPOS/esther-epics/css-archive-engine/xml/estherEngineConfigPulse.xml -replace_engine -engine estherPulse -settings esther.ini
 -->
 <engineconfig>
   <!-- Engine can have one or more groups
@@ -335,6 +337,50 @@
       </channel>
   </group>
 
+  <group>
+    <name>Esther ST Test Gases</name>
+      <channel>
+         <name>Esther:MFC-ST:FTemperature-ai</name>
+         <period>1.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:MFC-ST:FSetpoint-ai</name>
+         <period>1.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:MFC-ST:FMeasure-ai</name>
+         <period>1.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:MFC-ST:FCounter-Value-ai</name>
+         <period>1.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:MFC-CT:FTemperature-ai</name>
+         <period>1.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:MFC-CT:FMeasure-ai</name>
+         <period>1.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:MFC-CT:FCounter-Value-ai</name>
+         <period>1.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:MFC-CT:FCounter-Limit-ai</name>
+         <period>1.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:MFC-CT:FSetpoint-ai</name>
+         <period>1.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:MFC-CT:Enabled</name>
+         <period>1.0</period><monitor/>
+         <enable/>
+      </channel>
+  </group>
   <!--
    Other Group
   <group>

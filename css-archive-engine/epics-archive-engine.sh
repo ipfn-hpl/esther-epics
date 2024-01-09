@@ -11,7 +11,8 @@
 # When deploying, change "TOP"
 # to the absolute installation path
 #TOP="./archive-engine"
-TOP="/opt/epics/archive-engine"
+#TOP="/opt/epics/archive-engine"
+TOP="/opt/epics/archive-engine-4.7.3-SNAPSHOT"
 
 # Ideally, assert that Java is found
 # export JAVA_HOME=/opt/jdk-9
