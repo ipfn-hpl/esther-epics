@@ -31,6 +31,8 @@ S7NODAVE=$(SUPPORT)/s7nodave
 MODBUS=$(SUPPORT)/modbus
 
 AUTOSAVE = $(SUPPORT)/autosave
+OPCUA=$(SUPPORT)/opcua
+
 
 #  EPICS_BASE
 EPICS_BASE=$(EPICS_ROOT)/epics-base

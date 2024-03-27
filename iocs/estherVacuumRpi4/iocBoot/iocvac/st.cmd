@@ -28,6 +28,16 @@ dbLoadRecords("db/S7-tags.db", "P=Esther:,R=Vacuum")
 s7nodaveConfigurePollGroup("vacPLC", "default", 1.0, 0)
 s7nodaveConfigurePollGroup("vacPLC", "fast", 0.1, 0)
 
+## OAUPC Pretty minimal setup: one session with a 200ms subscription on top
+opcuaSession OPC1 opc.tcp://192.168.0.3:4840
+opcuaSubscription OPC_SUB1 OPC1 200
+
+# Switch off security
+opcuaOptions OPC1 sec-mode=None
+
+dbLoadRecords("db/S7-opcua.db", "P=Esther:,R=EDW,SUBS=OPC_SUB1")
+#dbLoadRecords("db/S7-opcua.db", "P=Esther:,R=EDW,SESS=OPC1,SUBS=OPC_SUB1")
+
 ## Load record instances
 # dbLoadRecords "db/vacVersion.db", "user=pi"
 

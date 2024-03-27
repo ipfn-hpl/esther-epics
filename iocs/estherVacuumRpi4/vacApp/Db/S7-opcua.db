@@ -1,0 +1,47 @@
+######################################################
+# vim: sta:et:sw=4:ts=4:sts=4
+#                                                     #
+#     EPICS Database for                              #
+#     General Tags  OAUPC  S7 PLC control             #
+#                                                     #
+#     author: B. Carvalho                             #
+#                                                     #
+#     Ref 1.0; 2024                                   #
+#                                                     #
+#######################################################
+record(bo, "$(P)EDW:DryPump-CT")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=9")
+#    field(OUT,  "@$(SUBS) ns=3;s=\"Data_block_1\".\"myBool\"")
+    field(DESC, "S7 PLC CT Dry Pump iXL120 Remote ON/OFF")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    #info(autosaveFields, "VAL")
+    field(VAL, "0")
+    field(PINI, "YES")
+}
+record(bi, "$(P)EDW:DryPump-CT-rbv")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=9")
+    field(DESC, "S7 PLC CT Dry Pump iXL120 Remote ON/OFF")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+record(ai, "$(P)$(R)PT_VSC4") {
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=6")
+    field(SCAN, "I/O Intr")
+}
+record(ai, "$(P)$(R)ADC_V0") {
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=12")
+    field(SCAN, "I/O Intr")
+}
+record(ai, "$(P)$(R)ADC_V0_Volt") {
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=13")
+    field(SCAN, "I/O Intr")
+}

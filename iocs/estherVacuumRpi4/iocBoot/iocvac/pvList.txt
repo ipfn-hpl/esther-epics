@@ -28,9 +28,9 @@ Esther:EDA:CT-Valve
 Esther:EDA:DT-Valve
 Esther:HVA:CTST-Valve
 Esther:HVA:STDT-Valve
-Esther:EDW:DryPump-CT
 Esther:EDW:DryPump-ST
 Esther:EDW:DryPump-DT
+Esther:EDW:DryPump-CT
 Esther:ARM:1:SwitchInCmd
 Esther:ARM:1:SwitchOutCmd
 Esther:ARM:2:SwitchInCmd
@@ -61,6 +61,7 @@ Esther:HVA:CTST_LS_IN
 Esther:HVA:CTST_LS_OUT
 Esther:HVA:STDT_LS_IN
 Esther:HVA:STDT_LS_OUT
+Esther:EDW:DryPump-CT-rbv
 Esther:ARM:1:SwitchIn
 Esther:ARM:1:SwitchOut
 Esther:ARM:1:LimitIn
@@ -102,6 +103,9 @@ Esther:EDW:02:WARNING:FANOUT1
 Esther:EDW:02:WARNING:FANOUT2
 Esther:EDW:02:WARNING:FANOUT3
 Esther:Vacuum:PT-DT-Static
+Esther:EDWPT_VSC4
+Esther:EDWADC_V0
+Esther:EDWADC_V0_Volt
 Esther:EDW:01:MSpeed
 Esther:EDW:02:MSpeed
 Esther:EDW:01:ReadSetpoint

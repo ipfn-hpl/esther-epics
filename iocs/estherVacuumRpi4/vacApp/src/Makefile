@@ -50,6 +50,7 @@ vac_DBD += calc.dbd
 vac_DBD += stream.dbd
 vac_DBD += s7nodave.dbd
 #vac_DBD += modbusSupport.dbd
+vac_DBD += opcua.dbd
 vac_DBD += asSupport.dbd
 vac_DBD += qsrv.dbd
 vac_DBD += PVAServerRegister.dbd
@@ -72,11 +73,11 @@ vac_LIBS += calc
 vac_LIBS += stream
 vac_LIBS += s7nodave
 #vac_LIBS += modbus
+vac_LIBS += opcua
 vac_LIBS += autosave
 
 # include QSRV
 vac_LIBS += qsrv
-
 
 # To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file

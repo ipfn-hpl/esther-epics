@@ -24,6 +24,7 @@ DB += esther-states.db
 DB += S7-eda-valve.db
 DB += S7-hva-valve.db
 DB += S7-tags.db
+DB += S7-opcua.db
 
 #DB += bme680.db
 #DB += bme680.proto
