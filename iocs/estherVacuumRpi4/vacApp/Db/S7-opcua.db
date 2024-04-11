@@ -30,10 +30,21 @@ record(bi, "$(P)EDW:DryPump-CT-rbv")
     field(ONAM, "ON")
     field(SCAN, "I/O Intr")
 }
-record(ai, "$(P)$(R)PT_VSC4") {
+record(ai, "$(P)$(R)PT-DT-Static") {
+    field(DESC, "S7 PLC thyracont-vacuum VSC4 Sensor 4-20mA")
     field(DTYP, "OPCUA")
     field(INP,  "@$(SUBS) ns=4;i=6")
     field(SCAN, "I/O Intr")
+        field(LOPR, "0.0")
+        field(HOPR, "1400.0")
+        field(HIHI, "1050.0")
+        field(HHSV, "MAJOR")
+        field(HIGH, "900.0")
+        field(HSV, "MINOR")
+        field(MDEL, "1.0")
+        field(ADEL, "2.0")
+        field(EGU, "mbar")
+        field(PREC, "2")
 }
 record(ai, "$(P)$(R)ADC_V0") {
     field(DTYP, "OPCUA")

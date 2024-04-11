@@ -35,7 +35,7 @@ opcuaSubscription OPC_SUB1 OPC1 200
 # Switch off security
 opcuaOptions OPC1 sec-mode=None
 
-dbLoadRecords("db/S7-opcua.db", "P=Esther:,R=EDW,SUBS=OPC_SUB1")
+dbLoadRecords("db/S7-opcua.db", "P=Esther:,R=Vacuum:,SUBS=OPC_SUB1")
 #dbLoadRecords("db/S7-opcua.db", "P=Esther:,R=EDW,SESS=OPC1,SUBS=OPC_SUB1")
 
 ## Load record instances
