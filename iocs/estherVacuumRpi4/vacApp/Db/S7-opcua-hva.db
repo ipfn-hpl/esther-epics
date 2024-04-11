@@ -1,0 +1,90 @@
+######################################################
+# vim: sta:et:sw=4:ts=4:sts=4
+#                                                     #
+#     EPICS Database for                              #
+#     Tags  OPCUA  S7-1215 PLC control                #
+#                                                     #
+#     author: B. Carvalho                             #
+#                                                     #
+#     Ref 1.0; 2024                                   #
+#                                                     #
+#######################################################
+## HVA Gate Valves
+### HVA STDT
+record(bi, "$(P)$(R)CTST_LS_IN")
+{
+    field(DESC, "S7 PLC I1.2 HVA_VALVE LS IN")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=25")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+record(bi, "$(P)$(R)CTST_LS_OUT")
+{
+    field(DESC, "S7 PLC I1.3 HVA_VALVE LS OUT")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=26")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(P)$(R)CTST-Valve")
+{
+    field(DESC, "S7 PLC Q0.7 CTST HVA VALVE Solenoid")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=27 bini=write")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(VAL, "0")
+#    field(PINI, "YES")
+}
+record(bi, "$(P)$(R)CTST-Valve-rbv")
+{
+    field(DESC, "S7 PLC Q0.7 CTST HVA VALVE Solenoid")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=27")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+### HVA STDT
+record(bi, "$(P)$(R)STDT_LS_IN")
+{
+    field(DESC, "S7 PLC I1.0 HVA_VALVE LS IN")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=28")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+record(bi, "$(P)$(R)STDT_LS_OUT")
+{
+    field(DESC, "S7 PLC I1.1 HVA_VALVE LS OUT")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=29")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(P)$(R)STDT-Valve")
+{
+    field(DESC, "S7 PLC Q0.7 STDT HVA VALVE Solenoid")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=30 bini=write")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(VAL, "0")
+#    field(PINI, "YES")
+}
+record(bi, "$(P)$(R)STDT-Valve-rbv")
+{
+    field(DESC, "S7 PLC Q0.7 STDT HVA VALVE Solenoid")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=30")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}

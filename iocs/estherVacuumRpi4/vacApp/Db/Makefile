@@ -4,9 +4,6 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS BELOW HERE
 
 # Install databases, templates & substitutions like this
-#DB += circle.db
-#DB += dbExample1.db
-#DB += dbExample2.db
 DB += vacVersion.db
 #DB += dbSubExample.db
 #DB += user.substitutions
@@ -22,9 +19,11 @@ DB += armcontrol.proto
 DB += esther-states.db
 #DB += mb-li.db
 DB += S7-eda-valve.db
-DB += S7-hva-valve.db
-DB += S7-tags.db
+#DB += S7-hva-valve.db
+#DB += S7-tags.db
 DB += S7-opcua.db
+DB += S7-opcua-hva.db
+DB += S7-opcua-eda.db
 
 #DB += bme680.db
 #DB += bme680.proto

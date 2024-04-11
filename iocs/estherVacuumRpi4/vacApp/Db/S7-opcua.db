@@ -12,26 +12,68 @@
 record(bo, "$(P)EDW:DryPump-CT")
 {
     field(DTYP, "OPCUA")
-    field(OUT,  "@$(SUBS) ns=4;i=9")
+    field(OUT,  "@$(SUBS) ns=4;i=9 bini=write")
 #    field(OUT,  "@$(SUBS) ns=3;s=\"Data_block_1\".\"myBool\"")
     field(DESC, "S7 PLC CT Dry Pump iXL120 Remote ON/OFF")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
     #info(autosaveFields, "VAL")
     field(VAL, "0")
-    field(PINI, "YES")
 }
+#Esther:EDW:DryPump-CT uses PINI, which does not work with the OPC UA Device support - disabling it 
+# (check the 'bini' link option instead)
+
 record(bi, "$(P)EDW:DryPump-CT-rbv")
 {
     field(DTYP, "OPCUA")
     field(INP,  "@$(SUBS) ns=4;i=9")
-    field(DESC, "S7 PLC CT Dry Pump iXL120 Remote ON/OFF")
+    field(DESC, "S7 PLC CT Dry Pump iXL120 Monotoring")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+record(bo, "$(P)EDW:DryPump-DT")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=10 bini=write")
+    field(DESC, "S7 PLC DT Dry Pump GX600L Remote ON/OFF")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    #info(autosaveFields, "VAL")
+    field(VAL, "0")
+#    field(PINI, "YES")
+}
+record(bi, "$(P)EDW:DryPump-DT-rbv")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=10")
+    field(DESC, "S7 PLC DT Dry Pump  GX600L Monotoring")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+record(bo, "$(P)EDW:DryPump-ST")
+{
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=11")
+    field(DESC, "S7 PLC ST Dry Pump GX600L Remote ON/OFF")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    #info(autosaveFields, "VAL")
+#    field(VAL, "0")
+#    field(PINI, "YES")
+}
+record(bi, "$(P)EDW:DryPump-ST-rbv")
+{
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=11")
+    field(DESC, "S7 PLC ST Dry Pump  GX600L Monotoring")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
     field(SCAN, "I/O Intr")
 }
 record(ai, "$(P)$(R)PT-DT-Static") {
-    field(DESC, "S7 PLC thyracont-vacuum VSC4 Sensor 4-20mA")
+    field(DESC, "S7 PLC VSC4 Sensor 4-20mA")
     field(DTYP, "OPCUA")
     field(INP,  "@$(SUBS) ns=4;i=6")
     field(SCAN, "I/O Intr")

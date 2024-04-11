@@ -1,0 +1,58 @@
+######################################################
+# vim: sta:et:sw=4:ts=4:sts=4
+#                                                     #
+#     EPICS Database for                              #
+#     Tags  OPCUA  S7-1215 PLC control                #
+#                                                     #
+#     author: B. Carvalho                             #
+#                                                     #
+#     Ref 1.0; 2024                                   #
+#                                                     #
+#######################################################
+## EDA 'L' Valves
+### EDA CT
+record(bi, "$(P)$(R)CT-Valve_LS1_OFF")
+{
+    field(DESC, "S7 PLC I0.1 EDA_VALVE LS Idle OFF")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=17")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+record(bi, "$(P)$(R)CT-Valve_LS1_ON")
+{
+    field(DESC, "S7 PLC I0.0 EDA_VALVE LS Idle ON")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=18")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+record(bi, "$(P)$(R)CT-Valve_LS2_OFF")
+{
+    field(DESC, "S7 PLC I0.3 EDA_VALVE LS Idle OFF")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=19")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+record(bi, "$(P)$(R)CT-Valve_LS2_ON")
+{
+    field(DESC, "S7 PLC I0.2 EDA_VALVE LS Idle ON")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=20")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+record(bo, "$(P)$(R)CT-Valve")
+{
+    field(DESC, "S7 PLC Q1.1 EDA_VALVE Solenoid")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=31 bini=write")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(VAL, "0")
+}

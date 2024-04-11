@@ -7,8 +7,8 @@
 
 epicsEnvSet("STREAM_PROTOCOL_PATH", "$(TOP)/db")
 epicsEnvSet("SAVE_DIR", "$(TOP)/iocBoot/$(IOC)/save")
-epicsEnvSet("EPICS_CA_ADDR_LIST", "192.168.0.21 192.168.0.60 192.168.0.99 192.168.1.98")
-epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST", "NO")
+# epicsEnvSet("EPICS_CA_ADDR_LIST", "192.168.0.21 192.168.0.60 192.168.0.99 192.168.1.98")
+# epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST", "NO")
 
 epicsEnvSet "P" "$(P=Esther)"
 
@@ -21,8 +21,8 @@ vac_registerRecordDeviceDriver pdbbase
 #Configure PLC Connection
 s7nodaveConfigureIsoTcpPort("vacPLC", "192.168.0.1", 0)
 dbLoadRecords("db/S7-eda-valve.db", "P=Esther:,R=EDA")
-dbLoadRecords("db/S7-hva-valve.db", "P=Esther:,R=HVA")
-dbLoadRecords("db/S7-tags.db", "P=Esther:,R=Vacuum")
+# dbLoadRecords("db/S7-hva-valve.db", "P=Esther:,R=HVA")
+# dbLoadRecords("db/S7-tags.db", "P=Esther:,R=Vacuum")
 
 # Configure Poll Group
 s7nodaveConfigurePollGroup("vacPLC", "default", 1.0, 0)
@@ -36,10 +36,16 @@ opcuaSubscription OPC_SUB1 OPC1 200
 opcuaOptions OPC1 sec-mode=None
 
 dbLoadRecords("db/S7-opcua.db", "P=Esther:,R=Vacuum:,SUBS=OPC_SUB1")
-#dbLoadRecords("db/S7-opcua.db", "P=Esther:,R=EDW,SESS=OPC1,SUBS=OPC_SUB1")
+# dbLoadRecords("db/S7-opcua.db", "P=Esther:,R=EDW,SESS=OPC1,SUBS=OPC_SUB1")
+
+dbLoadRecords("db/S7-opcua-hva.db", "P=Esther:,R=HVA:,SUBS=OPC_SUB1")
+dbLoadRecords("db/S7-opcua-eda.db", "P=Esther:,R=EDA:,SUBS=OPC_SUB1")
 
 ## Load record instances
 # dbLoadRecords "db/vacVersion.db", "user=pi"
+# Can't set "pi:vac:version.DTYP" to "vac version" no such device support for 'lsi' record type : Illegal choice
+#    Did you mean "asynOctetCmdResponse"?
+
 
 # Arduino MST12 ARM control CTST
 # /dev/ttyACM0
