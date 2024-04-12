@@ -24,7 +24,7 @@ LIBRARY_IOC += vacSupport
 # rather than directly into the IOC application, that
 # causes problems on Windows DLL builds
 #vacSupport_SRCS += dbSubExample.c
-#vacSupport_SRCS += devvacVersion.c
+vacSupport_SRCS += devvacVersion.c
 #vacSupport_SRCS += vacHello.c
 vacSupport_SRCS += initTrace.c
 
@@ -32,9 +32,9 @@ vacSupport_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 # Auto-generate a header file containing a version string.
 # Version comes from the VCS if available, else date+time.
-#GENVERSION = vacVersion.h
+GENVERSION = vacVersion.h
 # Macro name
-#GENVERSIONMACRO = vacVERSION
+GENVERSIONMACRO = vacVERSION
 
 # Build the IOC application
 PROD_IOC = vac
@@ -48,7 +48,7 @@ vac_DBD += asyn.dbd
 vac_DBD += drvAsynSerialPort.dbd
 vac_DBD += calc.dbd
 vac_DBD += stream.dbd
-vac_DBD += s7nodave.dbd
+#vac_DBD += s7nodave.dbd
 #vac_DBD += modbusSupport.dbd
 vac_DBD += opcua.dbd
 vac_DBD += asSupport.dbd
@@ -71,7 +71,7 @@ vac_LIBS += vacSupport
 vac_LIBS += asyn
 vac_LIBS += calc
 vac_LIBS += stream
-vac_LIBS += s7nodave
+#vac_LIBS += s7nodave
 #vac_LIBS += modbus
 vac_LIBS += opcua
 vac_LIBS += autosave

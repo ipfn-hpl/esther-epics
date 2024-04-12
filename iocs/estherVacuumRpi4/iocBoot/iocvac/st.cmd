@@ -19,14 +19,14 @@ dbLoadDatabase "dbd/vac.dbd"
 vac_registerRecordDeviceDriver pdbbase
 
 #Configure PLC Connection
-s7nodaveConfigureIsoTcpPort("vacPLC", "192.168.0.1", 0)
-dbLoadRecords("db/S7-eda-valve.db", "P=Esther:,R=EDA")
+# s7nodaveConfigureIsoTcpPort("vacPLC", "192.168.0.1", 0)
+# dbLoadRecords("db/S7-eda-valve.db", "P=Esther:,R=EDA")
 # dbLoadRecords("db/S7-hva-valve.db", "P=Esther:,R=HVA")
 # dbLoadRecords("db/S7-tags.db", "P=Esther:,R=Vacuum")
 
 # Configure Poll Group
-s7nodaveConfigurePollGroup("vacPLC", "default", 1.0, 0)
-s7nodaveConfigurePollGroup("vacPLC", "fast", 0.1, 0)
+# s7nodaveConfigurePollGroup("vacPLC", "default", 1.0, 0)
+# s7nodaveConfigurePollGroup("vacPLC", "fast", 0.1, 0)
 
 ## OAUPC Pretty minimal setup: one session with a 200ms subscription on top
 opcuaSession OPC1 opc.tcp://192.168.0.3:4840

@@ -31,7 +31,7 @@ record(bi, "$(P)$(R)CT-Valve_LS1_ON")
 }
 record(bi, "$(P)$(R)CT-Valve_LS2_OFF")
 {
-    field(DESC, "S7 PLC I0.3 EDA_VALVE LS Idle OFF")
+    field(DESC, "S7 PLC I0.3 EDA_VALVE LS Active OFF")
     field(DTYP, "OPCUA")
     field(INP,  "@$(SUBS) ns=4;i=19")
     field(ZNAM, "OFF")
@@ -40,7 +40,7 @@ record(bi, "$(P)$(R)CT-Valve_LS2_OFF")
 }
 record(bi, "$(P)$(R)CT-Valve_LS2_ON")
 {
-    field(DESC, "S7 PLC I0.2 EDA_VALVE LS Idle ON")
+    field(DESC, "S7 PLC I0.2 EDA_VALVE LS Active ON")
     field(DTYP, "OPCUA")
     field(INP,  "@$(SUBS) ns=4;i=20")
     field(ZNAM, "OFF")
@@ -55,4 +55,52 @@ record(bo, "$(P)$(R)CT-Valve")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
     field(VAL, "0")
+}
+### EDA DT
+
+record(bi, "$(P)$(R)DT-Valve_LS1_OFF")
+{
+    field(DESC, "S7 PLC I0.5 EDA_VALVE LS Idle OFF")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=21")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+record(bi, "$(P)$(R)DT-Valve_LS1_ON")
+{
+    field(DESC, "S7 PLC I0.4 EDA_VALVE LS Idle ON")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=22")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+record(bi, "$(P)$(R)DT-Valve_LS2_OFF")
+{
+    field(DESC, "S7 PLC I0.7 EDA_VALVE LS Active OFF")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=23")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+record(bi, "$(P)$(R)DT-Valve_LS2_ON")
+{
+    field(DESC, "S7 PLC I0.6 EDA_VALVE LS Active ON")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=24")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(SCAN, "I/O Intr")
+}
+record(bo, "$(P)$(R)DT-Valve")
+{
+    field(DESC, "S7 PLC Q1.0 EDA_VALVE Solenoid")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=33 bini=write")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    ## DT Valve is Normally connected to Dry Pum. TODO: Change valve
+    field(VAL, "1")
 }

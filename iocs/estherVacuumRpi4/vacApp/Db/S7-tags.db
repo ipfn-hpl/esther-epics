@@ -98,25 +98,25 @@
 #    field(VAL, "0")
 #    field(PINI, "YES")
 #}
-record(bo, "$(P)EDW:DryPump-ST")
-{
-    field(DTYP, "s7nodave")
-    field(OUT, "@vacPLC Q0.4")
-    field(DESC, "S7 PLC ST Dry Pump GX600l Remote ON/OFF")
-    field(ZNAM, "OFF")
-    field(ONAM, "ON")
-    info(autosaveFields, "VAL")
+#record(bo, "$(P)EDW:DryPump-ST")
+#{
+#    field(DTYP, "s7nodave")
+#    field(OUT, "@vacPLC Q0.4")
+#    field(DESC, "S7 PLC ST Dry Pump GX600l Remote ON/OFF")
+#    field(ZNAM, "OFF")
+#    field(ONAM, "ON")
+#    info(autosaveFields, "VAL")
     #field(VAL, "0")
     #field(PINI, "YES")
-}
-record(bo, "$(P)EDW:DryPump-DT")
-{
-    field(DTYP, "s7nodave")
-    field(OUT, "@vacPLC Q0.3")
-    field(DESC, "S7 PLC DT Dry Pump GX600l Remote ON/OFF")
-    field(ZNAM, "OFF")
-    field(ONAM, "ON")
-    #info(autosaveFields, "VAL")
-    field(VAL, "0")
-    field(PINI, "YES")
-}
+#}
+#record(bo, "$(P)EDW:DryPump-DT")
+#{
+#    field(DTYP, "s7nodave")
+#    field(OUT, "@vacPLC Q0.3")
+#    field(DESC, "S7 PLC DT Dry Pump GX600l Remote ON/OFF")
+#    field(ZNAM, "OFF")
+#    field(ONAM, "ON")
+#    #info(autosaveFields, "VAL")
+#    field(VAL, "0")
+#    field(PINI, "YES")
+#}
