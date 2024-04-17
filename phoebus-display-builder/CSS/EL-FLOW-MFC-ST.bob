@@ -171,7 +171,7 @@
   <widget type="label" version="2.0.0">
     <name>EDA CT Air tube</name>
     <text>Air</text>
-    <x>248</x>
+    <x>70</x>
     <y>210</y>
     <width>18</width>
     <height>16</height>
@@ -185,7 +185,7 @@
   <widget type="label" version="2.0.0">
     <name>EDA DT tube</name>
     <text>DT</text>
-    <x>80</x>
+    <x>248</x>
     <y>210</y>
     <width>19</width>
     <height>16</height>
