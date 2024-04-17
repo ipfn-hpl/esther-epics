@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2023-12-05 15:54:45 by esther-->
+<display version="2.0.0">
+  <name>MFC El-Flow DT</name>
+  <width>610</width>
+  <height>190</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <x>340</x>
+    <y>10</y>
+    <width>120</width>
+    <height>53</height>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>310</x>
+    <y>71</y>
+    <width>160</width>
+    <height>76</height>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>EL-FLOW  ${mfc}</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>320</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>FMeasure</name>
+    <text>FMeasure-ai</text>
+    <x>200</x>
+    <y>133</y>
+    <width>79</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_FMeasure-ai</name>
+    <pv_name>Esther:${mfc}:FMeasure-ai</pv_name>
+    <x>190</x>
+    <y>151</y>
+    <format>3</format>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Control-Mode</name>
+    <pv_name>Esther:${mfc}:Control-Mode</pv_name>
+    <x>20</x>
+    <y>104</y>
+    <width>140</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Control-Mode-mbbi</name>
+    <pv_name>Esther:${mfc}:Control-Mode-mbbi</pv_name>
+    <x>20</x>
+    <y>84</y>
+    <width>130</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Control-Mode</text>
+    <x>20</x>
+    <y>67</y>
+    <width>140</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Counter-Mode</name>
+    <text>Counter-Mode</text>
+    <x>30</x>
+    <y>134</y>
+    <width>130</width>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Counter-Mode</name>
+    <pv_name>Esther:${mfc}:Counter-Mode</pv_name>
+    <x>30</x>
+    <y>154</y>
+    <width>140</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>FTemperature-ai</name>
+    <pv_name>Esther:${mfc}:FTemperature-ai</pv_name>
+    <x>20</x>
+    <y>47</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>L FTemperature</name>
+    <text>FTemperature-ai</text>
+    <x>20</x>
+    <y>31</y>
+    <width>105</width>
+    <height>16</height>
+    <background_color>
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </background_color>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TE_Reset_Counter_Enable</name>
+    <pv_name>Esther:${mfc}:Reset-Counter-Enable-mbbi</pv_name>
+    <x>310</x>
+    <y>167</y>
+    <width>130</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_Reset_Counter </name>
+    <text>Reset-Counter Mode</text>
+    <x>322</x>
+    <y>147</y>
+    <width>140</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>FMeasure-ai_1</name>
+    <pv_name>Esther:${mfc}:FCounter-Value-ai</pv_name>
+    <x>350</x>
+    <y>30</y>
+    <format>3</format>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>FMeasure_1</name>
+    <text>FCounter-Value</text>
+    <x>350</x>
+    <y>13</y>
+    <width>99</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_FCounter-Limit-ai</name>
+    <text>FCounter-Limit-ai</text>
+    <x>320</x>
+    <y>81</y>
+    <width>140</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>FCounter-Limit-ai</name>
+    <pv_name>Esther:${mfc}:FCounter-Limit-ai</pv_name>
+    <x>320</x>
+    <y>102</y>
+    <width>130</width>
+    <format>3</format>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>TE_FCounter_Limit</name>
+    <pv_name>Esther:${mfc}:FCounter-Limit</pv_name>
+    <x>320</x>
+    <y>121</y>
+    <width>110</width>
+    <format>3</format>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>FSetpoint</name>
+    <text>FSetpoint-ai</text>
+    <x>200</x>
+    <y>31</y>
+    <width>76</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>TE_FSetpoint</name>
+    <pv_name>Esther:${mfc}:FSetpoint</pv_name>
+    <x>190</x>
+    <y>105</y>
+    <width>110</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>FSetpoint-ai</name>
+    <pv_name>Esther:${mfc}:FSetpoint-ai</pv_name>
+    <x>190</x>
+    <y>47</y>
+    <width>130</width>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>S_Slider_FSetpoint</name>
+    <pv_name>Esther:${mfc}:FSetpoint</pv_name>
+    <x>150</x>
+    <y>67</y>
+    <width>150</width>
+    <height>47</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_Alarm-Info-li</name>
+    <pv_name>Esther:${mfc}:Alarm-Info-li</pv_name>
+    <x>527</x>
+    <y>147</y>
+    <width>65</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_Measure-li</name>
+    <pv_name>Esther:${mfc}:Measure-li</pv_name>
+    <x>194</x>
+    <y>170</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_Alarm</name>
+    <text>Alarm</text>
+    <x>480</x>
+    <y>147</y>
+    <width>37</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor</name>
+    <pv_name>Esther:${mfc}:Alarm-Info-li</pv_name>
+    <x>450</x>
+    <y>167</y>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <x>600</x>
+    <y>800</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_reset</name>
+    <pv_name>Esther:${mfc}:Reset</pv_name>
+    <x>490</x>
+    <y>113</y>
+    <off_label>Reset</off_label>
+    <show_led>false</show_led>
+    <mode>1</mode>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Alarm-Mode</name>
+    <pv_name>Esther:${mfc}:Alarm-Mode</pv_name>
+    <x>480</x>
+    <y>76</y>
+    <width>110</width>
+    <off_label>Alarm-Mode-0</off_label>
+    <on_label>Alarm-Mode-1</on_label>
+    <show_led>false</show_led>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Alarm-Setpoint-Mode</name>
+    <pv_name>Esther:${mfc}:Alarm-Setpoint-Mode</pv_name>
+    <x>480</x>
+    <y>42</y>
+    <width>111</width>
+    <off_label>Alarm-SP-Mode-0</off_label>
+    <on_label>Alarm-SP-Mode-1</on_label>
+    <show_led>false</show_led>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Counter_Setpoint_Mode</name>
+    <pv_name>Esther:${mfc}:Counter-Setpoint-Mode</pv_name>
+    <x>480</x>
+    <y>10</y>
+    <width>111</width>
+    <off_label>Counter-SP-Mode-0</off_label>
+    <on_label>Counter-SP-Mode-1</on_label>
+    <show_led>false</show_led>
+  </widget>
+</display>

@@ -235,6 +235,7 @@
     </rules>
     <enabled>false</enabled>
     <show_confirm_dialog>1</show_confirm_dialog>
+    <confirm_message>Are your sure you want to do this? Check that Helium sniffer is off</confirm_message>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label  DryPump-ST</name>
