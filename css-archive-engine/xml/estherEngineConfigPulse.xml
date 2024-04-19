@@ -327,7 +327,11 @@
          <period>60.0</period><monitor/>
       </channel>
       <channel>
-         <name>Esther:Vacuum:Hidraulic-Pressure</name>
+         <name>Esther:Vacuum:PT-HYDEC-CC-N</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:Vacuum:PT-HYDEC-CC-S</name>
          <period>60.0</period><monitor/>
       </channel>
       <channel>
