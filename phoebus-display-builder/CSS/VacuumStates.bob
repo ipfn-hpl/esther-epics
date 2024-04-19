@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2023-06-09 18:40:58 by esther-->
+<!--Saved on 2024-04-19 12:26:29 by esther-->
 <display version="2.0.0">
   <name>States</name>
   <macros>
@@ -396,17 +396,16 @@
     <name>Text Update_2</name>
     <pv_name>${unit}:${node}:OPSTATE</pv_name>
     <x>360</x>
-    <y>260</y>
+    <y>266</y>
     <width>129</width>
     <height>31</height>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>Text Entry</name>
-    <pv_name>${unit}:${node}:Hidraulic-Pressure</pv_name>
-    <x>10</x>
-    <y>235</y>
-    <width>120</width>
-    <height>45</height>
+    <name>TE_PT-HYDEC-CC-N</name>
+    <pv_name>${unit}:${node}:PT-HYDEC-CC-N</pv_name>
+    <x>150</x>
+    <y>202</y>
+    <width>70</width>
   </widget>
   <widget type="checkbox" version="2.0.0">
     <name>Check Box_1</name>
@@ -721,5 +720,40 @@
     <file>../../../../Downloads/bezier.svg</file>
     <x>80</x>
     <y>390</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_T-HYDEC-CC-S</name>
+    <text>PT-HYDEC-CC-S</text>
+    <x>26</x>
+    <y>202</y>
+    <width>114</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_CC_Hyd_Pressures</name>
+    <class>Label_1</class>
+    <text>CC Hydraulic Pressures</text>
+    <x>26</x>
+    <y>177</y>
+    <width>251</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>TE_PT-HYDEC-CC-S</name>
+    <pv_name>${unit}:${node}:PT-HYDEC-CC-S</pv_name>
+    <x>150</x>
+    <y>222</y>
+    <width>70</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_T-HYDEC-CC-N_2</name>
+    <text>PT-HYDEC-CC-N</text>
+    <x>26</x>
+    <y>222</y>
+    <width>114</width>
   </widget>
 </display>
