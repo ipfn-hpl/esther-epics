@@ -49,7 +49,6 @@ Esther:VacuumSR_heartbeat
 Esther:VacuumSR_i_am_alive
 Esther:VacuumSR_deadIfZero
 Esther:VacuumSR_disable
-Esther:EDW:DryPump-CT-rbv
 Esther:EDW:DryPump-DT-rbv
 Esther:EDW:DryPump-ST-rbv
 Esther:HVA:CTST_LS_IN
@@ -108,7 +107,8 @@ Esther:EDW:02:WARNING:FANOUT2
 Esther:EDW:02:WARNING:FANOUT3
 Esther:Vacuum:PT-DT-Static
 Esther:Vacuum:ADC_V0
-Esther:Vacuum:ADC_V0_Volt
+Esther:Vacuum:PT-HYDEC-CC-N
+Esther:Vacuum:PT-HYDEC-CC-S
 Esther:EDW:01:MSpeed
 Esther:EDW:02:MSpeed
 Esther:EDW:01:ReadSetpoint
@@ -121,7 +121,6 @@ Esther:Vacuum:01:ReadVoltage
 Esther:Vacuum:02:ReadVoltage
 Esther:EDW:01:SetSpeedSetpoint
 Esther:EDW:02:SetSpeedSetpoint
-Esther:Vacuum:Hidraulic-Pressure
 Esther:EDW:01:WARNING
 Esther:EDW:02:WARNING
 Esther:Vacuum:ResetIdle

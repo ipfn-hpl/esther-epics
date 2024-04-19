@@ -12,7 +12,9 @@
 record(bo, "$(P)EDW:DryPump-CT")
 {
     field(DTYP, "OPCUA")
-    field(OUT,  "@$(SUBS) ns=4;i=9 bini=write")
+    field(OUT,  "@$(SUBS) ns=4;i=49 bini=write")
+    # monitor  Set up monitor (output record gets bidirectional) [y/n; def: y]
+#    field(OUT,  "@$(SUBS) ns=4;s=\"DB_EPICS\".\"DRY_PUMP_CT\" bini=write")
 #    field(OUT,  "@$(SUBS) ns=3;s=\"Data_block_1\".\"myBool\"")
     field(DESC, "S7 PLC CT Dry Pump iXL120 Remote ON/OFF")
     field(ZNAM, "OFF")
@@ -23,30 +25,31 @@ record(bo, "$(P)EDW:DryPump-CT")
 #Esther:EDW:DryPump-CT uses PINI, which does not work with the OPC UA Device support - disabling it 
 # (check the 'bini' link option instead)
 
-record(bi, "$(P)EDW:DryPump-CT-rbv")
-{
-    field(DTYP, "OPCUA")
-    field(INP,  "@$(SUBS) ns=4;i=9")
-    field(DESC, "S7 PLC CT Dry Pump iXL120 Monotoring")
-    field(ZNAM, "OFF")
-    field(ONAM, "ON")
-    field(SCAN, "I/O Intr")
-}
+#record(bi, "$(P)EDW:DryPump-CT-rbv")
+#{
+#    field(DTYP, "OPCUA")
+#    field(INP,  "@$(SUBS) ns=4;i=9")
+#    field(DESC, "S7 PLC CT Dry Pump iXL120 Monotoring")
+#    field(ZNAM, "OFF")
+#    field(ONAM, "ON")
+#    field(SCAN, "I/O Intr")
+#}
 record(bo, "$(P)EDW:DryPump-DT")
 {
     field(DTYP, "OPCUA")
-    field(OUT,  "@$(SUBS) ns=4;i=10 bini=write")
+    field(OUT,  "@$(SUBS) ns=4;i=47 bini=write")
+#     OPC UA session OPC1: item ns=4;s="DB_EPICS"."DRY_PUMP_DT" : BadNodeIdUnknown
+#    field(OUT,  "@$(SUBS) ns=4;s=\"DB_EPICS\".\"DRY_PUMP_DT\" bini=write")
     field(DESC, "S7 PLC DT Dry Pump GX600L Remote ON/OFF")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
     #info(autosaveFields, "VAL")
     field(VAL, "0")
-#    field(PINI, "YES")
 }
 record(bi, "$(P)EDW:DryPump-DT-rbv")
 {
     field(DTYP, "OPCUA")
-    field(INP,  "@$(SUBS) ns=4;i=10")
+    field(INP,  "@$(SUBS) ns=4;i=47")
     field(DESC, "S7 PLC DT Dry Pump  GX600L Monotoring")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
@@ -55,18 +58,17 @@ record(bi, "$(P)EDW:DryPump-DT-rbv")
 record(bo, "$(P)EDW:DryPump-ST")
 {
     field(DTYP, "OPCUA")
-    field(OUT,  "@$(SUBS) ns=4;i=11")
+    field(OUT,  "@$(SUBS) ns=4;i=48")
     field(DESC, "S7 PLC ST Dry Pump GX600L Remote ON/OFF")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
     #info(autosaveFields, "VAL")
 #    field(VAL, "0")
-#    field(PINI, "YES")
 }
 record(bi, "$(P)EDW:DryPump-ST-rbv")
 {
     field(DTYP, "OPCUA")
-    field(INP,  "@$(SUBS) ns=4;i=11")
+    field(INP,  "@$(SUBS) ns=4;i=48")
     field(DESC, "S7 PLC ST Dry Pump  GX600L Monotoring")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
@@ -75,7 +77,7 @@ record(bi, "$(P)EDW:DryPump-ST-rbv")
 record(ai, "$(P)$(R)PT-DT-Static") {
     field(DESC, "S7 PLC VSC4 Sensor 4-20mA")
     field(DTYP, "OPCUA")
-    field(INP,  "@$(SUBS) ns=4;i=6")
+    field(INP,  "@$(SUBS) ns=4;i=57")
     field(SCAN, "I/O Intr")
         field(LOPR, "0.0")
         field(HOPR, "1400.0")
@@ -89,12 +91,35 @@ record(ai, "$(P)$(R)PT-DT-Static") {
         field(PREC, "2")
 }
 record(ai, "$(P)$(R)ADC_V0") {
-    field(DTYP, "OPCUA")
-    field(INP,  "@$(SUBS) ns=4;i=12")
-    field(SCAN, "I/O Intr")
+    field(VAL, "1.0")
+#    field(DTYP, "OPCUA")
+#    field(DTYP, "OPCUA")
+#    field(INP,  "@$(SUBS) ns=4;i=12")
+#    field(SCAN, "I/O Intr")
 }
-record(ai, "$(P)$(R)ADC_V0_Volt") {
+record(ai, "$(P)$(R)PT-HYDEC-CC-N") {
     field(DTYP, "OPCUA")
-    field(INP,  "@$(SUBS) ns=4;i=13")
+    field(INP,  "@$(SUBS) ns=4;i=56")
     field(SCAN, "I/O Intr")
+    field(HOPR, "250.0")
+    field(LOPR, "0.0")
+    field(LOW, "20.0")
+    field(LSV, "MINOR")
+    field(LOLO, "10.0")
+    field(LLSV, "MAJOR")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ai, "$(P)$(R)PT-HYDEC-CC-S") {
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=55")
+    field(SCAN, "I/O Intr")
+    field(HOPR, "250.0")
+    field(LOPR, "0.0")
+    field(LOW, "20.0")
+    field(LSV, "MINOR")
+    field(LOLO, "10.0")
+    field(LLSV, "MAJOR")
+    field(EGU, "Bar")
+    field(PREC, "2")
 }

@@ -7,8 +7,8 @@
 
 epicsEnvSet("STREAM_PROTOCOL_PATH", "$(TOP)/db")
 epicsEnvSet("SAVE_DIR", "$(TOP)/iocBoot/$(IOC)/save")
-# epicsEnvSet("EPICS_CA_ADDR_LIST", "192.168.0.21 192.168.0.60 192.168.0.99 192.168.1.98")
-# epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST", "NO")
+epicsEnvSet("EPICS_CA_ADDR_LIST", "192.168.0.21 192.168.0.60 192.168.0.99 192.168.1.98")
+epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST", "NO")
 
 epicsEnvSet "P" "$(P=Esther)"
 

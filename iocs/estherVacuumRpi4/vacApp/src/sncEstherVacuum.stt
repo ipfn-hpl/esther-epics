@@ -221,9 +221,17 @@ short WaterPump;
 assign WaterPump to "{P}:Vacuum:Water-Pump";
 monitor WaterPump;
 
-float HidraulicPressure;
-assign HidraulicPressure to "{P}:Vacuum:Hidraulic-Pressure";
-monitor HidraulicPressure;
+//float HydraulicPressure;
+//assign HidraulicPressure to "{P}:Vacuum:Hidraulic-Pressure";
+//monitor HidraulicPressure;
+
+float HydraulicPressCC_N;
+assign HydraulicPressCC_N to "{P}:Vacuum:PT-HYDEC-CC-N";
+monitor HydraulicPressCC_N;
+
+float HydraulicPressCC_S;
+assign HydraulicPressCC_S to "{P}:Vacuum:PT-HYDEC-CC-S";
+monitor HydraulicPressCC_S;
 
 short HoldVacuum;
 assign HoldVacuum to "{P}:Vacuum:HoldVacuum";
@@ -345,8 +353,8 @@ ss VacuumSequence {
             pvPut(CTST_PressureHigh);
             STDT_PressureHigh = PressureStop_High;
             pvPut(STDT_PressureHigh);
-            HidraulicPressure = 0.0;
-            pvPut(HidraulicPressure);
+            //HidraulicPressure = 0.0;
+            //pvPut(HidraulicPressure);
         }
         when (delay(5) && (StartReq == START) ) { //  && (IsttokupsBatteryON != ON)) 
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
@@ -637,14 +645,14 @@ ss IdleSequence {
           */
             pvPut(msg);
             errlogSevPrintf(NO_ALARM, "%s\t", msg);
-            errlogSevPrintf(NO_ALARM, "%d\n", pvStatus(HidraulicPressure));
+            errlogSevPrintf(NO_ALARM, "%d\n", pvStatus(HydraulicPressCC_N));
             IdleSubState = IdleState_OpenArms;
             pvPut(IdleSubState);
         } state OpenArms
     }
     state OpenArms {
         when (OPSTATE != POS_Idle ) { } state Inactive
-        when  ((pvStatus(HidraulicPressure) == pvStatOK)) {
+        when  ((pvStatus(HydraulicPressCC_N) == pvStatOK)) {
         /*&&
             (ARM_CTST_Status == ARM_STATUS_OPEN ) &&
             (ARM_STDT_Status == ARM_STATUS_OPEN )) { */
