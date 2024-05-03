@@ -738,9 +738,8 @@ ss StartingLVSequence {
         //            (EDA_DT_LS2_ON == ON)) {
         when  (pvStatus(TurboFans) == pvStatOK) {
             strcpy(msg, "StartingLV SS: CheckValves");
-            //strcpy(msg, "StartingLV SS: StartPump_DT");
-            //strcpy(msg, "IdleSubState Mode: CheckValves");
             pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
             HVA_CTST_Valve = ON;
             pvPut(HVA_CTST_Valve);
             HVA_STDT_Valve = ON;
@@ -756,6 +755,7 @@ ss StartingLVSequence {
             //strcpy(msg, "IdleSubState Mode: End");
             strcpy(msg, "StartingLV SS: StartPump_DT");
             pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
             StartingLVSubState = StartingLV_StartPumpDT;
             pvPut(StartingLVSubState);
 
@@ -763,21 +763,38 @@ ss StartingLVSequence {
     }
     state StartDryPumpDT {
         when (OPSTATE != POS_StartingLowVacuum ) { } state Inactive
+        when (delay(5) && (DtVacuumAutoEnable == OFF)) {
+            strcpy(msg, "StartingLV SS: Bypassing-> StartPump_CT");
+            pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
+            StartingLVSubState = StartingLV_StartPumpCT;
+            pvPut(StartingLVSubState);
+        } state StartDryPumpCT
         when (delay(60) && (DT_StaticPressure < 300)) {
-//            EDW_Dry_Pump_CT = ON;
-//            pvPut(EDW_Dry_Pump_CT);
-//            strcpy(msg, "StartingLV SS: StartPump_CT");
-//            pvPut(msg);
-//            errlogSevPrintf(NO_ALARM, "%s\n", msg);
             strcpy(msg, "StartingLV SS: StartPump_CT");
             pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
             StartingLVSubState = StartingLV_StartPumpCT;
             pvPut(StartingLVSubState);
         } state StartDryPumpCT
     }
     state StartDryPumpCT {
         when (OPSTATE != POS_StartingLowVacuum ) { } state Inactive
-        when ((CT_StaticPressure < 500)) {
+        when (delay(5) && CtVacuumAutoEnable == OFF) {
+            EDW_Dry_Pump_ST = ON;
+            pvPut(EDW_Dry_Pump_ST);
+            CTST_PressureHigh = PressureLV_High;
+            STDT_PressureHigh = PressureLV_High;
+            pvPut(CTST_PressureHigh);
+            pvPut(STDT_PressureHigh);
+
+            strcpy(msg, "StartingLV_SS Bypass: CheckPressure");
+            pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
+            StartingLVSubState = StartingLV_CheckPressure;
+            pvPut(StartingLVSubState);
+        } state CheckPressure
+        when (CT_StaticPressure < 500) {
             EDW_Dry_Pump_ST = ON;
             pvPut(EDW_Dry_Pump_ST);
             CTST_PressureHigh = PressureLV_High;
