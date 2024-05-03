@@ -44,6 +44,8 @@ Esther:Vacuum:STOP-REQ
 Esther:Vacuum:Water-Pump
 Esther:Vacuum:Turbo-Fans
 Esther:Vacuum:Auto-Mode
+Esther:Vacuum:CT-Auto-Enable
+Esther:Vacuum:DT-Auto-Enable
 Esther:Vacuum:HoldVacuum
 Esther:VacuumSR_heartbeat
 Esther:VacuumSR_i_am_alive
@@ -178,6 +180,8 @@ Esther:Vacuum:StoppingLV-SubState
 Esther:Vacuum:StartingHV-SubState
 Esther:Vacuum:StoppingHV-SubState
 Esther:Vacuum:StartingShot-SubState
+Esther:Vacuum:CT-Vacuum-SubState
+Esther:Vacuum:DT-Vacuum-SubState
 Esther:VacuumSR_rebootStatus
 Esther:VacuumSR_status
 Esther:VacuumSR_0_Status

@@ -226,6 +226,43 @@ record(mbbo, "$(P)$(R)StartingShot-SubState") {
     field(NIST, "End")
     field(VAL, "0")
 }
+record(mbbo, "$(P)$(R)CT-Vacuum-SubState") {
+    field(DESC, "CT Vacuum Sequence SubState M")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(TWVL, "2")
+    field(THVL, "3")
+    field(FRVL, "4")
+    field(FVVL, "5")
+    field(SXVL, "6")
+    field(ZRST, "Stopped")
+    field(ONST, "Idle")
+    field(TWST, "ManualOperation")
+    field(THST, "StartingLowVacuum")
+    field(FRST, "LowVacuum")
+    field(FVST, "StoppingLowVacuum")
+    field(SXST, "Emergency")
+    field(VAL, "0")
+    #info(autosaveFields, "VAL")
+}
+record(mbbo, "$(P)$(R)DT-Vacuum-SubState") {
+    field(DESC, "DT Vacuum Sequence SubState M")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(TWVL, "2")
+    field(THVL, "3")
+    field(FRVL, "4")
+    field(FVVL, "5")
+    field(SXVL, "6")
+    field(ZRST, "Stopped")
+    field(ONST, "Idle")
+    field(TWST, "ManualOperation")
+    field(THST, "StartingLowVacuum")
+    field(FRST, "LowVacuum")
+    field(FVST, "StoppingLowVacuum")
+    field(SXST, "Emergency")
+    field(VAL, "0")
+}
 # record for bit leds
 record(calc, "$(P)$(R)OPCALCSTATE") {
     field(DESC, "Pulse Calculated State")
@@ -235,7 +272,6 @@ record(calc, "$(P)$(R)OPCALCSTATE") {
 }
 
 record(bo, "$(P)$(R)START-REQ") {
-    # info(autosaveFields, "VAL")
     field(DESC, "Pulse Sequence Start/Continue")
     field(VAL, "0")
     field(PINI, "YES")
@@ -266,7 +302,6 @@ record(bo, "$(P)$(R)Water-Pump") {
     field(ZNAM, "Off")
     field(ONAM, "On")
     #field(VAL, "0")
-#    info(autosaveFields, "VAL")
 }
 # TODO change this to S7
 record(bo, "$(P)$(R)Turbo-Fans") {
@@ -282,7 +317,18 @@ record(bo, "$(P)$(R)Auto-Mode") {
     field(DESC, "Pulse Sequence Manual/Auto")
     field(ZNAM, "Auto")
     field(ONAM, "Manual")
-#    info(autosaveFields, "VAL")
+}
+record(bo, "$(P)$(R)CT-Auto-Enable") {
+    field(DESC, "CT Vacuum Auto Mode Enable")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    info(autosaveFields, "VAL")
+}
+record(bo, "$(P)$(R)DT-Auto-Enable") {
+    field(DESC, "DT Vacuum Auto Mode Enable")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    info(autosaveFields, "VAL")
 }
 record(calc, "$(P)$(R)COUNTUP") {
     field(DESC, "Counter Increment")

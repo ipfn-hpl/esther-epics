@@ -62,6 +62,14 @@ short StoppingHV_CheckPumpsLevit = 2;
 short StartingShot_CloseArms = 1;
 short StartingShot_CloseValves = 2;
 
+//short CtDt_Stopped = 0;
+short CtDt_Idle = 1;
+short CtDt_ManualOperation=2;
+short CtDt_StartingLowVacuum=3;
+short CtDt_LowVacuum=4;
+short CtDt_StoppingLowVacuum=5;
+short CtDt_Emergency=6;
+
 short OFF = 0;
 short ON = 1;
 short AUTO_ON = 1;
@@ -126,6 +134,22 @@ monitor StoppingHVSubState;
 short StartingShotSubState;
 assign StartingShotSubState to "{P}:Vacuum:StartingShot-SubState";
 monitor StartingShotSubState;
+
+short CtVacuumSubState;
+assign CtVacuumSubState to "{P}:Vacuum:CT-Vacuum-SubState";
+monitor CtVacuumSubState;
+
+short DtVacuumSubState;
+assign DtVacuumSubState to "{P}:Vacuum:DT-Vacuum-SubState";
+monitor DtVacuumSubState;
+
+short CtVacuumAutoEnable;
+assign CtVacuumAutoEnable to "{P}:Vacuum:CT-Auto-Enable";
+monitor CtVacuumAutoEnable;
+
+short DtVacuumAutoEnable;
+assign DtVacuumAutoEnable to "{P}:Vacuum:DT-Auto-Enable";
+monitor DtVacuumAutoEnable;
 
 short StartReq;
 assign StartReq to "{P}:Vacuum:START-REQ";
@@ -250,11 +274,15 @@ assign EDA_CT_Valve to "{P}:EDA:CT-Valve";
 short EDA_CT_LS2_ON;
 assign EDA_CT_LS2_ON to "{P}:EDA:CT-Valve_LS2_ON";
 monitor EDA_CT_LS2_ON;
+
 short EDA_DT_Valve;
 assign EDA_DT_Valve to "{P}:EDA:DT-Valve";
 short EDA_DT_LS2_ON;
 assign EDA_DT_LS2_ON to "{P}:EDA:DT-Valve_LS2_ON";
 monitor EDA_DT_LS2_ON;
+short EDA_DT_LS1_ON;
+assign EDA_DT_LS1_ON to "{P}:EDA:DT-Valve_LS1_ON";
+monitor EDA_DT_LS1_ON;
 
 short HVA_CTST_Valve;
 assign HVA_CTST_Valve to "{P}:HVA:CTST-Valve";
@@ -335,7 +363,10 @@ ss VacuumSequence {
             EDA_CT_Valve = (EDA_CT_LS2_ON)? ON: OFF;
             pvPut(EDA_CT_Valve);
             
-            EDA_DT_Valve = (EDA_DT_LS2_ON)? ON:  OFF;
+            //EDA_DT_Valve = (EDA_DT_LS2_ON)? ON:  OFF;
+            //pvPut(EDA_DT_Valve);
+            //EDA_DT_Valve = (EDA_DT_LS2_ON)? ON:  OFF;
+            EDA_DT_Valve = ON;  // TODO Invert Valve
             pvPut(EDA_DT_Valve);
             
             HVA_CTST_Valve = OFF;
@@ -384,6 +415,9 @@ ss VacuumSequence {
             pvPut(EDW_Dry_Pump_ST);
             EDW_Dry_Pump_DT = OFF;
             pvPut(EDW_Dry_Pump_DT);
+            //EDA_DT_Valve = (EDA_DT_LS2_ON)? ON:  OFF;
+            EDA_DT_Valve = ON;  // TODO Invert Valve
+            pvPut(EDA_DT_Valve);
 
             HVA_CTST_Valve = OFF;
             pvPut(HVA_CTST_Valve);
@@ -416,7 +450,8 @@ ss VacuumSequence {
                 errlogSevPrintf(NO_ALARM, "%s\n", msg);
         } state ManualOperation
 
-        when (delay(4) && (StartReq == START) && (IdleSubState == SubState_End)) {
+        when (delay(4) && (StartReq == START) && (IdleSubState == SubState_End) &&
+            (pvStatus(HydraulicPressCC_N) == pvStatOK) && (pvStatus(HydraulicPressCC_S) == pvStatOK)) {
                 strcpy(msg, "State to StartingLowVacuum");
                 pvPut(msg);
                 errlogSevPrintf(NO_ALARM, "%s\n", msg);
@@ -661,8 +696,8 @@ ss IdleSequence {
             errlogSevPrintf(NO_ALARM, "%s\n", msg);
             EDA_CT_Valve = ON;
             pvPut(EDA_CT_Valve);
-            EDA_DT_Valve = ON;
-            pvPut(EDA_DT_Valve);
+            //EDA_DT_Valve = ON;
+            //pvPut(EDA_DT_Valve);
             IdleSubState = SubState_End;
             pvPut(IdleSubState);
             LAST_OPSTATE = POS_Idle;
@@ -683,14 +718,14 @@ ss StartingLVSequence {
         }
 
         when (OPSTATE == POS_StartingLowVacuum) {
-            EDW_Dry_Pump_DT = ON;
-            pvPut(EDW_Dry_Pump_DT);
+            //EDW_Dry_Pump_DT = ON;
+            //pvPut(EDW_Dry_Pump_DT);
             //CTST_PressureHigh = 500;
             //STDT_PressureHigh = 500;
             //pvPut(CTST_PressureHigh);
             //pvPut(STDT_PressureHigh);
 
-            strcpy(msg, "StartingLV SS: StartPump_DT");
+            strcpy(msg, "StartingLV SS: OpenValves");
             pvPut(msg);
             errlogSevPrintf(NO_ALARM, "%s\n", msg);
             StartingLVSubState = StartingLV_OpenValves;
@@ -699,9 +734,11 @@ ss StartingLVSequence {
     }
     state OpenValves {
         when (OPSTATE != POS_StartingLowVacuum ) { } state Inactive
-        when  ((pvStatus(TurboFans) == pvStatOK) && (EDA_CT_LS2_ON == ON) &&
-                    (EDA_DT_LS2_ON == ON)) {
-            strcpy(msg, "StartingLV SS: StartPump_DT");
+        //when  ((pvStatus(TurboFans) == pvStatOK) && (EDA_CT_LS2_ON == ON) &&
+        //            (EDA_DT_LS2_ON == ON)) {
+        when  (pvStatus(TurboFans) == pvStatOK) {
+            strcpy(msg, "StartingLV SS: CheckValves");
+            //strcpy(msg, "StartingLV SS: StartPump_DT");
             //strcpy(msg, "IdleSubState Mode: CheckValves");
             pvPut(msg);
             HVA_CTST_Valve = ON;
@@ -716,7 +753,8 @@ ss StartingLVSequence {
     state CheckValves {
         when (OPSTATE != POS_StartingLowVacuum ) { } state Inactive
         when  ((HVA_CTST_Lim_Out == ON) && (HVA_STDT_Lim_Out == ON) ) {
-            strcpy(msg, "IdleSubState Mode: End");
+            //strcpy(msg, "IdleSubState Mode: End");
+            strcpy(msg, "StartingLV SS: StartPump_DT");
             pvPut(msg);
             StartingLVSubState = StartingLV_StartPumpDT;
             pvPut(StartingLVSubState);
@@ -726,11 +764,13 @@ ss StartingLVSequence {
     state StartDryPumpDT {
         when (OPSTATE != POS_StartingLowVacuum ) { } state Inactive
         when (delay(60) && (DT_StaticPressure < 300)) {
-            EDW_Dry_Pump_CT = ON;
-            pvPut(EDW_Dry_Pump_CT);
+//            EDW_Dry_Pump_CT = ON;
+//            pvPut(EDW_Dry_Pump_CT);
+//            strcpy(msg, "StartingLV SS: StartPump_CT");
+//            pvPut(msg);
+//            errlogSevPrintf(NO_ALARM, "%s\n", msg);
             strcpy(msg, "StartingLV SS: StartPump_CT");
             pvPut(msg);
-            errlogSevPrintf(NO_ALARM, "%s\n", msg);
             StartingLVSubState = StartingLV_StartPumpCT;
             pvPut(StartingLVSubState);
         } state StartDryPumpCT
@@ -793,12 +833,12 @@ ss StoppingLVSequence {
     state CheckValves {
         when (OPSTATE != POS_StoppingLowVacuum ) { } state Inactive
         when  ((HVA_CTST_Lim_In == ON) && (HVA_STDT_Lim_In == ON) ) {
-            EDW_Dry_Pump_CT = OFF;
-            pvPut(EDW_Dry_Pump_CT);
+            //EDW_Dry_Pump_CT = OFF;
+            //pvPut(EDW_Dry_Pump_CT);
             EDW_Dry_Pump_ST = OFF;
             pvPut(EDW_Dry_Pump_ST);
-            EDW_Dry_Pump_DT = OFF;
-            pvPut(EDW_Dry_Pump_DT);
+            //EDW_Dry_Pump_DT = OFF;
+            //pvPut(EDW_Dry_Pump_DT);
             //CTST_PressureHigh = ADC_PressureL2HThres;
             // STDT_PressureHigh = ADC_PressureL2HThres;
             //pvPut(CTST_PressureHigh);
@@ -1005,3 +1045,115 @@ ss StartingShotSequence {
         when (OPSTATE != POS_StartingShot ) { } state Inactive
     }
 }
+ss CtVacuumSequence {
+    state Inactive {
+        entry {
+            //EDW_Dry_Pump_CT = ON;
+            //pvPut(EDW_Dry_Pump_CT);
+            CtVacuumSubState = SubState_Inactive;
+            pvPut(CtVacuumSubState);
+        }
+         when (OPSTATE == POS_StartingLowVacuum && CtVacuumAutoEnable == ON) {
+            //CTST_PressureHigh = 500;
+            //STDT_PressureHigh = 500;
+            //pvPut(CTST_PressureHigh);
+            //pvPut(STDT_PressureHigh);
+            EDW_Dry_Pump_CT = ON;
+            pvPut(EDW_Dry_Pump_CT);
+            strcpy(msg, "CtVacuumSequence SS: StartingDryPumpCT");
+            pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
+            CtVacuumSubState = CtDt_StartingLowVacuum;
+            pvPut(CtVacuumSubState);
+
+        } state StartingDryPumpCT
+    }
+    state StartingDryPumpCT {
+        when (OPSTATE != POS_StartingLowVacuum ) {  // if abort, 
+            EDW_Dry_Pump_CT = OFF;
+            pvPut(EDW_Dry_Pump_CT);
+
+        } state Inactive
+        //when ((CT_StaticPressure < 500)) {
+         //when (delay(10) && OPSTATE == POS_StartingLowVacuum) {
+        when ((CT_StaticPressure < 500)) {
+            CtVacuumSubState = CtDt_LowVacuum;
+            pvPut(CtVacuumSubState);
+
+            //EDW_Dry_Pump_CT = ON;
+            //pvPut(EDW_Dry_Pump_CT);
+            strcpy(msg, "CtVacuumSequence SS: LowVacuumCT");
+            pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
+        } state LowVacuumCT
+    }
+    state LowVacuumCT {
+        when (OPSTATE == POS_StoppingLowVacuum || OPSTATE == POS_Idle) {
+            if (CtVacuumAutoEnable == ON) {
+                EDW_Dry_Pump_CT = OFF;
+                pvPut(EDW_Dry_Pump_CT);
+            }
+            strcpy(msg, "CtVacuumSequence SS: Inactive");
+            pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
+
+        } state Inactive
+
+    }
+}
+ss DtVacuumSequence {
+    state Inactive {
+        entry {
+            //EDW_Dry_Pump_DT = ON;
+            //pvPut(EDW_Dry_Pump_DT);
+            DtVacuumSubState = SubState_Inactive;
+            pvPut(DtVacuumSubState);
+        }
+         when (OPSTATE == POS_StartingLowVacuum && DtVacuumAutoEnable == ON) {
+            //EDA_DT_Valve = (EDA_DT_LS2_ON)? ON:  OFF;
+            EDA_DT_Valve = OFF;  // TODO Invert Valve
+            pvPut(EDA_DT_Valve);
+            EDW_Dry_Pump_DT = ON;
+            pvPut(EDW_Dry_Pump_DT);
+            strcpy(msg, "CtVacuumSequence SS: StartingDryPumpDT");
+            pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
+            DtVacuumSubState = CtDt_StartingLowVacuum;
+            pvPut(DtVacuumSubState);
+
+        } state StartingDryPumpDT
+    }
+    state StartingDryPumpDT {
+        when (OPSTATE != POS_StartingLowVacuum ) {  // if abort, 
+            EDW_Dry_Pump_DT = OFF;
+            pvPut(EDW_Dry_Pump_DT);
+
+        } state Inactive
+        //when ((CT_StaticPressure < 500)) {
+         //when (delay(10) && OPSTATE == POS_StartingLowVacuum) {
+        when ((DT_StaticPressure < 500)) {
+            DtVacuumSubState = CtDt_LowVacuum;
+            pvPut(DtVacuumSubState);
+
+            //EDW_Dry_Pump_DT = ON;
+            //pvPut(EDW_Dry_Pump_DT);
+            strcpy(msg, "DtVacuumSequence SS: LowVacuumDT");
+            pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
+        } state LowVacuumDT
+    }
+    state LowVacuumDT {
+        when (OPSTATE == POS_StoppingLowVacuum || OPSTATE == POS_Idle) {
+            if (DtVacuumAutoEnable == ON) {
+                EDW_Dry_Pump_DT = OFF;
+                pvPut(EDW_Dry_Pump_DT);
+            }
+            strcpy(msg, "DtVacuumSequence SS: Inactive");
+            pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
+
+        } state Inactive
+
+    }
+}
+//short CtDt_StoppingLowVacuum=5;
