@@ -12,6 +12,8 @@ DB += edwards-scu800.proto
 DB += edwards-adc.db
 DB += edwards-adc.proto
 
+DB += edwards-gx-temp.db
+
 DB += gate-valve.db
 DB += gate-valve.proto
 DB += armcontrol.db

@@ -117,6 +117,8 @@ Esther:EDW:01:ReadSetpoint
 Esther:EDW:02:ReadSetpoint
 Esther:EDW:01:ReadMeas
 Esther:EDW:01:ReadSpeedSetpoint
+Esther:EDW:DryPump-ST-Temp
+Esther:EDW:DryPump-DT-Temp
 Esther:Vacuum:CTST-Pressure
 Esther:Vacuum:STDT-Pressure
 Esther:Vacuum:01:ReadVoltage

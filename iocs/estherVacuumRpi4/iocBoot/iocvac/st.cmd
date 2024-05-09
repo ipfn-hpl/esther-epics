@@ -85,6 +85,8 @@ asynSetOption("RS485", 0, "stop", "1")
 #asynSetOption("RS485", 0, "crtscts", "N")
 ## Load record instances
 dbLoadRecords("db/edwards-scu800.db", "P=Esther:,R=EDW:,BUS=RS485")
+## GX Temperatures through http
+dbLoadRecords("db/edwards-gx-temp.db", "P=Esther:")
 
 ## EDWARDS ADC Vacuum Monitor
 drvAsynSerialPortConfigure("RS232E1","/dev/edwardsADC")
