@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-05-03 13:04:13 by esther-->
+<!--Saved on 2024-05-09 18:01:31 by esther-->
 <display version="2.0.0">
   <name>States</name>
   <macros>
@@ -806,7 +806,7 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_DT-Auto-Enable_1</name>
-    <pv_name>${unit}:${node}:DT-Auto-Enable</pv_name>
+    <pv_name>${unit}:${node}:CT-Auto-Enable</pv_name>
     <x>130</x>
     <y>760</y>
   </widget>

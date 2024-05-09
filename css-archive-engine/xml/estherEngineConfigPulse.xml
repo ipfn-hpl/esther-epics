@@ -335,6 +335,14 @@
          <period>60.0</period><monitor/>
       </channel>
       <channel>
+         <name>Esther:EDW:DryPump-ST-Temp</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
+         <name>Esther:EDW:DryPump-DT-Temp</name>
+         <period>60.0</period><monitor/>
+      </channel>
+      <channel>
          <name>Esther:Vacuum:Enabled</name>
          <period>60.0</period><monitor/>
          <enable/>
