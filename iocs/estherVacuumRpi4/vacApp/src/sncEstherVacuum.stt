@@ -61,7 +61,9 @@ short StartingHV_CheckPumpsNormal = 4;
 short StartingHV_CheckHvPressure = 5;
 
 short StoppingHV_CheckPumpsDecel = 1;
-short StoppingHV_CheckPumpsLevit = 2;
+short StoppingHV_CloseHvaValves = 2;
+short StoppingHV_CheckHvaValves = 3;
+short StoppingHV_CheckPumpsLevit = 4;
 
 short StartingShot_CloseArms = 1;
 short StartingShot_CloseValves = 2;
@@ -191,6 +193,12 @@ short EdwScuStDtDisable;
 assign EdwScuStDtDisable to "{P}:EDW:02:Disable";
 short EdwScuStDtMagLev;
 assign EdwScuStDtMagLev to "{P}:EDW:02:Command";
+short EdwScuCtStMSpeed;
+assign EdwScuCtStMSpeed to "{P}:EDW:01:MSpeed";
+monitor EdwScuCtStMSpeed;
+short EdwScuStDtMSpeed;
+assign EdwScuStDtMSpeed to "{P}:EDW:02:MSpeed";
+monitor EdwScuStDtMSpeed;
 
 float CTST_Pressure;
 assign CTST_Pressure "{P}:Vacuum:CTST-Pressure";
@@ -1032,6 +1040,22 @@ ss StoppingHVSequence {
         when (OPSTATE != POS_StoppingHighVacuum ) { } state Inactive
         when  (delay(5) && ((EdwScuCtStModFonct == EdwScuModFonct_Deceleration) &&
             (EdwScuStDtModFonct == EdwScuModFonct_Deceleration) )) {
+            strcpy(msg, "StoppingHV SubState: CloseHvaValves");
+            pvPut(msg);
+            errlogSevPrintf(NO_ALARM, "%s\n", msg);
+            StoppingHVSubState = StoppingHV_CloseHvaValves;
+            pvPut(StoppingHVSubState);
+        } state CloseHvaValves
+    }
+    state CloseHvaValves {
+        when (OPSTATE != POS_StoppingHighVacuum ) { } state Inactive
+        when  (delay(5) && (EdwScuCtStMSpeed <= 5000.0) &&
+            (EdwScuStDtMSpeed <= 5000.0) ) {
+            HVA_CTST_Valve = OFF;
+            pvPut(HVA_CTST_Valve);
+            HVA_STDT_Valve = OFF;
+            pvPut(HVA_STDT_Valve);
+
             strcpy(msg, "StoppingHV SubState: CheckPumpsLevit");
             pvPut(msg);
             errlogSevPrintf(NO_ALARM, "%s\n", msg);
@@ -1039,6 +1063,8 @@ ss StoppingHVSequence {
             pvPut(StoppingHVSubState);
         } state CheckPumpsLevit
     }
+            // TODO : Check Valves?
+    //state CheckHvaValves {
     state CheckPumpsLevit{
         when (OPSTATE != POS_StoppingHighVacuum ) { } state Inactive
         when  (delay(10) && ((EdwScuCtStModFonct == EdwScuModFonct_Levitation) &&

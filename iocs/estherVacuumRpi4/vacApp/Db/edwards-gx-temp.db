@@ -1,0 +1,47 @@
+#######################################################
+# ###                                             ### #
+# ### EPICS Database for                          ### #
+# ### Edwards GX660 Dry Pumps                     ### #
+# ###                                             ### #
+# ### author: B. Carvalho /IPFN- Portugal         ### #
+# ###                                             ### #
+# ### Ref 1.0; 2024                               ### #
+# ###                                             ### #
+# ###                                             ### #
+# ### Description:                                ### #
+# ### This is DB file  for                         ### #
+# ###   command  EDWARDS GX600 Dry Pumpsi          ## #
+# ###                                             ### #
+#######################################################
+
+################################################
+# ### Read Parameters                      ### #
+################################################
+record(ai, $(P)EDW:DryPump-ST-Temp){
+    field(DESC, "Holds measured GX600 temperature")
+    field(DTYP, "Soft Channel")
+    field(LOPR, "5")
+    field(HOPR, "60")
+    field(HIGH, "50")
+    field(HIHI, "55")
+    field(HHSV,"MAJOR")
+    field(HSV, "MINOR")
+    field(LOW,  "15")
+    field(LOLO, "10")
+    field(EGU,  "ºC")
+}
+record(ai, $(P)EDW:DryPump-DT-Temp){
+    field(DESC, "Holds measured GX600 temperature")
+    field(DTYP, "Soft Channel")
+    field(LOPR, "5")
+    field(HOPR, "60")
+    field(HIGH, "50")
+    field(HIHI, "55")
+    field(HHSV,"MAJOR")
+    field(HSV, "MINOR")
+    field(LOW,  "15")
+    field(LOLO, "10")
+    field(EGU,  "ºC")
+}
+
+## vim: sta:et:sw=4:ts=4:sts=4
