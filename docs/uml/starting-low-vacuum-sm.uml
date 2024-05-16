@@ -1,0 +1,81 @@
+@startuml
+' scale 350 width
+hide empty description
+
+[*] -> Inactive
+Inactive : Not controlling Instruments
+' state Stopped {
+'   [*] --> 
+'  Idle --> Configuring : powerInst
+'  Configuring --> Idle : EvConfig
+' }
+
+Inactive --right-> CheckCircuits
+state CheckCircuits  {
+'  [*] --> NewValueSelection
+'  NewValueSelection --> NewValuePreview : EvNewValue
+'  NewValuePreview --> NewValueSelection : EvNewValueRejected
+'  NewValuePreview --> NewValueSelection : EvNewValueSaved
+'  state NewValuePreview {
+'     State1 -> State2
+'  }
+'  --
+    [*] -> HidraulicPressureON
+    HidraulicPressureON -> WaterCircuitON
+    WaterCircuitON -> FansTurbosON
+    state HidraulicPressureON #lightblue
+    state WaterCircuitON #lightblue
+    state FansTurbosON #lightblue
+}
+
+CheckCircuits --right-> OpenValvesPre : Press(ST)  < 10 mBar
+CheckCircuits --right-> StartDryPumpDT : Press(ST)  >= 10 mBar
+
+state OpenValvesPre  {
+'  [*] --> NewValueSelection
+'  state NewValuePreview {
+'     State1 -> State2
+'  }
+'  --
+    [*] -> OpenSTDTArm
+    OpenSTDTArm -> OpenSTDTGateValve
+}
+OpenValvesPre  --> CheckValvesPre : Press(DT)  < 500 mBar
+
+state CheckValvesPre {
+
+}
+CheckValvesPre -> StartDryPumpDT
+
+state StartDryPumpDT {
+
+}
+StartDryPumpDT -down-> StartDryPumpCT
+
+state StartDryPumpCT  {
+'     [*] --> StartDryPumpDT
+    [*] --> fork_stateCT
+    state fork_stateCT <<fork>>
+    fork_stateCT --> StartDryPumpST : Dry Pump CT Manual
+    fork_stateCT --> sDryCTDryPumpST
+    state sDryCTDryPumpST
+    ' StartDryPumpDT --> StartDryPumpST
+'    : p(DT)  < 5 mBar
+
+'    CheckPressuresLV -> StartDryPumpST : Press(DT)  < 500 mBar
+'    StartDryPumpST -> [*]  :  p(DT) < 5mBar\np(CT,ST)  <  1e-2 mBar
+
+}
+
+StartDryPumpCT -> StartDryPumpST
+
+state StartDryPumpST {
+
+}
+StartDryPumpST -> OpenValvesPost
+' : 60 sec
+
+state OpenValvesPost {
+}
+@enduml
+
