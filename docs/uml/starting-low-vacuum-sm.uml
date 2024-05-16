@@ -1,8 +1,13 @@
 @startuml
+' https://plantuml.com/state-diagram
+' create png with: $ plantuml starting-low-vacuum-sm.uml
 ' scale 350 width
 hide empty description
 
-[*] -> Inactive
+state start1  <<start>>
+start1 -> Inactive
+' [*] -> Inactive
+
 Inactive : Not controlling Instruments
 ' state Stopped {
 '   [*] --> 
@@ -10,7 +15,7 @@ Inactive : Not controlling Instruments
 '  Configuring --> Idle : EvConfig
 ' }
 
-Inactive --right-> CheckCircuits
+Inactive -down-> CheckCircuits : State StartingLowVacuum 
 state CheckCircuits  {
 '  [*] --> NewValueSelection
 '  NewValueSelection --> NewValuePreview : EvNewValue
@@ -23,59 +28,89 @@ state CheckCircuits  {
     [*] -> HidraulicPressureON
     HidraulicPressureON -> WaterCircuitON
     WaterCircuitON -> FansTurbosON
+    FansTurbosON ->  [*]
     state HidraulicPressureON #lightblue
     state WaterCircuitON #lightblue
     state FansTurbosON #lightblue
+  --
+    [*] -> OpenSTDTArm
+    state "Open STDT Arm" as OpenSTDTArm
+    OpenSTDTArm -> [*]
 }
 
-CheckCircuits --right-> OpenValvesPre : Press(ST)  < 10 mBar
-CheckCircuits --right-> StartDryPumpDT : Press(ST)  >= 10 mBar
+' CheckCircuits -down-> OpenValvesPre : Press(ST)  < 10 mBar
+CheckCircuits --> choicePre
+state choicePre <<choice>>
+
+choicePre --> OpenValvesPre : [Press(ST)  < 10 mBar]
+choicePre --> StartDryPumpDT : [Press(ST)  >= 10 mBar]
 
 state OpenValvesPre  {
-'  [*] --> NewValueSelection
-'  state NewValuePreview {
-'     State1 -> State2
-'  }
 '  --
-    [*] -> OpenSTDTArm
-    OpenSTDTArm -> OpenSTDTGateValve
+    [*] -> CTSTGateValveOn
+    CTSTGateValveOn -> STDTGateValveOn
+    STDTGateValveOn -> [*]
 }
-OpenValvesPre  --> CheckValvesPre : Press(DT)  < 500 mBar
+OpenValvesPre  -right-> CheckValvesPre
 
-state CheckValvesPre {
-
+state CheckValvesPre { 
+    [*] --> checkCTSTGateValve
+    state checkCTSTGateValve
 }
-CheckValvesPre -> StartDryPumpDT
+CheckValvesPre -down-> StartDryPumpDT
+CheckValvesPre -up-> start1 : Abort
 
 state StartDryPumpDT {
+    [*] --> autoDT
+    state autoDT
+    ' <<fork>>
+    autoDT --> DryPumpDTon : Dry Pump DT Manual
+    autoDT -->  [*] 
+    state DryPumpDTon
 
 }
-StartDryPumpDT -down-> StartDryPumpCT
+StartDryPumpDT -right-> StartDryPumpCT
 
 state StartDryPumpCT  {
-'     [*] --> StartDryPumpDT
-    [*] --> fork_stateCT
-    state fork_stateCT <<fork>>
-    fork_stateCT --> StartDryPumpST : Dry Pump CT Manual
-    fork_stateCT --> sDryCTDryPumpST
-    state sDryCTDryPumpST
-    ' StartDryPumpDT --> StartDryPumpST
+    [*] --> autoCT
+    state autoCT <<fork>>
+    autoCT --> DryPumpCTon : Dry Pump CT Manual
+    autoCT -->  [*]
+    state DryPumpCTon <<join>>
 '    : p(DT)  < 5 mBar
 
 '    CheckPressuresLV -> StartDryPumpST : Press(DT)  < 500 mBar
-'    StartDryPumpST -> [*]  :  p(DT) < 5mBar\np(CT,ST)  <  1e-2 mBar
+    DryPumpCTon -> [*]  :  p(CT) < 100mBar
 
 }
 
 StartDryPumpCT -> StartDryPumpST
 
 state StartDryPumpST {
+    [*] -> DryPumpSTon 
+    state DryPumpSTon #green
+    DryPumpSTon -> [*]  :  p(DT) < 5mBar\np(CT,ST)  <  1e-2 mBar
 
 }
-StartDryPumpST -> OpenValvesPost
-' : 60 sec
+StartDryPumpST -down-> OpenValvesPost : 50 sec
 
-state OpenValvesPost {
+state "(Re)Open GT Valves" as OpenValvesPost {
+    [*] -> CTSTGvOn
+    CTSTGvOn -> STDTGvOn
+    STDTGvOn -> [*]
 }
+OpenValvesPost -left-> CheckValves
+
+state CheckValves { 
+    [*] --> checkCTSTGateVal
+    checkCTSTGateVal -> checkSTDTGateVal
+    checkSTDTGateVal -> [*]
+}
+
+CheckValves -down-> CheckPressures
+
+state CheckPressures
+
+CheckPressures -> [*]  :  p(DT) < 5mBar\np(CT,ST)  <  1e-2 mBar
 @enduml
 

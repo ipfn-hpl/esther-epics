@@ -9,7 +9,7 @@ Stopped : Instruments Powered Off
 '  Idle --> Configuring : powerInst
 '  Configuring --> Idle : EvConfig
 ' }
-Stopped --right-> Idle
+Stopped -down-> Idle
 
 state Idle {
 '  [*] --> NewValueSelection
@@ -38,28 +38,13 @@ Idle -right[#blue,bold]-> ManualOperation :  OpRequest
 ManualOperation -left[#blue,bold]-> Idle
 state ManualOperation #lightblue
 Idle --> StartingLowVacuum :  OpRequest
-StartingLowVacuum : Open CTST andSTDT Arms
+StartingLowVacuum : Open CTST and STDT Arms, GT\nSee special SM
 
-state StartingLowVacuum {
-'     [*] --> StartDryPumpDT
-    [*] --> fork_stateLV
-    state fork_stateLV <<fork>>
-    fork_stateLV --> StartDryPumpCT
-    fork_stateLV --> StartDryPumpDT
-    ' StartDryPumpDT --> StartDryPumpST
-    StartDryPumpCT --> CheckPressuresLV
-    StartDryPumpDT --> CheckPressuresLV
-'    : p(DT)  < 5 mBar
-    state CheckPressuresLV <<join>>
-
-    CheckPressuresLV -> StartDryPumpST : Press(DT)  < 500 mBar
-    StartDryPumpST -> [*]  :  p(DT) < 5mBar\np(CT,ST)  <  1e-2 mBar
-
-}
+state StartingLowVacuum 
 
 StartingLowVacuum -> LowVacuum
-LowVacuum : 
-LowVacuum -[#blue,bold]-> StoppingLowVacuum : OpRequest
+state LowVacuum #magenta 
+LowVacuum -up[#blue,bold]-> StoppingLowVacuum : OpRequest
 state StoppingLowVacuum {
   [*] -> StopDryPumpCT
   --
@@ -80,7 +65,10 @@ state StartingHighVacuum {
     joinStateH -> [*]  :  p(CTST, STDT) < 1e-6
 }
 StartingHighVacuum --> HighVacuum
+
+state HighVacuum #magenta
 HighVacuum -> StoppingHighVacuum
+
 StoppingHighVacuum -> LowVacuum
 state StoppingHighVacuum {
   [*] -> StopTurbos
