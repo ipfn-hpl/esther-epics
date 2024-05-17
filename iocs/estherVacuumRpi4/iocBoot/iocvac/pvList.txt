@@ -10,6 +10,7 @@ Esther:Vacuum:CTST-ErrorGauge
 Esther:Vacuum:STDT-ErrorGauge
 Esther:Vacuum:CurrentTime
 Esther:Vacuum:TimeOfDay
+Esther:Vacuum:GRUNFOS-PWM
 Esther:EDW:01:SetSpeedSetpointLo
 Esther:EDW:02:SetSpeedSetpointLo
 Esther:VacuumSR_0_State

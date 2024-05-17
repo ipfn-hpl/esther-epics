@@ -101,6 +101,8 @@ short EdwScuModFonct_Deceleration=5;
 float PressureStop_High = 1.1e3;
 float PressureLV_High = 2.0e-1;
 float PressureHV_High = 3.0e-4;
+
+float PressLvOpenGvMin = 1.0; // 1 MBar. Open GV if Pres ST > x mBar
 // End Program Constansts
 
 /* PV variables  
@@ -193,10 +195,11 @@ short EdwScuStDtDisable;
 assign EdwScuStDtDisable to "{P}:EDW:02:Disable";
 short EdwScuStDtMagLev;
 assign EdwScuStDtMagLev to "{P}:EDW:02:Command";
-short EdwScuCtStMSpeed;
+
+float EdwScuCtStMSpeed;
 assign EdwScuCtStMSpeed to "{P}:EDW:01:MSpeed";
 monitor EdwScuCtStMSpeed;
-short EdwScuStDtMSpeed;
+float EdwScuStDtMSpeed;
 assign EdwScuStDtMSpeed to "{P}:EDW:02:MSpeed";
 monitor EdwScuStDtMSpeed;
 
@@ -755,7 +758,7 @@ ss StartingLVSequence {
         //when  ((pvStatus(TurboFans) == pvStatOK) && (EDA_CT_LS2_ON == ON) &&
         //            (EDA_DT_LS2_ON == ON)) {
         when  (delay(3) && ((pvStatus(CTST_Pressure) == pvStatOK) &&
-                CTST_Pressure >= 0.01)) {
+                CTST_Pressure >= PressLvOpenGvMin)) {
             strcpy(msg, "StartingLV SS: CheckValvesPre");
             pvPut(msg);
             errlogSevPrintf(NO_ALARM, "%s\n", msg);
@@ -769,7 +772,7 @@ ss StartingLVSequence {
         } state CheckValvesPre
         // ST Perssure is sufficient Low. Open HVA Valves later
         when  (delay(5) && ((pvStatus(CTST_Pressure) == pvStatOK) &&
-                CTST_Pressure < 0.01)) {
+                CTST_Pressure < PressLvOpenGvMin)) {
             strcpy(msg, "StartingLV SS: StartPump_DT");
             pvPut(msg);
             errlogSevPrintf(NO_ALARM, "%s\n", msg);

@@ -131,3 +131,9 @@ record(ai, "$(P)$(R)PT-HYDEC-CC-S") {
     field(EGU, "Bar")
     field(PREC, "2")
 }
+record(longout, "$(P)$(R)GRUNFOS-PWM") {
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=58")
+    field(HOPR, "100")
+    field(LOPR, "0")
+}
