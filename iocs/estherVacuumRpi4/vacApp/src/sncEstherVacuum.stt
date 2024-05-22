@@ -253,7 +253,7 @@ assign ARM_STDT_Status to "{P}:ARM:2:Status";
 monitor ARM_STDT_Status;
 
 short TurboFans;
-assign TurboFans to "{P}:Vacuum:Turbo-Fans";
+assign TurboFans to "{P}:Vacuum:TURBO-FANS";
 monitor TurboFans;
 
 short WaterPump;

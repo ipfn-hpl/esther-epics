@@ -9,8 +9,7 @@
 #     Ref 1.0; 2024                                   #
 #                                                     #
 #######################################################
-record(bo, "$(P)EDW:DryPump-CT")
-{
+record(bo, "$(P)EDW:DryPump-CT") {
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=49 bini=write")
     # monitor  Set up monitor (output record gets bidirectional) [y/n; def: y]
@@ -136,4 +135,20 @@ record(longout, "$(P)$(R)GRUNFOS-PWM") {
     field(OUT,  "@$(SUBS) ns=4;i=58")
     field(HOPR, "100")
     field(LOPR, "0")
+}
+record(bo, "$(P)$(R)TURBO-FANS") {
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=59 bini=write")
+    field(DESC, "S7 PLC SCU-800 Turbo Fans ON/OFF")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(VAL, "0")
+}
+record(bo, "$(P)$(R)HEAT-BLANKETS") {
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=60 bini=write")
+    field(DESC, "S7 PLC Heat Blankets ON/OFF")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(VAL, "0")
 }

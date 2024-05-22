@@ -303,14 +303,14 @@ record(bo, "$(P)$(R)Water-Pump") {
     #field(VAL, "0")
 }
 # TODO change this to S7
-record(bo, "$(P)$(R)Turbo-Fans") {
-    field(DESC, "Maglev Turbos Fans")
-    field(ZNAM, "Off")
-    field(ZSV, "MINOR")
-    field(ONAM, "On")
+#record(bo, "$(P)$(R)Turbo-Fans") {
+#    field(DESC, "Maglev Turbos Fans")
+#    field(ZNAM, "Off")
+#    field(ZSV, "MINOR")
+#    field(ONAM, "On")
     #field(VAL, "0")
 #    info(autosaveFields, "VAL")
-}
+#}
 record(bo, "$(P)$(R)Auto-Mode") {
     info(autosaveFields, "VAL")
     field(DESC, "Pulse Sequence Manual/Auto")

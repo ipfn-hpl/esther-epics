@@ -28,6 +28,8 @@ Esther:Vacuum:COUNTUP
 Esther:EDW:DryPump-CT
 Esther:EDW:DryPump-DT
 Esther:EDW:DryPump-ST
+Esther:Vacuum:TURBO-FANS
+Esther:Vacuum:HEAT-BLANKETS
 Esther:HVA:CTST-Valve
 Esther:HVA:STDT-Valve
 Esther:EDA:CT-Valve
@@ -43,7 +45,6 @@ Esther:Vacuum:01:GaugeOn
 Esther:Vacuum:START-REQ
 Esther:Vacuum:STOP-REQ
 Esther:Vacuum:Water-Pump
-Esther:Vacuum:Turbo-Fans
 Esther:Vacuum:Auto-Mode
 Esther:Vacuum:CT-Auto-Enable
 Esther:Vacuum:DT-Auto-Enable
