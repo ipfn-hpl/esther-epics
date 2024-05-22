@@ -102,7 +102,7 @@ float PressureStop_High = 1.1e3;
 float PressureLV_High = 2.0e-1;
 float PressureHV_High = 3.0e-4;
 
-float PressLvOpenGvMin = 1.0; // 1 MBar. Open GV if Pres ST > x mBar
+float PressLvOpenGvMin = 10.0; // 10 MBar. Open GV if Pres ST > x mBar
 // End Program Constansts
 
 /* PV variables  
@@ -259,10 +259,6 @@ monitor TurboFans;
 short WaterPump;
 assign WaterPump to "{P}:Vacuum:Water-Pump";
 monitor WaterPump;
-
-//float HydraulicPressure;
-//assign HidraulicPressure to "{P}:Vacuum:Hidraulic-Pressure";
-//monitor HidraulicPressure;
 
 float HydraulicPressCC_N;
 assign HydraulicPressCC_N to "{P}:Vacuum:PT-HYDEC-CC-N";
@@ -449,6 +445,8 @@ ss VacuumSequence {
             pvPut(EdwScuCtStDisable);
             EdwScuStDtDisable = OFF;
             pvPut(EdwScuStDtDisable);
+            TurboFans = OFF;
+            pvPut(TurboFans);
         }
         when (delay(4) && (StopReq == STOP_REQ) ) { //  && (IsttokupsBatteryON != ON)) {
                 strcpy(msg, "State to Stopped");
@@ -536,7 +534,7 @@ ss VacuumSequence {
             STDT_PressureHigh = PressureLV_High;
             pvPut(STDT_PressureHigh);
         }
-        when (delay(5) && (StopReq == STOP_REQ) ) {
+        when (delay(2) && (StopReq == STOP_REQ) ) {
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
                 strcpy(msg, "State to Stopping LV");
                 pvPut(msg);
@@ -550,7 +548,7 @@ ss VacuumSequence {
                 (pvStatus(STDT_Pressure) != pvStatOK)) {
         } state StoppingLowVacuum
         */
-        when (delay(10) && (StartReq == START)) {
+        when (delay(3) && (StartReq == START)) {
                 strcpy(msg, "State to StartingHighVacuum");
                 pvPut(msg);
                 errlogSevPrintf(NO_ALARM, "%s\n", msg);
@@ -738,13 +736,13 @@ ss StartingLVSequence {
             pvPut(StartingLVSubState);
         }
 
-        when (OPSTATE == POS_StartingLowVacuum && pvStatus(TurboFans) == pvStatOK) {
-            //EDW_Dry_Pump_DT = ON;
-            //pvPut(EDW_Dry_Pump_DT);
+        when (OPSTATE == POS_StartingLowVacuum ) {
             //CTST_PressureHigh = 500;
             //STDT_PressureHigh = 500;
             //pvPut(CTST_PressureHigh);
             //pvPut(STDT_PressureHigh);
+            TurboFans = ON;
+            pvPut(TurboFans);
 
             strcpy(msg, "StartingLV SS: OpenValvesPre");
             pvPut(msg);
@@ -770,7 +768,7 @@ ss StartingLVSequence {
             pvPut(StartingLVSubState);
 
         } state CheckValvesPre
-        // ST Perssure is sufficient Low. Open HVA Valves later
+        // ST Pressure is sufficient Low. Open HVA Valves later
         when  (delay(5) && ((pvStatus(CTST_Pressure) == pvStatOK) &&
                 CTST_Pressure < PressLvOpenGvMin)) {
             strcpy(msg, "StartingLV SS: StartPump_DT");
@@ -1201,7 +1199,7 @@ ss DtVacuumSequence {
         }
          when (OPSTATE == POS_StartingLowVacuum && DtVacuumAutoEnable == ON) {
             //EDA_DT_Valve = (EDA_DT_LS2_ON)? ON:  OFF;
-            EDA_DT_Valve = OFF;  // TODO Invert Valve
+            EDA_DT_Valve = ON;  // TODO Invert Valve
             pvPut(EDA_DT_Valve);
             EDW_Dry_Pump_DT = ON;
             pvPut(EDW_Dry_Pump_DT);

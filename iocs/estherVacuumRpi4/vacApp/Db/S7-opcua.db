@@ -150,5 +150,6 @@ record(bo, "$(P)$(R)HEAT-BLANKETS") {
     field(DESC, "S7 PLC Heat Blankets ON/OFF")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
+    field(OSV, "MINOR")
     field(VAL, "0")
 }
