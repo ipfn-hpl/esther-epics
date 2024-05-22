@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-05-09 18:01:31 by esther-->
+<!--Saved on 2024-05-17 16:48:18 by esther-->
 <display version="2.0.0">
   <name>States</name>
   <macros>
@@ -837,5 +837,12 @@
       </font>
     </font>
     <auto_size>true</auto_size>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>TE_GRUNFOS-PWM</name>
+    <pv_name>${unit}:${node}:GRUNFOS-PWM</pv_name>
+    <x>56</x>
+    <y>330</y>
+    <width>70</width>
   </widget>
 </display>
