@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-05-17 16:48:18 by esther-->
+<!--Saved on 2024-05-22 17:34:53 by esther-->
 <display version="2.0.0">
   <name>States</name>
   <macros>
@@ -407,13 +407,6 @@
     <y>202</y>
     <width>70</width>
   </widget>
-  <widget type="checkbox" version="2.0.0">
-    <name>Check Box_1</name>
-    <pv_name>${unit}:${node}:Turbo-Fans</pv_name>
-    <label>Turbo-Fans</label>
-    <x>10</x>
-    <y>280</y>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>LowPress Thr_1</name>
     <class>Label_1</class>
@@ -448,8 +441,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>Tu_StartLV_Sub</name>
     <pv_name>${unit}:${node}:StartingLV-SubState</pv_name>
-    <x>106</x>
-    <y>297</y>
+    <x>126</x>
+    <y>317</y>
     <width>190</width>
   </widget>
   <widget type="textupdate" version="2.0.0">
@@ -550,7 +543,7 @@
     <pv_name>${unit}:${node}:Water-Pump</pv_name>
     <label>Water-Pump</label>
     <x>10</x>
-    <y>300</y>
+    <y>317</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
@@ -581,8 +574,8 @@
         <description>Open Vacuum Display</description>
       </action>
     </actions>
-    <x>26</x>
-    <y>127</y>
+    <x>818</x>
+    <y>497</y>
     <width>150</width>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -841,8 +834,47 @@
   <widget type="textentry" version="3.0.0">
     <name>TE_GRUNFOS-PWM</name>
     <pv_name>${unit}:${node}:GRUNFOS-PWM</pv_name>
-    <x>56</x>
-    <y>330</y>
+    <x>14</x>
+    <y>354</y>
     <width>70</width>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Turbo_Fans</name>
+    <pv_name>${unit}:Vacuum:TURBO-FANS</pv_name>
+    <x>10</x>
+    <y>263</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_TurboFans</name>
+    <text>TURBO-FANS</text>
+    <x>13</x>
+    <y>246</y>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_HeatBlankets</name>
+    <pv_name>${unit}:Vacuum:HEAT-BLANKETS</pv_name>
+    <x>26</x>
+    <y>534</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_HeatBlankets</name>
+    <text>HEAT-BLANKETS</text>
+    <x>29</x>
+    <y>517</y>
+    <width>121</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_PWM</name>
+    <text>PWM</text>
+    <x>26</x>
+    <y>337</y>
+    <width>54</width>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <y>310</y>
+    <width>120</width>
+    <height>80</height>
+    <transparent>true</transparent>
   </widget>
 </display>
