@@ -1,12 +1,20 @@
 @startuml
+' Install Plantuml with:
+'  sudo apt-get install plantuml 
+' Lines starting with "'" are comments
 ' https://plantuml.com/state-diagram
 ' create png with: $ plantuml starting-low-vacuum-sm.uml
+' EPICS Statem machine coded in 
+' https://github.com/ipfn-hpl/esther-epics/blob/master/iocs/estherVacuumRpi4/vacApp/src/sncEstherVacuum.stt
+'    lines after "ss StartingLVSequence {"
+' 
 ' scale 350 width
+
 hide empty description
 
-state start1  <<start>>
-start1 -> Inactive
-' [*] -> Inactive
+[*] -> Start
+state Start  <<start>>
+Start -> Inactive
 
 Inactive : Not controlling Instruments
 ' state Stopped {
@@ -33,12 +41,13 @@ state CheckCircuits  {
     state WaterCircuitON #lightblue
     state FansTurbosON #lightblue
   --
-    [*] -> OpenSTDTArm
+    [*] -> OpenCTSTArm
+    state "Open CTST Arm" as OpenCTSArm
+    OpenCTSArm -> OpenSTDTArm
     state "Open STDT Arm" as OpenSTDTArm
     OpenSTDTArm -> [*]
 }
 
-' CheckCircuits -down-> OpenValvesPre : Press(ST)  < 10 mBar
 CheckCircuits --> choicePre
 state choicePre <<choice>>
 
@@ -54,33 +63,32 @@ state OpenValvesPre  {
 OpenValvesPre  -right-> CheckValvesPre
 
 state CheckValvesPre { 
-    [*] --> checkCTSTGateValve
+    [*] -> checkCTSTGateValve
     state checkCTSTGateValve
+    checkCTSTGateValve-> [*]
 }
 CheckValvesPre -down-> StartDryPumpDT
-CheckValvesPre -up-> start1 : Abort
+CheckValvesPre -up-> Start : Abort
 
 state StartDryPumpDT {
     [*] --> autoDT
     state autoDT
     ' <<fork>>
-    autoDT --> DryPumpDTon : Dry Pump DT Manual
-    autoDT -->  [*] 
+    autoDT --> DryPumpDTon : Auto
+    autoDT ->  [*] : Manual
     state DryPumpDTon
-
+    DryPumpDTon -> [*] :  Press(DT) < 500mBar
 }
 StartDryPumpDT -right-> StartDryPumpCT
 
 state StartDryPumpCT  {
     [*] --> autoCT
     state autoCT <<fork>>
-    autoCT --> DryPumpCTon : Dry Pump CT Manual
-    autoCT -->  [*]
+    autoCT --> DryPumpCTon : Auto
+    autoCT -->  [*] : Manual
     state DryPumpCTon <<join>>
-'    : p(DT)  < 5 mBar
 
-'    CheckPressuresLV -> StartDryPumpST : Press(DT)  < 500 mBar
-    DryPumpCTon -> [*]  :  p(CT) < 100mBar
+    DryPumpCTon -> [*]  :  Press(CT) < 100mBar
 
 }
 
@@ -88,11 +96,13 @@ StartDryPumpCT -> StartDryPumpST
 
 state StartDryPumpST {
     [*] -> DryPumpSTon 
-    state DryPumpSTon #green
-    DryPumpSTon -> [*]  :  p(DT) < 5mBar\np(CT,ST)  <  1e-2 mBar
+    state DryPumpSTon
+' state DryPumpSTon #green
+    DryPumpSTon -> [*]
+'     : Press(CT,ST)  <  1e-2 mBar
 
 }
-StartDryPumpST -down-> OpenValvesPost : 50 sec
+StartDryPumpST -down-> OpenValvesPost : Wait 50 sec
 
 state "(Re)Open GT Valves" as OpenValvesPost {
     [*] -> CTSTGvOn
@@ -111,6 +121,6 @@ CheckValves -down-> CheckPressures
 
 state CheckPressures
 
-CheckPressures -> [*]  :  p(DT) < 5mBar\np(CT,ST)  <  1e-2 mBar
+CheckPressures -> [*]  :  Press(CT,ST)  <  1e-2 mBar
 @enduml
 
