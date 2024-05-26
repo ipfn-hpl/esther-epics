@@ -1,0 +1,60 @@
+@startuml
+' Install Plantuml with:
+'  sudo apt-get install plantuml 
+' Lines starting with "'" are comments
+' https://plantuml.com/state-diagram
+' create png with: $ plantuml starting-low-vacuum-sm.uml
+' EPICS Statem machine coded in 
+' https://github.com/ipfn-hpl/esther-epics/blob/master/iocs/estherVacuumRpi4/vacApp/src/sncEstherVacuum.stt
+'    lines after "ss StoppingHVSequence {"
+' 
+' scale 350 width
+
+hide empty description
+
+[*] -> Inactive
+
+Inactive : Not controlling Instruments
+' state Stopped {
+'   [*] --> 
+'  Idle --> Configuring : powerInst
+'  Configuring --> Idle : EvConfig
+' }
+
+Inactive -down-> StopTurbos : Stopping High Vacuum Command 
+
+state "Stop Turbo Pumps" as StopTurbos {
+    [*] --> StopCtSt
+    StopCtSt -> StopStDT
+    StopStDT -> [*]
+}
+
+StopTurbos -down-> CheckPumpsDecel
+
+state CheckPumpsDecel {
+    [*] -> CheckCtStDecel  : 5 sec 
+    CheckCtStDecel -> CheckStDtDecel
+    CheckStDtDecel -> [*]
+}
+CheckPumpsDecel -> CheckPumpsSpeed
+
+state CheckPumpsSpeed {
+    [*] -> CheckCtStSpeed  : 5 sec 
+    CheckCtStSpeed -> CheckStDtSpeed : Speed CtSt < 5000 rpm
+    CheckStDtSpeed -> [*] : Speed StDt < 5000 rpm
+}
+CheckPumpsSpeed -down-> CloseHvaValves
+
+state CloseHvaValves {
+    [*] -> CloseHvaCtStValve  : 5 sec 
+    CloseHvaCtStValve -> CloseHvaStDtValve
+    CloseHvaStDtValve -> [*]
+}
+CloseHvaValves -left-> CheckPumpsLevitation
+
+state CheckPumpsLevitation
+
+
+CheckPumpsLevitation  -down-> [*] 
+@enduml
+
