@@ -80,6 +80,8 @@ short OFF = 0;
 short ON = 1;
 short AUTO_ON = 1;
 short AUTO_OFF = 0;
+short AUTO_STARTING = 0;
+short AUTO_STOPPING = 1;
 short ARM_STATUS_CLOSED = 3;
 short ARM_STATUS_OPEN = 4;
 short STOP = 0;
@@ -174,6 +176,10 @@ monitor Countup;
 short AutoMode;
 assign AutoMode to "{P}:Vacuum:Auto-Mode";
 monitor AutoMode;
+
+short AutoVacuum;
+assign AutoVacuum to "{P}:Vacuum:Auto-Vacuum";
+monitor AutoVacuum;
 
 short CountupDisa;
 assign CountupDisa to "{P}:Vacuum:COUNTUP.DISA";
@@ -447,6 +453,8 @@ ss VacuumSequence {
             pvPut(EdwScuStDtDisable);
             TurboFans = OFF;
             pvPut(TurboFans);
+            AutoVacuum = AUTO_STARTING;
+            pvPut(AutoVacuum);
         }
         when (delay(4) && (StopReq == STOP_REQ) ) { //  && (IsttokupsBatteryON != ON)) {
                 strcpy(msg, "State to Stopped");
@@ -534,7 +542,13 @@ ss VacuumSequence {
             STDT_PressureHigh = PressureLV_High;
             pvPut(STDT_PressureHigh);
         }
-        when (delay(2) && (StopReq == STOP_REQ) ) {
+        when (delay(2) && (AutoVacuum == AUTO_STOPPING)) {
+//              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
+                strcpy(msg, "State Auto to Stopping LV");
+                pvPut(msg);
+                errlogSevPrintf(MINOR, "%s\n", msg);
+        } state StoppingLowVacuum
+        when (delay(5) && (StopReq == STOP_REQ) ) {
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
                 strcpy(msg, "State to Stopping LV");
                 pvPut(msg);
@@ -548,7 +562,13 @@ ss VacuumSequence {
                 (pvStatus(STDT_Pressure) != pvStatOK)) {
         } state StoppingLowVacuum
         */
-        when (delay(3) && (StartReq == START)) {
+        when (delay(12) && (AutoVacuum == AUTO_STARTING)) {
+                strcpy(msg, "State Auto to StartingHighVacuum");
+                pvPut(msg);
+                errlogSevPrintf(NO_ALARM, "%s\n", msg);
+        } state StartingHighVacuum
+
+        when (delay(10) && (StartReq == START)) {
                 strcpy(msg, "State to StartingHighVacuum");
                 pvPut(msg);
                 errlogSevPrintf(NO_ALARM, "%s\n", msg);
@@ -598,6 +618,8 @@ ss VacuumSequence {
         entry{
             OPSTATE = POS_HighVacuum;
             pvPut(OPSTATE);
+            AutoVacuum = AUTO_STOPPING;
+            pvPut(AutoVacuum);
             /*
             CTST_PressureHigh = 1.0e-4; //ADC_PressureH2LThres;
             STDT_PressureHigh = 1.0e-4; //ADC_PressureH2LThres;

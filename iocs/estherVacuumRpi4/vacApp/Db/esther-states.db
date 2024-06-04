@@ -313,9 +313,15 @@ record(bo, "$(P)$(R)Water-Pump") {
 #}
 record(bo, "$(P)$(R)Auto-Mode") {
     info(autosaveFields, "VAL")
-    field(DESC, "Pulse Sequence Manual/Auto")
-    field(ZNAM, "Auto")
-    field(ONAM, "Manual")
+    field(DESC, "Sequence Manual/Auto")
+    field(ZNAM, "Supervisory")
+    field(ONAM, "Auto")
+}
+record(bo, "$(P)$(R)Auto-Vacuum") {
+    info(autosaveFields, "VAL")
+    field(DESC, "Sequence Auto LV->HV /HV->LV")
+    field(ZNAM, "Starting")
+    field(ONAM, "Stopping")
 }
 record(bo, "$(P)$(R)CT-Auto-Enable") {
     field(DESC, "CT Vacuum Auto Mode Enable")
