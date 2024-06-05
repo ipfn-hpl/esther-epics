@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-06-05 11:37:04 by esther-->
 <display version="2.0.0">
   <name>Esther Vacuum Monitor</name>
   <macros>
     <unit>Esther</unit>
   </macros>
-  <width>1261</width>
-  <height>955</height>
+  <width>1266</width>
+  <height>863</height>
   <background_color>
     <color name="Write_Background" red="128" green="255" blue="255">
     </color>
@@ -145,8 +146,8 @@
       <mfc>MFC-CT</mfc>
     </macros>
     <file>EL-FLOW-MFC-CTMonitor.bob</file>
-    <x>776</x>
-    <y>80</y>
+    <x>781</x>
+    <y>150</y>
     <width>480</width>
     <height>298</height>
   </widget>
@@ -157,16 +158,16 @@
       <mfc>MFC-ST</mfc>
     </macros>
     <file>EL-FLOW-MFC-STMonitor.bob</file>
-    <x>781</x>
-    <y>480</y>
+    <x>786</x>
+    <y>550</y>
     <width>480</width>
     <height>298</height>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_PT-DT-Static</name>
     <text>PT-DT-Static</text>
-    <x>1079</x>
-    <y>387</y>
+    <x>1084</x>
+    <y>457</y>
     <background_color>
       <color red="115" green="115" blue="115">
       </color>
@@ -176,8 +177,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>TU_PT-DT-Static</name>
     <pv_name>Esther:Vacuum:PT-DT-Static</pv_name>
-    <x>1040</x>
-    <y>412</y>
+    <x>1045</x>
+    <y>482</y>
     <width>190</width>
     <height>40</height>
     <font>
@@ -283,8 +284,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>TU_PT-CT-Static</name>
     <pv_name>${unit}:Vacuum:PT-CT-Static</pv_name>
-    <x>781</x>
-    <y>410</y>
+    <x>786</x>
+    <y>480</y>
     <width>190</width>
     <height>40</height>
     <font>
@@ -298,8 +299,8 @@
   <widget type="label" version="2.0.0">
     <name>Label_PT-DT-Static_2</name>
     <text>PT-CT-Static</text>
-    <x>820</x>
-    <y>387</y>
+    <x>825</x>
+    <y>457</y>
     <background_color>
       <color red="115" green="115" blue="115">
       </color>
@@ -309,8 +310,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>TU_VGC401-Status</name>
     <pv_name>${unit}:Vacuum:VGC401-Status</pv_name>
-    <x>783</x>
-    <y>454</y>
+    <x>788</x>
+    <y>524</y>
     <width>220</width>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -341,5 +342,51 @@
     <width>137</width>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_ST-Temp</name>
+    <pv_name>${unit}:EDW:DryPump-DT-Temp</pv_name>
+    <x>997</x>
+    <y>94</y>
+    <width>112</width>
+    <height>29</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="204">
+      </color>
+    </background_color>
+    <format>1</format>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_PT-DT-Static_1</name>
+    <text>DT-Dry_Temp</text>
+    <x>996</x>
+    <y>74</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_ST-DryTemp</name>
+    <text>ST-Dry_Temp</text>
+    <x>884</x>
+    <y>74</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_ST-Temp_1</name>
+    <pv_name>${unit}:EDW:DryPump-ST-Temp</pv_name>
+    <x>870</x>
+    <y>94</y>
+    <width>114</width>
+    <height>29</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="204">
+      </color>
+    </background_color>
+    <format>1</format>
   </widget>
 </display>
