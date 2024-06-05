@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-06-04 18:00:40 by esther-->
+<!--Saved on 2024-06-05 10:05:16 by esther-->
 <display version="2.0.0">
   <name>States</name>
   <macros>
@@ -74,6 +74,7 @@
     <y>377</y>
     <width>100</width>
     <height>100</height>
+    <off_label>LOW Vacuum</off_label>
     <on_label>LOW Vacuum</on_label>
   </widget>
   <widget type="bool_button" version="2.0.0">
@@ -467,6 +468,7 @@
     <y>517</y>
     <width>80</width>
     <height>80</height>
+    <off_label>StartingHighVacuum </off_label>
     <on_label>StartingHighVacuum </on_label>
   </widget>
   <widget type="polyline" version="2.0.0">
@@ -494,6 +496,7 @@
     <y>517</y>
     <width>80</width>
     <height>80</height>
+    <off_label>StoppingHighVacuum </off_label>
     <on_label>StoppingHighVacuum </on_label>
   </widget>
   <widget type="polyline" version="2.0.0">
@@ -522,7 +525,8 @@
     <y>587</y>
     <width>100</width>
     <height>100</height>
-    <on_label>HIGHVacuum</on_label>
+    <off_label>HighVacuum</off_label>
+    <on_label>HighVacuum</on_label>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Tu_Idle_Sub</name>
@@ -686,6 +690,7 @@
     <y>700</y>
     <width>100</width>
     <height>100</height>
+    <off_label>SHOTReady</off_label>
     <on_label>SHOTReady</on_label>
   </widget>
   <widget type="led" version="2.0.0">
@@ -696,6 +701,7 @@
     <y>687</y>
     <width>80</width>
     <height>80</height>
+    <off_label>StartingShot</off_label>
     <on_label>StartingShot</on_label>
   </widget>
   <widget type="bool_button" version="2.0.0">
@@ -832,13 +838,6 @@
     </font>
     <auto_size>true</auto_size>
   </widget>
-  <widget type="textentry" version="3.0.0">
-    <name>TE_GRUNFOS-PWM</name>
-    <pv_name>${unit}:${node}:GRUNFOS-PWM</pv_name>
-    <x>14</x>
-    <y>354</y>
-    <width>70</width>
-  </widget>
   <widget type="bool_button" version="2.0.0">
     <name>BB_Turbo_Fans</name>
     <pv_name>${unit}:Vacuum:TURBO-FANS</pv_name>
@@ -884,5 +883,11 @@
     <pv_name>${unit}:Vacuum:Auto-Vacuum</pv_name>
     <x>385</x>
     <y>507</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_GRUNFOS-PWM</name>
+    <pv_name>${unit}:${node}:GRUNFOS-PWM</pv_name>
+    <x>7</x>
+    <y>357</y>
   </widget>
 </display>
