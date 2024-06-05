@@ -136,6 +136,12 @@ record(longout, "$(P)$(R)GRUNFOS-PWM") {
     field(HOPR, "100")
     field(LOPR, "0")
 }
+record(calcout, "_$(P)$(R)GRUNFOS-PWM_calc"){
+    field(INPA, "$(P)$(R)Water-Pump")
+    field(CALC, "A==1? 10 : 80")
+    field(OUT,  "$(P)$(R)GRUNFOS-PWM PP")
+    field(OOPT,  "On Change")
+}
 record(bo, "$(P)$(R)TURBO-FANS") {
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=59 bini=write")

@@ -300,6 +300,8 @@ record(bo, "$(P)$(R)Water-Pump") {
     field(DESC, "Water Colling Pump")
     field(ZNAM, "Off")
     field(ONAM, "On")
+    field(FLNK, "_$(P)$(R)GRUNFOS-PWM_calc")
+    info(autosaveFields, "VAL")
     #field(VAL, "0")
 }
 # TODO change this to S7

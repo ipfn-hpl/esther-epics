@@ -46,6 +46,7 @@ Esther:Vacuum:START-REQ
 Esther:Vacuum:STOP-REQ
 Esther:Vacuum:Water-Pump
 Esther:Vacuum:Auto-Mode
+Esther:Vacuum:Auto-Vacuum
 Esther:Vacuum:CT-Auto-Enable
 Esther:Vacuum:DT-Auto-Enable
 Esther:Vacuum:HoldVacuum
@@ -230,3 +231,4 @@ Esther:EDW:02:Error1
 Esther:EDW:02:Error2
 Esther:Vacuum:CTST-GaugeVersionli
 Esther:Vacuum:STDT-GaugeVersionli
+_Esther:Vacuum:GRUNFOS-PWM_calc

@@ -431,6 +431,9 @@ ss VacuumSequence {
 
             HoldVacuum = OFF;
             pvPut(HoldVacuum);
+            
+            WaterPump = ON;
+            pvPut(WaterPump);
 
             EDW_Dry_Pump_CT = OFF;
             pvPut(EDW_Dry_Pump_CT);
