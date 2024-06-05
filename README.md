@@ -36,8 +36,8 @@ sudo systemctl status epics-css-archive.service
 * [Valve Display](http://10.10.136.177:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/GasSystem/ValveDisplay.bob)
 
 ### Shock Tube Vacuum System 
-* [Vacuum System Main Display](http://10.10.136.177:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/EstherVacuumMonitor.bob)   
-* [Vacuum States](http://10.10.136.177:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/VacuumStates.bob)
+* [Vacuum System Main Display](http://golem.local:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/EstherVacuumMonitor.bob)   
+* [Vacuum States](http://golem.local:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/VacuumStates.bob)
 * [Vacuum Plots](http://10.10.136.177:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/VacuumPlots.bob)
 
 ## Dry Pumps Displays - Only on Esther HPL Internal Network
