@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-06-05 10:05:16 by esther-->
+<!--Saved on 2024-06-07 12:21:13 by esther-->
 <display version="2.0.0">
-  <name>States</name>
+  <name>Vacuum State Machine</name>
   <macros>
     <node>Vacuum</node>
     <unit>Esther</unit>
@@ -580,7 +580,7 @@
     <name>ActButton_VacPlot</name>
     <actions>
       <action type="open_display">
-        <file>EstherVacuum.bob</file>
+        <file>VacuumMainDisplay.bob</file>
         <target>tab</target>
         <description>Open Vacuum Display</description>
       </action>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-06-07 12:29:19 by esther-->
 <display version="2.0.0">
   <name>MFC El-Flow DT</name>
   <width>470</width>
@@ -100,13 +101,16 @@
     <name>Valve</name>
     <pv_name>Esther:EDA:${eda}-Valve</pv_name>
     <symbols>
-      <symbol>pics/1809-horizontal-type-L-port-flow-path-open-right.png</symbol>
-      <symbol>pics/1809-horizontal-type-L-port-flow-path-open-left.png</symbol>
+      <symbol>../images/1809-horizontal-type-L-port-flow-path-open-right.png</symbol>
+      <symbol>../images/1809-horizontal-type-L-port-flow-path-open-left.png</symbol>
     </symbols>
     <x>110</x>
     <y>200</y>
     <width>130</width>
     <height>76</height>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
   </widget>
   <widget type="led" version="2.0.0">
     <name>Valve_LS1_ON</name>
