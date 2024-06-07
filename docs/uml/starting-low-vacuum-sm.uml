@@ -23,7 +23,7 @@ Inactive : Not controlling Instruments
 '  Configuring --> Idle : EvConfig
 ' }
 
-Inactive -down-> CheckCircuits : State StartingLowVacuum 
+Inactive -down-> CheckCircuits : [Main State: StartingLowVacuum ]
 state CheckCircuits  {
 '  [*] --> NewValueSelection
 '  NewValueSelection --> NewValuePreview : EvNewValue
@@ -49,12 +49,14 @@ state CheckCircuits  {
 }
 
 CheckCircuits --> choicePre
-state choicePre <<choice>>
+CheckCircuits -up-> Start : Abort
+
+state "Measure ST Pressure" as choicePre <<choice>>
 
 choicePre --> OpenValvesPre : [Press(ST)  < 10 mBar]
 choicePre --> StartDryPumpDT : [Press(ST)  >= 10 mBar]
 
-state OpenValvesPre  {
+state "Open Gate Valves" as OpenValvesPre  {
 '  --
     [*] -> CTSTGateValveOn
     CTSTGateValveOn -> STDTGateValveOn
@@ -62,17 +64,16 @@ state OpenValvesPre  {
 }
 OpenValvesPre  -right-> CheckValvesPre
 
-state CheckValvesPre { 
+state "Check GV Open" as CheckValvesPre { 
     [*] -> checkCTSTGateValve
     state checkCTSTGateValve
     checkCTSTGateValve-> [*]
 }
 CheckValvesPre -down-> StartDryPumpDT
-CheckValvesPre -up-> Start : Abort
 
 state StartDryPumpDT {
     [*] --> autoDT
-    state autoDT
+    state "Auto" as autoDT
     ' <<fork>>
     autoDT --> DryPumpDTon : Auto
     autoDT ->  [*] : Manual
@@ -83,7 +84,7 @@ StartDryPumpDT -right-> StartDryPumpCT
 
 state StartDryPumpCT  {
     [*] --> autoCT
-    state autoCT <<fork>>
+    state "Auto" as autoCT <<fork>>
     autoCT --> DryPumpCTon : Auto
     autoCT -->  [*] : Manual
     state DryPumpCTon <<join>>
@@ -111,13 +112,35 @@ state "(Re)Open GT Valves" as OpenValvesPost {
 }
 OpenValvesPost -left-> CheckValves
 
-state CheckValves { 
+state "Check GV Open" as CheckValves { 
     [*] --> checkCTSTGateVal
     checkCTSTGateVal -> checkSTDTGateVal
     checkSTDTGateVal -> [*]
 }
 
-CheckValves -down-> CheckPressures
+CheckValves -left-> CheckLowVacuumDT
+
+state CheckLowVacuumDT {
+    [*] --> auto_DT
+    state "Auto" as auto_DT
+    ' <<fork>>
+    auto_DT --> DryPumpDToff : Auto
+    auto_DT ->  [*] : Manual
+    state DryPumpDToff
+    DryPumpDToff -> [*] :  Press(DT) < 25 mBar
+}
+CheckLowVacuumDT-left-> CheckLowVacuumCT
+
+state CheckLowVacuumCT {
+    [*] --> auto_CT
+    state "Auto" as auto_CT
+    ' <<fork>>
+    auto_CT --> DryPumpCToff : Auto
+    auto_CT ->  [*] : Manual
+    state DryPumpCToff
+    DryPumpCToff -> [*] :  Press(CT) < 1 mBar
+}
+CheckLowVacuumCT -down-> CheckPressures
 
 state CheckPressures
 
