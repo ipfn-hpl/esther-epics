@@ -9,8 +9,10 @@ DB += vacVersion.db
 #DB += user.substitutions
 DB += edwards-scu800.db
 DB += edwards-scu800.proto
-DB += edwards-adc.db
-DB += edwards-adc.proto
+# DB += edwards-adc.db
+# DB += edwards-adc.proto
+DB += edwards-adc-analog.db
+DB += edwards-adc-analog.proto
 
 DB += edwards-gx-temp.db
 

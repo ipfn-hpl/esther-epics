@@ -1,7 +1,7 @@
 #######################################################
 # ###                                             ### #
 # ### EPICS Database for                          ### #
-# ### Edwards GX660 Dry Pumps                     ### #
+# ### Edwards GX600 Dry Pumps                     ### #
 # ###                                             ### #
 # ### author: B. Carvalho /IPFN- Portugal         ### #
 # ###                                             ### #
@@ -9,8 +9,13 @@
 # ###                                             ### #
 # ###                                             ### #
 # ### Description:                                ### #
-# ### This is DB file  for                         ### #
-# ###   command  EDWARDS GX600 Dry Pumpsi          ## #
+# ### This is DB file  for                        ### #
+# ###   command  EDWARDS GX600 Dry Pumps          ### #
+# These records are writen                        ### #
+#           by Python gxPumpEpicsPut.py script    ### #
+# Water circuit temperature sensor                ### #
+# Power is shut-off to the motor if the 
+# temperature exceeds 70°C (Warning at 60°C).     ### #
 # ###                                             ### #
 #######################################################
 
@@ -21,27 +26,33 @@ record(ai, $(P)EDW:DryPump-ST-Temp){
     field(DESC, "Holds measured GX600 temperature")
     field(DTYP, "Soft Channel")
     field(LOPR, "5")
-    field(HOPR, "60")
-    field(HIGH, "50")
-    field(HIHI, "55")
+    field(HOPR, "70")
+#    field(HIGH, "50")
+#    field(HIHI, "55")
     field(HHSV,"MAJOR")
     field(HSV, "MINOR")
-    field(LOW,  "15")
-    field(LOLO, "10")
+    field(LOW,  "10")
+    field(LOLO, "6")
+    field(LLSV,"MAJOR")
+    field(LSV, "MINOR")
     field(EGU,  "ºC")
+    info(autosaveFields, "HIGH HIHI")
 }
 record(ai, $(P)EDW:DryPump-DT-Temp){
     field(DESC, "Holds measured GX600 temperature")
     field(DTYP, "Soft Channel")
     field(LOPR, "5")
-    field(HOPR, "60")
-    field(HIGH, "50")
-    field(HIHI, "55")
+    field(HOPR, "70")
+#    field(HIGH, "50")
+#    field(HIHI, "55")
     field(HHSV,"MAJOR")
     field(HSV, "MINOR")
-    field(LOW,  "15")
-    field(LOLO, "10")
+    field(LOW,  "10")
+    field(LOLO, "6")
+    field(LLSV,"MAJOR")
+    field(LSV, "MINOR")
     field(EGU,  "ºC")
+    info(autosaveFields, "HIGH HIHI")
 }
 
 ## vim: sta:et:sw=4:ts=4:sts=4

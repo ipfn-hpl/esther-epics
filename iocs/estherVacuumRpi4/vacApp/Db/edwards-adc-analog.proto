@@ -1,0 +1,23 @@
+# Terminator   = CR;
+Terminator = CR LF;
+#ReplyTimeout = 2000;
+#ReadTimeout  = 300;
+MaxInput     = 40;
+#ExtraInput   = Error;
+# ExtraInput   = Ignore;
+
+#  GA1: 2085, GA2: 20
+readPressure1 {
+  in  "GA1: %i, GA2: %*i";
+}
+#  @mismatch {in "%(\$2)10c"};
+readPressure2 {
+  in  "GA1: %*i, GA2: %i";
+}
+readVoltage1 {
+  in  "GA1: %f, GA2: %*f";
+}
+#  @mismatch {in "%(\$2)10c"};
+readVoltage2 {
+  in  "GA1: %*f, GA2: %f";
+}
