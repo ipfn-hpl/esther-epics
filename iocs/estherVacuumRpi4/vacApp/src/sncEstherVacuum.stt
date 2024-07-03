@@ -83,8 +83,9 @@ short OFF = 0;
 short ON = 1;
 short AUTO_ON = 1;
 short AUTO_OFF = 0;
-short AUTO_STARTING = 0;
-short AUTO_STOPPING = 1;
+short AUTO_STARTING_SEQ = 0;
+short AUTO_STOPPING_SEQ = 1;
+short AUTO_HOLD_SEQ = 2;
 short ARM_STATUS_CLOSED = 3;
 short ARM_STATUS_OPEN = 4;
 short STOP = 0;
@@ -180,9 +181,9 @@ short AutoMode;
 assign AutoMode to "{P}:Vacuum:Auto-Mode";
 monitor AutoMode;
 
-short AutoVacuum;
-assign AutoVacuum to "{P}:Vacuum:Auto-Vacuum";
-monitor AutoVacuum;
+short AutoSeqVacuum;
+assign AutoSeqVacuum to "{P}:Vacuum:Auto-Vacuum";
+monitor AutoSeqVacuum;
 
 short CountupDisa;
 assign CountupDisa to "{P}:Vacuum:COUNTUP.DISA";
@@ -291,12 +292,14 @@ assign msg to "{P}:Vacuum:TraceMessage.VAL";
 
 short EDA_CT_Valve;
 assign EDA_CT_Valve to "{P}:EDA:CT-Valve";
+monitor EDA_CT_Valve;
 short EDA_CT_LS2_ON;
 assign EDA_CT_LS2_ON to "{P}:EDA:CT-Valve_LS2_ON";
 monitor EDA_CT_LS2_ON;
 
 short EDA_DT_Valve;
 assign EDA_DT_Valve to "{P}:EDA:DT-Valve";
+monitor EDA_DT_Valve;
 short EDA_DT_LS2_ON;
 assign EDA_DT_LS2_ON to "{P}:EDA:DT-Valve_LS2_ON";
 monitor EDA_DT_LS2_ON;
@@ -386,14 +389,14 @@ ss VacuumSequence {
             EdwScuStDtDisable = ON;
             pvPut(EdwScuStDtDisable);
 
-            EDA_CT_Valve = (EDA_CT_LS2_ON)? ON: OFF;
-            pvPut(EDA_CT_Valve);
+            // EDA_CT_Valve = (EDA_CT_LS2_ON)? ON: OFF;
+            // pvPut(EDA_CT_Valve);
             
             //EDA_DT_Valve = (EDA_DT_LS2_ON)? ON:  OFF;
             //pvPut(EDA_DT_Valve);
             //EDA_DT_Valve = (EDA_DT_LS2_ON)? ON:  OFF;
-            EDA_DT_Valve = ON;  // TODO Invert Valve
-            pvPut(EDA_DT_Valve);
+            //EDA_DT_Valve = ON;  // TODO Invert Valve
+            // pvPut(EDA_DT_Valve);
             
             HVA_CTST_Valve = OFF;
             pvPut(HVA_CTST_Valve);
@@ -445,8 +448,8 @@ ss VacuumSequence {
             EDW_Dry_Pump_DT = OFF;
             pvPut(EDW_Dry_Pump_DT);
             //EDA_DT_Valve = (EDA_DT_LS2_ON)? ON:  OFF;
-            EDA_DT_Valve = ON;  // TODO Invert Valve
-            pvPut(EDA_DT_Valve);
+            //EDA_DT_Valve = ON;  // TODO Invert Valve
+            //pvPut(EDA_DT_Valve);
 
             HVA_CTST_Valve = OFF;
             pvPut(HVA_CTST_Valve);
@@ -459,8 +462,8 @@ ss VacuumSequence {
             pvPut(EdwScuStDtDisable);
             TurboFans = OFF;
             pvPut(TurboFans);
-            AutoVacuum = AUTO_STARTING;
-            pvPut(AutoVacuum);
+            AutoSeqVacuum = AUTO_STARTING_SEQ;
+            pvPut(AutoSeqVacuum);
         }
         when (delay(1) && (StopReq == STOP_REQ) ) { //  && (IsttokupsBatteryON != ON)) {
                 strcpy(msg, "State to Stopped");
@@ -548,7 +551,7 @@ ss VacuumSequence {
             STDT_PressureHigh = PressureLV_High;
             pvPut(STDT_PressureHigh);
         }
-        when (delay(2) && (AutoVacuum == AUTO_STOPPING)) {
+        when (delay(2) && (AutoSeqVacuum == AUTO_STOPPING_SEQ)) {
 //              &&  (pvStatus(IsttokRPump1_Pressure) == pvStatOK) && (pvStatus(IsttokTMPump1_Emergency) == pvStatOK)) {
                 strcpy(msg, "State Auto to Stopping LV");
                 pvPut(msg);
@@ -568,7 +571,7 @@ ss VacuumSequence {
                 (pvStatus(STDT_Pressure) != pvStatOK)) {
         } state StoppingLowVacuum
         */
-        when (delay(10) && (AutoVacuum == AUTO_STARTING)) {
+        when (delay(10) && (AutoSeqVacuum == AUTO_STARTING_SEQ)) {
                 strcpy(msg, "State Auto to StartingHighVacuum");
                 pvPut(msg);
                 errlogSevPrintf(NO_ALARM, "%s\n", msg);
@@ -624,8 +627,8 @@ ss VacuumSequence {
         entry{
             OPSTATE = POS_HighVacuum;
             pvPut(OPSTATE);
-            AutoVacuum = AUTO_STOPPING;
-            pvPut(AutoVacuum);
+            AutoSeqVacuum = AUTO_STOPPING_SEQ;
+            pvPut(AutoSeqVacuum);
             /*
             CTST_PressureHigh = 1.0e-4; //ADC_PressureH2LThres;
             STDT_PressureHigh = 1.0e-4; //ADC_PressureH2LThres;

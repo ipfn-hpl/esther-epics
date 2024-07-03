@@ -51,10 +51,11 @@ record(bo, "$(P)$(R)CT-Valve")
 {
     field(DESC, "S7 PLC Q1.1 EDA_VALVE Solenoid")
     field(DTYP, "OPCUA")
-    field(OUT,  "@$(SUBS) ns=4;i=53 bini=write")
+# monitor y (default)    
+    field(OUT,  "@$(SUBS) ns=4;i=53")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
-    field(VAL, "0")
+#    field(VAL, "0")
 }
 ### EDA DT
 
@@ -98,9 +99,10 @@ record(bo, "$(P)$(R)DT-Valve")
 {
     field(DESC, "S7 PLC Q1.0 EDA_VALVE Solenoid")
     field(DTYP, "OPCUA")
-    field(OUT,  "@$(SUBS) ns=4;i=52 bini=write")
+    field(OUT,  "@$(SUBS) ns=4;i=52")
+#    field(OUT,  "@$(SUBS) ns=4;i=52 bini=write")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
     ## DT Valve is Normally connected to Dry Pum. TODO: Change valve
-    field(VAL, "1")
+#    field(VAL, "1")
 }

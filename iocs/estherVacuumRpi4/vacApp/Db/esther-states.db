@@ -322,11 +322,17 @@ record(bo, "$(P)$(R)Auto-Mode") {
     field(ZNAM, "Supervisory")
     field(ONAM, "Auto")
 }
-record(bo, "$(P)$(R)Auto-Vacuum") {
+record(mbbo, "$(P)$(R)Auto-Vacuum") {
     info(autosaveFields, "VAL")
     field(DESC, "Sequence Auto LV->HV /HV->LV")
-    field(ZNAM, "Starting")
-    field(ONAM, "Stopping")
+#    field(ZNAM, "Starting")
+#    field(ONAM, "Stopping")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(TWVL, "2")
+    field(ZRST, "Starting")
+    field(ONST, "Stopping")
+    field(TWST, "Hold")
 }
 record(bo, "$(P)$(R)CT-Auto-Enable") {
     field(DESC, "CT Vacuum Auto Mode Enable")
