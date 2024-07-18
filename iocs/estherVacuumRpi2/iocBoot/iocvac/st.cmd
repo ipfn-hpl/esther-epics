@@ -1,4 +1,4 @@
-#!../../bin/linux-arm/vac
+#!../../bin/linux-aarch64/vac
 
 #- You may have to change vac to something else
 #- everywhere it appears in this file
@@ -19,8 +19,8 @@ vac_registerRecordDeviceDriver pdbbase
 #dbLoadRecords "db/vacVersion.db", "user=pi"
 #dbLoadRecords "db/dbSubExample.db", "user=pi"
 
-drvAsynSerialPortConfigure("MDBUS", "/dev/tty_modbus", 0, 0, 0)
-asynSetOption("MDBUS",0,"baud","38400")
+drvAsynSerialPortConfigure("MDBUS", "/dev/ttyModbus", 0, 0, 0)
+asynSetOption("MDBUS",0,"baud","19200")
 asynSetOption("MDBUS",0,"parity","even")
 asynSetOption("MDBUS",0,"bits","8")
 asynSetOption("MDBUS",0,"stop","1")
@@ -195,7 +195,6 @@ dbLoadRecords("db/mb-ai.db","P=Esther:MFC-CT,R=FCounter-Limit,PORT=K2_R59416_In_
 drvModbusAsynConfigure("K2_R59416_Out_Word",   "MDBUS",   2, 16, 0xE818,  2,   0,  5000,    "el-flow")
 dbLoadRecords("db/mb-ao.db","P=Esther:MFC-CT,R=FCounter-Limit,HOPR=100.0,PORT=K2_R59416_Out_Word")
 
-dbLoadRecords("db/vacVersion.db","P=Esther:MFC")
 
 #- Set this to see messages from mySub
 #var mySubDebug 1

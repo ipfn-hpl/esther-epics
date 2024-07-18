@@ -1,12 +1,12 @@
 TOP=../..
 include $(TOP)/configure/CONFIG
 #----------------------------------------
-#  ADD MACRO DEFINITIONS BELOW HERE
+#  ADD MACRO DEFINITIONS AFTER THIS LINE
 
-# Install databases, templates & substitutions like this
-DB += vacVersion.db
-#DB += user.substitutions
-
+#----------------------------------------------------
+# Create and install (or just install) into <top>/db
+# databases, templates, substitutions like this
+#DB += xxx.db
 DB += mb-ai.db
 DB += mb-ao.db
 DB += mb-li.db
@@ -23,12 +23,11 @@ DB += mb-reset-mbbi.db
 DB += mb-reset-mbbo.db
 DB += mfc-control.db
 
-#DB += bme680.db
-#DB += bme680.proto
+#----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
-# <anyname>_TEMPLATE = <templatename>
+# <anyname>_template = <templatename>
 
 include $(TOP)/configure/RULES
 #----------------------------------------
-#  ADD EXTRA GNUMAKE RULES BELOW HERE
+#  ADD RULES AFTER THIS LINE
 
