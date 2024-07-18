@@ -9,6 +9,16 @@
 ssh rpi2-gas
 >sudo systemctl status esther-gas-ioc.service
 >exit
+
+ssh rpi4-gas
+>sudo systemctl status esther-mfc-ioc.service
+>exit
+
+ssh galatea
+>sudo systemctl status esther-vacuum-ioc.service
+>sudo systemctl status epics-python-caput.service
+>exit
+
 ssh rpi4-vacuum
 >sudo systemctl status esther-vacuum-ioc.service
 >exit
