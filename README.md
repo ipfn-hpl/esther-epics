@@ -4,7 +4,7 @@
 
 1. Login to PC with esther account
 2. Check if Gas Switchboard is powered
-  * Wait 3 min and check if Rasperry Pi epics IOC are running
+  * Wait 3 min and check if all Epics IOCs are running
 ```bash
 ssh rpi2-gas
 >sudo systemctl status esther-gas-ioc.service
