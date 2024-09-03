@@ -1422,7 +1422,7 @@
     <name>Action Button</name>
     <actions>
       <action type="open_display">
-        <file>gas_set_points.bob</file>
+        <file>GasSetPoints.bob</file>
         <target>tab</target>
         <description>Open SetPoints</description>
       </action>
