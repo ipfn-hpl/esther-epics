@@ -19,11 +19,14 @@ vac_registerRecordDeviceDriver pdbbase
 #dbLoadRecords "db/vacVersion.db", "user=pi"
 #dbLoadRecords "db/dbSubExample.db", "user=pi"
 
-drvAsynSerialPortConfigure("MDBUS", "/dev/ttyModbus", 0, 0, 0)
-asynSetOption("MDBUS",0,"baud","19200")
-asynSetOption("MDBUS",0,"parity","even")
-asynSetOption("MDBUS",0,"bits","8")
-asynSetOption("MDBUS",0,"stop","1")
+#drvAsynSerialPortConfigure("MDBUS", "/dev/ttyModbus", 0, 0, 0)
+#asynSetOption("MDBUS",0,"baud","19200")
+#asynSetOption("MDBUS",0,"parity","even")
+#asynSetOption("MDBUS",0,"bits","8")
+#asynSetOption("MDBUS",0,"stop","1")
+
+# HF5111B 
+drvAsynIPPortConfigure("MDBUS","192.168.0.30:8899",0,0,0)
 
 # modbusInterposeConfig(portName,
 #                      linkType,
@@ -31,7 +34,8 @@ asynSetOption("MDBUS",0,"stop","1")
 #                      writeDelayMsec)
 # Modbus link layer type:, 0 = TCP/IP, 1 = RTU, 2 = ASCII
 
-modbusInterposeConfig("MDBUS",1,1000,5)
+#modbusInterposeConfig("MDBUS",1,1000,5)
+modbusInterposeConfig("MDBUS",0,1000,0)
 # drvModbusAsynConfigure(portName,
 #                       tcpPortName,
 #                       slaveAddress,

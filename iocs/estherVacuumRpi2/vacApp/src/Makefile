@@ -19,6 +19,7 @@ vac_DBD += base.dbd
 #vac_DBD += xxx.dbd
 vac_DBD += asyn.dbd
 vac_DBD += drvAsynSerialPort.dbd
+vac_DBD += drvAsynIPPort.dbd
 vac_DBD += calc.dbd
 vac_DBD += stream.dbd
 vac_DBD += modbusSupport.dbd
