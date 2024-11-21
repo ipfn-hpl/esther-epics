@@ -43,12 +43,12 @@ sudo systemctl status epics-css-archive.service
 ## Web EPICS Displays (Only on CTN Network)
 ### Combustion Chamber Gas Injection System
 (You main need to change IP number, to point to Golem PC)
-* [Valve Display](http://10.10.136.177:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/GasSystem/ValveDisplay.bob)
+* [Valve Display](http://golem.local:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/GasSystem/ValveDisplay.bob)
 
 ### Shock Tube Vacuum System 
 * [Vacuum System Main Display](http://golem.local:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/EstherVacuumMonitor.bob)   
 * [Vacuum States](http://golem.local:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/VacuumStates.bob)
-* [Vacuum Plots](http://10.10.136.177:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/VacuumPlots.bob)
+* [Vacuum Plots](http://golem.local:8080/dbwr/view.jsp?display=https://raw.githubusercontent.com/ipfn-hpl/esther-epics/master/phoebus-display-builder/CSS/VacuumPlots.bob)
 
 ## Dry Pumps Displays - Only on Esther HPL Internal Network
 1. Check Temperatures in Vacuum Dry Pumps GX600L
