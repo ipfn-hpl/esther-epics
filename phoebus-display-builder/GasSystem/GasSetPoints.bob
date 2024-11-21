@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-08-30 16:14:43 by esther-->
+<!--Saved on 2024-11-21 15:28:44 by esther-->
 <display version="2.0.0">
   <name>Gas Control SET POINTS</name>
   <macros>
@@ -233,7 +233,6 @@ Helium II</text>
       <x>161</x>
       <y>20</y>
       <width>36</width>
-      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -296,7 +295,6 @@ Helium II</text>
       <x>384</x>
       <y>20</y>
       <width>42</width>
-      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -521,7 +519,7 @@ He II</text>
   </widget>
   <widget type="picture" version="2.0.0">
     <name>Picture</name>
-    <file>../pics/ESTHER_logo_variant_150x192.png</file>
+    <file>../CSS/pics/ESTHER_logo_variant_150x192.png</file>
     <x>62</x>
     <y>300</y>
     <height>192</height>
@@ -618,7 +616,6 @@ He II</text>
       <text>MFC601- He</text>
       <x>377</x>
       <width>109</width>
-      <height>19</height>
       <font>
         <font family="DejaVu Sans" style="BOLD" size="16.0">
         </font>
@@ -1575,5 +1572,76 @@ STOP</off_label>
     <x>127</x>
     <y>540</y>
     <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>TE_PNumber</name>
+    <pv_name>${unit}:${node}:PulseNumber</pv_name>
+    <x>130</x>
+    <y>570</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Tu_Counter_S1_2</name>
+    <pv_name>=0.001*${unit}:${node}:Counter_S1</pv_name>
+    <x>1198</x>
+    <y>158</y>
+    <width>48</width>
+    <precision>1</precision>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="Visible" prop_id="visible" out_exp="false">
+        <exp bool_exp="if(pv0&gt;1)">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Counter_S1</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LbO218</name>
+    <text>/18</text>
+    <x>1050</x>
+    <y>226</y>
+    <width>30</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LbHe1_15</name>
+    <text>/15</text>
+    <x>1050</x>
+    <y>260</y>
+    <width>30</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LbSt5_10</name>
+    <text>/10</text>
+    <x>1050</x>
+    <y>286</y>
+    <width>30</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LbH2_17</name>
+    <text>/15</text>
+    <x>1050</x>
+    <y>316</y>
+    <width>30</width>
+  </widget>
+  <widget type="progressbar" version="2.0.0">
+    <name>PB_STP7</name>
+    <pv_name>${unit}:${node}:S7_SubStep</pv_name>
+    <x>1094</x>
+    <y>348</y>
+    <width>156</width>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <limits_from_pv>false</limits_from_pv>
+    <maximum>15.0</maximum>
+  </widget>
+  <widget type="progressbar" version="2.0.0">
+    <name>PB_STP6</name>
+    <pv_name>${unit}:${node}:S6_SubStep</pv_name>
+    <x>1094</x>
+    <y>316</y>
+    <width>156</width>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <limits_from_pv>false</limits_from_pv>
+    <maximum>15.0</maximum>
   </widget>
 </display>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2023-04-13 11:54:35 by esther-->
+<!--Saved on 2024-11-21 12:06:20 by esther-->
 <display version="2.0.0">
   <name>ValveDisplay</name>
   <macros>
@@ -2281,5 +2281,52 @@
       <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
       </color>
     </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>GroupHydraulicPress</name>
+    <x>931</x>
+    <y>372</y>
+    <width>251</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_PT-HYDEC-CC-S</name>
+      <pv_name>${unit}:Vacuum:PT-HYDEC-CC-S</pv_name>
+      <x>124</x>
+      <y>45</y>
+      <width>105</width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_PT-HYDEC-CC-N</name>
+      <pv_name>${unit}:Vacuum:PT-HYDEC-CC-N</pv_name>
+      <x>124</x>
+      <y>25</y>
+      <width>105</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lb_CC_Hyd_Pressures</name>
+      <class>Label_1</class>
+      <text>CC Hydraulic Pressures</text>
+      <width>251</width>
+      <height>25</height>
+      <font>
+        <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_T-HYDEC-CC-N_2</name>
+      <text>PT-HYDEC-CC-N</text>
+      <y>45</y>
+      <width>114</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_T-HYDEC-CC-S</name>
+      <text>PT-HYDEC-CC-S</text>
+      <y>25</y>
+      <width>114</width>
+    </widget>
   </widget>
 </display>
