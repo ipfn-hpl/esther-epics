@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-06-07 12:50:15 by esther-->
+<!--Saved on 2024-11-29 10:00:34 by esther-->
 <display version="2.0.0">
   <name>Esther Vacuum</name>
   <macros>
@@ -167,14 +167,14 @@
   <widget type="label" version="2.0.0">
     <name>Label_PT-DT-Static</name>
     <text>PT-DT-Static</text>
-    <x>1094</x>
-    <y>486</y>
+    <x>1099</x>
+    <y>458</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TU_PT-DT-Static</name>
     <pv_name>Esther:Vacuum:PT-DT-Static</pv_name>
-    <x>1055</x>
-    <y>506</y>
+    <x>1060</x>
+    <y>478</y>
     <width>169</width>
     <height>40</height>
     <font>
@@ -322,8 +322,8 @@
     <name>ActButton_VacPlot</name>
     <actions>
       <action type="open_file">
-        <file>Pressure.plt</file>
         <description>Open Vacuum Plot</description>
+        <file>Pressure.plt</file>
       </action>
     </actions>
     <x>1120</x>
@@ -336,9 +336,9 @@
     <name>Action Button_2</name>
     <actions>
       <action type="open_display">
+        <description>Open States</description>
         <file>VacuumStates.bob</file>
         <target>tab</target>
-        <description>Open States</description>
       </action>
     </actions>
     <x>1120</x>
@@ -399,6 +399,29 @@
     <y>121</y>
     <width>114</width>
     <height>29</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="204">
+      </color>
+    </background_color>
+    <format>1</format>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_PT_DT_MIPM50P</name>
+    <text>PT-DT-MIPM50P</text>
+    <x>1089</x>
+    <y>521</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_PT-DT-Static_1</name>
+    <pv_name>Esther:Vacuum:PT-DT_MIPAM50P</pv_name>
+    <x>1050</x>
+    <y>541</y>
+    <width>169</width>
+    <height>40</height>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="20.0">
       </font>
