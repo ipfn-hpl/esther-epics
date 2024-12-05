@@ -1,4 +1,4 @@
-# mbbo record template for register inputs
+# mbbo record template for register outputs
 record(mbbo,"$(P):$(R)") {
     field(DTYP,"asynUInt32Digital")
     field(OUT,"@asynMask($(PORT) $(OFFSET=0) 0xFFFF)")
@@ -33,6 +33,8 @@ record(mbbo,"$(P):$(R)") {
     field(FTVL,"22")
     field(FTST,"Valve safe state")
 
-    field(PINI,"YES")
-    field(VAL,"0")
+    info(autosaveFields, "VAL")
+
+    #field(PINI,"YES")
+    #field(VAL,"0")
 }

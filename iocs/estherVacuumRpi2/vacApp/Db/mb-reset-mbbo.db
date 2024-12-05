@@ -19,6 +19,7 @@ record(mbbo,"$(P):$(R)") {
     field(SXST,"Reset Alarm error bit")
     field(SVVL,"7")
     field(SVST,"Reset Alarm warning bit")
-    field(PINI,"YES")
-    field(VAL,"0")
+    info(autosaveFields, "VAL")
+    #field(PINI,"YES")
+    #field(VAL,"0")
 }

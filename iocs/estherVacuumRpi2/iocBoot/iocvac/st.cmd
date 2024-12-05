@@ -6,6 +6,7 @@
 < envPaths
 
 epicsEnvSet( "STREAM_PROTOCOL_PATH", "$(TOP)/db" )
+epicsEnvSet("SAVE_DIR", "$(TOP)/iocBoot/$(IOC)/save")
 #epicsEnvSet "P" "$(P=Esther)"
 
 cd "${TOP}"
@@ -211,7 +212,28 @@ var streamError 1
 #streamSetLogfile("stream_logfile.txt")
 
 cd "${TOP}/iocBoot/${IOC}"
+
+set_savefile_path("$(SAVE_DIR)")
+set_requestfile_path("$(SAVE_DIR)")
+set_savefile_path("$(SAVE_DIR)")
+set_pass0_restoreFile("$(IOC).sav")
+set_pass1_restoreFile("$(IOC).sav")
+dbLoadRecords("$(AUTOSAVE)/asApp/Db/save_restoreStatus.db", "P=Esther:TestGases")
+
+# Number of sequenced backup files (e.g., 'auto_settings.sav0') to write
+save_restoreSet_NumSeqFiles(3)
+
+# Time interval between sequenced backups
+save_restoreSet_SeqPeriodInSeconds(600)
+
 iocInit
+
+# Handle autosave 'commands' contained in loaded databases.
+makeAutosaveFiles()
+# Do after 'cp info_settings.req save/iocvac.req'
+
+# Start periodic 'save’
+create_monitor_set("$(IOC).req", 30, "P=Esther:TestGases")
 
 ## Start any sequence programs
 #seq sncEstherVacuum, "user=pi,unit=Esther"

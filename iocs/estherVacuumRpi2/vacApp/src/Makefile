@@ -23,6 +23,7 @@ vac_DBD += drvAsynIPPort.dbd
 vac_DBD += calc.dbd
 vac_DBD += stream.dbd
 vac_DBD += modbusSupport.dbd
+vac_DBD += asSupport.dbd
 
 # Add all the support libraries needed by this IOC
 #vac_LIBS += xxx
@@ -30,6 +31,7 @@ vac_LIBS += asyn
 vac_LIBS += calc
 vac_LIBS += stream
 vac_LIBS += modbus
+vac_LIBS += autosave
 
 # vac_registerRecordDeviceDriver.cpp derives from vac.dbd
 vac_SRCS += vac_registerRecordDeviceDriver.cpp
