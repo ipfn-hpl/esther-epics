@@ -36,6 +36,8 @@ record(ai, $(P)EDW:DryPump-ST-Temp){
     field(LLSV,"MAJOR")
     field(LSV, "MINOR")
     field(EGU,  "ºC")
+    field(MDEL, "0.5")
+    field(ADEL, "1.0")
     info(autosaveFields, "HIGH HIHI")
 }
 record(ai, $(P)EDW:DryPump-DT-Temp){
@@ -52,6 +54,8 @@ record(ai, $(P)EDW:DryPump-DT-Temp){
     field(LLSV,"MAJOR")
     field(LSV, "MINOR")
     field(EGU,  "ºC")
+    field(MDEL, "0.5")
+    field(ADEL, "1.0")
     info(autosaveFields, "HIGH HIHI")
 }
 
