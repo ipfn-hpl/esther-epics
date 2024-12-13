@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-12-05 16:10:44 by esther-->
+<!--Saved on 2024-12-10 15:37:15 by esther-->
 <display version="2.0.0">
   <name>TestGas Display</name>
   <macros>
     <node>MFC</node>
     <unit>Esther</unit>
   </macros>
-  <width>660</width>
-  <height>490</height>
+  <width>1320</width>
+  <height>270</height>
   <background_color>
     <color red="128" green="128" blue="128">
     </color>
@@ -68,8 +68,8 @@
       <max_flow>9 mLn /min</max_flow>
     </macros>
     <file>EL-FLOW-MFC-TEST.bob</file>
-    <x>10</x>
-    <y>270</y>
+    <x>670</x>
+    <y>50</y>
     <width>650</width>
     <height>220</height>
     <resize>1</resize>

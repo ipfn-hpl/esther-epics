@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-11-21 12:06:20 by esther-->
+<!--Saved on 2024-12-13 10:12:29 by esther-->
 <display version="2.0.0">
   <name>ValveDisplay</name>
   <macros>
@@ -1422,9 +1422,9 @@
     <name>Action Button</name>
     <actions>
       <action type="open_display">
-        <file>GasSetPoints.bob</file>
+        <description>Open Control / SetPoints</description>
+        <file>Gas-Control-SetPoints.bob</file>
         <target>tab</target>
-        <description>Open SetPoints</description>
       </action>
     </actions>
     <x>1021</x>
