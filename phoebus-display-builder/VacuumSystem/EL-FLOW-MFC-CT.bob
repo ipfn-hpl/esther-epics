@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-06-07 12:29:19 by esther-->
+<!--Saved on 2024-12-17 14:28:33 by esther-->
 <display version="2.0.0">
   <name>MFC El-Flow DT</name>
   <width>470</width>
@@ -174,10 +174,10 @@ $(actions)</tooltip>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Counter-Mode_1</name>
-    <text>Closed</text>
+    <text>Pump</text>
     <x>248</x>
     <y>210</y>
-    <width>44</width>
+    <width>37</width>
     <height>16</height>
     <background_color>
       <color name="Write_Background" red="128" green="255" blue="255">
@@ -189,9 +189,23 @@ $(actions)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Counter-Mode_2</name>
     <text>CT</text>
+    <x>130</x>
+    <y>243</y>
+    <width>19</width>
+    <height>16</height>
+    <background_color>
+      <color name="Write_Background" red="128" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Counter-Mode_3</name>
+    <text>MFC</text>
     <x>80</x>
     <y>210</y>
-    <width>19</width>
+    <width>31</width>
     <height>16</height>
     <background_color>
       <color name="Write_Background" red="128" green="255" blue="255">
