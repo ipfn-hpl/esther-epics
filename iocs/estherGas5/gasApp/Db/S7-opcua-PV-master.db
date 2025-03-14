@@ -1,0 +1,46 @@
+######################################################
+# vim: sta:et:sw=4:ts=4:sts=4                         
+#                                                     #
+#     EPICS Database for                              #
+#     General Tags  OPC-UA S7 PLC control             #
+#     MASTER PT valve commands                        #
+#                                                     #
+#     author: B. Carvalho                             #
+#                                                     #
+#     Ref 1.0; 2025                                   #
+#                                                     #
+#######################################################
+record(bo, "$(P)$(R)Master-Enabled")
+{
+    field(DESC, "S7PLC Gas master control Enable")
+    field(DTYP, "OPCUA")
+# monitor y (default)     /output record gets biderectional
+    field(OUT,  "@$(SUBS) ns=4;i=89 monitor=y")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "$(P)$(R)PV102-Master")
+{
+    field(DESC, "S7 PLC Gas PV102 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=91 monitor=y")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+record(bo, "$(P)$(R)PV201-Master")
+{
+    field(DESC, "S7 PLC Gas PV201 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=92 monitor=y")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+record(bo, "$(P)$(R)PV202-Master")
+{
+    field(DESC, "S7 PLC Gas PV202 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=93 monitor=y")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}

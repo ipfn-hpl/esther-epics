@@ -1,0 +1,67 @@
+######################################################
+#                                                     #
+#     EPICS Database for                              #
+#     General Tags  OAUPC  S7 PLC control             #
+#                                                     #
+#     author: B. Carvalho                             #
+#                                                     #
+#     Ref 1.0; 2025                                   #
+#                                                     #
+#######################################################
+record(ao, "$(P)$(R)PT101-LOW") {
+    field(DESC, "S7 PLC Gas PT101 LOW Alarm")
+    field(DTYP, "OPCUA")
+# monitor y (default)     /output record gets biderectional
+    field(OUT,  "@$(SUBS) ns=4;i=30 monitor=y")
+    field(LOPR, "0.0")
+    field(HOPR, "90.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT201-LOW") {
+    field(DESC, "S7 PLC Gas PT201 LOW Alarm")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=31 monitor=y")
+    field(LOPR, "0.0")
+    field(HOPR, "90.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT301-LOW") {
+    field(DESC, "S7 PLC Gas PT301 LOW Alarm")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=32 monitor=y")
+    field(LOPR, "0.0")
+    field(HOPR, "90.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT401-LOW") {
+    field(DESC, "S7 PLC Gas PT401 LOW Alarm")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=33 monitor=y")
+    field(LOPR, "0.0")
+    field(HOPR, "90.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT501-LOW") {
+    field(DESC, "S7 PLC Gas PT501 LOW Alarm")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=34 monitor=y")
+    field(LOPR, "0.0")
+    field(HOPR, "90.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT801-LOW") {
+    field(DESC, "S7 PLC Gas PT801 LOW Alarm")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=35 monitor=y")
+    field(LOPR, "0.0")
+    field(HOPR, "90.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+
+# vim: sta:et:sw=4:ts=4:sts=4
