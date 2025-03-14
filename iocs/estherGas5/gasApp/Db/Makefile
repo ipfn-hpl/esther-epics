@@ -14,6 +14,7 @@ include $(TOP)/configure/CONFIG
 DB += S7-opcua-PT.db
 DB += S7-opcua-PT-low.db
 DB += S7-opcua-PV-master.db
+DB += S7-opcua-PV.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

@@ -1,5 +1,4 @@
 ######################################################
-# vim: sta:et:sw=4:ts=4:sts=4                         
 #                                                     #
 #     EPICS Database for                              #
 #     General Tags  OPC-UA S7 PLC control             #
@@ -25,22 +24,127 @@ record(bo, "$(P)$(R)PV102-Master")
     field(DESC, "S7 PLC Gas PV102 master control")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=91 monitor=y")
-    field(ZNAM, "OFF")
-    field(ONAM, "ON")
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
 }
 record(bo, "$(P)$(R)PV201-Master")
 {
     field(DESC, "S7 PLC Gas PV201 master control")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=92 monitor=y")
-    field(ZNAM, "OFF")
-    field(ONAM, "ON")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
 }
 record(bo, "$(P)$(R)PV202-Master")
 {
     field(DESC, "S7 PLC Gas PV202 master control")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=93 monitor=y")
-    field(ZNAM, "OFF")
-    field(ONAM, "ON")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
 }
+record(bo, "$(P)$(R)PV203-Master")
+{
+    field(DESC, "S7 PLC Gas PV203 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=94 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV301-Master")
+{
+    field(DESC, "S7 PLC Gas PV301 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=95 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV302-Master")
+{
+    field(DESC, "S7 PLC Gas PV302 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=96 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV303-Master")
+{
+    field(DESC, "S7 PLC Gas PV203 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=97 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV401-Master")
+{
+    field(DESC, "S7 PLC Gas PV401 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=98 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV402-Master")
+{
+    field(DESC, "S7 PLC Gas PV402 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=99 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV403-Master")
+{
+    field(DESC, "S7 PLC Gas PV403 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=100 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV501-Master")
+{
+    field(DESC, "S7 PLC Gas PV501 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=101 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV502-Master")
+{
+    field(DESC, "S7 PLC Gas PV502 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=102 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV503-Master")
+{
+    field(DESC, "S7 PLC Gas PV503 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=103 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV601-Master")
+{
+    field(DESC, "S7 PLC Gas PV601 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=104 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV602-Master")
+{
+    field(DESC, "S7 PLC Gas PV602 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=105 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV603-Master")
+{
+    field(DESC, "S7 PLC Gas PV603 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=106 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+# vim: sta:et:sw=4:ts=4:sts=4                         

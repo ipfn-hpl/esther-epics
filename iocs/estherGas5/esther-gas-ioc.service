@@ -1,0 +1,31 @@
+# https://epics-controls.org/resources-and-support/documents/howto-documents/posix-thread-priority/
+# after changing this run 
+#  sudo systemctl daemon-reload
+# and restart service
+[Unit]
+Description=EPICS Soft IOC ESTHER GAS OPC-UA
+Requires=network.target
+After=network.target
+
+[Service]
+WorkingDirectory=/home/esther/esther-epics/iocs/estherGas5/iocBoot/iocgas
+ExecStart=/usr/bin/procServ --foreground --quiet --port=4051 /home/esther/esther-epics/iocs/estherGas5/iocBoot/iocgas/st.cmd
+Restart=always
+#User=iocuser
+User=esther
+Group=epics
+RuntimeDirectory=estherGas
+#CPUAffinity=1-3
+#LimitMEMLOCK=infinity
+#LimitRTPRIO=99
+#
+# put this file in /etc/systemd/system/
+# and enable service with:
+# sudo systemctl enable esther-vacuum-ioc  
+#
+# Do "telnet localhost 4051" to go to epics console
+# ^] + ^D to exit console
+
+[Install]
+WantedBy=multi-user.target
+

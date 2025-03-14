@@ -1,0 +1,201 @@
+######################################################
+#                                                     #
+#     EPICS Database for                              #
+#     General Tags  OPC-UA S7 PLC control             #
+#     MASTER PT valve Status                          #
+#                                                     #
+#     author: B. Carvalho                             #
+#                                                     #
+#     Ref 1.0; 2025                                   #
+#                                                     #
+#######################################################
+record(bi, "$(P)$(R)PV101")
+{
+    field(DESC, "S7 PLC PV101 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=90")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV102")
+{
+    field(DESC, "S7 PLC PV102 NO")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=91")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
+}
+record(bi, "$(P)$(R)PV201")
+{
+    field(DESC, "S7 PLC PV201 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=92")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV202")
+{
+    field(DESC, "S7 PLC PV202 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=93")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV203")
+{
+    field(DESC, "S7 PLC PV203 NO")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=94")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
+}
+record(bi, "$(P)$(R)PV301")
+{
+    field(DESC, "S7 PLC PV301 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=95")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV302")
+{
+    field(DESC, "S7 PLC PV302 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=96")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV303")
+{
+    field(DESC, "S7 PLC PV303 NO")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=97")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
+}
+record(bi, "$(P)$(R)PV401")
+{
+    field(DESC, "S7 PLC PV401 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=98")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV402")
+{
+    field(DESC, "S7 PLC PV402 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=99")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV403")
+{
+    field(DESC, "S7 PLC PV403 NO")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=100")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
+}
+record(bi, "$(P)$(R)PV501")
+{
+    field(DESC, "S7 PLC PV501 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=101")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV502")
+{
+    field(DESC, "S7 PLC PV502 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=102")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV503")
+{
+    field(DESC, "S7 PLC PV503 NO")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=103")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
+}
+record(bi, "$(P)$(R)PV601")
+{
+    field(DESC, "S7 PLC PV601 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=104")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV602")
+{
+    field(DESC, "S7 PLC PV602 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=105")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV603")
+{
+    field(DESC, "S7 PLC PV603 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=106")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV701")
+{
+    field(DESC, "S7 PLC PV701 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=107")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV702")
+{
+    field(DESC, "S7 PLC PV702 NC")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=108")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bi, "$(P)$(R)PV703A")
+{
+    field(DESC, "S7 PLC PV703A NO")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=109")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
+}
+record(bi, "$(P)$(R)PV703B")
+{
+    field(DESC, "S7 PLC PV703B NO")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=110")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
+}
+# vim: sta:et:sw=4:ts=4:sts=4                         
