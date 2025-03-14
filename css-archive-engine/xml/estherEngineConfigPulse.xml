@@ -185,9 +185,9 @@
          <monitor/>
          <enable/>
       </channel>
+      <!-- 
   </group>
 
-      <!-- 
   <group>
     <name>Esther MFC Flow/Volumes</name>
   </group>
@@ -195,10 +195,14 @@
   <group>
     <name>Esther Saved Pressures</name>
   </group>
-      -->
 
   <group>
     <name>Esther Driver Pressure Transducer (Kistler)</name>
+  </group>
+
+  <group>
+    <name>Esther - MXT Gas Alarms System</name>
+      -->
       <channel>
          <name>Esther:Camera:MRout</name>
          <period>10</period>
@@ -218,10 +222,6 @@
          <period>60</period>
          <monitor/>
       </channel>
-  </group>
-
-  <group>
-    <name>Esther - MXT Gas Alarms System</name>
       <channel>
          <name>Esther:gas:MXT_H2_Central</name>
      <monitor/>
