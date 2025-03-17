@@ -9,7 +9,7 @@
 #     Ref 1.0; 2025                                   #
 #                                                     #
 #######################################################
-record(bo, "$(P)$(R)Master-Enabled")
+record(bo, "$(P)$(R)Master_Enable")
 {
     field(DESC, "S7PLC Gas master control Enable")
     field(DTYP, "OPCUA")
@@ -19,7 +19,15 @@ record(bo, "$(P)$(R)Master-Enabled")
     field(ONAM, "ON")
 }
 
-record(bo, "$(P)$(R)PV102-Master")
+record(bo, "$(P)$(R)PV101_Master")
+{
+    field(DESC, "S7 PLC Gas PV101 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=90 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV102_Master")
 {
     field(DESC, "S7 PLC Gas PV102 master control")
     field(DTYP, "OPCUA")
@@ -27,7 +35,7 @@ record(bo, "$(P)$(R)PV102-Master")
     field(ZNAM, "OPEN")
     field(ONAM, "CLOSED")
 }
-record(bo, "$(P)$(R)PV201-Master")
+record(bo, "$(P)$(R)PV201_Master")
 {
     field(DESC, "S7 PLC Gas PV201 master control")
     field(DTYP, "OPCUA")
@@ -35,7 +43,7 @@ record(bo, "$(P)$(R)PV201-Master")
     field(ZNAM, "CLOSED")
     field(ONAM, "OPEN")    
 }
-record(bo, "$(P)$(R)PV202-Master")
+record(bo, "$(P)$(R)PV202_Master")
 {
     field(DESC, "S7 PLC Gas PV202 master control")
     field(DTYP, "OPCUA")
@@ -43,15 +51,15 @@ record(bo, "$(P)$(R)PV202-Master")
     field(ZNAM, "CLOSED")
     field(ONAM, "OPEN")    
 }
-record(bo, "$(P)$(R)PV203-Master")
+record(bo, "$(P)$(R)PV203_Master")
 {
     field(DESC, "S7 PLC Gas PV203 master control")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=94 monitor=y")
-    field(ZNAM, "CLOSED")
-    field(ONAM, "OPEN")    
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
 }
-record(bo, "$(P)$(R)PV301-Master")
+record(bo, "$(P)$(R)PV301_Master")
 {
     field(DESC, "S7 PLC Gas PV301 master control")
     field(DTYP, "OPCUA")
@@ -59,7 +67,7 @@ record(bo, "$(P)$(R)PV301-Master")
     field(ZNAM, "CLOSED")
     field(ONAM, "OPEN")    
 }
-record(bo, "$(P)$(R)PV302-Master")
+record(bo, "$(P)$(R)PV302_Master")
 {
     field(DESC, "S7 PLC Gas PV302 master control")
     field(DTYP, "OPCUA")
@@ -67,15 +75,15 @@ record(bo, "$(P)$(R)PV302-Master")
     field(ZNAM, "CLOSED")
     field(ONAM, "OPEN")    
 }
-record(bo, "$(P)$(R)PV303-Master")
+record(bo, "$(P)$(R)PV303_Master")
 {
     field(DESC, "S7 PLC Gas PV203 master control")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=97 monitor=y")
-    field(ZNAM, "CLOSED")
-    field(ONAM, "OPEN")    
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
 }
-record(bo, "$(P)$(R)PV401-Master")
+record(bo, "$(P)$(R)PV401_Master")
 {
     field(DESC, "S7 PLC Gas PV401 master control")
     field(DTYP, "OPCUA")
@@ -83,7 +91,7 @@ record(bo, "$(P)$(R)PV401-Master")
     field(ZNAM, "CLOSED")
     field(ONAM, "OPEN")    
 }
-record(bo, "$(P)$(R)PV402-Master")
+record(bo, "$(P)$(R)PV402_Master")
 {
     field(DESC, "S7 PLC Gas PV402 master control")
     field(DTYP, "OPCUA")
@@ -91,15 +99,15 @@ record(bo, "$(P)$(R)PV402-Master")
     field(ZNAM, "CLOSED")
     field(ONAM, "OPEN")    
 }
-record(bo, "$(P)$(R)PV403-Master")
+record(bo, "$(P)$(R)PV403_Master")
 {
     field(DESC, "S7 PLC Gas PV403 master control")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=100 monitor=y")
-    field(ZNAM, "CLOSED")
-    field(ONAM, "OPEN")    
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
 }
-record(bo, "$(P)$(R)PV501-Master")
+record(bo, "$(P)$(R)PV501_Master")
 {
     field(DESC, "S7 PLC Gas PV501 master control")
     field(DTYP, "OPCUA")
@@ -107,7 +115,7 @@ record(bo, "$(P)$(R)PV501-Master")
     field(ZNAM, "CLOSED")
     field(ONAM, "OPEN")    
 }
-record(bo, "$(P)$(R)PV502-Master")
+record(bo, "$(P)$(R)PV502_Master")
 {
     field(DESC, "S7 PLC Gas PV502 master control")
     field(DTYP, "OPCUA")
@@ -115,15 +123,15 @@ record(bo, "$(P)$(R)PV502-Master")
     field(ZNAM, "CLOSED")
     field(ONAM, "OPEN")    
 }
-record(bo, "$(P)$(R)PV503-Master")
+record(bo, "$(P)$(R)PV503_Master")
 {
     field(DESC, "S7 PLC Gas PV503 master control")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=103 monitor=y")
-    field(ZNAM, "CLOSED")
-    field(ONAM, "OPEN")    
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
 }
-record(bo, "$(P)$(R)PV601-Master")
+record(bo, "$(P)$(R)PV601_Master")
 {
     field(DESC, "S7 PLC Gas PV601 master control")
     field(DTYP, "OPCUA")
@@ -131,7 +139,7 @@ record(bo, "$(P)$(R)PV601-Master")
     field(ZNAM, "CLOSED")
     field(ONAM, "OPEN")    
 }
-record(bo, "$(P)$(R)PV602-Master")
+record(bo, "$(P)$(R)PV602_Master")
 {
     field(DESC, "S7 PLC Gas PV602 master control")
     field(DTYP, "OPCUA")
@@ -139,12 +147,44 @@ record(bo, "$(P)$(R)PV602-Master")
     field(ZNAM, "CLOSED")
     field(ONAM, "OPEN")    
 }
-record(bo, "$(P)$(R)PV603-Master")
+record(bo, "$(P)$(R)PV603_Master")
 {
     field(DESC, "S7 PLC Gas PV603 master control")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=106 monitor=y")
     field(ZNAM, "CLOSED")
     field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV701_Master")
+{
+    field(DESC, "S7 PLC Gas PV701 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=107 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV702_Master")
+{
+    field(DESC, "S7 PLC Gas PV702 master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=108 monitor=y")
+    field(ZNAM, "CLOSED")
+    field(ONAM, "OPEN")    
+}
+record(bo, "$(P)$(R)PV703A_Master")
+{
+    field(DESC, "S7 PLC Gas PV703A master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=109 monitor=y")
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
+}
+record(bo, "$(P)$(R)PV703B_Master")
+{
+    field(DESC, "S7 PLC Gas PV703B master control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=110 monitor=y")
+    field(ZNAM, "OPEN")
+    field(ONAM, "CLOSED")
 }
 # vim: sta:et:sw=4:ts=4:sts=4                         

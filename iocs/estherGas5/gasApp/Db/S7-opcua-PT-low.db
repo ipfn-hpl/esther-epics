@@ -8,7 +8,7 @@
 #     Ref 1.0; 2025                                   #
 #                                                     #
 #######################################################
-record(ao, "$(P)$(R)PT101-LOW") {
+record(ao, "$(P)$(R)PT101_LOW") {
     field(DESC, "S7 PLC Gas PT101 LOW Alarm")
     field(DTYP, "OPCUA")
 # monitor y (default)     /output record gets biderectional
@@ -18,7 +18,7 @@ record(ao, "$(P)$(R)PT101-LOW") {
     field(EGU, "Bar")
     field(PREC, "2")
 }
-record(ao, "$(P)$(R)PT201-LOW") {
+record(ao, "$(P)$(R)PT201_LOW") {
     field(DESC, "S7 PLC Gas PT201 LOW Alarm")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=31 monitor=y")
@@ -27,7 +27,7 @@ record(ao, "$(P)$(R)PT201-LOW") {
     field(EGU, "Bar")
     field(PREC, "2")
 }
-record(ao, "$(P)$(R)PT301-LOW") {
+record(ao, "$(P)$(R)PT301_LOW") {
     field(DESC, "S7 PLC Gas PT301 LOW Alarm")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=32 monitor=y")
@@ -36,7 +36,7 @@ record(ao, "$(P)$(R)PT301-LOW") {
     field(EGU, "Bar")
     field(PREC, "2")
 }
-record(ao, "$(P)$(R)PT401-LOW") {
+record(ao, "$(P)$(R)PT401_LOW") {
     field(DESC, "S7 PLC Gas PT401 LOW Alarm")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=33 monitor=y")
@@ -45,7 +45,7 @@ record(ao, "$(P)$(R)PT401-LOW") {
     field(EGU, "Bar")
     field(PREC, "2")
 }
-record(ao, "$(P)$(R)PT501-LOW") {
+record(ao, "$(P)$(R)PT501_LOW") {
     field(DESC, "S7 PLC Gas PT501 LOW Alarm")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=34 monitor=y")
@@ -54,7 +54,7 @@ record(ao, "$(P)$(R)PT501-LOW") {
     field(EGU, "Bar")
     field(PREC, "2")
 }
-record(ao, "$(P)$(R)PT801-LOW") {
+record(ao, "$(P)$(R)PT801_LOW") {
     field(DESC, "S7 PLC Gas PT801 LOW Alarm")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=35 monitor=y")

@@ -1,0 +1,147 @@
+#######################################################
+#                                                     #
+#     EPICS Database for                              #
+#     General Tags OPC-UA S7 PLC control              #
+#                                                     #
+#     author: B. Carvalho                             #
+#                                                     #
+#     Ref 1.0; 2025                                   #
+#                                                     #
+#######################################################
+record(ai,"$(P)$(R)MFC201_FLOW")
+{
+    field(DESC, "S7 MFC201 O2 FLOW Measure")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=47")
+    field(SCAN, "I/O Intr")
+    field(HOPR, "2.5")
+    field(LOPR, "0.0")
+    field(HIGH, "1.95")
+    field(HIHI, "2.10")
+    field(HSV, "MINOR")
+    field(HHSV, "MAJOR")
+    field(EGU, "m3n/h")
+    field(PREC, "2")
+    field(ADEL, "0.05")
+}
+record(ai,"$(P)$(R)MFC201_TEMP")
+{
+    field(DESC, "S7 MFC201 O2 Temperature Measure")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=50")
+    field(SCAN, "I/O Intr")
+    field(HOPR, "50.0")
+    field(LOPR, "0.0")
+    field(EGU, "C")
+    field(PREC, "2")
+    field(ADEL, "0.05")
+}
+record(ai,"$(P)$(R)MFC201_MEAS_VOL")
+{
+    field(DESC, "S7 MFC201 O2 Volume Measure")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=54")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0.0")
+    field(HOPR, "6000.0")
+    field(HIGH, "600")
+    field(HIHI, "3000.0")
+    field(HSV, "MINOR")
+    field(HHSV, "MAJOR")
+    field(EGU, "ln")
+    field(PREC, "2")
+    field(ADEL, "0.05")
+}
+record(ai,"$(P)$(R)MFC201_END_VOL")
+{
+    field(DESC, "S7 MFC201 O2 S3 END Volume")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=56")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0.0")
+    field(HOPR, "6000.0")
+    field(HIGH, "600")
+    field(HIHI, "3000.0")
+    field(HSV, "MINOR")
+    field(HHSV, "MAJOR")
+    field(EGU, "ln")
+    field(PREC, "2")
+    field(ADEL, "0.05")
+}
+record(ai,"$(P)$(R)MFC601_FLOW")
+{
+    field(DESC, "S7 MFC601 He FLOW Measure")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=49")
+    field(SCAN, "I/O Intr")
+    field(HOPR, "60.0")
+    field(LOPR, "0.0")
+#        field(HIGH, ".45")
+#        field(HIHI, "0.50")
+    field(EGU, "ln/min")
+    field(HSV, "MINOR")
+    field(HHSV, "MAJOR")
+    field(PREC, "1")
+    field(ADEL, "0.05")
+}
+record(ai,"$(P)$(R)MFC601_TEMP")
+{
+    field(DESC, "S7 MFC601 Temperature Measure")    
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=52")
+    field(SCAN, "I/O Intr")
+    field(HOPR, "50.0")
+    field(LOPR, "0.0")
+    field(EGU, "C")
+    field(PREC, "2")
+    field(ADEL, "0.05")
+}
+record(ai,"$(P)$(R)MFC601_MEAS_VOL")
+{
+    field(DESC, "S7 MFC601 He Volume Measure")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=55")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0.0")
+    field(HOPR, "10000.0")
+    field(HIGH, "5000.0")
+    field(HIHI, "6000.0")
+    field(HSV, "MINOR")
+    field(HHSV, "MAJOR")
+    field(EGU, "ln")
+    field(PREC, "2")
+    field(ADEL, "0.05")
+}
+record(ai,"$(P)$(R)MFC601_END_HE1_VOL")
+{
+    field(DESC, "S7 MFC601 He1 END Volume")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=57")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0.0")
+    field(HOPR, "6000.0")
+    field(HIGH, "600")
+    field(HIHI, "3000.0")
+    field(HSV, "MINOR")
+    field(HHSV, "MAJOR")
+    field(EGU, "ln")
+    field(PREC, "2")
+    field(ADEL, "0.05")
+}
+record(ai,"$(P)$(R)MFC601_END_HE2_VOL")
+{
+    field(DESC, "S7 MFC601 He2 END Volume")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=112")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0.0")
+    field(HOPR, "6000.0")
+    field(HIGH, "600")
+    field(HIHI, "3000.0")
+    field(HSV, "MINOR")
+    field(HHSV, "MAJOR")
+    field(EGU, "ln")
+    field(PREC, "2")
+    field(ADEL, "0.05")
+}
+# vim: sta:et:sw=4:ts=4:sts=4
