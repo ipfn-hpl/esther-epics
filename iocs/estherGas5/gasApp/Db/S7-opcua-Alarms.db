@@ -1,0 +1,193 @@
+######################################################
+#                                                     #
+#     EPICS Database for                              #
+#     General Tags  OAUPC  S7 PLC control             #
+#                                                     #
+#     author: B. Carvalho                             #
+#                                                     #
+#     Ref 1.0; 2025                                   #
+#                                                     #
+#######################################################
+record(bi, "$(P)$(R)PT101-Alarm")
+{
+    field(DESC, "S7 PLC PT101 Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=127")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(bi, "$(P)$(R)PT102-Alarm")
+{
+    field(DESC, "S7 PLC PT102 Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=128")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(bi, "$(P)$(R)PT201-Alarm")
+{
+    field(DESC, "S7 PLC PT201 Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=129")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(bi, "$(P)$(R)PT202-Alarm")
+{
+    field(DESC, "S7 PLC PT202 Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=130")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(bi, "$(P)$(R)PT301-Alarm")
+{
+    field(DESC, "S7 PLC PT301 Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=131")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(bi, "$(P)$(R)PT302-Alarm")
+{
+    field(DESC, "S7 PLC PT302 Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=128")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(bi, "$(P)$(R)PT401-Alarm")
+{
+    field(DESC, "S7 PLC PT401 Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=133")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(bi, "$(P)$(R)PT402-Alarm")
+{
+    field(DESC, "S7 PLC PT402 Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=134")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(bi, "$(P)$(R)PT501-Alarm")
+{
+    field(DESC, "S7 PLC PT501 Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=135")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(bi, "$(P)$(R)PT502-Alarm")
+{
+    field(DESC, "S7 PLC PT502 Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=136")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(bi, "$(P)$(R)PT601-Alarm")
+{
+    field(DESC, "S7 PLC PT601 Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=137")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(bi, "$(P)$(R)PT801-Alarm")
+{
+    field(DESC, "S7 PLC PT801 Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=138")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(bi, "$(P)$(R)PT901-Alarm")
+{
+    field(DESC, "S7 PLC PT901 Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=139")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(bi, "$(P)$(R)DOORS-Alarm")
+{
+    field(DESC, "S7 PLC DOORS Open Alarm")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=139")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
+record(ao, "$(P)$(R)PT101_LOW") {
+    field(DESC, "S7 PLC Gas PT101 LOW Alarm")
+    field(DTYP, "OPCUA")
+# monitor y (default)     /output record gets biderectional
+    field(OUT,  "@$(SUBS) ns=4;i=30 monitor=y")
+    field(LOPR, "0.0")
+    field(HOPR, "90.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT201_LOW") {
+    field(DESC, "S7 PLC Gas PT201 LOW Alarm")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=31 monitor=y")
+    field(LOPR, "0.0")
+    field(HOPR, "90.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT301_LOW") {
+    field(DESC, "S7 PLC Gas PT301 LOW Alarm")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=32 monitor=y")
+    field(LOPR, "0.0")
+    field(HOPR, "90.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT401_LOW") {
+    field(DESC, "S7 PLC Gas PT401 LOW Alarm")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=33 monitor=y")
+    field(LOPR, "0.0")
+    field(HOPR, "90.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT501_LOW") {
+    field(DESC, "S7 PLC Gas PT501 LOW Alarm")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=34 monitor=y")
+    field(LOPR, "0.0")
+    field(HOPR, "90.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT801_LOW") {
+    field(DESC, "S7 PLC Gas PT801 LOW Alarm")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=35 monitor=y")
+    field(LOPR, "0.0")
+    field(HOPR, "90.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+
+# vim: sta:et:sw=4:ts=4:sts=4

@@ -12,11 +12,12 @@ include $(TOP)/configure/CONFIG
 # databases, templates, substitutions like this
 #DB += xxx.db
 DB += S7-opcua-PT.db
-DB += S7-opcua-PT-low.db
+DB += S7-opcua-Alarms.db
 DB += S7-opcua-PT-sp.db
 DB += S7-opcua-PV-master.db
 DB += S7-opcua-PV.db
 DB += S7-opcua-MFC.db
+DB += S7-opcua-Control.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

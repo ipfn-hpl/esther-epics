@@ -28,11 +28,12 @@ opcuaOptions OPC2 sec-mode=None
 
 ## Load record instances
 dbLoadRecords("db/S7-opcua-PT.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB2")
-dbLoadRecords("db/S7-opcua-PT-low.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
+dbLoadRecords("db/S7-opcua-Alarms.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
 dbLoadRecords("db/S7-opcua-PT-sp.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
 dbLoadRecords("db/S7-opcua-PV.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
 dbLoadRecords("db/S7-opcua-PV-master.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
 dbLoadRecords("db/S7-opcua-MFC.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
+dbLoadRecords("db/S7-opcua-Control.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
 
 # dbLoadRecords("db/gas.db","user=esther")
 

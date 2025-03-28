@@ -1,0 +1,120 @@
+######################################################
+#                                                     #
+#     EPICS Database for                              #
+#     General Tags  OAUPC  S7 PLC control             #
+#                                                     #
+#     author: B. Carvalho                             #
+#                                                     #
+#     Ref 1.0; 2025                                   #
+#                                                     #
+#######################################################
+record(bo, "$(P)$(R)CONTROL-ON")
+{
+    field(DESC, "S7PLC Gas ABORT Control")
+    field(DTYP, "OPCUA")
+# monitor y (default)     /output record gets biderectional
+    field(OUT,  "@$(SUBS) ns=4;i=113 monitor=y")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+record(bo, "$(P)$(R)ABORT")
+{
+    field(DESC, "S7PLC Gas ABORT Control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=29 monitor=y")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+record(bo, "$(P)$(R)ALARM-CLEAR")
+{
+    field(DESC, "S7PLC Gas Alarm Clear")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=115 monitor=y")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+record(bo, "$(P)$(R)STEP-START")
+{
+    field(DESC, "S7PLC Gas STEP Start Control")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=118 monitor=y")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+record(longin, "$(P)$(R)MAIN-STEP") {
+    field(DESC, "S7 PLC Gas Control M Step")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=116")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0")
+    field(HOPR, "100")
+#    field(HIHI, "135.0")
+#    field(HHSV, "MAJOR")
+    field(HIGH, "99")
+    field(HSV, "MINOR")
+}
+record(longin, "$(P)$(R)SA-STEP") {
+    field(DESC, "S7 PLC Gas Control S0 SubStep")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=119")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0")
+    field(HOPR, "100")
+}
+record(longin, "$(P)$(R)S0-STEP") {
+    field(DESC, "S7 PLC Gas Control S0 SubStep")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=120")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0")
+    field(HOPR, "100")
+}
+record(longin, "$(P)$(R)S1-STEP") {
+    field(DESC, "S7 PLC Gas Control S1 SubStep")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=121")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0")
+    field(HOPR, "100")
+}
+record(longin, "$(P)$(R)S3-STEP") {
+    field(DESC, "S7 PLC Gas Control S3 SubStep")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=122")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0")
+    field(HOPR, "100")
+}
+record(longin, "$(P)$(R)S4-STEP") {
+    field(DESC, "S7 PLC Gas Control S4 SubStep")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=123")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0")
+    field(HOPR, "100")
+}
+record(longin, "$(P)$(R)S5-STEP") {
+    field(DESC, "S7 PLC Gas Control S5 SubStep")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=124")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0")
+    field(HOPR, "100")
+}
+record(longin, "$(P)$(R)S6-STEP") {
+    field(DESC, "S7 PLC Gas Control S6 SubStep")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=125")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0")
+    field(HOPR, "100")
+}
+record(longin, "$(P)$(R)S7-STEP") {
+    field(DESC, "S7 PLC Gas Control S7 SubStep")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=126")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0")
+    field(HOPR, "100")
+}
+# vim: sta:et:sw=4:ts=4:sts=4
