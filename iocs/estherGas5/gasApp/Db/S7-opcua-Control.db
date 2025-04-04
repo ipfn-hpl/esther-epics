@@ -61,18 +61,18 @@ record(longin, "$(P)$(R)SA-STEP") {
     field(LOPR, "0")
     field(HOPR, "100")
 }
-record(longin, "$(P)$(R)S0-STEP") {
-    field(DESC, "S7 PLC Gas Control S0 SubStep")
-    field(DTYP, "OPCUA")
-    field(INP,  "@$(SUBS) ns=4;i=120")
-    field(SCAN, "I/O Intr")
-    field(LOPR, "0")
-    field(HOPR, "100")
-}
 record(longin, "$(P)$(R)S1-STEP") {
     field(DESC, "S7 PLC Gas Control S1 SubStep")
     field(DTYP, "OPCUA")
     field(INP,  "@$(SUBS) ns=4;i=121")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0")
+    field(HOPR, "100")
+}
+record(longin, "$(P)$(R)S2-STEP") {
+    field(DESC, "S7 PLC Gas Control S2 SubStep")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=142")
     field(SCAN, "I/O Intr")
     field(LOPR, "0")
     field(HOPR, "100")

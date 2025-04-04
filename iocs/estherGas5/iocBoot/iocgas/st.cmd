@@ -8,6 +8,8 @@
 #- everywhere it appears in this file
 
 < envPaths
+epicsEnvSet("STREAM_PROTOCOL_PATH", "$(TOP)/db")
+
 
 cd "${TOP}"
 
@@ -37,6 +39,9 @@ dbLoadRecords("db/S7-opcua-Control.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
 
 # dbLoadRecords("db/gas.db","user=esther")
 
+# NA111 Ethernet <->RS485
+drvAsynIPPortConfigure("LAN","192.168.0.31:8887",0,0,0)
+dbLoadRecords("db/nWRG.db", "P=Esther:,R=Gas-Opc:,PORT=LAN,A=0")
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit

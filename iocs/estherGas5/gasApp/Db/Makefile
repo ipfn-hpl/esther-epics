@@ -18,6 +18,8 @@ DB += S7-opcua-PV-master.db
 DB += S7-opcua-PV.db
 DB += S7-opcua-MFC.db
 DB += S7-opcua-Control.db
+DB += nWRG.db
+DB += nWRG.proto
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

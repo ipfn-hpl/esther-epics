@@ -8,7 +8,7 @@
 #     Ref 1.0; 2025                                   #
 #                                                     #
 #######################################################
-record(ao, "$(P)$(R)PT901_SP_FLUSH") {
+record(ao, "$(P)$(R)PT901-SP-Flush") {
     field(DESC, "S7 PLC Gas PT901 SP Flush")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=37 monitor=n")
@@ -18,12 +18,48 @@ record(ao, "$(P)$(R)PT901_SP_FLUSH") {
     field(PREC, "2")
 }
 
-record(ao, "$(P)$(R)PT901_FLUSH_ZERO") {
+record(ao, "$(P)$(R)PT901-Flush-Zero") {
     field(DESC, "S7 PLC Gas PT901 Flush Zero Check")
     field(DTYP, "OPCUA")
     field(OUT,  "@$(SUBS) ns=4;i=36 monitor=n")
     field(LOPR, "0.0")
     field(HOPR, "2.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT901-SP-O2") {
+    field(DESC, "S7 PLC Gas PT901 SP O2")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=38 monitor=n")
+    field(LOPR, "0.0")
+    field(HOPR, "15.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT901-SP-He1") {
+    field(DESC, "S7 PLC Gas PT901 SP He1")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=39 monitor=n")
+    field(LOPR, "0.0")
+    field(HOPR, "15.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT901-SP-H2") {
+    field(DESC, "S7 PLC Gas PT901 SP H2")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=40 monitor=n")
+    field(LOPR, "0.0")
+    field(HOPR, "15.0")
+    field(EGU, "Bar")
+    field(PREC, "2")
+}
+record(ao, "$(P)$(R)PT901-SP-He2") {
+    field(DESC, "S7 PLC Gas PT901 SP He2")
+    field(DTYP, "OPCUA")
+    field(OUT,  "@$(SUBS) ns=4;i=41 monitor=n")
+    field(LOPR, "0.0")
+    field(HOPR, "15.0")
     field(EGU, "Bar")
     field(PREC, "2")
 }

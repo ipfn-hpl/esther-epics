@@ -1,0 +1,31 @@
+######################################################
+#                                                     #
+#     EPICS Database for                              #
+#     General Tags OPC-UA S7 PLC control              #
+#                                                     #
+#     author: B. Carvalho                             #
+#                                                     #
+#     Ref 1.0; 2025                                   #
+#                                                     #
+#######################################################
+record(ai, "$(P)$(R)Pressure-WRG-2") {
+    field(DESC, "nWRG Pressure Sensor")
+    field(DTYP, "stream")
+    field(INP, "@nWRG.proto readPressure(2) $(PORT) $(A)")
+    field(SCAN, "2 second")
+    field(EGU, "mBar")
+    field(PREC, "3")
+}
+record(ai, "$(P)$(R)Hours-WRG-2") {
+    field(DESC, "nWRG Sensor Hours")
+    field(DTYP, "stream")
+    field(INP, "@nWRG.proto readHours(2) $(PORT) $(A)")
+#    field(SCAN, "2 second")
+}
+record(ai, "$(P)$(R)Temperature-WRG-2") {
+    field(DESC, "nWRG Sensor Temperature")
+    field(DTYP, "stream")
+    field(INP, "@nWRG.proto readTemperature(2) $(PORT) $(A)")
+    field(SCAN, "2 second")
+}
+# vim: sta:et:sw=4:ts=4:sts=4

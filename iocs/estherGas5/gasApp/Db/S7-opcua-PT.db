@@ -219,4 +219,54 @@ record(ai, "$(P)$(R)PT901") {
     field(EGU, "Bar")
     field(PREC, "2")
 }
+record(ai, "$(P)$(R)PT901-End-Flush") {
+    field(DESC, "S7 Gas PT901 Flush End")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=42")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0.0")
+    field(HOPR, "10.0")
+    field(EGU, "Bar")
+    field(PREC, "3")
+}
+record(ai, "$(P)$(R)PT901-End-O2") {
+    field(DESC, "S7 PLC Gas PT901 End O2")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=43")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0.0")
+    field(HOPR, "30.0")
+    field(EGU, "Bar")
+    field(PREC, "3")
+}
+record(ai, "$(P)$(R)PT901-End-He1") {
+    field(DESC, "S7 PLC Gas PT901 End He1")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=44")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0.0")
+    field(HOPR, "30.0")
+    field(EGU, "Bar")
+    field(PREC, "3")
+}
+record(ai, "$(P)$(R)PT901-End-H2") {
+    field(DESC, "S7 PLC Gas PT901 End H2")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=45")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0.0")
+    field(HOPR, "100.0")
+    field(EGU, "Bar")
+    field(PREC, "3")
+}
+record(ai, "$(P)$(R)PT901-End-He2") {
+    field(DESC, "S7 PLC Gas PT901 End He2")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=46")
+    field(SCAN, "I/O Intr")
+    field(LOPR, "0.0")
+    field(HOPR, "110.0")
+    field(EGU, "Bar")
+    field(PREC, "3")
+}
 # vim: sta:et:sw=4:ts=4:sts=4

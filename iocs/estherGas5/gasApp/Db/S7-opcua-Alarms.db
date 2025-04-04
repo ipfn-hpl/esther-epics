@@ -8,6 +8,15 @@
 #     Ref 1.0; 2025                                   #
 #                                                     #
 #######################################################
+record(bi, "$(P)$(R)Alarm-ON")
+{
+    field(DESC, "S7 PLC Alarm State")
+    field(DTYP, "OPCUA")
+    field(INP,  "@$(SUBS) ns=4;i=114")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")    
+}
 record(bi, "$(P)$(R)PT101-Alarm")
 {
     field(DESC, "S7 PLC PT101 Alarm")
