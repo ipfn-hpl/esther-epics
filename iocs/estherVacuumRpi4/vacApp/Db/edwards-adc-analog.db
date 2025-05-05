@@ -41,20 +41,20 @@ record(calc, $(P)$(R)Enabled){
 #    field (SCAN, "I/O Intr")
 # field(FLNK, "$(P)$(R)02:ReadSetpoint")
 #}
-record(ai, $(P)$(R)CTST-Voltage) {
-    field(DESC, "Reads the measured CTST Pres Volt")
-    field(DTYP, "stream")
-    field(INP, "@edwards-adc-analog.proto readVoltage1 $(BUS)")
-    field(EGU, "Volt")
-    field (SCAN, "I/O Intr")
-    field(FLNK, "$(P)$(R)CTST-Pressure")
-}
-record(calc, $(P)$(R)CTST-Pressure) {
-    field(DESC, "Calcs CTST Pressure")
-    field(INPA, "$(P)$(R)CTST-Voltage")
-    field(CALC, "10.0**(A*3.0 - 12.0)" )
-    field(EGU, "mBar")
-}
+#record(ai, $(P)$(R)CTST-Voltage) {
+#    field(DESC, "Reads the measured CTST Pres Volt")
+#    field(DTYP, "stream")
+#    field(INP, "@edwards-adc-analog.proto readVoltage1 $(BUS)")
+#    field(EGU, "Volt")
+#    field (SCAN, "I/O Intr")
+#    field(FLNK, "$(P)$(R)CTST-Pressure")
+#}
+#record(calc, $(P)$(R)CTST-Pressure) {
+#    field(DESC, "Calcs CTST Pressure")
+#    field(INPA, "$(P)$(R)CTST-Voltage")
+#    field(CALC, "10.0**(A*3.0 - 12.0)" )
+#    field(EGU, "mBar")
+#}
 record(ai, $(P)$(R)STDT-Voltage) {
     field(DESC, "Reads the measured STDT Pres Volt")
     field(DTYP, "stream")

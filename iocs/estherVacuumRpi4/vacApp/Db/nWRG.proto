@@ -1,0 +1,23 @@
+Terminator   = CR;
+# Terminator = CR LF;
+#ReplyTimeout = 2000;
+#ReadTimeout  = 300;
+MaxInput     = 40;
+#ExtraInput   = Error;
+# ExtraInput   = Ignore;
+
+readPressure {
+  out "#0\$1:00?V752";
+  in  "#00:0\$1=V752%E;%*x";
+}
+readStatus {
+  in  "#00:0\$1=V752%*E;%x";
+}
+readHours {
+  out "#0\$1:00?S769";
+  in  "#00:0\$1=S769%E";
+}
+readTemperature {
+  out "#0\$1:00?V759";
+  in  "#00:0\$1=V759%E";
+}

@@ -28,6 +28,9 @@ DB += esther-states.db
 DB += S7-opcua.db
 DB += S7-opcua-hva.db
 DB += S7-opcua-eda.db
+DB += nWRG.db
+DB += nWRG.proto
+
 
 #DB += bme680.db
 #DB += bme680.proto
