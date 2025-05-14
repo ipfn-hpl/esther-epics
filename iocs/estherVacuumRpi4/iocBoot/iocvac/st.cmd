@@ -89,20 +89,20 @@ dbLoadRecords("db/edwards-scu800.db", "P=Esther:,R=EDW:,BUS=RS485")
 dbLoadRecords("db/edwards-gx-temp.db", "P=Esther:")
 
 ## EDWARDS ADC Vacuum Monitor
-drvAsynSerialPortConfigure("RS232E1","/dev/tty_edwards")
+#drvAsynSerialPortConfigure("RS232E1","/dev/tty_edwards")
 
 # drvAsynSerialPortConfigure("RS232E1","/dev/edwardsADC")
 # drvAsynSerialPortConfigure("RS232E1","/dev/ttyAMA0")
 # On Raspberry Pi4 primary UART
 # drvAsynSerialPortConfigure("RS232E1","/dev/ttyS0")
-asynSetOption("RS232E1", 0, "baud", "115200")
-asynSetOption("RS232E1", 0, "bits", "8")
-asynSetOption("RS232E1", 0, "parity", "none")
-asynSetOption("RS232E1", 0, "stop", "1")
+#asynSetOption("RS232E1", 0, "baud", "115200")
+#asynSetOption("RS232E1", 0, "bits", "8")
+#asynSetOption("RS232E1", 0, "parity", "none")
+#asynSetOption("RS232E1", 0, "stop", "1")
 ##asynSetOption("RS232E1", 0, "clocal", "Y")
-asynSetOption("RS232E1", 0, "crtscts", "N")
+# asynSetOption("RS232E1", 0, "crtscts", "N")
 # dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
-dbLoadRecords("db/edwards-adc-analog.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
+# dbLoadRecords("db/edwards-adc-analog.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
 
 #drvAsynSerialPortConfigure("RS232INF","/dev/tty_inficom")
 #asynSetOption("RS232A1", 0, "baud", "19200")

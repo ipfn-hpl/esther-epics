@@ -16,6 +16,48 @@
 #    field(EGU, "mBar")
 #    field(PREC, "3")
 #}
+##################################################
+# Disables Instrument reading    Not used        #
+##################################################
+record(bo, $(P)$(R)Disable){
+    field(DESC, "Disable ADC Instrument SCAN")
+    field(ZNAM, "ENABLED")
+    field(ONAM, "DISABLED")
+    field(VAL, "0")
+#    field(FLNK, "$(P)$(R)Enabled")
+}
+# nWRG Address 1
+record(ai, "$(P)$(R)STDT-Pressure"){
+    field(DESC, "Reads the nWRG STDT Pressure")
+    field(DTYP, "stream")
+    field(INP, "@nWRG.proto readPressure(1) $(PORT) $(A)")
+    field(HIGH, "1.2e3")
+    field(HSV, "MINOR")
+    field(HIHI, "1.3e3")
+    field(HHSV, "MINOR")
+    field(PREC, "3")
+    field(SCAN, "2 second")
+    field(FLNK, "$(P)$(R)CTST-Pressure")
+}
+record(mbbiDirect, "$(P)$(R)WRG-1-Status") {
+    field(DESC, "nWRG Sensor Status")
+    field(DTYP, "stream")
+    field(INP, "@nWRG.proto readStatus(1) $(PORT) $(A)")
+    field(SCAN, "I/O Intr")
+}
+record(ai, "$(P)$(R)WRG-1-Hours") {
+    field(DESC, "nWRG Sensor Hours")
+    field(DTYP, "stream")
+    field(INP, "@nWRG.proto readHours(1) $(PORT) $(A)")
+#    field(SCAN, "2 second")
+}
+record(ai, "$(P)$(R)STDT-nWRG-Temperature") {
+    field(DESC, "STDT nWRG Temperature")
+    field(DTYP, "stream")
+    field(INP, "@nWRG.proto readTemperature(1) $(PORT) $(A)")
+    field(SCAN, "10 second")
+    field(FLNK, "$(P)$(R)CTST-nWRG-Temperature")
+}
 # nWRG Address 2
 record(ai, $(P)$(R)CTST-Pressure){
     field(DESC, "Reads the nWRG CTST Pressure")
@@ -26,7 +68,7 @@ record(ai, $(P)$(R)CTST-Pressure){
     field(HIHI, "1.3e3")
     field(HHSV, "MINOR")
     field(PREC, "3")
-    field(SCAN, "2 second")
+#    field(SCAN, "2 second")
     #field(SDIS, "$(P)$(R)Disable")
 #    field(DISA, "1")
 }
@@ -46,6 +88,6 @@ record(ai, "$(P)$(R)CTST-nWRG-Temperature") {
     field(DESC, "CTST nWRG Temperature")
     field(DTYP, "stream")
     field(INP, "@nWRG.proto readTemperature(2) $(PORT) $(A)")
-    field(SCAN, "10 second")
+#    field(SCAN, "10 second")
 }
 # vim: sta:et:sw=4:ts=4:sts=4
