@@ -21,27 +21,26 @@ gas_registerRecordDeviceDriver pdbbase
 opcuaSession OPC1 opc.tcp://192.168.0.2:4840
 opcuaSubscription OPC_SUB1 OPC1 200
 
-opcuaSession OPC2 opc.tcp://192.168.0.2:4840
-opcuaSubscription OPC_SUB2 OPC2 100
+#opcuaSession OPC2 opc.tcp://192.168.0.2:4840
+#opcuaSubscription OPC_SUB2 OPC2 100
 
 # Switch off security
 opcuaOptions OPC1 sec-mode=None
-opcuaOptions OPC2 sec-mode=None
+#opcuaOptions OPC2 sec-mode=None
 
 ## Load record instances
-dbLoadRecords("db/S7-opcua-PT.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB2")
-dbLoadRecords("db/S7-opcua-Alarms.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
-dbLoadRecords("db/S7-opcua-PT-sp.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
-dbLoadRecords("db/S7-opcua-PV.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
-dbLoadRecords("db/S7-opcua-PV-master.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
-dbLoadRecords("db/S7-opcua-MFC.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
-dbLoadRecords("db/S7-opcua-Control.db", "P=Esther:,R=Gas-Opc:,SUBS=OPC_SUB1")
-
-# dbLoadRecords("db/gas.db","user=esther")
+dbLoadRecords("db/S7-opcua-PT.db", "P=Esther:,R=gas:,SUBS=OPC_SUB1")
+dbLoadRecords("db/S7-opcua-Alarms.db", "P=Esther:,R=gas:,SUBS=OPC_SUB1")
+dbLoadRecords("db/S7-opcua-PT-sp.db", "P=Esther:,R=gas:,SUBS=OPC_SUB1")
+dbLoadRecords("db/S7-opcua-PV.db", "P=Esther:,R=gas:,SUBS=OPC_SUB1")
+dbLoadRecords("db/S7-opcua-PV-master.db", "P=Esther:,R=gas:,SUBS=OPC_SUB1")
+dbLoadRecords("db/S7-opcua-MFC.db", "P=Esther:,R=gas:,SUBS=OPC_SUB1")
+dbLoadRecords("db/S7-opcua-Control.db", "P=Esther:,R=gas:,SUBS=OPC_SUB1")
+dbLoadRecords("db/ambient.db","P=Esther,R=gas")
 
 # NA111 Ethernet <->RS485
-drvAsynIPPortConfigure("LAN","192.168.0.31:8887",0,0,0)
-dbLoadRecords("db/nWRG.db", "P=Esther:,R=Gas-Opc:,PORT=LAN,A=0")
+# drvAsynIPPortConfigure("LAN","192.168.0.31:8887",0,0,0)
+# dbLoadRecords("db/nWRG.db", "P=Esther:,R=gas:,PORT=LAN,A=0")
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit
