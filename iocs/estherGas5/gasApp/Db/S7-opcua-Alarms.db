@@ -66,7 +66,7 @@ record(bi, "$(P)$(R)PT302-Alarm")
 {
     field(DESC, "S7 PLC PT302 Alarm")
     field(DTYP, "OPCUA")
-    field(INP,  "@$(SUBS) ns=4;i=128")
+    field(INP,  "@$(SUBS) ns=4;i=132")
     field(SCAN, "I/O Intr")
     field(ZNAM, "OFF")
     field(ONAM, "ON")    

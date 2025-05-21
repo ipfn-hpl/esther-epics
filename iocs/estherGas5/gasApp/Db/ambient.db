@@ -1,0 +1,24 @@
+###
+###
+record(ai,"$(P):$(R):Temperature") {
+        field(DESC, "Esther Ambient Pressure")
+	field(DTYP, "Soft Channel")
+	field(EGU, "C")
+	field(LOPR, "10")
+	field(HOPR, "50")
+}
+record(ai,"$(P):$(R):Pressure") {
+        field(DESC, "Esther Ambient Pressure")
+	field(DTYP, "Soft Channel")
+	field(EGU, "mBar")
+	field(LOPR, "950")
+	field(HOPR, "1050")
+}
+record(ai,"$(P):$(R):Humidity") {
+        field(DESC, "Esther Ambient Humidity")
+	field(DTYP, "Soft Channel")
+	field(EGU, "%")
+	field(LOPR, "10")
+	field(HOPR, "100")
+}
+

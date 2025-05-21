@@ -20,6 +20,7 @@ DB += S7-opcua-MFC.db
 DB += S7-opcua-Control.db
 DB += nWRG.db
 DB += nWRG.proto
+DB += ambient.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
