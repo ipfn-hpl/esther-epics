@@ -24,7 +24,14 @@ record(bo, $(P)$(R)Disable){
     field(ZNAM, "ENABLED")
     field(ONAM, "DISABLED")
     field(VAL, "0")
-#    field(FLNK, "$(P)$(R)Enabled")
+    field(FLNK, "$(P)$(R)Enabled")
+}
+record(calc, $(P)$(R)Enabled){
+    field(DESC, "Enable Archive")
+    field(CALC, "(A==1)?0:1")
+    field(INPA, "$(P)$(R)Disable.VAL NPP NMS")
+#    field(ZNAM, "Disabled")
+#    field(ONAM, "Enabled")
 }
 # nWRG Address 1
 record(ai, "$(P)$(R)STDT-Pressure"){
