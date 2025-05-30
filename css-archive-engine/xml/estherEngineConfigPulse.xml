@@ -180,7 +180,7 @@
          <period>00:00:02</period><scan/>
       </channel>
       <channel>
-         <name>Esther:gas:ON</name>
+         <name>Esther:gas:CONTROL-ON</name>
          <period>60</period>
          <monitor/>
          <enable/>
@@ -343,7 +343,7 @@
          <period>60.0</period><monitor/>
       </channel>
       <channel>
-         <name>Esther:Vacuum:Enabled</name>
+         <name>Esther:Vacuum:Enable</name>
          <period>60.0</period><monitor/>
          <enable/>
       </channel>

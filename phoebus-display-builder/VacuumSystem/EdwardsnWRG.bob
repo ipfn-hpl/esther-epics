@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <width>340</width>
+  <height>114</height>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Edwards nWRG ${name}</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>230</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <class>COMMENT</class>
+    <text>WRG Status</text>
+    <x>8</x>
+    <y>24</y>
+    <width>78</width>
+    <height>16</height>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <auto_size>true</auto_size>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Pressure</name>
+    <pv_name>${unit}:${node}:${name}-Pressure</pv_name>
+    <x>8</x>
+    <y>68</y>
+    <width>210</width>
+    <height>46</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="36.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="204">
+      </color>
+    </background_color>
+    <format>2</format>
+    <precision>2</precision>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Unit_1</name>
+    <pv_name>${unit}:${node}:${name}-WRG-Status</pv_name>
+    <x>218</x>
+    <y>24</y>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>ByteMon Wrg</name>
+    <pv_name>${unit}:${node}:${name}-WRG-Status</pv_name>
+    <x>30</x>
+    <y>44</y>
+    <width>290</width>
+    <height>18</height>
+    <numBits>16</numBits>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_temp</name>
+    <pv_name>${unit}:${node}:${name}-nWRG-Temperature</pv_name>
+    <x>230</x>
+    <y>80</y>
+  </widget>
+</display>
