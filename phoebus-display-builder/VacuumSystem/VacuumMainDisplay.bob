@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-11-29 10:00:34 by esther-->
 <display version="2.0.0">
   <name>Esther Vacuum</name>
   <macros>
@@ -39,11 +38,11 @@
       <node>Vacuum</node>
       <unit>Esther</unit>
     </macros>
-    <file>EdwardsADC.bob</file>
+    <file>EdwardsnWRG.bob</file>
     <x>16</x>
     <y>26</y>
     <width>350</width>
-    <height>90</height>
+    <height>101</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_1</name>
@@ -52,11 +51,11 @@
       <name>STDT</name>
       <node>Vacuum</node>
     </macros>
-    <file>EdwardsADC.bob</file>
+    <file>EdwardsnWRG.bob</file>
     <x>416</x>
-    <y>22</y>
+    <y>15</y>
     <width>350</width>
-    <height>90</height>
+    <height>109</height>
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>ED Arm CTST</name>
@@ -107,7 +106,7 @@
     </macros>
     <file>EdwardsCUTabs.bob</file>
     <x>416</x>
-    <y>118</y>
+    <y>124</y>
     <width>360</width>
     <height>470</height>
     <border_width>1</border_width>
@@ -121,7 +120,7 @@
     </macros>
     <file>EdwardsCUTabs.bob</file>
     <x>5</x>
-    <y>121</y>
+    <y>127</y>
     <width>366</width>
     <height>470</height>
     <border_width>1</border_width>
@@ -431,5 +430,11 @@
       </color>
     </background_color>
     <format>1</format>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>${unit}:${node}:Enable</pv_name>
+    <x>366</x>
+    <height>26</height>
   </widget>
 </display>

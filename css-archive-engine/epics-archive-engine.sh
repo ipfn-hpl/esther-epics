@@ -1,6 +1,7 @@
 #!/bin/sh
 # To replace engine:
-# ./archive-engine.sh -import ~/GIT_REPOS/esther-epics/css-archive-engine/xml/estherEngineConfigPulse.xml -replace_engine -engine estherPulse -settings esther.ini
+# ./archive-engine.sh -import ./xml/estherEngineConfigPulse.xml -replace_engine -engine estherPulse -settings esther.ini
+
 # To run:
 # ./epics-archive-engine.sh -engine estherPulse -settings esther.ini
 #
