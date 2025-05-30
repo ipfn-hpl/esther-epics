@@ -188,8 +188,8 @@ monitor AutoSeqVacuum;
 short CountupDisa;
 assign CountupDisa to "{P}:Vacuum:COUNTUP.DISA";
 
-short VacuumDisable;
-assign VacuumDisable to "{P}:Vacuum:Disable";
+short VacuumEnable;
+assign VacuumEnable to "{P}:Vacuum:Enable";
 
 // EdwScuCtSt OUT-OF-SERVICE
 /*short EdwScuCtStModFonct;
@@ -359,8 +359,8 @@ ss VacuumSequence {
             pvPut(LAST_OPSTATE);
             CountupDisa = ON;
             pvPut(CountupDisa);
-            VacuumDisable = ON;
-            pvPut(VacuumDisable);
+            VacuumEnable = OFF;
+            pvPut(VacuumEnable);
 
             AutoMode = ON;
             pvPut(AutoMode);
@@ -430,8 +430,8 @@ ss VacuumSequence {
             pvPut(Countup);
             CountupDisa = OFF;
             pvPut(CountupDisa);
-            VacuumDisable = OFF;
-            pvPut(VacuumDisable);
+            VacuumEnable = ON;
+            pvPut(VacuumEnable);
 
             HoldVacuum = OFF;
             pvPut(HoldVacuum);
@@ -500,8 +500,8 @@ ss VacuumSequence {
             pvPut(OPSTATE);
             CountupDisa = ON;
             pvPut(CountupDisa);
-            VacuumDisable = OFF;
-            pvPut(VacuumDisable);
+            VacuumEnable = ON;
+            pvPut(VacuumEnable);
         }
         when (AutoMode == AUTO_ON) {
                 strcpy(msg, "State to Idle");
@@ -514,8 +514,8 @@ ss VacuumSequence {
         entry{
             OPSTATE = POS_StartingLowVacuum;
             pvPut(OPSTATE);
-            VacuumDisable = OFF;
-            pvPut(VacuumDisable);
+            VacuumEnable = ON;
+            pvPut(VacuumEnable);
             //CTST_PressureHigh = ADC_PressureHighThres;
             //STDT_PressureHigh = ADC_PressureHighThres;
             //pvPut(CTST_PressureHigh);
