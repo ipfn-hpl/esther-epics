@@ -1,7 +1,7 @@
 ######################################################
 #                                                     #
 #     EPICS Database for                              #
-#     nWRG RS484 Tags                                 #
+#     nWRG RS485 Tags                                 #
 #                                                     #
 #     author: B. Carvalho   /IPFN                     #
 #                                                     #
@@ -93,4 +93,34 @@ record(ai, "$(P)$(R)CTST-nWRG-Temperature") {
     field(INP, "@nWRG.proto readTemperature(2) $(PORT) $(A)")
 #    field(SCAN, "10 second")
 }
+record(longout, "$(P)$(R)STDT-WRG-AdjustAtm") {
+    field(DESC, "nWRG Sensor Calibration")
+    field(DTYP, "stream")
+    field(OUT, "@nWRG.proto atmAdjust(1) $(PORT) $(A)")
+    field(VAL, "-1")
+}
+record(longout, "$(P)$(R)CTST-WRG-AdjustAtm") {
+    field(DESC, "nWRG Sensor Calibration")
+    field(DTYP, "stream")
+    field(OUT, "@nWRG.proto atmAdjust(2) $(PORT) $(A)")
+    field(VAL, "-1")
+}
+record(longout, "$(P)$(R)STDT-WRG-ClearCalib") {
+    field(DESC, "nWRG Sensor Calibration")
+    field(DTYP, "stream")
+    field(OUT, "@nWRG.proto clearCalib(1) $(PORT) $(A)")
+    #field(VAL, "-1")
+}
+record(longout, "$(P)$(R)CTST-WRG-ClearCalib") {
+    field(DESC, "nWRG Sensor Calibration")
+    field(DTYP, "stream")
+    field(OUT, "@nWRG.proto clearCalib(2) $(PORT) $(A)")
+    field(VAL, "-1")
+}
+record(stringout, "$(P)$(R)WRG-Debug"){
+    field(DESC, "WRG Debug")
+    field(DTYP, "stream")
+    field(OUT, "@nWRG.proto debug $(PORT) $(A)")
+}
+
 # vim: sta:et:sw=4:ts=4:sts=4

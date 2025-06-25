@@ -1,0 +1,48 @@
+######################################################
+#                                                     #
+#     EPICS Database for                              #
+#     nWRG RS485 Tags                                 #
+#                                                     #
+#     author: B. Carvalho   /IPFN                     #
+#                                                     #
+#     Ref 1.0; 2025                                   #
+#                                                     #
+#######################################################
+
+record (longin, "$(P)$(R)P003:M")
+{
+    field (DESC, "getPressure003 Mantissa $(PORT)")
+    field (DTYP, "stream")
+    field (INP, "@pfeiffer.proto getPressure003($(P)$(R)P003:E) $(PORT)")
+    field (SCAN, "2 second")
+    field (FLNK, "$(P)$(R)CT-Pressure")
+}
+
+record (longin, "$(P)$(R)P003:E")
+{
+    field (DESC, "Pressure003 Exponent $(PORT)")
+}
+
+record (calc, "$(P)$(R)CT-Pressure")
+{
+    field(DESC, "Reads the Pfeiffer PT200")
+    field(INPA, "$(P)$(R)P003:M MSS")
+    field(INPB, "$(P)$(R)P003:E")
+    field(CALC, "(A*0.001)*10.0**(B-20)")
+    field(PREC, "3")
+    field(EGU, "mBar")
+    field(HIHI,"1.0e-1")
+    field(HIGH,"1.0e-2")
+    field(LOW,"1.0e-9")
+    field(LOLO,"0.5e-9")
+    field(HHSV,"MAJOR")
+    field(HSV, "MINOR")
+    field(LSV, "MINOR")
+    field(LLSV,"MAJOR")
+}
+record(stringout, "$(P)$(R)Pfeiffer-Debug"){
+    field(DESC, "Pfeiffer Debug")
+    field(DTYP, "stream")
+    field(OUT, "@pfeiffer.proto debug $(PORT) $(A)")
+}
+

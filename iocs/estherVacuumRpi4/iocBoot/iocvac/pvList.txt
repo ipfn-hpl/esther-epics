@@ -6,6 +6,10 @@ Esther:Vacuum:CurrentTime
 Esther:Vacuum:TimeOfDay
 Esther:Vacuum:GRUNFOS-PWM
 Esther:EDW:02:SetSpeedSetpointLo
+Esther:Vacuum:STDT-WRG-AdjustAtm
+Esther:Vacuum:CTST-WRG-AdjustAtm
+Esther:Vacuum:STDT-WRG-ClearCalib
+Esther:Vacuum:CTST-WRG-ClearCalib
 Esther:VacuumSR_0_State
 Esther:VacuumSR_1_State
 Esther:VacuumSR_2_State
@@ -17,7 +21,8 @@ Esther:VacuumSR_7_State
 Esther:VacuumSR_disableMaxSecs
 Esther:Vacuum:OPCALCSTATE
 Esther:Vacuum:COUNTUP
-Esther:Vacuum:Enabled
+Esther:Vacuum:Disabled
+Esther:Vacuum:CT-Pressure
 Esther:EDW:DryPump-CT
 Esther:EDW:DryPump-DT
 Esther:EDW:DryPump-ST
@@ -39,7 +44,7 @@ Esther:Vacuum:Auto-Mode
 Esther:Vacuum:CT-Auto-Enable
 Esther:Vacuum:DT-Auto-Enable
 Esther:Vacuum:HoldVacuum
-Esther:Vacuum:Disable
+Esther:Vacuum:Enable
 Esther:VacuumSR_heartbeat
 Esther:VacuumSR_i_am_alive
 Esther:VacuumSR_deadIfZero
@@ -110,6 +115,8 @@ Esther:ARM:ARM-generic
 Esther:EDW:generic
 Esther:Vacuum:TraceMessage
 Esther:Vacuum:Time2Reset
+Esther:Vacuum:WRG-Debug
+Esther:Vacuum:Pfeiffer-Debug
 Esther:VacuumSR_recentlyStr
 Esther:VacuumSR_rebootStatusStr
 Esther:VacuumSR_rebootTime
@@ -180,4 +187,6 @@ Esther:EDW:02:ReadMotorTemp
 Esther:EDW:02:NErrors
 Esther:EDW:02:Error1
 Esther:EDW:02:Error2
+Esther:Vacuum:P003:M
+Esther:Vacuum:P003:E
 _Esther:Vacuum:GRUNFOS-PWM_calc

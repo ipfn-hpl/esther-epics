@@ -1,0 +1,40 @@
+Terminator = CR;
+inTerminator = CR;
+# CR and LF are control characters, respectively coded 0x0D (13 decimal) and 0x0A (10 decimal)
+MaxInput = 20;
+ExtraInput = Ignore;
+
+# Values in millisecond
+LockTimeout = 500;
+# Affects first out command in a protocol.
+#  If other records currently use the device, how many milliseconds to wait for 
+# exclusive access to the device before giving up? 
+
+
+ReplyTimeout = 300;
+
+#PollPeriod = $ReplyTimeout;
+#Integer. Affects first in command in I/O Intr mode (see chapter Record Processing).
+PollPeriod = 200;
+
+# Using redirection to read 2 records, mantissa and exponent
+getPressure001 {
+    out "0010074002=?106";
+    in  "0011074006%4u%(\$1)2u%+<sum8>";
+}
+
+# RS485 address 3
+getPressure003 {
+    out "0030074002=?108";
+    in  "0031074006%4u%(\$1)2u%+<sum8>";
+}
+
+
+# Connect a stringout record to this to get
+# a generic command interface.
+# After processing finishes, the record contains the reply.
+
+debug {
+    ExtraInput = Ignore;
+    out "%s"; in "%39c"
+}

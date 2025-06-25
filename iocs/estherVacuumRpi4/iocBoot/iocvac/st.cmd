@@ -145,8 +145,11 @@ dbLoadRecords("db/esther-states.db", "P=Esther:,R=Vacuum:")
 # dbLoadRecords("db/mb-li.db","P='Esther:MFC1',R=Temperature,PORT=K1_Y1063_In_Word,OFFSET=0,SCAN='I/O Intr'")
 
 # NA111 Ethernet <->RS485 Link to nWRG Vacuum probes
-drvAsynIPPortConfigure("LAN", "192.168.0.31:8887", 0,0,0)
-dbLoadRecords("db/nWRG.db", "P=Esther:,R=Vacuum:,PORT=LAN,A=0")
+drvAsynIPPortConfigure("LAN31", "192.168.0.31:8887", 0,0,0)
+dbLoadRecords("db/nWRG.db", "P=Esther:,R=Vacuum:,PORT=LAN31,A=0")
+
+drvAsynIPPortConfigure("LAN32", "192.168.0.32:8887", 0,0,0)
+dbLoadRecords("db/pfeiffer.db", "P=Esther:,R=Vacuum:,PORT=LAN32,A=0")
 
 #- Set this to see messages from mySub
 #var mySubDebug 1

@@ -21,3 +21,23 @@ readTemperature {
   out "#0\$1:00?V759";
   in  "#00:0\$1=V759%E";
 }
+# Atmosphere adjustment - !S761
+atmAdjust {
+  out "#0\$1:00!S761 1;1";
+  in  "#00:0\$1*S761 1;%u";
+}
+## #01:00!S761 1;1
+## #760 Clear calibration
+## #01:00!S760 1
+clearCalib {
+  out "#0\$1:00!S760 1";
+  in  "#00:0\$1*S760 %u";
+}
+
+# Connect a stringout record to this to get
+# a generic command interface.
+# After processing finishes, the record contains the reply.
+debug {
+    ExtraInput = Ignore;
+    out "%s"; in "%39c"
+}
