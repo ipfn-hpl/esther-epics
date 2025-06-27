@@ -290,7 +290,7 @@
     <name>TU_PT-CT-Static</name>
     <pv_name>${unit}:Vacuum:PT-CT-Static</pv_name>
     <x>800</x>
-    <y>505</y>
+    <y>478</y>
     <width>169</width>
     <height>40</height>
     <font>
@@ -308,13 +308,13 @@
     <name>Label_PT-DT-Static</name>
     <text>PT-CT-Static</text>
     <x>839</x>
-    <y>485</y>
+    <y>458</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TU_VGC401-Status</name>
     <pv_name>${unit}:Vacuum:VGC401-Status</pv_name>
-    <x>800</x>
-    <y>545</y>
+    <x>781</x>
+    <y>518</y>
     <width>220</width>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -436,5 +436,23 @@
     <pv_name>${unit}:${node}:Enable</pv_name>
     <x>366</x>
     <height>26</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Tu_CT-Pressure</name>
+    <pv_name>${unit}:Vacuum:CT-Pressure</pv_name>
+    <x>800</x>
+    <y>538</y>
+    <width>169</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="255" blue="204">
+      </color>
+    </background_color>
+    <format>2</format>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
