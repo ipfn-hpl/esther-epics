@@ -23,6 +23,7 @@ record (longin, "$(P)$(R)P003:E")
     field (DESC, "Pressure003 Exponent $(PORT)")
 }
 
+# record (calc, "$(P)$(R)PT-CT-Static")
 record (calc, "$(P)$(R)CT-Pressure")
 {
     field(DESC, "Reads the Pfeiffer PT200")
