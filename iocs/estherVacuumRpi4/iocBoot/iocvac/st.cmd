@@ -89,20 +89,20 @@ dbLoadRecords("db/edwards-scu800.db", "P=Esther:,R=EDW:,BUS=RS485")
 dbLoadRecords("db/edwards-gx-temp.db", "P=Esther:")
 
 ## EDWARDS ADC Vacuum Monitor
-#drvAsynSerialPortConfigure("RS232E1","/dev/tty_edwards")
+drvAsynSerialPortConfigure("RS232E1","/dev/tty_edwards")
 
 # drvAsynSerialPortConfigure("RS232E1","/dev/edwardsADC")
+# dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
 # drvAsynSerialPortConfigure("RS232E1","/dev/ttyAMA0")
 # On Raspberry Pi4 primary UART
 # drvAsynSerialPortConfigure("RS232E1","/dev/ttyS0")
-#asynSetOption("RS232E1", 0, "baud", "115200")
-#asynSetOption("RS232E1", 0, "bits", "8")
-#asynSetOption("RS232E1", 0, "parity", "none")
-#asynSetOption("RS232E1", 0, "stop", "1")
-##asynSetOption("RS232E1", 0, "clocal", "Y")
-# asynSetOption("RS232E1", 0, "crtscts", "N")
-# dbLoadRecords("db/edwards-adc.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
-# dbLoadRecords("db/edwards-adc-analog.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
+asynSetOption("RS232E1", 0, "baud", "115200")
+asynSetOption("RS232E1", 0, "bits", "8")
+asynSetOption("RS232E1", 0, "parity", "none")
+asynSetOption("RS232E1", 0, "stop", "1")
+#asynSetOption("RS232E1", 0, "clocal", "Y")
+ asynSetOption("RS232E1", 0, "crtscts", "N")
+dbLoadRecords("db/edwards-adc-analog.db", "P=Esther:,R=Vacuum:,A=1,BUS=RS232E1")
 
 #drvAsynSerialPortConfigure("RS232INF","/dev/tty_inficom")
 #asynSetOption("RS232A1", 0, "baud", "19200")
@@ -123,7 +123,7 @@ dbLoadRecords("db/esther-states.db", "P=Esther:,R=Vacuum:")
 #                      linkType,
 #                      timeoutMsec,
 #                      writeDelayMsec)
-# Modbus link layer type:, 0 = TCP/IP, 1 = RTU, 2 = ASCII
+#- Modbus link layer type:, 0 = TCP/IP, 1 = RTU, 2 = ASCII
 
 # modbusInterposeConfig("MDBUS",1,1000,0)
 # drvModbusAsynConfigure(portName,
@@ -135,10 +135,10 @@ dbLoadRecords("db/esther-states.db", "P=Esther:,R=Vacuum:")
 #                       dataType,
 #                       pollMsec,
 #                       plcType);
-# Read  words (16 bits).  Function code=3 PDU address (start=0).
+#- Read  words (16 bits).  Function code=3 PDU address (start=0).
 # USE PDU ADDRESSES, prefix 0 is octal
 # drvModbusAsynConfigure("K1_Y32_In_Word","MDBUS", 1, 3, 32, 1,    0,  100, "el-flow")
-## Load record instances
+#- Load record instances
 # dbLoadRecords("db/mb-li.db","P='Esther:MFC1',R=Measure,PORT=K1_Y32_In_Word,OFFSET=0,SCAN='I/O Intr'")
 
 # drvModbusAsynConfigure("K1_Y1063_In_Word","MDBUS", 1, 3, 1063, 1,    0,  100, "el-flow")
@@ -148,8 +148,20 @@ dbLoadRecords("db/esther-states.db", "P=Esther:,R=Vacuum:")
 drvAsynIPPortConfigure("LAN31", "192.168.0.31:8887", 0,0,0)
 dbLoadRecords("db/nWRG.db", "P=Esther:,R=Vacuum:,PORT=LAN31,A=0")
 
-drvAsynIPPortConfigure("LAN32", "192.168.0.32:8887", 0,0,0)
-dbLoadRecords("db/pfeiffer.db", "P=Esther:,R=Vacuum:,PORT=LAN32,A=0")
+# drvAsynIPPortConfigure("LAN32", "192.168.0.32:8887", 0,0,0)
+# dbLoadRecords("db/pfeiffer.db", "P=Esther:,R=Vacuum:,PORT=LAN32,A=0")
+
+# sudo dmesg| grep FTDI
+# drvAsynSerialPortConfigure("RS232","/dev/ttyUSB1")
+drvAsynSerialPortConfigure("RS232","/dev/tty_thyracont")
+asynSetOption("RS232", 0, "baud", "9600")
+asynSetOption("RS232", 0, "bits", "8")
+asynSetOption("RS232", 0, "parity", "none")
+asynSetOption("RS232", 0, "stop", "1")
+#asynSetOption("RS232", 0, "clocal", "Y")
+#asynSetOption("RS232", 0, "crtscts", "N")
+## Load record instances
+dbLoadRecords("db/thyracontV2.db", "P=Esther:,R=Vacuum:,PORT=RS232")
 
 #- Set this to see messages from mySub
 #var mySubDebug 1

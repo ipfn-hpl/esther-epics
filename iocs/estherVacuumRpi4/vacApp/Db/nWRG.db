@@ -26,7 +26,7 @@ record(calc, $(P)$(R)Disabled){
 #    field(ONAM, "Enabled")
 }
 # nWRG Address 1
-record(ai, "$(P)$(R)STDT-Pressure"){
+record(ai, "$(P)$(R)STDT-nWRG-Pressure"){
     field(DESC, "Reads the nWRG STDT Pressure")
     field(DTYP, "stream")
     field(INP, "@nWRG.proto readPressure(1) $(PORT) $(A)")
@@ -39,15 +39,15 @@ record(ai, "$(P)$(R)STDT-Pressure"){
     field(SCAN, "2 second")
 # SCAN Disable
     field(SDIS, "$(P)$(R)Disabled")
-    field(FLNK, "$(P)$(R)CTST-Pressure")
+    field(FLNK, "$(P)$(R)CTST-nWRG-Pressure")
 }
-record(mbbiDirect, "$(P)$(R)STDT-WRG-Status") {
+record(mbbiDirect, "$(P)$(R)STDT-nWRG-Status") {
     field(DESC, "nWRG Sensor Status")
     field(DTYP, "stream")
     field(INP, "@nWRG.proto readStatus(1) $(PORT) $(A)")
     field(SCAN, "I/O Intr")
 }
-record(ai, "$(P)$(R)WRG-1-Hours") {
+record(ai, "$(P)$(R)nWRG-1-Hours") {
     field(DESC, "nWRG Sensor Hours")
     field(DTYP, "stream")
     field(INP, "@nWRG.proto readHours(1) $(PORT) $(A)")
@@ -62,7 +62,7 @@ record(ai, "$(P)$(R)STDT-nWRG-Temperature") {
     field(FLNK, "$(P)$(R)CTST-nWRG-Temperature")
 }
 # nWRG Address 2
-record(ai, $(P)$(R)CTST-Pressure){
+record(ai, "$(P)$(R)CTST-nWRG-Pressure"){
     field(DESC, "Reads the nWRG CTST Pressure")
     field(DTYP, "stream")
     field(INP, "@nWRG.proto readPressure(2) $(PORT) $(A)")
@@ -75,13 +75,13 @@ record(ai, $(P)$(R)CTST-Pressure){
 #    field(SCAN, "2 second")
 #    field(DISA, "1")
 }
-record(ai, "$(P)$(R)WRG-2-Hours") {
+record(ai, "$(P)$(R)nWRG-2-Hours") {
     field(DESC, "nWRG Sensor Hours")
     field(DTYP, "stream")
     field(INP, "@nWRG.proto readHours(2) $(PORT) $(A)")
 #    field(SCAN, "2 second")
 }
-record(mbbiDirect, "$(P)$(R)CTST-WRG-Status") {
+record(mbbiDirect, "$(P)$(R)CTST-nWRG-Status") {
     field(DESC, "nWRG Sensor Status")
     field(DTYP, "stream")
     field(INP, "@nWRG.proto readStatus(2) $(PORT) $(A)")
@@ -93,32 +93,32 @@ record(ai, "$(P)$(R)CTST-nWRG-Temperature") {
     field(INP, "@nWRG.proto readTemperature(2) $(PORT) $(A)")
 #    field(SCAN, "10 second")
 }
-record(longout, "$(P)$(R)STDT-WRG-AdjustAtm") {
+record(longout, "$(P)$(R)STDT-nWRG-AdjustAtm") {
     field(DESC, "nWRG Sensor Calibration")
     field(DTYP, "stream")
     field(OUT, "@nWRG.proto atmAdjust(1) $(PORT) $(A)")
     field(VAL, "-1")
 }
-record(longout, "$(P)$(R)CTST-WRG-AdjustAtm") {
+record(longout, "$(P)$(R)CTST-nWRG-AdjustAtm") {
     field(DESC, "nWRG Sensor Calibration")
     field(DTYP, "stream")
     field(OUT, "@nWRG.proto atmAdjust(2) $(PORT) $(A)")
     field(VAL, "-1")
 }
-record(longout, "$(P)$(R)STDT-WRG-ClearCalib") {
+record(longout, "$(P)$(R)STDT-nWRG-ClearCalib") {
     field(DESC, "nWRG Sensor Calibration")
     field(DTYP, "stream")
     field(OUT, "@nWRG.proto clearCalib(1) $(PORT) $(A)")
     #field(VAL, "-1")
 }
-record(longout, "$(P)$(R)CTST-WRG-ClearCalib") {
+record(longout, "$(P)$(R)CTST-nWRG-ClearCalib") {
     field(DESC, "nWRG Sensor Calibration")
     field(DTYP, "stream")
     field(OUT, "@nWRG.proto clearCalib(2) $(PORT) $(A)")
     field(VAL, "-1")
 }
-record(stringout, "$(P)$(R)WRG-Debug"){
-    field(DESC, "WRG Debug")
+record(stringout, "$(P)$(R)nWRG-Debug"){
+    field(DESC, "nWRG Debug")
     field(DTYP, "stream")
     field(OUT, "@nWRG.proto debug $(PORT) $(A)")
 }

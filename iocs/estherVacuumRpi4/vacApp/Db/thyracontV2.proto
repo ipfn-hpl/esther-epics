@@ -1,0 +1,62 @@
+Terminator = CR;
+#InTerminator = $Terminator;
+# CR and LF are control characters, respectively coded 0x0D (13 decimal) and 0x0A (10 decimal)
+MaxInput = 20;
+ExtraInput = Ignore;
+
+# Values in millisecond
+LockTimeout = 500;
+# Affects first out command in a protocol.
+#  If other records currently use the device, how many milliseconds to wait for 
+# exclusive access to the device before giving up? 
+
+
+ReplyTimeout = 300;
+
+#PollPeriod = $ReplyTimeout;
+#Integer. Affects first in command in I/O Intr mode (see chapter Record Processing).
+PollPeriod = 200;
+#    in  "0011074006%4u%(\$1)2u%+<sum8>";
+# out ADR(3) AC(1) CMD LEN(2) CS CR
+# in  ADR AC CMD LEN DATA CS CR
+getPressure {
+    out "0010MV00D";
+    in  "001%(\$1)1uMV%*2u%e%*1c";
+}
+
+# in  ADR AC CMD LEN float/OR/UR CS CR
+getErrorCode {
+    in  "001%*1uMV%*2u%2c%*1c";
+}
+#  6 Warnings and Error Messages
+# Description
+# NO_DEF
+#   Command is not valid (not defined) for the device, e. g. Degas (DG) for VSR
+# _LOGIC
+#   Access Code is not valid or execution of command is not logical
+# _RANGE
+#   Error if any data value in send sequence is out of range, e. g. value too high for a gas
+#   correction factor
+# ERROR1
+#   Sensor is defect or stacked out
+# SYNTAX
+#   Command is valid, but the syntax in data is wrong or the selected mode in data is not
+#       valid for your device
+# LENGTH
+#   Command is valid, but the length of data is out of expected range
+# _CD_RE
+#   Calibration Data Read Error
+# _EP_RE
+#   EEPROM Read Error
+# _UNSUP
+#   Unsupported Data, e. g. no valid value for baud rate
+# _SEDIS
+#   Sensor element disabled, e. g. read measurement of cathode if cathode is disabled
+
+# a generic command interface.
+# After processing finishes, the record contains the reply.
+debug {
+    ExtraInput = Ignore;
+    out "%s"; in "%39c"
+}
+

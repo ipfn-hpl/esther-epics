@@ -30,9 +30,10 @@ DB += S7-opcua-hva.db
 DB += S7-opcua-eda.db
 DB += nWRG.db
 DB += nWRG.proto
-DB += pfeiffer.db
-DB += pfeiffer.proto
-
+# DB += pfeiffer.db
+# DB += pfeiffer.proto
+DB += thyracontV2.db
+DB += thyracontV2.proto
 
 #DB += bme680.db
 #DB += bme680.proto
