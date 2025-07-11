@@ -1,0 +1,34 @@
+Terminator = CR;
+#InTerminator = $Terminator;
+# CR and LF are control characters, respectively coded 0x0D (13 decimal) and 0x0A (10 decimal)
+MaxInput = 20;
+ExtraInput = Ignore;
+
+# Values in millisecond
+LockTimeout = 500;
+# Affects first out command in a protocol.
+#  If other records currently use the device, how many milliseconds to wait for 
+# exclusive access to the device before giving up? 
+
+
+ReplyTimeout = 300;
+
+#PollPeriod = $ReplyTimeout;
+#Integer. Affects first in command in I/O Intr mode (see chapter Record Processing).
+PollPeriod = 200;
+#    in  "0011074006%4u%(\$1)2u%+<sum8>";
+# out ADR(3) AC(1) CMD LEN(2) CS CR
+# in  ADR AC CMD LEN DATA CS CR
+getPressure {
+    out "0010MV00D";
+    in  "001%(\$1)1uMV%*2u%e%*1c";
+}
+
+# a generic command interface.
+# After processing finishes, the record contains the reply.
+
+debug {
+    ExtraInput = Ignore;
+    out "%s"; in "%39c"
+}
+

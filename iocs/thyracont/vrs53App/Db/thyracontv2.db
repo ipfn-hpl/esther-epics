@@ -1,0 +1,34 @@
+######################################################
+#                                                     #
+#     EPICS Database for                              #
+#     Thyracont VSR52USB                           #
+#                                                     #
+#     author: B. Carvalho   /IPFN                     #
+#                                                     #
+#     Ref 1.0; 2025                                   #
+#                                                     #
+#######################################################
+record (ai, "$(P)$(R)VSR52-Pressure")
+{
+    field (DESC, "getPressure)")
+    field (DTYP, "stream")
+    field (INP, "@thyracontv2.proto getPressure($(P)$(R)VSR52-Error) $(PORT)")
+    field (SCAN, "2 second")
+#    field (FLNK, "$(P)$(R)CT-Pressure")
+}
+record (longin, "$(P)$(R)VSR52-Error")
+{
+    field (DESC, "getPressure Error ")
+#    field (DTYP, "stream")
+#    field (INP, "@thyracontv2.proto getPressure $(PORT)")
+#    field (SCAN, "2 second")
+#    field (FLNK, "$(P)$(R)CT-Pressure")
+}
+
+
+record(stringout, "$(P)$(R)Thyracont-Debug"){
+    field(DESC, "Thyracontv2  Debug")
+    field(DTYP, "stream")
+    field(OUT, "@thyracontv2.proto debug $(PORT)")
+}
+
