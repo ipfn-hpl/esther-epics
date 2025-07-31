@@ -23,6 +23,9 @@ DB += mb-reset-mbbi.db
 DB += mb-reset-mbbo.db
 DB += mfc-control.db
 
+DB += thyracontV2.db
+DB += thyracontV2.proto
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_template = <templatename>
