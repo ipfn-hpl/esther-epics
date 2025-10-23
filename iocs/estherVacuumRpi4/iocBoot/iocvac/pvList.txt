@@ -4,7 +4,6 @@ Esther:EDW:02:PumpSerialNo
 Esther:EDW:02:ReadCounters
 Esther:Vacuum:CurrentTime
 Esther:Vacuum:TimeOfDay
-Esther:Vacuum:VSR52-ErrorCode
 Esther:Vacuum:GRUNFOS-PWM
 Esther:EDW:02:SetSpeedSetpointLo
 Esther:Vacuum:STDT-nWRG-AdjustAtm
@@ -107,7 +106,6 @@ Esther:Vacuum:STDT-nWRG-Temperature
 Esther:Vacuum:CTST-nWRG-Pressure
 Esther:Vacuum:nWRG-2-Hours
 Esther:Vacuum:CTST-nWRG-Temperature
-Esther:Vacuum:VSR52-Pressure
 Esther:EDW:02:SetSpeedSetpoint
 Esther:EDW:02:WARNING
 Esther:Vacuum:STDT-nWRG-Status
@@ -116,13 +114,11 @@ Esther:Vacuum:ResetIdle
 Esther:ARM:1:Status
 Esther:ARM:2:Status
 Esther:EDW:02:ReadModFonctWithWarning
-Esther:Vacuum:VSR52-Error
 Esther:ARM:ARM-generic
 Esther:EDW:generic
 Esther:Vacuum:TraceMessage
 Esther:Vacuum:Time2Reset
 Esther:Vacuum:nWRG-Debug
-Esther:Vacuum:Thyracont-Debug
 Esther:VacuumSR_recentlyStr
 Esther:VacuumSR_rebootStatusStr
 Esther:VacuumSR_rebootTime

@@ -8,19 +8,21 @@
 #     Ref 1.0; 2025                                   #
 #                                                     #
 #######################################################
-record(ai, "$(P)$(R)VSR52-Pressure")
+#record(ai, "$(P)$(R)VSR52-Pressure")
+#record(ai, "$(P)$(R)CT-Pressure")
+record(ai, "$(P)$(R)PT-CT-Static")
 {
     field (DESC, "getPressure)")
     field (DTYP, "stream")
     field (INP, "@thyracontV2.proto getPressure($(P)$(R)VSR52-Error) $(PORT)")
-    field (SCAN, "2 second")
+    field (SCAN, "1 second")
     field(EGU, "mBar")
     field(HIGH, "1.0e3")
     field(HSV, "MINOR")
     field(HIHI, "1.1e3")
     field(HHSV, "MAJOR")
     field(PREC, "3")
-#    field (FLNK, "$(P)$(R)CT-Pressure")
+#    field (FLNK, "$(P)$(R)")
 }
 record(mbbi, "$(P)$(R)VSR52-Error")
 {
