@@ -1,0 +1,9 @@
+record( bo, "$(P)$(R)Enabled")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    info(autosaveFields, "VAL")
+    field(VAL, "0")
+}
+
