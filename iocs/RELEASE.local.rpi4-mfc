@@ -1,0 +1,30 @@
+#RELEASE Location of external products
+EPICS_HOME=/opt/epics
+SUPPORT=$(EPICS_HOME)/support
+#
+#
+# If CALC was built with SSCAN support then SSCAN must be defined for testEpicsApp
+SSCAN=
+#$(SUPPORT)/sscan
+## For sCalcout support in asynOctet - applications include asynCalc.dbd
+CALC=
+#$(SUPPORT)/calc
+
+#use libtirpc-dev debian package
+TIRPC=YES
+ASYN=$(SUPPORT)/asyn
+STREAM=$(SUPPORT)/stream
+AUTOSAVE = $(SUPPORT)/autosave
+MODBUS=$(SUPPORT)/modbus
+
+#$(SUPPORT)/seq-2-2
+#
+# SEQ is required for testIPServer
+#SNCSEQ=$(SUPPORT)/seq-2-2-5
+SNCSEQ=
+
+PCRE=
+
+# EPICS_BASE 3.14.6 or later is required
+EPICS_BASE=$(EPICS_HOME)/epics-base
+
