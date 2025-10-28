@@ -1,0 +1,15 @@
+Esther:MFC-CT:Enabled.VAL
+Esther:MFC-ST:Control-Mode.VAL
+Esther:MFC-ST:Counter-Mode.VAL
+Esther:MFC-ST:Reset.VAL
+Esther:MFC-CT:Reset.VAL
+Esther:MFC-CT:Control-Mode.VAL
+Esther:MFC-CT:Counter-Mode.VAL
+Esther:MFC-CT:Alarm-Setpoint-Mode.VAL
+Esther:MFC-ST:Alarm-Setpoint-Mode.VAL
+Esther:MFC-CT:FSetpoint.VAL
+Esther:MFC-ST:FSetpoint.VAL
+Esther:MFC-CT:FCounter-Limit.VAL
+Esther:MFC-ST:FCounter-Limit.VAL
+Esther:MFC-CT:Reset-Counter-Enable.VAL
+Esther:MFC-ST:Reset-Counter-Enable.VAL

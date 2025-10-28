@@ -1,0 +1,24 @@
+# mbbi record for register Reset Addr : 0x0E68/3689
+# ErrorCan't  "Reset Alarm info warning bit"  : String is too long
+# field(FVST,"Reset firmware program (soft reset)")
+record(mbbi,"$(P):$(R)-mbbi") {
+    field(DTYP,"asynUInt32Digital")
+    field(INP,"@asynMask($(PORT) $(OFFSET=0) 0xFFFF)UINT16")
+    field(ZRVL,"0")
+    field(ZRST,"No Reset")
+    field(ONVL,"1")
+    field(ONST,"Reset counter")
+    field(TWVL,"2")
+    field(TWST,"Reset alarm")
+    field(THVL,"3")
+    field(THST,"Reset counter")
+    field(FRVL,"4")
+    field(FRST,"Reset and disable counter")
+    field(FVVL,"5")
+    field(FVST,"Reset firmware program")
+    field(SXVL,"6")
+    field(SXST,"Reset Alarm error bit")
+    field(SVVL,"7")
+    field(SVST,"Reset Alarm warning bit")
+    field(SCAN,"$(SCAN=I/O Intr)")
+}
