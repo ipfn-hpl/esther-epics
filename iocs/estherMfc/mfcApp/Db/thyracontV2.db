@@ -1,0 +1,54 @@
+######################################################
+#                                                     #
+#     EPICS Database for                              #
+#     Thyracont VSR52USB                           #
+#                                                     #
+#     author: B. Carvalho   /IPFN                     #
+#                                                     #
+#     Ref 1.0; 2025                                   #
+#                                                     #
+#######################################################
+#record(ai, "$(P)$(R)VSR52-Pressure")
+#record(ai, "$(P)$(R)CT-Pressure")
+record(ai, "$(P)$(R)PT-CT-Static")
+{
+    field (DESC, "getPressure)")
+    field (DTYP, "stream")
+    field (INP, "@thyracontV2.proto getPressure($(P)$(R)VSR52-Error) $(PORT)")
+    field (SCAN, "1 second")
+    field(EGU, "mBar")
+    field(HIGH, "1.0e3")
+    field(HSV, "MINOR")
+    field(HIHI, "1.1e3")
+    field(HHSV, "MAJOR")
+    field(PREC, "3")
+#    field (FLNK, "$(P)$(R)")
+}
+record(mbbi, "$(P)$(R)VSR52-Error")
+{
+    field (DESC, "VSR52USB Com Error ")
+    field(ZRVL,"0")
+    field(ZRST,"No Data")
+    field(ONVL,"1")
+    field(ONST,"Data OK")
+    field(SVVL,"1")
+    field(SVST,"Error")
+    field(SVSV,"MAJOR")
+    field(VAL,"0")
+#    field (FLNK, "$(P)$(R)CT-Pressure")
+}
+
+record(stringin, "$(P)$(R)VSR52-ErrorCode")
+{
+    field (DESC, "VSR52USB Com Error Code")
+    field (DTYP, "stream")
+    field (INP, "@thyracontV2.proto getErrorCode $(PORT)")
+    field(SCAN, "I/O Intr")
+}
+
+record(stringout, "$(P)$(R)Thyracont-Debug"){
+    field(DESC, "ThyracontV2  Debug")
+    field(DTYP, "stream")
+    field(OUT, "@thyracontV2.proto debug $(PORT)")
+}
+
