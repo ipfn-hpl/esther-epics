@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-12-10 15:37:15 by esther-->
 <display version="2.0.0">
   <name>TestGas Display</name>
   <macros>
@@ -82,11 +81,11 @@
     <width>80</width>
     <height>20</height>
     <off_color>
-      <color name="OK" red="0" green="255" blue="0">
+      <color name="Button_Background" red="210" green="210" blue="210">
       </color>
     </off_color>
     <on_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
+      <color name="On" red="0" green="255" blue="0">
       </color>
     </on_color>
     <font>

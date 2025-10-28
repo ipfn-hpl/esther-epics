@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-12-05 16:11:45 by esther-->
 <display version="2.0.0">
   <name>MFC El-Flow DT</name>
   <width>610</width>
@@ -61,7 +60,7 @@
     <pv_name>Esther:${mfc}:FMeasure-ai</pv_name>
     <x>190</x>
     <y>151</y>
-    <format>3</format>
+    <format>1</format>
   </widget>
   <widget type="combo" version="2.0.0">
     <name>Control-Mode</name>
@@ -170,7 +169,8 @@
     <x>320</x>
     <y>121</y>
     <width>110</width>
-    <format>3</format>
+    <format>1</format>
+    <precision>3</precision>
   </widget>
   <widget type="label" version="2.0.0">
     <name>FSetpoint</name>

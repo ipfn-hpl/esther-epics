@@ -28,7 +28,7 @@ fi
 JAR=`echo "${TOP}/service-archive-engine-*.jar"`
 
 #java -jar $JAR $OPT "$@"
-$JAVA_HOME/bin/java -jar $JAR -engine estherPulse -settings esther.ini
+$JAVA_HOME/bin/java -jar $JAR -engine estherPulse -settings esther.ini.local
 
 
 echo "Archive Started. Check browser at  http://localhost:4812/main"
