@@ -222,9 +222,10 @@ assign CTST_PressureHigh "{P}:Vacuum:CTST-Pressure.HIGH";
 //float CTST_PressureLow;
 //assign CTST_PressureLow "{P}:Vacuum:CTST-Pressure.LOW";
 
-float CT_StaticPressure;
-assign CT_StaticPressure to "{P}:Vacuum:PT-CT-Static";
-monitor CT_StaticPressure;
+float CT_StaticPressure = 1; // Problems to connect, CHECK!
+
+//assign CT_StaticPressure to "{P}:Vacuum:PT-CT-Static";
+//monitor CT_StaticPressure;
 float DT_StaticPressure;
 assign DT_StaticPressure to "{P}:Vacuum:PT-DT-Static";
 monitor DT_StaticPressure;
