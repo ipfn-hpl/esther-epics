@@ -20,6 +20,7 @@
 /iocBoot/*ioc*/dllPath.bat
 /iocBoot/*ioc*/envPaths
 /iocBoot/*ioc*/relPaths.sh
+/iocBoot/*ioc*/save/*
 
 # iocsh
 .iocsh_history
