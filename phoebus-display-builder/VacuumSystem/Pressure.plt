@@ -34,8 +34,8 @@
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>1.0</min>
-      <max>1000.0</max>
+      <min>4.9E-324</min>
+      <max>10.0</max>
       <grid>false</grid>
       <autoscale>true</autoscale>
       <log_scale>true</log_scale>
@@ -51,8 +51,8 @@
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>-50.0</min>
-      <max>1050.0</max>
+      <min>450.0</min>
+      <max>1550.0</max>
       <grid>false</grid>
       <autoscale>true</autoscale>
       <log_scale>false</log_scale>
@@ -80,11 +80,6 @@
       <period>0.0</period>
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
-      <archive>
-        <name>jdbc:mysql://192.168.0.98/archive</name>
-        <url>jdbc:mysql://192.168.0.98/archive</url>
-        <key>1</key>
-      </archive>
     </pv>
     <pv>
       <display_name>Esther:Vacuum:PT-CT-Static</display_name>
@@ -105,11 +100,6 @@
       <period>0.0</period>
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
-      <archive>
-        <name>jdbc:mysql://localhost/archive</name>
-        <url>jdbc:mysql://localhost/archive</url>
-        <key>1</key>
-      </archive>
     </pv>
     <pv>
       <display_name>Esther:Vacuum:CTST-Pressure</display_name>
@@ -130,11 +120,6 @@
       <period>0.0</period>
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
-      <archive>
-        <name>jdbc:mysql://localhost/archive</name>
-        <url>jdbc:mysql://localhost/archive</url>
-        <key>1</key>
-      </archive>
     </pv>
     <pv>
       <display_name>Esther:Vacuum:STDT-Pressure</display_name>
@@ -155,11 +140,6 @@
       <period>0.0</period>
       <ring_size>5000</ring_size>
       <request>OPTIMIZED</request>
-      <archive>
-        <name>jdbc:mysql://localhost/archive</name>
-        <url>jdbc:mysql://localhost/archive</url>
-        <key>1</key>
-      </archive>
     </pv>
   </pvlist>
 </databrowser>

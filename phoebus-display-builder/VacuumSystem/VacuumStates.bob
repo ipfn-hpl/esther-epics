@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-07-03 12:16:57 by esther-->
 <display version="2.0.0">
   <name>Vacuum State Machine</name>
   <macros>
@@ -580,9 +579,9 @@
     <name>ActButton_VacPlot</name>
     <actions>
       <action type="open_display">
+        <description>Open Vacuum Display</description>
         <file>VacuumMainDisplay.bob</file>
         <target>tab</target>
-        <description>Open Vacuum Display</description>
       </action>
     </actions>
     <x>818</x>
@@ -887,5 +886,20 @@
     <pv_name>${unit}:Vacuum:Auto-Vacuum</pv_name>
     <x>385</x>
     <y>477</y>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>ActButton_VacPlot_1</name>
+    <actions>
+      <action type="open_display">
+        <description>OpenTest gas MFC Display</description>
+        <file>../TestGases/MFC-MainDisplay.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <x>818</x>
+    <y>537</y>
+    <width>150</width>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
