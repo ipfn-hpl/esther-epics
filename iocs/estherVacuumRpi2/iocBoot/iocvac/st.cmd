@@ -26,6 +26,17 @@ vac_registerRecordDeviceDriver pdbbase
 #asynSetOption("MDBUS",0,"bits","8")
 #asynSetOption("MDBUS",0,"stop","1")
 
+# sudo dmesg | grep FTDI
+# Only USB port on RPI
+drvAsynSerialPortConfigure("USB0","/dev/ttyUSB0")
+# drvAsynSerialPortConfigure("USB0","/dev/tty_thyracont")
+asynSetOption("USB0", 0, "baud", "9600")
+asynSetOption("USB0", 0, "bits", "8")
+asynSetOption("USB0", 0, "parity", "none")
+asynSetOption("USB0", 0, "stop", "1")
+## Load record instances
+dbLoadRecords("db/thyracontV2.db", "P=Esther:,R=Vacuum:,PORT=USB0")
+
 # HF5111B 
 drvAsynIPPortConfigure("MDBUS","192.168.0.30:8899",0,0,0)
 
