@@ -939,11 +939,11 @@ record(mbbo, $(P)$(R)01:Command){
     field( TWST, "STOP" )
     field( FRST, "RESET" )
     field(VAL, "2")
+    field(PINI, "YES")
 }
 record(mbbo, $(P)$(R)02:Command){
     field( DTYP, "stream" )
     field( OUT,  "@edwards-scu800.proto Command('02') RS485" )
-  #field( ZRVL, "0" )
     field( ONVL, "1" )
     field( TWVL, "2" )
     field( FRVL, "4" )
@@ -951,6 +951,7 @@ record(mbbo, $(P)$(R)02:Command){
     field( TWST, "STOP" )
     field( FRST, "RESET" )
     field(VAL, "2")
+    field(PINI, "YES")
 }
 record(stringout, $(P)$(R)generic){
     field(DESC, "EDW Generic")
