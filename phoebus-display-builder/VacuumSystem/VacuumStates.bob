@@ -5,7 +5,7 @@
     <node>Vacuum</node>
     <unit>Esther</unit>
   </macros>
-  <width>1099</width>
+  <width>1097</width>
   <height>800</height>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
@@ -102,9 +102,9 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Pressure</name>
     <pv_name>${unit}:${node}:CTST-Pressure</pv_name>
-    <x>670</x>
+    <x>624</x>
     <y>25</y>
-    <width>210</width>
+    <width>130</width>
     <height>40</height>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="36.0">
@@ -116,8 +116,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Unit</name>
     <pv_name>${unit}:${node}:Units</pv_name>
-    <x>929</x>
-    <y>147</y>
+    <x>968</x>
+    <y>426</y>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="20.0">
       </font>
@@ -126,9 +126,9 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Pressure_1</name>
     <pv_name>${unit}:${node}:STDT-Pressure</pv_name>
-    <x>889</x>
+    <x>875</x>
     <y>25</y>
-    <width>210</width>
+    <width>111</width>
     <height>40</height>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="36.0">
@@ -141,7 +141,7 @@
     <name>CTST_lb</name>
     <class>Label_1</class>
     <text>CTST</text>
-    <x>740</x>
+    <x>710</x>
     <width>58</width>
     <height>25</height>
     <font>
@@ -240,8 +240,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>TU_DT-PT-Static_1</name>
     <pv_name>${unit}:${node}:PT-DT-Static</pv_name>
-    <x>900</x>
-    <y>85</y>
+    <x>910</x>
+    <y>137</y>
     <width>169</width>
     <height>40</height>
     <font>
@@ -253,8 +253,8 @@
   <widget type="label" version="2.0.0">
     <name>Label_DT-PT-Static_1</name>
     <text>DT-PT-Static</text>
-    <x>939</x>
-    <y>65</y>
+    <x>949</x>
+    <y>117</y>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_6</name>
@@ -901,5 +901,47 @@
     <width>150</width>
     <tooltip>$(actions)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Pressure_2</name>
+    <pv_name>${unit}:${node}:STDT-nWRG-Pressure</pv_name>
+    <x>986</x>
+    <y>27</y>
+    <width>111</width>
+    <height>32</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <format>2</format>
+    <precision>2</precision>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Pressure_3</name>
+    <pv_name>${unit}:${node}:CTST-nWRG-Pressure</pv_name>
+    <x>754</x>
+    <y>31</y>
+    <width>111</width>
+    <height>32</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <format>2</format>
+    <precision>2</precision>
+  </widget>
+  <widget type="meter" version="3.0.0">
+    <name>Meter</name>
+    <x>1280</x>
+    <y>380</y>
+    <width>0</width>
+    <height>0</height>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_1</name>
+    <pv_name>${unit}:${node}:Enable</pv_name>
+    <x>805</x>
+    <y>5</y>
+    <height>26</height>
   </widget>
 </display>
