@@ -11,7 +11,7 @@
  * Copyright (c) : (IPFN-IST)
  *
  * Created 5-Sep-2022
- * Revised 
+ * Revised 6-Nov-2025
  * Modified 
  *
  * To show unconnected PVs, type the following command at the iocsh
@@ -191,8 +191,8 @@ assign CountupDisa to "{P}:Vacuum:COUNTUP.DISA";
 short VacuumEnable;
 assign VacuumEnable to "{P}:Vacuum:Enable";
 
-// EdwScuCtSt OUT-OF-SERVICE
-/*short EdwScuCtStModFonct;
+// EdwScuCtSt back on SERVICE
+short EdwScuCtStModFonct;
 assign EdwScuCtStModFonct to "{P}:EDW:01:ReadModFonctWithWarning";
 monitor EdwScuCtStModFonct;
 short EdwScuCtStDisable;
@@ -202,7 +202,7 @@ assign EdwScuCtStMagLev to "{P}:EDW:01:Command";
 float EdwScuCtStMSpeed;
 assign EdwScuCtStMSpeed to "{P}:EDW:01:MSpeed";
 monitor EdwScuCtStMSpeed;
-*/
+
 short EdwScuStDtModFonct;
 assign EdwScuStDtModFonct to "{P}:EDW:02:ReadModFonctWithWarning";
 monitor EdwScuStDtModFonct;
@@ -351,7 +351,7 @@ ss VacuumSequence {
             printf("sncEsther: Startup delay over\n");
         } state Stopped
     }
-    
+
     state Stopped {
         entry{
             OPSTATE = POS_Stopped;
@@ -382,13 +382,12 @@ ss VacuumSequence {
             EDW_Dry_Pump_DT = OFF;
             pvPut(EDW_Dry_Pump_DT);
 
-            //EdwScuCtStMagLev = EdwScuMagLev_STOP;
-            //pvPut(EdwScuCtStMagLev);
+            EdwScuCtStMagLev = EdwScuMagLev_STOP;
+            pvPut(EdwScuCtStMagLev);
             EdwScuStDtMagLev = EdwScuMagLev_STOP;
             pvPut(EdwScuStDtMagLev);
-            // EdwScuCtSt OUT-OF-SERVICE
-            //EdwScuCtStDisable = ON;
-            //pvPut(EdwScuCtStDisable );
+            EdwScuCtStDisable = ON;
+            pvPut(EdwScuCtStDisable );
             EdwScuStDtDisable = ON;
             pvPut(EdwScuStDtDisable);
 
@@ -455,9 +454,8 @@ ss VacuumSequence {
             HVA_STDT_Valve = OFF;
             pvPut(HVA_STDT_Valve);
 
-        // EdwScuCtSt OUT-OF-SERVICE
-            //EdwScuCtStDisable = OFF;
-            //pvPut(EdwScuCtStDisable);
+            EdwScuCtStDisable = OFF;
+            pvPut(EdwScuCtStDisable);
             EdwScuStDtDisable = OFF;
             pvPut(EdwScuStDtDisable);
             TurboFans = OFF;
@@ -1025,12 +1023,10 @@ ss StartingHVSequence {
     }
     state CheckPumpsLevit {
         when (OPSTATE != POS_StartingHighVacuum ) { } state Inactive
-        // EdwScuCtSt OUT-OF-SERVICE
-        //when  ((EdwScuCtStModFonct == EdwScuModFonct_Levitation) &&
-        //        (EdwScuStDtModFonct == EdwScuModFonct_Levitation)) {
-            //EdwScuCtStMagLev = EdwScuMagLev_START;
-            //pvPut(EdwScuCtStMagLev);
-        when  (EdwScuStDtModFonct == EdwScuModFonct_Levitation) {
+        when  ((EdwScuCtStModFonct == EdwScuModFonct_Levitation) &&
+                (EdwScuStDtModFonct == EdwScuModFonct_Levitation)) {
+            EdwScuCtStMagLev = EdwScuMagLev_START;
+            pvPut(EdwScuCtStMagLev);
             EdwScuStDtMagLev = EdwScuMagLev_START;
             pvPut(EdwScuStDtMagLev);
             strcpy(msg, "StartingHV SubState: CheckPumps Accel");
@@ -1042,20 +1038,16 @@ ss StartingHVSequence {
     }
     state CheckPumpsAccel {
         when (OPSTATE != POS_StartingHighVacuum ) { } state Inactive
-        // EdwScuCtSt OUT-OF-SERVICE
-        //when  (delay(2) && ((EdwScuCtStModFonct == EdwScuModFonct_Acceleration) &&
-        //    (EdwScuStDtModFonct == EdwScuModFonct_Acceleration))) {
-        when  (delay(2) && (EdwScuStDtModFonct == EdwScuModFonct_Acceleration)) {
+        when  (delay(2) && ((EdwScuCtStModFonct == EdwScuModFonct_Acceleration) &&
+            (EdwScuStDtModFonct == EdwScuModFonct_Acceleration))) {
             StartingHVSubState = StartingHV_CheckPumpsNormal;
             pvPut(StartingHVSubState);
         } state CheckPumpsNormal
     }
     state CheckPumpsNormal {
         when (OPSTATE != POS_StartingHighVacuum ) { } state Inactive
-        // EdwScuCtSt OUT-OF-SERVICE
-        //when  (delay(30) && (EdwScuCtStModFonct == EdwScuModFonct_Normal) &&
-        //        (EdwScuStDtModFonct == EdwScuModFonct_Normal)) {
-        when  (delay(30) && (EdwScuStDtModFonct == EdwScuModFonct_Normal)) {
+        when  (delay(30) && (EdwScuCtStModFonct == EdwScuModFonct_Normal) &&
+                (EdwScuStDtModFonct == EdwScuModFonct_Normal)) {
             CTST_PressureHigh = PressureHV_High;
             STDT_PressureHigh = PressureHV_High;
             pvPut(CTST_PressureHigh);
@@ -1092,8 +1084,8 @@ ss StoppingHVSequence {
 
         when (OPSTATE == POS_StoppingHighVacuum) {
 
-            // EdwScuCtStMagLev = EdwScuMagLev_STOP;
-            // pvPut(EdwScuCtStMagLev);
+            EdwScuCtStMagLev = EdwScuMagLev_STOP;
+            pvPut(EdwScuCtStMagLev);
             EdwScuStDtMagLev = EdwScuMagLev_STOP;
             pvPut(EdwScuStDtMagLev);
             //CTST_PressureHigh = ADC_PressureL2HThres;
@@ -1111,10 +1103,8 @@ ss StoppingHVSequence {
     }
     state CheckPumpsDecel {
         when (OPSTATE != POS_StoppingHighVacuum ) { } state Inactive
-        // EdwScuCtSt OUT-OF-SERVICE
-        //when  (delay(5) && ((EdwScuCtStModFonct == EdwScuModFonct_Deceleration) &&
-        //    (EdwScuStDtModFonct == EdwScuModFonct_Deceleration) )) {
-        when (delay(5) && (EdwScuStDtModFonct == EdwScuModFonct_Deceleration) ) {
+        when  (delay(5) && ((EdwScuCtStModFonct == EdwScuModFonct_Deceleration) &&
+            (EdwScuStDtModFonct == EdwScuModFonct_Deceleration) )) {
             strcpy(msg, "StoppingHV SubState: CloseHvaValves");
             pvPut(msg);
             errlogSevPrintf(NO_ALARM, "%s\n", msg);
@@ -1124,9 +1114,7 @@ ss StoppingHVSequence {
     }
     state CloseHvaValves {
         when (OPSTATE != POS_StoppingHighVacuum ) { } state Inactive
-        // EdwScuCtSt OUT-OF-SERVICE
-        // when  (delay(5) && (EdwScuCtStMSpeed <= 5000.0) &&
-        when  (delay(5) &&
+        when  (delay(5) && (EdwScuCtStMSpeed <= 5000.0) &&
             (EdwScuStDtMSpeed <= 5000.0) ) {
             HVA_CTST_Valve = OFF;
             pvPut(HVA_CTST_Valve);
@@ -1144,10 +1132,8 @@ ss StoppingHVSequence {
     //state CheckHvaValves {
     state CheckPumpsLevit{
         when (OPSTATE != POS_StoppingHighVacuum ) { } state Inactive
-        // EdwScuCtSt OUT-OF-SERVICE
-        //when  (delay(10) && ((EdwScuCtStModFonct == EdwScuModFonct_Levitation) &&
-        //        (EdwScuStDtModFonct == EdwScuModFonct_Levitation))) {
-        when (delay(10) && (EdwScuStDtModFonct == EdwScuModFonct_Levitation)) {
+        when  (delay(10) && ((EdwScuCtStModFonct == EdwScuModFonct_Levitation) &&
+                (EdwScuStDtModFonct == EdwScuModFonct_Levitation))) {
             strcpy(msg, "StoppingHV SubState: End");
             pvPut(msg);
             errlogSevPrintf(NO_ALARM, "%s\n", msg);
