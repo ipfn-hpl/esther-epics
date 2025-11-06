@@ -334,10 +334,10 @@ assign EDW_Dry_Pump_ST to "{P}:EDW:DryPump-ST";
 short EDW_Dry_Pump_DT;
 assign EDW_Dry_Pump_DT to "{P}:EDW:DryPump-DT";
 //monitor GV_STDT_Lim_In;
-short EDW_Dry_Pump_ST_Temp;
+float EDW_Dry_Pump_ST_Temp;
 assign EDW_Dry_Pump_ST_Temp to "{P}:EDW:DryPump-ST-Temp";
 monitor EDW_Dry_Pump_ST_Temp;
-short EDW_Dry_Pump_DT_Temp;
+float EDW_Dry_Pump_DT_Temp;
 assign EDW_Dry_Pump_DT_Temp to "{P}:EDW:DryPump-DT-Temp";
 monitor EDW_Dry_Pump_DT_Temp;
 
