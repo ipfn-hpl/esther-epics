@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-04-22 15:04:38 by esther-->
+<display version="2.0.0">
+  <name>DisplayAlarms</name>
+  <width>279</width>
+  <height>299</height>
+  <background_color>
+    <color red="255" green="230" blue="204">
+    </color>
+  </background_color>
+  <widget type="bool_button" version="2.0.0">
+    <name>ClearAlarm</name>
+    <pv_name>${unit}:${node}:ALARM-CLEAR</pv_name>
+    <bit>-1</bit>
+    <width>150</width>
+    <height>50</height>
+    <off_label>CLEAR ALARMS </off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <foreground_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <mode>1</mode>
+    <show_confirm_dialog>2</show_confirm_dialog>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>ALARM ACTIVE</text>
+    <x>157</x>
+    <y>8</y>
+    <width>66</width>
+    <height>34</height>
+    <font>
+      <font family="Sans" style="BOLD" size="8.910891089108912">
+      </font>
+    </font>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>false</value>
+        </exp>
+        <pv_name>${unit}:${node}:Alarm-ON</pv_name>
+      </rule>
+      <rule name="Blinking" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="240" green="240" blue="240">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1&amp;&amp;pv1&lt;0.5">
+          <value>
+            <color name="Attention" red="255" green="160" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1&amp;&amp;pv1&gt;=0.5">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:Alarm-ON</pv_name>
+        <pv_name>sim://ramp(0,1,.05)</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>PT101</text>
+    <x>2</x>
+    <y>84</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>PT102</text>
+    <x>150</x>
+    <y>84</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_15</name>
+    <text>DOORS</text>
+    <y>268</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_Min</name>
+    <text>LOW ALARM</text>
+    <x>57</x>
+    <y>60</y>
+    <width>85</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_Min_1</name>
+    <text>HIGH ALARM</text>
+    <x>173</x>
+    <y>60</y>
+    <width>88</width>
+    <height>16</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>ALARM_LED_15</name>
+    <pv_name>${unit}:${node}:PT102-Alarm</pv_name>
+    <bit>0</bit>
+    <x>233</x>
+    <y>87</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PT101</name>
+    <pv_name>${unit}:${node}:PT101-Alarm</pv_name>
+    <bit>0</bit>
+    <x>87</x>
+    <y>86</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>PT201</text>
+    <x>2</x>
+    <y>114</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_202</name>
+    <text>PT202</text>
+    <x>150</x>
+    <y>114</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>ALARM_LED_21</name>
+    <pv_name>${unit}:${node}:PT202-Alarm</pv_name>
+    <bit>0</bit>
+    <x>233</x>
+    <y>113</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PT201</name>
+    <pv_name>${unit}:${node}:PT201-Alarm</pv_name>
+    <bit>0</bit>
+    <x>87</x>
+    <y>112</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_301</name>
+    <text>PT301</text>
+    <x>2</x>
+    <y>144</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_301</name>
+    <text>PT302</text>
+    <x>150</x>
+    <y>144</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PT302</name>
+    <pv_name>${unit}:${node}:PT302-Alarm</pv_name>
+    <bit>0</bit>
+    <x>233</x>
+    <y>147</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PT301</name>
+    <pv_name>${unit}:${node}:PT301-Alarm</pv_name>
+    <bit>0</bit>
+    <x>87</x>
+    <y>146</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_401</name>
+    <text>PT401</text>
+    <x>2</x>
+    <y>174</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_402</name>
+    <text>PT402</text>
+    <x>150</x>
+    <y>174</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PT402</name>
+    <pv_name>${unit}:${node}:PT402-Alarm</pv_name>
+    <bit>0</bit>
+    <x>233</x>
+    <y>173</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PT201_1</name>
+    <pv_name>${unit}:${node}:PT401-Alarm</pv_name>
+    <bit>0</bit>
+    <x>87</x>
+    <y>172</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_501</name>
+    <text>PT501</text>
+    <y>206</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_402</name>
+    <text>PT502</text>
+    <x>148</x>
+    <y>206</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PT402_1</name>
+    <pv_name>${unit}:${node}:PT502-Alarm</pv_name>
+    <bit>0</bit>
+    <x>231</x>
+    <y>205</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PT501</name>
+    <pv_name>${unit}:${node}:PT501-Alarm</pv_name>
+    <bit>0</bit>
+    <x>85</x>
+    <y>204</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>${unit}:${node}:Alarm-ON</pv_name>
+    <x>236</x>
+    <y>16</y>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_801</name>
+    <text>PT801</text>
+    <y>238</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_601</name>
+    <text>PT601</text>
+    <x>148</x>
+    <y>238</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PT402_2</name>
+    <pv_name>${unit}:${node}:PT601-Alarm</pv_name>
+    <bit>0</bit>
+    <x>231</x>
+    <y>237</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PT801</name>
+    <pv_name>${unit}:${node}:PT801-Alarm</pv_name>
+    <bit>0</bit>
+    <x>85</x>
+    <y>236</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PT402_3</name>
+    <pv_name>${unit}:${node}:PT901-Alarm</pv_name>
+    <bit>0</bit>
+    <x>231</x>
+    <y>268</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_901</name>
+    <text>PT901</text>
+    <x>148</x>
+    <y>269</y>
+    <width>79</width>
+    <height>30</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_Doors</name>
+    <pv_name>${unit}:${node}:DOORS-Alarm</pv_name>
+    <bit>0</bit>
+    <x>85</x>
+    <y>268</y>
+    <width>26</width>
+    <height>26</height>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+</display>
