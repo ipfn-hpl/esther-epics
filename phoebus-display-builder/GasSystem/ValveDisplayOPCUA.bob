@@ -1,0 +1,2600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>ValveDisplayOPCUA</name>
+  <macros>
+    <node>gas</node>
+    <unit>Esther</unit>
+  </macros>
+  <width>1341</width>
+  <height>857</height>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Esther Gas Injection System</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>322</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <macros>
+      <gasName>N2</gasName>
+      <ptNum>101</ptNum>
+    </macros>
+    <file>BottleDouble.bob</file>
+    <x>40</x>
+    <y>30</y>
+    <width>203</width>
+    <height>141</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PT201</name>
+    <macros>
+      <gasName>O2</gasName>
+      <ptNum>201</ptNum>
+    </macros>
+    <file>BottleSimple.bob</file>
+    <x>40</x>
+    <y>202</y>
+    <width>187</width>
+    <height>141</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_Btl_H2</name>
+    <macros>
+      <gasName>H2</gasName>
+      <ptNum>401</ptNum>
+    </macros>
+    <file>BottleSimple.bob</file>
+    <x>40</x>
+    <y>546</y>
+    <width>187</width>
+    <height>141</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_3</name>
+    <macros>
+      <gasName>He I</gasName>
+      <ptNum>301</ptNum>
+    </macros>
+    <file>BottleDouble.bob</file>
+    <x>40</x>
+    <y>374</y>
+    <width>187</width>
+    <height>141</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <macros>
+      <gasName>He II</gasName>
+      <ptNum>501</ptNum>
+    </macros>
+    <file>BottleSimple.bob</file>
+    <x>40</x>
+    <y>712</y>
+    <width>187</width>
+    <height>141</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV102</name>
+    <macros>
+      <pvNum>102</pvNum>
+    </macros>
+    <file>PValve_OPC_NO.bob</file>
+    <x>586</x>
+    <y>10</y>
+    <width>90</width>
+    <height>70</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_pt202</name>
+    <macros>
+      <ptNum>102</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>398</x>
+    <y>29</y>
+    <width>86</width>
+    <height>71</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_56</name>
+    <x>370</x>
+    <y>60</y>
+    <width>240</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="130.0" y="40.0">
+      </point>
+      <point x="130.0" y="0.0">
+      </point>
+      <point x="240.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==1 &amp;&amp; pv1&gt;=10.0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PV101</pv_name>
+        <pv_name>${unit}:${node}:PT102</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_ExitN2</name>
+    <x>640</x>
+    <y>20</y>
+    <width>60</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="60.0" y="40.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_2</name>
+    <macros>
+      <pvNum>101</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>300</x>
+    <y>53</y>
+    <width>88</width>
+    <height>90</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_59</name>
+    <x>350</x>
+    <y>230</y>
+    <width>180</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="150.0" y="40.0">
+      </point>
+      <point x="150.0" y="0.0">
+      </point>
+      <point x="180.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=10.0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PT202</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_60</name>
+    <x>366</x>
+    <y>589</y>
+    <width>165</width>
+    <height>41</height>
+    <points>
+      <point x="0.0" y="41.0">
+      </point>
+      <point x="134.0625" y="41.0">
+      </point>
+      <point x="134.0625" y="0.0">
+      </point>
+      <point x="165.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_pt202_1</name>
+    <macros>
+      <ptNum>202</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>398</x>
+    <y>202</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_8</name>
+    <macros>
+      <mfcNum>401</mfcNum>
+    </macros>
+    <file>MFC.bob</file>
+    <x>208</x>
+    <y>582</y>
+    <width>120</width>
+    <height>60</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_9</name>
+    <macros>
+      <mfcNum>201</mfcNum>
+    </macros>
+    <file>MFC.bob</file>
+    <x>208</x>
+    <y>223</y>
+    <width>120</width>
+    <height>60</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_FL_601</name>
+    <macros>
+      <flNum>601</flNum>
+    </macros>
+    <file>Lira.bob</file>
+    <x>1096</x>
+    <y>716</y>
+    <width>75</width>
+    <height>48</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_14</name>
+    <macros>
+      <mfcNum>601</mfcNum>
+    </macros>
+    <file>MFC.bob</file>
+    <x>981</x>
+    <y>706</y>
+    <width>120</width>
+    <height>60</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_pt202_2</name>
+    <macros>
+      <ptNum>601</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>1072</x>
+    <y>684</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>EC_NR601</name>
+    <macros>
+      <cvNum>601</cvNum>
+    </macros>
+    <file>Valve_NR.bob</file>
+    <x>791</x>
+    <y>726</y>
+    <width>112</width>
+    <height>41</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>EC_NR603</name>
+    <macros>
+      <cvNum>603</cvNum>
+    </macros>
+    <file>Valve_NR.bob</file>
+    <x>799</x>
+    <y>646</y>
+    <width>112</width>
+    <height>41</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Ed_PV_202</name>
+    <macros>
+      <pvNum>202</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>520</x>
+    <y>264</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_O2</name>
+    <x>500</x>
+    <y>270</y>
+    <width>40</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="40.0" y="40.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_O2_3</name>
+    <x>580</x>
+    <y>310</y>
+    <width>210</width>
+    <height>440</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="180.0" y="0.0">
+      </point>
+      <point x="180.0" y="435.0">
+      </point>
+      <point x="210.0" y="435.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=10.0 &amp;&amp; pv1==1">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv2&gt;=10.0 &amp;&amp; pv3==1">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PT202</pv_name>
+        <pv_name>${unit}:${node}:PV202</pv_name>
+        <pv_name>${unit}:${node}:PT302</pv_name>
+        <pv_name>${unit}:${node}:PV302</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_201</name>
+    <macros>
+      <pvNum>201</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>300</x>
+    <y>223</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_301</name>
+    <macros>
+      <pvNum>301</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>294</x>
+    <y>401</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_HeI_1</name>
+    <x>350</x>
+    <y>410</y>
+    <width>260</width>
+    <height>35</height>
+    <points>
+      <point x="0.0" y="35.0">
+      </point>
+      <point x="140.0" y="35.0">
+      </point>
+      <point x="140.0" y="0.0">
+      </point>
+      <point x="260.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==1 &amp;&amp; pv1&gt;=10.0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PV301</pv_name>
+        <pv_name>${unit}:${node}:PT302</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_O2_1</name>
+    <x>490</x>
+    <y>450</y>
+    <width>50</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="50.0" y="40.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==1 &amp;&amp; pv1&gt;=10.0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PV301</pv_name>
+        <pv_name>${unit}:${node}:PT302</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_MV204</name>
+    <macros>
+      <mvNum>204</mvNum>
+    </macros>
+    <file>MValve.bob</file>
+    <x>530</x>
+    <y>200</y>
+    <width>80</width>
+    <height>40</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_H2_2</name>
+    <x>500</x>
+    <y>630</y>
+    <width>40</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="40.0" y="40.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_MV404</name>
+    <macros>
+      <mvNum>404</mvNum>
+    </macros>
+    <file>MValve.bob</file>
+    <x>525</x>
+    <y>560</y>
+    <width>80</width>
+    <height>40</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <x>500</x>
+    <y>100</y>
+    <width>300</width>
+    <height>570</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="280.0" y="40.0">
+      </point>
+      <point x="280.0" y="570.0">
+      </point>
+      <point x="300.0" y="570.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=10.0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PT102</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_ExitN2_1</name>
+    <x>630</x>
+    <y>190</y>
+    <width>60</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="60.0" y="40.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_302</name>
+    <macros>
+      <pvNum>302</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>520</x>
+    <y>450</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_401</name>
+    <macros>
+      <pvNum>401</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>300</x>
+    <y>584</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_402</name>
+    <macros>
+      <pvNum>402</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>520</x>
+    <y>630</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_501</name>
+    <macros>
+      <pvNum>501</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>300</x>
+    <y>747</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PT_302</name>
+    <macros>
+      <ptNum>302</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>398</x>
+    <y>378</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PT_402</name>
+    <macros>
+      <ptNum>402</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>398</x>
+    <y>557</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PT_502</name>
+    <macros>
+      <ptNum>502</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>406</x>
+    <y>715</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_HeII_2</name>
+    <x>360</x>
+    <y>747</y>
+    <width>248</width>
+    <height>45</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="147.61904761904762" y="40.0">
+      </point>
+      <point x="147.61904761904762" y="0.0">
+      </point>
+      <point x="246.03174603174602" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_502</name>
+    <macros>
+      <pvNum>502</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>520</x>
+    <y>790</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_HeII_3</name>
+    <x>506</x>
+    <y>787</y>
+    <width>40</width>
+    <height>50</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="50.0">
+      </point>
+      <point x="40.0" y="50.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_H2_4</name>
+    <x>580</x>
+    <y>670</y>
+    <width>150</width>
+    <height>160</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="150.0" y="0.0">
+      </point>
+      <point x="150.0" y="160.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_HeII_3</name>
+    <x>580</x>
+    <y>830</y>
+    <width>210</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="210.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_HeII_4</name>
+    <x>590</x>
+    <y>490</y>
+    <width>170</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="170.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=10.0 &amp;&amp; pv1==1">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv2&gt;=10.0 &amp;&amp; pv3==1">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PT202</pv_name>
+        <pv_name>${unit}:${node}:PV202</pv_name>
+        <pv_name>${unit}:${node}:PT302</pv_name>
+        <pv_name>${unit}:${node}:PV302</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_603</name>
+    <macros>
+      <pvNum>603</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>871</x>
+    <y>624</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_601</name>
+    <macros>
+      <pvNum>601</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>871</x>
+    <y>706</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_MV704</name>
+    <macros>
+      <mvNum>704</mvNum>
+    </macros>
+    <file>MValve.bob</file>
+    <x>908</x>
+    <y>511</y>
+    <width>80</width>
+    <height>40</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_FL_603</name>
+    <macros>
+      <flNum>603</flNum>
+    </macros>
+    <file>Lira.bob</file>
+    <x>851</x>
+    <y>504</y>
+    <width>70</width>
+    <height>50</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PT901</name>
+    <macros>
+      <ptNum>901</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>1008</x>
+    <y>79</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_701</name>
+    <macros>
+      <pvNum>701</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>1121</x>
+    <y>498</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_MV701</name>
+    <macros>
+      <mvNum>701</mvNum>
+    </macros>
+    <file>MValve.bob</file>
+    <x>1083</x>
+    <y>120</y>
+    <width>80</width>
+    <height>40</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_FL_602</name>
+    <macros>
+      <flNum>602</flNum>
+    </macros>
+    <file>Lira.bob</file>
+    <x>896</x>
+    <y>115</y>
+    <width>70</width>
+    <height>50</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_HeII_5</name>
+    <x>931</x>
+    <y>666</y>
+    <width>50</width>
+    <height>169</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="50.0" y="0.0">
+      </point>
+      <point x="50.0" y="169.0">
+      </point>
+      <point x="0.0" y="169.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_HeII_5</name>
+    <x>931</x>
+    <y>750</y>
+    <width>59</width>
+    <height>2</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="50.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PT801</name>
+    <macros>
+      <ptNum>801</ptNum>
+    </macros>
+    <file>PT_probe.bob</file>
+    <x>27</x>
+    <y>29</y>
+    <width>86</width>
+    <height>71</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit</name>
+    <text>EXIT</text>
+    <x>710</x>
+    <y>29</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV203</name>
+    <macros>
+      <pvNum>203</pvNum>
+    </macros>
+    <file>PValve_NO.bob</file>
+    <x>580</x>
+    <y>180</y>
+    <width>90</width>
+    <height>70</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV303</name>
+    <macros>
+      <pvNum>303</pvNum>
+    </macros>
+    <file>PValve_NO.bob</file>
+    <x>586</x>
+    <y>360</y>
+    <width>90</width>
+    <height>70</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_ExitN2_2</name>
+    <x>647</x>
+    <y>372</y>
+    <width>60</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="60.0" y="40.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit_2</name>
+    <text>EXIT</text>
+    <x>635</x>
+    <y>419</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV503</name>
+    <macros>
+      <pvNum>503</pvNum>
+    </macros>
+    <file>PValve_NO.bob</file>
+    <x>589</x>
+    <y>695</y>
+    <width>90</width>
+    <height>70</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_ExitN2_3</name>
+    <x>646</x>
+    <y>705</y>
+    <width>60</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="60.0" y="40.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit_3</name>
+    <text>EXIT</text>
+    <x>672</x>
+    <y>745</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>EC_NR602</name>
+    <macros>
+      <cvNum>602</cvNum>
+    </macros>
+    <file>Valve_NR.bob</file>
+    <x>790</x>
+    <y>810</y>
+    <width>112</width>
+    <height>41</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_602</name>
+    <macros>
+      <pvNum>602</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>871</x>
+    <y>786</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV403</name>
+    <macros>
+      <pvNum>403</pvNum>
+    </macros>
+    <file>PValve_NO.bob</file>
+    <x>588</x>
+    <y>539</y>
+    <width>90</width>
+    <height>70</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_ExitN2_4</name>
+    <x>649</x>
+    <y>551</y>
+    <width>60</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="60.0" y="40.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit_4</name>
+    <text>EXIT</text>
+    <x>679</x>
+    <y>598</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>EC_NR502</name>
+    <macros>
+      <cvNum>502</cvNum>
+    </macros>
+    <file>Valve_NR.bob</file>
+    <x>212</x>
+    <y>767</y>
+    <width>112</width>
+    <height>41</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV703A</name>
+    <macros>
+      <pvNum>703A</pvNum>
+    </macros>
+    <file>PValve_NO.bob</file>
+    <x>1140</x>
+    <y>100</y>
+    <width>90</width>
+    <height>70</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_703a</name>
+    <x>1200</x>
+    <y>150</y>
+    <width>40</width>
+    <height>70</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="40.0" y="0.0">
+      </point>
+      <point x="40.0" y="70.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_19</name>
+    <file>C_Chamber.bob</file>
+    <x>800</x>
+    <y>190</y>
+    <width>541</width>
+    <height>240</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV703B</name>
+    <macros>
+      <pvNum>703B</pvNum>
+    </macros>
+    <file>PValve_NO.bob</file>
+    <x>931</x>
+    <y>100</y>
+    <width>90</width>
+    <height>70</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_Exit_roof</name>
+    <x>810</x>
+    <y>470</y>
+    <width>40</width>
+    <height>70</height>
+    <points>
+      <point x="40.0" y="70.0">
+      </point>
+      <point x="0.0" y="70.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>EC_NR701</name>
+    <macros>
+      <cvNum>701</cvNum>
+    </macros>
+    <file>Valve_NR.bob</file>
+    <x>1148</x>
+    <y>730</y>
+    <width>112</width>
+    <height>41</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ED_PV_702</name>
+    <macros>
+      <pvNum>702</pvNum>
+    </macros>
+    <file>PValve_NC.bob</file>
+    <x>974</x>
+    <y>497</y>
+    <width>80</width>
+    <height>61</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_O2_4</name>
+    <x>1040</x>
+    <y>540</y>
+    <width>210</width>
+    <height>210</height>
+    <points>
+      <point x="100.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+      <point x="60.0" y="100.0">
+      </point>
+      <point x="210.0" y="100.0">
+      </point>
+      <point x="210.0" y="210.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0 &gt;=pv1+ 1.0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PT601</pv_name>
+        <pv_name>${unit}:${node}:PT901</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>PL_703a_1</name>
+    <x>1180</x>
+    <y>350</y>
+    <width>50</width>
+    <height>190</height>
+    <points>
+      <point x="0.0" y="190.0">
+      </point>
+      <point x="50.0" y="190.0">
+      </point>
+      <point x="50.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="(pv0 &gt;=pv1) &amp;&amp; pv2== 1">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PT601</pv_name>
+        <pv_name>${unit}:${node}:PT901</pv_name>
+        <pv_name>${unit}:${node}:PT701</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_Exit_roof_1</name>
+    <x>810</x>
+    <y>60</y>
+    <width>90</width>
+    <height>90</height>
+    <points>
+      <point x="90.0" y="90.0">
+      </point>
+      <point x="0.0" y="90.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_N2_2</name>
+    <x>980</x>
+    <y>150</y>
+    <width>110</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="110.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=1.0 &amp;&amp; pv1==0">
+          <value>
+            <color name="MAJOR" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PT901</pv_name>
+        <pv_name>${unit}:${node}:PV703B</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Pl_N2_3</name>
+    <x>210</x>
+    <y>99</y>
+    <width>110</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="110.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <rules>
+      <rule name="ColorRule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0&gt;=10.0">
+          <value>
+            <color name="On" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:PT101</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>EC_NR303</name>
+    <macros>
+      <cvNum>303</cvNum>
+    </macros>
+    <file>Valve_NR.bob</file>
+    <x>209</x>
+    <y>427</y>
+    <width>112</width>
+    <height>41</height>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="BorderRule" prop_id="border_width" out_exp="false">
+        <exp bool_exp="pv0&lt;=10.0">
+          <value>1</value>
+        </exp>
+        <pv_name>${unit}:${node}:PT301</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="51" green="102" blue="51">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Control / SetPoints</description>
+        <file>Gas-Control-OPCUA.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <x>1021</x>
+    <y>790</y>
+    <width>159</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>${unit}:${node}:MFC201_FLOW</pv_name>
+    <x>292</x>
+    <y>184</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>${unit}:${node}:MFC201_MEAS_VOL</pv_name>
+    <x>292</x>
+    <y>205</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>PT201_2</name>
+    <text>Volume</text>
+    <x>243</x>
+    <y>203</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>PT201_3</name>
+    <text>Flow</text>
+    <x>243</x>
+    <y>184</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>${unit}:${node}:MFC601_FLOW</pv_name>
+    <x>1041</x>
+    <y>645</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_4</name>
+    <pv_name>${unit}:${node}:MFC601_MEAS_VOL</pv_name>
+    <x>1041</x>
+    <y>664</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>PT201_4</name>
+    <text>Flow</text>
+    <x>995</x>
+    <y>643</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>PT201_5</name>
+    <text>Volume</text>
+    <x>995</x>
+    <y>664</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_F_401</name>
+    <pv_name>${unit}:${node}:MFC401_FLOW</pv_name>
+    <x>304</x>
+    <y>548</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Flow_401</name>
+    <text>Flow</text>
+    <x>259</x>
+    <y>547</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>FVol_401</name>
+    <text>FVol</text>
+    <x>277</x>
+    <y>667</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_V_401</name>
+    <pv_name>${unit}:${node}:MFC401_MEAS_VOL</pv_name>
+    <x>303</x>
+    <y>566</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LbL_FT_401</name>
+    <text>Temp</text>
+    <x>259</x>
+    <y>528</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>LbL_FT_401</name>
+    <pv_name>${unit}:${node}:MFC401_TEMP</pv_name>
+    <x>306</x>
+    <y>528</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>LbL_FT_402</name>
+    <pv_name>${unit}:${node}:MFC201_TEMP</pv_name>
+    <x>294</x>
+    <y>165</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LbL_FT_403</name>
+    <text>Temp</text>
+    <x>243</x>
+    <y>165</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LbL_T_MFC_601</name>
+    <text>Temp</text>
+    <x>951</x>
+    <y>624</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_FT_MFC601</name>
+    <pv_name>${unit}:${node}:MFC601_TEMP</pv_name>
+    <x>998</x>
+    <y>625</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit_901</name>
+    <text>EXIT</text>
+    <x>830</x>
+    <y>60</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="ColorRule" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>Esther:gas:PV703B</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit_702</name>
+    <text>EXIT</text>
+    <x>830</x>
+    <y>462</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="ColorRule" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>Esther:gas:PV702</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Exit_203</name>
+    <text>EXIT</text>
+    <x>670</x>
+    <y>240</y>
+    <width>49</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="ColorRule" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="OK" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>Esther:gas:PV203</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_9</name>
+    <pv_name>${unit}:${node}:MFC201_FVOL_O2_END</pv_name>
+    <x>380</x>
+    <y>314</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_V_402</name>
+    <pv_name>${unit}:${node}:MFC601_END_HE1_VOL</pv_name>
+    <x>1250</x>
+    <y>830</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Vol_402_end</name>
+    <text>End Vol</text>
+    <x>1203</x>
+    <y>829</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Vol_402_end_1</name>
+    <text>End Vol</text>
+    <x>1203</x>
+    <y>810</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_V_403</name>
+    <pv_name>${unit}:${node}:MFC601_END_HE1_VOL</pv_name>
+    <x>1250</x>
+    <y>811</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Vol_402_end_2</name>
+    <text>End Vol</text>
+    <x>259</x>
+    <y>687</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TU_V_404</name>
+    <pv_name>${unit}:${node}:MFC401_FVOL_H2_END</pv_name>
+    <x>306</x>
+    <y>688</y>
+    <width>88</width>
+    <height>15</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>GroupHydraulicPress</name>
+    <x>931</x>
+    <y>372</y>
+    <width>251</width>
+    <height>65</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_PT-HYDEC-CC-S</name>
+      <pv_name>${unit}:Vacuum:PT-HYDEC-CC-S</pv_name>
+      <x>124</x>
+      <y>45</y>
+      <width>105</width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>TE_PT-HYDEC-CC-N</name>
+      <pv_name>${unit}:Vacuum:PT-HYDEC-CC-N</pv_name>
+      <x>124</x>
+      <y>25</y>
+      <width>105</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Lb_CC_Hyd_Pressures</name>
+      <class>Label_1</class>
+      <text>CC Hydraulic Pressures</text>
+      <width>251</width>
+      <height>25</height>
+      <font>
+        <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_T-HYDEC-CC-N_2</name>
+      <text>PT-HYDEC-CC-N</text>
+      <y>45</y>
+      <width>114</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_T-HYDEC-CC-S</name>
+      <text>PT-HYDEC-CC-S</text>
+      <y>25</y>
+      <width>114</width>
+    </widget>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>${unit}:${node}:Master_Enable</pv_name>
+    <x>1182</x>
+    <y>47</y>
+    <show_confirm_dialog>1</show_confirm_dialog>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>lb_MFC401_VOL</name>
+    <text>Volume</text>
+    <x>259</x>
+    <y>566</y>
+    <width>44</width>
+    <height>19</height>
+    <foreground_color>
+      <color name="Text_ForeGround" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV101</name>
+    <pv_name>${unit}:${node}:PV101_Master</pv_name>
+    <x>306</x>
+    <y>120</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV102</name>
+    <pv_name>${unit}:${node}:PV102_Master</pv_name>
+    <x>647</x>
+    <y>90</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV201</name>
+    <pv_name>${unit}:${node}:PV201_Master</pv_name>
+    <x>306</x>
+    <y>284</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV203</name>
+    <pv_name>${unit}:${node}:PV203_Master</pv_name>
+    <x>647</x>
+    <y>265</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV301</name>
+    <pv_name>${unit}:${node}:PV301_Master</pv_name>
+    <x>301</x>
+    <y>461</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV303</name>
+    <pv_name>${unit}:${node}:PV303_Master</pv_name>
+    <x>647</x>
+    <y>446</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV403</name>
+    <pv_name>${unit}:${node}:PV403_Master</pv_name>
+    <x>642</x>
+    <y>624</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV401</name>
+    <pv_name>${unit}:${node}:PV401_Master</pv_name>
+    <x>310</x>
+    <y>642</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV501</name>
+    <pv_name>${unit}:${node}:PV501_Master</pv_name>
+    <x>303</x>
+    <y>808</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV503</name>
+    <pv_name>${unit}:${node}:PV503_Master</pv_name>
+    <x>645</x>
+    <y>766</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV603</name>
+    <pv_name>${unit}:${node}:PV603_Master</pv_name>
+    <x>877</x>
+    <y>675</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV701</name>
+    <pv_name>${unit}:${node}:PV701_Master</pv_name>
+    <x>1135</x>
+    <y>559</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV703A</name>
+    <pv_name>${unit}:${node}:PV703A_Master</pv_name>
+    <x>1140</x>
+    <y>160</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV703B</name>
+    <pv_name>${unit}:${node}:PV703B_Master</pv_name>
+    <x>939</x>
+    <y>157</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV702</name>
+    <pv_name>${unit}:${node}:PV702_Master</pv_name>
+    <x>983</x>
+    <y>554</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_aster_Enable</name>
+    <text>MASTER ENABLE</text>
+    <x>1142</x>
+    <y>20</y>
+    <width>190</width>
+    <height>25</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <rules>
+      <rule name="ColorRule" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PV102</name>
+    <pv_name>${unit}:${node}:PV102</pv_name>
+    <x>610</x>
+    <y>90</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PV203</name>
+    <pv_name>${unit}:${node}:PV203</pv_name>
+    <x>610</x>
+    <y>264</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PV303</name>
+    <pv_name>${unit}:${node}:PV303</pv_name>
+    <x>610</x>
+    <y>445</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PV403</name>
+    <pv_name>${unit}:${node}:PV403</pv_name>
+    <x>605</x>
+    <y>623</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_PV503</name>
+    <pv_name>${unit}:${node}:PV503</pv_name>
+    <x>608</x>
+    <y>765</y>
+  </widget>
+</display>
