@@ -21,3 +21,8 @@ docs/uml/*.png
 !iocs/estherVacuumRpi/vacApp/Db/**
 
 
+css/.project
+iocs/thyracont/configure
+iocs/thyracont/iocBoot/iocvrs53
+iocs/thyracont/vrs53App
+phoebus-display-builder/CSS/Vacuum_20230519.csv

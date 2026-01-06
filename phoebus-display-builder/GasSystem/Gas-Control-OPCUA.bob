@@ -671,6 +671,15 @@ He II</text>
     <off_label>CLEAR_ALARM</off_label>
     <on_label>CLEARING</on_label>
     <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:CONTROL-ON</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
     <mode>1</mode>
   </widget>
   <widget type="textupdate" version="2.0.0">
@@ -686,8 +695,8 @@ He II</text>
   <widget type="textupdate" version="2.0.0">
     <name>Tu_Counter_S1</name>
     <pv_name>${unit}:${node}:Counter_S1</pv_name>
-    <x>579</x>
-    <y>650</y>
+    <x>559</x>
+    <y>600</y>
     <width>48</width>
     <wrap_words>false</wrap_words>
     <rules>
@@ -715,11 +724,11 @@ He II</text>
     <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>TU_SA_SS</name>
+    <name>TU_S2_SS</name>
     <pv_name>${unit}:${node}:S2-STEP</pv_name>
-    <x>924</x>
+    <x>935</x>
     <y>228</y>
-    <width>55</width>
+    <width>30</width>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TU_S1_SubStep_1_wait_1</name>
@@ -821,30 +830,15 @@ START</off_label>
     <on_label>ABORT ON
 STOP</on_label>
     <show_led>false</show_led>
-  </widget>
-  <widget type="bool_button" version="2.0.0">
-    <name>BB_Stp_3</name>
-    <pv_name>${unit}:${node}:STEP_3_GO</pv_name>
-    <x>813</x>
-    <y>740</y>
-    <off_label>Step3 O2</off_label>
-    <off_color>
-      <color red="0" green="100" blue="0">
-      </color>
-    </off_color>
-    <on_color>
-      <color red="0" green="255" blue="0">
-      </color>
-    </on_color>
-    <foreground_color>
-      <color red="192" green="192" blue="192">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="100" green="100" blue="100">
-      </color>
-    </background_color>
-    <mode>1</mode>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:CONTROL-ON</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Tu_PT901_end_s3</name>
@@ -879,14 +873,14 @@ STOP</on_label>
   <widget type="bool_button" version="2.0.0">
     <name>BB _AUTO_CYCLE</name>
     <pv_name>${unit}:${node}:AUTO_CYCLE</pv_name>
-    <x>506</x>
-    <y>610</y>
+    <x>360</x>
+    <y>590</y>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_Auto_cycle</name>
     <text>AUTO CYCLE</text>
-    <x>375</x>
-    <y>630</y>
+    <x>360</x>
+    <y>560</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Tu_PT901_end_s6</name>
@@ -897,36 +891,6 @@ STOP</on_label>
     <format>1</format>
     <show_units>false</show_units>
     <wrap_words>false</wrap_words>
-  </widget>
-  <widget type="combo" version="2.0.0">
-    <name>CB_Chief-Operator</name>
-    <pv_name>${unit}:${node}:Operator</pv_name>
-    <x>286</x>
-    <y>550</y>
-    <width>202</width>
-  </widget>
-  <widget type="combo" version="2.0.0">
-    <name>CB_Chief-Engineer</name>
-    <pv_name>${unit}:${node}:Chief-Engineer</pv_name>
-    <x>497</x>
-    <y>550</y>
-    <width>216</width>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Lbl_Operator</name>
-    <text>Operator</text>
-    <x>286</x>
-    <y>530</y>
-    <width>202</width>
-    <horizontal_alignment>1</horizontal_alignment>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Lbl_Chief-Engineer</name>
-    <text>Chief-Engineer</text>
-    <x>497</x>
-    <y>530</y>
-    <width>216</width>
-    <horizontal_alignment>1</horizontal_alignment>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Lbl_PulseNumber</name>
@@ -1005,6 +969,15 @@ STOP</on_label>
     <off_label>STEP-START</off_label>
     <on_label>STARTING</on_label>
     <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:CONTROL-ON</pv_name>
+      </rule>
+    </rules>
+    <enabled>false</enabled>
     <mode>1</mode>
   </widget>
   <widget type="multi_state_led" version="2.0.0">
@@ -1103,7 +1076,7 @@ STOP</on_label>
     <name>LED (Multi State)_S4_ON</name>
     <pv_name>${unit}:${node}:MAIN-STEP</pv_name>
     <x>840</x>
-    <y>287</y>
+    <y>289</y>
     <width>67</width>
     <height>30</height>
     <states>
@@ -1123,11 +1096,11 @@ STOP</on_label>
     </fallback_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>TU_SA_SS_2</name>
+    <name>TU_S1_SS</name>
     <pv_name>${unit}:${node}:S1-STEP</pv_name>
-    <x>924</x>
+    <x>935</x>
     <y>198</y>
-    <width>55</width>
+    <width>30</width>
   </widget>
   <widget type="multi_state_led" version="2.0.0">
     <name>LED (Multi State)_SA_End</name>
@@ -1216,7 +1189,7 @@ STOP</on_label>
     <name>LED (Multi State)_S2_ON</name>
     <pv_name>${unit}:${node}:MAIN-STEP</pv_name>
     <x>840</x>
-    <y>223</y>
+    <y>225</y>
     <width>67</width>
     <height>30</height>
     <states>
@@ -1236,21 +1209,21 @@ STOP</on_label>
     </fallback_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>LbO218_1</name>
-    <text>/ 6</text>
-    <x>1007</x>
+    <name>Lb_S1_NSS</name>
+    <text>/6</text>
+    <x>989</x>
     <y>198</y>
     <width>30</width>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>LbO218_2</name>
-    <text>/ 26</text>
-    <x>994</x>
+    <name>Lb_S2_NSS</name>
+    <text>/26</text>
+    <x>989</x>
     <y>228</y>
     <width>30</width>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>TU_SA_SS_3</name>
+    <name>TU_SA_SS</name>
     <pv_name>${unit}:${node}:SA-STEP</pv_name>
     <x>934</x>
     <y>103</y>
@@ -1264,31 +1237,31 @@ STOP</on_label>
     <width>30</width>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>TU_SA_SS_4</name>
+    <name>TU_S3_SS</name>
     <pv_name>${unit}:${node}:S3-STEP</pv_name>
-    <x>924</x>
+    <x>935</x>
     <y>257</y>
-    <width>55</width>
+    <width>30</width>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>LbO218_4</name>
-    <text>/ 22</text>
-    <x>994</x>
+    <name>Lb_S3_NSS</name>
+    <text>/22</text>
+    <x>989</x>
     <y>257</y>
     <width>30</width>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>TU_SS_4</name>
+    <name>TU_S4_SS</name>
     <pv_name>${unit}:${node}:S4-STEP</pv_name>
-    <x>924</x>
+    <x>935</x>
     <y>287</y>
-    <width>55</width>
+    <width>30</width>
   </widget>
   <widget type="multi_state_led" version="2.0.0">
-    <name>LED (Multi State)_S4_ON_1</name>
+    <name>LED (Multi State)_S20_ON</name>
     <pv_name>${unit}:${node}:MAIN-STEP</pv_name>
     <x>841</x>
-    <y>443</y>
+    <y>482</y>
     <width>67</width>
     <height>30</height>
     <states>
@@ -1308,9 +1281,9 @@ STOP</on_label>
     </fallback_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>LbO218_5</name>
-    <text>/ 27</text>
-    <x>992</x>
+    <name>Lb_S4_NSS</name>
+    <text>/27</text>
+    <x>989</x>
     <y>289</y>
     <width>30</width>
   </widget>
@@ -1364,7 +1337,7 @@ STOP</on_label>
     <name>LED (Multi State)_S5_ON</name>
     <pv_name>${unit}:${node}:MAIN-STEP</pv_name>
     <x>841</x>
-    <y>320</y>
+    <y>321</y>
     <width>67</width>
     <height>30</height>
     <states>
@@ -1384,16 +1357,16 @@ STOP</on_label>
     </fallback_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>TU_SS_5</name>
+    <name>TU_S5_SS</name>
     <pv_name>${unit}:${node}:S5-STEP</pv_name>
-    <x>926</x>
+    <x>935</x>
     <y>322</y>
-    <width>55</width>
+    <width>30</width>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>LbO218_6</name>
-    <text>/ 13</text>
-    <x>992</x>
+    <name>Lb_S5_NSS</name>
+    <text>/13</text>
+    <x>989</x>
     <y>322</y>
     <width>30</width>
   </widget>
@@ -1424,7 +1397,7 @@ STOP</on_label>
     <name>LED (Multi State)_S6_ON</name>
     <pv_name>${unit}:${node}:MAIN-STEP</pv_name>
     <x>841</x>
-    <y>356</y>
+    <y>353</y>
     <width>67</width>
     <height>30</height>
     <states>
@@ -1447,7 +1420,7 @@ STOP</on_label>
     <name>LED (Multi State)_S7_ON</name>
     <pv_name>${unit}:${node}:MAIN-STEP</pv_name>
     <x>841</x>
-    <y>391</y>
+    <y>385</y>
     <width>67</width>
     <height>30</height>
     <states>
@@ -1467,16 +1440,16 @@ STOP</on_label>
     </fallback_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>TU_SS_7</name>
+    <name>TU_S7_SS</name>
     <pv_name>${unit}:${node}:S7-STEP</pv_name>
-    <x>934</x>
+    <x>935</x>
     <y>391</y>
-    <width>55</width>
+    <width>30</width>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>LbO218_7</name>
-    <text>/ 24</text>
-    <x>1000</x>
+    <name>Lb_S7_NSS</name>
+    <text>/24</text>
+    <x>989</x>
     <y>391</y>
     <width>30</width>
   </widget>
@@ -1527,17 +1500,131 @@ STOP</on_label>
     </fallback_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>TU_SS_6</name>
+    <name>TU_S6_SS</name>
     <pv_name>${unit}:${node}:S6-STEP</pv_name>
-    <x>926</x>
-    <y>356</y>
-    <width>55</width>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>LbO218_8</name>
-    <text>/ 24</text>
-    <x>992</x>
+    <x>935</x>
     <y>356</y>
     <width>30</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_S6_NSS</name>
+    <text>/24</text>
+    <x>989</x>
+    <y>356</y>
+    <width>30</width>
+  </widget>
+  <widget type="multi_state_led" version="2.0.0">
+    <name>LED (Multi State)_S8_ON</name>
+    <pv_name>${unit}:${node}:MAIN-STEP</pv_name>
+    <x>843</x>
+    <y>419</y>
+    <width>67</width>
+    <height>30</height>
+    <states>
+      <state>
+        <value>8</value>
+        <label>Step 8</label>
+        <color>
+          <color name="On" red="0" green="255" blue="0">
+          </color>
+        </color>
+      </state>
+    </states>
+    <fallback_label>Off</fallback_label>
+    <fallback_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </fallback_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_S4_He1</name>
+    <text>He I</text>
+    <x>1023</x>
+    <y>289</y>
+    <width>30</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_S4_He1_1</name>
+    <text>H2</text>
+    <x>1020</x>
+    <y>356</y>
+    <width>30</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_S4_He2</name>
+    <text>He II</text>
+    <x>1015</x>
+    <y>391</y>
+    <width>30</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_S8_Close</name>
+    <text>Close PVs</text>
+    <x>939</x>
+    <y>423</y>
+    <width>73</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_TS1</name>
+    <text>S1</text>
+    <x>916</x>
+    <y>199</y>
+    <width>20</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_TS2</name>
+    <text>S2</text>
+    <x>916</x>
+    <y>225</y>
+    <width>20</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_TS4</name>
+    <text>S4</text>
+    <x>916</x>
+    <y>294</y>
+    <width>20</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_TS3_1</name>
+    <text>S3</text>
+    <x>916</x>
+    <y>261</y>
+    <width>20</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_TS5</name>
+    <text>S5</text>
+    <x>916</x>
+    <y>321</y>
+    <width>20</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_TS6</name>
+    <text>S6</text>
+    <x>913</x>
+    <y>359</y>
+    <width>20</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_TS7</name>
+    <text>S7</text>
+    <x>913</x>
+    <y>391</y>
+    <width>20</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_TS8</name>
+    <text>S8</text>
+    <x>915</x>
+    <y>423</y>
+    <width>20</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_TS20</name>
+    <text>S20</text>
+    <x>908</x>
+    <y>488</y>
+    <width>26</width>
   </widget>
 </display>

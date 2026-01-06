@@ -6,7 +6,7 @@
     <unit>Esther</unit>
   </macros>
   <width>1320</width>
-  <height>270</height>
+  <height>241</height>
   <background_color>
     <color red="128" green="128" blue="128">
     </color>
@@ -29,24 +29,6 @@
     </foreground_color>
     <transparent use_class="true">true</transparent>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_2</name>
-    <class>COMMENT</class>
-    <text>Some comment.</text>
-    <x>450</x>
-    <y>10</y>
-    <width>90</width>
-    <font use_class="true">
-      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
-      </font>
-    </font>
-    <foreground_color use_class="true">
-      <color name="Text" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <transparent use_class="true">true</transparent>
-    <wrap_words use_class="true">true</wrap_words>
-  </widget>
   <widget type="embedded" version="2.0.0">
     <name>ED_CT</name>
     <macros>
@@ -55,7 +37,7 @@
     </macros>
     <file>EL-FLOW-MFC-TEST.bob</file>
     <x>10</x>
-    <y>50</y>
+    <y>31</y>
     <width>650</width>
     <height>210</height>
     <resize>1</resize>
@@ -68,7 +50,7 @@
     </macros>
     <file>EL-FLOW-MFC-TEST.bob</file>
     <x>670</x>
-    <y>50</y>
+    <y>13</y>
     <width>650</width>
     <height>220</height>
     <resize>1</resize>
