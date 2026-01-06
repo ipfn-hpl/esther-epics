@@ -6,7 +6,7 @@
     <unit>Esther</unit>
   </macros>
   <width>1341</width>
-  <height>857</height>
+  <height>902</height>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
@@ -2067,32 +2067,6 @@
       </color>
     </border_color>
   </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>TU_V_404</name>
-    <pv_name>${unit}:${node}:MFC401_FVOL_H2_END</pv_name>
-    <x>306</x>
-    <y>688</y>
-    <width>88</width>
-    <height>15</height>
-    <font>
-      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
-      </font>
-    </font>
-    <foreground_color>
-      <color name="Text_ForeGround" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_width>1</border_width>
-    <border_color>
-      <color name="MEDM_COLOR_28" red="58" green="94" blue="171">
-      </color>
-    </border_color>
-  </widget>
   <widget type="group" version="3.0.0">
     <name>GroupHydraulicPress</name>
     <x>931</x>
@@ -2393,10 +2367,60 @@
     <enabled>false</enabled>
   </widget>
   <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV502</name>
+    <pv_name>${unit}:${node}:PV502_Master</pv_name>
+    <x>576</x>
+    <y>847</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
     <name>BB_Master_PV503</name>
     <pv_name>${unit}:${node}:PV503_Master</pv_name>
     <x>645</x>
     <y>766</y>
+    <width>61</width>
+    <visible>false</visible>
+    <show_led>false</show_led>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+      <rule name="VisibleRule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <pv_name>${unit}:${node}:Master_Enable</pv_name>
+      </rule>
+    </rules>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_Master_PV602</name>
+    <pv_name>${unit}:${node}:PV602_Master</pv_name>
+    <x>898</x>
+    <y>844</y>
     <width>61</width>
     <visible>false</visible>
     <show_led>false</show_led>

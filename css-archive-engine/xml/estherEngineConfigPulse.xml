@@ -287,6 +287,10 @@
          <period>5.0</period><scan/>
       </channel>
       <channel>
+         <name>Esther:Vacuum:PT-DT_MIPAM50P</name>
+         <period>1.0</period><scan/>
+      </channel>
+      <channel>
          <name>Esther:Vacuum:CTST-Pressure</name>
          <period>5.0</period><scan/>
       </channel>
