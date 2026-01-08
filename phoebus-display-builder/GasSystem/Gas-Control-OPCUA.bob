@@ -1627,4 +1627,11 @@ STOP</on_label>
     <y>488</y>
     <width>26</width>
   </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lb_S4_He1_2</name>
+    <text>Purge He I</text>
+    <x>1023</x>
+    <y>228</y>
+    <width>64</width>
+  </widget>
 </display>
