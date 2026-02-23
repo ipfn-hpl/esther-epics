@@ -15,6 +15,12 @@
 #record(ai, "$(P)aiExample") {
 #    field(DESC, "temp ai PV")
 #}
+record(bo, $(P)$(R)Enable){
+    field(DESC, "Enable SCAN/Archive")
+    field(ONAM, "ENABLED")
+    field(ZNAM, "DISABLED")
+    field(VAL, "0")
+}
 record(mbbo, "$(P)$(R)OPSTATE") {
     field(DESC, "Vacuum Sequence State")
     field(ZRVL, "0")

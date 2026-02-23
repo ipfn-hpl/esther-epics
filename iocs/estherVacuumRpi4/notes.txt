@@ -1,0 +1,4 @@
+https://epics.anl.gov/tech-talk/2022/msg01583.php
+To show unconnected PVs, type the following command at the iocsh
+ *   seqChanShow sncEstherVacuum "-"
+
