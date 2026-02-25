@@ -2621,4 +2621,18 @@
     <x>608</x>
     <y>765</y>
   </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_Cntrl</name>
+    <pv_name>${unit}:${node}:MAIN-STEP</pv_name>
+    <x>1000</x>
+    <y>40</y>
+    <width>45</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Control ON</text>
+    <x>984</x>
+    <y>21</y>
+    <width>75</width>
+  </widget>
 </display>

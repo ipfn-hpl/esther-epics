@@ -5,7 +5,7 @@
   <update_period>3.0</update_period>
   <scroll_step>5</scroll_step>
   <scroll>true</scroll>
-  <start>-1 hours</start>
+  <start>-10 minutes</start>
   <end>now</end>
   <archive_rescale>STAGGER</archive_rescale>
   <foreground>
@@ -35,7 +35,7 @@
         <blue>0</blue>
       </color>
       <min>4.9E-324</min>
-      <max>10.0</max>
+      <max>10000.0</max>
       <grid>false</grid>
       <autoscale>true</autoscale>
       <log_scale>true</log_scale>
@@ -51,11 +51,11 @@
         <green>0</green>
         <blue>0</blue>
       </color>
-      <min>450.0</min>
-      <max>1550.0</max>
+      <min>0.1</min>
+      <max>10.0</max>
       <grid>false</grid>
       <autoscale>true</autoscale>
-      <log_scale>false</log_scale>
+      <log_scale>true</log_scale>
     </axis>
   </axes>
   <annotations>
@@ -134,6 +134,46 @@
       <trace_type>AREA</trace_type>
       <linewidth>2</linewidth>
       <line_style>SOLID</line_style>
+      <point_type>NONE</point_type>
+      <point_size>2</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+    </pv>
+    <pv>
+      <display_name>CTST-nWRG-Pressure</display_name>
+      <visible>true</visible>
+      <name>Esther:Vacuum:CTST-nWRG-Pressure</name>
+      <axis>1</axis>
+      <color>
+        <red>0</red>
+        <green>255</green>
+        <blue>0</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>2</linewidth>
+      <line_style>DASH</line_style>
+      <point_type>NONE</point_type>
+      <point_size>2</point_size>
+      <waveform_index>0</waveform_index>
+      <period>0.0</period>
+      <ring_size>5000</ring_size>
+      <request>OPTIMIZED</request>
+    </pv>
+    <pv>
+      <display_name>STDT-nWRG-Pressure</display_name>
+      <visible>true</visible>
+      <name>Esther:Vacuum:STDT-nWRG-Pressure</name>
+      <axis>1</axis>
+      <color>
+        <red>0</red>
+        <green>0</green>
+        <blue>255</blue>
+      </color>
+      <trace_type>AREA</trace_type>
+      <linewidth>2</linewidth>
+      <line_style>DASH</line_style>
       <point_type>NONE</point_type>
       <point_size>2</point_size>
       <waveform_index>0</waveform_index>

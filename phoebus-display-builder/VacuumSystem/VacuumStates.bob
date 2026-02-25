@@ -102,7 +102,7 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Pressure</name>
     <pv_name>${unit}:${node}:CTST-Pressure</pv_name>
-    <x>624</x>
+    <x>661</x>
     <y>25</y>
     <width>130</width>
     <height>40</height>
@@ -126,9 +126,9 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Pressure_1</name>
     <pv_name>${unit}:${node}:STDT-Pressure</pv_name>
-    <x>875</x>
+    <x>883</x>
     <y>25</y>
-    <width>111</width>
+    <width>174</width>
     <height>40</height>
     <font>
       <font family="Liberation Sans" style="REGULAR" size="36.0">
@@ -207,8 +207,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>TU_DT-PT-Static</name>
     <pv_name>${unit}:${node}:PT-CT-Static</pv_name>
-    <x>689</x>
-    <y>85</y>
+    <x>738</x>
+    <y>110</y>
     <width>169</width>
     <height>40</height>
     <font>
@@ -221,8 +221,8 @@
   <widget type="label" version="2.0.0">
     <name>Label_DT-PT-Static</name>
     <text>PT-CT-Static</text>
-    <x>728</x>
-    <y>65</y>
+    <x>780</x>
+    <y>91</y>
   </widget>
   <widget type="label" version="2.0.0">
     <name>CTST_lb_1</name>
@@ -706,8 +706,8 @@
   <widget type="bool_button" version="2.0.0">
     <name>BB_HoldVacuum</name>
     <pv_name>${unit}:Vacuum:HoldVacuum</pv_name>
-    <x>800</x>
-    <y>150</y>
+    <x>754</x>
+    <y>155</y>
     <off_label>Push Hold Vacuum</off_label>
     <off_color>
       <color name="OK" red="0" green="255" blue="0">
@@ -905,8 +905,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Pressure_2</name>
     <pv_name>${unit}:${node}:STDT-nWRG-Pressure</pv_name>
-    <x>986</x>
-    <y>27</y>
+    <x>917</x>
+    <y>62</y>
     <width>111</width>
     <height>32</height>
     <font>
@@ -919,8 +919,8 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text Pressure_3</name>
     <pv_name>${unit}:${node}:CTST-nWRG-Pressure</pv_name>
-    <x>754</x>
-    <y>31</y>
+    <x>686</x>
+    <y>60</y>
     <width>111</width>
     <height>32</height>
     <font>
@@ -934,8 +934,8 @@
     <name>Meter</name>
     <x>1280</x>
     <y>380</y>
-    <width>0</width>
-    <height>0</height>
+    <width>1</width>
+    <height>1</height>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button_1</name>
