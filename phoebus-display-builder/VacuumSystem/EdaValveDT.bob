@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>MFC El-Flow DT</name>
+  <width>280</width>
+  <height>140</height>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>DT EDA Valve</text>
+    <x>30</x>
+    <y>20</y>
+    <width>103</width>
+    <height>21</height>
+    <font>
+      <font family="Quicksand" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>${unit}:${node}:EdaDtValve:C</pv_name>
+    <x>195</x>
+    <y>10</y>
+    <width>60</width>
+    <labels_from_pv>true</labels_from_pv>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Valve_LS1_ON</name>
+    <pv_name>${unit}:${node}:EdaDtLs1On</pv_name>
+    <bit>0</bit>
+    <x>225</x>
+    <y>90</y>
+    <square>true</square>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Valve_LS1_OFF</name>
+    <pv_name>${unit}:${node}:EdaDtLs1Off</pv_name>
+    <bit>0</bit>
+    <x>205</x>
+    <y>90</y>
+    <on_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <square>true</square>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Valve_LS2_ON</name>
+    <pv_name>${unit}:${node}:EdaDtLs2On</pv_name>
+    <bit>0</bit>
+    <x>75</x>
+    <y>90</y>
+    <square>true</square>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>Valve_LS2_OFF</name>
+    <pv_name>${unit}:${node}:EdaDtLs2Off</pv_name>
+    <bit>0</bit>
+    <x>95</x>
+    <y>90</y>
+    <on_color>
+      <color name="STOP" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <square>true</square>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Pump</name>
+    <text>Pump</text>
+    <x>199</x>
+    <y>64</y>
+    <width>37</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl-CT</name>
+    <text>DT</text>
+    <x>151</x>
+    <y>18</y>
+    <width>19</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Lbl_Air</name>
+    <text>Venting line</text>
+    <x>47</x>
+    <y>64</y>
+    <width>74</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>Symbol</name>
+    <pv_name>${unit}:${node}:EdaDtValve:S</pv_name>
+    <symbols>
+      <symbol>../images/upright_valve.svg</symbol>
+      <symbol>../images/down_right_valve.svg</symbol>
+    </symbols>
+    <x>125</x>
+    <y>40</y>
+    <width>70</width>
+    <height>60</height>
+    <rotation>-90.0</rotation>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+</display>
