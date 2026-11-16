@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="33.23584"
+   height="15.54053"
+   id="svg2186"
+   sodipodi:version="0.32"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   version="1.0"
+   sodipodi:docname="Gate_valve.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2188" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="12.753176"
+     inkscape:cy="-18.056477"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     width="20mm"
+     height="20mm"
+     units="mm"
+     inkscape:window-width="1240"
+     inkscape:window-height="1174"
+     inkscape:window-x="1837"
+     inkscape:window-y="0"
+     showgrid="false"
+     inkscape:window-maximized="0"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2200"
+       spacingx="1mm"
+       spacingy="1mm"
+       units="mm"
+       originx="-19.183023"
+       originy="-26.562701" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2191">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-19.183023,-26.562701)">
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       d="M 19.714517,27.094172 V 41.571708 L 51.887365,27.094172 V 41.571708 L 19.714517,27.094172"
+       id="path1702" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1.06299;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       d="M 19.714519,27.094196 V 41.571733 L 51.887368,27.094196 v 14.477537 z"
+       id="path1704" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1.06299;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       d="M 35.837566,41.571735 V 27.094197"
+       id="path1706" />
+  </g>
+</svg>
