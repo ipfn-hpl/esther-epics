@@ -1453,4 +1453,11 @@ $(actions)</tooltip>
       </background_color>
     </widget>
   </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_5</name>
+    <pv_name>${unit}:${node}:STDT-nWRG-Pressure</pv_name>
+    <x>1050</x>
+    <y>268</y>
+    <format>2</format>
+  </widget>
 </display>
