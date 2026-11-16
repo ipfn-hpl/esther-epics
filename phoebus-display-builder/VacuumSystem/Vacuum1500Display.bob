@@ -1,0 +1,1456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <macros>
+    <unit>Esther</unit>
+    <node>VacuumPLC1500</node>
+  </macros>
+  <width>1600</width>
+  <height>1010</height>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <class>COMMENT</class>
+    <text>TurboFans</text>
+    <x>1004</x>
+    <y>100</y>
+    <width>131</width>
+    <height>72</height>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <wrap_words use_class="true">true</wrap_words>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Box_FullPanel</name>
+    <y>110</y>
+    <width>1600</width>
+    <height>900</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Esther Display</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>153</width>
+    <height>25</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <class>COMMENT</class>
+    <text>Mode Auto</text>
+    <x>240</x>
+    <y>20</y>
+    <width>110</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>../images/ESTHER-isometric.svg</file>
+    <y>90</y>
+    <width>1600</width>
+    <height>300</height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>Esther:gas:PT901</pv_name>
+    <x>103</x>
+    <y>217</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>PT901</text>
+    <x>107</x>
+    <y>200</y>
+    <width>60</width>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_MODEAUTO</name>
+    <pv_name>Esther:${node}:ModeAuto</pv_name>
+    <x>240</x>
+    <y>40</y>
+    <show_confirm_dialog>1</show_confirm_dialog>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_MODEAUTO_1</name>
+    <pv_name>${unit}:${node}:HeatBlankets:C</pv_name>
+    <x>940</x>
+    <y>242</y>
+    <width>60</width>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_HeatBlankets</name>
+    <pv_name>Esther:${node}:HeatBlankets:S</pv_name>
+    <x>1004</x>
+    <y>248</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <class>COMMENT</class>
+    <text>HeatBlankets</text>
+    <x>950</x>
+    <y>273</y>
+    <width>110</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_TurboFans</name>
+    <pv_name>Esther:${node}:TurboFans:C</pv_name>
+    <x>1015</x>
+    <y>121</y>
+    <width>60</width>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_TurboFans</name>
+    <pv_name>Esther:${node}:TurboFans:S</pv_name>
+    <x>1079</x>
+    <y>127</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_PtHydecCc_S</name>
+    <pv_name>${unit}:${node}:PtHydecCc_S</pv_name>
+    <x>190</x>
+    <y>256</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_PtHydecCc_S</name>
+    <class>COMMENT</class>
+    <text>PtHydecCc_S</text>
+    <x>191</x>
+    <y>272</y>
+    <width>110</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_PtHydecCc_N</name>
+    <pv_name>${unit}:${node}:PtHydecCc_N</pv_name>
+    <x>194</x>
+    <y>147</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_PtHydecCc_N</name>
+    <class>COMMENT</class>
+    <text>PtHydecCc_N</text>
+    <x>195</x>
+    <y>162</y>
+    <width>110</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_PtHydecCc_S_1</name>
+    <pv_name>${unit}:${node}:PtDtStatic</pv_name>
+    <x>1459</x>
+    <y>216</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_PtDtStatic</name>
+    <class>COMMENT</class>
+    <text>PtDtStatic</text>
+    <x>1384</x>
+    <y>216</y>
+    <width>110</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_4</name>
+    <pv_name>${unit}:${node}:CTST-Pressure</pv_name>
+    <x>1040</x>
+    <y>248</y>
+    <format>2</format>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>CT_CT_PneumaticValve_Line</name>
+    <x>170</x>
+    <y>212</y>
+    <width>403</width>
+    <height>148</height>
+    <points>
+      <point x="0.0" y="145.0">
+      </point>
+      <point x="0.0" y="88.0">
+      </point>
+      <point x="403.0" y="88.0">
+      </point>
+      <point x="403.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>CT_PneumaticValve</name>
+    <macros>
+      <valveName>EdaCt</valveName>
+    </macros>
+    <file>EdaValveCT.bob</file>
+    <x>10</x>
+    <y>310</y>
+    <width>290</width>
+    <height>140</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>CT_PneumaticValve_CT_TestGasMFC_Line</name>
+    <x>70</x>
+    <y>385</y>
+    <width>68</width>
+    <height>205</height>
+    <points>
+      <point x="68.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="204.99999999999997">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>CT_TestGasMFC</name>
+    <macros>
+      <mfc>MFC-CT</mfc>
+      <max_flow>10 Ln/min</max_flow>
+    </macros>
+    <file>../TestGases/EL-FLOW-MFC.bob</file>
+    <x>10</x>
+    <y>590</y>
+    <width>225</width>
+    <height>420</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>CT_PneumaticValve_CT_DryPump_Line</name>
+    <x>200</x>
+    <y>385</y>
+    <width>77</width>
+    <height>95</height>
+    <points>
+      <point x="74.1125" y="99.0">
+      </point>
+      <point x="74.1125" y="25.0">
+      </point>
+      <point x="74.1125" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>CT_DryPump</name>
+    <x>94</x>
+    <y>463</y>
+    <width>246</width>
+    <height>114</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="led" version="2.0.0">
+      <name>LED_CT_DryPump</name>
+      <pv_name>Esther:${node}:DryPumpCT:S</pv_name>
+      <x>110</x>
+      <y>58</y>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>BB_CT_DryPump</name>
+      <pv_name>${unit}:${node}:DryPumpCT:C</pv_name>
+      <x>16</x>
+      <y>53</y>
+      <width>80</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_CT_DryPump</name>
+      <text>CT DryPump</text>
+      <x>17</x>
+      <y>25</y>
+      <width>95</width>
+      <font>
+        <font family="Quicksand" style="ITALIC" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="symbol" version="2.0.0">
+      <name>PID_CT_DryPump</name>
+      <pv_name>${unit}:${node}:DryPumpCT:S</pv_name>
+      <symbols>
+        <symbol>../images/pump_off.svg</symbol>
+        <symbol>../images/pump_on.svg</symbol>
+      </symbols>
+      <x>132</x>
+      <y>21</y>
+      <width>96</width>
+      <height>71</height>
+      <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Box_CT_DryPump</name>
+      <width>246</width>
+      <height>114</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="Text" red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Background" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>ST_TestGasMFC_Line</name>
+    <x>360</x>
+    <y>320</y>
+    <width>456</width>
+    <height>270</height>
+    <points>
+      <point x="456.00000000000006" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="270.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ST_TestGasMFC</name>
+    <macros>
+      <mfc>MFC-ST</mfc>
+      <max_flow>9 mLn/min</max_flow>
+    </macros>
+    <file>../TestGases/EL-FLOW-MFC.bob</file>
+    <x>225</x>
+    <y>590</y>
+    <width>225</width>
+    <height>420</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>CT_ST_IsolatorPlug</name>
+    <file>Mst12CtSt.bob</file>
+    <x>450</x>
+    <y>330</y>
+    <width>300</width>
+    <height>120</height>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ST_DT_IsolatorPlug</name>
+    <file>Mst12StDt.bob</file>
+    <x>1020</x>
+    <y>330</y>
+    <width>300</width>
+    <height>120</height>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>CT_ST_GateValve</name>
+    <x>449</x>
+    <y>460</y>
+    <width>302</width>
+    <height>70</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Box_HVA_CTST_GateValve</name>
+      <width>302</width>
+      <height>70</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_HVA_CTST_GateValve</name>
+      <pv_name>Esther:${node}:HvaCtStGateValve:S</pv_name>
+      <x>151</x>
+      <y>35</y>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>BB_HVA_CTST_GateValve</name>
+      <pv_name>${unit}:${node}:HvaCtStGateValve:C</pv_name>
+      <x>10</x>
+      <y>30</y>
+      <width>70</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_HVA_CTST_GateValve</name>
+      <text>HVA CT/ST GateValve</text>
+      <x>5</x>
+      <width>180</width>
+      <font>
+        <font family="Quicksand" style="BOLD" size="16.0">
+        </font>
+      </font>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>ST_DT_GateValve</name>
+    <x>1019</x>
+    <y>460</y>
+    <width>302</width>
+    <height>70</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Box_HVA_STDT_GateValve</name>
+      <width>302</width>
+      <height>70</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_HVA_STDT_GateValve</name>
+      <pv_name>Esther:${node}:HvaStDtGateValve:S</pv_name>
+      <x>150</x>
+      <y>35</y>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>BB_HVA_STDT_GateValve</name>
+      <pv_name>${unit}:${node}:HvaStDtGateValve:C</pv_name>
+      <x>10</x>
+      <y>30</y>
+      <width>70</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_HVA_STDT_GateValve</name>
+      <text>HVA ST/DT GateValve</text>
+      <x>5</x>
+      <width>180</width>
+      <font>
+        <font family="Quicksand" style="BOLD" size="16.0">
+        </font>
+      </font>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>CT_ST_Turbo_ControlPanel</name>
+    <macros>
+      <Add>01</Add>
+      <name>CT/ST</name>
+      <node>EDW</node>
+    </macros>
+    <file>EdwardsCUTabs.bob</file>
+    <x>450</x>
+    <y>540</y>
+    <width>300</width>
+    <height>455</height>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>ST_DT_Turbo_ControlPanel</name>
+    <macros>
+      <Add>02</Add>
+      <name>ST/DT</name>
+      <node>EDW</node>
+    </macros>
+    <file>EdwardsCUTabs.bob</file>
+    <x>1020</x>
+    <y>540</y>
+    <width>300</width>
+    <height>455</height>
+    <border_width>1</border_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>ST_CTST_Isolator_Line</name>
+    <x>817</x>
+    <y>245</y>
+    <width>1</width>
+    <height>95</height>
+    <points>
+      <point x="0.0" y="95.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>CTST_Isolator</name>
+    <symbols>
+      <symbol>../images/MST.svg</symbol>
+    </symbols>
+    <x>766</x>
+    <y>340</y>
+    <width>80</width>
+    <height>80</height>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>CTST_Isolator_GateValve_Line</name>
+    <x>817</x>
+    <y>420</y>
+    <width>1</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="40.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>CTST_GateValve</name>
+    <symbols>
+      <symbol>../images/Gate_valve-vertical.svg</symbol>
+    </symbols>
+    <x>798</x>
+    <y>460</y>
+    <width>38</width>
+    <height>80</height>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>CTST_Bellows</name>
+    <x>807</x>
+    <y>490</y>
+    <width>20</width>
+    <height>190</height>
+    <points>
+      <point x="10.0" y="180.0">
+      </point>
+      <point x="10.0" y="160.0">
+      </point>
+      <point x="20.0" y="150.0">
+      </point>
+      <point x="0.0" y="140.0">
+      </point>
+      <point x="20.0" y="130.0">
+      </point>
+      <point x="0.0" y="120.0">
+      </point>
+      <point x="20.0" y="110.0">
+      </point>
+      <point x="0.0" y="100.0">
+      </point>
+      <point x="20.0" y="90.0">
+      </point>
+      <point x="0.0" y="80.0">
+      </point>
+      <point x="10.0" y="70.0">
+      </point>
+      <point x="10.0" y="50.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>CTST_Turbo</name>
+    <pv_name>${unit}:${node}:DryPumpCT:S</pv_name>
+    <symbols>
+      <symbol>../images/pump_off.svg</symbol>
+      <symbol>../images/pump_on.svg</symbol>
+    </symbols>
+    <x>770</x>
+    <y>670</y>
+    <width>96</width>
+    <height>71</height>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>CTST_Turbo_ST_DryPump_Line</name>
+    <x>817</x>
+    <y>740</y>
+    <width>140</width>
+    <height>90</height>
+    <points>
+      <point x="69.0" y="45.0">
+      </point>
+      <point x="69.0" y="20.0">
+      </point>
+      <point x="1.0" y="20.0">
+      </point>
+      <point x="1.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>ST_STDT_Isolator_Line</name>
+    <x>956</x>
+    <y>240</y>
+    <width>255</width>
+    <height>100</height>
+    <points>
+      <point x="0.0" y="99.99999999999999">
+      </point>
+      <point x="0.0" y="66.66666666666666">
+      </point>
+      <point x="221.5862068965517" y="66.66666666666666">
+      </point>
+      <point x="221.5862068965517" y="0.0">
+      </point>
+      <point x="255.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>STDT_Isolator</name>
+    <symbols>
+      <symbol>../images/MST.svg</symbol>
+    </symbols>
+    <x>926</x>
+    <y>340</y>
+    <width>80</width>
+    <height>80</height>
+    <rotation>180.0</rotation>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>STDT_Isolator_GateValve_Line</name>
+    <x>955</x>
+    <y>420</y>
+    <width>1</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="40.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>STDT_GateValve</name>
+    <symbols>
+      <symbol>../images/Gate_valve-vertical.svg</symbol>
+    </symbols>
+    <x>936</x>
+    <y>460</y>
+    <width>38</width>
+    <height>80</height>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>STDT_Bellows</name>
+    <x>945</x>
+    <y>490</y>
+    <width>20</width>
+    <height>190</height>
+    <points>
+      <point x="10.0" y="180.0">
+      </point>
+      <point x="10.0" y="160.0">
+      </point>
+      <point x="20.0" y="150.0">
+      </point>
+      <point x="0.0" y="140.0">
+      </point>
+      <point x="20.0" y="130.0">
+      </point>
+      <point x="0.0" y="120.0">
+      </point>
+      <point x="20.0" y="110.0">
+      </point>
+      <point x="0.0" y="100.0">
+      </point>
+      <point x="20.0" y="90.0">
+      </point>
+      <point x="0.0" y="80.0">
+      </point>
+      <point x="10.0" y="70.0">
+      </point>
+      <point x="10.0" y="50.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="symbol" version="2.0.0">
+    <name>STDT_Turbo</name>
+    <pv_name>${unit}:${node}:DryPumpCT:S</pv_name>
+    <symbols>
+      <symbol>../images/pump_off.svg</symbol>
+      <symbol>../images/pump_on.svg</symbol>
+    </symbols>
+    <x>907</x>
+    <y>670</y>
+    <width>96</width>
+    <height>71</height>
+    <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>STDT_Turbo_ST_DryPump_Line</name>
+    <x>886</x>
+    <y>740</y>
+    <width>70</width>
+    <height>90</height>
+    <points>
+      <point x="0.0" y="45.0">
+      </point>
+      <point x="0.0" y="20.0">
+      </point>
+      <point x="69.0" y="20.0">
+      </point>
+      <point x="69.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>ST_DryPump</name>
+    <x>817</x>
+    <y>775</y>
+    <width>139</width>
+    <height>221</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="symbol" version="2.0.0">
+      <name>PID_ST_DryPump</name>
+      <pv_name>${unit}:${node}:DryPumpDT:S</pv_name>
+      <symbols>
+        <symbol>../images/pump_off.svg</symbol>
+        <symbol>../images/pump_on.svg</symbol>
+      </symbols>
+      <x>21</x>
+      <y>60</y>
+      <width>96</width>
+      <height>71</height>
+      <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>BB_ST_DryPump</name>
+      <pv_name>${unit}:${node}:DryPumpST:C</pv_name>
+      <x>12</x>
+      <y>161</y>
+      <width>80</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Temp_ST_DryPump</name>
+      <pv_name>${unit}:EDW:DryPump-ST-Temp</pv_name>
+      <x>49</x>
+      <y>133</y>
+      <width>40</width>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_ST_DryPump</name>
+      <pv_name>Esther:${node}:DryPumpST:S</pv_name>
+      <x>106</x>
+      <y>166</y>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_ST_DryPump</name>
+      <text>ST DryPump</text>
+      <x>22</x>
+      <y>196</y>
+      <width>93</width>
+      <font>
+        <font family="Quicksand" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>PID_ST_DryPump_GateValve_1</name>
+      <x>59</x>
+      <y>11</y>
+      <width>20</width>
+      <height>40</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="20.0" y="0.0">
+        </point>
+        <point x="0.0" y="40.0">
+        </point>
+        <point x="20.0" y="40.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>PID_ST_DryPump_GateValve_2</name>
+      <x>59</x>
+      <y>30</y>
+      <width>20</width>
+      <height>1</height>
+      <points>
+        <point x="20.0" y="0.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Box_ST_DryPump</name>
+      <width>139</width>
+      <height>221</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="Text" red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Background" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Pipe_ST_DryPump</name>
+      <x>69</x>
+      <y>50</y>
+      <width>3</width>
+      <height>10</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="10.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>DT_DTPneumaticValve_Line</name>
+    <x>1460</x>
+    <y>240</y>
+    <width>70</width>
+    <height>110</height>
+    <points>
+      <point x="0.0" y="116.0">
+      </point>
+      <point x="0.0" y="60.0">
+      </point>
+      <point x="70.0" y="60.0">
+      </point>
+      <point x="70.0" y="0.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>DT_PneumaticValve</name>
+    <macros>
+      <valveName>EdaDt</valveName>
+    </macros>
+    <file>EdaValveDT.bob</file>
+    <x>1300</x>
+    <y>310</y>
+    <width>290</width>
+    <height>140</height>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>DT_Vent_Line</name>
+    <x>1350</x>
+    <y>385</y>
+    <width>80</width>
+    <height>240</height>
+    <points>
+      <point x="80.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="240.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>DT_PneumaticValve_DT_DryPump_Line</name>
+    <x>1490</x>
+    <y>385</y>
+    <width>80</width>
+    <height>175</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="80.0" y="0.0">
+      </point>
+      <point x="80.0" y="75.0">
+      </point>
+      <point x="10.0" y="75.0">
+      </point>
+      <point x="10.0" y="170.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>DT_DryPump</name>
+    <x>1431</x>
+    <y>544</y>
+    <width>140</width>
+    <height>170</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Temp_DT_DryPump</name>
+      <pv_name>${unit}:EDW:DryPump-DT-Temp</pv_name>
+      <x>49</x>
+      <y>84</y>
+      <width>40</width>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="symbol" version="2.0.0">
+      <name>PID_DT_DryPump</name>
+      <pv_name>${unit}:${node}:DryPumpDT:S</pv_name>
+      <symbols>
+        <symbol>../images/pump_off.svg</symbol>
+        <symbol>../images/pump_on.svg</symbol>
+      </symbols>
+      <x>21</x>
+      <y>10</y>
+      <width>96</width>
+      <height>71</height>
+      <tooltip>$(pv_name)
+$(pv_value)
+$(actions)</tooltip>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>BB_DT_DryPump</name>
+      <pv_name>${unit}:${node}:DryPumpDT:C</pv_name>
+      <x>14</x>
+      <y>112</y>
+      <width>80</width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_DT_DryPump</name>
+      <pv_name>Esther:${node}:DryPumpDT:S</pv_name>
+      <x>108</x>
+      <y>117</y>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_DT_DryPump</name>
+      <text>DT DryPump</text>
+      <x>21</x>
+      <y>145</y>
+      <width>96</width>
+      <font>
+        <font family="Quicksand" style="REGULAR" size="16.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Box_DT_DryPump</name>
+      <width>140</width>
+      <height>170</height>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="Text" red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Background" red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Model_PID_Valve_1</name>
+    <x>541</x>
+    <y>91</y>
+    <width>80</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="40.0">
+      </point>
+      <point x="80.0" y="0.0">
+      </point>
+      <point x="80.0" y="40.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Model_PID_Valve_2</name>
+    <x>410</x>
+    <y>31</y>
+    <width>40</width>
+    <height>80</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="40.0" y="0.0">
+      </point>
+      <point x="0.0" y="80.0">
+      </point>
+      <point x="40.0" y="80.0">
+      </point>
+    </points>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Model_PID_Gate_Valve_1</name>
+    <x>481</x>
+    <y>31</y>
+    <width>40</width>
+    <height>80</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline</name>
+      <y>40</y>
+      <width>40</width>
+      <height>1</height>
+      <points>
+        <point x="40.0" y="0.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_1</name>
+      <width>40</width>
+      <height>80</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="40.0" y="0.0">
+        </point>
+        <point x="0.0" y="80.0">
+        </point>
+        <point x="40.0" y="80.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Model_PID_3WayValve_1</name>
+    <x>606</x>
+    <y>11</y>
+    <width>80</width>
+    <height>80</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_6</name>
+      <x>20</x>
+      <y>40</y>
+      <width>40</width>
+      <height>40</height>
+      <points>
+        <point x="20.0" y="0.0">
+        </point>
+        <point x="40.0" y="40.0">
+        </point>
+        <point x="0.0" y="40.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_3</name>
+      <y>20</y>
+      <width>40</width>
+      <height>40</height>
+      <points>
+        <point x="40.0" y="20.0">
+        </point>
+        <point x="0.0" y="40.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_4</name>
+      <x>20</x>
+      <width>40</width>
+      <height>40</height>
+      <points>
+        <point x="20.0" y="40.0">
+        </point>
+        <point x="40.0" y="0.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_5</name>
+      <x>40</x>
+      <y>20</y>
+      <width>40</width>
+      <height>40</height>
+      <points>
+        <point x="0.0" y="20.0">
+        </point>
+        <point x="40.0" y="40.0">
+        </point>
+        <point x="40.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Model_PID_3WayValve_2</name>
+    <x>729</x>
+    <y>51</y>
+    <width>80</width>
+    <height>60</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_9</name>
+      <x>20</x>
+      <width>40</width>
+      <height>40</height>
+      <points>
+        <point x="20.0" y="40.0">
+        </point>
+        <point x="40.0" y="0.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="On" red="0" green="255" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_10</name>
+      <y>20</y>
+      <width>40</width>
+      <height>40</height>
+      <points>
+        <point x="40.0" y="20.0">
+        </point>
+        <point x="0.0" y="40.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="On" red="0" green="255" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_11</name>
+      <x>40</x>
+      <y>20</y>
+      <width>40</width>
+      <height>40</height>
+      <points>
+        <point x="0.0" y="20.0">
+        </point>
+        <point x="40.0" y="40.0">
+        </point>
+        <point x="40.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="STOP" red="255" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Model_PID_3WayValve_3</name>
+    <x>836</x>
+    <y>51</y>
+    <width>80</width>
+    <height>60</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_12</name>
+      <x>20</x>
+      <width>40</width>
+      <height>40</height>
+      <points>
+        <point x="20.0" y="40.0">
+        </point>
+        <point x="40.0" y="0.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="On" red="0" green="255" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_13</name>
+      <y>20</y>
+      <width>40</width>
+      <height>40</height>
+      <points>
+        <point x="40.0" y="20.0">
+        </point>
+        <point x="0.0" y="40.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="STOP" red="255" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_14</name>
+      <x>40</x>
+      <y>20</y>
+      <width>40</width>
+      <height>40</height>
+      <points>
+        <point x="0.0" y="20.0">
+        </point>
+        <point x="40.0" y="40.0">
+        </point>
+        <point x="40.0" y="0.0">
+        </point>
+      </points>
+      <line_color>
+        <color name="On" red="0" green="255" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+        </color>
+      </background_color>
+    </widget>
+  </widget>
+</display>

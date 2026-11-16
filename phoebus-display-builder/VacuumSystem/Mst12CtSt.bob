@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <width>300</width>
+  <height>120</height>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>MST CT/ST</text>
+    <x>5</x>
+    <width>86</width>
+    <font>
+      <font family="Quicksand" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_MST12</name>
+    <x>40</x>
+    <y>30</y>
+    <width>140</width>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="204" green="204" blue="204">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_MstIn</name>
+    <pv_name>${unit}:${node}:MstCtStIn:C</pv_name>
+    <x>220</x>
+    <y>70</y>
+    <width>70</width>
+    <mode>1</mode>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_MstOut</name>
+    <pv_name>${unit}:${node}:MstCtStOut:C</pv_name>
+    <x>10</x>
+    <y>70</y>
+    <width>70</width>
+    <mode>1</mode>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>BB_MstStop</name>
+    <pv_name>${unit}:${node}:MstCtStStop:C</pv_name>
+    <x>115</x>
+    <y>70</y>
+    <width>70</width>
+    <mode>1</mode>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_MsIn</name>
+    <text>In</text>
+    <x>220</x>
+    <y>100</y>
+    <width>70</width>
+    <height>15</height>
+    <font>
+      <font family="Quicksand" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_MSt12StDt</name>
+    <text>Stop</text>
+    <x>115</x>
+    <y>100</y>
+    <width>70</width>
+    <height>15</height>
+    <font>
+      <font family="Quicksand" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_out</name>
+    <text>Out</text>
+    <x>10</x>
+    <y>100</y>
+    <width>70</width>
+    <height>15</height>
+    <font>
+      <font family="Quicksand" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>${unit}:${node}:MstCtStStatus</pv_name>
+    <x>170</x>
+    <y>3</y>
+    <width>10</width>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>${unit}:${node}:MstCtStLsIn</pv_name>
+    <x>270</x>
+    <y>30</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_LsOut</name>
+    <pv_name>${unit}:${node}:MstCtStLsOut</pv_name>
+    <x>10</x>
+    <y>30</y>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon</name>
+    <x>219</x>
+    <y>15</y>
+    <width>40</width>
+    <height>50</height>
+    <points>
+      <point x="10.0" y="45.0">
+      </point>
+      <point x="10.0" y="50.0">
+      </point>
+      <point x="0.0" y="50.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="10.0" y="0.0">
+      </point>
+      <point x="10.0" y="5.0">
+      </point>
+      <point x="40.0" y="5.0">
+      </point>
+      <point x="32.5" y="8.5">
+      </point>
+      <point x="27.5" y="15.0">
+      </point>
+      <point x="25.5" y="25.0">
+      </point>
+      <point x="27.5" y="35.0">
+      </point>
+      <point x="32.5" y="41.5">
+      </point>
+      <point x="40.0" y="45.0">
+      </point>
+    </points>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="204" green="204" blue="204">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_MST12_1</name>
+    <x>179</x>
+    <y>35</y>
+    <width>40</width>
+    <height>10</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="204" green="204" blue="204">
+      </color>
+    </background_color>
+  </widget>
+</display>

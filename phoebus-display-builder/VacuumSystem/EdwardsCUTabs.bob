@@ -1,49 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>SCU800 Sub Display</name>
-  <width>351</width>
-  <height>463</height>
-  <background_color>
-    <color name="On" red="0" green="255" blue="0">
-    </color>
-  </background_color>
+  <width>300</width>
+  <height>455</height>
   <widget type="label" version="2.0.0">
     <name>LabelTitle</name>
-    <class>TITLE</class>
     <text>SCU800 CONTROLLER ${name}</text>
-    <x use_class="true">0</x>
-    <y use_class="true">0</y>
-    <width>351</width>
-    <height>25</height>
-    <font use_class="true">
-      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+    <x>5</x>
+    <width>251</width>
+    <font>
+      <font family="Quicksand" style="BOLD" size="16.0">
       </font>
     </font>
-    <foreground_color use_class="true">
-      <color name="Text" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <transparent use_class="true">true</transparent>
-    <horizontal_alignment>2</horizontal_alignment>
+    <horizontal_alignment>1</horizontal_alignment>
     <auto_size>true</auto_size>
     <wrap_words>false</wrap_words>
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Speed SP</name>
     <pv_name>${unit}:${node}:${Add}:SetSpeedSetpoint</pv_name>
-    <x>225</x>
+    <x>196</x>
     <y>25</y>
+    <background_color>
+      <color red="209" green="255" blue="255">
+      </color>
+    </background_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TU_ReadSetpoint</name>
     <pv_name>${unit}:${node}:${Add}:ReadSetpoint</pv_name>
-    <x>225</x>
-    <y>49</y>
+    <x>196</x>
+    <y>45</y>
+    <background_color>
+      <color red="255" green="225" blue="225">
+      </color>
+    </background_color>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Speep SP</name>
     <text>SET Speed</text>
-    <x>148</x>
+    <x>114</x>
     <y>25</y>
     <width>72</width>
     <height>16</height>
@@ -52,18 +48,18 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text ReadModFonctWithWarning</name>
     <pv_name>${unit}:${node}:${Add}:ReadModFonctWithWarning</pv_name>
-    <x>215</x>
-    <y>96</y>
+    <x>196</x>
+    <y>95</y>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_FunctionMode</name>
     <text>Function Mode</text>
-    <x>110</x>
-    <y>97</y>
+    <x>95</x>
+    <y>95</y>
     <width>93</width>
     <height>16</height>
     <background_color>
-      <color name="On" red="0" green="255" blue="0">
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
     </background_color>
     <transparent>false</transparent>
@@ -72,9 +68,9 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Speep SP_1</name>
-    <text>Read SP</text>
-    <x>160</x>
-    <y>49</y>
+    <text>Read SS</text>
+    <x>114</x>
+    <y>45</y>
     <width>57</width>
     <height>16</height>
     <auto_size>true</auto_size>
@@ -82,12 +78,12 @@
   <widget type="label" version="2.0.0">
     <name>Label_Warning</name>
     <text>Warning Code</text>
-    <x>112</x>
-    <y>113</y>
+    <x>98</x>
+    <y>115</y>
     <width>90</width>
     <height>16</height>
     <background_color>
-      <color name="MINOR" red="255" green="128" blue="0">
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
     </background_color>
     <transparent>false</transparent>
@@ -97,14 +93,14 @@
   <widget type="textupdate" version="2.0.0">
     <name>Text ReadModFonctWithWarning_3</name>
     <pv_name>${unit}:${node}:${Add}:WARNING</pv_name>
-    <x>215</x>
-    <y>117</y>
+    <x>196</x>
+    <y>115</y>
   </widget>
   <widget type="bool_button" version="2.0.0">
     <name>Bb_Disable</name>
     <pv_name>${unit}:${node}:${Add}:Disable</pv_name>
-    <x>30</x>
-    <y>25</y>
+    <x>7</x>
+    <y>27</y>
     <off_color>
       <color name="OK" red="0" green="255" blue="0">
       </color>
@@ -128,8 +124,8 @@
           <widget type="label" version="2.0.0">
             <name>Label_MTemp</name>
             <text>Motor Temp</text>
-            <x>38</x>
-            <y>231</y>
+            <x>18</x>
+            <y>199</y>
             <width>76</width>
             <height>16</height>
             <auto_size>true</auto_size>
@@ -137,34 +133,30 @@
           <widget type="textupdate" version="2.0.0">
             <name>TU_MTemp</name>
             <pv_name>${unit}:${node}:${Add}:MTemp</pv_name>
-            <x>30</x>
-            <y>202</y>
+            <x>18</x>
+            <y>179</y>
           </widget>
           <widget type="label" version="2.0.0">
             <name>Label_MSpeed</name>
             <text>Motor Speed</text>
-            <x>173</x>
-            <y>209</y>
+            <x>138</x>
+            <y>199</y>
             <width>81</width>
             <height>16</height>
-            <background_color>
-              <color red="60" green="100" blue="60" alpha="179">
-              </color>
-            </background_color>
             <transparent>false</transparent>
             <auto_size>true</auto_size>
           </widget>
           <widget type="textupdate" version="2.0.0">
             <name>Text Update_3</name>
             <pv_name>${unit}:${node}:${Add}:MSpeed</pv_name>
-            <x>158</x>
-            <y>169</y>
+            <x>136</x>
+            <y>179</y>
           </widget>
           <widget type="meter" version="3.0.0">
             <name>Meter_MTemp_1</name>
             <pv_name>${unit}:${node}:${Add}:MSpeed</pv_name>
-            <x>118</x>
-            <y>61</y>
+            <x>78</x>
+            <y>39</y>
             <width>157</width>
             <height>88</height>
             <format>1</format>
@@ -172,10 +164,14 @@
           <widget type="thermometer" version="2.0.0">
             <name>Thermometer</name>
             <pv_name>${unit}:${node}:${Add}:MTemp</pv_name>
-            <x>28</x>
+            <x>18</x>
             <y>19</y>
             <width>30</width>
             <height>140</height>
+            <fill_color>
+              <color red="255" green="0" blue="0">
+              </color>
+            </fill_color>
           </widget>
         </children>
       </tab>
@@ -364,10 +360,10 @@
           </widget>
           <widget type="label" version="2.0.0">
             <name>Label_Tab_Warning_22</name>
-            <text> Recover by AUX Data</text>
+            <text>Recover by AUX Data</text>
             <x>18</x>
             <y>249</y>
-            <width>141</width>
+            <width>137</width>
             <height>16</height>
             <background_color>
               <color red="255" green="128" blue="0" alpha="60">
@@ -381,6 +377,7 @@
             <name>LED</name>
             <pv_name>${unit}:${node}:${Add}:WARNING:BAD-PUMP-TX</pv_name>
             <x>180</x>
+            <y>10</y>
             <width>15</width>
             <height>15</height>
             <on_color>
@@ -392,7 +389,7 @@
             <name>LED_3</name>
             <pv_name>${unit}:${node}:${Add}:WARNING:SecondDamageLmt</pv_name>
             <x>180</x>
-            <y>20</y>
+            <y>30</y>
             <width>15</width>
             <height>15</height>
             <on_color>
@@ -404,7 +401,7 @@
             <name>LED_4</name>
             <pv_name>${unit}:${node}:${Add}:WARNING:FirstDamageLmt</pv_name>
             <x>180</x>
-            <y>40</y>
+            <y>50</y>
             <width>15</width>
             <height>15</height>
             <on_color>
@@ -416,7 +413,7 @@
             <name>LED_10</name>
             <pv_name>${unit}:${node}:${Add}:WARNING:Imbalance-X_H</pv_name>
             <x>180</x>
-            <y>60</y>
+            <y>70</y>
             <width>15</width>
             <height>15</height>
             <on_color>
@@ -428,7 +425,7 @@
             <name>LED_12</name>
             <pv_name>${unit}:${node}:${Add}:WARNING:Imbalance-X_B</pv_name>
             <x>180</x>
-            <y>80</y>
+            <y>90</y>
             <width>15</width>
             <height>15</height>
             <on_color>
@@ -440,7 +437,7 @@
             <name>LED_W_5</name>
             <pv_name>${unit}:${node}:${Add}:WARNING:Imbalance-Z</pv_name>
             <x>180</x>
-            <y>100</y>
+            <y>110</y>
             <width>15</width>
             <height>15</height>
             <on_color>
@@ -452,7 +449,7 @@
             <name>LED_W_6</name>
             <pv_name>${unit}:${node}:${Add}:WARNING:PumpRunTimeOver</pv_name>
             <x>180</x>
-            <y>120</y>
+            <y>130</y>
             <width>15</width>
             <height>15</height>
             <on_color>
@@ -464,7 +461,7 @@
             <name>LED_W_7</name>
             <pv_name>${unit}:${node}:${Add}:WARNING:PumpOverload</pv_name>
             <x>180</x>
-            <y>140</y>
+            <y>150</y>
             <width>15</width>
             <height>15</height>
             <on_color>
@@ -476,7 +473,7 @@
             <name>LED_W_8</name>
             <pv_name>${unit}:${node}:${Add}:WARNING:PumpRecordBungle</pv_name>
             <x>180</x>
-            <y>160</y>
+            <y>170</y>
             <width>15</width>
             <height>15</height>
             <on_color>
@@ -488,7 +485,7 @@
             <name>LED_W_9</name>
             <pv_name>${unit}:${node}:${Add}:WARNING:PCBRecordBungle</pv_name>
             <x>180</x>
-            <y>180</y>
+            <y>190</y>
             <width>15</width>
             <height>15</height>
             <on_color>
@@ -500,7 +497,7 @@
             <name>LED_W_11</name>
             <pv_name>${unit}:${node}:${Add}:WARNING:ClockDataLost</pv_name>
             <x>180</x>
-            <y>220</y>
+            <y>230</y>
             <width>15</width>
             <height>15</height>
             <on_color>
@@ -512,7 +509,7 @@
             <name>LED_W_12</name>
             <pv_name>${unit}:${node}:${Add}:WARNING:LowRTCBattery</pv_name>
             <x>180</x>
-            <y>200</y>
+            <y>210</y>
             <width>15</width>
             <height>15</height>
             <on_color>
@@ -524,7 +521,7 @@
             <name>LED_W_14</name>
             <pv_name>${unit}:${node}:${Add}:WARNING:RecoverbyAUXData</pv_name>
             <x>180</x>
-            <y>240</y>
+            <y>250</y>
             <width>15</width>
             <height>15</height>
             <on_color>
@@ -540,8 +537,8 @@
           <widget type="label" version="2.0.0">
             <name>Label_3</name>
             <text>Error 1 Code</text>
-            <x>38</x>
-            <y>10</y>
+            <x>18</x>
+            <y>9</y>
             <background_color>
               <color name="Grid" red="128" green="128" blue="128">
               </color>
@@ -550,8 +547,8 @@
           <widget type="label" version="2.0.0">
             <name>Label_6</name>
             <text>Error 2 Code</text>
-            <x>38</x>
-            <y>27</y>
+            <x>18</x>
+            <y>29</y>
             <background_color>
               <color name="Grid" red="128" green="128" blue="128">
               </color>
@@ -560,22 +557,22 @@
           <widget type="textupdate" version="2.0.0">
             <name>Text Update_4</name>
             <pv_name>${unit}:${node}:${Add}:Error2</pv_name>
-            <x>138</x>
+            <x>118</x>
             <y>29</y>
           </widget>
           <widget type="textupdate" version="2.0.0">
             <name>Text ReadModFonctWithWarning_4</name>
             <pv_name>${unit}:${node}:${Add}:NErrors</pv_name>
-            <x>138</x>
-            <y>2</y>
+            <x>118</x>
+            <y>9</y>
           </widget>
         </children>
       </tab>
     </tabs>
-    <x>10</x>
+    <x>7</x>
     <y>153</y>
-    <width>310</width>
-    <height>310</height>
+    <width>286</width>
+    <height>295</height>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button ON</name>
@@ -588,8 +585,8 @@
     </actions>
     <pv_name>${unit}:${node}:${Add}:Command</pv_name>
     <text>START</text>
-    <x>10</x>
-    <y>66</y>
+    <x>7</x>
+    <y>68</y>
     <width>70</width>
     <rules>
       <rule name="New Rule" prop_id="enabled" out_exp="false">
@@ -614,25 +611,25 @@
     </actions>
     <pv_name>${unit}:${node}:${Add}:Command</pv_name>
     <text>STOP</text>
-    <x>90</x>
-    <y>66</y>
+    <x>7</x>
+    <y>113</y>
     <width>70</width>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text ReadModFonctWithWarning_5</name>
     <pv_name>${unit}:${node}:${Add}:NErrors</pv_name>
-    <x>219</x>
-    <y>137</y>
+    <x>196</x>
+    <y>135</y>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_N_Errors</name>
     <text>N Errors</text>
-    <x>150</x>
-    <y>137</y>
+    <x>135</x>
+    <y>135</y>
     <width>53</width>
     <height>16</height>
     <background_color>
-      <color name="MINOR" red="255" green="128" blue="0">
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
       </color>
     </background_color>
     <transparent>false</transparent>
